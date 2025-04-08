@@ -33,21 +33,21 @@ Describe the key infrastructure components available at the TEF Site, including 
     <td><strong>Data Broker<strong></td>
     <td>
       {{ config.extra.labels.data_brokers.fiware }}<br>
-      <strong>- API: /strong> &lt;<\>Scorpio<br>
+      <strong>- API: /strong> Scorpio<br>
       <strong>- Version:</strong> ??
     </td>
   </tr>
   <tr>
-    <td><strong>Data Source<strong></td>
-    <td>&lt;\>Scorpio Context Broker</td>
+    <td><strong>Data Source:<strong></td>
+    <td>Scorpio Context Broker</td>
   </tr>
   <tr>
     <td><strong>IdM &amp; Auth<strong></td>
-    <td>&lt;no_specified\>KeyCloak</td>
+    <td>KeyCloak</td>
   </tr>
   <tr>
     <td><strong>Data Publication<strong></td>
-    <td>&lt;no_specified\>RESTful API</td>
+    <td>RESTful API</td>
   </tr>
 </table>
 
