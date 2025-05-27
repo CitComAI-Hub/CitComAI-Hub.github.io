@@ -8,45 +8,39 @@ Center Denmark is located in Fredericia, Denmark, and serves as a national hub f
 
 Center Denmark provides secure and structured data infrastructure that supports collaboration between utilities, AI innovators, and researchers. The site plays a central role in bridging the gap between data availability and AI application by making validated utility datasets accessible for development, testing, and scaling of smart solutions that support the green transition.
 
-**In short:** Center Denmark provides access to high-quality utility data through a dedicated **data portal**, offering both **downloadable datasets** and **API-based access** – ready for use in **AI, analytics, and research**.
+**In short:** Center Denmark provides access to high-quality utility data through a dedicated data portal, offering both downloadable datasets and API-based access – ready for use in AI, analytics, and research.
 
 ## Services Offered
 
-The following services provided by Center Denmark as part of the CitCom.ai ecosystem are focused on enabling **secure, structured, and value-driven access to utility data**. Whether for collaboration between utilities and service providers, academic research, or early-stage experimentation, the services make it possible to work with real-world data from electricity, water, heating, gas, and PtX – all compliant with GDPR and tailored to different needs.
+List the services available at the TEF Site related to the CitCom.ai Services Catalog. Provide a brief description of each service, and include any relevant links or documentation.
 
-### Service 1: Access to Utility Data for Co-developed Digital Services  
-This service supports collaboration between utility companies and service providers by granting access to structured and enriched utility data. The data is typically used for AI and analytics purposes such as forecasting, predictive maintenance, or grid planning.  
-Center Denmark manages the entire data process – from collection and cleansing to enrichment and delivery – ensuring high data quality and full GDPR compliance.
-
-📄 Documentation: *Link to documentation will be inserted later*
-
----
-
-### Service 2: Build-Your-Own Utility Dataset  
-This modular service enables data consumers (e.g. researchers, startups) to configure and request customized datasets based on available utility data.  
-Users select a base dataset (electricity, water, heating) and can combine it with open data sources such as weather data, building information (BBR), electricity spot prices, or demographic data. The final dataset is delivered at the desired processing level (e.g. anonymised or pseudonymised), and pricing depends on the complexity and scope of the request.
-
-📄 Documentation: *Link to documentation will be inserted later*
-
----
-
-### Service 3: Open Utility Datasets  
-This service provides free access to pre-approved, anonymised datasets via Center Denmark’s data portal.  
-It is designed for early-stage experimentation, prototyping, education, and exploratory analysis. The datasets are ready to use and can be combined with publicly available data sources such as weather and building data, without any need for customization.
-
-📄 Documentation: *Link to documentation will be inserted later*
-
+- **Service 1**: [Description of Service 1]
+- **Service 2**: [Description of Service 2]
+- **Service 3**: [Description of Service 3]
 
 ## Infrastructure Components
 
-Describe the key infrastructure components available at the TEF Site, including data platforms, local digital twins, specific hardware, IoT platforms, or any other relevant technologies.
+Center Denmark provides the core infrastructure necessary to make high-quality utility data accessible, usable, and legally compliant for AI development, research, and innovation.  
+The infrastructure is built to support both technical and legal aspects of data sharing, ensuring that stakeholders can focus on value creation without complexity or risk.
 
-- **Data Platforms**: [Description of the data platforms available]
-- **Local Digital Twins**: [Details about any local digital twin infrastructure]
-- **Specific Hardware**: [Details about specialized hardware available, such as sensors, servers, etc.]
-- **IoT Platforms**: [Information about IoT systems or platforms in use at the site]
-- **Visualization platforms**: [Information about large scale visualisation components]
-- **Other**: [Any other relevant infrastructure to showcase]
+### Data Platform  
+Center Denmark operates a national data platform that collects, processes, and structures data from electricity, water, heating, gas, and PtX systems.  
+In addition to utility data, the platform also integrates **public data sources** such as:
+
+- Weather data  
+- Building information (BBR)  
+- Electricity spot prices  
+- Demographic data
+
+The platform ensures that all data is securely ingested, cleansed, enriched, and pseudonymised in accordance with GDPR, and prepared for use in AI, analytics, and research.
+
+### Data Portal  
+The data portal is the primary access point for users, offering both **downloadable datasets** and **API-based access**.  
+Through the portal, users can browse available data, configure tailored datasets, or access open datasets for prototyping and exploration. The portal ensures structured and efficient access to high-quality utility data.
+
+### Legal and Governance Support  
+To ensure responsible and compliant data sharing, Center Denmark provides **legal assistance and standardized templates** that help define the correct legal basis for data access and publication.  
+This includes support with data processing agreements, joint controller agreements, and consent management – collectively known as the **“fullmagtparadigme”**.
 
 <table>
   <tr>
