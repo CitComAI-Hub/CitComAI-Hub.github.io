@@ -1,8 +1,8 @@
 # Data Preparation
 
-Particularly relevant for information sources that lie outside the primary source.
+In order to use information sources for an AI, the information sources must be prepared for AI. 
 
-The primary information source in this case is [loop.sundhedogomsorg.dk](http://loop.sundhedogomsorg.dk).
+This is an example of decision structures based on a specific case. In this case the primary information source is [loop.sundhedogomsorg.dk](http://loop.sundhedogomsorg.dk).
 More specifically, the content created in the Drupal CMS system used to maintain "Loop" as a scientific source.
 The information that lies outside Loop is referred to here as "external data".
 The considerations below also apply to content hosted in Loop (videos, files) that are not "formatted" using the Drupal CMS system.
