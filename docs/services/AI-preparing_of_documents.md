@@ -1,6 +1,8 @@
 # Data Preparation
 
 In order to use information sources for an AI, the information sources must be prepared for AI. 
+The following material is developed by ITK, Aarhus Municipality. Read more about ITK here [ITK, Aarhus Kommune](https://itk.aarhus.dk/)).  
+For questions about the material below, please contact [@DKAndreasen](https://github.com/dkandreasen)
 
 This is an example of decision structures based on a specific case. In this case the primary information source is [loop.sundhedogomsorg.dk](http://loop.sundhedogomsorg.dk).
 More specifically, the content created in the Drupal CMS system used to maintain "Loop" as a scientific source.
