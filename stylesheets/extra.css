@@ -5,14 +5,14 @@
     font-style: normal;
 }
 
-body {
-    font-family: 'FK Grotesk';
-    color: #000;
-}
 
 /* Fix for rendering SVGs in Safari */
 .md-nav__link svg {
     transform: translate(0, 0);
+}
+
+.md-header__title{
+    font-family: 'FK Grotesk', sans-serif;
 }
 
 sup {
