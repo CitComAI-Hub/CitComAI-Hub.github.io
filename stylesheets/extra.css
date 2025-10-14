@@ -52,3 +52,13 @@ footer .footer-tagline p {
     margin: 0;
     padding: 0;
 }
+
+figure {
+  max-width: 100% !important;
+  width: auto !important;
+}
+
+figure > svg {
+  width: 100% !important;
+  height: auto !important;
+}
