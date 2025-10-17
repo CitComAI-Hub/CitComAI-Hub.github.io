@@ -62,3 +62,11 @@ figure > svg {
   width: 100% !important;
   height: auto !important;
 }
+
+/* Center images inside cards/grid without requiring HTML in markdown */
+.grid.cards img {
+        display: block;
+        margin: 0 auto;
+        max-width: 100%;
+        height: auto;
+}
