@@ -630,6 +630,10 @@
       
         
       
+        
+      
+        
+      
     
     
       
@@ -1332,6 +1336,120 @@
   
 
               
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_7" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../documentation/local_digital_twins/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Local Digital Twins
+    
+  </span>
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_7">
+            <span class="md-nav__icon md-icon"></span>
+            Local Digital Twins
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_8" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../documentation/ai_assessment/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    AI Assessment
+    
+  </span>
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_8">
+            <span class="md-nav__icon md-icon"></span>
+            AI Assessment
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
             
               
             
@@ -2230,6 +2348,8 @@
       
         
       
+        
+      
     
     
       
@@ -2274,6 +2394,28 @@
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../toolbox/ldt_toolkit/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    LDT Toolkit
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
               
             
               
@@ -2584,6 +2726,11 @@
 </ul>
 <p>These adjustments enable the demo to work seamlessly with Valencia's available datasets while maintaining compatibility with Smart Data Models where possible.</p>
 </blockquote>
+<div class="admonition note">
+<p class="admonition-title">Level 2 of interoperability</p>
+<p>To adapt the demo application to Level 2 of interoperability, it must operate within a data <strong>space infrastructure</strong>, where data exchanges are <strong>traceable, governed, and policy-compliant</strong>. Instead of connecting directly to raw data sources, the application interacts through standardized <strong>connectors</strong> that manage trust and authorization. This setup involves registering the application with identity services, using <strong>verifiable credentials</strong> to prove access rights, and ensuring that all data exchanges are traceable and aligned with governance rules. </p>
+<p>A detailed walkthrough of this process, including example scripts and deployment steps, is available on the <a href="../waste_collection/#running-miais-in-level-2">MIAIS repository section</a>. This resource illustrates how to integrate an AI service into a Level 2 environment using a minimum viable data space configuration. </p>
+</div>
 <h2 id="features">Features</h2>
 <ul>
 <li>Map UI with route selection between monuments</li>
@@ -2617,10 +2764,12 @@
 <ul>
 <li>
 <p>On Windows:</p>
-<p><div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>.venv<span class="se">\S</span>cripts<span class="se">\a</span>ctivate
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>.venv<span class="se">\S</span>cripts<span class="se">\a</span>ctivate
 </span></code></pre></div>
-    * On macOS/Linux:
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nb">source</span><span class="w"> </span>.venv/bin/activate
+</li>
+<li>
+<p>On macOS/Linux:
+    <div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nb">source</span><span class="w"> </span>.venv/bin/activate
 </span></code></pre></div></p>
 </li>
 </ul>
@@ -2677,7 +2826,7 @@ http://127.0.0.1:5000</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="October 16, 2025 18:10:44"><span class="timeago" datetime="2025-10-16T18:10:44+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="October 16, 2025 18:10:44">2025-10-16</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="October 24, 2025 08:02:41"><span class="timeago" datetime="2025-10-24T08:02:41+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="October 24, 2025 08:02:41">2025-10-24</span>
   </span>
 
     
