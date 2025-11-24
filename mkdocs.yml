@@ -62,6 +62,10 @@ nav:
               - documentation/mv_data_space/fiware/consumer.md
               - documentation/mv_data_space/fiware/provider.md
           - documentation/mv_data_space/index.md
+      - Local Digital Twins:
+          - documentation/local_digital_twins/index.md
+      - AI Assessment:
+          - documentation/ai_assessment/index.md
   - AI services:
       - services/index.md
       - Minimal Interoperable AI Service: services/waste_collection.md
@@ -91,8 +95,10 @@ nav:
         - tef/south_connect/warsaw.md
   - Toolbox:
       - toolbox/index.md
+      - AI Assessment Toolkit: toolbox/ai_assessment_toolkit.md
       - AI Toolkit: toolbox/ai_toolkit.md
       - AI Logging Monitor: toolbox/ai_logging_monitor.md
+      - LDT Toolkit: toolbox/ldt_toolkit.md
       - MIMs Toolkit: toolbox/mims_toolkit.md
       - Other Tools: toolbox/other_toolkit.md
   - FAQ:
