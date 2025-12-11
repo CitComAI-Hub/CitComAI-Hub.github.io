@@ -4,7 +4,8 @@
 .ai-assessment-table table {
   table-layout: fixed;
   width: 100%;
-  min-width: 1500px;
+  /* Responsive: let container and column min-widths define overflow */
+  min-width: 0;
   border-collapse: collapse;
 }
 
@@ -92,12 +93,15 @@
 
 /* Widen the page content area for this catalogue */
 .catalog-page .md-grid {
-  max-width: 1600px;
-  width: min(96vw, 1600px);
+  /* Fixed side gutters: 24px each, consistent at any viewport width */
+  max-width: none;
+  width: calc(100vw - 500px);
 }
 
 .catalog-page .md-content__inner {
-  margin: 0 0.75rem 2.5rem;
+  /* Keep constant gutters handled by .md-grid; avoid extra padding */
+  margin: 0 auto 2.5rem;
+  padding-inline: 0;
 }
 
 /* Hide the toggle while the sidebar is open */
