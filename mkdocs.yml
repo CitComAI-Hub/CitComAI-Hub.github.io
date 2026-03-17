@@ -33,9 +33,10 @@ nav:
       - Interoperability: getting_started/interoperability.md
       - Data spaces:
           - getting_started/data_spaces/index.md
-      - Get involved: 
-        - getting_started/get_involved/index.md
-        - Join the Data Space: getting_started/get_involved/join.md
+          - Fundamentals & Deployment: getting_started/data_spaces/fundaments_deployment.md
+      - Get involved:
+          - getting_started/get_involved/index.md
+          - Join the Data Space: getting_started/get_involved/join.md
   - Data catalog:
       - data_catalog/index.md
       - data_catalog/instructions.md
@@ -45,18 +46,18 @@ nav:
           - documentation/verifiable_credentials/index.md
           - Hands-On Configuration: documentation/verifiable_credentials/keycloak/index.md
       - Trust Frameworks:
-        - documentation/trust_frameworks/index.md
-        - Fiware: documentation/trust_frameworks/fiware_trust_anchor/index.md
+          - documentation/trust_frameworks/index.md
+          - Fiware: documentation/trust_frameworks/fiware_trust_anchor/index.md
       - Data Space Connectors:
           - documentation/data_space_connectors/index.md
           - Eclipse: documentation/data_space_connectors/eclipse/index.md
-          - Fiware: 
+          - Fiware:
               - documentation/data_space_connectors/fiware/index.md
       - Data Federation:
-        - documentation/data_federation/index.md
-        - NGSI-v2 to NGSI-LD:
-            - Lepus: documentation/data_federation/ngsiv2_to_ld/lepus.md
-            - FIWARE IoT-Agent: documentation/data_federation/ngsiv2_to_ld/iot_agent.md
+          - documentation/data_federation/index.md
+          - NGSI-v2 to NGSI-LD:
+              - Lepus: documentation/data_federation/ngsiv2_to_ld/lepus.md
+              - FIWARE IoT-Agent: documentation/data_federation/ngsiv2_to_ld/iot_agent.md
       - MV Data Space:
           - Fiware:
               - documentation/mv_data_space/fiware/trust_anchor.md
@@ -64,10 +65,10 @@ nav:
               - documentation/mv_data_space/fiware/provider.md
           - documentation/mv_data_space/index.md
       - Local Digital Twins:
-        - documentation/local_digital_twins/index.md
+          - documentation/local_digital_twins/index.md
       - AI Assessment:
-        - documentation/ai_assessment/index.md
-        - documentation/ai_assessment/ai_assessment_catalogue.md
+          - documentation/ai_assessment/index.md
+          - documentation/ai_assessment/ai_assessment_catalogue.md
   - AI services:
       - services/index.md
       - Minimal Interoperable AI Service: services/waste_collection.md
@@ -76,25 +77,25 @@ nav:
       - Healthy Routes: services/healthy_routes.md
   - TEF Nodes:
       - tef/index.md
-      - Nordic - POWER: 
-        - tef/nordic_power/doll_living_lab.md
-        - tef/nordic_power/aarhus_city_lab.md
-        - tef/nordic_power/net_zero_innovation_hub.md
-        - tef/nordic_power/dti.md
-        - tef/nordic_power/center_denmark.md
-        - tef/nordic_power/gate21.md
-        - tef/nordic_power/rise.md
-        - tef/nordic_power/tampere.md
+      - Nordic - POWER:
+          - tef/nordic_power/doll_living_lab.md
+          - tef/nordic_power/aarhus_city_lab.md
+          - tef/nordic_power/net_zero_innovation_hub.md
+          - tef/nordic_power/dti.md
+          - tef/nordic_power/center_denmark.md
+          - tef/nordic_power/gate21.md
+          - tef/nordic_power/rise.md
+          - tef/nordic_power/tampere.md
       - Central - MOVE:
-        - tef/central_move/mechelen.md
-        - tef/central_move/brussels.md
-        - tef/central_move/eindhoven.md
-        - tef/central_move/paris.md
-        - tef/central_move/list.md
+          - tef/central_move/mechelen.md
+          - tef/central_move/brussels.md
+          - tef/central_move/eindhoven.md
+          - tef/central_move/paris.md
+          - tef/central_move/list.md
       - South - CONNECT:
-        - tef/south_connect/valencia.md
-        - tef/south_connect/milano.md
-        - tef/south_connect/warsaw.md
+          - tef/south_connect/valencia.md
+          - tef/south_connect/milano.md
+          - tef/south_connect/warsaw.md
   - Toolbox:
       - toolbox/index.md
       - LDT Toolkit: toolbox/ldt_toolkit.md
@@ -168,7 +169,7 @@ plugins:
 extra:
   generator: false
   labels:
-    data_brokers: 
+    data_brokers:
       fiware: '<span style="background-color:green; color:white; padding:2px 4px; border-radius:4px;">Fiware</span>'
       kafka: '<span style="background-color:black; color:white; padding:2px 4px; border-radius:4px;">Kafka</span>'
       iot_ticket: '<span style="background-color:blue; color:white; padding:2px 4px; border-radius:4px;">IoT-Ticket Azure</span>'
