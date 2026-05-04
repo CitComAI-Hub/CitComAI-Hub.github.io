@@ -1,6 +1,16 @@
 SHELL := /bin/bash
 
 VENV_NAME := .env
+
+# Python 3.11 is required to run mkdocs-material, which is the theme used by this project.
+# sudo apt update
+# sudo apt install software-properties-common
+# sudo add-apt-repository ppa:deadsnakes/ppa -y
+# sudo apt update
+# sudo apt install python3.11 python3.11-venv python3.11-dev
+# --------------------------
+# python3.11 -m pip install virtualenv
+
 PYTHON := python3
 
 ################################################################################
@@ -10,8 +20,8 @@ PYTHON := python3
 .PHONY: virtenv_create
 ## Create virtualenv
 virtenv_create:
-	@python3 -c "import virtualenv" >/dev/null 2>&1 || pip install --break-system-packages --user virtualenv
-	python3 -m virtualenv $(VENV_NAME)
+	@$(PYTHON) -c "import virtualenv" >/dev/null 2>&1 || pip install --break-system-packages --user virtualenv
+	$(PYTHON) -m virtualenv $(VENV_NAME)
 	source $(VENV_NAME)/bin/activate && pip install -r requirements.txt
 
 .PHONY: run_mkdocs

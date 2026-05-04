@@ -63,6 +63,10 @@ nav:
               - documentation/mv_data_space/fiware/trust_anchor.md
               - documentation/mv_data_space/fiware/consumer.md
               - documentation/mv_data_space/fiware/provider.md
+          - Eclipse:
+              - documentation/mv_data_space/eclipse/index.md
+              - Architecture: documentation/mv_data_space/eclipse/architecture.md
+              - Deployment: documentation/mv_data_space/eclipse/deployment.md
           - documentation/mv_data_space/index.md
       - Local Digital Twins:
           - documentation/local_digital_twins/index.md
