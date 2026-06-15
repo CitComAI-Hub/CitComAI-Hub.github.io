@@ -1,0 +1,3559 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://citcomai-hub.github.io/documentation/mv_data_space/eclipse/deployment/">
+      
+      
+        <link rel="prev" href="../architecture/">
+      
+      
+        <link rel="next" href="../../">
+      
+      
+      <link rel="icon" href="../../../../assets/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.0">
+    
+    
+  
+    <title>Deployment - CitCom.ai Hub</title>
+  
+
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.45e1311d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../css/timeago.css">
+    
+      <link rel="stylesheet" href="../../../../stylesheets/extra.css">
+    
+      <link rel="stylesheet" href="../../../../stylesheets/neoteroi-mkdocs.css">
+    
+      <link rel="stylesheet" href="../../../../assets/css/data_catalog.css">
+    
+      <link rel="stylesheet" href="../../../../assets/css/ai_assess_catalog.css">
+    
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+   <link href="../../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }
+    .gscrollbar-fixer { padding-right: 15px; }
+    .gdesc-inner { font-size: 0.75rem; }
+    body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+    body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../../../assets/javascripts/glightbox.min.js"></script></head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#citcomai-deployment" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../../.." title="CitCom&lt;sup&gt;AI&lt;/sup&gt; Hub" class="md-header__button md-logo" aria-label="CitCom<sup>AI</sup> Hub" data-md-component="logo">
+      
+  <img src="../../../../assets/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            CitCom<sup>AI</sup> Hub
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Deployment
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/CitComAI-Hub/CitComAI-Hub.github.io" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    CitComAI-Hub/CitComAI-Hub.github.io
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../.." title="CitCom&lt;sup&gt;AI&lt;/sup&gt; Hub" class="md-nav__button md-logo" aria-label="CitCom<sup>AI</sup> Hub" data-md-component="logo">
+      
+  <img src="../../../../assets/logo.png" alt="logo">
+
+    </a>
+    CitCom<sup>AI</sup> Hub
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/CitComAI-Hub/CitComAI-Hub.github.io" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    CitComAI-Hub/CitComAI-Hub.github.io
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../welcome/" class="md-nav__link">
+        
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7.03 4.95 3.5 8.5c-3.33 3.31-3.33 8.69 0 12s8.69 3.33 12 0l6-6c1-.97 1-2.56 0-3.54-.1-.12-.23-.23-.37-.32l.37-.39c1-.97 1-2.56 0-3.54-.14-.16-.33-.3-.5-.41.38-.92.21-2.02-.54-2.77-.87-.87-2.22-.96-3.2-.28a2.517 2.517 0 0 0-3.88-.42l-2.51 2.51c-.09-.14-.2-.27-.32-.39a2.53 2.53 0 0 0-3.52 0m1.41 1.42c.2-.2.51-.2.71 0s.2.51 0 .71l-3.18 3.18a3 3 0 0 1 0 4.24l1.41 1.41a5.004 5.004 0 0 0 1.12-5.36l6.3-6.3c.2-.2.51-.2.7 0s.21.51 0 .71l-4.59 4.6 1.41 1.41 6.01-6.01c.2-.2.51-.2.71 0 .2.2.2.51 0 .71l-6.01 6.01 1.41 1.41 4.95-4.95c.2-.2.51-.2.71 0 .2.2.2.51 0 .71l-5.66 5.65 1.41 1.42 3.54-3.54c.2-.2.51-.2.71 0 .2.2.2.51 0 .71l-6 6.01c-2.54 2.54-6.65 2.54-9.19 0s-2.54-6.65 0-9.19l3.53-3.54M23 17c0 3.31-2.69 6-6 6v-1.5c2.5 0 4.5-2 4.5-4.5H23M1 7c0-3.31 2.69-6 6-6v1.5c-2.5 0-4.5 2-4.5 4.5H1Z"/></svg>
+  
+  <span class="md-ellipsis">
+    Welcome
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../../getting_started/" class="md-nav__link ">
+              
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2S7 4 7 12c0 3.1.76 5.75 1.67 7.83A2 2 0 0 0 10.5 21h3a2 2 0 0 0 1.83-1.17C16.25 17.75 17 15.1 17 12c0-8-5-10-5-10m1.5 17h-3c-1-2.24-1.5-4.59-1.5-7 0-4.64 1.9-6.8 3-7.67 1.1.87 3 3.03 3 7.67 0 2.41-.5 4.76-1.5 7m6.5 3-3.86-1.55c.7-1.53 1.2-3.11 1.51-4.72m-9.79 4.72L4 22l2.35-6.27c.31 1.61.81 3.19 1.51 4.72M12 12c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2Z"/></svg>
+  
+  <span class="md-ellipsis">
+    Getting started
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Getting started
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../getting_started/nodes_countries/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Nodes & Countries
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../getting_started/interoperability/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Interoperability
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../../getting_started/data_spaces/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Data spaces
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            Data spaces
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../getting_started/data_spaces/fundaments_deployment/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Fundamentals & Deployment
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../../getting_started/get_involved/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Get involved
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_5" id="__nav_2_5_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_5">
+            <span class="md-nav__icon md-icon"></span>
+            Get involved
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../getting_started/get_involved/join/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Join the Data Space
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../../data_catalog/" class="md-nav__link ">
+              
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 4H2V2h16v2m-4.96 6h-10l.6-3h12.72l.4 2c.74.04 1.45.19 2.13.46L18 5H2l-1 5v2h1v6h8.5c-.33-.8-.5-1.65-.5-2.5v.5H4v-4h6v3.5c0-1.66.64-3.33 1.9-4.6.36-.35.74-.65 1.14-.9m10.35 11L22 22.39l-3.12-3.07c-.69.43-1.51.68-2.38.68-2.5 0-4.5-2-4.5-4.5s2-4.5 4.5-4.5 4.5 2 4.5 4.5c0 .88-.25 1.71-.69 2.4l3.08 3.1M19 15.5a2.5 2.5 0 0 0-5 0 2.5 2.5 0 0 0 5 0Z"/></svg>
+  
+  <span class="md-ellipsis">
+    Data catalog
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Data catalog
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../data_catalog/instructions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    How to add new datasets?
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../" class="md-nav__link ">
+              
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 2a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6H6m0 2h7v5h5v11H6V4m2 8v2h8v-2H8m0 4v2h5v-2H8Z"/></svg>
+  
+  <span class="md-ellipsis">
+    Guides
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Guides
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+          
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../verifiable_credentials/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Verifiable Credentials
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            Verifiable Credentials
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../verifiable_credentials/keycloak/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Hands-On Configuration
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+          
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../trust_frameworks/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Trust Frameworks
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_3">
+            <span class="md-nav__icon md-icon"></span>
+            Trust Frameworks
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../trust_frameworks/fiware_trust_anchor/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Fiware
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../data_space_connectors/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Data Space Connectors
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4_4" id="__nav_4_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_4">
+            <span class="md-nav__icon md-icon"></span>
+            Data Space Connectors
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../data_space_connectors/eclipse/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Eclipse
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4_3" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../data_space_connectors/fiware/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Fiware
+  </span>
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_4_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_4_3">
+            <span class="md-nav__icon md-icon"></span>
+            Fiware
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_5" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../data_federation/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Data Federation
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4_5" id="__nav_4_5_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_5">
+            <span class="md-nav__icon md-icon"></span>
+            Data Federation
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_5_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_5_2" id="__nav_4_5_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    NGSI-v2 to NGSI-LD
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_5_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_5_2">
+            <span class="md-nav__icon md-icon"></span>
+            NGSI-v2 to NGSI-LD
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../data_federation/ngsiv2_to_ld/lepus/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lepus
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../data_federation/ngsiv2_to_ld/iot_agent/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    FIWARE IoT-Agent
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+          
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_6" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    MV Data Space
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4_6" id="__nav_4_6_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_6_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4_6">
+            <span class="md-nav__icon md-icon"></span>
+            MV Data Space
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_6_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_6_1" id="__nav_4_6_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Fiware
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_6_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_6_1">
+            <span class="md-nav__icon md-icon"></span>
+            Fiware
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../fiware/trust_anchor/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Trust Anchor
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../fiware/consumer/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    FDSC Consumer
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../fiware/provider/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    FDSC Provider
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_6_2" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Eclipse
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4_6_2" id="__nav_4_6_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_6_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4_6_2">
+            <span class="md-nav__icon md-icon"></span>
+            Eclipse
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../architecture/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Architecture
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Deployment
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Deployment
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-topology" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Topology
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-the-deploy-command" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. The deploy command
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-provisioning-a-new-tenant" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Provisioning a new tenant
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-self-healing" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Self-healing
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-service-inventory" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Service inventory
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-self-issued-certificates" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Self-issued certificates
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-smtp-email" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. SMTP / email
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-common-operational-tasks" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. Common operational tasks
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8. Common operational tasks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#add-a-tenant" class="md-nav__link">
+    <span class="md-ellipsis">
+      Add a tenant
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rotate-the-keycloak-admin-password" class="md-nav__link">
+    <span class="md-ellipsis">
+      Rotate the Keycloak admin password
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#refresh-ds-manager-images" class="md-nav__link">
+    <span class="md-ellipsis">
+      Refresh DS-Manager images
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diagnose-a-failing-transfer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagnose a failing transfer
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-known-runtime-drift-things-to-watch" class="md-nav__link">
+    <span class="md-ellipsis">
+      9. Known runtime drift / things to watch
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-evidence-the-data-space-is-operational-last-verified-2026-04-29" class="md-nav__link">
+    <span class="md-ellipsis">
+      10. Evidence the data space is operational (last verified 2026-04-29)
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_7" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../local_digital_twins/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Local Digital Twins
+  </span>
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_7">
+            <span class="md-nav__icon md-icon"></span>
+            Local Digital Twins
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_8" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../ai_assessment/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    AI Assessment
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4_8" id="__nav_4_8_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_8">
+            <span class="md-nav__icon md-icon"></span>
+            AI Assessment
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ai_assessment/ai_assessment_catalogue/" class="md-nav__link">
+        
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 4H2V2h16v2m-4.96 6h-10l.6-3h12.72l.4 2c.74.04 1.45.19 2.13.46L18 5H2l-1 5v2h1v6h8.5c-.33-.8-.5-1.65-.5-2.5v.5H4v-4h6v3.5c0-1.66.64-3.33 1.9-4.6.36-.35.74-.65 1.14-.9m10.35 11L22 22.39l-3.12-3.07c-.69.43-1.51.68-2.38.68-2.5 0-4.5-2-4.5-4.5s2-4.5 4.5-4.5 4.5 2 4.5 4.5c0 .88-.25 1.71-.69 2.4l3.08 3.1M19 15.5a2.5 2.5 0 0 0-5 0 2.5 2.5 0 0 0 5 0Z"/></svg>
+  
+  <span class="md-ellipsis">
+    AI Assessment Catalogue
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../../services/" class="md-nav__link ">
+              
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17.5 15.5c0 1.11-.89 2-2 2s-2-.89-2-2 .9-2 2-2 2 .9 2 2m-9-2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.89 2-2-.89-2-2-2M23 15v3c0 .55-.45 1-1 1h-1v1c0 1.11-.89 2-2 2H5a2 2 0 0 1-2-2v-1H2c-.55 0-1-.45-1-1v-3c0-.55.45-1 1-1h1c0-3.87 3.13-7 7-7h1V5.73c-.6-.34-1-.99-1-1.73 0-1.1.9-2 2-2s2 .9 2 2c0 .74-.4 1.39-1 1.73V7h1c3.87 0 7 3.13 7 7h1c.55 0 1 .45 1 1m-2 1h-2v-2c0-2.76-2.24-5-5-5h-4c-2.76 0-5 2.24-5 5v2H3v1h2v3h14v-3h2v-1Z"/></svg>
+  
+  <span class="md-ellipsis">
+    AI services
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5" id="__nav_5_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            AI services
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../services/waste_collection/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Minimal Interoperable AI Service
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../services/wastecontainer_location_optimization/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Container Location Optimization
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../services/GenAI-MVP/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    GenAI GovTechMidtjylland
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../services/healthy_routes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Healthy Routes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../../tef/" class="md-nav__link ">
+              
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M15 23h-2v-2h2v2m4-2h-2v2h2v-2m-4-4h-2v2h2v-2m-8 4H5v2h2v-2m0-4H5v2h2v-2m12 0h-2v2h2v-2m-4-4h-2v2h2v-2m4 0h-2v2h2v-2m2-4a2 2 0 0 1 2 2v12h-2V11H11v12H9v-8H3v8H1v-8a2 2 0 0 1 2-2h6v-2a2 2 0 0 1 2-2V7a2 2 0 0 1 2-2h2V1h2v4h2a2 2 0 0 1 2 2v2m-2 0V7h-6v2h6Z"/></svg>
+  
+  <span class="md-ellipsis">
+    TEF Nodes
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_6" id="__nav_6_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            TEF Nodes
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_2" id="__nav_6_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Nordic - POWER
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_2">
+            <span class="md-nav__icon md-icon"></span>
+            Nordic - POWER
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../tef/nordic_power/doll_living_lab/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    DOLL Living Lab
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../tef/nordic_power/aarhus_city_lab/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Aarhus City Lab
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../tef/nordic_power/net_zero_innovation_hub/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Net Zero Innovation Hub
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../tef/nordic_power/dti/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    DTI
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../tef/nordic_power/center_denmark/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Center Denmark
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../tef/nordic_power/gate21/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    GATE21
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../tef/nordic_power/rise/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RISE
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../tef/nordic_power/tampere/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tampere
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_3" id="__nav_6_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Central - MOVE
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_3">
+            <span class="md-nav__icon md-icon"></span>
+            Central - MOVE
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../tef/central_move/mechelen/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Mechelen
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../tef/central_move/brussels/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Brussels
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../tef/central_move/eindhoven/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Eindhoven
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../tef/central_move/paris/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Paris
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../tef/central_move/list/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Luxembourg
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_4" id="__nav_6_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    South - CONNECT
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_4">
+            <span class="md-nav__icon md-icon"></span>
+            South - CONNECT
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../tef/south_connect/valencia/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Valencia
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../tef/south_connect/milano/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Milano
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../tef/south_connect/warsaw/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Warsaw
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../../toolbox/" class="md-nav__link ">
+              
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 8h-3V6c0-1.1-.9-2-2-2H9c-1.1 0-2 .9-2 2v2H4c-1.1 0-2 .9-2 2v10h20V10c0-1.1-.9-2-2-2M9 6h6v2H9V6m11 12H4v-3h2v1h2v-1h8v1h2v-1h2v3m-2-5v-1h-2v1H8v-1H6v1H4v-3h16v3h-2Z"/></svg>
+  
+  <span class="md-ellipsis">
+    Toolbox
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_7" id="__nav_7_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            Toolbox
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../toolbox/ldt_toolkit/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    LDT Toolkit
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../toolbox/ai_toolkit/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    AI Toolkit
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../toolbox/ai_logging_monitor/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    AI Logging Monitor
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../toolbox/mims_toolkit/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    MIMs Toolkit
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../toolbox/other_toolkit/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Other Tools
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../../faq/" class="md-nav__link ">
+              
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M11 18h2v-2h-2v2m1-16A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2m0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8m0-14a4 4 0 0 0-4 4h2a2 2 0 0 1 2-2 2 2 0 0 1 2 2c0 2-3 1.75-3 5h2c0-2.25 3-2.5 3-5a4 4 0 0 0-4-4Z"/></svg>
+  
+  <span class="md-ellipsis">
+    FAQ
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_8" id="__nav_8_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            FAQ
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../faq/pull_request_procedure/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Request changes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-topology" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Topology
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-the-deploy-command" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. The deploy command
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-provisioning-a-new-tenant" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Provisioning a new tenant
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-self-healing" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Self-healing
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-service-inventory" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Service inventory
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-self-issued-certificates" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Self-issued certificates
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-smtp-email" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. SMTP / email
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-common-operational-tasks" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. Common operational tasks
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8. Common operational tasks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#add-a-tenant" class="md-nav__link">
+    <span class="md-ellipsis">
+      Add a tenant
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rotate-the-keycloak-admin-password" class="md-nav__link">
+    <span class="md-ellipsis">
+      Rotate the Keycloak admin password
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#refresh-ds-manager-images" class="md-nav__link">
+    <span class="md-ellipsis">
+      Refresh DS-Manager images
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diagnose-a-failing-transfer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagnose a failing transfer
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-known-runtime-drift-things-to-watch" class="md-nav__link">
+    <span class="md-ellipsis">
+      9. Known runtime drift / things to watch
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-evidence-the-data-space-is-operational-last-verified-2026-04-29" class="md-nav__link">
+    <span class="md-ellipsis">
+      10. Evidence the data space is operational (last verified 2026-04-29)
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+    <a href="https://github.com/CitComAI-Hub/CitComAI-Hub.github.io/edit/main/docs/documentation/mv_data_space/eclipse/deployment.md" title="Edit this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-2m10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1 2.1 2.1Z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="citcomai-deployment">CitCom.ai — Deployment</h1>
+<p>This is the operational guide for the CitCom data space at
+<code>https://citcom.dataspaceready.eu</code>. It assumes you've read
+<a href="../architecture/"><code>architecture.md</code></a> for the <em>what</em>; this doc focuses
+on the <em>how</em>.</p>
+<h2 id="1-topology">1. Topology</h2>
+<pre class="mermaid"><code>flowchart LR
+  CF[Cloudflare DNS&lt;br/&gt;*.dataspaceready.eu]
+  subgraph host[citcom-ds host — 145.239.127.76]
+    direction TB
+    Traefik["Traefik :443&lt;br/&gt;LE DNS-01"]
+    NM[nginx-main]
+    NA[nginx-admin]
+    Nt1[nginx-libelium]
+    Nt2[nginx-valencia]
+    Nt3[nginx-upv]
+    NMP[nginx-mailpit]
+    OA[onboarding-api]
+    KC[Keycloak&lt;br/&gt;+ Postgres]
+    DSRA[admin DS-Manager&lt;br/&gt;+ EDC + Postgres]
+    T1[libelium DS-Manager&lt;br/&gt;+ EDC + Postgres]
+    T2[valencia DS-Manager&lt;br/&gt;+ EDC + Postgres]
+    T3[upv DS-Manager&lt;br/&gt;+ EDC + Postgres]
+    MIN[MinIO + storage-portal]
+    Sync[sync-fuseki / sync-dome]
+    Loki[Loki + Alloy]
+    Mailpit[Mailpit web UI&lt;br/&gt;SMTP relays to buzondecorreo]
+  end
+  CF --&gt;|443| Traefik
+  Traefik --&gt; NM &amp; NA &amp; Nt1 &amp; Nt2 &amp; Nt3 &amp; NMP</code></pre>
+<ul>
+<li><strong>Server:</strong> <code>145.239.127.76</code> (<code>citcom-ds</code>), Ubuntu, user <code>ubuntu</code>.</li>
+<li><strong>Deploy directory:</strong> <code>~/citcom/</code> (rsync target — not a git
+  worktree).</li>
+<li><strong>Single Docker network:</strong> <code>edc-net</code> (external; created on first
+  deploy).</li>
+<li><strong>Persistent state:</strong> Docker volumes for each Postgres and MinIO
+  instance + the Traefik ACME store.</li>
+<li><strong>DNS:</strong> Wildcard <code>*.citcom.dataspaceready.eu</code> in Cloudflare → host
+  IP. The <code>traefik-cloudflare-companion</code> sidecar registers any new
+  Traefik host label automatically, so a new tenant subdomain
+  resolves without manual DNS work.</li>
+<li><strong>TLS:</strong> Per-host Let's Encrypt certs via the Cloudflare DNS-01
+  challenge (no port-80 challenge → wildcard-friendly + does not
+  break HTTP→HTTPS redirect).</li>
+</ul>
+<h2 id="2-the-deploy-command">2. The deploy command</h2>
+<p>A full deploy from a developer machine is one line:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>make<span class="w"> </span>deploy-prod-remote<span class="w"> </span><span class="nv">PROJECT</span><span class="o">=</span>citcom
+</span></code></pre></div>
+<p>What it does:</p>
+<ol>
+<li><strong>rsync</strong> the repo (excluding <code>.git/</code>, <code>active/</code>, secrets) to
+   <code>ubuntu@citcom-ds:~/citcom/</code>.</li>
+<li><strong>ssh</strong> into the host and run <code>make deploy-prod PROJECT=citcom</code>,
+   which is a thin wrapper for <code>make deploy ENV=production
+   PROJECT=citcom SSL=skip</code>.</li>
+<li><strong>smoke test</strong> with <code>curl https://citcom.dataspaceready.eu/</code>.</li>
+</ol>
+<p>The <code>make deploy</code> target itself does, in order:</p>
+<ol>
+<li><code>make activate</code> — render <code>active/</code> from <code>platform/</code> + <code>projects/citcom/</code></li>
+<li><code>env.production</code> + <code>tenants.yml</code>. This regenerates
+   <code>active/keycloak/realm-export.json</code>, every tenant compose under
+   <code>active/tenants/</code>, the Keycloak theme, the navbar config, etc.</li>
+<li>Fix file permissions (<code>chmod -R o+rX active/</code>) so containers can
+   read bind-mounted assets.</li>
+<li><strong>Pull all images</strong> referenced by every compose file. Hopu
+   re-publishes <code>1.3.x-generic-ds</code> regularly with the same tag, so a
+   blind <code>docker compose up -d</code> would silently keep the old digest;
+   we explicitly pull first.</li>
+<li>Bring up the platform: Traefik (with <code>docker-compose.cloudflare.yml</code>
+   and <code>docker-compose.traefik-le.yml</code> overlays when
+   <code>CLOUDFLARE_ENABLED=true</code>), then <code>docker-compose.yml</code>,
+   then MinIO (<code>docker-compose-minio.yml</code>), then the admin connector
+   (<code>docker-compose-tenant-admin.yml</code>), then every per-tenant compose
+   under <code>active/tenants/</code>.</li>
+<li><strong>Force-recreate every nginx gateway</strong>. Their config is bind-mounted
+   from <code>active/nginx/*.conf.template</code> so a vanilla <code>up -d</code> doesn't
+   pick up template changes.</li>
+<li><strong>Force-recreate Keycloak</strong>. Same bind-mount problem (the
+   themes directory and <code>realm-export.json</code> are mounted; <code>make
+   activate</code> removes and recreates those files, so the inode under the
+   old container is stale).</li>
+<li>Bring up the audit pipeline (Loki + Alloy).</li>
+<li><strong>Run <code>keycloak_sync.py</code></strong> (self-heal). Reconciles realm-level
+   fields, mappers and per-client redirect URIs against
+   <code>active/keycloak/realm-export.json</code>. Self-heals admin password
+   drift via fallback-and-rotate. Idempotent — second run is a no-op.</li>
+<li><strong>Run <code>register-admin-connector.py</code></strong> to ensure the <code>admin</code>
+   connector exists in the admin DS-Manager's <code>connector_registry.ds_connector</code>.</li>
+<li>Print URLs and exit.</li>
+</ol>
+<h2 id="3-provisioning-a-new-tenant">3. Provisioning a new tenant</h2>
+<p>Tenants are declared in <a href="../tenants.yml"><code>tenants.yml</code></a>. Each entry
+covers identity, EDC, contact, users and (optional but recommended)
+<code>org_details</code> for the DS-Manager Organisation registry:</p>
+<div class="language-yaml highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">libelium</span><span class="w">             </span><span class="c1"># used as connector / db / k8s-style identifier</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">  </span><span class="nt">subdomain</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">libelium</span><span class="w">        </span><span class="c1"># https://libelium.citcom.dataspaceready.eu</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">  </span><span class="nt">org</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Libelium</span><span class="w">              </span><span class="c1"># display name</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">  </span><span class="nt">sector</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Technology</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">  </span><span class="nt">contact</span><span class="p">:</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Mateo Ferri</span>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">    </span><span class="nt">email</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">m.ferri@libelium.com</span>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">    </span><span class="nt">role</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Data Engineer</span>
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="w">  </span><span class="nt">edc</span><span class="p">:</span>
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="w">    </span><span class="nt">api_key</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">api-key-libelium</span><span class="w">  </span><span class="c1"># X-Api-Key for the connector&#39;s management API</span>
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="w">    </span><span class="nt">public_port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">9005</span><span class="w">          </span><span class="c1"># internal port for the connector&#39;s data plane</span>
+</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="w">  </span><span class="nt">org_details</span><span class="p">:</span>
+</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="w">    </span><span class="nt">vat</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ESB99065815</span>
+</span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="w">    </span><span class="nt">street</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Calle Bari 19, Edificio CEEI</span>
+</span><span id="__span-1-15"><a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a><span class="w">    </span><span class="nt">city</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Zaragoza</span>
+</span><span id="__span-1-16"><a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a><span class="w">    </span><span class="nt">postal</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;50197&quot;</span>
+</span><span id="__span-1-17"><a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a><span class="w">    </span><span class="nt">subdivision</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ES-Z</span><span class="w">          </span><span class="c1"># ISO-3166-2 — the DS-Manager backend rejects anything else</span>
+</span><span id="__span-1-18"><a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a><span class="w">    </span><span class="nt">country</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ES</span>
+</span><span id="__span-1-19"><a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a><span class="w">  </span><span class="nt">users</span><span class="p">:</span>
+</span><span id="__span-1-20"><a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">email</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">m.ferri@libelium.com</span>
+</span><span id="__span-1-21"><a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a><span class="w">      </span><span class="nt">password</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">...</span>
+</span><span id="__span-1-22"><a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a><span class="w">      </span><span class="nt">first_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Mateo</span>
+</span><span id="__span-1-23"><a id="__codelineno-1-23" name="__codelineno-1-23" href="#__codelineno-1-23"></a><span class="w">      </span><span class="nt">last_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Ferri</span>
+</span><span id="__span-1-24"><a id="__codelineno-1-24" name="__codelineno-1-24" href="#__codelineno-1-24"></a><span class="w">      </span><span class="nt">roles</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">dsr</span><span class="p p-Indicator">:</span><span class="nv">asset-owner</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">dsr</span><span class="p p-Indicator">:</span><span class="nv">operator</span><span class="p p-Indicator">]</span>
+</span></code></pre></div>
+<p>Then:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># After editing tenants.yml on a deployed host:</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="nb">cd</span><span class="w"> </span>~/citcom
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>ln<span class="w"> </span>-sf<span class="w"> </span>active/env<span class="w"> </span>env<span class="w">                      </span><span class="c1"># provision-tenant.py reads cwd/env</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>ln<span class="w"> </span>-sf<span class="w"> </span>active/tenants.yml<span class="w"> </span>tenants.yml<span class="w">      </span><span class="c1"># ... and cwd/tenants.yml</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>python3<span class="w"> </span>platform/scripts/provision-tenant.py<span class="w"> </span>&lt;tenant-name&gt;<span class="w"> </span>--skip-verify
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="c1"># or do all at once:</span>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>python3<span class="w"> </span>platform/scripts/provision-tenant.py<span class="w"> </span>--all<span class="w"> </span>--skip-verify
+</span></code></pre></div>
+<p><code>provision-tenant.py</code> performs <strong>9 idempotent steps</strong> per tenant:</p>
+<ol>
+<li>Generate <code>active/tenants/docker-compose-tenant-&lt;name&gt;.yml</code>.</li>
+<li>Add the tenant subdomain to the <code>dsr-app</code> redirect URIs.</li>
+<li>Create or <strong>self-heal</strong> the per-tenant OIDC client (<code>dsr-app-&lt;name&gt;</code>)
+   — re-applies all 5 protocol mappers and copies the 8 default + 1
+   optional client scopes from <code>dsr-app</code> even when the client already
+   exists, fixing accumulated drift.</li>
+<li>Start the tenant containers (or <code>--skip-containers</code> if they're
+   already up after a <code>make deploy</code>).</li>
+<li>Create the Keycloak group + each declared user, attach roles.</li>
+<li>Register the EDC connector in the tenant DS-Manager's
+   <code>connector_registry.ds_connector</code> (HTTP API first, falls back to
+   direct Postgres insert).</li>
+<li>Identity setup (DID + Organisation + LEAR designation). <strong>This step
+   runs inside the <code>onboarding-api</code> container</strong> so all the HTTP calls
+   resolve through the internal Docker DNS — running on the host
+   silently fails because the public domain doesn't loop back.</li>
+<li>Add the new connector's catalogue endpoints to the sync-service
+   compose so the federated catalogue picks it up.</li>
+<li>Endpoint smoke check (skipped with <code>--skip-verify</code>).</li>
+</ol>
+<h2 id="4-self-healing">4. Self-healing</h2>
+<p>Two self-healers run on every deploy:</p>
+<ul>
+<li><strong><code>platform/scripts/keycloak_sync.py</code></strong> — reconciles the running
+  Keycloak realm with the rendered <code>active/keycloak/realm-export.json</code>
+  (themes, SMTP, locale, mappers, redirect URIs). Auto-rotates the
+  admin password if the value in <code>env.production</code> no longer
+  authenticates and a known fallback (e.g. <code>admin</code>) does.</li>
+<li><strong><code>platform/onboarding-api/register-admin-connector.py</code></strong> — ensures
+  the admin EDC connector is registered in the admin DS-Manager's
+  <code>connector_registry.ds_connector</code>. SQL-direct (the previous
+  <code>/test-auth/create-session</code> endpoint was removed in dsr-backend
+  1.3.4).</li>
+</ul>
+<p>Both are idempotent and non-fatal: a deploy succeeds even if either
+fails.</p>
+<h2 id="5-service-inventory">5. Service inventory</h2>
+<table>
+<thead>
+<tr>
+<th>Container</th>
+<th>Image</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>traefik</code></td>
+<td><code>traefik:latest</code></td>
+<td>TLS termination, host-based routing, ACME (LE) via Cloudflare DNS-01</td>
+</tr>
+<tr>
+<td><code>cloudflare-companion</code></td>
+<td><code>tiredofit/traefik-cloudflare-companion:latest</code></td>
+<td>Auto-register DNS records for every Traefik host label</td>
+</tr>
+<tr>
+<td><code>nginx-main</code></td>
+<td><code>nginx:1.25-alpine</code></td>
+<td>Onboarding portal, <code>/catalog/</code>, <code>/registry/</code>, DS-Manager fallback</td>
+</tr>
+<tr>
+<td><code>nginx-admin</code></td>
+<td><code>nginx:1.25-alpine</code></td>
+<td><code>admin.&lt;domain&gt;</code> — admin DS-Manager proxy</td>
+</tr>
+<tr>
+<td><code>nginx-mailpit</code></td>
+<td><code>nginx:1.25-alpine</code></td>
+<td><code>mailpit.&lt;domain&gt;</code> (debug catcher; SMTP egress is real)</td>
+</tr>
+<tr>
+<td><code>nginx-{tenant}</code></td>
+<td><code>nginx:1.25-alpine</code></td>
+<td>One per tenant subdomain</td>
+</tr>
+<tr>
+<td><code>tenant-validator</code></td>
+<td>custom (FastAPI)</td>
+<td>nginx <code>auth_request</code> subhandler — validates session against DS-Manager backend, gates <code>/storage/</code> strictly</td>
+</tr>
+<tr>
+<td><code>onboarding-api</code></td>
+<td>custom (Flask)</td>
+<td>Participant registry, <code>/auth/*</code> portal, activation emails (SMTP), provision API</td>
+</tr>
+<tr>
+<td><code>dsr-keycloak-dev</code> + <code>dsr-keycloak-db-dev</code></td>
+<td><code>quay.io/keycloak/keycloak:26.4</code> + <code>postgres:15-alpine</code></td>
+<td>OIDC issuer</td>
+</tr>
+<tr>
+<td><code>dsr-frontend-{tenant}</code></td>
+<td><code>registry.hopu.eu/dsr-frontend:1.3.3-generic-ds</code></td>
+<td>Per-tenant DS-Manager UI</td>
+</tr>
+<tr>
+<td><code>dsr-backend-{tenant}</code></td>
+<td><code>registry.hopu.eu/dsr-backend:1.3.4-generic-ds</code></td>
+<td>Per-tenant DS-Manager API (assets, policies, identity)</td>
+</tr>
+<tr>
+<td><code>cp-{tenant}</code></td>
+<td><code>ghcr.io/sovity/edc-ce:16.4.2</code></td>
+<td>Eclipse EDC connector per tenant</td>
+</tr>
+<tr>
+<td><code>dsr-postgres-{tenant}</code> + <code>db-{tenant}</code></td>
+<td><code>postgres:15-alpine</code></td>
+<td>DS-Manager + EDC databases per tenant</td>
+</tr>
+<tr>
+<td><code>dsr-redis-{tenant}</code></td>
+<td><code>redis:7-alpine</code></td>
+<td>DS-Manager session store per tenant</td>
+</tr>
+<tr>
+<td><code>dsr-did-init-{tenant}</code></td>
+<td>one-shot</td>
+<td>Generates DID material on first start</td>
+</tr>
+<tr>
+<td><code>cp-admin</code> + <code>db-admin</code></td>
+<td>EDC + postgres</td>
+<td>Shared admin connector</td>
+</tr>
+<tr>
+<td><code>dsr-backend-dev</code> + <code>dsr-postgres-dev</code> + <code>dsr-redis-dev</code></td>
+<td>DS-Manager</td>
+<td>Admin DS-Manager (compliance / sync centre)</td>
+</tr>
+<tr>
+<td><code>dsr-frontend-dev</code></td>
+<td><code>registry.hopu.eu/dsr-frontend:1.3.3-generic-ds</code></td>
+<td>Admin DS-Manager UI</td>
+</tr>
+<tr>
+<td><code>minio</code> + <code>minio-init</code></td>
+<td>MinIO</td>
+<td>Object storage with per-bucket per-tenant separation</td>
+</tr>
+<tr>
+<td><code>storage-portal</code></td>
+<td>custom (Flask + minio-py)</td>
+<td>Authenticated upload/list UI per tenant; X-Participant header gates the bucket</td>
+</tr>
+<tr>
+<td><code>http-source</code>, <code>http-sink</code></td>
+<td>nginx + node</td>
+<td>Test-data servers used in transfer demos</td>
+</tr>
+<tr>
+<td><code>fuseki</code></td>
+<td>Apache Jena</td>
+<td>DCAT catalogue index</td>
+</tr>
+<tr>
+<td><code>scorpio</code> + <code>dome-postgres</code> + <code>tmforum-{product,resource,service}-catalog</code></td>
+<td>DOME</td>
+<td>TMForum API stack</td>
+</tr>
+<tr>
+<td><code>bae-frontend</code></td>
+<td>DOME marketplace UI</td>
+<td>Browseable product catalogue</td>
+</tr>
+<tr>
+<td><code>sync-service</code> (a.k.a. <code>sync-fuseki</code>)</td>
+<td><code>node:20-alpine</code></td>
+<td>Polls every connector's DCAT catalogue → Fuseki SPARQL</td>
+</tr>
+<tr>
+<td><code>sync-dome</code></td>
+<td><code>node:20-alpine</code></td>
+<td>Polls every connector → TMForum</td>
+</tr>
+<tr>
+<td><code>mailpit</code></td>
+<td><code>axllent/mailpit:latest</code></td>
+<td>Local SMTP catcher (debug)</td>
+</tr>
+<tr>
+<td><code>dsr-loki-dev</code> + <code>dsr-alloy-dev</code></td>
+<td>Loki + Grafana Alloy</td>
+<td>Audit log aggregation</td>
+</tr>
+</tbody>
+</table>
+<h2 id="6-self-issued-certificates">6. Self-issued certificates</h2>
+<p>The Traefik service is configured to issue per-host certs through the
+Cloudflare DNS-01 challenge. The flag chain:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>--certificatesresolvers.le.acme.email=...
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>--certificatesresolvers.le.acme.storage=/acme/acme.json
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>--certificatesresolvers.le.acme.dnschallenge=true
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>--certificatesresolvers.le.acme.dnschallenge.provider=cloudflare
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>--certificatesresolvers.le.acme.dnschallenge.resolvers=1.1.1.1:53,8.8.8.8:53
+</span></code></pre></div>
+<p>Each routed service ships a label <code>traefik.http.routers.&lt;name&gt;.tls.certresolver=${TRAEFIK_CERTRESOLVER:-}</code>,
+which evaluates to <code>le</code> in production (where the env sets it) and to
+empty in local dev (where Traefik falls back to the file provider's
+self-signed wildcard). Adding a new tenant therefore needs no manual
+cert work — Traefik issues one on the first request to its host.</p>
+<h2 id="7-smtp-email">7. SMTP / email</h2>
+<p><code>onboarding-api</code> sends activation emails directly through SMTP (it does
+<strong>not</strong> delegate to Keycloak's mailing). Production points at
+<code>smtp.buzondecorreo.com:465</code> SSL, authenticated as
+<code>info@geospace.es</code> — recipients see the message as
+<code>From: CitCom.ai &lt;info@geospace.es&gt;</code>. The HTML template lives at
+<a href="../../../platform/onboarding-api/templates/activation-email.html"><code>platform/onboarding-api/templates/activation-email.html</code></a>
+and is parametrised entirely from env (<code>EMAIL_PRIMARY_COLOR</code>,
+<code>EMAIL_ACCENT_COLOR</code>, <code>EMAIL_LOGO_FILE</code>, …) so each project's emails
+match its login + portal palette.</p>
+<blockquote>
+<p><strong>Caveat</strong> — sender domain (<code>geospace.es</code>) does not match the data-
+space domain (<code>citcom.dataspaceready.eu</code>), so a strict DMARC policy
+at the recipient's MX may quarantine. Long-term we'll set up
+<code>noreply@citcom.dataspaceready.eu</code> with proper SPF/DKIM in
+Cloudflare; short-term Mailpit on <code>mailpit.citcom.dataspaceready.eu</code>
+remains as a debug surface.</p>
+</blockquote>
+<h2 id="8-common-operational-tasks">8. Common operational tasks</h2>
+<h3 id="add-a-tenant">Add a tenant</h3>
+<ol>
+<li>Append entry to <code>projects/citcom/tenants.yml</code>.</li>
+<li><code>make deploy-prod-remote PROJECT=citcom</code> (or, if you only want the
+   tenant change without a full redeploy, ssh in and
+   <code>python3 platform/scripts/provision-tenant.py &lt;new-tenant&gt;</code>).</li>
+<li>Activation emails are NOT sent automatically by provisioning — they
+   are sent by an explicit call to the onboarding-api's <code>send_activation</code>
+   helper. We dispatch them in batch after provisioning completes (see
+   the in-session ad-hoc script we used the day of go-live).</li>
+</ol>
+<h3 id="rotate-the-keycloak-admin-password">Rotate the Keycloak admin password</h3>
+<ol>
+<li>Edit <code>KEYCLOAK_ADMIN_PASSWORD</code> in <code>projects/citcom/env.production</code>.</li>
+<li><code>make deploy-prod-remote PROJECT=citcom</code>.</li>
+<li><code>keycloak_sync.py</code> detects the env doesn't authenticate, falls back
+   to the prior known password, resets the master admin user to the
+   new env value.</li>
+<li>Save the new password to a secrets store (memory, vault, …) and
+   update <code>memory/citcom_keycloak_admin.md</code>.</li>
+</ol>
+<h3 id="refresh-ds-manager-images">Refresh DS-Manager images</h3>
+<p>Because Hopu re-tags <code>1.3.x-generic-ds</code>, a redeploy is enough — the
+deploy target now does an explicit <code>docker compose pull</code> before
+<code>up -d</code>. Force-recreate of the relevant containers happens
+automatically.</p>
+<h3 id="diagnose-a-failing-transfer">Diagnose a failing transfer</h3>
+<ol>
+<li>Provider EDC log: <code>docker logs cp-&lt;provider-tenant&gt; --tail 200</code>
+   — look for <code>ContractNegotiation: ID … Fatal error</code> lines. The
+   most common one is the JSON-LD policy mismatch on
+   <code>POST /contractnegotiations</code>.</li>
+<li>Consumer side: <code>GET /api/management/v3/contractnegotiations/&lt;id&gt;</code>
+   shows the state machine; <code>state=TERMINATED</code> plus <code>errorDetail</code>
+   tells you what the consumer rejected.</li>
+<li>EDR phase: <code>GET /api/management/v3/edrs/{transferProcessId}/dataaddress</code>
+   returns the bearer token + endpoint. If that endpoint 401s, the
+   token expired or the data-plane URL is wrong.</li>
+</ol>
+<h2 id="9-known-runtime-drift-things-to-watch">9. Known runtime drift / things to watch</h2>
+<ul>
+<li>The realm-import lifecycle in Keycloak applies once. Without
+  <code>keycloak_sync.py</code>, every theme / SMTP / mapper change after first
+  import is silently ignored.</li>
+<li>Tag-pinned images can drift under the same tag. The deploy target
+  now <code>docker compose pull</code>s explicitly to defeat this.</li>
+<li>nginx + Keycloak both bind-mount files that <code>make activate</code>
+  regenerates → <code>--force-recreate</code> is on by default for those
+  services.</li>
+<li><code>org_details.subdivision</code> MUST match <code>^[A-Z]{2}-[A-Z0-9]{1,3}$</code> or
+  the DS-Manager Organisation API rejects with a cryptic 422.</li>
+</ul>
+<h2 id="10-evidence-the-data-space-is-operational-last-verified-2026-04-29">10. Evidence the data space is operational (last verified 2026-04-29)</h2>
+<ul>
+<li>Federated DCAT catalogue from libelium → valencia DSP returns the
+  Albufera dataset.</li>
+<li>Contract negotiation <code>019dd641-…</code> reaches <code>FINALIZED</code>.</li>
+<li>Transfer process <code>019dd641-…</code> reaches <code>STARTED</code>; EDR endpoint
+  <code>http://cp-valencia:9006/api/public</code> issued with a 1-time bearer.</li>
+<li>Consumer <code>GET</code> of that endpoint returns the 2 022 698-byte CSV
+  (<code>dateObserved,numValue,…</code>) — i.e. the actual asset bytes flow
+  end-to-end through Eclipse EDC's DSP + data plane.</li>
+</ul>
+
+
+
+
+
+
+
+  
+    
+  
+  
+    
+  
+
+
+  <aside class="md-source-file">
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Last update">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="May 4, 2026 10:15:44"><span class="timeago" datetime="2026-05-04T10:15:44+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="May 4, 2026 10:15:44">2026-05-04</span>
+  </span>
+
+    
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Created">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3h-2Z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="April 30, 2026 10:40:05"><span class="timeago" datetime="2026-04-30T10:40:05+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="April 30, 2026 10:40:05">2026-04-30</span>
+  </span>
+
+    
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Contributors">
+      
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 4a4 4 0 0 1 4 4 4 4 0 0 1-4 4 4 4 0 0 1-4-4 4 4 0 0 1 4-4m0 10c4.42 0 8 1.79 8 4v2H4v-2c0-2.21 3.58-4 8-4Z"/></svg>
+      
+    </span>
+    <nav>
+      
+        <a href="mailto:164411755+mateoofp@users.noreply.github.com">mateoofp</a>
+    </nav>
+  </span>
+
+    
+    
+  </aside>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../architecture/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Architecture">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Architecture
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../../" class="md-footer__link md-footer__link--next" aria-label="Next: MV Data Space on AWS Cloud">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                MV Data Space on AWS Cloud
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="footer-container">
+    <div class="footer-column">
+        <h4 style="margin-top: 0;">Organization</h4>
+        <div class="footer-logo" style="display: flex; align-items: center;">
+            <a href="https://citcom.ai/" target="_blank">
+                <img class="citcom-logo" src="/assets/citcom.svg" alt="CitCom.ai logo">
+            </a>
+            <a href="https://vrain.upv.es/" target="_blank">
+                <img class="vrain-logo" src="/assets/vrain_white.png" alt="VRAIN logo">
+            </a>
+        </div>
+
+    </div>
+    <div class="footer-column">
+        <div class="footer-tagline">
+            <h4 style="margin: 0;">Co-funded by</h4>
+            <div class="logo-container" style="display: flex; align-items: center;">
+                <a target="_blank" href="https://digital-strategy.ec.europa.eu/en/policies/testing-and-experimentation-facilities"><img src="/assets/eu-co-funded.png" alt="EU Logo"></a>
+                <a target="_blank" href="https://cindi.gva.es/"><img src="/assets/gva.png" alt="GVA Logo"></a>
+            </div>
+            <p>
+                Views and opinions expressed are however those of the author(s)
+                only and do not necessarily reflect those of the European Union. Neither the European Union nor the
+                granting authority can be held responsible for them.
+            </p>
+        </div>
+    </div>
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../../..", "features": ["content.code.copy", "content.action.edit", "navigation.sections", "navigation.footer", "navigation.indexes"], "search": "../../../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../../assets/javascripts/bundle.d7c377c4.min.js"></script>
+      
+        <script src="../../../../js/timeago.min.js"></script>
+      
+        <script src="../../../../js/timeago_mkdocs_material.js"></script>
+      
+        <script src="../../../../assets/js/data_catalog.js"></script>
+      
+    
+  <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(() => { lightbox.reload() });
+</script></body>
+</html>
