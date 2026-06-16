@@ -2,55 +2,59 @@
 title: AI Assessment
 ---
 
-# Citcom Label
+# Citcom AI Trustworthiness Label
 
-The Citcom Label is an initiative currently under development within Citcom.ai. Its goal is to create a trusted, recognisable signal that helps AI providers demonstrate responsible practices and gives buyers—especially public-sector actors such as smart cities—a clearer basis for evaluating and procuring AI solutions.
+The **Citcom AI Trustworthiness Label** is a Citcom.ai service, **currently under pilot**, through which TEF site partners independently assess AI systems deployed in smart-city contexts — across mobility, energy, citizen services, urban planning, and related domains.
 
+Its purpose is to provide a **trusted, recognisable signal**: an independent expert opinion on whether an AI system has been developed and operated responsibly for its intended use. The Label gives cities a sounder basis for procurement and gives providers a credible way to demonstrate responsible practice on the market.
 
-## What will the Citcom Label be?
+> **Not a conformity certificate.** The Label and its recommendations do not constitute a conformity certificate and are not legally binding — in particular, they are not a conformity assessment under the AI Act. The Label is an expert, evidence-based judgement, not a pass/fail certification. Its value lies in the independent third-party assessment itself, which builds trust between cities and providers and eases the procurement process.
 
-The label is envisioned as a **system of digital badges**, each representing a specific dimension of trustworthiness assessed during the evaluation process.  
-These badges would include a **watermark**, ensuring authenticity and preventing misuse. Each badge would be **verifiable through the Citcom Hub**, allowing external stakeholders to confirm its origin, evaluation status, and associated criteria.
+## Who requests an assessment? Two streams
 
-The Citcom badges are **not intended to function as legally binding conformity certificates under the AI Act**. Instead, they serve as **smart-city–oriented quality marks**, helping cities and other public authorities gain confidence in the AI solutions they consider adopting.
+An assessment can be initiated from either side of the market. Both lead to the same independent process and the same kind of report.
 
-For AI innovators, the Citcom badge system provides **independent third-party validation**, helping them promote their solutions and demonstrate that they meet recognised standards of trustworthiness. For cities and public buyers, the badges offer **clear, evidence-based guidance** to support more informed and transparent procurement decisions.
+**Stream 1 — Municipality.** A municipality needs to procure an AI solution but lacks the in-house capacity or competence to evaluate it. It requests an independent third-party assessment from a TEF site to support its procurement decision.
 
-## On what basis will the Citcom badges be awarded?
+**Stream 2 — AI provider.** An AI provider requests the assessment voluntarily, so that its solution becomes more credible on the market and easier to recommend to public-sector buyers.
 
-The detailed criteria are still being developed with Citcom partners, but several guiding principles are emerging:
+## How it works: the value proposition
 
-### Completion of an evaluation  
-A badge is expected to be awarded only once a solution completes a structured assessment aligned with shared guidelines for the relevant dimension of trustworthiness.
+A **TEF site** conducts the assessment as an independent domain expert and **releases an assessment report**. The TEF site is not auditing compliance against a standard — it is forming a professional, evidence-grounded opinion about whether the system has been developed and operated responsibly in its smart-city context.
 
-### Common methodology  
-Work is ongoing to define a coherent framework that determines how systems are qualified, how requirements translate into test cases, and how results are interpreted across different trust dimensions.
+The tangible outcome of the process is a **system of badges**. Each badge corresponds to a specific dimension of trustworthiness that was assessed. Badges are awarded independently — a provider may receive one, two, or all three — and receiving a badge on one dimension says nothing about the others.
 
-### Success thresholds  
-Initial discussions point toward setting minimum quantitative and qualitative thresholds that vary by product type, maturity level, and the specific dimension being assessed.
+| Badge | What it covers |
+| --- | --- |
+| **Technical Testing** | How the system was evaluated for trustworthiness: testing methodology, independence of testing, performance, fairness, robustness and failure modes, safety, and explainability. |
+| **Governance** | The governance, oversight, and operational practices around the system: risk management, human oversight, accountability, monitoring and incident response, and documentation. |
+| **Impact** | The effects of the system on people, communities, and society: affected populations, differential impact, transparency and recourse, broader societal effects, participation, and environmental footprint. |
 
-### Real-world validation  
-Evaluations are expected to rely on practical or pilot scenarios using the actual product, ensuring that results reflect real-world behaviour.
+Each badge would include a **watermark** to ensure authenticity and prevent misuse, and would be **verifiable through the Citcom Hub**, allowing external stakeholders to confirm its origin and evaluation status.
 
+## Customised to context and use case
 
-## Who will conduct the assessment and with which methodologies?
+Each evaluation can **focus on specific aspects** and is **customised to the deployment context and the actual use case** of the AI system. The questions addressed for each badge represent a minimal set; a TEF site may add further ones where the specifics of the system or its smart-city context warrant it. This is what makes the assessment meaningful rather than a generic checklist.
 
-The assessment behind each Citcom badge will be carried out by the participating TEF sites. Each site brings its own specialised methodologies, tools, and testing infrastructures, reflecting the diversity of technical expertise across the Citcom network.
+## Consistency across TEF sites
 
-These assessment solutions cover different dimensions of trustworthiness and can be consulted through the **AI Assessment Catalogue**, available at the following link:
+Because each evaluation is customised — and because different TEF sites contribute different specialised expertise — it is essential that all sites follow the **same guidelines**. Shared guidelines are what keep the Label **consistent and equally valuable** wherever it is awarded, so that a badge means the same thing regardless of which TEF site issued it.
+
+The two reference documents below define and illustrate that common approach:
+
+- **[Assessment Guidelines for TEF sites](citcom-assessment-guidelines.pdf)** — how to conduct an assessment, what each badge covers, and how to exercise and document expert judgement consistently.
+- **[Example Assessment Report](citcom-assessment-report-example.pdf)** — a fully worked (fictional) report showing how the guidelines are applied in practice and how a finished report looks.
+
+For the **Technical Testing** badge, one such resource is the **[AI Assessment Sandbox Configurator](https://github.com/lux-ai-factory/aisc)**, developed under the Luxembourg AI Factory. It offers a harmonised way of configuring and conducting the technical evaluation, and is suggested as one option among others — TEF sites remain free to apply their own methodologies and tools where these better fit the system and context.
+
+## Multiple TEF sites for a single solution
+
+If a solution would benefit from complementary expertise available across several TEF sites, an AI provider can undergo assessments in multiple locations. In such cases, the **first-contact TEF site** coordinates the overall process: it connects with the additional sites (which assess independently), ensures each manages its own contractual and operational responsibilities, consolidates the results into a unified report, and oversees the issuance of the corresponding badges.
+
+## Assessment Catalogue
+
+The specialised methodologies, tools, and test suites available across the network can be consulted in the **AI Assessment Catalogue**:
 
 [AI Assessment Catalogue](ai_assessment_catalogue.md)
 
-The catalogue provides an overview of the available evaluation tools, test suites, and methodologies, enabling innovators to understand which capabilities are applied to their systems and helping cities see how specific trust dimensions are assessed.
-
-### Can an AI provider receive assessments across multiple TEF sites?
-
-Yes. If a solution would benefit from complementary expertise available across several TEF sites, an AI provider can undergo assessments in multiple locations. In such cases, the **first-contact TEF site** will coordinate the overall process.
-
-The coordinating TEF site will:
-- connect with the additional TEF sites that carry out their assessments independently,
-- ensure that each participating site manages its own contractual and operational responsibilities,
-- consolidate the evaluation results into a unified report,
-- and oversee the issuance of the Citcom badges corresponding to the dimensions assessed across all sites.
-
-This ensures a seamless experience for AI innovators while leveraging the full breadth of expertise across the TEF network.
+The catalogue helps innovators understand which capabilities are applied to their systems, and helps cities see how specific trust dimensions are assessed.
