@@ -42,8 +42,8 @@ Because each evaluation is customised — and because different TEF sites contri
 
 The two reference documents below define and illustrate that common approach:
 
-- **[Assessment Guidelines for TEF sites](citcom-assessment-guidelines.pdf)** — how to conduct an assessment, what each badge covers, and how to exercise and document expert judgement consistently.
-- **[Example Assessment Report](citcom-assessment-report-example.pdf)** — a fully worked (fictional) report showing how the guidelines are applied in practice and how a finished report looks.
+- **[Assessment Guidelines for TEF sites](./resources/citcom-assessment-guidelines.pdf)** — how to conduct an assessment, what each badge covers, and how to exercise and document expert judgement consistently.
+- **[Example Assessment Report](./resources/citcom-assessment-report-example.pdf)** — a fully worked (fictional) report showing how the guidelines are applied in practice and how a finished report looks.
 
 For the **Technical Testing** badge, one such resource is the **[AI Assessment Sandbox Configurator](https://github.com/lux-ai-factory/aisc)**, developed under the Luxembourg AI Factory. It offers a harmonised way of configuring and conducting the technical evaluation, and is suggested as one option among others — TEF sites remain free to apply their own methodologies and tools where these better fit the system and context.
 
