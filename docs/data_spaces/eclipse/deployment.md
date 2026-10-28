@@ -1,4 +1,4 @@
-# CitCom.ai — Deployment
+# Eclipse EDC data space: deployment
 
 This is the operational guide for the CitCom data space at
 `https://citcom.dataspaceready.eu`. It assumes you've read

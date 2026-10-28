@@ -2,32 +2,11 @@
 title: Aarhus City Lab
 ---
 
-## Overview
+!!! note "Page to be completed"
 
-_Provide a brief overview of the TEF Site, including its location, objectives, and role within the CitCom.ai ecosystem. Describe any relevant background information that stakeholders might find helpful._
-
-Example:
-
-The [TEF Site Name] is located in [City, Country] and is dedicated to advancing research and development in [relevant domain]. This site is equipped with state-of-the-art infrastructure and is a key site in the CitCom.ai project, facilitating collaboration between cities and comunities, industrial partners (AI innovators) and research institutions.
-
-## Services Offered
-
-List the services available at the TEF Site related to the CitCom.ai Services Catalog. Provide a brief description of each service, and include any relevant links or documentation.
-
-- **Service 1**: [Description of Service 1]
-- **Service 2**: [Description of Service 2]
-- **Service 3**: [Description of Service 3]
+    The partners of this site have not described it here yet. To add the description, see [Request changes](../../faq/pull_request_procedure.md).
 
 ## Infrastructure Components
-
-Describe the key infrastructure components available at the TEF Site, including data platforms, local digital twins, specific hardware, IoT platforms, or any other relevant technologies.
-
-- **Data Platforms**: [Description of the data platforms available]
-- **Local Digital Twins**: [Details about any local digital twin infrastructure]
-- **Specific Hardware**: [Details about specialized hardware available, such as sensors, servers, etc.]
-- **IoT Platforms**: [Information about IoT systems or platforms in use at the site]
-- **Visualization platforms**: [Information about large scale visualisation components]
-- **Other**: [Any other relevant infrastructure to showcase]
 
 <table>
   <tr>
@@ -57,10 +36,7 @@ Describe the key infrastructure components available at the TEF Site, including 
 
 ### Architecture
 
-Provide a high-level overview of the architecture of the TEF Site, including the key components and technologies used. Include any relevant diagrams or visualizations to help stakeholders understand the infrastructure.
-
 ![aarhus_city_lab_arch](./img/aarhus_city_lab-arch.png)
-
 
 ### European Data Space for Smart Communities (DS4SSCC)
 
@@ -68,45 +44,91 @@ Provide a high-level overview of the architecture of the TEF Site, including the
 
 ![aarhus_city_lab_arch-ds4sscc](./img/aarhus_city_lab_ds4sscc-arch.svg)
 
-## Relevant datasets of the site
 
-Describe the relevant datasets available at the site
+## Datasets in detail
 
-- **Dataset_1**: [Description of the data set and link to Data Catalog: eg https://citcomai-hub.github.io/data_catalog/metadata_datasets/south_spain_valencia/]
-- **Dataset_2**: [Description of the data set and link to Data Catalog: eg https://citcomai-hub.github.io/data_catalog/metadata_datasets/south_spain_valencia/]
-- **Dataset_3**: [Description of the data set and link to Data Catalog: eg https://citcomai-hub.github.io/data_catalog/metadata_datasets/south_spain_valencia/]
+Attributes of the datasets of this site, as described by its partners.
 
-## Key Stakeholders and Partners
+??? info "Bikeparking stands in Aarhus City"
 
-Provide a list of the key stakeholders and partners involved in the TEF Site. Include any academic institutions, industry collaborators, and other stakeholders.
 
-- **Stakeholder 1**: [Name and description of the stakeholder, e.g., university, research institute, industry partner]
-- **Stakeholder 2**: [Description]
-- **Stakeholder 3**: [Description]
+    | ATTRIBUTE     |   TYPE | UNITS (SI)   | DESCRIPTION/COMMENTS                  |
+    |:--------------|-------:|:-------------|:--------------------------------------|
+    | ID            |     | number       | numerical identicator for each stand  |
+    | element       |     | txt          | the type of geographical element      |
+    | elementnavn   |     | txt          | name of the stand                     |
+    | bemaerkninger |     | txt          | comments                              |
+    | beliggenhed   |     | txt          | adress og location                    |
+    | oprettet_af   |     | internal ID  | person/system that created the item   |
+    | oprettet_dato |     | date         | date of creation                      |
+    | rettet_dato   |     | date         | person/system that corrected the item |
+    | SP_geometry   |     | coordinates  | geograpical coordinates               |
 
-## Contact Information
+??? info "Bike terminals in Aarhus, air and tools"
 
-Provide contact details for those responsible for the TEF Site or who can provide more information to collaborators or users.
 
-- **Site Coordinator**: [Name and contact details]
-- **Technical Support**: [Name and contact details]
-- **General Inquiries**: [Name and contact details]
+    | ATTRIBUTE     |   TYPE | UNITS (SI)   | DESCRIPTION/COMMENTS                  |
+    |:--------------|-------:|:-------------|:--------------------------------------|
+    | fid           |     | txt          | identicator for each route            |
+    | type          |     | txt          | type of terminal                      |
+    | beskrivelse   |     | txt          | description                           |
+    | adress        |     | txt          | adress                                |
+    | by            |     | txt          | city                                  |
+    | komnr         |     | number       | municipality number                   |
+    | oprettet_af   |     | internal ID  | person/system that created the item   |
+    | oprettet_dato |     | date         | date of creation                      |
+    | rettet_af     |     | internal ID  | person/system that corrected the item |
+    | rettet_dato   |     | date         | date of correction                    |
+    | MI_STYLE      |     |           |                                    |
+    | MI_PRINX      |     | number       |                                    |
+    | SP_geometry   |     | coordinates  | geograpical coordinates               |
 
-## Additional Information
+??? info "Citybike locations in Aarhus"
 
-Any other relevant information that might be useful to collaborators or developers working with the TEF Site, such as specific protocols, access instructions, or unique capabilities.
 
-Example:
-The TEF Site offers unique capabilities in [specific field], and it is open to collaboration with other EU projects in the area of [related field].
+    | ATTRIBUTE   |   TYPE | UNITS (SI)   | DESCRIPTION/COMMENTS   |
+    |:------------|-------:|:-------------|:-----------------------|
+    | _id         |     | number       | identicator            |
+    | bid         |     | number       |                     |
+    | place       |     | txt          | name og location       |
+    | alttext     |     | txt          | comments               |
+    | lat         |     | number       | degrees of latitude    |
+    | ing         |     | number       | degrees of longitude   |
+    | date        |     | date         |                     |
 
-## Documentation and Resources
+??? info "Fast track bikeroutes in Aarhus"
 
-Link to any relevant documentation or resources, such as technical specifications, API documentation, or guides for using services at the TEF Site.
 
-- [Documentation Link 1](#)
-- [Documentation Link 2](#)
+    | ATTRIBUTE      |   TYPE | UNITS (SI)   | DESCRIPTION/COMMENTS                  |
+    |:---------------|-------:|:-------------|:--------------------------------------|
+    | fid            |     | txt          | identicator for each route            |
+    | navn_cykelrute |     | txt          | Name of route                         |
+    | komnr          |     | number       | municipality number                   |
+    | navn_sted      |     | txt          | name of place                         |
+    | bemaerkninger  |     | txt          |                                    |
+    | oprettet_af    |     | internal ID  | person/system that created the item   |
+    | oprettet_dato  |     | date         | date of creation                      |
+    | rettet_af      |     | internal ID  | person/system that corrected the item |
+    | rettet_dato    |     | date         | date of correction                    |
+    | MI_STYLE       |     |           |                                    |
+    | MI_PRINX       |     | number       |                                    |
+    | SP_geometry    |     | coordinates  | geograpical coordinates               |
+
+??? info "Recreative bikeroutes in Aarhus"
+
+
+    | ATTRIBUTE     |   TYPE | UNITS (SI)   | DESCRIPTION/COMMENTS                  |
+    |:--------------|-------:|:-------------|:--------------------------------------|
+    | fid           |     | txt          | identicator for each route            |
+    | straekning    |     | number       | nummerical identicator for each route |
+    | oprettet_af   |     | internal ID  | person/system that created the item   |
+    | oprettet_dato |     | date         | date of creation                      |
+    | rettet_dato   |     | date         | person/system that corrected the item |
+    | MI_STYLE      |     |           |                                    |
+    | MI_PRINX      |     |           |                                    |
+    | SP_geometry   |     | coordinates  | geograpical coordinates               |
+
 
 ---
-
 !!! info
     This page is part of the documentation hub for the CitCom.ai project. Please ensure that the information is up-to-date and accurate.

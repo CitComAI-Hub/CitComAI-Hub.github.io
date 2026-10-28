@@ -1,4 +1,4 @@
-# CitCom.ai — Architecture
+# Eclipse EDC data space: architecture
 
 ## 1. Scope and positioning
 

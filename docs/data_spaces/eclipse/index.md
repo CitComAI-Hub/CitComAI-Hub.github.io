@@ -1,63 +1,34 @@
-# CitCom.ai — Data Space Technical Documentation
+---
+title: Eclipse EDC data space
+---
 
-This folder is the canonical technical documentation for the **CitCom.ai
-data space**, deployed at `https://citcom.dataspaceready.eu`.
+# Eclipse EDC data space
 
-It describes the **Eclipse Dataspace Components (EDC)** stack we run, the
-deployment topology, and the data flows between participants.
+CitCom runs a second data space, an alternative to the [FIWARE one](../fiware.md), built on the **Eclipse Dataspace Components** (EDC). It is operated at [citcom.dataspaceready.eu](https://citcom.dataspaceready.eu) and lets organisations publish data assets, discover the assets of other participants, negotiate machine-readable usage policies and exchange the data under those agreements.
 
-## How to view the diagrams
+## The stack
 
-The docs use two diagram formats. **Pick whichever fits where you're
-reading from**:
+- **Connectors**: [Eclipse EDC](https://eclipse-edc.github.io/), through the [sovity Community Edition](https://github.com/sovity/edc-ce) 16.4.2 distribution, which adds management interfaces and defaults but stays compatible with upstream EDC.
+- **Management portal**: DS-Manager, by Hopu, the human-facing side: identity, asset metadata, policy drafting, catalogue browsing and audit. It talks to the connectors through the EDC Management API.
+- **Protocol**: the [Dataspace Protocol](https://docs.internationaldataspaces.org/ids-knowledgebase/dataspace-protocol) (DSP) for catalogues, contract negotiation and transfers between connectors.
 
-* **Mermaid blocks** embedded in `architecture.md` and `deployment.md`
-  (` ```mermaid `…` ``` ` fenced code). GitLab and GitHub render these
-  inline in the browser — **just open the `.md` file in the web UI**
-  and the diagrams appear in the right place. No extra tooling.
+CitCom is one of four data spaces built on the same platform; each one is a thin per-project layer over a shared core.
 
-* **Excalidraw sources** under [`diagrams/`](diagrams/) — same content
-  as the inline Mermaid, but as an editable canvas. To open them:
+## How it compares
 
-  | You're using… | What to do |
-  |---|---|
-  | **VS Code** | Install the [`pomdtr.excalidraw-editor`](https://marketplace.visualstudio.com/items?itemName=pomdtr.excalidraw-editor) extension and double-click the `.excalidraw` file. |
-  | **Cursor / JetBrains / Vim** | Same extension on VS Code is the easiest path; alternatively download the file and use the web option below. |
-  | **A browser** | Go to <https://excalidraw.com>, then *Menu → Open* and pick the `.excalidraw` file from your local clone. Or paste the file content via *Menu → Load from URL* against the GitLab raw link. |
-  | **GitLab web UI** | The file shows up as JSON — that's expected. GitLab has no native preview for Excalidraw; use one of the options above to view the canvas. |
-
-  If you only need to look at them (no editing), the Mermaid versions
-  in the `.md` files are usually enough.
-
-## Contents
-
-| Doc | Audience | What it covers |
+| | FIWARE data space | Eclipse EDC data space |
 |---|---|---|
-| [`architecture.md`](architecture.md) | Tech reviewers, integrators | Component model, Eclipse EDC role, federated catalog, identity, transfer protocol (DSP). |
-| [`deployment.md`](deployment.md) | DevOps, ops handover | Server topology, deploy pipeline, provisioning, self-healing, troubleshooting. |
-| [`diagrams/`](diagrams/) | All | Excalidraw sources for the inline diagrams. Open with `pomdtr.excalidraw-editor` (VS Code) or `excalidraw.com`. |
+| Identity | Verifiable credentials and wallets | Accounts and connector identities managed by the portal |
+| Contracts | Marketplace orders, applied by each provider's connector | DSP negotiation between connectors |
+| Data | NGSI-LD APIs, queried live | Assets: any HTTP source, transferred by the connectors |
 
-## Quick context
+Both data spaces share the Valencia data: see [Bridging both](../bridge.md).
 
-**CitCom.ai** is one of four production data spaces built on the same
-monorepo (`Sovity-monorepo`); the other three are Geo4Water,
-GeoSpaceData, and BeatTheHeat. The platform is intentionally
-project-agnostic: each data space is a thin per-project overlay
-(`projects/<X>/`) on top of a shared `platform/` core.
+## In this section
 
-The **Eclipse stack** — that is, the open-source Eclipse Dataspace
-Components (EDC) — is the bedrock of the connector layer. CitCom uses
-the Sovity Community Edition 16.4.2 distribution of Eclipse EDC
-(`ghcr.io/sovity/edc-ce:16.4.2`), which adds management UIs and
-opinionated defaults but is upstream-compatible. The architecture
-document goes into detail on which EDC modules we rely on (DSP catalog,
-contract negotiation, transfer process, EDR proxy).
+| Page | For | What it covers |
+|---|---|---|
+| [Architecture](architecture.md) | Technical reviewers and integrators | Component model, the role of EDC, federated catalogue, identity model, transfer flow |
+| [Deployment](deployment.md) | Operators | Server topology, deployment, provisioning of tenants, self-healing and troubleshooting |
 
-## How to read this
-
-* If you came here to **understand what CitCom is and how the pieces
-  fit**, start with `architecture.md`.
-* If you came here to **deploy, redeploy, or troubleshoot**, jump to
-  `deployment.md`.
-* The diagrams are the same ones embedded in the markdown — open them
-  in Excalidraw to edit.
+The diagrams of these pages are also available as editable [Excalidraw sources](https://github.com/CitComAI-Hub/CitComAI-Hub.github.io/tree/main/docs/data_spaces/eclipse/diagrams); open them at [excalidraw.com](https://excalidraw.com).

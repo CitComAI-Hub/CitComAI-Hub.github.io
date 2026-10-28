@@ -83,20 +83,14 @@ Finally, visualization and analysis tools (Grafana, Spark, Node-RED, Snap4City) 
 
 ![milano_arch](./img/milano-arch.png)
 
-### European Data Space for Smart Communities (DS4SSCC)
-
-<!-- {{ config.extra.labels.ds4ssc_compliant.yes_comp.data_sources }} {{ config.extra.labels.ds4ssc_compliant.yes_comp.data_broker }} {{ config.extra.labels.ds4ssc_compliant.yes_comp.data_api }} {{ config.extra.labels.ds4ssc_compliant.no_comp.data_idm_auth }} {{ config.extra.labels.ds4ssc_compliant.no_comp.data_publication }}
-
-![aarhus_city_lab_arch-ds4sscc](./img/aarhus_city_lab_ds4sscc-arch.svg) -->
-
 ## Relevant datasets of the site
 
 Milano TEF site offers the following datasets:
 
-- **[Air quality](../../data_catalog/metadata_datasets/south_italy_uptown.md/#site-uptown-airquality)**: air quality readings from sensors deployed across the Milano area, reporting temperature, humidity, and pollutant levels along with time and location.
-- **[Biodiversity](../../data_catalog/metadata_datasets/south_italy_uptown.md/#site-uptown-biodiversity)**: data from biodiversity sensors deployed in UpTown, reporting device status, energy levels, and bird species detections over time.
-- **[Energy distribution](../../data_catalog/metadata_datasets/south_italy_uptown.md/#site-uptown-energy-distribution)**: data from heating systems deployed in UpTown, reporting energy use, fluid temperatures, and heating power.
-- **[Archaeological site](../../data_catalog/metadata_datasets/south_italy_mithraeum-of-circus-maximus.md/#site-mithraeum-of-circus-maximus-archaeological-site)**: environmental data from sensors deployed in an underground archaeological site, reporting air quality, temperature, humidity, and vibration levels over time.
+- **[Air quality](#datasets-in-detail)**: air quality readings from sensors deployed across the Milano area, reporting temperature, humidity, and pollutant levels along with time and location.
+- **[Biodiversity](#datasets-in-detail)**: data from biodiversity sensors deployed in UpTown, reporting device status, energy levels, and bird species detections over time.
+- **[Energy distribution](#datasets-in-detail)**: data from heating systems deployed in UpTown, reporting energy use, fluid temperatures, and heating power.
+- **[Archaeological site](#datasets-in-detail)**: environmental data from sensors deployed in an underground archaeological site, reporting air quality, temperature, humidity, and vibration levels over time.
 
 ## Key Stakeholders and Partners
 
@@ -109,6 +103,89 @@ Milano TEF site offers the following datasets:
 - **Site Coordinator**: Luca Mottola <luca.mottola@polimi.it>
 - **Technical Support**: Andrea Maioli <andrea1.maioli@polimi.it>
 - **General Inquiries**: Alberto Celani <alberto.celani@polimi.it>
+
+
+## Datasets in detail
+
+Attributes of the datasets of this site, as described by its partners.
+
+??? info "AirQuality"
+
+
+    | ATTRIBUTE    | TYPE     | UNITS (SI)   | DESCRIPTION/COMMENTS                      |
+    |:-------------|:---------|:-------------|:------------------------------------------|
+    | id           | Text     |           | Sensor identifier                         |
+    | temperature  | Number   | K            | Ambient temperature                       |
+    | humidity     | Number   | %            | Relative humidity                         |
+    | co           | Number   | mg/m³        | Carbon monoxide concentration             |
+    | nh3          | Number   | µg/m³        | Ammonia concentration                     |
+    | no           | Number   | µg/m³        | Nitric oxide concentration                |
+    | no2          | Number   | µg/m³        | Nitrogen dioxide concentration            |
+    | o3           | Number   | µg/m³        | Ozone concentration                       |
+    | pm25         | Number   | µg/m³        | Particulate matter < 2.5 µm concentration |
+    | pm10         | Number   | µg/m³        | Particulate matter < 10 µm concentration  |
+    | so2          | Number   | µg/m³        | Sulfur dioxide concentration              |
+    | indoor       | Boolean  |           | True if the sensor is located indoors     |
+    | manufacturer | Text     |           | Sensor manufacturer name                  |
+    | sensorName   | Text     |           | Human-readable sensor name                |
+    | location     | geo:json |           | Geographical coordinates of the sensor    |
+    | timestamp    | Number   |           | Unix timestamp of the measurement         |
+
+??? info "Biodiversity"
+
+
+    | ATTRIBUTE                      | TYPE   | UNITS (SI)   | DESCRIPTION/COMMENTS                        |
+    |:-------------------------------|:-------|:-------------|:--------------------------------------------|
+    | id                             | Text   |           | Sensor identifier                           |
+    | timestamp                      | Number |           | Unix timestamp of the measurement           |
+    | device_hostname                | Text   |           | Device hostname                             |
+    | firmware_version               | Text   |           | Current firmware version                    |
+    | state                          | Text   |           | Reported high-level state of the device     |
+    | activity_state                 | Text   |           | Current activity state (e.g., active, idle) |
+    | device_temperature             | Number | °C          | Internal device temperature                 |
+    | battery_voltage                | Number | V            | Battery voltage                             |
+    | battery_level                  | Number | %            | Battery charge level                        |
+    | battery_power_input            | Text   |           | Raw battery input power data                |
+    | last_ping                      | Number |           | Timestamp of last device ping               |
+    | last_audio_record              | Number |           | Timestamp of last audio recording           |
+    | last_detection_ts              | Number |           | Timestamp of last detection event           |
+    | last_detection_scientific_name | Text   |           | Scientific name of last detected species    |
+    | last_detection_common_name_en  | Text   |           | Common name (EN) of last detected species   |
+    | last_detection_common_name_it  | Text   |           | Common name (IT) of last detected species   |
+    | last_detection_confidence      | Number |           | Confidence score of last detection          |
+
+??? info "Energy distribution"
+
+
+    | ATTRIBUTE                    | TYPE     | UNITS (SI)   | DESCRIPTION/COMMENTS                                         |
+    |:-----------------------------|:---------|:-------------|:-------------------------------------------------------------|
+    | id                           | Text     |           | Sensor identifier                                            |
+    | timestamp                    | Number   |           | Unix timestamp of the measurement                            |
+    | user_identifier              | Text     |           | Anonymized unique identifier for the user                    |
+    | pod_identifier               | Number   |           | Anonymized identifier of the heating POD unit                |
+    | pod_coordinates              | geo:json |           | Geographical coordinates of the POD                          |
+    | user_type                    | Text     |           | Category or role of the user (e.g., residential, commercial) |
+    | external_temperature         | Number   | °C           | Outdoor air temperature                                      |
+    | heating_temperature_delivery | Number   | °C           | Temperature of the fluid delivered to the heating system     |
+    | heating_temperature_return   | Number   | °C           | Temperature of the fluid returning from the heating system   |
+    | heating_volume               | Number   | m³/h         | Volume flow rate of heating fluid                            |
+    | heating_power                | Number   | kW           | Thermal power delivered for heating                          |
+    | energy_consumption           | Number   | kWh          | Cumulative heating energy consumed                           |
+
+??? info "Archaeological Site"
+
+
+    | ATTRIBUTE     | TYPE     | UNITS (SI)   | DESCRIPTION/COMMENTS                      |
+    |:--------------|:---------|:-------------|:------------------------------------------|
+    | id            | Text     |           | Sensor identifier                         |
+    | temperature   | Number   | K            | Ambient temperature                       |
+    | humidity      | Number   | %            | Relative humidity                         |
+    | pm10          | Number   | µg/m³        | Particulate matter < 10 µm concentration  |
+    | pm25          | Number   | µg/m³        | Particulate matter < 2.5 µm concentration |
+    | spectralPower | Number   | mW/Hz        | Spectral power density of vibrations      |
+    | timestamp     | Number   |           | Unix timestamp of the measurement         |
+    | location      | geo:json |           | Geographical coordinates of the sensor    |
+
 
 ---
 

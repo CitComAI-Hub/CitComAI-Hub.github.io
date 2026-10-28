@@ -54,10 +54,7 @@ The Warsaw TEF Site focuses on the use of spatial data and advanced tools for pr
 
 ### Architecture
 
-Provide a high-level overview of the architecture of the TEF Site, including the key components and technologies used. Include any relevant diagrams or visualizations to help stakeholders understand the infrastructure.
-
 ![warsaw_arch](./img/warsaw-arch.png)
-
 
 <!-- ### European Data Space for Smart Communities (DS4SSCC) -->
 
@@ -67,24 +64,17 @@ Provide a high-level overview of the architecture of the TEF Site, including the
 
 ## Relevant datasets of the site
 
-Describe the relevant datasets available at the site
-
 - **Dataset_1**: Road network in Poland in form of vector data from Topographic Objects Database (BDOT10k)
 - **Dataset_2**: Aerial laser scanning point cloud (LIDAR) for part of the city of Warsaw
 - **Dataset_3**: BIM model of Astronomical-Geodetic Observatory in Józefosław - location of part of CENAGIS inrastructure, labolatories and test sites
 
 ## Key Stakeholders and Partners
 
-Provide a list of the key stakeholders and partners involved in the TEF Site. Include any academic institutions, industry collaborators, and other stakeholders.
-
 - **Stakeholder 1**: [Warsaw University of Technology](https://eng.pw.edu.pl) - Creator and host of infrastructure
 - **Stakeholder 2**: [Opegieka Sp. z o.o.](https://opegieka.pl/home,1,en) - Main partner during system creation process
 - **Stakeholder 3**: [Scientific Network for Geospatial Analysis](https://cenagis.edu.pl/en/scientific-network-of-geospatial-analyzes/) - Consortium of nearly 30 research units with the aim of consolidating the geoinformation research program in Poland
 
-
 ## Contact Information
-
-Provide contact details for those responsible for the TEF Site or who can provide more information to collaborators or users.
 
 - **Site Coordinator**: Dariusz Gotlib (email: dariusz.gotlib@pw.edu.pl)
 - **Technical Support**: Kamil Choromański (email: kamil.choromanski@pw.edu.pl)
@@ -92,10 +82,6 @@ Provide contact details for those responsible for the TEF Site or who can provid
 
 ## Additional Information
 The TEF Site offers unique capabilities in geospatial analysis, and it is open to collaboration with other EU projects in the area of big data processing, artificial intelligence and smart cities.
-<!-- Any other relevant information that might be useful to collaborators or developers working with the TEF Site, such as specific protocols, access instructions, or unique capabilities.
-
-Example:
-The TEF Site offers unique capabilities in [specific field], and it is open to collaboration with other EU projects in the area of [related field]. -->
 
 ## Documentation and Resources
 

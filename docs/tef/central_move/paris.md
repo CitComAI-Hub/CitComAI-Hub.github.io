@@ -2,13 +2,15 @@
 title: Paris
 ---
 
+!!! note "Page to be completed"
+
+    The partners of this site have not described it here yet. To add the description, see [Request changes](../../faq/pull_request_procedure.md).
+
 ## Overview:
 
 The French test site is located in the Paris region at 5 dedicated sites (Trappes, Satory, Linas, Saclay and Champs-sur-Marne) and is dedicated to advancing research and development in autonomous mobility. This site is equipped with state-of-the-art infrastructure (test tracks, XiL simulation test bench...) and is a key site in the CitCom.ai project, facilitating the integration and validation of its high-risk AI devices to help them integrate into the urban environment.
 
 ## Services Offered
-
-List the services available at the TEF Site related to the CitCom.ai
 
 - **Virtual facility services**: The French node can cover all simulation needs (HIL, MIL, SIL, DIL, VIL) for the virtual design of transport systems and vehicles, evaluating multimodal Human-Computer Interactions, AI evaluation, driving simulation, intelligent sensors evaluation...
 - **Physcial facility services**: We will provide test tracks for tests as close as possible to real conditions (urban or suburban traffic areas, urban road infrastructure, etc.) for example at UTAc with TEQMO or UGE at Satory. They will also be able to draw on the approval and certification expertise and the upstream research expertise to support them, depending on their stage of development. We can also provide the full range of regulatory test benches for vehicle certification  (Charging, battery, EMC, acoustic, emission, ...) or sensor characterization physical bench in addition to track tests.
@@ -28,15 +30,6 @@ At UTAC, we can also provide the full range of regulatory test benches for vehic
 Potential customers can also access the UTAC and LNE training catalogue on AI and autonomous vehicles
 
 ## Infrastructure Components
-
-Describe the key infrastructure components available at the TEF Site, including data platforms, local digital twins, specific hardware, IoT platforms, or any other relevant technologies.
-
-- **Data Platforms**: [Description of the data platforms available]
-- **Local Digital Twins**: [Details about any local digital twin infrastructure]
-- **Specific Hardware**: [Details about specialized hardware available, such as sensors, servers, etc.]
-- **IoT Platforms**: [Information about IoT systems or platforms in use at the site]
-- **Visualization platforms**: [Information about large scale visualisation components]
-- **Other**: [Any other relevant infrastructure to showcase]
 
 <table>
   <tr>
@@ -66,55 +59,8 @@ Describe the key infrastructure components available at the TEF Site, including 
 
 ### Architecture
 
-Provide a high-level overview of the architecture of the TEF Site, including the key components and technologies used. Include any relevant diagrams or visualizations to help stakeholders understand the infrastructure.
-
 ![paris_arch](./img/paris-arch.png)
 
-### European Data Space for Smart Communities (DS4SSCC)
-<!-- 
-{{ config.extra.labels.ds4ssc_compliant.yes_comp.data_sources }} {{ config.extra.labels.ds4ssc_compliant.yes_comp.data_broker }} {{ config.extra.labels.ds4ssc_compliant.yes_comp.data_api }} {{ config.extra.labels.ds4ssc_compliant.no_comp.data_idm_auth }} {{ config.extra.labels.ds4ssc_compliant.no_comp.data_publication }}
-
-![aarhus_city_lab_arch-ds4sscc](./img/aarhus_city_lab_ds4sscc-arch.svg) -->
-
-## Relevant datasets of the site
-
-Describe the relevant datasets available at the site
-
-- **Dataset_1**: [Description of the data set and link to Data Catalog: eg https://citcomai-hub.github.io/data_catalog/metadata_datasets/south_spain_valencia/]
-- **Dataset_2**: [Description of the data set and link to Data Catalog: eg https://citcomai-hub.github.io/data_catalog/metadata_datasets/south_spain_valencia/]
-- **Dataset_3**: [Description of the data set and link to Data Catalog: eg https://citcomai-hub.github.io/data_catalog/metadata_datasets/south_spain_valencia/]
-
-## Key Stakeholders and Partners
-
-Provide a list of the key stakeholders and partners involved in the TEF Site. Include any academic institutions, industry collaborators, and other stakeholders.
-
-- **Stakeholder 1**: [Name and description of the stakeholder, e.g., university, research institute, industry partner]
-- **Stakeholder 2**: [Description]
-- **Stakeholder 3**: [Description]
-
-## Contact Information
-
-Provide contact details for those responsible for the TEF Site or who can provide more information to collaborators or users.
-
-- **Site Coordinator**: [Name and contact details]
-- **Technical Support**: [Name and contact details]
-- **General Inquiries**: [Name and contact details]
-
-## Additional Information
-
-Any other relevant information that might be useful to collaborators or developers working with the TEF Site, such as specific protocols, access instructions, or unique capabilities.
-
-Example:
-The TEF Site offers unique capabilities in [specific field], and it is open to collaboration with other EU projects in the area of [related field].
-
-## Documentation and Resources
-
-Link to any relevant documentation or resources, such as technical specifications, API documentation, or guides for using services at the TEF Site.
-
-- [Documentation Link 1](#)
-- [Documentation Link 2](#)
-
 ---
-
 !!! info
     This page is part of the documentation hub for the CitCom.ai project. Please ensure that the information is up-to-date and accurate.

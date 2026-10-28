@@ -49,7 +49,6 @@ It is designed for early-stage experimentation, prototyping, education, and expl
 
 📄 Documentation: *Link to documentation will be inserted later*
 
-
 ## Infrastructure Components
 
 * **Data Platforms:** Data is available from Center Denmark’s secure data platform, providing structured, GDPR-compliant datasets from utilities and public sources. Data can be accessed via RESTful APIs or by downloading datasets through the Data Portal (portal.centerdenmark.com).  
@@ -57,7 +56,6 @@ It is designed for early-stage experimentation, prototyping, education, and expl
 * **Specific Hardware:** No physical sensors or field devices are operated directly by Center Denmark. Data is sourced from utility partners’ smart meters, SCADA/SRO systems, and IoT devices. High-performance compute resources and secure servers are used for data ingestion, processing, and structuring.  
 * **IoT Platforms:** Data streams from IoT sources, such as smart meters, SCADA systems, weather stations, and building sensors, are securely integrated via partner-provided connections and standardized for use on the platform.  
 * **Visualization Platforms:** Visualization is primarily based on open-source tools such as Apache Superset, offering flexible dashboards and analytics. The platform also supports integration with Power BI and other external visualization environments as needed.  
-
 
 <table>
   <tr>
@@ -86,8 +84,6 @@ It is designed for early-stage experimentation, prototyping, education, and expl
 </table>
 
 ### Architecture
-
-Provide a high-level overview of the architecture of the TEF Site, including the key components and technologies used. Include any relevant diagrams or visualizations to help stakeholders understand the infrastructure.
 
 ![center_denmark_arch](./img/center_denmark-arch.png)
 
@@ -134,6 +130,46 @@ For any inquiries or collaboration opportunities related to the TEF Site at Cent
   **Andreas Okkels O. Thomsen**  
   Senior Business Developer  
   📧 andreas.thomsen@centerdenmark.com
+
+
+## Datasets in detail
+
+Attributes of the datasets of this site, as described by its partners.
+
+??? info "District Heating Data"
+
+
+    | ATTRIBUTE   | TYPE   | UNITS (SI)   | DESCRIPTION/COMMENTS   |
+    |-------------|--------|--------------|------------------------|
+    | id                   | INTEGER  |            | Identifier                                                                             |
+    | timestamp            | DATETIME |            | Date and time are shown in UTC in ISO 8601 format. Timestamps are represented in full hours, i.e., minutes and seconds are 00. |
+    | location             | STRING   |            | Address – following DAR (Danish Address Register)                                     |
+    | energy               | DOUBLE   | MWh        | The heating consumption of the district heating meter water supply.                   |
+    | energy_computed      | DOUBLE   | MWh        | Computed heat energy consumption based on the flow and temperature difference. Coefficients are determined for the water at 60 Degrees Celsius. |
+    | flow                 | DOUBLE   | m³/h       | The flow rate of the district heating meter water supply.                             |
+    | forward_temperature  | DOUBLE   | °C         | The forward temperature of the district heating meter water supply.                   |
+    | return_temperature   | DOUBLE   | °C         | Return temperature     
+
+??? info "Water Data"
+
+
+    | ATTRIBUTE   | TYPE     | UNITS (SI)   | DESCRIPTION/COMMENTS                                                                                                           |
+    |:------------|:---------|:-------------|:-------------------------------------------------------------------------------------------------------------------------------|
+    | id          | INTEGER  |           | Identifier                                                                                                                     |
+    | timestamp   | DATETIME |           | Date and time are shown in UTC in ISO 8601 format. Timestamps are represented in full hours, i.e., minutes and seconds are 00. |
+    | location    | STRING   |           | Adress - following DAR (Danish Adress Register)                                                                                |
+    | volumen     | DOUBLE   | M3           | Unit for Volumen                                                                                                               |
+    | flow        | DOUBLE   | m³/h         | The flow rate of the water supply.                                                                                             |
+
+??? info "Electricity Data"
+
+
+    | ATTRIBUTE   | TYPE     | UNITS (SI)   | DESCRIPTION/COMMENTS                                                                                                           |
+    |:------------|:---------|:-------------|:-------------------------------------------------------------------------------------------------------------------------------|
+    | id          | INTEGER  |           | Identifier                                                                                                                     |
+    | timestamp   | DATETIME |           | Date and time are shown in UTC in ISO 8601 format. Timestamps are represented in full hours, i.e., minutes and seconds are 00. |
+    | location    | STRING   |           | Adress - following DAR (Danish Adress Register)                                                                                |
+    | value       | DOUBLE   | kWh          | The actual value of the reading.                                                                                               |
 
 
 ---
