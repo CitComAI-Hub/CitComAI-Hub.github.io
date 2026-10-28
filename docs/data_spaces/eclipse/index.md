@@ -5,7 +5,7 @@ description: "The alternative stack, built on Eclipse EDC: what runs and how it 
 
 # Eclipse EDC data space
 
-CitCom runs a second data space, an alternative to the [FIWARE one](../fiware.md), built on the **Eclipse Dataspace Components** (EDC). It is operated at [citcom.dataspaceready.eu](https://citcom.dataspaceready.eu) and lets organisations publish data assets, discover the assets of other participants, negotiate machine-readable usage policies and exchange the data under those agreements.
+CitCom runs a second data space, an alternative to the [FIWARE one](../fiware.md), built on the **Eclipse Dataspace Components** (EDC). It is operated by [Libelium](https://www.libelium.com/) at [citcom.dataspaceready.eu](https://citcom.dataspaceready.eu) and lets organisations publish data assets, discover the assets of other participants, negotiate machine-readable usage policies and exchange the data under those agreements.
 
 ## The stack
 

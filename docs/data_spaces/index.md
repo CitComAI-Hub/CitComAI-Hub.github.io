@@ -10,7 +10,7 @@ CitCom runs two data spaces, built with the two main open-source technologies in
 | | FIWARE data space | Eclipse EDC data space |
 |---|---|---|
 | **Technology** | [FIWARE Data Space Connector](https://github.com/FIWARE/data-space-connector) 10 | [Eclipse EDC](https://eclipse-edc.github.io/), sovity Community Edition |
-| **Operated by** | VRAIN-UPV (Valencia TEF node) | A CitCom partner |
+| **Operated by** | VRAIN-UPV (Valencia TEF node) | [Libelium](https://www.libelium.com/) |
 | **Identity** | Verifiable credentials (OID4VCI / OID4VP) and wallets | Connector identities managed by the operator's portal |
 | **Contracts** | Marketplace (TMForum) → contract-management → trust list + ODRL policy | Dataspace Protocol (DSP) negotiation between connectors |
 | **Data API** | NGSI-LD, served by the provider's connector | Any HTTP source, transferred by the connectors |
