@@ -43,7 +43,7 @@ Both wallets below work with the CitCom data space: they receive credentials wit
     atesta-id-wallet uses the protocols of the European Digital Identity (EUDI) wallets: OpenID4VCI, OpenID4VP and SD-JWT VC. It is **not** a certified EUDI Wallet under eIDAS 2.0. That would need a provider notified by a Member State, certification at assurance level *high*, with a secure hardware key store, and wallet attestations, which are out of scope for this prototype.
 
 - **Prototype** (TRL 5), tested against Keycloak and the CitCom marketplace. Linux is the tested platform; the Windows builds are new and not yet tested by hand, and macOS is untested.
-- **Software keys**: the keys are not kept in a TPM or a secure element.
+- **Software keys**: the keys are kept encrypted on disk, not in a TPM or a secure element.
 - **One holder key per profile**: verifiers can correlate the presentations made with the same profile.
 - **SD-JWT VC only** (`dc+sd-jwt`, `vc+sd-jwt`): no `jwt_vc_json`, no mdoc, no deferred issuance.
 - **Verifiers identified by X.509 certificates**: verifiers identified by a DID, verifier attestations or OpenID Federation are not supported.
