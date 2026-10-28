@@ -156,15 +156,19 @@
   padding: 4.5rem 1rem 4rem;
   max-width: 46rem;
 }
-.cc-hero__eyebrow {
+.md-typeset .cc-hero__eyebrow {
   color: var(--cc-teal);
-  font-size: 0.75rem;
+  font-size: 0.65rem;
   font-weight: 600;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   margin: 0 0 0.8rem;
 }
-.cc-hero h1 {
+.cc-hero .md-typeset,
+.md-typeset.cc-hero__inner {
+  color: #fff;
+}
+.md-typeset.cc-hero__inner h1 {
   font-family: var(--cc-heading-font);
   font-weight: 400;
   font-size: 2.6rem;
@@ -172,7 +176,7 @@
   margin: 0 0 1.2rem;
   color: #fff;
 }
-.cc-hero p {
+.md-typeset.cc-hero__inner p:not(.cc-hero__eyebrow) {
   font-size: 1rem;
   line-height: 1.7;
   color: rgba(255, 255, 255, 0.78);
@@ -194,7 +198,7 @@
   .cc-hero__inner {
     padding: 3rem 0.8rem 2.5rem;
   }
-  .cc-hero h1 {
+  .md-typeset.cc-hero__inner h1 {
     font-size: 1.9rem;
   }
 }
@@ -227,4 +231,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+/* Four audience cards in one row on wide screens, two on tablets */
+.md-typeset .grid.cc-four {
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 12rem), 1fr));
 }

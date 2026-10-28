@@ -8,7 +8,7 @@ hide:
 
 ## Where do you start?
 
-<div class="grid cards" markdown>
+<div class="grid cards cc-four" markdown>
 
 -   :material-city-variant-outline:{ .lg .middle } __Cities and TEF nodes__
 
