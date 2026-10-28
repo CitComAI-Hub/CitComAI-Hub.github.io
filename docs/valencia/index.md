@@ -1,113 +1,78 @@
 ---
-title: Valencia
+title: Valencia TEF node
+icon: material/map-marker-outline
 ---
 
-## Overview
+# Valencia TEF node
 
-The Valencia TEF site, part of the South Supernode, supports AI-driven innovations in pollution management, noise monitoring, waste and water management, urban development, and tourism. Led by the Valencia City Council (VALE) and València Innovation Capital (LNAV), the TEF provides essential physical and virtual infrastructures, smart city datasets, ecosystem engagement, algorithm expertise, and regulatory compliance support. Key facilities include La Harinera and Las Naves, both serving as innovation hubs, while a citywide sensor network and the VLCi Data Platform offer real-time and historical data for AI experimentation. 
+Valencia is a site of the South super-node (CONNECT). It supports AI innovation in pollution, noise, waste and water management, mobility, urban development and tourism, and it hosts the [FIWARE data space](../data_spaces/fiware.md) of CitCom.
 
-## Services Offered
+## Who is who
 
-Valencia stands at the forefront of AI innovation within the South Supernode, offering a unique combination of resources and expertise. Key assets include the Las Naves facilities, which foster ecosystem engagement and collaboration, and the Urban Sandbox for AI, which supports real-world testing and regulatory compliance. The city's universities drive AI algorithm creation and validation, while S2Grupo provides specialized cybersecurity services. Additionally, the VLCi Data Platform offers access to a rich array of urban data, and the collaborative environment facilitates use case scoping and definition for impactful AI solutions. 
+| Organisation | Role in the TEF | In the data space |
+|---|---|---|
+| **Ajuntament de València** (City Council) | Owns the city data, through the **VLCi** urban platform | Provider `townhall-vlc`: offers the city datasets |
+| **València Innovation Capital** | Innovation hubs: Las Naves and La Harinera, the Urban Sandbox for AI | — |
+| **VRAIN-UPV** (Universitat Politècnica de València) | AI research and development; operates the data space | Participant `vrain`: offers the [MIAIS](../miais/index.md) and consumes city data |
 
-- **Service 1: Dissemination and communication of AI activities**   <br>
-  This service focuses on promoting the achievements of the Valencia TEF through events such as workshops, webinars, and presentations. It attracts stakeholders and fosters a community of interest, showcasing AI innovations effectively.
+## Services for companies
 
-- **Service 2: Development and testing of AI algorithms**   <br>
-  The public universities within the consortium offer comprehensive development and testing of AI algorithms, with a focus on data privacy and system optimization, for stakeholders like startups and research institutions.
-  
-- **Service 3: Valencia VLCi Platform and datasets**   <br>
-  For CitCom.ai project, an independent instance of the VLCi platform (Valencia Urban Platform) has been created and shared with the partners with the aim of testing and experimenting in a controlled environment not only restricted to the partners but also to AI     innovators. A guidelines manual has been created for that purpose. 
+- **Dissemination of AI activities**: workshops, webinars and presentations that showcase the innovations tested in Valencia.
+- **Development and testing of AI algorithms**: the universities of the consortium help startups and research centres develop and validate their algorithms, with attention to data privacy and optimisation.
+- **City data**: real-time data from the VLCi platform, now offered through the data space (below). An independent instance of VLCi was also set up for CitCom partners to experiment in a controlled environment.
+- **Regulatory support**: the Urban Sandbox for AI helps test in real conditions and check compliance; S2Grupo provides cybersecurity services.
 
-## Infrastructure Components
+## Data in the data space
 
-Describe the key infrastructure components available at the TEF Site, including data platforms, local digital twins, specific hardware, IoT platforms, or any other relevant technologies.
+The Ajuntament offers four datasets in the [marketplace](../marketplace/index.md), one offer each, all as NGSI-LD with [Smart Data Models](../toolbox/smart_data_models.md):
 
-- **Data Platforms**: [Description of the data platforms available]
-- **Local Digital Twins**: [Details about any local digital twin infrastructure]
-- **Specific Hardware**: [Details about specialized hardware available, such as sensors, servers, etc.]
-- **IoT Platforms**: [Information about IoT systems or platforms in use at the site]
-- **Visualization platforms**: [Information about large scale visualisation components]
-- **Other**: [Any other relevant infrastructure to showcase]
+| Dataset | Entity type | Source | Endpoint path | Category |
+|---|---|---|---|---|
+| Waste containers | [`WasteContainer`](https://github.com/smart-data-models/dataModel.WasteManagement/tree/master/WasteContainer) | VLCi, through Lepus | `/lepus/ngsi-ld` | Waste management |
+| Air quality | [`AirQualityObserved`](https://github.com/smart-data-models/dataModel.Environment/tree/master/AirQualityObserved) | VLCi, through Lepus | `/lepus/ngsi-ld` | Environment |
+| Traffic flow | [`TrafficFlowObserved`](https://github.com/smart-data-models/dataModel.Transportation/tree/master/TrafficFlowObserved) | VLCi, through Lepus | `/lepus/ngsi-ld` | Mobility |
+| Traffic state | `TrafficState` | VLCi open data endpoint, loaded every 7 minutes | `/ngsi-ld` | Mobility |
 
-<table>
-  <tr>
-    <th colspan="2" style="text-align: center;">Specifications</th>
-  </tr>
-  <tr>
-    <td><strong>Data Broker<strong></td>
-    <td>
-      {{config.extra.labels.data_brokers.fiware}}<br>
-      <strong>- API:</strong> {{config.extra.labels.api_brokers.ngsi_v2}}<br>
-      <strong>- Version:</strong> Scorpio
-    </td>
-  </tr>
-  <tr>
-    <td><strong>Data Source<strong></td>
-    <td><a href="https://documenter.getpostman.com/view/513743/RWgqVJkL">Fiware IoT-Agent</a></td>
-  </tr>
-  <tr>
-    <td><strong>IdM &amp; Auth<strong></td>
-    <td>Keycloak</td>
-  </tr>
-  <tr>
-    <td><strong>Data Publication<strong></td>
-    <td>CKAN</td>
-  </tr>
-</table>
+The endpoints are under `https://apisix-townhall-vlc.citcom-vrain-dataspace.eu`. Each offer gives access to its entity type only, with a `MachineCredential`. To use them, follow [Use data from your code](../guides/consume_data.md).
 
-### Architecture
+## How the data flows
 
-Provide a high-level overview of the architecture of the TEF Site, including the key components and technologies used. Include any relevant diagrams or visualizations to help stakeholders understand the infrastructure.
+```mermaid
+flowchart LR
+    subgraph CITY["Ajuntament de València"]
+        VLCI[("VLCi platform<br/>NGSI-v2 + Keystone")]
+        OD["Open data<br/>traffic state"]
+    end
+    subgraph TV["townhall-vlc connector"]
+        GW["APISIX<br/>verifier token + ODRL policy"]
+        LE["Lepus<br/>NGSI-LD → NGSI-v2"]
+        AF["Airflow<br/>ingestion every 7 min"]
+        OR[("Orion-LD")]
+        EDC["Route for EDC<br/>OAuth2"]
+    end
+    CONS["Consumers of the<br/>FIWARE data space"]
+    EDCC["Eclipse EDC<br/>data space"]
 
-![valencia_arch](../tef/south_connect/img/valencia-arch.png)
+    CONS -- "/lepus/ngsi-ld" --> GW
+    CONS -- "/ngsi-ld" --> GW
+    GW --> LE --> VLCI
+    GW --> OR
+    OD --> AF --> OR
+    EDCC -- "/edc/lepus/ngsi-ld" --> EDC --> LE
+```
 
+- **Lepus** serves the VLCi data live. It translates each NGSI-LD query into NGSI-v2, authenticates with the city platform on its own, and returns the entities as NGSI-LD with their Smart Data Models `@context`. VLCi never sees the data space tokens, and nothing is copied. See [Lepus](../toolbox/lepus.md).
+- **Airflow** loads the traffic state from an open data endpoint of VLCi into an Orion-LD broker every 7 minutes, for data that is not in VLCi.
+- **APISIX** protects both paths with the same mechanism: a token from the verifier and the ODRL policy of the purchased offer.
+- The same Lepus also serves the [Eclipse EDC data space](../data_spaces/bridge.md), through its own route.
 
-### European Data Space for Smart Communities (DS4SSCC)
+## Services in the data space
 
-<!-- {{ config.extra.labels.ds4ssc_compliant.yes_comp.data_sources }} {{ config.extra.labels.ds4ssc_compliant.yes_comp.data_broker }} {{ config.extra.labels.ds4ssc_compliant.yes_comp.data_api }} {{ config.extra.labels.ds4ssc_compliant.no_comp.data_idm_auth }} {{ config.extra.labels.ds4ssc_compliant.no_comp.data_publication }}
+| Service | Provider | What it does |
+|---|---|---|
+| [MIAIS Waste Collection](../miais/index.md) | VRAIN | Plans waste collection routes from the filling level of the Valencia containers. It reads the containers through the data space, and other organisations can use it by logging in with a wallet. |
 
-![aarhus_city_lab_arch-ds4sscc](../tef/south_connect/img/aarhus_city_lab_ds4sscc-arch.svg) -->
+## Contact
 
-## Relevant datasets of the site
-
-Describe the relevant datasets available at the site
-
-- **Dataset_1**: [Description of the data set and link to Data Catalog: eg https://citcomai-hub.github.io/data_catalog/metadata_datasets/south_spain_valencia/]
-- **Dataset_2**: [Description of the data set and link to Data Catalog: eg https://citcomai-hub.github.io/data_catalog/metadata_datasets/south_spain_valencia/]
-- **Dataset_3**: [Description of the data set and link to Data Catalog: eg https://citcomai-hub.github.io/data_catalog/metadata_datasets/south_spain_valencia/]
-
-## Key Stakeholders and Partners
-
-Provide a list of the key stakeholders and partners involved in the TEF Site. Include any academic institutions, industry collaborators, and other stakeholders.
-
-- **Stakeholder 1**: [Name and description of the stakeholder, e.g., university, research institute, industry partner]
-- **Stakeholder 2**: [Description]
-- **Stakeholder 3**: [Description]
-
-## Contact Information
-
-Provide contact details for those responsible for the TEF Site or who can provide more information to collaborators or users.
-
-- **Site Coordinator**: [Name and contact details]
-- **Technical Support**: [Name and contact details]
-- **General Inquiries**: [Name and contact details]
-
-## Additional Information
-
-Any other relevant information that might be useful to collaborators or developers working with the TEF Site, such as specific protocols, access instructions, or unique capabilities.
-
-Example:
-The TEF Site offers unique capabilities in [specific field], and it is open to collaboration with other EU projects in the area of [related field].
-
-## Documentation and Resources
-
-Link to any relevant documentation or resources, such as technical specifications, API documentation, or guides for using services at the TEF Site.
-
-- [Documentation Link 1](#)
-- [Documentation Link 2](#)
-
----
-
-!!! info
-    This page is part of the documentation hub for the CitCom.ai project. Please ensure that the information is up-to-date and accurate.
+- **Data space and technical questions**: VRAIN-UPV, through the [GitHub organisation](https://github.com/CitComAI-Hub) of the hub.
+- **The TEF and its services**: the [CitCom TEF website](https://citcomtef.eu/).
