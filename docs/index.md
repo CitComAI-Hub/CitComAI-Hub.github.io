@@ -1,80 +1,59 @@
 ---
-    template: home.html
+template: home.html
+title: Home
+hide:
+  - navigation
+  - toc
 ---
-<style>
-/* Hide title on the home page */
-article > h1 {
-    display: none
-}
 
-/* Fix title font-weight */
-body > header > nav > div.md-header__title.md-header__title--active > div > div:nth-child(2){
-    font-weight: 700;   
-}
-.package-icon{
-    width: 5rem;
-}
-body > div.md-container > main > div > div > article > a{
-    display: none
-}
-</style>
+## Where do you start?
 
-<div style="text-align: center;">
-
-<img class="package-icon skip-glightbox" src="./assets/package.png">
-  <h1>Minimal Package for TEF nodes</h1>
-  <p>Work package 3 (WP3) provides the <strong>Minimal Package for CitCom.ai TEF (Testing and Experimentation Facility) nodes</strong>, which contains comprehensive <strong>guides, toolboxes, and deployment frameworks</strong> to ensure interoperability across the wide range of TEF nodes by defining a <strong>common reference architecture</strong>. Based on this architecture, it also provides support and examples to develop <strong>AI services</strong>.</p> 
-</div>
-
-<br>
-### Package components:
 <div class="grid cards" markdown>
 
--   :material-rocket-outline:{ .lg .middle } __Getting Started__
+-   :material-city-variant-outline:{ .lg .middle } __Cities and TEF nodes__
 
     ---
 
-    Start by learning the basics of CitCom.ai and its common reference architecture.
+    What CitCom offers a city, how the TEF nodes are organised and what the Valencia node runs today.
 
-    [:octicons-arrow-right-24: Learn more](./welcome.md)
+    [:octicons-arrow-right-24: Understand CitCom](understand/index.md)
 
--   :material-city-variant-outline:{ .lg .middle } __TEF Nodes__
-
-    ---
-
-    Testing and Experimentation Facility (TEF) nodes.
-
-    [:octicons-arrow-right-24: Learn more](./tef/index.md)
-
--   :material-file-document-outline:{ .lg .middle } __Documentation__
+-   :material-database-export-outline:{ .lg .middle } __Data providers__
 
     ---
 
-    Reports and deployment guides of different components.
+    Publish a dataset in the data space and decide who can use it, with a policy you control.
 
-    [:octicons-arrow-right-24: Learn more](./documentation/index.md)
+    [:octicons-arrow-right-24: Publish a dataset](guides/publish_dataset.md)
 
--   :material-store-search-outline:{ .lg .middle } __Data Catalog__
-
-    ---
-
-    Centralized hub to keep track of available datasets.
-
-    [:octicons-arrow-right-24: Learn more](./data_catalog/index.md)
-
--   :material-toolbox-outline:{ .lg .middle } __Toolbox__
+-   :material-robot-outline:{ .lg .middle } __AI developers__
 
     ---
 
-    A set of useful tools compatible with MIMs.
+    Buy access to city data, read it from your code and offer your service to other cities.
 
-    [:octicons-arrow-right-24: Learn more](./toolbox/index.md)
+    [:octicons-arrow-right-24: Build a service](miais/index.md)
 
--   :material-robot-outline:{ .lg .middle } __AI Services__
+-   :material-server-network:{ .lg .middle } __Data space operators__
 
     ---
 
-    Minimal interoperable AI services for platforms compatible with MIMs.
+    How the CitCom data spaces are built, with FIWARE and Eclipse EDC, and how to run your own connector.
 
-    [:octicons-arrow-right-24: Learn more](./services/index.md)
+    [:octicons-arrow-right-24: The data spaces](data_spaces/index.md)
+
 </div>
+
+## How it fits together
+
+<ol class="cc-path" markdown>
+<li markdown>**Understand the basics.** [Interoperability levels](understand/interoperability.md) and [data spaces in 5 minutes](understand/data_spaces.md).</li>
+<li markdown>**See the real infrastructure.** [The CitCom data spaces](data_spaces/index.md) and the [Valencia TEF node](valencia/index.md), with diagrams.</li>
+<li markdown>**Follow a worked example.** The [MIAIS](miais/index.md) goes from a custom integration to a service in the data space.</li>
+<li markdown>**Do it yourself.** The [guides](guides/index.md) cover one task each: wallet, joining, consuming, publishing.</li>
+<li markdown>**Use the tools.** [Lepus](toolbox/lepus.md), [FiLiP](toolbox/ngsi_ld.md), [ds-consumer-auth](toolbox/ds_consumer_auth.md) and the [wallets](toolbox/wallets.md).</li>
+</ol>
+
+## About CitCom.ai
+
+[CitCom.ai](https://citcom.ai) is a European Union project that sets up Testing and Experimentation Facilities (TEFs) for AI and robotics in smart and sustainable cities. Companies test their AI products in real cities across Europe, under EU rules on data, privacy and cybersecurity. This site is the technical hub of the project: the shared architecture, the data spaces and the tools that make services work in any CitCom city.

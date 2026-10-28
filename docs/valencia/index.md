@@ -60,14 +60,14 @@ Describe the key infrastructure components available at the TEF Site, including 
 
 Provide a high-level overview of the architecture of the TEF Site, including the key components and technologies used. Include any relevant diagrams or visualizations to help stakeholders understand the infrastructure.
 
-![valencia_arch](./img/valencia-arch.png)
+![valencia_arch](../tef/south_connect/img/valencia-arch.png)
 
 
 ### European Data Space for Smart Communities (DS4SSCC)
 
 <!-- {{ config.extra.labels.ds4ssc_compliant.yes_comp.data_sources }} {{ config.extra.labels.ds4ssc_compliant.yes_comp.data_broker }} {{ config.extra.labels.ds4ssc_compliant.yes_comp.data_api }} {{ config.extra.labels.ds4ssc_compliant.no_comp.data_idm_auth }} {{ config.extra.labels.ds4ssc_compliant.no_comp.data_publication }}
 
-![aarhus_city_lab_arch-ds4sscc](./img/aarhus_city_lab_ds4sscc-arch.svg) -->
+![aarhus_city_lab_arch-ds4sscc](../tef/south_connect/img/aarhus_city_lab_ds4sscc-arch.svg) -->
 
 ## Relevant datasets of the site
 

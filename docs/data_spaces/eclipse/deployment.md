@@ -102,7 +102,7 @@ The `make deploy` target itself does, in order:
 
 ## 3. Provisioning a new tenant
 
-Tenants are declared in [`tenants.yml`](../tenants.yml). Each entry
+Tenants are declared in `tenants.yml`. Each entry
 covers identity, EDC, contact, users and (optional but recommended)
 `org_details` for the DS-Manager Organisation registry:
 
@@ -244,7 +244,7 @@ cert work — Traefik issues one on the first request to its host.
 `smtp.buzondecorreo.com:465` SSL, authenticated as
 `info@geospace.es` — recipients see the message as
 `From: CitCom.ai <info@geospace.es>`. The HTML template lives at
-[`platform/onboarding-api/templates/activation-email.html`](../../../platform/onboarding-api/templates/activation-email.html)
+`platform/onboarding-api/templates/activation-email.html`
 and is parametrised entirely from env (`EMAIL_PRIMARY_COLOR`,
 `EMAIL_ACCENT_COLOR`, `EMAIL_LOGO_FILE`, …) so each project's emails
 match its login + portal palette.

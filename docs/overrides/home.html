@@ -1,121 +1,25 @@
 {% extends "main.html" %}
+
 {% block tabs %}
 {{ super() }}
-<style>
-    .md-button {
-        margin-top: 0.8rem;
-        margin-left: 0.2rem;
-        margin-right: 0.2rem;
-        padding: 0.8rem 2rem;
-        font-size: 1rem;
-        border-radius: 6px;
-    }
-
-    .github-icon {
-        margin-left: 0.3em;
-        position: relative;
-        top: 1px;
-    }
-
-    .md-footer-meta__inner {
-        margin-top: 0 !important;
-    }
-
-    .md-source-file {
-        display: none !important;
-    }
-
-    .md-content__inner {
-        margin: 0 1.5rem 2.5rem !important;
-    }
-
-    .md-header__button.md-icon {
-        display: none !important;
-    }
-
-    .md-main {
-        flex-grow: 0;
-    }
-
-    .md-main__inner {
-        display: flex;
-        height: 100%;
-    }
-
-    .tx-container {
-        padding: 2rem;
-        color: #fff;
-        background: linear-gradient(to bottom, #14151A, #1E2129 99%, #fff 99%);
-    }
-    
-    .tx-hero {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin: 50px 3rem;
-        flex-wrap: wrap;
-        position: relative;
-    }
-
-    .tx-hero h2 {
-        margin-bottom: 1.2rem;
-        font-weight: 600;
-        font-size: 2.5rem;
-        text-align: center;
-    }
-
-    .tx-hero p {
-        font-size: 1.1rem;
-        max-width: 600px;
-        margin: 0 auto 1.5rem;
-        /* Light color for contrast */
-        text-align: center;
-        line-height: 1.8;
-    }
-
-    .tx-hero__content {
-        display: inline;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        z-index: 1;
-        /* Ensure content is above the image */
-    }
-    .tx-hero__content h2 {
-        font-family: 'FK Grotesk', sans-serif;
-    }
-</style>
-
-<!-- Main site Entry button descriptions -->
-<section class="tx-container">
-    <div class="md-grid md-typeset">
-        <div class="tx-hero">
-            <!-- <div class="tx-hero__image">
-                <img src="assets/smart-city.png" alt="Smart City" draggable="false">
-            </div> -->
-            <div class="tx-hero__content">
-                <div>
-                    <h2>CitCom<sup>AI</sup> Hub</h2>
-                    <p>Support & Documentation for Testing AI in Smart Cities and Communities</p>
-                </div>
-                <a href="/welcome" title="{{ page.next_page.title | striptags }}" class="md-button md-button--primary">
-                    Get started
-                </a>
-                <!-- ...existing code... -->
-                <!-- Updated GitHub button with inline SVG icon on the right -->
-                <a href="https://github.com/CitComAI-Hub" title="{{ lang.t('source.link.title') }}" class="md-button">
-                    Go to GitHub
-                    <svg class="github-icon" width="22" height="22" viewBox="0 0 16 16" fill="currentColor"
-                        aria-hidden="true" >
-                        <path fill-rule="evenodd"
-                            d="M8 0C3.58 0 0 3.58 0 8a8 8 0 005.47 7.59c.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2 .37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.98 0-.88.31-1.6.82-2.16-.08-.2-.36-1.01.08-2.11 0 0 .67-.22 2.2.82a7.5 7.5 0 012-.27c.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.91.08 2.11.51.56.82 1.27.82 2.16 0 3.1-1.87 3.78-3.65 3.98.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0016 8c0-4.42-3.58-8-8-8z">
-                        </path>
-                    </svg>
-                </a>
-            </div>
-        </div>
+<section class="cc-hero">
+  <div class="md-grid">
+    <div class="cc-hero__inner">
+      <p class="cc-hero__eyebrow">CitCom.ai Testing and Experimentation Facility</p>
+      <h1>Test AI for smart cities on shared, trusted data</h1>
+      <p>
+        Guides, tools and a working data space to connect city data, publish it under
+        your own rules and build AI services that run in any CitCom city.
+      </p>
+      <a href="{{ 'understand/' | url }}" class="md-button md-button--primary">Understand CitCom</a>
+      <a href="{{ 'marketplace/' | url }}" class="md-button">Marketplace</a>
+      <a href="{{ 'miais/' | url }}" class="md-button">Build a service</a>
+      <a href="{{ 'toolbox/' | url }}" class="md-button">Toolbox</a>
     </div>
+  </div>
 </section>
-
 {% endblock %}
-{% block site_nav %}{% endblock %}
+
+{% block content %}
+  {{ page.content }}
+{% endblock %}

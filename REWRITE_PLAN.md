@@ -160,10 +160,12 @@ Material for MkDocs, con un tema propio en la línea del marketplace y de citcom
 
 En cada fase: `mkdocs serve` en local y capturas para revisar antes de seguir. PR a `develop`, que es la convención del repo; de `develop` pasa a `main`, que es lo que publica la CI.
 
-## 8. Por decidir
+## 8. Decisiones (2026-10-28)
 
-1. **Contenido de otros socios**: ¿estás de acuerdo en no reescribirlo y solo moverlo y darle estilo? ¿Hay que avisar a alguien más antes del PR?
-2. **Servicios que no están en el marketplace** (GenAI MVP, Healthy Routes, Container Location Optimization): ¿a "Use cases", o se quitan?
-3. **Estilo**: ¿te vale la paleta y tipografía de arriba, o hay una guía de marca de CitCom que deba seguir?
-4. **EDC**: la guía "Publish to the EDC data space" depende de la decisión de tu jefe sobre en nombre de quién se publica. ¿La escribimos ya, de forma neutra?
-5. **Ramas de la MIAIS**: ¿limpiamos las ramas antiguas del repo (`mvds`, `valencia`…) o las documentamos tal cual?
+1. **Contenido de otros socios**: el repo es colaborativo, así que también se puede reescribir. Se avisa a los autores en el PR igualmente.
+2. **Servicios que no están en el marketplace** (GenAI MVP, Healthy Routes, Container Location Optimization): **se quitan**, sin sección "Use cases". Puede que llegue una "operational guidance" con todos los casos de uso; si llega, se enlaza.
+3. **Estilo**: la paleta vale. Referencia visual: [citcomtef.eu](https://citcomtef.eu/) (texto `#15141A`, *FK Grotesk* fina, acento cian). FK Grotesk es comercial: el repo solo tiene `FKGrotesk-Regular.woff2`, que se queda para el título del sitio; el resto usa una alternativa libre parecida (Google Fonts).
+4. **EDC**: se describe como alternativa (qué hay desplegado y su arquitectura). **No** se escribe la guía "Publish to the EDC data space" por ahora.
+5. **Ramas de la MIAIS**: solo se limpian las que no aportan; se conservan las útiles para la didáctica (p. ej., las de nivel 1).
+
+Consecuencias en la estructura (sección 2): desaparece "10. Use cases" y la guía "Publish to the EDC data space"; "Bridging both" describe el puente sin pasos de publicación.

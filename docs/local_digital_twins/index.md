@@ -24,7 +24,7 @@ To facilitate collaboration and drive progress towards these goals, we establish
 
 Meeting minutes, recordings and further materials related to the LDT Club are available under <https://imecinternational.sharepoint.com/:f:/r/sites/Citcom.aiTEF/Shared%20Documents/WP3%20-%20Infrastructure/T3.2/LDT%20Club?csf=1&web=1&e=zyhvcL>.
 
-For more details on the tools and methodologies supporting the development of Local Digital Twins, refer to the [LDT Toolkit](../../toolbox/ldt_toolkit.md).
+For more details on the tools and methodologies supporting the development of Local Digital Twins, refer to the [LDT Toolkit](../toolbox/ldt_toolkit.md).
 
 ## Scenario: CitCom.AI – EDIC LDT - CitiVerse
 

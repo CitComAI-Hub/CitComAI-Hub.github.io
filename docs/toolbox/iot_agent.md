@@ -4,13 +4,13 @@
 
 This section explains **how to connect an NGSI-V2 broker with an NGSI-LD broker (_Fiware Orion_) through subscriptions to a _FIWARE IoT-Agent_**. This connection between brokers arises as an alternative to the use of [FIWARE Lepus](./lepus.md) due to the lack of testing and the experimental nature of this service.
 
-![brkers_connection](./img/suscripcion_brokers.png)
+![brkers_connection](img/suscripcion_brokers.png)
 
 ## Simulation Environment
 
 An environment has been created with docker compose that deploys in an isolated way (on two independent networks) the architectures [FIWARE NGSI-V2](https://fiware-tutorials.readthedocs.io/en/latest/getting-started.html) and [FIWARE NGSI-LD](https://ngsi-ld-tutorials.readthedocs.io/en/latest/ngsi-ld-operations.html#architecture).
 
-![simulation_environment](./img/v2_LD_to_IoTAgent.png)
+![simulation_environment](img/v2_LD_to_IoTAgent.png)
  
 ### Services
 

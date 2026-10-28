@@ -2,7 +2,7 @@
 [Repository :simple-github:](https://github.com/CitComAI-Hub/waste-collection-demo){:target="_blank" .md-button .md-button--primary-light }
 
 <figure markdown>
-  ![Waste Collection](img/waste_collection.gif){ loading=lazy }
+  ![Waste Collection](../miais/img/waste_collection.gif){ loading=lazy }
 </figure>
 
 ## Introduction
@@ -129,7 +129,7 @@ AUTH_PASSWORD="xxxxx"
 At Level 2, deploying the MAIS requires integration with the **data space infrastructure**. The AI service no longer connects directly to raw NGSI-LD endpoints; instead, it accesses data via the standardized interface provided by the connector. This approximation guarantees that all data exchanges are **traceable, governed, and policy-compliant**.
 
 <figure markdown>
-  ![Level 2 MIAIS](img/level2_miais.png){ loading=lazy }
+  ![Level 2 MIAIS](../miais/img/level2_miais.png){ loading=lazy }
   <figcaption>Figure 2: MIAIS integration at Level 2</figcaption>
 </figure>
 

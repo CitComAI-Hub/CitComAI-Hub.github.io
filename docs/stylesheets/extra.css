@@ -1,18 +1,7 @@
-@font-face {
-    font-family: 'FK Grotesk';
-    src: url('/fonts/FKGrotesk-Regular.woff2') format('woff2');
-    font-weight: 300;
-    font-style: normal;
-}
-
 
 /* Fix for rendering SVGs in Safari */
 .md-nav__link svg {
     transform: translate(0, 0);
-}
-
-.md-header__title{
-    font-family: 'FK Grotesk', sans-serif;
 }
 
 sup {

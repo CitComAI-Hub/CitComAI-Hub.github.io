@@ -1,0 +1,230 @@
+/* CitCom.ai look: dark header and footer, teal accent, brand greens.
+   Reference: citcomtef.eu and the CitCom marketplace. */
+
+@font-face {
+  font-family: "FK Grotesk";
+  src: url("../fonts/FKGrotesk-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --cc-ink: #15141a;
+  --cc-night: #14161d;
+  --cc-night-2: #1f242c;
+  --cc-teal: #3cc3cf;
+  --cc-teal-dark: #0b7b85;
+  --cc-green: #00c48c;
+  --cc-green-dark: #00724d;
+  --cc-blue: #00add3;
+  --cc-radius: 10px;
+  --cc-heading-font: "FK Grotesk", var(--md-text-font-family), sans-serif;
+}
+
+/* Light scheme */
+[data-md-color-scheme="default"] {
+  --md-primary-fg-color: var(--cc-night);
+  --md-primary-fg-color--light: var(--cc-night-2);
+  --md-primary-fg-color--dark: #0d0e13;
+  --md-primary-bg-color: #ffffff;
+  --md-accent-fg-color: var(--cc-teal-dark);
+  --md-accent-fg-color--transparent: rgba(11, 123, 133, 0.1);
+  --md-typeset-color: var(--cc-ink);
+  --md-typeset-a-color: var(--cc-teal-dark);
+  --md-default-fg-color: rgba(21, 20, 26, 0.87);
+  --cc-surface: #f4f6f8;
+  --cc-border: #dfe3e8;
+}
+
+/* Dark scheme */
+[data-md-color-scheme="slate"] {
+  --md-hue: 222;
+  --md-primary-fg-color: var(--cc-night);
+  --md-primary-fg-color--light: var(--cc-night-2);
+  --md-primary-fg-color--dark: #0d0e13;
+  --md-primary-bg-color: #ffffff;
+  --md-accent-fg-color: var(--cc-teal);
+  --md-accent-fg-color--transparent: rgba(60, 195, 207, 0.12);
+  --md-default-bg-color: #181b22;
+  --md-code-bg-color: #1f242c;
+  --md-footer-bg-color: #0d0e13;
+  --md-typeset-a-color: var(--cc-teal);
+  --cc-surface: #1f242c;
+  --cc-border: #2c323c;
+}
+
+/* Header, tabs and footer are always dark */
+.md-header,
+.md-tabs {
+  background-color: var(--cc-night);
+}
+.md-tabs {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+.md-tabs__link {
+  font-size: 0.72rem;
+  opacity: 0.75;
+}
+.md-tabs__item--active .md-tabs__link,
+.md-tabs__link:hover {
+  color: var(--cc-teal);
+  opacity: 1;
+}
+.md-footer,
+.md-footer-meta {
+  background-color: var(--cc-night);
+}
+.md-footer-meta {
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+/* Typography */
+.md-header__title,
+.md-typeset h1,
+.md-typeset h2,
+.md-typeset h3 {
+  font-family: var(--cc-heading-font);
+  letter-spacing: -0.01em;
+}
+.md-typeset h1 {
+  font-weight: 400;
+  color: var(--md-typeset-color);
+}
+.md-typeset h2 {
+  font-weight: 400;
+}
+.md-typeset h3 {
+  font-weight: 500;
+}
+
+/* Buttons */
+.md-typeset .md-button {
+  border-radius: 999px;
+  font-weight: 600;
+  padding: 0.55em 1.6em;
+}
+.md-typeset .md-button--primary {
+  background-color: var(--cc-teal);
+  border-color: var(--cc-teal);
+  color: var(--cc-night);
+}
+.md-typeset .md-button--primary:hover,
+.md-typeset .md-button--primary:focus {
+  background-color: var(--cc-green);
+  border-color: var(--cc-green);
+  color: var(--cc-night);
+}
+
+/* Cards */
+.md-typeset .grid.cards > ul > li,
+.md-typeset .grid > .card {
+  border: 1px solid var(--cc-border);
+  border-radius: var(--cc-radius);
+  background: var(--md-default-bg-color);
+}
+.md-typeset .grid.cards > ul > li:hover,
+.md-typeset .grid > .card:hover {
+  border-color: var(--cc-teal);
+  box-shadow: 0 4px 18px rgba(20, 22, 29, 0.08);
+}
+.md-typeset .grid.cards .lg {
+  color: var(--cc-teal-dark);
+}
+[data-md-color-scheme="slate"] .md-typeset .grid.cards .lg {
+  color: var(--cc-teal);
+}
+
+/* Admonitions and code */
+.md-typeset .admonition,
+.md-typeset details {
+  border-radius: var(--cc-radius);
+}
+.md-typeset pre > code {
+  border-radius: var(--cc-radius);
+}
+
+/* Home page */
+.cc-hero {
+  background:
+    radial-gradient(60rem 30rem at 85% -10%, rgba(60, 195, 207, 0.18), transparent 60%),
+    radial-gradient(40rem 25rem at 0% 110%, rgba(0, 196, 140, 0.14), transparent 60%),
+    linear-gradient(180deg, var(--cc-night), var(--cc-night-2));
+  color: #fff;
+}
+.cc-hero__inner {
+  padding: 4.5rem 1rem 4rem;
+  max-width: 46rem;
+}
+.cc-hero__eyebrow {
+  color: var(--cc-teal);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin: 0 0 0.8rem;
+}
+.cc-hero h1 {
+  font-family: var(--cc-heading-font);
+  font-weight: 400;
+  font-size: 2.6rem;
+  line-height: 1.1;
+  margin: 0 0 1.2rem;
+  color: #fff;
+}
+.cc-hero p {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.78);
+  margin: 0 0 1.8rem;
+}
+.cc-hero .md-button {
+  margin: 0 0.4rem 0.6rem 0;
+}
+.cc-hero .md-button:not(.md-button--primary) {
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.35);
+}
+.cc-hero .md-button:not(.md-button--primary):hover {
+  border-color: var(--cc-teal);
+  color: var(--cc-teal);
+  background: transparent;
+}
+@media screen and (max-width: 44.9375em) {
+  .cc-hero__inner {
+    padding: 3rem 0.8rem 2.5rem;
+  }
+  .cc-hero h1 {
+    font-size: 1.9rem;
+  }
+}
+
+/* Numbered path on the home page */
+.md-typeset .cc-path {
+  counter-reset: step;
+  list-style: none;
+  padding: 0;
+  margin-left: 0;
+}
+.md-typeset .cc-path > li {
+  counter-increment: step;
+  position: relative;
+  padding: 0.2rem 0 0.9rem 2.6rem;
+  margin: 0;
+}
+.md-typeset .cc-path > li::before {
+  content: counter(step);
+  position: absolute;
+  left: 0;
+  top: 0.1rem;
+  width: 1.7rem;
+  height: 1.7rem;
+  border-radius: 50%;
+  background: var(--cc-teal);
+  color: var(--cc-night);
+  font-weight: 700;
+  font-size: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
