@@ -9,14 +9,6 @@ extra_css:
   - stylesheets/extra.css
   - stylesheets/citcom.css
   - assets/css/ai_assess_catalog.css
-# Legacy pages kept only as source material while they are rewritten (2026 update).
-# They are not published; their old URLs redirect to the new pages (see plugins.redirects).
-exclude_docs: |
-  /welcome.md
-  /getting_started/
-  /data_catalog/
-  /documentation/
-  /services/
 theme:
   custom_dir: docs/overrides
   name: material

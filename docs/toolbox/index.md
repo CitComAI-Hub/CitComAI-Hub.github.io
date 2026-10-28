@@ -3,38 +3,63 @@ icon: material/toolbox-outline
 title: Toolbox
 ---
 
+# Toolbox
+
+The tools used in the CitCom data space, from the city platform to the AI service. All of them are open source.
+
+```mermaid
+flowchart LR
+    V2[("NGSI-v2 platform")] --> LE["Lepus"]
+    LE --> CON["Connector"]
+    LD[("NGSI-LD broker")] --> CON
+    CON --> APP["Your service<br/>FiLiP + ds-consumer-auth"]
+    W["Wallets"] -. "people log in" .-> CON
+```
+
 <div class="grid cards" markdown>
 
--   :material-cogs:{ .lg .middle } __AI Toolkit__
+-   :material-swap-horizontal:{ .lg .middle } __Lepus__
 
     ---
 
-    Here we list a series of projects that can significantly help in managing these services.
-    
-    [:octicons-arrow-right-24: _More Details_](./ai_toolkit.md)
+    Serve an NGSI-v2 platform as NGSI-LD, without migrating it.
 
--   :material-cogs:{ .lg .middle } __AI Logging Monitor__
+    [:octicons-arrow-right-24: Lepus](lepus.md)
 
-    ---
-
-    The Logging module tracks the model's performance in production.
-
-    [:octicons-arrow-right-24: _More Details_](./ai_logging_monitor.md)
-
--   :material-cogs:{ .lg .middle } __MIMs Toolkit__
+-   :material-language-python:{ .lg .middle } __NGSI-LD and FiLiP__
 
     ---
 
-    List of tools and projects that can help services comply with OASC Minimal Interoperability Mechanisms.
+    Query a context broker from Python.
 
-    [:octicons-arrow-right-24: _More Details_](./mims_toolkit.md)
+    [:octicons-arrow-right-24: NGSI-LD and FiLiP](ngsi_ld.md)
 
--   :material-toolbox:{ .lg .middle } __Others__
+-   :material-key-chain-variant:{ .lg .middle } __ds-consumer-auth__
 
     ---
 
-    _Other useful tools and projects._
+    Get the access token of the data space from your code.
 
-    [:octicons-arrow-right-24: _More Details_](./other_toolkit.md)
+    [:octicons-arrow-right-24: ds-consumer-auth](ds_consumer_auth.md)
+
+-   :material-wallet-outline:{ .lg .middle } __Wallets__
+
+    ---
+
+    Keep your credentials and log in with a QR code: Lissi ID Wallet and atesta-id-wallet.
+
+    [:octicons-arrow-right-24: Wallets](wallets.md)
+
+-   :material-shape-outline:{ .lg .middle } __Smart Data Models__
+
+    ---
+
+    The data models used in the CitCom data spaces.
+
+    [:octicons-arrow-right-24: Smart Data Models](smart_data_models.md)
 
 </div>
+
+## More tools
+
+Other tools collected by the project partners: [AI toolkit](ai_toolkit.md), [AI logging monitor](ai_logging_monitor.md), [MIMs toolkit](mims_toolkit.md), [LDT toolkit](ldt_toolkit.md), the [FIWARE IoT Agent](iot_agent.md) experiment and [other tools](other_toolkit.md).
