@@ -12,7 +12,7 @@ The [Minimal Interoperability Mechanisms](https://mims.oascities.org/) (MIMs) ar
 
 | MIM | What it fixes | In CitCom |
 |---|---|---|
-| **MIM1 Context information management** | One API to read and write data about real-world entities | [NGSI-LD](https://www.etsi.org/committee/cim), served by a context broker (Orion-LD, Scorpio) |
+| **MIM1 Context information management** | One API to read and write data about real-world entities | [NGSI-LD](https://www.etsi.org/deliver/etsi_gs/CIM/001_099/009/01.08.01_60/gs_cim009v010801p.pdf), served by a context broker (Orion-LD, Scorpio) |
 | **MIM2 Data models** | One vocabulary to describe those entities | [Smart Data Models](https://smartdatamodels.org/), such as `WasteContainer` or `AirQualityObserved` |
 
 ## Interoperability levels

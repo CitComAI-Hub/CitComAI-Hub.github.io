@@ -15,7 +15,6 @@ List of tools and projects that can help services comply with OASC Minimal Inter
 | [tutorials NGSI-LD](https://github.com/FIWARE/tutorials.NGSI-LD) | Collection of tutorials for the FIWARE ecosystem designed for NGSI-LD developers. |
 | [Orange-OpenSource/python-ngsild-client](https://github.com/Orange-OpenSource/python-ngsild-client) | A Python library dedicated to NGSI-LD, which serves both as an NGSI-LD API client and a toolbox for efficiently creating and manipulating NGSI-LD entities. |
 | [OGC SensorThings API](https://www.ogc.org/standard/sensorthings/) | The OGC SensorThings API is a geospatially enabled framework that connects Internet of Things (IoT) devices, data, and applications via the web. This API facilitates interoperability and seamless integration within IoT ecosystems. |
-| [ngsild-client](https://github.com/CitComAI-Hub/ngsild-client) | Python ngsi-ld client for UPV-CitCom.ai projects. |
 | [A guide for connecting NGSI-V2 Broker to NGSI-LD via FIWARE IoT-Agent](https://github.com/CitComAI-Hub/IoTAgent.NGSI-V2_to_NGSI-LD_Subscription) | Local environment for testing subscriptions between FIWARE Orion brokers NGSI-V2 to NGSI-LD via FIWARE IoT-Agent. |
 
 

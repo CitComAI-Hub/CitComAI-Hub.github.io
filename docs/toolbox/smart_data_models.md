@@ -23,4 +23,4 @@ When two cities publish their waste containers as `WasteContainer`, a service wr
 1. Search [smartdatamodels.org](https://smartdatamodels.org/) for your entity before creating your own.
 2. Follow the model's `schema.json` for attribute names and types; the repository of each model has examples in NGSI-LD.
 3. Reference the `@context` of the subject (for example `dataModel.WasteManagement`) in your NGSI-LD requests, or let [Lepus](lepus.md) add it.
-4. If nothing fits, extend an existing model or [contribute a new one](https://smartdatamodels.org/index.php/how-to-contribute/).
+4. If nothing fits, extend an existing model or [contribute a new one](https://github.com/smart-data-models/data-models).

@@ -92,5 +92,5 @@ The public services are:
 |---|---|
 | Marketplace | <https://marketplace.citcom-vrain-dataspace.eu> |
 | Onboarding portal | <https://onboarding.citcom-vrain-dataspace.eu> |
-| Trust anchor (TIR) | <https://tir.citcom-vrain-dataspace.eu> |
+| Trust anchor (TIR) | <https://tir.citcom-vrain-dataspace.eu/v4/issuers> (list of trusted organisations) |
 | Connector of a participant `<p>` | `https://apisix-<p>.citcom-vrain-dataspace.eu` (data and services), `https://keycloak-<p>…` (credentials), `https://verifier-<p>…` (tokens) |

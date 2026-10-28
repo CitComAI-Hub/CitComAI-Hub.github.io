@@ -65,5 +65,5 @@ The code is the same at both levels; only the session changes. See [ds-consumer-
 
 !!! tip "Learn more"
 
-    - The [NGSI-LD specification](https://www.etsi.org/committee/cim) at ETSI.
+    - The [NGSI-LD specification](https://www.etsi.org/deliver/etsi_gs/CIM/001_099/009/01.08.01_60/gs_cim009v010801p.pdf) (ETSI GS CIM 009).
     - The FIWARE [NGSI-LD step-by-step tutorials](https://ngsi-ld-tutorials.readthedocs.io/).
