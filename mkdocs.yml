@@ -173,7 +173,6 @@ plugins:
       background: white
       shadow: true
       manual: false
-  - swagger-ui-tag
   - redirects:
       redirect_maps:
         welcome.md: getting_started/index.md

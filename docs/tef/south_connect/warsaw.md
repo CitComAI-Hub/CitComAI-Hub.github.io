@@ -26,41 +26,9 @@ The Warsaw TEF Site focuses on the use of spatial data and advanced tools for pr
 - **Visualization platforms**: CENAGIS MapViewer spatial data visualization platform based on [TerriaMap](https://terria.io) allows the visualisation and comparative analysis of a wide variety of spatial datasets. It supports visualisation of very large datasets and supports AI-based extensions of functionality.
 - **Other**: -
 
-<!-- <table>
-  <tr>
-    <th colspan="2" style="text-align: center;">Specifications</th>
-  </tr>
-  <tr>
-    <td><strong>Data Broker<strong></td>
-    <td>
-      &lt;no_specified><br>
-      <strong>- API:</strong> &lt;no_specified><br>
-      <strong>- Version:</strong> &lt;no_specified>
-    </td>
-  </tr>
-  <tr>
-    <td><strong>Data Source<strong></td>
-    <td>&lt;no_specified></a></td>
-  </tr>
-  <tr>
-    <td><strong>IdM &amp; Auth<strong></td>
-    <td>&lt;no_specified></td>
-  </tr>
-  <tr>
-    <td><strong>Data Publication<strong></td>
-    <td>&lt;no_specified></td>
-  </tr>
-</table> -->
-
 ### Architecture
 
 ![warsaw_arch](./img/warsaw-arch.png)
-
-<!-- ### European Data Space for Smart Communities (DS4SSCC) -->
-
-<!-- {{ config.extra.labels.ds4ssc_compliant.yes_comp.data_sources }} {{ config.extra.labels.ds4ssc_compliant.yes_comp.data_broker }} {{ config.extra.labels.ds4ssc_compliant.yes_comp.data_api }} {{ config.extra.labels.ds4ssc_compliant.no_comp.data_idm_auth }} {{ config.extra.labels.ds4ssc_compliant.no_comp.data_publication }}
-
-![aarhus_city_lab_arch-ds4sscc](./img/aarhus_city_lab_ds4sscc-arch.svg) -->
 
 ## Relevant datasets of the site
 
