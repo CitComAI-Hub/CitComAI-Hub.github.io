@@ -283,11 +283,21 @@
   border-color: var(--cc-teal);
   color: var(--cc-night);
 }
+/* Hover as in the marketplace: white on dark backgrounds, dark on white ones */
 .md-typeset .md-button--primary:hover,
 .md-typeset .md-button--primary:focus {
-  background-color: var(--cc-green);
-  border-color: var(--cc-green);
+  background-color: var(--cc-night);
+  border-color: var(--cc-night);
+  color: #ffffff;
+}
+[data-md-color-scheme="slate"] .md-typeset .md-button--primary:hover,
+[data-md-color-scheme="slate"] .md-typeset .md-button--primary:focus {
+  background-color: #ffffff;
+  border-color: #ffffff;
   color: var(--cc-night);
+}
+.md-typeset .md-button {
+  transition: background-color 0.2s, color 0.2s, border-color 0.2s;
 }
 
 /* ---------- Cards ---------- */
@@ -423,9 +433,11 @@
   color: var(--cc-night);
   border-color: var(--cc-teal);
 }
-.md-typeset.cc-hero__copy .md-button--primary:hover {
-  background: var(--cc-green);
-  border-color: var(--cc-green);
+.md-typeset.cc-hero__copy .md-button--primary:hover,
+.md-typeset.cc-hero__copy .md-button--primary:focus {
+  background: #ffffff;
+  border-color: #ffffff;
+  color: var(--cc-night);
 }
 .md-typeset .cc-hero__link {
   color: rgba(255, 255, 255, 0.85);
