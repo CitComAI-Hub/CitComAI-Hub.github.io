@@ -5,6 +5,8 @@ edit_uri: edit/main/docs/
 repo_name: CitComAI-Hub/CitComAI-Hub.github.io
 copyright: Copyright &copy; 2023 - 2026 CitCom.ai Hub
 site_dir: public
+extra_javascript:
+  - javascripts/external-links.js
 extra_css:
   - stylesheets/extra.css
   - stylesheets/citcom.css
