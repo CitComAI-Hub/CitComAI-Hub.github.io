@@ -1,30 +1,36 @@
 {% extends "main.html" %}
 
+{#- Home of the docs. Deliberately not the marketplace's layout: light hero on a blueprint grid,
+    a search box, and the reading path drawn as a line with stations. -#}
 {% block tabs %}
-<section class="cc-hero">
-  <div class="md-grid cc-hero__inner">
-    <div class="md-typeset cc-hero__copy">
+<section class="cc-dhero">
+  <div class="md-grid cc-dhero__inner">
+    <div class="md-typeset cc-dhero__copy">
       <p class="cc-eyebrow">CitCom.ai Hub · Documentation</p>
-      <h1>Test AI for smart cities on shared, trusted data</h1>
-      <p>
-        The technical hub of the CitCom.ai TEF: a working data space, the tools to connect a city
-        platform, and guides to build AI services that run in any CitCom city.
+      <h1>Build AI services for smart cities on a shared data space</h1>
+      <p class="cc-dhero__lead">
+        The technical hub of the CitCom.ai TEF: how the data space works, the tools to connect a
+        city platform, and guides to build services that run in any CitCom city.
       </p>
-      <div class="cc-hero__actions">
-        <a href="{{ 'getting_started/' | url }}" class="md-button md-button--primary">Get started &rarr;</a>
-        <a href="{{ config.extra.marketplace_url }}" class="md-button" target="_blank" rel="noopener">Marketplace</a>
-        <a href="https://citcomtef.eu/" class="cc-hero__link" target="_blank" rel="noopener">Visit project website &#8599;</a>
-      </div>
+      <label class="cc-dhero__search" for="__search">
+        {% include ".icons/material/magnify.svg" %}
+        <span>Search the documentation</span>
+        <kbd>/</kbd>
+      </label>
+      <p class="cc-dhero__alt">
+        Looking for data or AI services to use?
+        <a href="{{ config.extra.marketplace_url }}" target="_blank" rel="noopener">Browse the marketplace &#8599;</a>
+      </p>
     </div>
-    <div class="md-typeset cc-hero__panel">
-      <p class="cc-eyebrow">Start here</p>
+    <nav class="md-typeset cc-line" aria-label="Reading path">
+      <p class="cc-line__label">The path</p>
       <ol>
-        <li><a href="{{ 'getting_started/' | url }}"><span class="cc-n">01</span><span><strong>Get started</strong><small>What CitCom is, in plain words</small></span><span>&rarr;</span></a></li>
-        <li><a href="{{ 'data_spaces/' | url }}"><span class="cc-n">02</span><span><strong>Data spaces</strong><small>The infrastructure running today</small></span><span>&rarr;</span></a></li>
-        <li><a href="{{ 'guides/' | url }}"><span class="cc-n">03</span><span><strong>Build</strong><small>A worked example and the guides</small></span><span>&rarr;</span></a></li>
-        <li><a href="{{ 'toolbox/' | url }}"><span class="cc-n">04</span><span><strong>Toolbox</strong><small>Lepus, FiLiP, ds-consumer-auth, wallets</small></span><span>&rarr;</span></a></li>
+        <li><a href="{{ 'getting_started/' | url }}"><span class="cc-line__stop"></span><span><strong>Get started</strong><small>What CitCom is and why data spaces</small></span></a></li>
+        <li><a href="{{ 'data_spaces/' | url }}"><span class="cc-line__stop"></span><span><strong>Data spaces</strong><small>The infrastructure running today</small></span></a></li>
+        <li><a href="{{ 'guides/' | url }}"><span class="cc-line__stop"></span><span><strong>Build</strong><small>A worked example and step-by-step guides</small></span></a></li>
+        <li><a href="{{ 'toolbox/' | url }}"><span class="cc-line__stop"></span><span><strong>Toolbox</strong><small>Lepus, FiLiP, ds-consumer-auth, wallets</small></span></a></li>
       </ol>
-    </div>
+    </nav>
   </div>
 </section>
 {% endblock %}
