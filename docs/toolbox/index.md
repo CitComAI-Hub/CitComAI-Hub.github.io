@@ -7,14 +7,36 @@ description: "The open-source tools used in the CitCom data space."
 
 The tools used in the CitCom data space, from the city platform to the AI service. All of them are open source.
 
+Which tools you need depends on where your data is today. Whatever the starting point, the path is the same: reach [interoperability level 1](../getting_started/interoperability.md#interoperability-levels) (NGSI-LD and Smart Data Models), put a connector in front for level 2, and let programs and people use the data.
+
 ```mermaid
 flowchart LR
-    V2[("NGSI-v2 platform")] --> LE["Lepus"]
-    LE --> CON["Connector"]
-    LD[("NGSI-LD broker")] --> CON
-    CON --> APP["Your service<br/>FiLiP + ds-consumer-auth"]
-    W["Wallets"] -. "people log in" .-> CON
+    subgraph TODAY["Your data today"]
+        direction TB
+        V2[("NGSI-v2 platform")]
+        OT[("Other source<br/>custom API, IoT, files")]
+        LDN[("NGSI-LD broker")]
+    end
+    subgraph L1["Level 1"]
+        LD["NGSI-LD<br/>+ Smart Data Models"]
+    end
+    subgraph L2["Level 2"]
+        CON["Data space<br/>connector"]
+    end
+    subgraph USE["Who uses it"]
+        direction TB
+        PRG["Programs<br/>FiLiP + ds-consumer-auth"]
+        PPL["People<br/>Lissi / atesta-id-wallet"]
+    end
+    V2 -- "Lepus" --> LD
+    OT -- "IoT Agent or<br/>an ingestion job" --> LD
+    LDN -- "as it is" --> LD
+    LD --> CON
+    CON --> PRG
+    CON --> PPL
 ```
+
+For example, the Ajuntament de València serves its NGSI-v2 platform through Lepus, loads open data on traffic into an NGSI-LD broker with an ingestion job, and publishes both through its connector. See the [Valencia node](../valencia/index.md).
 
 <div class="grid cards" markdown>
 
