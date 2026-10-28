@@ -4,7 +4,7 @@ title: NGSI-LD and FiLiP
 
 # NGSI-LD and FiLiP
 
-**NGSI-LD** is the API of [MIM1](../understand/interoperability.md#mims): an ETSI standard to read, write and subscribe to data about real-world entities. Every entity has an `id`, a `type` and attributes, and a JSON-LD `@context` that gives the attributes their meaning, usually from [Smart Data Models](smart_data_models.md).
+**NGSI-LD** is the API of [MIM1](../getting_started/interoperability.md#mims): an ETSI standard to read, write and subscribe to data about real-world entities. Every entity has an `id`, a `type` and attributes, and a JSON-LD `@context` that gives the attributes their meaning, usually from [Smart Data Models](smart_data_models.md).
 
 ## The calls you need most
 

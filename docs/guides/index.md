@@ -27,4 +27,4 @@ flowchart LR
 
 !!! tip "New to data spaces?"
 
-    Read [Data spaces in 5 minutes](../understand/data_spaces.md) first. The guides use its vocabulary: participant, connector, credential, offer and policy.
+    Read [Data spaces in 5 minutes](../getting_started/data_spaces.md) first. The guides use its vocabulary: participant, connector, credential, offer and policy.

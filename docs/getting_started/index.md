@@ -1,59 +1,13 @@
 ---
-title: Understand CitCom
+title: Getting started
 icon: material/compass-outline
 hide:
   - toc
 ---
 
-# Understand CitCom
+# Getting started
 
 <p class="cc-lead">What CitCom.ai is and why its technical pieces fit together the way they do, in plain words. Start here if you are new to the project: each page is short and leads to the deeper chapters.</p>
-
-<div class="cc-journey" markdown>
-
-<p class="cc-journey__eyebrow">Your path through this site</p>
-<h2 class="cc-journey__title" id="your-path-through-this-site">From the concepts to your own service</h2>
-
-<div class="cc-jsteps" markdown>
-
-<a class="cc-jstep cc-jstep--here" href="./" markdown>
-<span class="cc-jstep__icon" markdown>:material-compass-outline:</span>
-<span class="cc-jstep__n">1 · You are here</span>
-<strong>Understand</strong>
-<span class="cc-jstep__text">The concepts, in plain words</span>
-</a>
-
-<a class="cc-jstep" href="../data_spaces/" markdown>
-<span class="cc-jstep__icon" markdown>:material-server-network:</span>
-<span class="cc-jstep__n">2</span>
-<strong>Data spaces</strong>
-<span class="cc-jstep__text">The real infrastructure and the Valencia node</span>
-</a>
-
-<a class="cc-jstep" href="../miais/" markdown>
-<span class="cc-jstep__icon" markdown>:material-robot-outline:</span>
-<span class="cc-jstep__n">3</span>
-<strong>MIAIS</strong>
-<span class="cc-jstep__text">An AI service that climbs the interoperability levels</span>
-</a>
-
-<a class="cc-jstep" href="../guides/" markdown>
-<span class="cc-jstep__icon" markdown>:material-book-open-variant:</span>
-<span class="cc-jstep__n">4</span>
-<strong>Guides</strong>
-<span class="cc-jstep__text">Get a wallet, join, read and publish data</span>
-</a>
-
-<a class="cc-jstep" href="../toolbox/" markdown>
-<span class="cc-jstep__icon" markdown>:material-toolbox-outline:</span>
-<span class="cc-jstep__n">5</span>
-<strong>Toolbox</strong>
-<span class="cc-jstep__text">Lepus, FiLiP, ds-consumer-auth and the wallets</span>
-</a>
-
-</div>
-
-</div>
 
 ## CitCom in four questions
 

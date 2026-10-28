@@ -16,7 +16,7 @@ hide:
 
     What CitCom offers a city, how the TEF nodes are organised and what the Valencia node runs today.
 
-    [:octicons-arrow-right-24: Understand CitCom](understand/index.md)
+    [:octicons-arrow-right-24: Getting started](getting_started/index.md)
 
 -   :material-database-export-outline:{ .lg .middle } __Data providers__
 
@@ -47,7 +47,7 @@ hide:
 ## How it fits together
 
 <ol class="cc-path" markdown>
-<li markdown>**Understand the basics.** [Interoperability levels](understand/interoperability.md) and [data spaces in 5 minutes](understand/data_spaces.md).</li>
+<li markdown>**Get started.** [Interoperability levels](getting_started/interoperability.md) and [data spaces in 5 minutes](getting_started/data_spaces.md).</li>
 <li markdown>**See the real infrastructure.** [The CitCom data spaces](data_spaces/index.md) and the [Valencia TEF node](valencia/index.md), with diagrams.</li>
 <li markdown>**Follow a worked example.** The [MIAIS](miais/index.md) goes from a custom integration to a service in the data space.</li>
 <li markdown>**Do it yourself.** The [guides](guides/index.md) cover one task each: wallet, joining, consuming, publishing.</li>

@@ -5,7 +5,7 @@ icon: material/server-network
 
 # The CitCom data spaces
 
-CitCom runs two data spaces, built with the two main open-source technologies in Europe. Both follow the concepts in [Data spaces in 5 minutes](../understand/data_spaces.md); they differ in how identity and contracts work.
+CitCom runs two data spaces, built with the two main open-source technologies in Europe. Both follow the concepts in [Data spaces in 5 minutes](../getting_started/data_spaces.md); they differ in how identity and contracts work.
 
 | | FIWARE data space | Eclipse EDC data space |
 |---|---|---|

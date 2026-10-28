@@ -47,11 +47,11 @@ theme:
         name: Switch to light mode
 nav:
   - Home: index.md
-  - Understand:
-      - understand/index.md
-      - The project and the TEFs: understand/project.md
-      - Interoperability: understand/interoperability.md
-      - Data spaces in 5 minutes: understand/data_spaces.md
+  - Getting started:
+      - getting_started/index.md
+      - The project and the TEFs: getting_started/project.md
+      - Interoperability: getting_started/interoperability.md
+      - Data spaces in 5 minutes: getting_started/data_spaces.md
       - TEF nodes:
           - tef/index.md
           - Nordic - POWER:
@@ -176,12 +176,9 @@ plugins:
   - swagger-ui-tag
   - redirects:
       redirect_maps:
-        welcome.md: understand/index.md
-        getting_started/index.md: understand/index.md
+        welcome.md: getting_started/index.md
         getting_started/nodes_countries.md: tef/index.md
-        getting_started/interoperability.md: understand/interoperability.md
-        getting_started/data_spaces/index.md: understand/data_spaces.md
-        getting_started/data_spaces/fundaments_deployment.md: understand/data_spaces.md
+        getting_started/data_spaces/fundaments_deployment.md: getting_started/data_spaces.md
         getting_started/get_involved/index.md: guides/join.md
         getting_started/get_involved/join.md: guides/join.md
         data_catalog/index.md: marketplace/index.md

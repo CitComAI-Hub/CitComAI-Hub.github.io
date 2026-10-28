@@ -5,7 +5,7 @@ icon: material/robot-outline
 
 # MIAIS: build an interoperable service
 
-The **Minimal Interoperable AI Service** (MIAIS) is a small AI service that plans waste collection routes. It is deliberately simple: its value is not the algorithm, but showing **what changes in a service when it climbs the [interoperability levels](../understand/interoperability.md)**, from a custom integration with one city to a service of the data space that any city can use.
+The **Minimal Interoperable AI Service** (MIAIS) is a small AI service that plans waste collection routes. It is deliberately simple: its value is not the algorithm, but showing **what changes in a service when it climbs the [interoperability levels](../getting_started/interoperability.md)**, from a custom integration with one city to a service of the data space that any city can use.
 
 [Repository :simple-github:](https://github.com/CitComAI-Hub/waste-collection-demo){ .md-button .md-button--primary } [Try it in the marketplace](https://marketplace.citcom-vrain-dataspace.eu){ .md-button }
 
