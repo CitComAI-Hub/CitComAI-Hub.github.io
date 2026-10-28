@@ -1,6 +1,6 @@
-/* CitCom.ai look. The Hub shares the marketplace's skeleton (logo, Barlow, white header,
-   dark footer, cards) but has its own accent and a docs-like home: green for the Hub, teal is kept
-   for what points to the marketplace. Barlow Condensed uppercase only for page titles. */
+/* CitCom.ai look. The Hub shares the marketplace's skeleton and teal accent (logo, Barlow,
+   white header, dark footer, cards) but has a docs-like home and the "Hub" lockup.
+   Barlow Condensed uppercase only for page titles. */
 
 @import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&display=swap");
 
@@ -11,8 +11,9 @@
   --cc-teal: #3cc3cf; /* marketplace */
   --cc-green: #00c48c;
   --cc-green-dark: #00724d;
-  --cc-accent: var(--cc-green); /* Hub */
-  --cc-accent-dark: var(--cc-green-dark);
+  --cc-teal-dark: #0b7b85;
+  --cc-accent: var(--cc-teal); /* Hub */
+  --cc-accent-dark: var(--cc-teal-dark);
   --cc-radius: 16px;
   --cc-radius-sm: 8px;
   --cc-heading-font: "Barlow Condensed", "Barlow", system-ui, sans-serif;
@@ -27,7 +28,7 @@
   --md-primary-bg-color: var(--cc-ink);
   --md-primary-bg-color--light: rgba(31, 36, 44, 0.6);
   --md-accent-fg-color: var(--cc-accent-dark);
-  --md-accent-fg-color--transparent: rgba(0, 114, 77, 0.1);
+  --md-accent-fg-color--transparent: rgba(11, 123, 133, 0.1);
   --md-typeset-color: var(--cc-ink);
   --md-typeset-a-color: var(--cc-accent-dark);
   --md-default-fg-color: rgba(31, 36, 44, 0.9);
@@ -49,7 +50,7 @@
   --md-primary-fg-color--dark: #0d0e13;
   --md-primary-bg-color: #ffffff;
   --md-accent-fg-color: var(--cc-accent);
-  --md-accent-fg-color--transparent: rgba(0, 196, 140, 0.12);
+  --md-accent-fg-color--transparent: rgba(60, 195, 207, 0.12);
   --md-default-bg-color: #181b22;
   --md-code-bg-color: #1f242c;
   --md-typeset-a-color: var(--cc-accent);
@@ -422,7 +423,7 @@
 /* ---------- Home: hero (light, blueprint grid, search) ---------- */
 
 .cc-dhero {
-  --cc-grid-line: rgba(0, 114, 77, 0.07);
+  --cc-grid-line: rgba(11, 123, 133, 0.07);
   background-color: var(--md-default-bg-color);
   background-image:
     linear-gradient(var(--cc-grid-line) 1px, transparent 1px),
@@ -431,7 +432,7 @@
   border-bottom: 1px solid var(--cc-border);
 }
 [data-md-color-scheme="slate"] .cc-dhero {
-  --cc-grid-line: rgba(0, 196, 140, 0.07);
+  --cc-grid-line: rgba(60, 195, 207, 0.07);
 }
 .cc-dhero__inner {
   display: grid;
