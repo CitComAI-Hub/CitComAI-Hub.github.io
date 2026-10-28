@@ -41,10 +41,10 @@ A service built on those points runs in any city that follows them. The [MIAIS](
 
 ## The minimal package for TEF nodes
 
-Two levels of offer are easy to confuse:
+CitCom has two kinds of offer, for different audiences:
 
-- **Each TEF node offers services to companies**: test sites, data, expertise and assessment. They are listed on the [CitCom TEF website](https://citcomtef.eu/) and in each [node's page](../tef/index.md).
-- **CitCom's work package 3 (WP3) offers the TEF nodes a *minimal package***, so that they all share a common technical base and a service built in one node runs in the others. This hub is that package:
+- **The TEF nodes offer services to AI and robotics innovators**: test sites, data, expertise and assessment. The [CitCom TEF website](https://citcomtef.eu/) lists them.
+- **CitCom's work package 3 (WP3) offers the TEF nodes a *minimal package***: a common reference architecture, with the guides, tools and deployment examples to apply it. Nodes that adopt it share a common technical base, so a service built on that base can run in any of them. This hub gathers the package:
 
 <div class="grid cards" markdown>
 

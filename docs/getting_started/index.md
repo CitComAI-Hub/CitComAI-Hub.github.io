@@ -41,7 +41,7 @@ description: "What CitCom.ai is and why its pieces fit together, in plain words.
 
     ---
 
-    The **TEF nodes** offer their services to companies. To help them, CitCom's **work package 3 (WP3)** prepares the *minimal package* for TEF nodes, gathered in this hub: a shared architecture, a working data space, tools, a worked example and guides.
+    The **TEF nodes** offer their services to AI and robotics innovators. CitCom's **work package 3 (WP3)** offers the TEF nodes a *minimal package*: a common reference architecture, with the guides, tools and deployment examples to apply it. This hub gathers it.
 
     [:octicons-arrow-right-24: The minimal package](project.md#the-minimal-package-for-tef-nodes)
 
