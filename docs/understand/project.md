@@ -38,9 +38,12 @@ Each city already has its own data platform, often built years ago with its own 
 
 A service built on those points runs in any city that follows them. The [MIAIS](../miais/index.md) shows how.
 
-## What this site offers
+## The minimal package for TEF nodes
 
-This site is the technical hub of CitCom, also known as the *minimal package for TEF nodes*:
+Two levels of offer are easy to confuse:
+
+- **Each TEF node offers services to companies**: test sites, data, expertise and assessment. They are listed on the [CitCom TEF website](https://citcomtef.eu/) and in each [node's page](../tef/index.md).
+- **CitCom's work package 3 (WP3) offers the TEF nodes a *minimal package***, so that they all share a common technical base and a service built in one node runs in the others. This hub is that package:
 
 <div class="grid cards" markdown>
 

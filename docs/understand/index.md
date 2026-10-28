@@ -1,38 +1,94 @@
 ---
 title: Understand CitCom
 icon: material/compass-outline
+hide:
+  - toc
 ---
 
 # Understand CitCom
 
-This section explains, in plain words, what CitCom.ai is and why its technical pieces fit together the way they do. Read it first if you are new to the project. Each page is short and links to the deeper chapters.
+<p class="cc-lead">What CitCom.ai is and why its technical pieces fit together the way they do, in plain words. Start here if you are new to the project: each page is short and leads to the deeper chapters.</p>
+
+<div class="cc-journey" markdown>
+
+<p class="cc-journey__eyebrow">Your path through this site</p>
+<h2 class="cc-journey__title" id="your-path-through-this-site">From the concepts to your own service</h2>
+
+<div class="cc-jsteps" markdown>
+
+<a class="cc-jstep cc-jstep--here" href="./" markdown>
+<span class="cc-jstep__icon" markdown>:material-compass-outline:</span>
+<span class="cc-jstep__n">1 · You are here</span>
+<strong>Understand</strong>
+<span class="cc-jstep__text">The concepts, in plain words</span>
+</a>
+
+<a class="cc-jstep" href="../data_spaces/" markdown>
+<span class="cc-jstep__icon" markdown>:material-server-network:</span>
+<span class="cc-jstep__n">2</span>
+<strong>Data spaces</strong>
+<span class="cc-jstep__text">The real infrastructure and the Valencia node</span>
+</a>
+
+<a class="cc-jstep" href="../miais/" markdown>
+<span class="cc-jstep__icon" markdown>:material-robot-outline:</span>
+<span class="cc-jstep__n">3</span>
+<strong>MIAIS</strong>
+<span class="cc-jstep__text">An AI service that climbs the interoperability levels</span>
+</a>
+
+<a class="cc-jstep" href="../guides/" markdown>
+<span class="cc-jstep__icon" markdown>:material-book-open-variant:</span>
+<span class="cc-jstep__n">4</span>
+<strong>Guides</strong>
+<span class="cc-jstep__text">Get a wallet, join, read and publish data</span>
+</a>
+
+<a class="cc-jstep" href="../toolbox/" markdown>
+<span class="cc-jstep__icon" markdown>:material-toolbox-outline:</span>
+<span class="cc-jstep__n">5</span>
+<strong>Toolbox</strong>
+<span class="cc-jstep__text">Lepus, FiLiP, ds-consumer-auth and the wallets</span>
+</a>
+
+</div>
+
+</div>
 
 ## CitCom in four questions
 
-**What is it?**
-:   [CitCom.ai](https://citcom.ai) is a European Union project that runs Testing and Experimentation Facilities (TEFs) for AI and robotics in smart and sustainable cities. A company brings an AI product and tests it in real cities, with real data, before it reaches the market. → [The project and the TEFs](project.md)
+<div class="grid cards cc-two" markdown>
 
-**What does it build on?**
-:   On the European work on data sharing between cities: the [Minimal Interoperability Mechanisms](interoperability.md#mims) (MIMs) of OASC, the [Smart Data Models](https://smartdatamodels.org/) and the data space recommendations of the [Data Spaces Support Centre](https://dssc.eu/) and [DS4SSCC](https://www.ds4sscc.eu/). → [Interoperability](interoperability.md)
+-   :material-city-variant-outline:{ .lg } __What is it?__
 
-**Which technology does it use?**
-:   NGSI-LD context brokers to serve the data, Smart Data Models to describe it, and two data space technologies to share it under control: the [FIWARE Data Space Connector](../data_spaces/fiware.md) and [Eclipse EDC](../data_spaces/eclipse/index.md). Access is granted with verifiable credentials held in a wallet. → [Data spaces in 5 minutes](data_spaces.md)
+    ---
 
-**What does it offer a TEF?**
-:   A *minimal package*: a shared reference architecture, a working data space to join, tools to connect existing city platforms, a worked example of an interoperable AI service, and the [AI Trustworthiness Label](../ai_assessment/index.md) to assess the services that are tested.
+    A European Union project that runs Testing and Experimentation Facilities (TEFs) for AI and robotics in smart cities. Companies test their AI products in real cities, with real data, before they reach the market.
 
-## The path through this site
+    [:octicons-arrow-right-24: The project and the TEFs](project.md)
 
-```mermaid
-flowchart LR
-    U["Understand<br/>concepts"] --> D["Data spaces<br/>the real infrastructure"]
-    D --> M["MIAIS<br/>a worked example"]
-    M --> G["Guides<br/>do it yourself"]
-    G --> T["Toolbox<br/>the tools used"]
-```
+-   :material-puzzle-outline:{ .lg } __What does it build on?__
 
-1. **Understand** the concepts (this section).
-2. See **the real infrastructure**: [the CitCom data spaces](../data_spaces/index.md) and the [Valencia TEF node](../valencia/index.md).
-3. Follow **a worked example**: the [MIAIS](../miais/index.md), an AI service that climbs the interoperability levels one by one.
-4. **Do it yourself** with the [guides](../guides/index.md): get a wallet, join, read data, publish data or a service.
-5. Use the **[toolbox](../toolbox/index.md)**: Lepus, FiLiP, ds-consumer-auth and the wallets.
+    ---
+
+    The European work on data sharing between cities: the Minimal Interoperability Mechanisms (MIMs) of OASC, Smart Data Models, and the data space recommendations of the DSSC and DS4SSCC.
+
+    [:octicons-arrow-right-24: Interoperability](interoperability.md)
+
+-   :material-server-network:{ .lg } __Which technology does it use?__
+
+    ---
+
+    NGSI-LD brokers to serve the data, Smart Data Models to describe it, and two data space technologies, FIWARE and Eclipse EDC, to share it under control, with verifiable credentials held in a wallet.
+
+    [:octicons-arrow-right-24: Data spaces in 5 minutes](data_spaces.md)
+
+-   :material-package-variant-closed:{ .lg } __Who provides what?__
+
+    ---
+
+    The **TEF nodes** offer their services to companies. To help them, CitCom's **work package 3 (WP3)** prepares the *minimal package* for TEF nodes, gathered in this hub: a shared architecture, a working data space, tools, a worked example and guides.
+
+    [:octicons-arrow-right-24: The minimal package](project.md#the-minimal-package-for-tef-nodes)
+
+</div>
