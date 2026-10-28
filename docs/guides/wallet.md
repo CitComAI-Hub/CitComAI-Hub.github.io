@@ -18,7 +18,9 @@ description: "Get Lissi or atesta-id-wallet and the credential you need to log i
 
 === "Desktop: atesta-id-wallet"
 
-    [atesta-id-wallet](https://github.com/CitComAI-Hub/atesta-id-wallet), a desktop wallet for Linux and Windows made in CitCom. Download it from its [releases page](https://github.com/CitComAI-Hub/atesta-id-wallet/releases). It reads the QR codes from a screenshot, so you never need a phone.
+    [atesta-id-wallet](https://github.com/CitComAI-Hub/atesta-id-wallet), a desktop wallet for Linux and Windows made in CitCom. Download it from its [releases page](https://github.com/CitComAI-Hub/atesta-id-wallet/releases). It reads the QR codes from a screenshot, so you never need a phone. It is a prototype: it uses the EUDI protocols, but it is not a certified EUDI Wallet.
+
+The [Wallets](../toolbox/wallets.md) page of the toolbox compares both wallets and lists the limitations of atesta-id-wallet.
 
 ## Which credential
 
