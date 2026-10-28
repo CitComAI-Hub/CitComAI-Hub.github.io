@@ -1,6 +1,6 @@
-/* CitCom.ai look, aligned with the CitCom marketplace:
-   Barlow for text, Barlow Condensed uppercase for headings, white header,
-   dark hero and footer, teal accent. */
+/* CitCom.ai look. The Hub shares the marketplace's skeleton (logo, Barlow, white header,
+   dark hero and footer, cards) but has its own accent: green for the Hub, teal is kept
+   for what points to the marketplace. Barlow Condensed uppercase only for page titles. */
 
 @import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&display=swap");
 
@@ -8,10 +8,11 @@
   --cc-ink: #1f242c;
   --cc-night: #14161d;
   --cc-night-2: #1f242c;
-  --cc-teal: #3cc3cf;
-  --cc-teal-dark: #0b7b85;
+  --cc-teal: #3cc3cf; /* marketplace */
   --cc-green: #00c48c;
   --cc-green-dark: #00724d;
+  --cc-accent: var(--cc-green); /* Hub */
+  --cc-accent-dark: var(--cc-green-dark);
   --cc-radius: 16px;
   --cc-radius-sm: 8px;
   --cc-heading-font: "Barlow Condensed", "Barlow", system-ui, sans-serif;
@@ -25,10 +26,10 @@
   --md-primary-fg-color--dark: #ffffff;
   --md-primary-bg-color: var(--cc-ink);
   --md-primary-bg-color--light: rgba(31, 36, 44, 0.6);
-  --md-accent-fg-color: var(--cc-teal-dark);
-  --md-accent-fg-color--transparent: rgba(11, 123, 133, 0.1);
+  --md-accent-fg-color: var(--cc-accent-dark);
+  --md-accent-fg-color--transparent: rgba(0, 114, 77, 0.1);
   --md-typeset-color: var(--cc-ink);
-  --md-typeset-a-color: var(--cc-teal-dark);
+  --md-typeset-a-color: var(--cc-accent-dark);
   --md-default-fg-color: rgba(31, 36, 44, 0.9);
   --md-default-fg-color--light: rgba(31, 36, 44, 0.66);
   --md-default-fg-color--lighter: rgba(31, 36, 44, 0.4);
@@ -47,11 +48,11 @@
   --md-primary-fg-color--light: var(--cc-night-2);
   --md-primary-fg-color--dark: #0d0e13;
   --md-primary-bg-color: #ffffff;
-  --md-accent-fg-color: var(--cc-teal);
-  --md-accent-fg-color--transparent: rgba(60, 195, 207, 0.12);
+  --md-accent-fg-color: var(--cc-accent);
+  --md-accent-fg-color--transparent: rgba(0, 196, 140, 0.12);
   --md-default-bg-color: #181b22;
   --md-code-bg-color: #1f242c;
-  --md-typeset-a-color: var(--cc-teal);
+  --md-typeset-a-color: var(--cc-accent);
   --md-footer-bg-color: #0d0e13;
   --md-footer-bg-color--dark: #08090c;
   --cc-header-bg: var(--cc-night);
@@ -93,11 +94,18 @@
 .cc-brand__label {
   display: flex;
   flex-direction: column;
-  line-height: 1.05;
+  justify-content: center;
+  line-height: 1;
+  padding-left: 0.6rem;
+  border-left: 2px solid var(--cc-border);
 }
 .cc-brand__label strong {
-  font-size: 0.72rem;
+  font-family: var(--cc-heading-font);
+  font-size: 1.05rem;
   font-weight: 700;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: var(--md-accent-fg-color);
 }
 .cc-brand__label span {
   font-size: 0.48rem;
@@ -152,18 +160,26 @@
   background: #000000;
   color: #ffffff;
 }
+/* teal dot: the marketplace's colour, it leaves the Hub */
+.cc-header__cta::before {
+  content: "";
+  width: 0.45rem;
+  height: 0.45rem;
+  border-radius: 50%;
+  background: var(--cc-teal);
+}
 .cc-header__cta svg {
   width: 0.8rem;
   height: 0.8rem;
   fill: currentColor;
 }
 [data-md-color-scheme="slate"] .cc-header__cta {
-  background: var(--cc-teal);
+  background: #ffffff;
   color: var(--cc-night);
 }
 [data-md-color-scheme="slate"] .cc-header__cta:hover,
 [data-md-color-scheme="slate"] .cc-header__cta:focus {
-  background: #ffffff;
+  background: var(--cc-teal);
   color: var(--cc-night);
 }
 .cc-header .md-header__button,
@@ -218,12 +234,16 @@
 
 /* ---------- Typography ---------- */
 
-.md-typeset h1,
-.md-typeset h2 {
+.md-typeset h1 {
   font-family: var(--cc-heading-font);
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.005em;
+  color: var(--md-typeset-color);
+}
+.md-typeset h2 {
+  font-weight: 700;
+  letter-spacing: -0.01em;
   color: var(--md-typeset-color);
 }
 .md-typeset h1 {
@@ -232,8 +252,8 @@
   margin-bottom: 1rem;
 }
 .md-typeset h2 {
-  font-size: 1.4rem;
-  line-height: 1.1;
+  font-size: 1.2rem;
+  line-height: 1.2;
 }
 .md-typeset h3 {
   font-weight: 700;
@@ -243,7 +263,7 @@
   font-weight: 700;
 }
 
-/* Eyebrow: small teal label with a line, as in the marketplace */
+/* Eyebrow: small accent label with a line, as in the marketplace */
 .md-typeset .cc-eyebrow {
   display: flex;
   align-items: center;
@@ -287,7 +307,7 @@
   border-color: var(--md-typeset-color);
   color: var(--md-default-bg-color);
 }
-/* Primary buttons as in the marketplace: dark on white pages, teal on dark backgrounds */
+/* Primary buttons as in the marketplace: dark on white pages, accent on dark backgrounds */
 .md-typeset .md-button--primary {
   background-color: var(--cc-ink);
   border-color: var(--cc-ink);
@@ -300,8 +320,8 @@
   color: #ffffff;
 }
 [data-md-color-scheme="slate"] .md-typeset .md-button--primary {
-  background-color: var(--cc-teal);
-  border-color: var(--cc-teal);
+  background-color: var(--cc-accent);
+  border-color: var(--cc-accent);
   color: var(--cc-night);
 }
 [data-md-color-scheme="slate"] .md-typeset .md-button--primary:hover,
@@ -402,8 +422,24 @@
 /* ---------- Home: hero ---------- */
 
 .cc-hero {
+  position: relative;
+  overflow: hidden;
   background: var(--cc-night);
   color: #ffffff;
+  border-bottom: 3px solid var(--cc-accent);
+}
+/* Hub motif: connectors linked into a network, fading towards the text */
+.cc-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("../assets/hub-network.svg") right center / cover no-repeat;
+  -webkit-mask-image: linear-gradient(to right, transparent 5%, #000 65%);
+  mask-image: linear-gradient(to right, transparent 5%, #000 65%);
+  pointer-events: none;
+}
+.cc-hero__inner {
+  position: relative;
 }
 .cc-hero__inner {
   display: grid;
@@ -413,7 +449,7 @@
   padding: 4rem 0.8rem 4.4rem;
 }
 .md-typeset.cc-hero__copy .cc-eyebrow {
-  color: var(--cc-teal);
+  color: var(--cc-accent);
 }
 .md-typeset.cc-hero__copy h1 {
   color: #ffffff;
@@ -444,8 +480,8 @@
   color: var(--cc-night);
 }
 .md-typeset.cc-hero__copy .md-button--primary {
-  background-color: var(--cc-teal);
-  border-color: var(--cc-teal);
+  background-color: var(--cc-accent);
+  border-color: var(--cc-accent);
   color: var(--cc-night);
 }
 .md-typeset.cc-hero__copy .md-button--primary:hover,
@@ -461,7 +497,7 @@
   font-size: 0.75rem;
 }
 .md-typeset .cc-hero__link:hover {
-  color: var(--cc-teal);
+  color: var(--cc-accent);
 }
 /* Start-here panel on the right of the hero */
 .cc-hero__panel {
@@ -471,7 +507,7 @@
   padding: 1.2rem 1.3rem 0.6rem;
 }
 .md-typeset.cc-hero__panel .cc-eyebrow {
-  color: var(--cc-teal-dark);
+  color: var(--cc-accent-dark);
 }
 .md-typeset.cc-hero__panel ol {
   list-style: none;
@@ -491,13 +527,13 @@
   color: var(--cc-ink);
 }
 .md-typeset.cc-hero__panel li a:hover {
-  color: var(--cc-teal-dark);
+  color: var(--cc-accent-dark);
 }
 .md-typeset.cc-hero__panel .cc-n {
   font-family: var(--cc-heading-font);
   font-weight: 700;
   font-size: 1.3rem;
-  color: var(--cc-teal-dark);
+  color: var(--cc-accent-dark);
 }
 .md-typeset.cc-hero__panel strong {
   display: block;
@@ -655,7 +691,7 @@
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  color: var(--cc-teal);
+  color: var(--cc-accent);
   font-size: 0.58rem;
   font-weight: 600;
   letter-spacing: 0.18em;
@@ -710,7 +746,7 @@
   display: block;
 }
 
-/* Small screens: menu button first, smaller logo, no label */
+/* Small screens: menu button first, smaller logo, only "Hub" in the label */
 @media screen and (max-width: 76.1875em) {
   .cc-header label.md-header__button[for="__drawer"] {
     order: -1;
@@ -724,6 +760,9 @@
     height: 1.2rem;
   }
   .cc-brand__label {
+    padding-left: 0.45rem;
+  }
+  .cc-brand__label span {
     display: none;
   }
 }
