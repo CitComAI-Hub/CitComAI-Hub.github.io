@@ -1,5 +1,6 @@
 ---
 title: Use data from your code
+description: "Buy an offer and read the data from Python with ds-consumer-auth and FiLiP."
 ---
 
 # Use data from your code
@@ -76,5 +77,3 @@ It returns one `WasteContainer` entity in JSON-LD.
 | `vp_token: the verifier rejected the credential (HTTP 400: {})` | Your organisation is not trusted by the provider for `MachineCredential`: the offer was not bought, or the order is not completed. Or your machine user has a role the offer does not allow | Buy the offer and wait for the order to complete; leave only the offer's role on the machine user |
 | `401` from the provider's gateway | A token for another verifier service, or the wrong scope | Check `DS_VERIFIER_URL` and `DS_SCOPE` |
 | `403` from the provider's gateway | The token is valid, but no purchased policy allows this request | Check that the path and the entity type are those of an offer you bought |
-
-**Next**: the [MIAIS](../miais/index.md) does the same in a complete service.

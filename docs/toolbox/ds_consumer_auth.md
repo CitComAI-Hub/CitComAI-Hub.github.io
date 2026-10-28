@@ -1,5 +1,6 @@
 ---
 title: ds-consumer-auth
+description: "Get the access token of the data space from your code."
 ---
 
 # ds-consumer-auth

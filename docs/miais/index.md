@@ -1,6 +1,7 @@
 ---
 title: "MIAIS: build an interoperable service"
 icon: material/robot-outline
+description: "An AI service that climbs the interoperability levels, and how to build your own."
 ---
 
 # MIAIS: build an interoperable service

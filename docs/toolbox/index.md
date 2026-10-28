@@ -1,6 +1,7 @@
 ---
 icon: material/toolbox-outline
 title: Toolbox
+description: "The open-source tools used in the CitCom data space."
 ---
 
 # Toolbox

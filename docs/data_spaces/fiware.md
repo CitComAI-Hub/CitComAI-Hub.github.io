@@ -1,5 +1,6 @@
 ---
 title: FIWARE data space
+description: "Its components and four flows: join, purchase, machine access and person access."
 ---
 
 # FIWARE data space

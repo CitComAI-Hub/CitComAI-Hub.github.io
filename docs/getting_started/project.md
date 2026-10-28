@@ -1,5 +1,6 @@
 ---
 title: The project and the TEFs
+description: "What a TEF is, the three super-nodes and the minimal package for TEF nodes."
 ---
 
 # The project and the TEFs

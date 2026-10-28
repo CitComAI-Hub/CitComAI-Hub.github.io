@@ -1,5 +1,6 @@
 ---
 title: Lepus
+description: "Serve an NGSI-v2 platform as NGSI-LD, without migrating it."
 ---
 
 # Lepus

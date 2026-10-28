@@ -1,6 +1,7 @@
 ---
 title: Guides
 icon: material/book-open-variant
+description: "One guide per task: wallet, join, use data, publish a dataset or a service."
 ---
 
 # Guides

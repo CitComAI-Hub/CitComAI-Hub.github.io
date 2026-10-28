@@ -3,6 +3,7 @@ title: Getting started
 icon: material/compass-outline
 hide:
   - toc
+description: "What CitCom.ai is and why its pieces fit together, in plain words."
 ---
 
 # Getting started

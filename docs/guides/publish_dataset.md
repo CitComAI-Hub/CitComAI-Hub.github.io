@@ -1,5 +1,6 @@
 ---
 title: Publish a dataset
+description: "Offer a dataset in the marketplace with its access policy."
 ---
 
 # Publish a dataset
@@ -108,5 +109,3 @@ Buy the offer from a test organisation, then read the data as in [Use data from 
 | The buyer gets `403` for the right path and type | The policy was not loaded in the policy engine | Check the policy; if you load one by hand, use an id without hyphens: hyphenated ids are accepted but never applied |
 | The buyer's credential is rejected even though they bought | Their credential carries a role that the offer does not allow | All the data space roles of a credential must be allowed by the purchase: give machine users only the data role |
 | The offer does not appear on the marketplace home | The specification has no image | Add a *Profile Picture* attachment |
-
-**Next**: [Publish a web service](publish_service.md).

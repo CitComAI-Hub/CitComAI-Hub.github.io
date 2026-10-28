@@ -1,5 +1,10 @@
 ---
 title: Deploy your own connector
+description: "What a FIWARE connector is made of and how CitCom deploys it."
+next_step:
+  url: toolbox/
+  title: "Toolbox"
+  description: "The open-source tools used in the CitCom data space."
 ---
 
 # Deploy your own connector

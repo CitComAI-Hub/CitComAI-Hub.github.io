@@ -1,5 +1,6 @@
 ---
 title: Interoperability
+description: "The MIMs and the three interoperability levels, from custom integration to data space."
 ---
 
 # Interoperability

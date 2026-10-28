@@ -1,5 +1,6 @@
 ---
 title: Bridging both data spaces
+description: "How the Valencia data is also available in the Eclipse EDC data space."
 ---
 
 # Bridging both data spaces

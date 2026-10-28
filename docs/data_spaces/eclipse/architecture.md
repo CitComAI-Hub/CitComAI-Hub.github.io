@@ -1,3 +1,7 @@
+---
+description: "Component model, federated catalogue, identity and transfer flow of the EDC data space."
+---
+
 # Eclipse EDC data space: architecture
 
 ## 1. Scope and positioning

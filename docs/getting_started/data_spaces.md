@@ -1,5 +1,10 @@
 ---
 title: Data spaces in 5 minutes
+description: "The core concepts: participant, trust anchor, connector, credential, offer and policy."
+next_step:
+  url: data_spaces/
+  title: "The CitCom data spaces"
+  description: "The two CitCom data spaces, FIWARE and Eclipse EDC, and how they connect."
 ---
 
 # Data spaces in 5 minutes

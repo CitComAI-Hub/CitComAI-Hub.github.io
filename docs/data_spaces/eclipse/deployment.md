@@ -1,3 +1,7 @@
+---
+description: "Topology, deployment and operations of the EDC data space."
+---
+
 # Eclipse EDC data space: deployment
 
 This is the operational guide for the CitCom data space at

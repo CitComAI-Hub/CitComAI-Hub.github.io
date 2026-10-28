@@ -1,5 +1,6 @@
 ---
 title: Wallets
+description: "Lissi ID Wallet and atesta-id-wallet."
 ---
 
 # Wallets

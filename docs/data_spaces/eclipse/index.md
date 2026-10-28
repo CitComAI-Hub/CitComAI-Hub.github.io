@@ -1,5 +1,6 @@
 ---
 title: Eclipse EDC data space
+description: "The alternative stack, built on Eclipse EDC: what runs and how it compares."
 ---
 
 # Eclipse EDC data space

@@ -1,5 +1,6 @@
 ---
 title: Join the data space
+description: "Register your organisation and complete its profile in the marketplace."
 ---
 
 # Join the data space
@@ -45,5 +46,3 @@ title: Join the data space
 | The marketplace rejects the LEAR's login | The organisation is not in the trust anchor yet, or the credential is not a `LegalPersonCredential` | Wait for the approval; check the credential in the wallet |
 | The marketplace home is empty and the browser console shows `401` on `/catalog/…` | An expired session in the browser | Log out, or delete the marketplace cookies |
 | A purchase of your offer completes but the buyer is still rejected | The contract management address is missing or wrong in your profile | Fix it in the profile, then ask the buyer to repeat the purchase |
-
-**Next**: [Use data from your code](consume_data.md) or [Publish a dataset](publish_dataset.md).

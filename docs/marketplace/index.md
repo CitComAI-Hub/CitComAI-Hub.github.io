@@ -1,6 +1,7 @@
 ---
 title: Marketplace
 icon: material/storefront-outline
+description: "What is on offer in the CitCom marketplace and how to buy it."
 ---
 
 # Marketplace

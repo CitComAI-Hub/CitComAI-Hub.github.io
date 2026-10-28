@@ -1,5 +1,6 @@
 ---
 title: Get a wallet and your credentials
+description: "Get Lissi or atesta-id-wallet and the credential you need to log in."
 ---
 
 # Get a wallet and your credentials
@@ -51,5 +52,3 @@ Open the [marketplace](https://marketplace.citcom-vrain-dataspace.eu) and click 
 | The wallet rejects the offer, or the QR has expired | Offers are short-lived | Click **Issue to wallet** again |
 | The verifier rejects the login | Your organisation is not trusted for this credential, or your roles do not match | For the marketplace, your organisation must be [registered](join.md). For a service, it must have bought it, and you must have only the role it asks for |
 | A service rejects a credential that has several roles | The verifier requires every data space role in the credential to be allowed by the purchase | Use a user with only the role of that service |
-
-**Next**: [Join the data space](join.md) or open a service your organisation has bought.

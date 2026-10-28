@@ -1,5 +1,6 @@
 ---
 title: NGSI-LD and FiLiP
+description: "The NGSI-LD calls you need most, and FiLiP to make them from Python."
 ---
 
 # NGSI-LD and FiLiP

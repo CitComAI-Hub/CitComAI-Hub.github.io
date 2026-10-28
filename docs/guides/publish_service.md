@@ -1,5 +1,6 @@
 ---
 title: Publish a web service
+description: "Offer a web app that people open with their wallet."
 ---
 
 # Publish a web service
@@ -51,5 +52,3 @@ The policy works by path, not by host name: that is why the service lives under 
 | The verifier rejects a user of a buying organisation | The user's credential carries more data space roles than the purchase allows | Give the user only the service role |
 | *You have no verifiable credentials yet* for the user | The `ServiceCredential` is not bound to the user | Bind the credential to the user in Keycloak, not only the role |
 | `403` after a successful login | The ODRL policy does not match the path or the role | Check the path prefix and the role in the policy |
-
-**Next**: list your service in the [marketplace](../marketplace/index.md).

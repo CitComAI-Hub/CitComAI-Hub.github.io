@@ -1,5 +1,10 @@
 ---
 title: Smart Data Models
+description: "The data models used in the CitCom data spaces."
+next_step:
+  url: marketplace/
+  title: "Marketplace"
+  description: "What is on offer in the CitCom marketplace and how to buy it."
 ---
 
 # Smart Data Models
