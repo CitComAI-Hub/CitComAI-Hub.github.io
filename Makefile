@@ -1,33 +1,42 @@
 SHELL := /bin/bash
 
-VENV_NAME := .env
-
-# Python 3.11 is required to run mkdocs-material, which is the theme used by this project.
-# sudo apt update
-# sudo apt install software-properties-common
-# sudo add-apt-repository ppa:deadsnakes/ppa -y
-# sudo apt update
-# sudo apt install python3.11 python3.11-venv python3.11-dev
-# --------------------------
-# python3.11 -m pip install virtualenv
-
+# Python 3.10 or later (the devcontainer uses 3.12)
 PYTHON := python3
+VENV := venv
+BIN := $(VENV)/bin
 
 ################################################################################
 # COMMANDS                                                                     #
 ################################################################################
 
-.PHONY: virtenv_create
-## Create virtualenv
-virtenv_create:
-	@$(PYTHON) -c "import virtualenv" >/dev/null 2>&1 || pip install --break-system-packages --user virtualenv
-	$(PYTHON) -m virtualenv $(VENV_NAME)
-	source $(VENV_NAME)/bin/activate && pip install -r requirements.txt
+$(BIN)/mkdocs: requirements.txt
+	$(PYTHON) -m venv $(VENV)
+	$(BIN)/pip install -q -r requirements.txt
+	@touch $@
 
-.PHONY: run_mkdocs
-## Run mkdocs
-run_mkdocs:
-	source $(VENV_NAME)/bin/activate && mkdocs serve --livereload
+.PHONY: install
+## Create the virtual environment and install the dependencies
+install: $(BIN)/mkdocs
+
+.PHONY: serve
+## Serve the site at http://127.0.0.1:8000, reloading on every change
+serve: install
+	$(BIN)/mkdocs serve
+
+.PHONY: serve-lan
+## Serve the site to your local network or tailnet (port 8000); stop it with Ctrl+C
+serve-lan: install
+	$(BIN)/mkdocs serve -a 0.0.0.0:8000
+
+.PHONY: build
+## Build the site into public/ in strict mode, as before a pull request
+build: install
+	$(BIN)/mkdocs build --strict
+
+.PHONY: clean
+## Remove the built site and the virtual environment
+clean:
+	rm -rf public $(VENV)
 
 ################################################################################
 # Self Documenting Commands                                                    #
