@@ -1,6 +1,6 @@
-/* CitCom.ai look, aligned with the CitCom marketplace:
-   Barlow for text, Barlow Condensed uppercase for headings, white header,
-   dark hero and footer, teal accent. */
+/* CitCom.ai look. The Hub shares the marketplace's skeleton and teal accent (logo, Barlow,
+   white header, dark footer, cards) but has a docs-like home and the "Hub" lockup.
+   Barlow Condensed uppercase only for page titles. */
 
 @import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&display=swap");
 
@@ -8,10 +8,12 @@
   --cc-ink: #1f242c;
   --cc-night: #14161d;
   --cc-night-2: #1f242c;
-  --cc-teal: #3cc3cf;
-  --cc-teal-dark: #0b7b85;
+  --cc-teal: #3cc3cf; /* marketplace */
   --cc-green: #00c48c;
   --cc-green-dark: #00724d;
+  --cc-teal-dark: #0b7b85;
+  --cc-accent: var(--cc-teal); /* Hub */
+  --cc-accent-dark: var(--cc-teal-dark);
   --cc-radius: 16px;
   --cc-radius-sm: 8px;
   --cc-heading-font: "Barlow Condensed", "Barlow", system-ui, sans-serif;
@@ -25,10 +27,10 @@
   --md-primary-fg-color--dark: #ffffff;
   --md-primary-bg-color: var(--cc-ink);
   --md-primary-bg-color--light: rgba(31, 36, 44, 0.6);
-  --md-accent-fg-color: var(--cc-teal-dark);
+  --md-accent-fg-color: var(--cc-accent-dark);
   --md-accent-fg-color--transparent: rgba(11, 123, 133, 0.1);
   --md-typeset-color: var(--cc-ink);
-  --md-typeset-a-color: var(--cc-teal-dark);
+  --md-typeset-a-color: var(--cc-accent-dark);
   --md-default-fg-color: rgba(31, 36, 44, 0.9);
   --md-default-fg-color--light: rgba(31, 36, 44, 0.66);
   --md-default-fg-color--lighter: rgba(31, 36, 44, 0.4);
@@ -47,11 +49,11 @@
   --md-primary-fg-color--light: var(--cc-night-2);
   --md-primary-fg-color--dark: #0d0e13;
   --md-primary-bg-color: #ffffff;
-  --md-accent-fg-color: var(--cc-teal);
+  --md-accent-fg-color: var(--cc-accent);
   --md-accent-fg-color--transparent: rgba(60, 195, 207, 0.12);
   --md-default-bg-color: #181b22;
   --md-code-bg-color: #1f242c;
-  --md-typeset-a-color: var(--cc-teal);
+  --md-typeset-a-color: var(--cc-accent);
   --md-footer-bg-color: #0d0e13;
   --md-footer-bg-color--dark: #08090c;
   --cc-header-bg: var(--cc-night);
@@ -93,11 +95,18 @@
 .cc-brand__label {
   display: flex;
   flex-direction: column;
-  line-height: 1.05;
+  justify-content: center;
+  line-height: 1;
+  padding-left: 0.6rem;
+  border-left: 2px solid var(--cc-border);
 }
 .cc-brand__label strong {
-  font-size: 0.72rem;
+  font-family: var(--cc-heading-font);
+  font-size: 1.05rem;
   font-weight: 700;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: var(--md-accent-fg-color);
 }
 .cc-brand__label span {
   font-size: 0.48rem;
@@ -152,18 +161,26 @@
   background: #000000;
   color: #ffffff;
 }
+/* teal dot: the marketplace's colour, it leaves the Hub */
+.cc-header__cta::before {
+  content: "";
+  width: 0.45rem;
+  height: 0.45rem;
+  border-radius: 50%;
+  background: var(--cc-teal);
+}
 .cc-header__cta svg {
   width: 0.8rem;
   height: 0.8rem;
   fill: currentColor;
 }
 [data-md-color-scheme="slate"] .cc-header__cta {
-  background: var(--cc-teal);
+  background: #ffffff;
   color: var(--cc-night);
 }
 [data-md-color-scheme="slate"] .cc-header__cta:hover,
 [data-md-color-scheme="slate"] .cc-header__cta:focus {
-  background: #ffffff;
+  background: var(--cc-teal);
   color: var(--cc-night);
 }
 .cc-header .md-header__button,
@@ -218,12 +235,16 @@
 
 /* ---------- Typography ---------- */
 
-.md-typeset h1,
-.md-typeset h2 {
+.md-typeset h1 {
   font-family: var(--cc-heading-font);
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.005em;
+  color: var(--md-typeset-color);
+}
+.md-typeset h2 {
+  font-weight: 700;
+  letter-spacing: -0.01em;
   color: var(--md-typeset-color);
 }
 .md-typeset h1 {
@@ -232,8 +253,8 @@
   margin-bottom: 1rem;
 }
 .md-typeset h2 {
-  font-size: 1.4rem;
-  line-height: 1.1;
+  font-size: 1.2rem;
+  line-height: 1.2;
 }
 .md-typeset h3 {
   font-weight: 700;
@@ -243,7 +264,7 @@
   font-weight: 700;
 }
 
-/* Eyebrow: small teal label with a line, as in the marketplace */
+/* Eyebrow: small accent label with a line, as in the marketplace */
 .md-typeset .cc-eyebrow {
   display: flex;
   align-items: center;
@@ -287,7 +308,7 @@
   border-color: var(--md-typeset-color);
   color: var(--md-default-bg-color);
 }
-/* Primary buttons as in the marketplace: dark on white pages, teal on dark backgrounds */
+/* Primary buttons as in the marketplace: dark on white pages, accent on dark backgrounds */
 .md-typeset .md-button--primary {
   background-color: var(--cc-ink);
   border-color: var(--cc-ink);
@@ -300,8 +321,8 @@
   color: #ffffff;
 }
 [data-md-color-scheme="slate"] .md-typeset .md-button--primary {
-  background-color: var(--cc-teal);
-  border-color: var(--cc-teal);
+  background-color: var(--cc-accent);
+  border-color: var(--cc-accent);
   color: var(--cc-night);
 }
 [data-md-color-scheme="slate"] .md-typeset .md-button--primary:hover,
@@ -399,234 +420,264 @@
   border-top: 1px solid rgba(255, 255, 255, 0.06);
 }
 
-/* ---------- Home: hero ---------- */
+/* ---------- Home: hero (light, blueprint grid, search) ---------- */
 
-.cc-hero {
-  background: var(--cc-night);
-  color: #ffffff;
+.cc-dhero {
+  --cc-grid-line: rgba(11, 123, 133, 0.07);
+  background-color: var(--md-default-bg-color);
+  background-image:
+    linear-gradient(var(--cc-grid-line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--cc-grid-line) 1px, transparent 1px);
+  background-size: 1.6rem 1.6rem;
+  border-bottom: 1px solid var(--cc-border);
 }
-.cc-hero__inner {
+[data-md-color-scheme="slate"] .cc-dhero {
+  --cc-grid-line: rgba(60, 195, 207, 0.07);
+}
+.cc-dhero__inner {
   display: grid;
-  grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
-  gap: 2.5rem;
+  grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
+  gap: 3rem;
   align-items: center;
-  padding: 4rem 0.8rem 4.4rem;
+  padding: 3.6rem 0.8rem 3.8rem;
 }
-.md-typeset.cc-hero__copy .cc-eyebrow {
-  color: var(--cc-teal);
+.md-typeset.cc-dhero__copy h1 {
+  font-family: inherit;
+  text-transform: none;
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+  margin: 0 0 1rem;
+  max-width: 34rem;
 }
-.md-typeset.cc-hero__copy h1 {
-  color: #ffffff;
-  font-size: 3.2rem;
-  line-height: 0.98;
-  margin: 0 0 1.2rem;
-}
-.md-typeset.cc-hero__copy p:not(.cc-eyebrow) {
-  color: rgba(255, 255, 255, 0.8);
+.md-typeset .cc-dhero__lead {
   font-size: 0.95rem;
   line-height: 1.6;
-  max-width: 32rem;
-  margin: 0 0 1.8rem;
+  color: var(--md-default-fg-color--light);
+  max-width: 34rem;
+  margin: 0 0 1.6rem;
 }
-.cc-hero__actions {
+/* Opens Material's search: it is the label of the search toggle */
+.cc-dhero__search {
   display: flex;
-  flex-wrap: wrap;
   align-items: center;
-  gap: 0.7rem 1rem;
+  gap: 0.6rem;
+  max-width: 30rem;
+  padding: 0.75rem 0.9rem;
+  border: 1px solid var(--cc-border);
+  border-radius: var(--cc-radius-sm);
+  background: var(--md-default-bg-color);
+  box-shadow: 0 6px 20px rgba(20, 22, 29, 0.06);
+  color: var(--md-default-fg-color--light);
+  font-size: 0.8rem;
+  cursor: text;
+  transition: border-color 0.15s;
 }
-.md-typeset.cc-hero__copy .md-button {
-  margin: 0;
-  color: #ffffff;
-  border-color: rgba(255, 255, 255, 0.55);
+.cc-dhero__search:hover {
+  border-color: var(--md-accent-fg-color);
 }
-.md-typeset.cc-hero__copy .md-button:hover {
-  background: #ffffff;
-  color: var(--cc-night);
+.cc-dhero__search svg {
+  width: 1.1rem;
+  height: 1.1rem;
+  fill: currentColor;
 }
-.md-typeset.cc-hero__copy .md-button--primary {
-  background-color: var(--cc-teal);
-  border-color: var(--cc-teal);
-  color: var(--cc-night);
+.cc-dhero__search span {
+  flex: 1;
 }
-.md-typeset.cc-hero__copy .md-button--primary:hover,
-.md-typeset.cc-hero__copy .md-button--primary:focus {
-  background: #ffffff;
-  border-color: #ffffff;
-  color: var(--cc-night);
+.cc-dhero__search kbd {
+  padding: 0.05rem 0.4rem;
+  border: 1px solid var(--cc-border);
+  border-radius: 4px;
+  font-size: 0.65rem;
 }
-.md-typeset .cc-hero__link {
-  color: rgba(255, 255, 255, 0.85);
+.md-typeset .cc-dhero__alt {
+  margin: 1rem 0 0;
+  font-size: 0.72rem;
+  color: var(--md-default-fg-color--light);
+}
+/* the marketplace keeps its own colour */
+.md-typeset .cc-dhero__alt a {
+  font-weight: 700;
+  color: var(--md-typeset-color);
   text-decoration: underline;
+  text-decoration-color: var(--cc-teal);
+  text-decoration-thickness: 2px;
   text-underline-offset: 3px;
-  font-size: 0.75rem;
 }
-.md-typeset .cc-hero__link:hover {
-  color: var(--cc-teal);
+
+/* Reading path drawn as a line with stations */
+.md-typeset .cc-line__label {
+  margin: 0 0 0.6rem;
+  font-size: 0.6rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--md-default-fg-color--light);
 }
-/* Start-here panel on the right of the hero */
-.cc-hero__panel {
-  background: #ffffff;
-  color: var(--cc-ink);
-  border-radius: var(--cc-radius);
-  padding: 1.2rem 1.3rem 0.6rem;
-}
-.md-typeset.cc-hero__panel .cc-eyebrow {
-  color: var(--cc-teal-dark);
-}
-.md-typeset.cc-hero__panel ol {
+.md-typeset.cc-line ol {
+  position: relative;
   list-style: none;
   margin: 0;
   padding: 0;
 }
-.md-typeset.cc-hero__panel li {
+.md-typeset.cc-line ol::before {
+  content: "";
+  position: absolute;
+  left: 0.55rem;
+  top: 1.8rem;
+  bottom: 1.8rem;
+  width: 3px;
+  background: var(--md-accent-fg-color);
+  border-radius: 2px;
+}
+.md-typeset.cc-line li {
   margin: 0;
-  border-top: 1px solid #e3e6ea;
 }
-.md-typeset.cc-hero__panel li a {
-  display: grid;
-  grid-template-columns: 2rem 1fr auto;
-  align-items: center;
-  gap: 0.6rem;
-  padding: 0.7rem 0;
-  color: var(--cc-ink);
-}
-.md-typeset.cc-hero__panel li a:hover {
-  color: var(--cc-teal-dark);
-}
-.md-typeset.cc-hero__panel .cc-n {
-  font-family: var(--cc-heading-font);
-  font-weight: 700;
-  font-size: 1.3rem;
-  color: var(--cc-teal-dark);
-}
-.md-typeset.cc-hero__panel strong {
-  display: block;
-  font-size: 0.8rem;
-}
-.md-typeset.cc-hero__panel small {
-  display: block;
-  font-size: 0.66rem;
-  color: rgba(31, 36, 44, 0.66);
-}
-@media screen and (max-width: 59.9375em) {
-  .cc-hero__inner {
-    grid-template-columns: 1fr;
-    padding: 2.6rem 0.8rem 2.8rem;
-  }
-  .md-typeset.cc-hero__copy h1 {
-    font-size: 2.3rem;
-  }
-}
-
-/* ---------- Numbered rows (marketplace "Browse by category") ---------- */
-
-.md-typeset .cc-section-head {
+.md-typeset.cc-line a {
+  position: relative;
   display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
-  gap: 1rem;
-  padding-bottom: 0.8rem;
-  border-bottom: 2px solid var(--cc-rule);
-  margin: 2.4rem 0 0;
-}
-.md-typeset .cc-section-head h2 {
-  margin: 0;
-}
-.md-typeset .cc-section-head a {
-  font-weight: 700;
-  font-size: 0.75rem;
-  white-space: nowrap;
-}
-.md-typeset .cc-rows {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 20rem), 1fr));
-  column-gap: 2.4rem;
-  margin: 0 0 1rem;
-}
-.md-typeset .cc-row {
-  display: grid;
-  grid-template-columns: 2.6rem 1fr 2rem;
   align-items: center;
-  gap: 0.9rem;
-  padding: 1.1rem 0.4rem;
-  border-bottom: 1px solid var(--cc-border);
+  gap: 1rem;
+  padding: 0.7rem 0.8rem 0.7rem 0;
+  border-radius: var(--cc-radius-sm);
   color: var(--md-typeset-color);
 }
-.md-typeset .cc-row:hover {
-  color: var(--md-typeset-color);
+.md-typeset .cc-line__stop {
+  flex: none;
+  width: 1.15rem;
+  height: 1.15rem;
+  border-radius: 50%;
+  border: 3px solid var(--md-accent-fg-color);
+  background: var(--md-default-bg-color);
+  transition: background-color 0.15s;
 }
-.md-typeset .cc-row__n {
-  font-family: var(--cc-heading-font);
-  font-weight: 700;
-  font-size: 1.5rem;
+.md-typeset.cc-line a:hover .cc-line__stop,
+.md-typeset.cc-line a:focus .cc-line__stop {
+  background: var(--md-accent-fg-color);
+}
+.md-typeset.cc-line a:hover strong {
   color: var(--md-accent-fg-color);
 }
-.md-typeset .cc-row__title {
+.md-typeset.cc-line strong {
   display: block;
-  font-weight: 700;
-  font-size: 0.92rem;
+  font-size: 0.9rem;
 }
-.md-typeset .cc-row__text {
+.md-typeset.cc-line small {
+  display: block;
+  font-size: 0.7rem;
+  color: var(--md-default-fg-color--light);
+}
+@media screen and (max-width: 59.9375em) {
+  .cc-dhero__inner {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding: 2.4rem 0.8rem 2.6rem;
+  }
+  .md-typeset.cc-dhero__copy h1 {
+    font-size: 1.9rem;
+  }
+}
+
+/* ---------- Home: role cards with direct links ---------- */
+
+.md-typeset .cc-roles {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 12.5rem), 1fr));
+  gap: 1rem;
+  margin: 1rem 0 2.6rem;
+}
+.md-typeset .cc-role {
+  border: 1px solid var(--cc-border);
+  border-top: 3px solid var(--md-accent-fg-color);
+  border-radius: var(--cc-radius-sm);
+  padding: 0.9rem 1rem 0.4rem;
+}
+.md-typeset .cc-role p {
+  font-size: 0.72rem;
+  line-height: 1.5;
+  color: var(--md-default-fg-color--light);
+  margin: 0 0 0.6rem;
+}
+.md-typeset .cc-role p.cc-role__who {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--md-typeset-color);
+  margin-bottom: 0.3rem;
+}
+.md-typeset .cc-role ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.md-typeset .cc-role li {
+  margin: 0;
+  padding: 0.45rem 0;
+  border-top: 1px solid var(--cc-border);
+  font-size: 0.74rem;
+  font-weight: 600;
+}
+/* Material indents list items with [dir=ltr] selectors */
+[dir] .md-typeset .cc-role li,
+[dir] .md-typeset.cc-line li {
+  margin-left: 0;
+}
+.md-typeset .cc-role li a::after {
+  content: " \2192";
+}
+
+/* ---------- Home: facts and resource links ---------- */
+
+.md-typeset .cc-facts {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 12rem), 1fr));
+  border: 1px solid var(--cc-border);
+  border-radius: var(--cc-radius-sm);
+  margin: 1.2rem 0 2.6rem;
+}
+.md-typeset .cc-facts > p {
+  display: contents;
+}
+.md-typeset .cc-facts a {
+  display: block;
+  padding: 1rem 1.1rem;
+  color: var(--md-typeset-color);
+  border-left: 1px solid var(--cc-border);
+}
+.md-typeset .cc-facts a:first-child {
+  border-left: 0;
+}
+.md-typeset .cc-facts a:hover strong {
+  color: var(--md-accent-fg-color);
+}
+.md-typeset .cc-facts strong {
+  display: block;
+  font-size: 0.85rem;
+  margin-bottom: 0.25rem;
+}
+.md-typeset .cc-facts span {
   display: block;
   font-size: 0.72rem;
   line-height: 1.5;
   color: var(--md-default-fg-color--light);
 }
-.md-typeset .cc-row__arrow {
-  width: 2rem;
-  height: 2rem;
-  border-radius: 50%;
-  border: 1px solid var(--cc-border);
+.md-typeset .cc-links > p {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: background-color 0.15s, color 0.15s, border-color 0.15s;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 1rem 0 2rem;
 }
-.md-typeset .cc-row:hover .cc-row__arrow,
-.md-typeset .cc-row:focus .cc-row__arrow {
-  background: var(--cc-ink);
-  border-color: var(--cc-ink);
-  color: #ffffff;
-}
-[data-md-color-scheme="slate"] .md-typeset .cc-row:hover .cc-row__arrow,
-[data-md-color-scheme="slate"] .md-typeset .cc-row:focus .cc-row__arrow {
-  background: #ffffff;
-  border-color: #ffffff;
-  color: var(--cc-night);
-}
-
-/* ---------- Feature columns (marketplace "About") ---------- */
-
-.md-typeset .cc-features {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 12rem), 1fr));
-  gap: 1.6rem;
-  margin: 1.4rem 0;
-}
-.md-typeset .cc-feature {
-  border-top: 2px solid var(--cc-rule);
-  padding-top: 1rem;
-  color: var(--md-typeset-color);
-}
-.md-typeset .cc-feature:hover {
-  color: var(--md-typeset-color);
-}
-.md-typeset .cc-feature .twemoji {
-  color: var(--md-accent-fg-color);
-}
-.md-typeset .cc-feature .twemoji svg {
-  width: 1.3rem;
-  height: 1.3rem;
-}
-.md-typeset .cc-feature strong {
-  display: block;
-  margin: 0.6rem 0 0.3rem;
-  font-size: 0.9rem;
-}
-.md-typeset .cc-feature span:not(.twemoji) {
+.md-typeset .cc-links a {
+  padding: 0.4rem 0.8rem;
+  border: 1px solid var(--cc-border);
+  border-radius: 999px;
   font-size: 0.72rem;
-  line-height: 1.55;
-  color: var(--md-default-fg-color--light);
+  font-weight: 600;
+  color: var(--md-typeset-color);
+}
+.md-typeset .cc-links a:hover {
+  border-color: var(--md-accent-fg-color);
+  color: var(--md-accent-fg-color);
 }
 
 /* ---------- Next step card ---------- */
@@ -655,7 +706,7 @@
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  color: var(--cc-teal);
+  color: var(--cc-accent);
   font-size: 0.58rem;
   font-weight: 600;
   letter-spacing: 0.18em;
@@ -698,19 +749,8 @@
   color: var(--cc-night);
 }
 
-/* Markdown wraps inline links in paragraphs: let the links be the grid items */
-.md-typeset .cc-rows > p,
-.md-typeset .cc-features > p {
-  display: contents;
-}
-.md-typeset .cc-section-head > p {
-  margin: 0;
-}
-.md-typeset .cc-feature {
-  display: block;
-}
 
-/* Small screens: menu button first, smaller logo, no label */
+/* Small screens: menu button first, smaller logo, only "Hub" in the label */
 @media screen and (max-width: 76.1875em) {
   .cc-header label.md-header__button[for="__drawer"] {
     order: -1;
@@ -724,6 +764,9 @@
     height: 1.2rem;
   }
   .cc-brand__label {
+    padding-left: 0.45rem;
+  }
+  .cc-brand__label span {
     display: none;
   }
 }
@@ -755,13 +798,11 @@
 }
 
 /* Arrows inside circles: an SVG icon instead of the "→" glyph, which sits off-centre in Barlow */
-.md-typeset .cc-next__arrow,
-.md-typeset .cc-row__arrow {
+.md-typeset .cc-next__arrow {
   font-size: 0;
   line-height: 0;
 }
-.md-typeset .cc-next__arrow::before,
-.md-typeset .cc-row__arrow::before {
+.md-typeset .cc-next__arrow::before {
   content: "";
   width: 0.9rem;
   height: 0.9rem;
@@ -771,7 +812,7 @@
 }
 
 /* External links in the text: a small arrow says they open in a new tab */
-.md-typeset a.cc-external:not(.md-button):not(.md-content__button):not(.cc-hero__link):not(.cc-header__cta):not(.cc-feature):not(.cc-row)::after {
+.md-typeset a.cc-external:not(.md-button):not(.md-content__button):not(.cc-header__cta)::after {
   content: "";
   display: inline-block;
   width: 0.62em;
