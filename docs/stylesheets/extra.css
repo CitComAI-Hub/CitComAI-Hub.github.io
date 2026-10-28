@@ -14,7 +14,8 @@ footer {
 
 .footer-container {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+    gap: 1rem;
     margin: 1rem auto;
 }
 
@@ -58,4 +59,20 @@ figure > svg {
         margin: 0 auto;
         max-width: 100%;
         height: auto;
+}
+
+.footer-links ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.footer-links li {
+    margin: 0.25rem 0;
+}
+.footer-links a {
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 0.7rem;
+}
+.footer-links a:hover {
+    color: #3cc3cf;
 }

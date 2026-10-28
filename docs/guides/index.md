@@ -1,12 +1,11 @@
 ---
-title: Guides
-icon: material/book-open-variant
-description: "One guide per task: wallet, join, use data, publish a dataset or a service."
+title: Build
+description: "A worked example and one guide per task: wallet, join, use data, publish a dataset or a service."
 ---
 
-# Guides
+# Build
 
-Each guide covers one task, from start to finish, in the CitCom [FIWARE data space](../data_spaces/fiware.md). They all follow the same structure: what you will get, what you need, the steps, how to check that it works and what to do if it does not.
+Build a service on the CitCom data space. Start with the [MIAIS](../miais/index.md), a worked example that goes from a custom integration to a data space service. Then follow the guides: each one covers one task, from start to finish, in the [FIWARE data space](../data_spaces/fiware.md). They all follow the same structure: what you will get, what you need, the steps, how to check that it works and what to do if it does not.
 
 | Guide | For | You end up with |
 |---|---|---|

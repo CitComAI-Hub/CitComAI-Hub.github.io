@@ -15,7 +15,7 @@ theme:
   logo: assets/logo.png
   favicon: assets/favicon.png
   font:
-    text: Hanken Grotesk
+    text: Barlow
     code: JetBrains Mono
   features:
     - content.code.copy
@@ -24,7 +24,6 @@ theme:
     - content.tabs.link
     - navigation.tabs
     - navigation.sections
-    - navigation.footer
     - navigation.indexes
     - navigation.top
     - search.suggest
@@ -47,11 +46,46 @@ theme:
         name: Switch to light mode
 nav:
   - Home: index.md
-  - Getting started:
+  - Get started:
       - getting_started/index.md
       - The project and the TEFs: getting_started/project.md
       - Interoperability: getting_started/interoperability.md
       - Data spaces in 5 minutes: getting_started/data_spaces.md
+  - Data spaces:
+      - data_spaces/index.md
+      - FIWARE data space: data_spaces/fiware.md
+      - Marketplace: marketplace/index.md
+      - Eclipse EDC data space:
+          - data_spaces/eclipse/index.md
+          - Architecture: data_spaces/eclipse/architecture.md
+          - Deployment: data_spaces/eclipse/deployment.md
+      - Bridging both: data_spaces/bridge.md
+      - Valencia TEF node: valencia/index.md
+  - Build:
+      - guides/index.md
+      - "MIAIS: a worked example": miais/index.md
+      - Get a wallet and your credentials: guides/wallet.md
+      - Join the data space: guides/join.md
+      - Use data from your code: guides/consume_data.md
+      - Publish a dataset: guides/publish_dataset.md
+      - Publish a web service: guides/publish_service.md
+      - Deploy your own connector: guides/deploy_connector.md
+  - Toolbox:
+      - toolbox/index.md
+      - Lepus: toolbox/lepus.md
+      - NGSI-LD and FiLiP: toolbox/ngsi_ld.md
+      - ds-consumer-auth: toolbox/ds_consumer_auth.md
+      - Wallets: toolbox/wallets.md
+      - Smart Data Models: toolbox/smart_data_models.md
+      - More tools:
+          - AI Toolkit: toolbox/ai_toolkit.md
+          - AI Logging Monitor: toolbox/ai_logging_monitor.md
+          - MIMs Toolkit: toolbox/mims_toolkit.md
+          - LDT Toolkit: toolbox/ldt_toolkit.md
+          - FIWARE IoT Agent: toolbox/iot_agent.md
+          - Other tools: toolbox/other_toolkit.md
+  - Partners & resources:
+      - resources/index.md
       - TEF nodes:
           - tef/index.md
           - Nordic - POWER:
@@ -70,44 +104,8 @@ nav:
               - tef/central_move/paris.md
               - tef/central_move/list.md
           - South - CONNECT:
-              - Valencia: valencia/index.md
               - tef/south_connect/milano.md
               - tef/south_connect/warsaw.md
-  - Data spaces:
-      - data_spaces/index.md
-      - FIWARE data space: data_spaces/fiware.md
-      - Eclipse EDC data space:
-          - data_spaces/eclipse/index.md
-          - Architecture: data_spaces/eclipse/architecture.md
-          - Deployment: data_spaces/eclipse/deployment.md
-      - Bridging both: data_spaces/bridge.md
-      - Valencia TEF node: valencia/index.md
-  - MIAIS:
-      - miais/index.md
-  - Guides:
-      - guides/index.md
-      - Get a wallet and your credentials: guides/wallet.md
-      - Join the data space: guides/join.md
-      - Use data from your code: guides/consume_data.md
-      - Publish a dataset: guides/publish_dataset.md
-      - Publish a web service: guides/publish_service.md
-      - Deploy your own connector: guides/deploy_connector.md
-  - Marketplace: marketplace/index.md
-  - Toolbox:
-      - toolbox/index.md
-      - Lepus: toolbox/lepus.md
-      - NGSI-LD and FiLiP: toolbox/ngsi_ld.md
-      - ds-consumer-auth: toolbox/ds_consumer_auth.md
-      - Wallets: toolbox/wallets.md
-      - Smart Data Models: toolbox/smart_data_models.md
-      - More tools:
-          - AI Toolkit: toolbox/ai_toolkit.md
-          - AI Logging Monitor: toolbox/ai_logging_monitor.md
-          - MIMs Toolkit: toolbox/mims_toolkit.md
-          - LDT Toolkit: toolbox/ldt_toolkit.md
-          - FIWARE IoT Agent: toolbox/iot_agent.md
-          - Other tools: toolbox/other_toolkit.md
-  - Resources:
       - AI Trustworthiness Label:
           - ai_assessment/index.md
           - ai_assessment/ai_assessment_catalogue.md
@@ -217,6 +215,9 @@ plugins:
         tef/south_connect/valencia.md: valencia/index.md
 extra:
   generator: false
+  marketplace_url: https://marketplace.citcom-vrain-dataspace.eu
+  hidden_sections:
+    - Partners & resources
   labels:
     data_brokers:
       fiware: '<span style="background-color:green; color:white; padding:2px 4px; border-radius:4px;">Fiware</span>'

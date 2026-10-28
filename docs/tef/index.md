@@ -1,5 +1,4 @@
 ---
-icon: material/city-variant-outline
 title: TEF Nodes
 ---
 

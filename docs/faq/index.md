@@ -1,5 +1,4 @@
 ---
-icon: material/help-circle-outline
 title: Frequently Asked Questions (FAQ) 
 ---
 

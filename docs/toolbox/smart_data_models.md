@@ -2,9 +2,9 @@
 title: Smart Data Models
 description: "The data models used in the CitCom data spaces."
 next_step:
-  url: marketplace/
-  title: "Marketplace"
-  description: "What is on offer in the CitCom marketplace and how to buy it."
+  url: resources/
+  title: "Partners & resources"
+  description: "The TEF nodes of CitCom, the AI Trustworthiness Label, Local Digital Twins and how to contribute."
 ---
 
 # Smart Data Models

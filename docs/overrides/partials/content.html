@@ -1,35 +1,14 @@
-{#- Material's partials/content.html with the path bar and the next step of the site -#}
-{#- Stage of the main path of the site for this page (0 = not in the path) -#}
-{%- set stages = [
-  ("getting_started/", "Getting started"),
-  ("data_spaces/", "Data spaces"),
-  ("miais/", "MIAIS"),
-  ("guides/", "Guides"),
-  ("toolbox/", "Toolbox"),
-] -%}
-{%- set journey = namespace(stage=0) -%}
-{%- for prefix, _ in stages -%}
-  {%- if page.url.startswith(prefix) -%}{%- set journey.stage = loop.index -%}{%- endif -%}
+{#- Material 9.5's partials/content.html with the next step at the end of the page -#}
+{#- Pages of the main sections end with a recommended next step -#}
+{%- set main_section = namespace(on=false) -%}
+{%- for prefix in ["getting_started/", "data_spaces/", "marketplace/", "valencia/", "miais/", "guides/", "toolbox/"] -%}
+  {%- if page.url.startswith(prefix) -%}{%- set main_section.on = true -%}{%- endif -%}
 {%- endfor -%}
-{%- if page.url.startswith("valencia/") -%}{%- set journey.stage = 2 -%}{%- endif -%}
 
 {% if "material/tags" in config.plugins and tags %}
   {% include "partials/tags.html" %}
 {% endif %}
-{%- if journey.stage -%}
-<nav class="cc-jbar" aria-label="Path through the site">
-  <ol>
-    {%- for prefix, title in stages %}
-    <li class="cc-jbar__item{% if loop.index < journey.stage %} cc-jbar__item--done{% elif loop.index == journey.stage %} cc-jbar__item--current{% endif %}">
-      <a href="{{ prefix | url }}"{% if loop.index == journey.stage %} aria-current="step"{% endif %}>
-        <span class="cc-jbar__n">{{ loop.index }}</span>
-        <span class="cc-jbar__title">{{ title }}</span>
-      </a>
-    </li>
-    {%- endfor %}
-  </ol>
-</nav>
-{%- endif -%}
+
 {% include "partials/actions.html" %}
 
 
@@ -38,7 +17,7 @@
 {% endif %}
 {{ page.content }}
 {#- Recommended next page: next_step in the front matter, or the next page of the navigation -#}
-{%- if journey.stage and not page.meta.hide_next_step -%}
+{%- if main_section.on and not page.meta.hide_next_step -%}
   {%- set step = page.meta.next_step -%}
   {%- if step -%}
     {%- set next_url = step.url | url -%}

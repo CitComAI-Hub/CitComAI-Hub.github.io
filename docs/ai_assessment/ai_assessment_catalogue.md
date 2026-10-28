@@ -1,5 +1,4 @@
 ---
-icon: material/store-search-outline
 title: AI Assessment Catalogue
 hide:
   - toc

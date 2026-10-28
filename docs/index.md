@@ -1,59 +1,101 @@
 ---
 template: home.html
 title: Home
+description: "The technical hub of the CitCom.ai TEF: data spaces, tools and guides to build AI services for smart cities."
 hide:
   - navigation
   - toc
 ---
 
-## Where do you start?
+<div class="cc-section-head" markdown>
+<h2 id="who-is-it-for">Who is it for?</h2>
+<a href="guides/">All guides &rarr;</a>
+</div>
 
-<div class="grid cards cc-four" markdown>
+<div class="cc-rows" markdown>
 
--   :material-city-variant-outline:{ .lg .middle } __Cities and TEF nodes__
+<a class="cc-row" href="getting_started/project/">
+  <span class="cc-row__n">01</span>
+  <span><span class="cc-row__title">Cities and TEF nodes</span><span class="cc-row__text">What CitCom offers, how the TEF nodes are organised and the minimal package they share.</span></span>
+  <span class="cc-row__arrow">&rarr;</span>
+</a>
 
-    ---
+<a class="cc-row" href="guides/publish_dataset/">
+  <span class="cc-row__n">02</span>
+  <span><span class="cc-row__title">Data providers</span><span class="cc-row__text">Publish a dataset in the data space and decide who can use it.</span></span>
+  <span class="cc-row__arrow">&rarr;</span>
+</a>
 
-    What CitCom offers a city, how the TEF nodes are organised and what the Valencia node runs today.
+<a class="cc-row" href="miais/">
+  <span class="cc-row__n">03</span>
+  <span><span class="cc-row__title">AI developers</span><span class="cc-row__text">Read city data from your code and offer your service to other cities.</span></span>
+  <span class="cc-row__arrow">&rarr;</span>
+</a>
 
-    [:octicons-arrow-right-24: Getting started](getting_started/index.md)
-
--   :material-database-export-outline:{ .lg .middle } __Data providers__
-
-    ---
-
-    Publish a dataset in the data space and decide who can use it, with a policy you control.
-
-    [:octicons-arrow-right-24: Publish a dataset](guides/publish_dataset.md)
-
--   :material-robot-outline:{ .lg .middle } __AI developers__
-
-    ---
-
-    Buy access to city data, read it from your code and offer your service to other cities.
-
-    [:octicons-arrow-right-24: Build a service](miais/index.md)
-
--   :material-server-network:{ .lg .middle } __Data space operators__
-
-    ---
-
-    How the CitCom data spaces are built, with FIWARE and Eclipse EDC, and how to run your own connector.
-
-    [:octicons-arrow-right-24: The data spaces](data_spaces/index.md)
+<a class="cc-row" href="data_spaces/">
+  <span class="cc-row__n">04</span>
+  <span><span class="cc-row__title">Data space operators</span><span class="cc-row__text">How the FIWARE and Eclipse EDC data spaces are built, and how to run a connector.</span></span>
+  <span class="cc-row__arrow">&rarr;</span>
+</a>
 
 </div>
 
-## How it fits together
+<p class="cc-eyebrow" style="margin-top: 3rem">About the hub</p>
 
-<ol class="cc-path" markdown>
-<li markdown>**Get started.** [Interoperability levels](getting_started/interoperability.md) and [data spaces in 5 minutes](getting_started/data_spaces.md).</li>
-<li markdown>**See the real infrastructure.** [The CitCom data spaces](data_spaces/index.md) and the [Valencia TEF node](valencia/index.md), with diagrams.</li>
-<li markdown>**Follow a worked example.** The [MIAIS](miais/index.md) goes from a custom integration to a service in the data space.</li>
-<li markdown>**Do it yourself.** The [guides](guides/index.md) cover one task each: wallet, joining, consuming, publishing.</li>
-<li markdown>**Use the tools.** [Lepus](toolbox/lepus.md), [FiLiP](toolbox/ngsi_ld.md), [ds-consumer-auth](toolbox/ds_consumer_auth.md) and the [wallets](toolbox/wallets.md).</li>
-</ol>
+## One place to learn, connect and build
 
-## About CitCom.ai
+[CitCom.ai](https://citcom.ai) is a European Union project that runs Testing and Experimentation Facilities for AI and robotics in smart and sustainable cities. This hub gathers the *minimal package* that the project prepares for its TEF nodes, so that a service built in one city runs in the others.
 
-[CitCom.ai](https://citcom.ai) is a European Union project that sets up Testing and Experimentation Facilities (TEFs) for AI and robotics in smart and sustainable cities. Companies test their AI products in real cities across Europe, under EU rules on data, privacy and cybersecurity. This site is the technical hub of the project: the shared architecture, the data spaces and the tools that make services work in any CitCom city.
+<div class="cc-features" markdown>
+
+<a class="cc-feature" href="data_spaces/">
+:material-server-network:
+<strong>A working data space</strong>
+<span>Running infrastructure to join, with real data from Valencia.</span>
+</a>
+
+<a class="cc-feature" href="miais/">
+:material-robot-outline:
+<strong>A worked example</strong>
+<span>An AI service that climbs the interoperability levels, step by step.</span>
+</a>
+
+<a class="cc-feature" href="toolbox/">
+:material-toolbox-outline:
+<strong>Open tools</strong>
+<span>Connect an NGSI-v2 platform, read NGSI-LD data and get data space tokens.</span>
+</a>
+
+</div>
+
+<p class="cc-eyebrow" style="margin-top: 3rem">Partners & resources</p>
+
+## From the TEF network
+
+<div class="cc-features" markdown>
+
+<a class="cc-feature" href="tef/">
+:material-city-variant-outline:
+<strong>TEF nodes</strong>
+<span>The sites of the Nordic, Central and South super-nodes.</span>
+</a>
+
+<a class="cc-feature" href="ai_assessment/">
+:material-shield-check-outline:
+<strong>AI Trustworthiness Label</strong>
+<span>How the services tested in the TEFs are assessed.</span>
+</a>
+
+<a class="cc-feature" href="local_digital_twins/">
+:material-cube-outline:
+<strong>Local Digital Twins</strong>
+<span>The digital twins of the TEF sites and their toolkit.</span>
+</a>
+
+<a class="cc-feature" href="faq/">
+:material-frequently-asked-questions:
+<strong>FAQ and contribute</strong>
+<span>Frequent questions and how to propose a change.</span>
+</a>
+
+</div>

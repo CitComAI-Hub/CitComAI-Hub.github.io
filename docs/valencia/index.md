@@ -1,11 +1,10 @@
 ---
 title: Valencia TEF node
-icon: material/map-marker-outline
 description: "Who is who, the datasets in the data space and how the data flows."
 next_step:
-  url: miais/
-  title: "MIAIS: build an interoperable service"
-  description: "An AI service that climbs the interoperability levels, and how to build your own."
+  url: guides/
+  title: "Build"
+  description: "A worked example and one guide per task: wallet, join, use data, publish a dataset or a service."
 ---
 
 # Valencia TEF node

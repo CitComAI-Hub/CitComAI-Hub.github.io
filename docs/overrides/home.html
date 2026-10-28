@@ -1,20 +1,29 @@
 {% extends "main.html" %}
 
 {% block tabs %}
-{{ super() }}
 <section class="cc-hero">
-  <div class="md-grid">
-    <div class="cc-hero__inner md-typeset">
-      <p class="cc-hero__eyebrow">CitCom.ai Testing and Experimentation Facility</p>
+  <div class="md-grid cc-hero__inner">
+    <div class="md-typeset cc-hero__copy">
+      <p class="cc-eyebrow">CitCom.ai documentation</p>
       <h1>Test AI for smart cities on shared, trusted data</h1>
       <p>
-        Guides, tools and a working data space to connect city data, publish it under
-        your own rules and build AI services that run in any CitCom city.
+        The technical hub of the CitCom.ai TEF: a working data space, the tools to connect a city
+        platform, and guides to build AI services that run in any CitCom city.
       </p>
-      <a href="{{ 'getting_started/' | url }}" class="md-button md-button--primary">Get started</a>
-      <a href="{{ 'marketplace/' | url }}" class="md-button">Marketplace</a>
-      <a href="{{ 'miais/' | url }}" class="md-button">Build a service</a>
-      <a href="{{ 'toolbox/' | url }}" class="md-button">Toolbox</a>
+      <div class="cc-hero__actions">
+        <a href="{{ 'getting_started/' | url }}" class="md-button md-button--primary">Get started &rarr;</a>
+        <a href="{{ config.extra.marketplace_url }}" class="md-button" target="_blank" rel="noopener">Marketplace</a>
+        <a href="https://citcomtef.eu/" class="cc-hero__link" target="_blank" rel="noopener">Visit project website &#8599;</a>
+      </div>
+    </div>
+    <div class="md-typeset cc-hero__panel">
+      <p class="cc-eyebrow">Start here</p>
+      <ol>
+        <li><a href="{{ 'getting_started/' | url }}"><span class="cc-n">01</span><span><strong>Get started</strong><small>What CitCom is, in plain words</small></span><span>&rarr;</span></a></li>
+        <li><a href="{{ 'data_spaces/' | url }}"><span class="cc-n">02</span><span><strong>Data spaces</strong><small>The infrastructure running today</small></span><span>&rarr;</span></a></li>
+        <li><a href="{{ 'guides/' | url }}"><span class="cc-n">03</span><span><strong>Build</strong><small>A worked example and the guides</small></span><span>&rarr;</span></a></li>
+        <li><a href="{{ 'toolbox/' | url }}"><span class="cc-n">04</span><span><strong>Toolbox</strong><small>Lepus, FiLiP, ds-consumer-auth, wallets</small></span><span>&rarr;</span></a></li>
+      </ol>
     </div>
   </div>
 </section>

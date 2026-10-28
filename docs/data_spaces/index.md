@@ -1,6 +1,5 @@
 ---
 title: The CitCom data spaces
-icon: material/server-network
 description: "The two CitCom data spaces, FIWARE and Eclipse EDC, and how they connect."
 ---
 

@@ -1,0 +1,35 @@
+{#- Header in the style of the CitCom marketplace: logo, the main sections, search and a Marketplace button.
+    Based on Material 9.5's partials/header.html; the section links replace the tabs row. -#}
+{%- macro first_url(item) -%}
+  {%- if item.children -%}{{ first_url(item.children[0]) }}{%- else -%}{{ item.url }}{%- endif -%}
+{%- endmacro -%}
+<header class="md-header cc-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="{{ lang.t('header') }}">
+    <a href="{{ nav.homepage.url | url }}" title="{{ config.site_name | striptags }}" class="cc-brand" aria-label="CitCom.ai Hub, home">
+      <img src="{{ 'assets/citcom.svg' | url }}" alt="CitCom.ai" class="cc-brand__logo">
+      <span class="cc-brand__label"><strong>Hub</strong><span>Documentation</span></span>
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      {% include ".icons/material/menu.svg" %}
+    </label>
+    <ul class="cc-header__links">
+      {%- for item in nav if item.children and item.title not in config.extra.hidden_sections %}
+      <li><a href="{{ first_url(item) | url }}" class="{% if item.active %}cc-header__link--active{% endif %}">{{ item.title }}</a></li>
+      {%- endfor %}
+    </ul>
+    {% if config.theme.palette and not config.theme.palette is mapping %}
+      {% include "partials/palette.html" %}
+      {% include "partials/javascripts/palette.html" %}
+    {% endif %}
+    {% if "material/search" in config.plugins %}
+      <label class="md-header__button md-icon" for="__search">
+        {% include ".icons/material/magnify.svg" %}
+      </label>
+      {% include "partials/search.html" %}
+    {% endif %}
+    <a href="{{ config.extra.marketplace_url }}" class="cc-header__cta" target="_blank" rel="noopener">
+      Marketplace
+      {% include ".icons/material/arrow-top-right.svg" %}
+    </a>
+  </nav>
+</header>
