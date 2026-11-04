@@ -23,7 +23,7 @@ CitCom is one of four data spaces built on the same platform; each one is a thin
 | Contracts | Marketplace orders, applied by each provider's connector | DSP negotiation between connectors |
 | Data | NGSI-LD APIs, queried live | Assets: any HTTP source, transferred by the connectors |
 
-Both data spaces share the Valencia data: see [Bridging both](../bridge.md).
+The Ajuntament de València also publishes its data here: see [the Valencia example](../../valencia/index.md#the-same-data-in-the-eclipse-edc-data-space).
 
 ## In this section
 

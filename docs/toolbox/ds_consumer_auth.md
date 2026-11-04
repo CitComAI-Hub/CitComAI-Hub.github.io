@@ -72,4 +72,4 @@ The provider's verifier only accepts your credential if your organisation **boug
 
 - One provider per session: create one session per provider.
 - Login with a user and password; client credentials and certificates are not supported yet.
-- Only for FIWARE data spaces. For Eclipse EDC, see [Bridging both](../data_spaces/bridge.md).
+- Only for FIWARE data spaces. For Eclipse EDC, see the [Eclipse EDC data space](../data_spaces/eclipse/index.md).

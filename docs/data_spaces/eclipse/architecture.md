@@ -88,8 +88,8 @@ flowchart LR
   subgraph tenant["{tenant}.citcom.dataspaceready.eu (× N)"]
     direction TB
     NG_t[nginx-tenant<br/>+ tenant-validator]
-    DSR_t[dsr-backend-{t}<br/>+ frontend]
-    EDC_t[cp-{t}<br/>EDC connector<br/>Sovity-CE 16.4.2]
+    DSR_t["dsr-backend-{t}<br/>+ frontend"]
+    EDC_t["cp-{t}<br/>EDC connector<br/>Sovity-CE 16.4.2"]
     PG_t[(Postgres<br/>per tenant)]
   end
 
@@ -287,9 +287,9 @@ flowchart TB
 
   subgraph dsr_t[DS-Manager per tenant]
     direction TB
-    DID[/api/v1/dids/<br/>did:web:&lt;subdomain&gt;.&lt;domain&gt;:did:&lt;uuid&gt;]
-    ORG[/api/v1/orgs/<br/>org_id, legal_name, headquarter_address]
-    LEAR[/api/v1/orgs/&lt;id&gt;/lear<br/>designates user_did → org]
+    DID["/api/v1/dids/<br/>did:web:&lt;subdomain&gt;.&lt;domain&gt;:did:&lt;uuid&gt;"]
+    ORG["/api/v1/orgs/<br/>org_id, legal_name, headquarter_address"]
+    LEAR["/api/v1/orgs/&lt;id&gt;/lear<br/>designates user_did → org"]
   end
 
   USERS -->|password grant| DSRTLIB

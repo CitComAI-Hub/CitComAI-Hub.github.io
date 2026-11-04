@@ -56,12 +56,11 @@ nav:
   - Data spaces:
       - data_spaces/index.md
       - FIWARE data space: data_spaces/fiware.md
+      - Marketplace: marketplace/index.md
       - Eclipse EDC data space:
           - data_spaces/eclipse/index.md
           - Architecture: data_spaces/eclipse/architecture.md
           - Deployment: data_spaces/eclipse/deployment.md
-      - Bridging both: data_spaces/bridge.md
-      - Marketplace: marketplace/index.md
   - Guides:
       - guides/index.md
       - "Example: MIAIS, an AI service": miais/index.md
@@ -213,6 +212,7 @@ plugins:
         services/healthy_routes.md: marketplace/index.md
         services/wastecontainer_location_optimization.md: marketplace/index.md
         resources/index.md: tef/index.md
+        data_spaces/bridge.md: valencia/index.md#the-same-data-in-the-eclipse-edc-data-space
 extra:
   generator: false
   marketplace_url: https://marketplace.citcom-vrain-dataspace.eu

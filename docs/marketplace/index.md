@@ -5,43 +5,20 @@ description: "What is on offer in the CitCom marketplace and how to buy it."
 
 # Marketplace
 
-The **CitCom marketplace** is where the participants of the FIWARE data space publish their datasets and services, and where other organisations find and buy them. It replaces the data catalogue and the list of services that this site used to keep.
+The **CitCom marketplace** is where the participants of the FIWARE data space publish their datasets and services, and where other organisations find and buy them. It is the place to find what is available: the datasets and services of every participant, with their descriptions and terms of use.
 
 [Open the marketplace](https://marketplace.citcom-vrain-dataspace.eu){ .md-button .md-button--primary }
 
 Anyone can browse it. To buy or to publish, your organisation must [join the data space](../guides/join.md), and its legal representative logs in with a [wallet](../toolbox/wallets.md).
 
-## What is on offer
-
-| Offer | Provider | Kind | Category |
-|---|---|---|---|
-| Waste containers (`WasteContainer`) | Ajuntament de València | Dataset | Data › Waste management |
-| Air quality (`AirQualityObserved`) | Ajuntament de València | Dataset | Data › Environment |
-| Traffic flow (`TrafficFlowObserved`) | Ajuntament de València | Dataset | Data › Mobility |
-| Traffic state (`TrafficState`) | Ajuntament de València | Dataset | Data › Mobility |
-| Access to the MIAIS Waste Collection | VRAIN-UPV | Web service | AI services |
-
-The datasets are described in the [Valencia example](../valencia/index.md#data-in-the-data-space), and the service in [MIAIS](../miais/index.md).
-
 ## How the marketplace is organised
 
-- **Services** lists every offer of every provider, datasets and services alike.
+- **Services** lists every offer of every provider, datasets and web services alike.
 - **Catalogues** group the offers by provider.
+- **Categories** are shared by the whole data space, so the filters work the same for every provider. The data space operator adds a category when a new kind of offer needs one.
 - The **home page** shows the offers that have an image.
 
-### Categories
-
-The categories are shared by the whole data space, so the filters work the same for every provider:
-
-```
-Data
-├── Waste management
-├── Environment
-└── Mobility
-AI services
-```
-
-New categories are added by the data space operator when a new kind of offer needs one.
+Each offer describes itself: what it contains, how to access it and its terms of use. This site does not keep a copy of the list: the marketplace is the only inventory.
 
 ## Buying an offer
 
