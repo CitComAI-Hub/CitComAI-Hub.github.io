@@ -1,30 +1,28 @@
 ---
-title: Valencia TEF node
-description: "Who is who, the datasets in the data space and how the data flows."
+title: "Valencia: a city platform in the data space"
+description: "How the Ajuntament de València offers its NGSI-v2 platform in the data space through Lepus, without migrating it."
 next_step:
-  url: guides/
-  title: "Build"
-  description: "A worked example and one guide per task: wallet, join, use data, publish a dataset or a service."
+  url: guides/wallet/
+  title: "Get a wallet and your credentials"
+  description: "The first step of every guide: a wallet with your organisation's credential."
 ---
 
-# Valencia TEF node
+# Valencia: a city platform in the data space
 
-Valencia is a site of the South super-node (CONNECT). It supports AI innovation in pollution, noise, waste and water management, mobility, urban development and tourism, and it hosts the [FIWARE data space](../data_spaces/fiware.md) of CitCom.
+The **Ajuntament de València** (City Council) was one of the first participants of the [FIWARE data space](../data_spaces/fiware.md). Its case is the reference for a city that already runs an urban platform and wants to offer that data to other organisations, without migrating the platform or copying the data.
 
-## Who is who
+Where the [MIAIS](../miais/index.md) shows the side of an AI service, this example shows the side of a **data provider**.
 
-| Organisation | Role in the TEF | In the data space |
-|---|---|---|
-| **Ajuntament de València** (City Council) | Owns the city data, through the **VLCi** urban platform | Provider `townhall-vlc`: offers the city datasets |
-| **València Innovation Capital** | Innovation hubs: Las Naves and La Harinera, the Urban Sandbox for AI | — |
-| **VRAIN-UPV** (Universitat Politècnica de València) | AI research and development; operates the data space | Participant `vrain`: offers the [MIAIS](../miais/index.md) and consumes city data |
+## The starting point
 
-## Services for companies
+The city data lives in **VLCi**, the urban platform of the Ajuntament: an NGSI-v2 broker protected by Keystone, with its own data models. The goal was to reach [interoperability level 2](../getting_started/interoperability.md): the same data, as NGSI-LD with [Smart Data Models](../toolbox/smart_data_models.md), bought and accessed through the data space.
 
-- **Dissemination of AI activities**: workshops, webinars and presentations that showcase the innovations tested in Valencia.
-- **Development and testing of AI algorithms**: the universities of the consortium help startups and research centres develop and validate their algorithms, with attention to data privacy and optimisation.
-- **City data**: real-time data from the VLCi platform, now offered through the data space (below). An independent instance of VLCi was also set up for CitCom partners to experiment in a controlled environment.
-- **Regulatory support**: the Urban Sandbox for AI helps test in real conditions and check compliance; S2Grupo provides cybersecurity services.
+The steps were:
+
+1. **Join the data space** as the participant `townhall-vlc`, with its own connector. See [Join the data space](../guides/join.md).
+2. **Serve VLCi as NGSI-LD** with [Lepus](../toolbox/lepus.md) inside the connector, so that VLCi stays as it is.
+3. **Load the data VLCi does not have** (traffic state) into an NGSI-LD broker with an ingestion job.
+4. **Publish one offer per dataset** in the marketplace, each limited to its entity type. See [Publish a dataset](../guides/publish_dataset.md).
 
 ## Data in the data space
 
@@ -68,15 +66,18 @@ flowchart LR
 - **Lepus** serves the VLCi data live. It translates each NGSI-LD query into NGSI-v2, authenticates with the city platform on its own, and returns the entities as NGSI-LD with their Smart Data Models `@context`. VLCi never sees the data space tokens, and nothing is copied. See [Lepus](../toolbox/lepus.md).
 - **Airflow** loads the traffic state from an open data endpoint of VLCi into an Orion-LD broker every 7 minutes, for data that is not in VLCi.
 - **APISIX** protects both paths with the same mechanism: a token from the verifier and the ODRL policy of the purchased offer.
-- The same Lepus also serves the [Eclipse EDC data space](../data_spaces/bridge.md), through its own route.
+- The same Lepus also serves the [Eclipse EDC data space](../data_spaces/eclipse/index.md), through its own route. See [Bridging both](../data_spaces/bridge.md).
 
-## Services in the data space
+## Who uses this data
 
 | Service | Provider | What it does |
 |---|---|---|
 | [MIAIS Waste Collection](../miais/index.md) | VRAIN | Plans waste collection routes from the filling level of the Valencia containers. It reads the containers through the data space, and other organisations can use it by logging in with a wallet. |
 
-## Contact
+## Do the same in your city
 
-- **Data space and technical questions**: VRAIN-UPV, through the [GitHub organisation](https://github.com/CitComAI-Hub) of the hub.
-- **The TEF and its services**: the [CitCom TEF website](https://citcomtef.eu/).
+- An NGSI-v2 platform: put [Lepus](../toolbox/lepus.md) in front of it, as here.
+- An NGSI-LD broker already: publish it directly through your connector.
+- Another kind of platform: see [NGSI-LD and FiLiP](../toolbox/ngsi_ld.md) and the [other tools](../toolbox/index.md) to bring it to NGSI-LD.
+
+Then follow the guides from [Get a wallet](../guides/wallet.md) to [Publish a dataset](../guides/publish_dataset.md). The Valencia TEF site itself is described in [TEF network](../tef/south_connect/valencia.md).

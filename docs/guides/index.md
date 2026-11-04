@@ -1,11 +1,11 @@
 ---
-title: Build
+title: Guides
 description: "A worked example and one guide per task: wallet, join, use data, publish a dataset or a service."
 ---
 
-# Build
+# Guides
 
-Build a service on the CitCom data space. Start with the [MIAIS](../miais/index.md), a worked example that goes from a custom integration to a data space service. Then follow the guides: each one covers one task, from start to finish, in the [FIWARE data space](../data_spaces/fiware.md). They all follow the same structure: what you will get, what you need, the steps, how to check that it works and what to do if it does not.
+Build on the CitCom data space. Start with a worked example: the [MIAIS](../miais/index.md) shows an AI service that goes from a custom integration to a data space service, and [Valencia](../valencia/index.md) shows a city that offers its existing platform as a data provider. Then follow the guides: each one covers one task, from start to finish, in the [FIWARE data space](../data_spaces/fiware.md). They all follow the same structure: what you will get, what you need, the steps, how to check that it works and what to do if it does not.
 
 | Guide | For | You end up with |
 |---|---|---|

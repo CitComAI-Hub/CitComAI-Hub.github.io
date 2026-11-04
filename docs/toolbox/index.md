@@ -36,7 +36,7 @@ flowchart LR
     CON --> PPL
 ```
 
-For example, the Ajuntament de València serves its NGSI-v2 platform through Lepus, loads open data on traffic into an NGSI-LD broker with an ingestion job, and publishes both through its connector. See the [Valencia node](../valencia/index.md).
+For example, the Ajuntament de València serves its NGSI-v2 platform through Lepus, loads open data on traffic into an NGSI-LD broker with an ingestion job, and publishes both through its connector. See the [Valencia example](../valencia/index.md).
 
 <div class="grid cards" markdown>
 

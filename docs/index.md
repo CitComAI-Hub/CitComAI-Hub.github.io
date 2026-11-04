@@ -17,8 +17,8 @@ hide:
 What CitCom offers and the minimal package the TEF nodes share.
 
 - [The project and the TEFs](getting_started/project.md)
-- [Interoperability](getting_started/interoperability.md)
-- [Valencia TEF node](valencia/index.md)
+- [Valencia: a city platform](valencia/index.md)
+- [TEF network](tef/index.md)
 </div>
 
 <div class="cc-role" markdown>
@@ -58,15 +58,15 @@ How the FIWARE and Eclipse EDC data spaces are built, and how to run a connector
 [CitCom.ai](https://citcom.ai) is a European Union project that runs Testing and Experimentation Facilities for AI and robotics in smart and sustainable cities. This hub gathers the *minimal package* that the project prepares for its TEF nodes, so that a service built in one city runs in the others.
 
 <div class="cc-facts" markdown>
-<a href="data_spaces/"><strong>A working data space</strong><span>Running infrastructure to join, with real data from Valencia.</span></a>
-<a href="miais/"><strong>A worked example</strong><span>An AI service that climbs the interoperability levels, step by step.</span></a>
+<a href="data_spaces/"><strong>A working data space</strong><span>Shared infrastructure for every CitCom partner, running today with real city data.</span></a>
+<a href="guides/"><strong>Worked examples</strong><span>An AI service and a city platform, from their own integration to the data space.</span></a>
 <a href="toolbox/"><strong>Open tools</strong><span>Connect an NGSI-v2 platform, read NGSI-LD data and get data space tokens.</span></a>
 </div>
 
 ## From the TEF network
 
 <div class="cc-links" markdown>
-[TEF nodes](tef/index.md)
+[TEF sites](tef/index.md)
 [AI Trustworthiness Label](ai_assessment/index.md)
 [Local Digital Twins](local_digital_twins/index.md)
 [FAQ and contribute](faq/index.md)

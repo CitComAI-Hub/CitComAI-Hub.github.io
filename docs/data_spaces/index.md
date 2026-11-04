@@ -1,16 +1,16 @@
 ---
 title: The CitCom data spaces
-description: "The two CitCom data spaces, FIWARE and Eclipse EDC, and how they connect."
+description: "The two data spaces shared by all CitCom partners, FIWARE and Eclipse EDC, the marketplace and how they connect."
 ---
 
 # The CitCom data spaces
 
-CitCom runs two data spaces, built with the two main open-source technologies in Europe. Both follow the concepts in [Data spaces in 5 minutes](../getting_started/data_spaces.md); they differ in how identity and contracts work.
+CitCom runs two data spaces for all its partners, built with the two main open-source technologies in Europe. Both follow the concepts in [Data spaces in 5 minutes](../getting_started/data_spaces.md); they differ in how identity and contracts work.
 
 | | FIWARE data space | Eclipse EDC data space |
 |---|---|---|
 | **Technology** | [FIWARE Data Space Connector](https://github.com/FIWARE/data-space-connector) 10 | [Eclipse EDC](https://eclipse-edc.github.io/), sovity Community Edition |
-| **Operated by** | VRAIN-UPV (Valencia TEF node) | [Libelium](https://www.libelium.com/) |
+| **Operated by** | [VRAIN-UPV](https://vrain.upv.es/) | [Libelium](https://www.libelium.com/) |
 | **Identity** | Verifiable credentials (OID4VCI / OID4VP) and wallets | Connector identities managed by the operator's portal |
 | **Contracts** | Marketplace (TMForum) → contract-management → trust list + ODRL policy | Dataspace Protocol (DSP) negotiation between connectors |
 | **Data API** | NGSI-LD, served by the provider's connector | Any HTTP source, transferred by the connectors |
@@ -38,17 +38,17 @@ CitCom runs two data spaces, built with the two main open-source technologies in
 
     ---
 
-    How the Valencia data is also available in the EDC data space.
+    How a FIWARE provider also serves its data in the EDC data space.
 
     [:octicons-arrow-right-24: Bridging both](bridge.md)
 
--   :material-map-marker-outline:{ .lg .middle } __Valencia TEF node__
+-   :material-storefront-outline:{ .lg .middle } __Marketplace__
 
     ---
 
-    The data, services and participants running today.
+    Where the participants of the FIWARE data space publish and buy datasets and services.
 
-    [:octicons-arrow-right-24: Valencia](../valencia/index.md)
+    [:octicons-arrow-right-24: Marketplace](../marketplace/index.md)
 
 </div>
 
@@ -83,8 +83,8 @@ flowchart TB
 ```
 
 - The **trust anchor**, the **onboarding portal** and the **marketplace** are shared by everyone.
-- Each participant runs its own **connector**. Today there are two: the Ajuntament de València, which provides city data, and VRAIN-UPV, which provides an AI service and consumes city data.
-- The **MIAIS** of VRAIN reads the waste containers of Valencia through the Ajuntament's connector, after buying the offer in the marketplace. People from other organisations use the MIAIS by logging in with their wallet.
+- Each participant runs its own **connector**. The diagram shows the first two: the Ajuntament de València, which provides city data, and VRAIN-UPV, which provides an AI service and consumes city data. Both are described as worked examples: [Valencia](../valencia/index.md) and the [MIAIS](../miais/index.md).
+- The MIAIS reads the waste containers of Valencia through the Ajuntament's connector, after buying the offer in the marketplace. People from other organisations use the MIAIS by logging in with their wallet.
 
 The public services are:
 

@@ -5,7 +5,7 @@ description: "Its components and four flows: join, purchase, machine access and 
 
 # FIWARE data space
 
-The CitCom FIWARE data space runs on Kubernetes at the Valencia TEF node and uses the [FIWARE Data Space Connector](https://github.com/FIWARE/data-space-connector) (version 10), which follows the recommendations of the [Data Spaces Business Alliance](https://data-spaces-business-alliance.eu/). This page describes its parts and the four flows that make it work.
+The CitCom FIWARE data space is operated by VRAIN-UPV for the whole of CitCom and uses the [FIWARE Data Space Connector](https://github.com/FIWARE/data-space-connector) (version 10), which follows the recommendations of the [Data Spaces Business Alliance](https://data-spaces-business-alliance.eu/). This page describes its parts and the four flows that make it work.
 
 ## Shared services
 
@@ -140,6 +140,6 @@ The person's organisation must have bought the service, and the person must have
 
 ## Where to go next
 
-- [Valencia TEF node](../valencia/index.md): the participants, data and services running today.
+- [Valencia: a city platform](../valencia/index.md): a worked example of a city offering its data here.
 - [Guides](../guides/index.md): join, read data, publish a dataset or a service.
 - [Deploy your own connector](../guides/deploy_connector.md): how a connector is deployed.

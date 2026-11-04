@@ -21,7 +21,7 @@ Anyone can browse it. To buy or to publish, your organisation must [join the dat
 | Traffic state (`TrafficState`) | Ajuntament de València | Dataset | Data › Mobility |
 | Access to the MIAIS Waste Collection | VRAIN-UPV | Web service | AI services |
 
-The datasets are described in the [Valencia node](../valencia/index.md#data-in-the-data-space), and the service in [MIAIS](../miais/index.md).
+The datasets are described in the [Valencia example](../valencia/index.md#data-in-the-data-space), and the service in [MIAIS](../miais/index.md).
 
 ## How the marketplace is organised
 

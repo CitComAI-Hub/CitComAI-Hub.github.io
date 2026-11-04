@@ -56,7 +56,7 @@ for container in cb.get_entity_list(entity_type="WasteContainer", limit=10):
     print(container.id, container.model_dump().get("fillingLevel"))
 ```
 
-Each Valencia dataset has its own path and entity type; see the [Valencia node](../valencia/index.md#data-in-the-data-space).
+Each Valencia dataset has its own path and entity type; see the [Valencia example](../valencia/index.md#data-in-the-data-space).
 
 ## Check that it works
 
