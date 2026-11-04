@@ -1096,17 +1096,22 @@
   line-height: 1.5;
   color: var(--md-default-fg-color--light);
 }
-.md-typeset .cc-tool__links {
-  position: relative;
+.md-typeset .cc-tool > p:not([class]) { margin-bottom: 0.1rem; }
+.md-typeset .cc-tool__ext {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
   z-index: 1;
-  display: flex;
-  gap: 1rem;
-  margin: 0;
-  padding-top: 0.6rem;
-  border-top: 1px solid var(--cc-border);
-  font-size: 0.66rem;
-  font-weight: 700;
+  display: grid;
+  place-items: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  color: var(--md-default-fg-color--light);
+  transition: background 0.15s, color 0.15s;
 }
+.md-typeset .cc-tool__ext:hover { background: var(--cc-surface); color: var(--md-default-fg-color); }
+.cc-tool__ext svg { width: 1.05rem; height: 1.05rem; }
 .md-typeset .cc-tool--add { border-style: dashed; background: transparent; }
 .cc-minitools {
   display: grid;
