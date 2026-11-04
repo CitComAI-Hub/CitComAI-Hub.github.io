@@ -20,58 +20,54 @@ CitCom runs two data spaces for all its partners, built with the two main open-s
 
 <div class="cc-infra" markdown="0">
   <div class="cc-infra__band">
-    <p class="cc-infra__eyebrow">Shared by every participant · operated by VRAIN-UPV</p>
+    <p class="cc-infra__eyebrow">Shared services · operated by VRAIN-UPV for all of CitCom</p>
     <div class="cc-infra__shared">
-      <a class="cc-infra__svc" href="fiware/#shared-services">
-        <span class="cc-infra__icon" aria-hidden="true">&#9670;</span>
-        <strong>Trust anchor</strong>
-        <small>Who is trusted: the registry of participants</small>
-      </a>
       <a class="cc-infra__svc" href="../guides/join/">
-        <span class="cc-infra__icon" aria-hidden="true">&#43;</span>
+        <span class="cc-infra__step">1</span>
         <strong>Onboarding portal</strong>
-        <small>Organisations ask to join</small>
+        <small>An organisation asks to join</small>
+      </a>
+      <a class="cc-infra__svc" href="fiware/#shared-services">
+        <span class="cc-infra__step">1</span>
+        <strong>Trust anchor</strong>
+        <small>Once approved, its identity is trusted by everyone</small>
       </a>
       <a class="cc-infra__svc" href="../marketplace/">
-        <span class="cc-infra__icon" aria-hidden="true">&#9638;</span>
+        <span class="cc-infra__step">2</span>
         <strong>Marketplace</strong>
-        <small>Offers, purchases and contracts</small>
+        <small>Providers publish offers, consumers buy them</small>
       </a>
     </div>
   </div>
-  <div class="cc-infra__bus">
-    <span>Verifiable credentials</span><span>ODRL contracts</span><span>NGSI-LD and Smart Data Models</span>
-  </div>
-  <div class="cc-infra__parts">
+  <div class="cc-infra__drop" aria-hidden="true"></div>
+  <div class="cc-infra__flow">
     <a class="cc-infra__part" href="../valencia/">
-      <span class="cc-infra__tag">Data provider</span>
+      <span class="cc-infra__tag">Provider · example</span>
       <strong>Ajuntament de València</strong>
-      <small>City data from its urban platform, through Lepus</small>
+      <small>Its connector serves the city data it offers</small>
       <span class="cc-infra__conn">Connector</span>
     </a>
+    <div class="cc-infra__arrow">
+      <span class="cc-infra__step">3</span>
+      <span class="cc-infra__line"></span>
+      <small>Data, directly between connectors</small>
+    </div>
     <a class="cc-infra__part" href="../miais/">
-      <span class="cc-infra__tag">Service provider · consumer</span>
+      <span class="cc-infra__tag">Consumer · example</span>
       <strong>VRAIN-UPV</strong>
-      <small>AI services such as the MIAIS, which reads city data</small>
+      <small>Its AI service, the MIAIS, reads the data it bought</small>
       <span class="cc-infra__conn">Connector</span>
     </a>
-    <a class="cc-infra__part cc-infra__part--you" href="../guides/join/">
-      <span class="cc-infra__tag">Consumer or provider</span>
-      <strong>Your organisation</strong>
-      <small>Join, buy an offer, read data or publish your own</small>
-      <span class="cc-infra__conn">Join &rarr;</span>
-    </a>
   </div>
-  <div class="cc-infra__edc">
-    <strong>Eclipse EDC data space</strong>
-    <span>A separate data space operated by Libelium, with its own catalogue and connectors.</span>
-    <a href="eclipse/">Read more &rarr;</a>
-  </div>
+  <ol class="cc-infra__legend">
+    <li><span class="cc-infra__step">1</span><span><strong>Join</strong> through the portal; the organisation enters the trust anchor.</span></li>
+    <li><span class="cc-infra__step">2</span><span><strong>Publish and buy</strong> offers in the marketplace; a purchase sets up the contract.</span></li>
+    <li><span class="cc-infra__step">3</span><span><strong>Access</strong>: the data goes from the provider's connector to the consumer, never through the shared services.</span></li>
+  </ol>
+  <a class="cc-infra__cta" href="../guides/join/">Your organisation joins the same way &rarr;</a>
 </div>
 
-- The **shared services** are the same for everyone: one trust anchor, one onboarding portal, one marketplace.
-- Each **participant** runs its own connector, or uses a shared one, and talks to the others with the same three standards: verifiable credentials for identity, ODRL contracts for access, NGSI-LD for the data.
-- The technical view, with every component and the public addresses, is in [FIWARE data space](fiware.md#the-deployment-today).
+The Ajuntament de València and VRAIN-UPV are the first participants, and both are told step by step as worked examples. The technical view, with every component and the public addresses, is in [FIWARE data space](fiware.md#the-deployment-today). The [Eclipse EDC data space](eclipse/index.md) is separate, operated by Libelium.
 
 <div class="grid cards" markdown>
 
