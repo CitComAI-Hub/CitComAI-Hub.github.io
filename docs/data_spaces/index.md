@@ -23,23 +23,25 @@ CitCom runs two data spaces for all its partners, built with the two main open-s
     <p class="cc-infra__eyebrow">Shared services · operated by VRAIN-UPV for all of CitCom</p>
     <div class="cc-infra__shared">
       <a class="cc-infra__svc" href="../guides/join/">
-        <span class="cc-infra__step">1</span>
         <strong>Onboarding portal</strong>
         <small>An organisation asks to join</small>
       </a>
       <a class="cc-infra__svc" href="fiware/#shared-services">
-        <span class="cc-infra__step">1</span>
         <strong>Trust anchor</strong>
-        <small>Once approved, its identity is trusted by everyone</small>
+        <small>The list of trusted organisations, checked on every access</small>
       </a>
       <a class="cc-infra__svc" href="../marketplace/">
-        <span class="cc-infra__step">2</span>
         <strong>Marketplace</strong>
         <small>Providers publish offers, consumers buy them</small>
       </a>
     </div>
   </div>
-  <div class="cc-infra__drop" aria-hidden="true"></div>
+  <div class="cc-infra__links" aria-hidden="true">
+    <div class="cc-infra__labels">
+      <span class="cc-infra__step">1</span><small>Join</small>
+      <span class="cc-infra__step">2</span><small>Publish · buy</small>
+    </div>
+  </div>
   <div class="cc-infra__flow">
     <a class="cc-infra__part" href="../valencia/">
       <span class="cc-infra__tag">Provider · example</span>
@@ -60,7 +62,7 @@ CitCom runs two data spaces for all its partners, built with the two main open-s
     </a>
   </div>
   <ol class="cc-infra__legend">
-    <li><span class="cc-infra__step">1</span><span><strong>Join</strong> through the portal; the organisation enters the trust anchor.</span></li>
+    <li><span class="cc-infra__step">1</span><span><strong>Join</strong> through the portal. Once approved, the organisation is in the trust anchor.</span></li>
     <li><span class="cc-infra__step">2</span><span><strong>Publish and buy</strong> offers in the marketplace; a purchase sets up the contract.</span></li>
     <li><span class="cc-infra__step">3</span><span><strong>Access</strong>: the data goes from the provider's connector to the consumer, never through the shared services.</span></li>
   </ol>

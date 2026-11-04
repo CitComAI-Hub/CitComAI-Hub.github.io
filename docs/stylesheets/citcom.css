@@ -876,16 +876,50 @@
   transition: border-color 0.15s, transform 0.15s;
 }
 .cc-infra__svc:hover { border-color: var(--cc-teal); transform: translateY(-2px); }
-.cc-infra__svc strong { margin-top: 0.3rem; font-size: 0.8rem; }
+.cc-infra__svc strong { font-size: 0.8rem; }
 .cc-infra__svc small { font-size: 0.64rem; line-height: 1.35; color: rgba(255, 255, 255, 0.72); }
-/* the two participants hang from the band */
-.cc-infra__drop {
+/* steps 1 and 2: one rail from the shared services down to both participants */
+.cc-infra__links {
   position: relative;
-  height: 1.4rem;
-  margin: 0 16%;
+  height: 3rem;
+}
+.cc-infra__links::before { /* up to the band */
+  content: "";
+  position: absolute;
+  top: 0;
+  height: 50%;
+  left: 50%;
+  border-left: 2px dashed var(--cc-infra-line);
+}
+.cc-infra__links::after { /* rail and the two drops */
+  content: "";
+  position: absolute;
+  top: 50%;
+  bottom: 0;
+  left: 18%;
+  right: 18%;
   border: 2px dashed var(--cc-infra-line);
-  border-top: 0;
   border-bottom: 0;
+}
+.cc-infra__labels {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.15rem 0.5rem;
+  border-radius: 999px;
+  background: var(--md-default-bg-color);
+  transform: translate(-50%, -50%);
+  white-space: nowrap;
+}
+.cc-infra__labels small {
+  margin-right: 0.3rem;
+  font-size: 0.62rem;
+  font-weight: 700;
+  color: var(--md-accent-fg-color);
 }
 .cc-infra__flow {
   display: grid;
@@ -981,7 +1015,8 @@
 @media screen and (max-width: 44.9375em) {
   .cc-infra { padding: 0.8rem; }
   .cc-infra__shared, .cc-infra__legend { grid-template-columns: 1fr; }
-  .cc-infra__drop { margin: 0 50%; border-right: 0; }
+  .cc-infra__links::before { height: 100%; }
+  .cc-infra__links::after { display: none; }
   .cc-infra__flow { grid-template-columns: 1fr; }
   .cc-infra__arrow { flex-direction: row; justify-content: center; }
   .cc-infra__line { width: 2px; height: 1.6rem; background: repeating-linear-gradient(var(--cc-accent) 0 8px, transparent 8px 13px); }
