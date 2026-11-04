@@ -21,8 +21,7 @@ The steps were:
 
 1. **Join the data space** as the participant `townhall-vlc`, with its own connector. See [Join the data space](../guides/join.md).
 2. **Serve VLCi as NGSI-LD** with [Lepus](../toolbox/lepus.md) inside the connector, so that VLCi stays as it is.
-3. **Load the data VLCi does not have** (traffic state) into an NGSI-LD broker with an ingestion job.
-4. **Publish one offer per dataset** in the marketplace, each limited to its entity type. See [Publish a dataset](../guides/publish_dataset.md).
+3. **Publish one offer per dataset** in the marketplace, each limited to its entity type. See [Publish a dataset](../guides/publish_dataset.md).
 
 ## Data in the data space
 
