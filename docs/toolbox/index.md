@@ -78,7 +78,7 @@ flowchart LR
     subgraph USE["Who uses it"]
         direction TB
         PRG["Programs<br/>FiLiP + ds-consumer-auth"]
-        PPL["People<br/>Lissi / atesta-id-wallet"]
+        PPL["People<br/>atesta-id-wallet / Lissi"]
     end
     V2 -- "Lepus" --> LD
     OT -- "IoT Agent or<br/>an ingestion job" --> LD

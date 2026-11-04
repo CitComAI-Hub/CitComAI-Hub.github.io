@@ -1,6 +1,6 @@
 ---
 title: Wallets
-description: "Lissi ID Wallet and atesta-id-wallet."
+description: "atesta-id-wallet, made in CitCom, and Lissi ID Wallet."
 ---
 
 # Wallets
@@ -11,14 +11,6 @@ Both wallets below work with the CitCom data space: they receive credentials wit
 
 <div class="grid cards" markdown>
 
--   :material-cellphone:{ .lg .middle } __Lissi ID Wallet__
-
-    ---
-
-    A mobile wallet for Android, from the Play Store. Scan the QR codes with the phone.
-
-    [:octicons-arrow-right-24: lissi.id](https://www.lissi.id/)
-
 -   :material-laptop:{ .lg .middle } __atesta-id-wallet__
 
     ---
@@ -26,6 +18,14 @@ Both wallets below work with the CitCom data space: they receive credentials wit
     A desktop wallet for Linux and Windows, made in CitCom. It reads the QR codes from a screenshot, so you do not need a phone. Also a command line tool.
 
     [:octicons-arrow-right-24: atesta-id-wallet](https://github.com/CitComAI-Hub/atesta-id-wallet)
+
+-   :material-cellphone:{ .lg .middle } __Lissi ID Wallet__
+
+    ---
+
+    A mobile wallet for Android, from the Play Store. Scan the QR codes with the phone.
+
+    [:octicons-arrow-right-24: lissi.id](https://www.lissi.id/)
 
 </div>
 
