@@ -1,3 +1,6 @@
+---
+description: "Tools to comply with the OASC Minimal Interoperability Mechanisms."
+---
 # MIMs Tools
 
 List of tools and projects that can help services comply with OASC Minimal Interoperability Mechanisms.

@@ -1,6 +1,10 @@
 ---
 title: Marketplace
 description: "What is on offer in the CitCom marketplace and how to buy it."
+next_step:
+  url: guides/join/
+  title: "Join the data space"
+  description: "Register your organisation in the onboarding portal, so that the other participants trust it."
 ---
 
 # Marketplace

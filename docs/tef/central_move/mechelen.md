@@ -1,5 +1,6 @@
 ---
 title: Mechelen
+description: "The Mechelen TEF site of the Central super-node (MOVE): what it offers and its data."
 ---
 
 ## Overview

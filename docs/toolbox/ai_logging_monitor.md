@@ -1,3 +1,6 @@
+---
+description: "Log and monitor the behaviour of an AI system."
+---
 # AI system Logging & Monitor
 [Repository :simple-github:](https://github.com/RECICLAI-VRAIN/ia-logging-monitor){:target="_blank" .md-button .md-button--primary-light }
 

@@ -1,5 +1,6 @@
 ---
 title: Brussels
+description: "The Brussels TEF site of the Central super-node (MOVE): what it offers and its data."
 ---
 
 ## Overview

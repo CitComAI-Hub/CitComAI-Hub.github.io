@@ -220,23 +220,23 @@ extra:
     - Help
   labels:
     data_brokers:
-      fiware: '<span style="background-color:green; color:white; padding:2px 4px; border-radius:4px;">Fiware</span>'
-      kafka: '<span style="background-color:black; color:white; padding:2px 4px; border-radius:4px;">Kafka</span>'
-      iot_ticket: '<span style="background-color:blue; color:white; padding:2px 4px; border-radius:4px;">IoT-Ticket Azure</span>'
+      fiware: '<span class="cc-chip cc-chip--broker">FIWARE</span>'
+      kafka: '<span class="cc-chip cc-chip--broker">Kafka</span>'
+      iot_ticket: '<span class="cc-chip cc-chip--broker">IoT-Ticket Azure</span>'
     api_brokers:
-      ngsi_v2: '<span style="background-color:orange; color:white; padding:2px 4px; border-radius:4px;">NGSI-v2</span>'
-      ngsi_ld: '<span style="background-color:green; color:white; padding:2px 4px; border-radius:4px;">NGSI-LD</span>'
-      custom: '<span style="background-color:red; color:white; padding:2px 4px; border-radius:4px;">Custom</span>'
+      ngsi_v2: '<span class="cc-chip cc-chip--v2">NGSI-v2</span>'
+      ngsi_ld: '<span class="cc-chip cc-chip--ld">NGSI-LD</span>'
+      custom: '<span class="cc-chip cc-chip--custom">Custom</span>'
     ds4ssc_compliant:
       yes_comp:
-        data_sources: '<span style="background-color:rgb(51,255,51); color:black; padding:2px 4px; border-radius:4px; border:1px solid black;"><strong>Data Sources</strong></span>'
-        data_broker: '<span style="background-color:red; color:white; padding:2px 4px; border-radius:4px; border:1px solid black;"><strong>Data Broker</strong></span>'
-        data_api: '<span style="background-color:rgb(255,51,255); color:white; padding:2px 4px; border-radius:4px; border:1px solid black;"><strong>Data API</strong></span>'
-        data_idm_auth: '<span style="background-color:orange; color:white; padding:2px 4px; border-radius:4px; border:1px solid black;"><strong>IdM & Auth</strong></span>'
-        data_publication: '<span style="background-color:rgb(204,255,255); color:black; padding:2px 4px; border-radius:4px; border:1px solid black;"><strong>Data Publication</strong></span>'
+        data_sources: '<span class="cc-chip cc-chip--yes">Data Sources</span>'
+        data_broker: '<span class="cc-chip cc-chip--yes">Data Broker</span>'
+        data_api: '<span class="cc-chip cc-chip--yes">Data API</span>'
+        data_idm_auth: '<span class="cc-chip cc-chip--yes">IdM &amp; Auth</span>'
+        data_publication: '<span class="cc-chip cc-chip--yes">Data Publication</span>'
       no_comp:
-        data_sources: '<span style="background-color:rgba(51,255,51,0.2); color:gray; padding:2px 4px; border-radius:4px;">Data Sources</span>'
-        data_broker: '<span style="background-color:rgba(255,0,0,0.2); color:gray; padding:2px 4px; border-radius:4px;">Data Broker</span>'
-        data_api: '<span style="background-color:rgba(255,51,255,0.2); color:gray; padding:2px 4px; border-radius:4px;">Data API</span>'
-        data_idm_auth: '<span style="background-color:rgba(255,165,0,0.2); color:gray; padding:2px 4px; border-radius:4px;">IdM & Auth</span>'
-        data_publication: '<span style="background-color:rgba(204,255,255,0.2); color:gray; padding:2px 4px; border-radius:4px;">Data Publication</span>'
+        data_sources: '<span class="cc-chip cc-chip--no">Data Sources</span>'
+        data_broker: '<span class="cc-chip cc-chip--no">Data Broker</span>'
+        data_api: '<span class="cc-chip cc-chip--no">Data API</span>'
+        data_idm_auth: '<span class="cc-chip cc-chip--no">IdM &amp; Auth</span>'
+        data_publication: '<span class="cc-chip cc-chip--no">Data Publication</span>'

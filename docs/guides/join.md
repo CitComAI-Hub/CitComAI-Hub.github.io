@@ -1,6 +1,10 @@
 ---
 title: Join the data space
 description: "Register your organisation in the onboarding portal, so that the other participants trust it."
+next_step:
+  url: guides/wallet/
+  title: "Get a wallet and your credentials"
+  description: "Get atesta-id-wallet or Lissi and the credential you need to log in."
 ---
 
 # Join the data space

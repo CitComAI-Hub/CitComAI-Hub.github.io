@@ -1,11 +1,11 @@
 ---
-title: FIWARE data space
+title: How the data space works
 description: "Its components and four flows: join, purchase, machine access and person access."
 ---
 
-# FIWARE data space
+# How the data space works
 
-The CitCom FIWARE data space is operated by VRAIN-UPV for the whole of CitCom and uses the [FIWARE Data Space Connector](https://github.com/FIWARE/data-space-connector) (version 10), which follows the recommendations of the [Data Spaces Business Alliance](https://data-spaces-business-alliance.eu/). This page describes its parts, the deployment running today and the four flows that make it work.
+The CitCom data space is operated by VRAIN-UPV for the whole of CitCom and uses the [FIWARE Data Space Connector](https://github.com/FIWARE/data-space-connector) (version 10), which follows the recommendations of the [Data Spaces Business Alliance](https://data-spaces-business-alliance.eu/). This page describes its parts, the deployment running today and the four flows that make it work.
 
 ## Shared services
 

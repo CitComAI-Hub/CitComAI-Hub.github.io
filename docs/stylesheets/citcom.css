@@ -1106,3 +1106,30 @@
 @media screen and (max-width: 44.9375em) {
   .cc-tools, .cc-minitools { grid-template-columns: 1fr; }
 }
+
+/* ---------- Labels of the TEF pages (extra.labels) ---------- */
+.md-typeset .cc-chip {
+  display: inline-block;
+  margin: 0.05rem 0.1rem 0.05rem 0;
+  padding: 0.05rem 0.45rem;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  font-size: 0.6rem;
+  font-weight: 700;
+  line-height: 1.5;
+  white-space: nowrap;
+}
+.md-typeset .cc-chip--broker { border-color: var(--cc-border); background: var(--cc-surface); color: var(--md-default-fg-color); }
+.md-typeset .cc-chip--ld { background: color-mix(in srgb, var(--cc-accent) 18%, transparent); color: var(--md-accent-fg-color); }
+.md-typeset .cc-chip--v2 { background: color-mix(in srgb, #f0a03c 22%, transparent); color: #8a5300; }
+[data-md-color-scheme="slate"] .md-typeset .cc-chip--v2 { color: #f5b866; }
+.md-typeset .cc-chip--custom { border-color: var(--cc-border); color: var(--md-default-fg-color--light); }
+.md-typeset .cc-chip--yes { background: color-mix(in srgb, var(--cc-green) 18%, transparent); color: var(--cc-green-dark); }
+[data-md-color-scheme="slate"] .md-typeset .cc-chip--yes { color: var(--cc-green); }
+.md-typeset .cc-chip--no { border-color: var(--cc-border); color: var(--md-default-fg-color--lighter); text-decoration: line-through; }
+
+/* FAQ and other 'question' blocks in the site palette */
+.md-typeset .admonition.question, .md-typeset details.question { border-color: var(--cc-accent); }
+.md-typeset .question > .admonition-title, .md-typeset .question > summary { background-color: color-mix(in srgb, var(--cc-accent) 10%, transparent); }
+.md-typeset .question > .admonition-title::before, .md-typeset .question > summary::before { background-color: var(--cc-accent); }
+.md-typeset details.question > summary::after { color: var(--cc-accent); background-color: var(--cc-accent); }

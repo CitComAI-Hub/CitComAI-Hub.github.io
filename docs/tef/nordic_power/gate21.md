@@ -1,5 +1,6 @@
 ---
 title: GATE21
+description: "The GATE21 TEF site of the Nordic super-node (POWER): what it offers and its data."
 ---
 
 !!! note "Page to be completed"

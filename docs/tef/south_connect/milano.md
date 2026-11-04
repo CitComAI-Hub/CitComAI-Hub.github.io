@@ -1,5 +1,6 @@
 ---
 title: Milano
+description: "The Milano TEF site of the South super-node (CONNECT): what it offers and its data."
 ---
 
 ## Overview

@@ -1,5 +1,6 @@
 ---
 title: Warsaw
+description: "The Warsaw TEF site of the South super-node (CONNECT): what it offers and its data."
 ---
 
 ## Overview
