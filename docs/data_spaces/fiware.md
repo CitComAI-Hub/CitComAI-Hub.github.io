@@ -37,7 +37,7 @@ flowchart TB
         VRS["MIAIS<br/>AI service"]
         VRC --- VRS
     end
-    W["Wallets<br/>Lissi, atesta-id-wallet"]
+    W["Wallets<br/>atesta-id-wallet, Lissi"]
 
     ON -- "registers" --> TA
     TVC -. "publishes offers" .-> MK

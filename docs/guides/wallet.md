@@ -1,6 +1,6 @@
 ---
 title: Get a wallet and your credentials
-description: "Get Lissi or atesta-id-wallet and the credential you need to log in."
+description: "Get atesta-id-wallet or Lissi and the credential you need to log in."
 ---
 
 # Get a wallet and your credentials
@@ -12,13 +12,13 @@ description: "Get Lissi or atesta-id-wallet and the credential you need to log i
 - A user in the credential issuer (Keycloak) of your organisation, with the credential bound to it. Your organisation's administrator creates it: see [Join the data space](join.md#5-create-the-user-of-the-legal-representative).
 - One of these wallets:
 
+=== "Desktop: atesta-id-wallet (recommended)"
+
+    [atesta-id-wallet](https://github.com/CitComAI-Hub/atesta-id-wallet), a desktop wallet for Linux and Windows made in CitCom. Download it from its [releases page](https://github.com/CitComAI-Hub/atesta-id-wallet/releases). It reads the QR codes from a screenshot, so you never need a phone. It is a prototype: it uses the EUDI protocols, but it is not a certified EUDI Wallet.
+
 === "Phone: Lissi ID Wallet"
 
     [Lissi ID Wallet](https://www.lissi.id/), from the Play Store. Scan the QR codes with the phone.
-
-=== "Desktop: atesta-id-wallet"
-
-    [atesta-id-wallet](https://github.com/CitComAI-Hub/atesta-id-wallet), a desktop wallet for Linux and Windows made in CitCom. Download it from its [releases page](https://github.com/CitComAI-Hub/atesta-id-wallet/releases). It reads the QR codes from a screenshot, so you never need a phone. It is a prototype: it uses the EUDI protocols, but it is not a certified EUDI Wallet.
 
 The [Wallets](../toolbox/wallets.md) page of the toolbox compares both wallets and lists the limitations of atesta-id-wallet.
 
@@ -39,8 +39,8 @@ Programs do not use a wallet: they request a `MachineCredential` by themselves. 
 2. Go to **Verifiable Credentials** and choose the credential.
 3. Click **Issue to wallet**. A QR code (or a link) appears.
 4. Scan it with the wallet:
-    - **Lissi**: scan the QR with the phone.
     - **atesta-id-wallet**: click the link, or press **Scan QR** and take a screenshot of the QR code.
+    - **Lissi**: scan the QR with the phone.
 5. The wallet shows who issues which credential. Accept, and enter your Keycloak user and password when the wallet asks for them.
 6. The credential appears in the wallet.
 
