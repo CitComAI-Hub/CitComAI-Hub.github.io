@@ -11,6 +11,10 @@ next_step:
 
 **What you will get**: a **consumer connector** for your organisation in your own Kubernetes cluster. It gives your organisation a DID and issues its credentials: the `LegalPersonCredential` of its legal representative, to buy in the marketplace, and the `MachineCredential` of its programs, to read data. That is all a consumer needs; the [provider components](#become-a-provider) can be added later.
 
+!!! tip "Do you need it?"
+
+    To join, buy and read data you do not: the onboarding portal gives your organisation a credential issuer of its own (option A of [Join the data space](join.md)). Deploy a connector to run your own infrastructure, or to become a provider.
+
 !!! warning "First version of this guide"
 
     The configuration comes from the connectors running in the CitCom data space, but this guide has not yet been followed from start to finish on a new cluster. Report anything that does not work in the [repository](https://github.com/CitComAI-Hub/CitComAI-Hub.github.io/issues).

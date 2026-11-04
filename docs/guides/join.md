@@ -21,14 +21,10 @@ Your organisation needs a **credential issuer**: the service that issues the cre
 | Your identity | A realm of your own in the Keycloak of the onboarding portal, with a new DID | Your connector's DID, on your domain |
 | Who manages your users | You, in the admin console of your realm | You, in your Keycloak |
 | Log in to the marketplace and buy | Yes | Yes |
-| Your programs read the data you bought | Not yet | Yes |
-| Best for | Starting now, and exploring and buying in the marketplace | Reading data from code, running your own infrastructure, or becoming a provider |
+| Your programs read the data you bought | Yes | Yes |
+| Best for | Almost everyone: join, buy and read data without deploying anything | Running your own infrastructure, or becoming a provider |
 
-Start with **A** if you want to be in the data space today. With B, [deploy your connector](deploy_connector.md) first: you register with its DID.
-
-!!! info "Reading data with option A"
-
-    Today the realm created by the portal issues the credential of the legal representative, not the `MachineCredential` that programs need to read data. To read data from code now, use option B.
+Choose **A** unless you need B. With B, [deploy your connector](deploy_connector.md) first: you register with its DID.
 
 ## What you need
 
@@ -67,7 +63,7 @@ In the admin console of your Keycloak (the realm created by the portal with opti
     - **Option A**: nothing to do. Every new user of the realm joins the group `representative`, which lets it log in to the marketplace.
     - **Option B**: follow [Create the users](deploy_connector.md#5-create-the-users) of the connector guide.
 
-With option B, create the users for your programs later, when you need them: see [Use data from your code](consume_data.md).
+Create the users for your programs later, when you need them: see [Use data from your code](consume_data.md#2-create-a-user-for-your-program).
 
 ### 6. Get the credential and log in to the marketplace
 
