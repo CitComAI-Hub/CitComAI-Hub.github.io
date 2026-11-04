@@ -24,7 +24,7 @@ flowchart LR
 
 ## What you need
 
-- Your organisation [registered in the data space](join.md), with a credential issuer: the realm created by the onboarding portal or [your own connector](deploy_connector.md).
+- Your organisation [registered in the data space](join.md), with [your own connector](deploy_connector.md): it issues the `MachineCredential` of your programs. The realm created by the onboarding portal does not issue it yet.
 - Its legal representative (LEAR) able to log in to the [marketplace](https://marketplace.citcom-vrain-dataspace.eu).
 - Access to the admin console of your Keycloak, to create a machine user.
 - Python 3.10 or later.

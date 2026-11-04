@@ -16,13 +16,15 @@ Your organisation needs a **credential issuer**: the service that issues the cre
 | What you deploy | Nothing | A consumer connector: Keycloak and did-helper |
 | Your identity | A realm of your own in the Keycloak of the onboarding portal, with a new DID | Your connector's DID, on your domain |
 | Who manages your users | You, in the admin console of your realm | You, in your Keycloak |
-| Best for | Most partners, and anyone who wants to start now | Organisations that want to run their own infrastructure, or become providers |
+| Log in to the marketplace and buy | Yes | Yes |
+| Your programs read the data you bought | Not yet | Yes |
+| Best for | Starting now, and exploring and buying in the marketplace | Reading data from code, running your own infrastructure, or becoming a provider |
 
-Choose **A** unless you have a reason for B. With B, [deploy your connector](deploy_connector.md) first: you register with its DID.
+Start with **A** if you want to be in the data space today. With B, [deploy your connector](deploy_connector.md) first: you register with its DID.
 
-!!! warning "Being checked"
+!!! info "Reading data with option A"
 
-    That programs can read data with a realm created by the portal (option A) is being verified. Until then, option B is the one tested for reading data from code.
+    Today the realm created by the portal issues the credential of the legal representative, not the `MachineCredential` that programs need to read data. To read data from code now, use option B.
 
 ## What you need
 
@@ -50,7 +52,7 @@ Download the participation agreement from the form, have the LEAR sign it, and u
 
 The data space operator reviews the request. When it approves it, the portal **registers your organisation in the trust anchor** automatically. From that moment the credentials your organisation issues are trusted in the data space. You can follow the status of the request in the portal.
 
-With option A, the approval also creates your realm in the Keycloak of the onboarding portal, with your new DID (`did:web:onboarding.citcom-vrain-dataspace.eu:<your realm>`). You receive an **email with the user and a temporary password** of its admin console; at the first login, Keycloak asks you to set a new password.
+With option A, the approval also creates your realm in the Keycloak of the onboarding portal, with your new DID (`did:web:onboarding.citcom-vrain-dataspace.eu:<your realm>`). You receive an **email** with a link to set the password of its administrator, the user `admin`, and the address of its admin console: `https://keycloak-onboarding.citcom-vrain-dataspace.eu/admin/<your realm>/console/`.
 
 ### 5. Create the user of the legal representative
 
@@ -58,10 +60,10 @@ In the admin console of your Keycloak (the realm created by the portal with opti
 
 1. Create a user for the LEAR, with email, first name and last name, and set its password.
 2. Let it receive the `LegalPersonCredential`:
-    - **Option A**: give it the realm role `consumer`.
+    - **Option A**: nothing to do. Every new user of the realm joins the group `representative`, which lets it log in to the marketplace.
     - **Option B**: follow [Create the users](deploy_connector.md#5-create-the-users) of the connector guide.
 
-Create the users for your programs later, when you need them: see [Use data from your code](consume_data.md).
+With option B, create the users for your programs later, when you need them: see [Use data from your code](consume_data.md).
 
 ### 6. Get the credential and log in to the marketplace
 
