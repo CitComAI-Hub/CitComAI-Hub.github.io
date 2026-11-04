@@ -64,9 +64,8 @@ nav:
       - Marketplace: marketplace/index.md
   - Guides:
       - guides/index.md
-      - Worked examples:
-          - "MIAIS: an AI service": miais/index.md
-          - "Valencia: a city platform": valencia/index.md
+      - "Example: MIAIS, an AI service": miais/index.md
+      - "Example: Valencia, a city platform": valencia/index.md
       - Get a wallet and your credentials: guides/wallet.md
       - Join the data space: guides/join.md
       - Use data from your code: guides/consume_data.md
