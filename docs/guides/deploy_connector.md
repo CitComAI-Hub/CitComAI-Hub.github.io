@@ -176,7 +176,8 @@ The realm, called `provider`, defines everything the data space expects from an 
 | Credential `ServiceCredential` | Same format; claims from `roles-dataspace` | Web services bought by your organisation |
 | Client `marketplace` | Role `REPRESENTATIVE` | The LEAR |
 | Client `roles-dataspace` | Roles `clearence1` to `clearence4`; add the roles your offers ask for | Your programs and people |
-| Client `account-console` | Direct access grants and OID4VCI enabled | [ds-consumer-auth](../toolbox/ds_consumer_auth.md) and the wallets |
+| Client `account-console` | Direct access grants and OID4VCI enabled | [ds-consumer-auth](../toolbox/ds_consumer_auth.md) |
+| Client `atesta-id-wallet` | Public, PKCE, redirect to `http://127.0.0.1/callback` | [atesta-id-wallet](../toolbox/wallets.md): login in the browser |
 | Signing key | The DID key, from the keystore `/did-material/cert.pfx`, with `kid` = your DID | Every credential |
 
 The `${…}` values left in the file (`${STORE_PASS}`, `${role_…}`) are read by Keycloak itself: leave them as they are.
