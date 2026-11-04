@@ -9,7 +9,7 @@ description: "Get Lissi or atesta-id-wallet and the credential you need to log i
 
 ## What you need
 
-- A user in the credential issuer (Keycloak) of your organisation, with the credential bound to it. Your organisation's administrator creates it: see [Join the data space](join.md#4-create-the-user-of-the-legal-representative).
+- A user in the credential issuer (Keycloak) of your organisation, with the credential bound to it. Your organisation's administrator creates it: see [Join the data space](join.md#5-create-the-user-of-the-legal-representative).
 - One of these wallets:
 
 === "Phone: Lissi ID Wallet"
@@ -35,7 +35,7 @@ Programs do not use a wallet: they request a `MachineCredential` by themselves. 
 
 1. Open the account console of your organisation's Keycloak and log in with your user:
     - **Your own connector**: `https://<your Keycloak host>/realms/provider/account`.
-    - **Identity from the onboarding portal**: the account console of the realm the portal created for you, `https://keycloak-onboarding.citcom-vrain-dataspace.eu/realms/<your realm>/account`.
+    - **Identity created by the onboarding portal**: the account console of your realm, `https://keycloak-onboarding.citcom-vrain-dataspace.eu/realms/<your realm>/account`.
 2. Go to **Verifiable Credentials** and choose the credential.
 3. Click **Issue to wallet**. A QR code (or a link) appears.
 4. Scan it with the wallet:
