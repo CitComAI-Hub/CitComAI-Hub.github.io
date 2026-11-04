@@ -126,7 +126,8 @@
 }
 .cc-header__links a {
   display: block;
-  padding: 0.4rem 0.7rem;
+  padding: 0.4rem 0.55rem;
+  white-space: nowrap;
   border-radius: var(--cc-radius-sm);
   font-size: 0.74rem;
   font-weight: 600;
