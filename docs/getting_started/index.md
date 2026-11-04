@@ -1,15 +1,48 @@
 ---
-icon: material/rocket-outline
 title: Getting started
+hide:
+  - toc
+description: "What CitCom.ai is and why its pieces fit together, in plain words."
 ---
 
-Embarking on your journey with CitCom.ai is made simple through our comprehensive *Getting Started* guide. This section is designed to help users familiarize themselves with the essential aspects of the CitCom.ai project. To facilitate your learning, we present a roadmap that outlines key steps and resources, ensuring you have a clear path to follow as you dive into the principles and functionalities of CitCom.ai.
+# Getting started
 
-[timeline center alternate(docs/getting_started/roadmap.yaml)]
+<p class="cc-lead">What CitCom.ai is and why its technical pieces fit together the way they do, in plain words. Start here if you are new to the project: each page is short and leads to the deeper chapters.</p>
 
-!!! Tip "Next steps"
+## CitCom in four questions
 
-    Ready to get started? Just click "**Next**" on the bottom navigation bar to continue!
+<div class="grid cards cc-two" markdown>
 
+-   :material-city-variant-outline:{ .lg } __What is it?__
 
+    ---
 
+    A European Union project that runs Testing and Experimentation Facilities (TEFs) for AI and robotics in smart cities. Companies test their AI products in real cities, with real data, before they reach the market.
+
+    [:octicons-arrow-right-24: The project and the TEFs](project.md)
+
+-   :material-puzzle-outline:{ .lg } __What does it build on?__
+
+    ---
+
+    The European work on data sharing between cities: the Minimal Interoperability Mechanisms (MIMs) of OASC, Smart Data Models, and the data space recommendations of the DSSC and DS4SSCC.
+
+    [:octicons-arrow-right-24: Interoperability](interoperability.md)
+
+-   :material-server-network:{ .lg } __Which technology does it use?__
+
+    ---
+
+    NGSI-LD brokers to serve the data, Smart Data Models to describe it, and two data space technologies, FIWARE and Eclipse EDC, to share it under control, with verifiable credentials held in a wallet.
+
+    [:octicons-arrow-right-24: Data spaces in 5 minutes](data_spaces.md)
+
+-   :material-package-variant-closed:{ .lg } __Who provides what?__
+
+    ---
+
+    The **TEF nodes** offer their services to AI and robotics innovators. CitCom's **work package 3 (WP3)** offers the TEF nodes a *minimal package*: a common reference architecture, with the guides, tools and deployment examples to apply it. This hub gathers it.
+
+    [:octicons-arrow-right-24: The minimal package](project.md#the-minimal-package-for-tef-nodes)
+
+</div>

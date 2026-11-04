@@ -1,80 +1,73 @@
 ---
-    template: home.html
+template: home.html
+title: Home
+description: "The technical hub of the CitCom.ai TEF: data spaces, tools and guides to build AI services for smart cities."
+hide:
+  - navigation
+  - toc
 ---
-<style>
-/* Hide title on the home page */
-article > h1 {
-    display: none
-}
 
-/* Fix title font-weight */
-body > header > nav > div.md-header__title.md-header__title--active > div > div:nth-child(2){
-    font-weight: 700;   
-}
-.package-icon{
-    width: 5rem;
-}
-body > div.md-container > main > div > div > article > a{
-    display: none
-}
-</style>
+## Find your way in
 
-<div style="text-align: center;">
+<div class="cc-roles" markdown>
 
-<img class="package-icon skip-glightbox" src="./assets/package.png">
-  <h1>Minimal Package for TEF nodes</h1>
-  <p>Work package 3 (WP3) provides the <strong>Minimal Package for CitCom.ai TEF (Testing and Experimentation Facility) nodes</strong>, which contains comprehensive <strong>guides, toolboxes, and deployment frameworks</strong> to ensure interoperability across the wide range of TEF nodes by defining a <strong>common reference architecture</strong>. Based on this architecture, it also provides support and examples to develop <strong>AI services</strong>.</p> 
+<div class="cc-role" markdown>
+<p class="cc-role__who">Cities and TEF nodes</p>
+
+What CitCom offers and the minimal package the TEF nodes share.
+
+- [The project and the TEFs](getting_started/project.md)
+- [Interoperability](getting_started/interoperability.md)
+- [Valencia TEF node](valencia/index.md)
 </div>
 
-<br>
-### Package components:
-<div class="grid cards" markdown>
+<div class="cc-role" markdown>
+<p class="cc-role__who">Data providers</p>
 
--   :material-rocket-outline:{ .lg .middle } __Getting Started__
+Publish a dataset in the data space and decide who can use it.
 
-    ---
+- [Join the data space](guides/join.md)
+- [Publish a dataset](guides/publish_dataset.md)
+- [Lepus](toolbox/lepus.md)
+</div>
 
-    Start by learning the basics of CitCom.ai and its common reference architecture.
+<div class="cc-role" markdown>
+<p class="cc-role__who">AI developers</p>
 
-    [:octicons-arrow-right-24: Learn more](./welcome.md)
+Read city data from your code and offer your service to other cities.
 
--   :material-city-variant-outline:{ .lg .middle } __TEF Nodes__
+- [MIAIS: a worked example](miais/index.md)
+- [Use data from your code](guides/consume_data.md)
+- [Publish a web service](guides/publish_service.md)
+</div>
 
-    ---
+<div class="cc-role" markdown>
+<p class="cc-role__who">Data space operators</p>
 
-    Testing and Experimentation Facility (TEF) nodes.
+How the FIWARE and Eclipse EDC data spaces are built, and how to run a connector.
 
-    [:octicons-arrow-right-24: Learn more](./tef/index.md)
+- [FIWARE data space](data_spaces/fiware.md)
+- [Eclipse EDC data space](data_spaces/eclipse/index.md)
+- [Deploy your own connector](guides/deploy_connector.md)
+</div>
 
--   :material-file-document-outline:{ .lg .middle } __Documentation__
+</div>
 
-    ---
+## What you will find here
 
-    Reports and deployment guides of different components.
+[CitCom.ai](https://citcom.ai) is a European Union project that runs Testing and Experimentation Facilities for AI and robotics in smart and sustainable cities. This hub gathers the *minimal package* that the project prepares for its TEF nodes, so that a service built in one city runs in the others.
 
-    [:octicons-arrow-right-24: Learn more](./documentation/index.md)
+<div class="cc-facts" markdown>
+<a href="data_spaces/"><strong>A working data space</strong><span>Running infrastructure to join, with real data from Valencia.</span></a>
+<a href="miais/"><strong>A worked example</strong><span>An AI service that climbs the interoperability levels, step by step.</span></a>
+<a href="toolbox/"><strong>Open tools</strong><span>Connect an NGSI-v2 platform, read NGSI-LD data and get data space tokens.</span></a>
+</div>
 
--   :material-store-search-outline:{ .lg .middle } __Data Catalog__
+## From the TEF network
 
-    ---
-
-    Centralized hub to keep track of available datasets.
-
-    [:octicons-arrow-right-24: Learn more](./data_catalog/index.md)
-
--   :material-toolbox-outline:{ .lg .middle } __Toolbox__
-
-    ---
-
-    A set of useful tools compatible with MIMs.
-
-    [:octicons-arrow-right-24: Learn more](./toolbox/index.md)
-
--   :material-robot-outline:{ .lg .middle } __AI Services__
-
-    ---
-
-    Minimal interoperable AI services for platforms compatible with MIMs.
-
-    [:octicons-arrow-right-24: Learn more](./services/index.md)
+<div class="cc-links" markdown>
+[TEF nodes](tef/index.md)
+[AI Trustworthiness Label](ai_assessment/index.md)
+[Local Digital Twins](local_digital_twins/index.md)
+[FAQ and contribute](faq/index.md)
 </div>

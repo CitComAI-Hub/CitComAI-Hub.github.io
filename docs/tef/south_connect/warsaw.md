@@ -26,48 +26,11 @@ The Warsaw TEF Site focuses on the use of spatial data and advanced tools for pr
 - **Visualization platforms**: CENAGIS MapViewer spatial data visualization platform based on [TerriaMap](https://terria.io) allows the visualisation and comparative analysis of a wide variety of spatial datasets. It supports visualisation of very large datasets and supports AI-based extensions of functionality.
 - **Other**: -
 
-<!-- <table>
-  <tr>
-    <th colspan="2" style="text-align: center;">Specifications</th>
-  </tr>
-  <tr>
-    <td><strong>Data Broker<strong></td>
-    <td>
-      &lt;no_specified><br>
-      <strong>- API:</strong> &lt;no_specified><br>
-      <strong>- Version:</strong> &lt;no_specified>
-    </td>
-  </tr>
-  <tr>
-    <td><strong>Data Source<strong></td>
-    <td>&lt;no_specified></a></td>
-  </tr>
-  <tr>
-    <td><strong>IdM &amp; Auth<strong></td>
-    <td>&lt;no_specified></td>
-  </tr>
-  <tr>
-    <td><strong>Data Publication<strong></td>
-    <td>&lt;no_specified></td>
-  </tr>
-</table> -->
-
 ### Architecture
-
-Provide a high-level overview of the architecture of the TEF Site, including the key components and technologies used. Include any relevant diagrams or visualizations to help stakeholders understand the infrastructure.
 
 ![warsaw_arch](./img/warsaw-arch.png)
 
-
-<!-- ### European Data Space for Smart Communities (DS4SSCC) -->
-
-<!-- {{ config.extra.labels.ds4ssc_compliant.yes_comp.data_sources }} {{ config.extra.labels.ds4ssc_compliant.yes_comp.data_broker }} {{ config.extra.labels.ds4ssc_compliant.yes_comp.data_api }} {{ config.extra.labels.ds4ssc_compliant.no_comp.data_idm_auth }} {{ config.extra.labels.ds4ssc_compliant.no_comp.data_publication }}
-
-![aarhus_city_lab_arch-ds4sscc](./img/aarhus_city_lab_ds4sscc-arch.svg) -->
-
 ## Relevant datasets of the site
-
-Describe the relevant datasets available at the site
 
 - **Dataset_1**: Road network in Poland in form of vector data from Topographic Objects Database (BDOT10k)
 - **Dataset_2**: Aerial laser scanning point cloud (LIDAR) for part of the city of Warsaw
@@ -75,16 +38,11 @@ Describe the relevant datasets available at the site
 
 ## Key Stakeholders and Partners
 
-Provide a list of the key stakeholders and partners involved in the TEF Site. Include any academic institutions, industry collaborators, and other stakeholders.
-
 - **Stakeholder 1**: [Warsaw University of Technology](https://eng.pw.edu.pl) - Creator and host of infrastructure
 - **Stakeholder 2**: [Opegieka Sp. z o.o.](https://opegieka.pl/home,1,en) - Main partner during system creation process
 - **Stakeholder 3**: [Scientific Network for Geospatial Analysis](https://cenagis.edu.pl/en/scientific-network-of-geospatial-analyzes/) - Consortium of nearly 30 research units with the aim of consolidating the geoinformation research program in Poland
 
-
 ## Contact Information
-
-Provide contact details for those responsible for the TEF Site or who can provide more information to collaborators or users.
 
 - **Site Coordinator**: Dariusz Gotlib (email: dariusz.gotlib@pw.edu.pl)
 - **Technical Support**: Kamil Choromański (email: kamil.choromanski@pw.edu.pl)
@@ -92,10 +50,6 @@ Provide contact details for those responsible for the TEF Site or who can provid
 
 ## Additional Information
 The TEF Site offers unique capabilities in geospatial analysis, and it is open to collaboration with other EU projects in the area of big data processing, artificial intelligence and smart cities.
-<!-- Any other relevant information that might be useful to collaborators or developers working with the TEF Site, such as specific protocols, access instructions, or unique capabilities.
-
-Example:
-The TEF Site offers unique capabilities in [specific field], and it is open to collaboration with other EU projects in the area of [related field]. -->
 
 ## Documentation and Resources
 
