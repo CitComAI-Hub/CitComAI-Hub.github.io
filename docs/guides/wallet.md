@@ -9,7 +9,7 @@ description: "Get Lissi or atesta-id-wallet and the credential you need to log i
 
 ## What you need
 
-- A user in the identity server (Keycloak) of your organisation's connector, with the credential assigned. Your organisation's administrator creates it.
+- A user in the credential issuer (Keycloak) of your organisation, with the credential bound to it. Your organisation's administrator creates it: see [Join the data space](join.md#4-create-the-user-of-the-legal-representative).
 - One of these wallets:
 
 === "Phone: Lissi ID Wallet"
@@ -33,7 +33,9 @@ Programs do not use a wallet: they request a `MachineCredential` by themselves. 
 
 ## Steps
 
-1. Open the account console of your organisation's Keycloak: `https://keycloak-<participant>.citcom-vrain-dataspace.eu/realms/provider/account`, and log in with your user.
+1. Open the account console of your organisation's Keycloak and log in with your user:
+    - **Your own connector**: `https://<your Keycloak host>/realms/provider/account`.
+    - **Identity from the onboarding portal**: the account console of the realm the portal created for you, `https://keycloak-onboarding.citcom-vrain-dataspace.eu/realms/<your realm>/account`.
 2. Go to **Verifiable Credentials** and choose the credential.
 3. Click **Issue to wallet**. A QR code (or a link) appears.
 4. Scan it with the wallet:
@@ -50,7 +52,7 @@ Open the [marketplace](https://marketplace.citcom-vrain-dataspace.eu) and click 
 
 | Symptom | Cause | Fix |
 |---|---|---|
-| *You have no verifiable credentials yet* in the account console | The credential is not bound to your user. Having the role is not enough | Ask your administrator to bind the credential to your user |
+| *You have no verifiable credentials yet* in the account console | The credential is not bound to your user. Having the role is not enough | Ask your administrator to bind it (see [Create the users](deploy_connector.md#5-create-the-users)) |
 | The wallet rejects the offer, or the QR has expired | Offers are short-lived | Click **Issue to wallet** again |
 | The verifier rejects the login | Your organisation is not trusted for this credential, or your roles do not match | For the marketplace, your organisation must be [registered](join.md). For a service, it must have bought it, and you must have only the role it asks for |
 | A service rejects a credential that has several roles | The verifier requires every data space role in the credential to be allowed by the purchase | Use a user with only the role of that service |

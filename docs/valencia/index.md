@@ -2,9 +2,9 @@
 title: "Valencia: a city platform in the data space"
 description: "How the Ajuntament de València offers its NGSI-v2 platform in the data space through Lepus, without migrating it."
 next_step:
-  url: guides/wallet/
-  title: "Get a wallet and your credentials"
-  description: "The first step of every guide: a wallet with your organisation's credential."
+  url: guides/join/
+  title: "Join the data space"
+  description: "The first step of every guide: register your organisation."
 ---
 
 # Valencia: a city platform in the data space

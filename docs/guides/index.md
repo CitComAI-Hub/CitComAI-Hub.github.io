@@ -9,20 +9,24 @@ Build on the CitCom data space. Start with a worked example: the [MIAIS](../miai
 
 | Guide | For | You end up with |
 |---|---|---|
+| [Join the data space](join.md) | The legal representative (LEAR) of an organisation | Your organisation registered and trusted, able to buy in the marketplace |
+| [Deploy your own connector](deploy_connector.md) | Operators | A consumer connector that issues your organisation's credentials |
 | [Get a wallet and your credentials](wallet.md) | Anyone | A wallet with your credential, ready to log in |
-| [Join the data space](join.md) | The legal representative (LEAR) of an organisation | Your organisation registered, with its profile in the marketplace |
 | [Use data from your code](consume_data.md) | Developers of a consumer | A program that reads another organisation's data |
 | [Publish a dataset](publish_dataset.md) | Data providers | An offer in the marketplace that others can buy |
 | [Publish a web service](publish_service.md) | Service providers | A web app that people from other organisations open with their wallet |
-| [Deploy your own connector](deploy_connector.md) | Operators | An overview of what a connector is made of and how it is deployed |
+
+!!! tip "To read data as soon as possible"
+
+    Follow [Join the data space](join.md), then [Use data from your code](consume_data.md). The first one tells you whether you need your own connector.
 
 ```mermaid
 flowchart LR
-    W["Get a wallet"] --> J["Join"]
-    J --> C["Use data"]
-    J --> P["Publish a dataset"]
-    J --> S["Publish a service"]
-    D["Deploy a connector"] -.-> J
+    D["Deploy a connector<br/>(optional)"] -.-> J["Join"]
+    J --> W["Get a wallet"]
+    W --> C["Use data"]
+    W --> P["Publish a dataset"]
+    W --> S["Publish a service"]
 ```
 
 !!! tip "New to data spaces?"
