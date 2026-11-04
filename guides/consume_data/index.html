@@ -784,9 +784,9 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#2-create-a-machine-user-in-your-keycloak" class="md-nav__link">
+  <a href="#2-create-a-user-for-your-program" class="md-nav__link">
     <span class="md-ellipsis">
-      2. Create a machine user in your Keycloak
+      2. Create a user for your program
     </span>
   </a>
   
@@ -2137,9 +2137,9 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#2-create-a-machine-user-in-your-keycloak" class="md-nav__link">
+  <a href="#2-create-a-user-for-your-program" class="md-nav__link">
     <span class="md-ellipsis">
-      2. Create a machine user in your Keycloak
+      2. Create a user for your program
     </span>
   </a>
   
@@ -2264,9 +2264,9 @@
     P -- "3 · NGSI-LD queries + token" --&gt; GW</code></pre>
 <h2 id="what-you-need">What you need</h2>
 <ul>
-<li>Your organisation <a href="../join/">registered in the data space</a>, with <a href="../deploy_connector/">your own connector</a>: it issues the <code>MachineCredential</code> of your programs. The realm created by the onboarding portal does not issue it yet.</li>
+<li>Your organisation <a href="../join/">registered in the data space</a>. Nothing to deploy: the realm the onboarding portal created for it issues the <code>MachineCredential</code> of your programs. With your own connector, it issues it.</li>
 <li>Its legal representative (LEAR) able to log in to the <a href="https://marketplace.citcom-vrain-dataspace.eu">marketplace</a>.</li>
-<li>Access to the admin console of your Keycloak, to create a machine user.</li>
+<li>The administrator of your organisation's Keycloak, to create a user for the program.</li>
 <li>Python 3.10 or later.</li>
 </ul>
 <h2 id="steps">Steps</h2>
@@ -2307,12 +2307,24 @@
 <p class="admonition-title">To try it: the Valencia offers</p>
 <p>The <a href="../../valencia/#data-in-the-data-space">Ajuntament de València</a> offers four datasets that are always on. They are a good first test; the rest of this guide uses its <em>Waste containers</em> offer as the example. Replace the values with those of your offer.</p>
 </div>
-<h3 id="2-create-a-machine-user-in-your-keycloak">2. Create a machine user in your Keycloak</h3>
-<p>Your program logs in as a user of its own, never as a person. In the admin console of your Keycloak:</p>
+<h3 id="2-create-a-user-for-your-program">2. Create a user for your program</h3>
+<p>Your program logs in as a user of its own, never as a person. Open the admin console of your organisation's Keycloak:</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="realm-created-by-the-portal" name="__tabbed_1" type="radio" /><input id="your-own-connector" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="realm-created-by-the-portal">Realm created by the portal</label><label for="your-own-connector">Your own connector</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p><code>https://keycloak-onboarding.citcom-vrain-dataspace.eu/admin/&lt;your realm&gt;/console/</code>, with the user <code>admin</code> and the password you set after the approval email.</p>
+</div>
+<div class="tabbed-block">
+<p><code>https://&lt;your Keycloak host&gt;/admin/master/console/#/provider</code>, with the admin of your Keycloak.</p>
+</div>
+</div>
+</div>
+<p>Then:</p>
 <ol>
-<li><strong>Users → Add user</strong>: a name such as <code>reader1</code>, with an email. Then <strong>Credentials → Set password</strong>, not temporary.</li>
-<li><strong>Role mapping → Assign role → Filter by clients</strong>: choose the role the offer asks for in the client <code>roles-dataspace</code> (<code>clearence1</code>). Give it <strong>only</strong> the roles of the offers this program uses: the provider's verifier rejects a credential that carries a role the purchase does not allow.</li>
-<li>Bind the <code>MachineCredential</code> to the user. See <a href="../deploy_connector/#5-create-the-users">Create the users</a>: having the role is not enough.</li>
+<li><strong>Users → Add user</strong>: a name such as <code>reader1</code>, with an email. <strong>Create</strong>.</li>
+<li><strong>Credentials → Set password</strong>: a long password, with <strong>Temporary</strong> off.</li>
+<li><strong>Role mapping → Assign role</strong>, filter by clients, and choose <code>roles-dataspace</code> · <code>clearence1</code>, the role the data offers ask for. Give it <strong>only</strong> the roles of the offers this program uses: a verifier rejects a credential that carries a role the purchase does not allow.</li>
+<li><strong>Verifiable credentials → Create verifiable credential</strong> and choose <code>MachineCredential</code>. Without this step Keycloak does not issue it, even with the role.</li>
 </ol>
 <h3 id="3-buy-the-offer">3. Buy the offer</h3>
 <p>The LEAR logs in to the marketplace, opens the offer and buys it. When the order is <strong>completed</strong>, the provider's connector trusts the <code>MachineCredential</code> of your organisation and loads the access policy of the offer. This takes a few seconds.</p>
@@ -2322,43 +2334,62 @@
 </span></code></pre></div>
 <p><a href="../../toolbox/ds_consumer_auth/">ds-consumer-auth</a> gets the credential and the access token, and renews them. <a href="../../toolbox/ngsi_ld/">FiLiP</a> is the NGSI-LD client.</p>
 <h3 id="5-configure">5. Configure</h3>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="realm-created-by-the-portal_1" name="__tabbed_2" type="radio" /><input id="your-own-connector_1" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="realm-created-by-the-portal_1">Realm created by the portal</label><label for="your-own-connector_1">Your own connector</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>The program logs in through your organisation's own client, whose ID is your DID. Copy its secret from the admin console: <strong>Clients → <code>did:web:onboarding.citcom-vrain-dataspace.eu:&lt;your realm&gt;</code> → Credentials → Client secret</strong>.</p>
 <div class="language-bash highlight"><span class="filename">.env</span><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># Your organisation: who you are</span>
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="nb">export</span><span class="w"> </span><span class="nv">DS_ISSUER_URL</span><span class="o">=</span><span class="s2">&quot;https://&lt;your Keycloak host&gt;/realms/&lt;your realm&gt;&quot;</span>
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="nb">export</span><span class="w"> </span><span class="nv">DS_USERNAME</span><span class="o">=</span><span class="s2">&quot;reader1&quot;</span>
-</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="nb">export</span><span class="w"> </span><span class="nv">DS_PASSWORD</span><span class="o">=</span><span class="s2">&quot;&lt;its password&gt;&quot;</span>
-</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="c1"># The provider: who you ask (from step 1)</span>
-</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="nb">export</span><span class="w"> </span><span class="nv">DS_VERIFIER_URL</span><span class="o">=</span><span class="s2">&quot;https://verifier-townhall-vlc.citcom-vrain-dataspace.eu/services/machine-id&quot;</span>
-</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="nb">export</span><span class="w"> </span><span class="nv">DS_SCOPE</span><span class="o">=</span><span class="s2">&quot;operator1&quot;</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="nb">export</span><span class="w"> </span><span class="nv">DS_ISSUER_URL</span><span class="o">=</span><span class="s2">&quot;https://keycloak-onboarding.citcom-vrain-dataspace.eu/realms/&lt;your realm&gt;&quot;</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="nb">export</span><span class="w"> </span><span class="nv">DS_CLIENT_ID</span><span class="o">=</span><span class="s2">&quot;did:web:onboarding.citcom-vrain-dataspace.eu:&lt;your realm&gt;&quot;</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="nb">export</span><span class="w"> </span><span class="nv">DS_CLIENT_SECRET</span><span class="o">=</span><span class="s2">&quot;&lt;the client secret&gt;&quot;</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="nb">export</span><span class="w"> </span><span class="nv">DS_USERNAME</span><span class="o">=</span><span class="s2">&quot;reader1&quot;</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="nb">export</span><span class="w"> </span><span class="nv">DS_PASSWORD</span><span class="o">=</span><span class="s2">&quot;&lt;its password&gt;&quot;</span>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="c1"># The provider: who you ask (from step 1)</span>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="nb">export</span><span class="w"> </span><span class="nv">DS_VERIFIER_URL</span><span class="o">=</span><span class="s2">&quot;https://verifier-townhall-vlc.citcom-vrain-dataspace.eu/services/machine-id&quot;</span>
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="nb">export</span><span class="w"> </span><span class="nv">DS_SCOPE</span><span class="o">=</span><span class="s2">&quot;operator1&quot;</span>
 </span></code></pre></div>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nb">source</span><span class="w"> </span>.env
+</div>
+<div class="tabbed-block">
+<div class="language-bash highlight"><span class="filename">.env</span><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># Your organisation: who you are</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="nb">export</span><span class="w"> </span><span class="nv">DS_ISSUER_URL</span><span class="o">=</span><span class="s2">&quot;https://&lt;your Keycloak host&gt;/realms/provider&quot;</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="nb">export</span><span class="w"> </span><span class="nv">DS_USERNAME</span><span class="o">=</span><span class="s2">&quot;reader1&quot;</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="nb">export</span><span class="w"> </span><span class="nv">DS_PASSWORD</span><span class="o">=</span><span class="s2">&quot;&lt;its password&gt;&quot;</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="c1"># The provider: who you ask (from step 1)</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="nb">export</span><span class="w"> </span><span class="nv">DS_VERIFIER_URL</span><span class="o">=</span><span class="s2">&quot;https://verifier-townhall-vlc.citcom-vrain-dataspace.eu/services/machine-id&quot;</span>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="nb">export</span><span class="w"> </span><span class="nv">DS_SCOPE</span><span class="o">=</span><span class="s2">&quot;operator1&quot;</span>
 </span></code></pre></div>
-<p>Keep the password out of your repository.</p>
+</div>
+</div>
+</div>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nb">source</span><span class="w"> </span>.env
+</span></code></pre></div>
+<p>Keep the passwords and the secret out of your repository.</p>
 <h3 id="6-check-the-token">6. Check the token</h3>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>ds-token<span class="w"> </span>&gt;<span class="w"> </span>/dev/null<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;token OK&quot;</span>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>ds-token<span class="w"> </span>&gt;<span class="w"> </span>/dev/null<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;token OK&quot;</span>
 </span></code></pre></div>
 <p>If it prints <code>token OK</code>, your credential is accepted by the provider. If not, see <a href="#if-something-fails">If something fails</a> before going on.</p>
 <h3 id="7-read-the-data">7. Read the data</h3>
-<div class="language-python highlight"><span class="filename">read_data.py</span><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">filip.clients.ngsi_ld.cb</span><span class="w"> </span><span class="kn">import</span> <span class="n">ContextBrokerLDClient</span>
-</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="kn">from</span><span class="w"> </span><span class="nn">filip.models.base</span><span class="w"> </span><span class="kn">import</span> <span class="n">FiwareLDHeader</span>
-</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="kn">from</span><span class="w"> </span><span class="nn">ds_consumer_auth</span><span class="w"> </span><span class="kn">import</span> <span class="n">data_space_session</span>
-</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>
-</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="n">cb</span> <span class="o">=</span> <span class="n">ContextBrokerLDClient</span><span class="p">(</span>
-</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>    <span class="c1"># API address + path, without /ngsi-ld (FiLiP adds it)</span>
-</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>    <span class="n">url</span><span class="o">=</span><span class="s2">&quot;https://apisix-townhall-vlc.citcom-vrain-dataspace.eu/lepus&quot;</span><span class="p">,</span>
-</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>    <span class="n">session</span><span class="o">=</span><span class="n">data_space_session</span><span class="p">(),</span>  <span class="c1"># adds the data space token to every request</span>
-</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>    <span class="n">fiware_header</span><span class="o">=</span><span class="n">FiwareLDHeader</span><span class="p">(),</span>
-</span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>    <span class="n">create_tenant</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
-</span><span id="__span-4-11"><a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a><span class="p">)</span>
-</span><span id="__span-4-12"><a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a><span class="k">for</span> <span class="n">entity</span> <span class="ow">in</span> <span class="n">cb</span><span class="o">.</span><span class="n">get_entity_list</span><span class="p">(</span><span class="n">entity_type</span><span class="o">=</span><span class="s2">&quot;WasteContainer&quot;</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="mi">10</span><span class="p">):</span>
-</span><span id="__span-4-13"><a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a>    <span class="nb">print</span><span class="p">(</span><span class="n">entity</span><span class="o">.</span><span class="n">id</span><span class="p">,</span> <span class="n">entity</span><span class="o">.</span><span class="n">model_dump</span><span class="p">()</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;fillingLevel&quot;</span><span class="p">))</span>
+<div class="language-python highlight"><span class="filename">read_data.py</span><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">filip.clients.ngsi_ld.cb</span><span class="w"> </span><span class="kn">import</span> <span class="n">ContextBrokerLDClient</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="kn">from</span><span class="w"> </span><span class="nn">filip.models.base</span><span class="w"> </span><span class="kn">import</span> <span class="n">FiwareLDHeader</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="kn">from</span><span class="w"> </span><span class="nn">ds_consumer_auth</span><span class="w"> </span><span class="kn">import</span> <span class="n">data_space_session</span>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="n">cb</span> <span class="o">=</span> <span class="n">ContextBrokerLDClient</span><span class="p">(</span>
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>    <span class="c1"># API address + path, without /ngsi-ld (FiLiP adds it)</span>
+</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>    <span class="n">url</span><span class="o">=</span><span class="s2">&quot;https://apisix-townhall-vlc.citcom-vrain-dataspace.eu/lepus&quot;</span><span class="p">,</span>
+</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>    <span class="n">session</span><span class="o">=</span><span class="n">data_space_session</span><span class="p">(),</span>  <span class="c1"># adds the data space token to every request</span>
+</span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>    <span class="n">fiware_header</span><span class="o">=</span><span class="n">FiwareLDHeader</span><span class="p">(),</span>
+</span><span id="__span-5-10"><a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>    <span class="n">create_tenant</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+</span><span id="__span-5-11"><a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a><span class="p">)</span>
+</span><span id="__span-5-12"><a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a><span class="k">for</span> <span class="n">entity</span> <span class="ow">in</span> <span class="n">cb</span><span class="o">.</span><span class="n">get_entity_list</span><span class="p">(</span><span class="n">entity_type</span><span class="o">=</span><span class="s2">&quot;WasteContainer&quot;</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="mi">10</span><span class="p">):</span>
+</span><span id="__span-5-13"><a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a>    <span class="nb">print</span><span class="p">(</span><span class="n">entity</span><span class="o">.</span><span class="n">id</span><span class="p">,</span> <span class="n">entity</span><span class="o">.</span><span class="n">model_dump</span><span class="p">()</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;fillingLevel&quot;</span><span class="p">))</span>
 </span></code></pre></div>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>python<span class="w"> </span>read_data.py
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>python<span class="w"> </span>read_data.py
 </span></code></pre></div>
 <p>It prints ten entities. To read more, page with <code>offset</code>, or filter with <code>q</code>, for example <code>q="fillingLevel&gt;0.8"</code>.</p>
 <h2 id="check-that-it-works">Check that it works</h2>
 <p>The same query with <code>curl</code>, using the token of the library:</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>curl<span class="w"> </span>-s<span class="w"> </span>-H<span class="w"> </span><span class="s2">&quot;Authorization: Bearer </span><span class="k">$(</span>ds-token<span class="k">)</span><span class="s2">&quot;</span><span class="w"> </span>-H<span class="w"> </span><span class="s2">&quot;Accept: application/ld+json&quot;</span><span class="w"> </span><span class="se">\</span>
-</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="w">  </span><span class="s2">&quot;https://apisix-townhall-vlc.citcom-vrain-dataspace.eu/lepus/ngsi-ld/v1/entities?type=WasteContainer&amp;limit=1&quot;</span>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>curl<span class="w"> </span>-s<span class="w"> </span>-H<span class="w"> </span><span class="s2">&quot;Authorization: Bearer </span><span class="k">$(</span>ds-token<span class="k">)</span><span class="s2">&quot;</span><span class="w"> </span>-H<span class="w"> </span><span class="s2">&quot;Accept: application/ld+json&quot;</span><span class="w"> </span><span class="se">\</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="w">  </span><span class="s2">&quot;https://apisix-townhall-vlc.citcom-vrain-dataspace.eu/lepus/ngsi-ld/v1/entities?type=WasteContainer&amp;limit=1&quot;</span>
 </span></code></pre></div>
 <p>It returns one entity in JSON-LD.</p>
 <h2 id="several-offers">Several offers</h2>
@@ -2367,16 +2398,18 @@
 <li><strong>Offers that ask for different roles</strong>: use one machine user per role. A credential is accepted only if <em>all</em> its roles are allowed by one purchase, so a user with two roles fails both.</li>
 <li><strong>Several providers</strong>: one session per provider, each with the verifier of its provider:</li>
 </ul>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">ds_consumer_auth</span><span class="w"> </span><span class="kn">import</span> <span class="n">ConsumerConfig</span><span class="p">,</span> <span class="n">data_space_session</span>
-</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>
-</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="k">def</span><span class="w"> </span><span class="nf">session_for</span><span class="p">(</span><span class="n">provider_verifier</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
-</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>    <span class="k">return</span> <span class="n">data_space_session</span><span class="p">(</span><span class="n">ConsumerConfig</span><span class="p">(</span>
-</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>        <span class="n">issuer_url</span><span class="o">=</span><span class="s2">&quot;https://&lt;your Keycloak host&gt;/realms/&lt;your realm&gt;&quot;</span><span class="p">,</span>
-</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>        <span class="n">username</span><span class="o">=</span><span class="s2">&quot;reader1&quot;</span><span class="p">,</span>
-</span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>        <span class="n">password</span><span class="o">=</span><span class="s2">&quot;&lt;its password&gt;&quot;</span><span class="p">,</span>
-</span><span id="__span-7-8"><a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a>        <span class="n">verifier_url</span><span class="o">=</span><span class="n">provider_verifier</span><span class="p">,</span>
-</span><span id="__span-7-9"><a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a>        <span class="n">scope</span><span class="o">=</span><span class="s2">&quot;operator1&quot;</span><span class="p">,</span>
-</span><span id="__span-7-10"><a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a>    <span class="p">))</span>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">ds_consumer_auth</span><span class="w"> </span><span class="kn">import</span> <span class="n">ConsumerConfig</span><span class="p">,</span> <span class="n">data_space_session</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="k">def</span><span class="w"> </span><span class="nf">session_for</span><span class="p">(</span><span class="n">provider_verifier</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>    <span class="k">return</span> <span class="n">data_space_session</span><span class="p">(</span><span class="n">ConsumerConfig</span><span class="p">(</span>
+</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>        <span class="n">issuer_url</span><span class="o">=</span><span class="s2">&quot;https://keycloak-onboarding.citcom-vrain-dataspace.eu/realms/&lt;your realm&gt;&quot;</span><span class="p">,</span>
+</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>        <span class="n">client_id</span><span class="o">=</span><span class="s2">&quot;did:web:onboarding.citcom-vrain-dataspace.eu:&lt;your realm&gt;&quot;</span><span class="p">,</span>
+</span><span id="__span-8-7"><a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a>        <span class="n">client_secret</span><span class="o">=</span><span class="s2">&quot;&lt;the client secret&gt;&quot;</span><span class="p">,</span>
+</span><span id="__span-8-8"><a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a>        <span class="n">username</span><span class="o">=</span><span class="s2">&quot;reader1&quot;</span><span class="p">,</span>
+</span><span id="__span-8-9"><a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a>        <span class="n">password</span><span class="o">=</span><span class="s2">&quot;&lt;its password&gt;&quot;</span><span class="p">,</span>
+</span><span id="__span-8-10"><a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a>        <span class="n">verifier_url</span><span class="o">=</span><span class="n">provider_verifier</span><span class="p">,</span>
+</span><span id="__span-8-11"><a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a>        <span class="n">scope</span><span class="o">=</span><span class="s2">&quot;operator1&quot;</span><span class="p">,</span>
+</span><span id="__span-8-12"><a id="__codelineno-8-12" name="__codelineno-8-12" href="#__codelineno-8-12"></a>    <span class="p">))</span>
 </span></code></pre></div>
 <h2 id="if-something-fails">If something fails</h2>
 <table>
@@ -2390,13 +2423,18 @@
 <tbody>
 <tr>
 <td><code>login: request failed (HTTP 401)</code></td>
-<td>Wrong user or password, or <code>DS_ISSUER_URL</code> points to another realm</td>
+<td>Wrong user or password, wrong client secret, or <code>DS_ISSUER_URL</code> points to another realm</td>
 <td>Check them in your Keycloak</td>
 </tr>
 <tr>
+<td><code>login: request failed (HTTP 400)</code> with <code>unauthorized_client</code></td>
+<td>A realm created by the portal, without <code>DS_CLIENT_ID</code> and <code>DS_CLIENT_SECRET</code></td>
+<td>Set them as in step 5</td>
+</tr>
+<tr>
 <td>The credential request fails, or the account console says <em>You have no verifiable credentials yet</em></td>
-<td>The <code>MachineCredential</code> is not bound to the machine user</td>
-<td>Step 2.3</td>
+<td>The <code>MachineCredential</code> is not bound to the user</td>
+<td>Step 2.4</td>
 </tr>
 <tr>
 <td><code>vp_token: the verifier rejected the credential (HTTP 400: {})</code></td>
@@ -2450,7 +2488,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="November 4, 2026 12:26:33"><span class="timeago" datetime="2026-11-04T12:26:33+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="November 4, 2026 12:26:33">2026-11-04</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="November 4, 2026 20:16:50"><span class="timeago" datetime="2026-11-04T20:16:50+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="November 4, 2026 20:16:50">2026-11-04</span>
   </span>
 
     
