@@ -76,7 +76,7 @@ For example, the Ajuntament de València serves its NGSI-v2 platform through Lep
 
     ---
 
-    The data models used in the CitCom data spaces.
+    The data models used in the CitCom data space.
 
     [:octicons-arrow-right-24: Smart Data Models](smart_data_models.md)
 

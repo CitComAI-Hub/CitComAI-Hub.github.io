@@ -1,6 +1,6 @@
 ---
 title: Smart Data Models
-description: "The data models used in the CitCom data spaces."
+description: "The data models used in the CitCom data space."
 next_step:
   url: tef/
   title: "TEF network"

@@ -33,7 +33,7 @@ description: "What CitCom.ai is and why its pieces fit together, in plain words.
 
     ---
 
-    NGSI-LD brokers to serve the data, Smart Data Models to describe it, and two data space technologies, FIWARE and Eclipse EDC, to share it under control, with verifiable credentials held in a wallet.
+    NGSI-LD brokers to serve the data, Smart Data Models to describe it, and a data space built with FIWARE to share it under control, with verifiable credentials held in a wallet.
 
     [:octicons-arrow-right-24: Data spaces in 5 minutes](data_spaces.md)
 

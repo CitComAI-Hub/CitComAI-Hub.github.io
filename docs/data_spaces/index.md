@@ -1,22 +1,13 @@
 ---
-title: The CitCom data spaces
-description: "The two data spaces shared by all CitCom partners, FIWARE and Eclipse EDC, the marketplace and how they connect."
+title: The CitCom data space
+description: "The data space shared by all CitCom partners: how it works today, its marketplace and how to join."
+hide:
+  - toc
 ---
 
-# The CitCom data spaces
+# The CitCom data space
 
-CitCom runs two data spaces for all its partners, built with the two main open-source technologies in Europe. Both follow the concepts in [Data spaces in 5 minutes](../getting_started/data_spaces.md); they differ in how identity and contracts work.
-
-| | FIWARE data space | Eclipse EDC data space |
-|---|---|---|
-| **Technology** | [FIWARE Data Space Connector](https://github.com/FIWARE/data-space-connector) 10 | [Eclipse EDC](https://eclipse-edc.github.io/), sovity Community Edition |
-| **Operated by** | [VRAIN-UPV](https://vrain.upv.es/) | [Libelium](https://www.libelium.com/) |
-| **Identity** | Verifiable credentials (OID4VCI / OID4VP) and wallets | Connector identities managed by the operator's portal |
-| **Contracts** | Marketplace (TMForum) → contract-management → trust list + ODRL policy | Dataspace Protocol (DSP) negotiation between connectors |
-| **Data API** | NGSI-LD, served by the provider's connector | Any HTTP source, transferred by the connectors |
-| **Entry point** | [marketplace.citcom-vrain-dataspace.eu](https://marketplace.citcom-vrain-dataspace.eu) | [citcom.dataspaceready.eu](https://citcom.dataspaceready.eu) |
-
-## The FIWARE data space today
+<p class="cc-lead">Where CitCom partners share data and AI services under their own rules. Operated by VRAIN-UPV for every partner, built on the FIWARE Data Space Connector, and open to any organisation that joins.</p>
 
 <div class="cc-infra" markdown="0">
   <div class="cc-infra__band">
@@ -69,32 +60,29 @@ CitCom runs two data spaces for all its partners, built with the two main open-s
   <div class="cc-infra__cta-row"><a class="cc-infra__cta" href="../guides/join/">Join &rarr;</a></div>
 </div>
 
-The Ajuntament de València and VRAIN-UPV are the first participants, and both are told step by step as worked examples. The technical view, with every component and the public addresses, is in [FIWARE data space](fiware.md#the-deployment-today). The [Eclipse EDC data space](eclipse/index.md) is separate, operated by Libelium.
+The Ajuntament de València and VRAIN-UPV are the first participants, and both are told step by step as worked examples. The technical view, with every component and the public addresses, is in [How it works](fiware.md#the-deployment-today).
 
-<div class="grid cards" markdown>
+<div class="grid cards cc-two" markdown>
 
--   :material-shield-key-outline:{ .lg .middle } __FIWARE data space__
+-   :material-shield-key-outline:{ .lg .middle } __How it works__
 
     ---
 
     Its components, the deployment running today, and the flows to join, buy and access data and services.
 
-    [:octicons-arrow-right-24: FIWARE data space](fiware.md)
+    [:octicons-arrow-right-24: How it works](fiware.md)
 
 -   :material-storefront-outline:{ .lg .middle } __Marketplace__
 
     ---
 
-    Where the participants of the FIWARE data space publish and buy datasets and services.
+    Where the participants publish and buy datasets and services.
 
     [:octicons-arrow-right-24: Marketplace](../marketplace/index.md)
 
--   :material-transit-connection-variant:{ .lg .middle } __Eclipse EDC data space__
-
-    ---
-
-    The alternative stack: architecture and deployment.
-
-    [:octicons-arrow-right-24: Eclipse EDC data space](eclipse/index.md)
-
 </div>
+
+## Also in CitCom
+
+Libelium operates a second, separate data space built on Eclipse EDC, for the partners that work with that technology. It has its own portal and catalogue; see [Eclipse EDC data space](eclipse/index.md).
+

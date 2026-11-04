@@ -46,6 +46,9 @@ theme:
       toggle:
         icon: material/weather-sunny
         name: Switch to light mode
+not_in_nav: |
+  /data_spaces/eclipse/architecture.md
+  /data_spaces/eclipse/deployment.md
 nav:
   - Home: index.md
   - Get started:
@@ -53,14 +56,11 @@ nav:
       - The project and the TEFs: getting_started/project.md
       - Interoperability: getting_started/interoperability.md
       - Data spaces in 5 minutes: getting_started/data_spaces.md
-  - Data spaces:
+  - Data space:
       - data_spaces/index.md
-      - FIWARE data space: data_spaces/fiware.md
+      - How it works: data_spaces/fiware.md
       - Marketplace: marketplace/index.md
-      - Eclipse EDC data space:
-          - data_spaces/eclipse/index.md
-          - Architecture: data_spaces/eclipse/architecture.md
-          - Deployment: data_spaces/eclipse/deployment.md
+      - Eclipse EDC data space: data_spaces/eclipse/index.md
   - Guides:
       - guides/index.md
       - "Example: MIAIS, an AI service": miais/index.md

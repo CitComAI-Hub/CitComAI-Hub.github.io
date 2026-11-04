@@ -3,15 +3,15 @@ title: Data spaces in 5 minutes
 description: "The core concepts: participant, trust anchor, connector, credential, offer and policy."
 next_step:
   url: data_spaces/
-  title: "The CitCom data spaces"
-  description: "The two CitCom data spaces, FIWARE and Eclipse EDC, and how they connect."
+  title: "The CitCom data space"
+  description: "How the CitCom data space works today, its marketplace and how to join."
 ---
 
 # Data spaces in 5 minutes
 
 A **data space** is a set of rules and software that lets organisations share data while each one keeps control of its own. There is no central database: the data stays with its provider, and the provider decides who can read it and under which conditions.
 
-This page explains the few concepts you need to follow the rest of the site. They apply to both CitCom data spaces; the [FIWARE data space](../data_spaces/fiware.md) page shows how they are implemented.
+This page explains the few concepts you need to follow the rest of the site. The [CitCom data space](../data_spaces/index.md) is built on them; [How it works](../data_spaces/fiware.md) shows how they are implemented.
 
 ## The pieces
 
@@ -39,7 +39,7 @@ flowchart TB
 :   The list of participants that everyone trusts. When an organisation joins, the operator of the data space adds it to the trust anchor. From then on, the credentials it issues are accepted by the others.
 
 **Connector**
-:   The software each participant runs at its border. For a provider, it sits in front of the data: it checks who is asking, applies the access rules and only then forwards the request. In CitCom it is the [FIWARE Data Space Connector](../data_spaces/fiware.md) or an [Eclipse EDC](../data_spaces/eclipse/index.md) connector.
+:   The software each participant runs at its border. For a provider, it sits in front of the data: it checks who is asking, applies the access rules and only then forwards the request. In CitCom it is the [FIWARE Data Space Connector](../data_spaces/fiware.md).
 
 **Verifiable credential**
 :   A digital certificate, signed by an organisation, that says something about a person or a machine: "this is an employee of VRAIN", "this program acts for VRAIN with the role `clearence1`". People keep theirs in a [wallet](../toolbox/wallets.md) on the phone or the desktop; programs request them from their organisation's identity server. CitCom uses three types:
