@@ -16,7 +16,7 @@ CitCom runs two data spaces for all its partners, built with the two main open-s
 | **Data API** | NGSI-LD, served by the provider's connector | Any HTTP source, transferred by the connectors |
 | **Entry point** | [marketplace.citcom-vrain-dataspace.eu](https://marketplace.citcom-vrain-dataspace.eu) | [citcom.dataspaceready.eu](https://citcom.dataspaceready.eu) |
 
-## The infrastructure today
+## The FIWARE data space today
 
 <div class="cc-infra" markdown="0">
   <div class="cc-infra__band">
@@ -37,10 +37,9 @@ CitCom runs two data spaces for all its partners, built with the two main open-s
     </div>
   </div>
   <div class="cc-infra__links" aria-hidden="true">
-    <div class="cc-infra__labels">
-      <span class="cc-infra__step">1</span><small>Join</small>
-      <span class="cc-infra__step">2</span><small>Publish · buy</small>
-    </div>
+    <div class="cc-infra__label cc-infra__label--center"><span class="cc-infra__step">1</span><small>Both join</small></div>
+    <div class="cc-infra__label cc-infra__label--left"><span class="cc-infra__step">2</span><small>Publishes an offer</small></div>
+    <div class="cc-infra__label cc-infra__label--right"><span class="cc-infra__step">3</span><small>Buys it</small></div>
   </div>
   <div class="cc-infra__flow">
     <a class="cc-infra__part" href="../valencia/">
@@ -50,9 +49,9 @@ CitCom runs two data spaces for all its partners, built with the two main open-s
       <span class="cc-infra__conn">Connector</span>
     </a>
     <div class="cc-infra__arrow">
-      <span class="cc-infra__step">3</span>
+      <span class="cc-infra__step">4</span>
       <span class="cc-infra__line"></span>
-      <small>Data, directly between connectors</small>
+      <small>Reads the data, connector to connector</small>
     </div>
     <a class="cc-infra__part" href="../miais/">
       <span class="cc-infra__tag">Consumer · example</span>
@@ -62,11 +61,12 @@ CitCom runs two data spaces for all its partners, built with the two main open-s
     </a>
   </div>
   <ol class="cc-infra__legend">
-    <li><span class="cc-infra__step">1</span><span><strong>Join</strong> through the portal. Once approved, the organisation is in the trust anchor.</span></li>
-    <li><span class="cc-infra__step">2</span><span><strong>Publish and buy</strong> offers in the marketplace; a purchase sets up the contract.</span></li>
-    <li><span class="cc-infra__step">3</span><span><strong>Access</strong>: the data goes from the provider's connector to the consumer, never through the shared services.</span></li>
+    <li><span class="cc-infra__step">1</span><span><strong>Join.</strong> Both organisations register in the onboarding portal. Once approved, they are in the trust anchor and their credentials are trusted.</span></li>
+    <li><span class="cc-infra__step">2</span><span><strong>Publish.</strong> The Ajuntament offers a dataset in the marketplace, for example its waste containers.</span></li>
+    <li><span class="cc-infra__step">3</span><span><strong>Buy.</strong> VRAIN-UPV buys the offer. The purchase sets up the contract in the Ajuntament's connector.</span></li>
+    <li><span class="cc-infra__step">4</span><span><strong>Read.</strong> The MIAIS of VRAIN-UPV reads the data from the Ajuntament's connector. The data never goes through the shared services.</span></li>
   </ol>
-  <a class="cc-infra__cta" href="../guides/join/">Your organisation joins the same way &rarr;</a>
+  <div class="cc-infra__cta-row"><a class="cc-infra__cta" href="../guides/join/">Join &rarr;</a></div>
 </div>
 
 The Ajuntament de València and VRAIN-UPV are the first participants, and both are told step by step as worked examples. The technical view, with every component and the public addresses, is in [FIWARE data space](fiware.md#the-deployment-today). The [Eclipse EDC data space](eclipse/index.md) is separate, operated by Libelium.
