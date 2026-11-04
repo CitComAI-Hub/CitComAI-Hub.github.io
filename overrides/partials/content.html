@@ -1,0 +1,43 @@
+{#- Material 9.5's partials/content.html with the next step at the end of the page -#}
+{#- Pages of the main sections end with a recommended next step -#}
+{%- set main_section = namespace(on=false) -%}
+{%- for prefix in ["getting_started/", "data_spaces/", "marketplace/", "valencia/", "miais/", "guides/", "toolbox/", "tef/", "ai_assessment/", "local_digital_twins/"] -%}
+  {%- if page.url.startswith(prefix) -%}{%- set main_section.on = true -%}{%- endif -%}
+{%- endfor -%}
+
+{% if "material/tags" in config.plugins and tags %}
+  {% include "partials/tags.html" %}
+{% endif %}
+
+{% include "partials/actions.html" %}
+
+
+{% if "\x3ch1" not in page.content %}
+  <h1>{{ page.title | d(config.site_name, true)}}</h1>
+{% endif %}
+{{ page.content }}
+{#- Recommended next page: next_step in the front matter, or the next page of the navigation -#}
+{%- if main_section.on and not page.meta.hide_next_step -%}
+  {%- set step = page.meta.next_step -%}
+  {%- if step -%}
+    {%- set next_url = step.url | url -%}
+    {%- set next_title = step.title -%}
+    {%- set next_text = step.description -%}
+  {%- elif page.next_page -%}
+    {%- set next_url = page.next_page.url | url -%}
+    {%- set next_title = page.next_page.title -%}
+    {%- set next_text = page.next_page.meta.description if page.next_page.meta else "" -%}
+  {%- endif -%}
+  {%- if next_url -%}
+  <a class="cc-next" href="{{ next_url }}">
+    <span class="cc-next__label">Next step</span>
+    <span class="cc-next__title">{{ next_title }}</span>
+    {%- if next_text %}<span class="cc-next__text">{{ next_text }}</span>{% endif %}
+    <span class="cc-next__arrow" aria-hidden="true">→</span>
+  </a>
+  {%- endif -%}
+{%- endif -%}
+
+{% include "partials/source-file.html" %}
+{% include "partials/feedback.html" %}
+{% include "partials/comments.html" %}

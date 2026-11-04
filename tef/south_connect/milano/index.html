@@ -6,6 +6,8 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
+        <meta name="description" content="The Milano TEF site of the South super-node (CONNECT): what it offers and its data.">
+      
       
       
         <link rel="canonical" href="https://citcomai-hub.github.io/tef/south_connect/milano/">
@@ -43,8 +45,8 @@
         
         
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
-        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Barlow:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Barlow";--md-code-font:"JetBrains Mono"}</style>
       
     
     
@@ -52,9 +54,7 @@
     
       <link rel="stylesheet" href="../../../stylesheets/extra.css">
     
-      <link rel="stylesheet" href="../../../stylesheets/neoteroi-mkdocs.css">
-    
-      <link rel="stylesheet" href="../../../assets/css/data_catalog.css">
+      <link rel="stylesheet" href="../../../stylesheets/citcom.css">
     
       <link rel="stylesheet" href="../../../assets/css/ai_assess_catalog.css">
     
@@ -79,10 +79,12 @@
   
     
     
+      
     
     
     
-    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="indigo">
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom">
   
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
@@ -101,45 +103,50 @@
     </div>
     
     
-      
-
-  
-
-<header class="md-header md-header--shadow" data-md-component="header">
+      <header class="md-header cc-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../../.." title="CitCom&lt;sup&gt;AI&lt;/sup&gt; Hub" class="md-header__button md-logo" aria-label="CitCom<sup>AI</sup> Hub" data-md-component="logo">
-      
-  <img src="../../../assets/logo.png" alt="logo">
-
+    <a href="../../.." title="CitComAI Hub" class="cc-brand" aria-label="CitCom.ai Hub, home">
+      <img src="../../../assets/citcom.svg" alt="CitCom.ai" class="cc-brand__logo">
+      <span class="cc-brand__label"><strong>Hub</strong><span>Documentation</span></span>
     </a>
     <label class="md-header__button md-icon" for="__drawer">
-      
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
     </label>
-    <div class="md-header__title" data-md-component="header-title">
-      <div class="md-header__ellipsis">
-        <div class="md-header__topic">
-          <span class="md-ellipsis">
-            CitCom<sup>AI</sup> Hub
-          </span>
-        </div>
-        <div class="md-header__topic" data-md-component="header-topic">
-          <span class="md-ellipsis">
-            
-              Milano
-            
-          </span>
-        </div>
-      </div>
-    </div>
+    <ul class="cc-header__links">
+      <li><a href="../../../getting_started/" class="">Get started</a></li>
+      <li><a href="../../../data_spaces/" class="">Data space</a></li>
+      <li><a href="../../../guides/" class="">Guides</a></li>
+      <li><a href="../../../toolbox/" class="">Toolbox</a></li>
+      <li><a href="../../" class="cc-header__link--active">TEF network</a></li>
+    </ul>
     
-      
+      <form class="md-header__option" data-md-component="palette">
+  
     
     
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3 3.19.09m3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95 2.06.05m-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5c-.84 0-1.65.15-2.39.42L12 2M3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29L3.34 7m.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14L3.36 17M20.65 7l-1.77 3.79a7.023 7.023 0 0 0-2.38-4.15l4.15.36m-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29L20.64 17M12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44L12 22Z"/></svg>
+      </label>
+    
+  
+</form>
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
     
     
       <label class="md-header__button md-icon" for="__search">
-        
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
       </label>
       <div class="md-search" data-md-component="search" role="dialog">
@@ -161,6 +168,8 @@
         </button>
       </nav>
       
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
     </form>
     <div class="md-search__output">
       <div class="md-search__scrollwrap" data-md-scrollfix>
@@ -175,29 +184,15 @@
   </div>
 </div>
     
-    
-      <div class="md-header__source">
-        <a href="https://github.com/CitComAI-Hub/CitComAI-Hub.github.io" title="Go to repository" class="md-source" data-md-component="source">
-  <div class="md-source__icon md-icon">
-    
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
-  </div>
-  <div class="md-source__repository">
-    CitComAI-Hub/CitComAI-Hub.github.io
-  </div>
-</a>
-      </div>
-    
+    <a href="https://marketplace.citcom-vrain-dataspace.eu" class="cc-header__cta" target="_blank" rel="noopener">
+      Marketplace
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5 17.59 15.59 7H9V5h10v10h-2V8.41L6.41 19 5 17.59Z"/></svg>
+    </a>
   </nav>
-  
 </header>
     
     <div class="md-container" data-md-component="container">
       
-      
-        
-          
-        
       
       <main class="md-main" data-md-component="main">
         <div class="md-main__inner md-grid">
@@ -210,8 +205,10 @@
                     
 
 
+  
 
-<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
     <a href="../../.." title="CitCom&lt;sup&gt;AI&lt;/sup&gt; Hub" class="md-nav__button md-logo" aria-label="CitCom<sup>AI</sup> Hub" data-md-component="logo">
       
@@ -242,13 +239,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../welcome/" class="md-nav__link">
+      <a href="../../.." class="md-nav__link">
         
   
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7.03 4.95 3.5 8.5c-3.33 3.31-3.33 8.69 0 12s8.69 3.33 12 0l6-6c1-.97 1-2.56 0-3.54-.1-.12-.23-.23-.37-.32l.37-.39c1-.97 1-2.56 0-3.54-.14-.16-.33-.3-.5-.41.38-.92.21-2.02-.54-2.77-.87-.87-2.22-.96-3.2-.28a2.517 2.517 0 0 0-3.88-.42l-2.51 2.51c-.09-.14-.2-.27-.32-.39a2.53 2.53 0 0 0-3.52 0m1.41 1.42c.2-.2.51-.2.71 0s.2.51 0 .71l-3.18 3.18a3 3 0 0 1 0 4.24l1.41 1.41a5.004 5.004 0 0 0 1.12-5.36l6.3-6.3c.2-.2.51-.2.7 0s.21.51 0 .71l-4.59 4.6 1.41 1.41 6.01-6.01c.2-.2.51-.2.71 0 .2.2.2.51 0 .71l-6.01 6.01 1.41 1.41 4.95-4.95c.2-.2.51-.2.71 0 .2.2.2.51 0 .71l-5.66 5.65 1.41 1.42 3.54-3.54c.2-.2.51-.2.71 0 .2.2.2.51 0 .71l-6 6.01c-2.54 2.54-6.65 2.54-9.19 0s-2.54-6.65 0-9.19l3.53-3.54M23 17c0 3.31-2.69 6-6 6v-1.5c2.5 0 4.5-2 4.5-4.5H23M1 7c0-3.31 2.69-6 6-6v1.5c-2.5 0-4.5 2-4.5 4.5H1Z"/></svg>
-  
   <span class="md-ellipsis">
-    Welcome
+    Home
   </span>
   
 
@@ -268,8 +263,6 @@
       
         
           
-        
-      
         
       
         
@@ -298,10 +291,8 @@
             <a href="../../../getting_started/" class="md-nav__link ">
               
   
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2S7 4 7 12c0 3.1.76 5.75 1.67 7.83A2 2 0 0 0 10.5 21h3a2 2 0 0 0 1.83-1.17C16.25 17.75 17 15.1 17 12c0-8-5-10-5-10m1.5 17h-3c-1-2.24-1.5-4.59-1.5-7 0-4.64 1.9-6.8 3-7.67 1.1.87 3 3.03 3 7.67 0 2.41-.5 4.76-1.5 7m6.5 3-3.86-1.55c.7-1.53 1.2-3.11 1.51-4.72m-9.79 4.72L4 22l2.35-6.27c.31 1.61.81 3.19 1.51 4.72M12 12c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2Z"/></svg>
-  
   <span class="md-ellipsis">
-    Getting started
+    Get started
   </span>
   
 
@@ -317,7 +308,7 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
-            Getting started
+            Get started
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -330,11 +321,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../getting_started/nodes_countries/" class="md-nav__link">
+      <a href="../../../getting_started/project/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Nodes & Countries
+    The project and the TEFs
   </span>
   
 
@@ -371,67 +362,12 @@
   
   
   
-    
-    
-      
-        
-          
-        
-      
-        
-      
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4" >
-        
-          
-          
-          <div class="md-nav__link md-nav__container">
-            <a href="../../../getting_started/data_spaces/" class="md-nav__link ">
-              
-  
-  <span class="md-ellipsis">
-    Data spaces
-  </span>
-  
-
-            </a>
-            
-              
-              <label class="md-nav__link " for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
-                <span class="md-nav__icon md-icon"></span>
-              </label>
-            
-          </div>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2_4">
-            <span class="md-nav__icon md-icon"></span>
-            Data spaces
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-            
-              
-                
-  
-  
-  
-  
     <li class="md-nav__item">
-      <a href="../../../getting_started/data_spaces/fundaments_deployment/" class="md-nav__link">
+      <a href="../../../getting_started/data_spaces/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Fundamentals & Deployment
+    Data spaces in 5 minutes
   </span>
   
 
@@ -447,98 +383,6 @@
     </li>
   
 
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
-      
-        
-          
-        
-      
-        
-      
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5" >
-        
-          
-          
-          <div class="md-nav__link md-nav__container">
-            <a href="../../../getting_started/get_involved/" class="md-nav__link ">
-              
-  
-  <span class="md-ellipsis">
-    Get involved
-  </span>
-  
-
-            </a>
-            
-              
-              <label class="md-nav__link " for="__nav_2_5" id="__nav_2_5_label" tabindex="0">
-                <span class="md-nav__icon md-icon"></span>
-              </label>
-            
-          </div>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_5_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2_5">
-            <span class="md-nav__icon md-icon"></span>
-            Get involved
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../getting_started/get_involved/join/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Join the Data Space
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
     
       
       
@@ -553,6 +397,14 @@
           
         
       
+        
+      
+        
+          
+        
+      
+        
+          
         
       
     
@@ -572,13 +424,11 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../data_catalog/" class="md-nav__link ">
+            <a href="../../../data_spaces/" class="md-nav__link ">
               
   
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 4H2V2h16v2m-4.96 6h-10l.6-3h12.72l.4 2c.74.04 1.45.19 2.13.46L18 5H2l-1 5v2h1v6h8.5c-.33-.8-.5-1.65-.5-2.5v.5H4v-4h6v3.5c0-1.66.64-3.33 1.9-4.6.36-.35.74-.65 1.14-.9m10.35 11L22 22.39l-3.12-3.07c-.69.43-1.51.68-2.38.68-2.5 0-4.5-2-4.5-4.5s2-4.5 4.5-4.5 4.5 2 4.5 4.5c0 .88-.25 1.71-.69 2.4l3.08 3.1M19 15.5a2.5 2.5 0 0 0-5 0 2.5 2.5 0 0 0 5 0Z"/></svg>
-  
   <span class="md-ellipsis">
-    Data catalog
+    Data space
   </span>
   
 
@@ -594,7 +444,7 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
-            Data catalog
+            Data space
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -607,11 +457,53 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../data_catalog/instructions/" class="md-nav__link">
+      <a href="../../../data_spaces/fiware/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    How to add new datasets?
+    How it works
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../marketplace/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Marketplace
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../data_spaces/eclipse/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Eclipse EDC data space
   </span>
   
 
@@ -641,6 +533,12 @@
           
         
       
+        
+          
+        
+      
+        
+          
         
       
         
@@ -672,10 +570,8 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../documentation/" class="md-nav__link ">
+            <a href="../../../guides/" class="md-nav__link ">
               
-  
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 2a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6H6m0 2h7v5h5v11H6V4m2 8v2h8v-2H8m0 4v2h5v-2H8Z"/></svg>
   
   <span class="md-ellipsis">
     Guides
@@ -706,426 +602,12 @@
   
   
   
-    
-    
-      
-        
-          
-        
-      
-        
-          
-        
-      
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" >
-        
-          
-          
-          <div class="md-nav__link md-nav__container">
-            <a href="../../../documentation/verifiable_credentials/" class="md-nav__link ">
-              
-  
-  <span class="md-ellipsis">
-    Verifiable Credentials
-  </span>
-  
-
-            </a>
-            
-              
-              <label class="md-nav__link " for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
-                <span class="md-nav__icon md-icon"></span>
-              </label>
-            
-          </div>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_2">
-            <span class="md-nav__icon md-icon"></span>
-            Verifiable Credentials
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-            
-              
-                
-  
-  
-  
-  
     <li class="md-nav__item">
-      <a href="../../../documentation/verifiable_credentials/keycloak/" class="md-nav__link">
+      <a href="../../../miais/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Hands-On Configuration
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
-      
-        
-          
-        
-      
-        
-          
-        
-      
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" >
-        
-          
-          
-          <div class="md-nav__link md-nav__container">
-            <a href="../../../documentation/trust_frameworks/" class="md-nav__link ">
-              
-  
-  <span class="md-ellipsis">
-    Trust Frameworks
-  </span>
-  
-
-            </a>
-            
-              
-              <label class="md-nav__link " for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
-                <span class="md-nav__icon md-icon"></span>
-              </label>
-            
-          </div>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_3">
-            <span class="md-nav__icon md-icon"></span>
-            Trust Frameworks
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../documentation/trust_frameworks/fiware_trust_anchor/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Fiware
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
-      
-        
-          
-        
-      
-        
-          
-        
-      
-        
-      
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4" >
-        
-          
-          
-          <div class="md-nav__link md-nav__container">
-            <a href="../../../documentation/data_space_connectors/" class="md-nav__link ">
-              
-  
-  <span class="md-ellipsis">
-    Data Space Connectors
-  </span>
-  
-
-            </a>
-            
-              
-              <label class="md-nav__link " for="__nav_4_4" id="__nav_4_4_label" tabindex="0">
-                <span class="md-nav__icon md-icon"></span>
-              </label>
-            
-          </div>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_4_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_4">
-            <span class="md-nav__icon md-icon"></span>
-            Data Space Connectors
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../documentation/data_space_connectors/eclipse/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Eclipse
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
-      
-        
-          
-        
-      
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4_3" >
-        
-          
-          
-          <div class="md-nav__link md-nav__container">
-            <a href="../../../documentation/data_space_connectors/fiware/" class="md-nav__link ">
-              
-  
-  <span class="md-ellipsis">
-    Fiware
-  </span>
-  
-
-            </a>
-            
-          </div>
-        
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_4_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_4_3">
-            <span class="md-nav__icon md-icon"></span>
-            Fiware
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
-      
-        
-          
-        
-      
-        
-      
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_5" >
-        
-          
-          
-          <div class="md-nav__link md-nav__container">
-            <a href="../../../documentation/data_federation/" class="md-nav__link ">
-              
-  
-  <span class="md-ellipsis">
-    Data Federation
-  </span>
-  
-
-            </a>
-            
-              
-              <label class="md-nav__link " for="__nav_4_5" id="__nav_4_5_label" tabindex="0">
-                <span class="md-nav__icon md-icon"></span>
-              </label>
-            
-          </div>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_5_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_5">
-            <span class="md-nav__icon md-icon"></span>
-            Data Federation
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
-      
-        
-      
-        
-      
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_5_2" >
-        
-          
-          <label class="md-nav__link" for="__nav_4_5_2" id="__nav_4_5_2_label" tabindex="0">
-            
-  
-  <span class="md-ellipsis">
-    NGSI-v2 to NGSI-LD
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_5_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_5_2">
-            <span class="md-nav__icon md-icon"></span>
-            NGSI-v2 to NGSI-LD
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../documentation/data_federation/ngsiv2_to_ld/lepus/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Lepus
+    Example: MIAIS, an AI service
   </span>
   
 
@@ -1142,148 +624,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../documentation/data_federation/ngsiv2_to_ld/iot_agent/" class="md-nav__link">
+      <a href="../../../valencia/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    FIWARE IoT-Agent
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
-      
-        
-      
-        
-      
-        
-          
-        
-      
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_6" >
-        
-          
-          
-          <div class="md-nav__link md-nav__container">
-            <a href="../../../documentation/mv_data_space/" class="md-nav__link ">
-              
-  
-  <span class="md-ellipsis">
-    MV Data Space
-  </span>
-  
-
-            </a>
-            
-              
-              <label class="md-nav__link " for="__nav_4_6" id="__nav_4_6_label" tabindex="0">
-                <span class="md-nav__icon md-icon"></span>
-              </label>
-            
-          </div>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_6_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_6">
-            <span class="md-nav__icon md-icon"></span>
-            MV Data Space
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    
-    
-      
-        
-      
-        
-      
-        
-      
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_6_1" >
-        
-          
-          <label class="md-nav__link" for="__nav_4_6_1" id="__nav_4_6_1_label" tabindex="0">
-            
-  
-  <span class="md-ellipsis">
-    Fiware
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_6_1_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_6_1">
-            <span class="md-nav__icon md-icon"></span>
-            Fiware
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../documentation/mv_data_space/fiware/trust_anchor/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Trust Anchor
+    Example: Valencia, a city platform
   </span>
   
 
@@ -1300,11 +645,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../documentation/mv_data_space/fiware/consumer/" class="md-nav__link">
+      <a href="../../../guides/join/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    FDSC Consumer
+    Join the data space
   </span>
   
 
@@ -1321,97 +666,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../documentation/mv_data_space/fiware/provider/" class="md-nav__link">
+      <a href="../../../guides/deploy_connector/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    FDSC Provider
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
-      
-        
-          
-        
-      
-        
-      
-        
-      
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_6_2" >
-        
-          
-          
-          <div class="md-nav__link md-nav__container">
-            <a href="../../../documentation/mv_data_space/eclipse/" class="md-nav__link ">
-              
-  
-  <span class="md-ellipsis">
-    Eclipse
-  </span>
-  
-
-            </a>
-            
-              
-              <label class="md-nav__link " for="__nav_4_6_2" id="__nav_4_6_2_label" tabindex="0">
-                <span class="md-nav__icon md-icon"></span>
-              </label>
-            
-          </div>
-        
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_6_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_6_2">
-            <span class="md-nav__icon md-icon"></span>
-            Eclipse
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../documentation/mv_data_space/eclipse/architecture/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Architecture
+    Deploy your own connector
   </span>
   
 
@@ -1428,11 +687,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../documentation/mv_data_space/eclipse/deployment/" class="md-nav__link">
+      <a href="../../../guides/wallet/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Deployment
+    Get a wallet and your credentials
   </span>
   
 
@@ -1440,135 +699,6 @@
     </li>
   
 
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
-      
-        
-          
-        
-      
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_7" >
-        
-          
-          
-          <div class="md-nav__link md-nav__container">
-            <a href="../../../documentation/local_digital_twins/" class="md-nav__link ">
-              
-  
-  <span class="md-ellipsis">
-    Local Digital Twins
-  </span>
-  
-
-            </a>
-            
-          </div>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_7_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_7">
-            <span class="md-nav__icon md-icon"></span>
-            Local Digital Twins
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
-      
-        
-          
-        
-      
-        
-      
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_8" >
-        
-          
-          
-          <div class="md-nav__link md-nav__container">
-            <a href="../../../documentation/ai_assessment/" class="md-nav__link ">
-              
-  
-  <span class="md-ellipsis">
-    AI Assessment
-  </span>
-  
-
-            </a>
-            
-              
-              <label class="md-nav__link " for="__nav_4_8" id="__nav_4_8_label" tabindex="0">
-                <span class="md-nav__icon md-icon"></span>
-              </label>
-            
-          </div>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_8_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_8">
-            <span class="md-nav__icon md-icon"></span>
-            AI Assessment
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
               
             
               
@@ -1578,13 +708,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../documentation/ai_assessment/ai_assessment_catalogue/" class="md-nav__link">
+      <a href="../../../guides/consume_data/" class="md-nav__link">
         
   
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 4H2V2h16v2m-4.96 6h-10l.6-3h12.72l.4 2c.74.04 1.45.19 2.13.46L18 5H2l-1 5v2h1v6h8.5c-.33-.8-.5-1.65-.5-2.5v.5H4v-4h6v3.5c0-1.66.64-3.33 1.9-4.6.36-.35.74-.65 1.14-.9m10.35 11L22 22.39l-3.12-3.07c-.69.43-1.51.68-2.38.68-2.5 0-4.5-2-4.5-4.5s2-4.5 4.5-4.5 4.5 2 4.5 4.5c0 .88-.25 1.71-.69 2.4l3.08 3.1M19 15.5a2.5 2.5 0 0 0-5 0 2.5 2.5 0 0 0 5 0Z"/></svg>
-  
   <span class="md-ellipsis">
-    AI Assessment Catalogue
+    Use data from your code
   </span>
   
 
@@ -1594,9 +722,43 @@
 
               
             
-          </ul>
-        </nav>
-      
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../guides/publish_dataset/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Publish a dataset
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../guides/publish_service/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Publish a web service
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -1620,6 +782,10 @@
       
         
           
+        
+      
+        
+      
         
       
         
@@ -1647,13 +813,11 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../services/" class="md-nav__link ">
+            <a href="../../../toolbox/" class="md-nav__link ">
               
   
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17.5 15.5c0 1.11-.89 2-2 2s-2-.89-2-2 .9-2 2-2 2 .9 2 2m-9-2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.89 2-2-.89-2-2-2M23 15v3c0 .55-.45 1-1 1h-1v1c0 1.11-.89 2-2 2H5a2 2 0 0 1-2-2v-1H2c-.55 0-1-.45-1-1v-3c0-.55.45-1 1-1h1c0-3.87 3.13-7 7-7h1V5.73c-.6-.34-1-.99-1-1.73 0-1.1.9-2 2-2s2 .9 2 2c0 .74-.4 1.39-1 1.73V7h1c3.87 0 7 3.13 7 7h1c.55 0 1 .45 1 1m-2 1h-2v-2c0-2.76-2.24-5-5-5h-4c-2.76 0-5 2.24-5 5v2H3v1h2v3h14v-3h2v-1Z"/></svg>
-  
   <span class="md-ellipsis">
-    AI services
+    Toolbox
   </span>
   
 
@@ -1669,7 +833,7 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
-            AI services
+            Toolbox
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -1682,11 +846,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../services/waste_collection/" class="md-nav__link">
+      <a href="../../../toolbox/lepus/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Minimal Interoperable AI Service
+    Lepus
   </span>
   
 
@@ -1703,11 +867,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../services/wastecontainer_location_optimization/" class="md-nav__link">
+      <a href="../../../toolbox/ngsi_ld/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Container Location Optimization
+    NGSI-LD and FiLiP
   </span>
   
 
@@ -1724,11 +888,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../services/GenAI-MVP/" class="md-nav__link">
+      <a href="../../../toolbox/ds_consumer_auth/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    GenAI GovTechMidtjylland
+    ds-consumer-auth
   </span>
   
 
@@ -1745,15 +909,224 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../services/healthy_routes/" class="md-nav__link">
+      <a href="../../../toolbox/wallets/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Healthy Routes
+    Wallets
   </span>
   
 
       </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../toolbox/smart_data_models/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Smart Data Models
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_7" id="__nav_5_7_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    More tools
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_7">
+            <span class="md-nav__icon md-icon"></span>
+            More tools
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../toolbox/ai_toolkit/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    AI Toolkit
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../toolbox/ai_logging_monitor/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    AI Logging Monitor
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../toolbox/mims_toolkit/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    MIMs Toolkit
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../toolbox/ldt_toolkit/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    LDT Toolkit
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../toolbox/iot_agent/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    FIWARE IoT Agent
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../toolbox/other_toolkit/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Other tools
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -1787,6 +1160,12 @@
       
         
       
+        
+      
+        
+          
+        
+      
     
     
     
@@ -1807,10 +1186,8 @@
             <a href="../../" class="md-nav__link ">
               
   
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M15 23h-2v-2h2v2m4-2h-2v2h2v-2m-4-4h-2v2h2v-2m-8 4H5v2h2v-2m0-4H5v2h2v-2m12 0h-2v2h2v-2m-4-4h-2v2h2v-2m4 0h-2v2h2v-2m2-4a2 2 0 0 1 2 2v12h-2V11H11v12H9v-8H3v8H1v-8a2 2 0 0 1 2-2h6v-2a2 2 0 0 1 2-2V7a2 2 0 0 1 2-2h2V1h2v4h2a2 2 0 0 1 2 2v2m-2 0V7h-6v2h6Z"/></svg>
-  
   <span class="md-ellipsis">
-    TEF Nodes
+    TEF network
   </span>
   
 
@@ -1826,7 +1203,7 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_6">
             <span class="md-nav__icon md-icon"></span>
-            TEF Nodes
+            TEF network
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -1861,7 +1238,10 @@
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
@@ -1869,7 +1249,7 @@
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_2" >
         
           
-          <label class="md-nav__link" for="__nav_6_2" id="__nav_6_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_6_2" id="__nav_6_2_label" tabindex="">
             
   
   <span class="md-ellipsis">
@@ -2086,7 +1466,10 @@
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
@@ -2094,7 +1477,7 @@
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_3" >
         
           
-          <label class="md-nav__link" for="__nav_6_3" id="__nav_6_3_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_6_3" id="__nav_6_3_label" tabindex="">
             
   
   <span class="md-ellipsis">
@@ -2246,7 +1629,10 @@
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
@@ -2254,7 +1640,7 @@
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_4" checked>
         
           
-          <label class="md-nav__link" for="__nav_6_4" id="__nav_6_4_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_6_4" id="__nav_6_4_label" tabindex="">
             
   
   <span class="md-ellipsis">
@@ -2402,15 +1788,6 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#european-data-space-for-smart-communities-ds4sscc" class="md-nav__link">
-    <span class="md-ellipsis">
-      European Data Space for Smart Communities (DS4SSCC)
-    </span>
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
   
@@ -2438,6 +1815,15 @@
   <a href="#contact-information" class="md-nav__link">
     <span class="md-ellipsis">
       Contact Information
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#datasets-in-detail" class="md-nav__link">
+    <span class="md-ellipsis">
+      Datasets in detail
     </span>
   </a>
   
@@ -2481,6 +1867,114 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_5" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../ai_assessment/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    AI Trustworthiness Label
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_6_5" id="__nav_6_5_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_5">
+            <span class="md-nav__icon md-icon"></span>
+            AI Trustworthiness Label
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ai_assessment/ai_assessment_catalogue/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    AI Assessment Catalogue
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../local_digital_twins/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Local Digital Twins
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -2499,14 +1993,6 @@
       
         
           
-        
-      
-        
-      
-        
-      
-        
-      
         
       
         
@@ -2528,13 +2014,11 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../toolbox/" class="md-nav__link ">
+            <a href="../../../faq/" class="md-nav__link ">
               
   
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 8h-3V6c0-1.1-.9-2-2-2H9c-1.1 0-2 .9-2 2v2H4c-1.1 0-2 .9-2 2v10h20V10c0-1.1-.9-2-2-2M9 6h6v2H9V6m11 12H4v-3h2v1h2v-1h8v1h2v-1h2v3m-2-5v-1h-2v1H8v-1H6v1H4v-3h16v3h-2Z"/></svg>
-  
   <span class="md-ellipsis">
-    Toolbox
+    Help
   </span>
   
 
@@ -2550,179 +2034,7 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_7">
             <span class="md-nav__icon md-icon"></span>
-            Toolbox
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../toolbox/ldt_toolkit/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    LDT Toolkit
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../toolbox/ai_toolkit/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    AI Toolkit
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../toolbox/ai_logging_monitor/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    AI Logging Monitor
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../toolbox/mims_toolkit/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    MIMs Toolkit
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../toolbox/other_toolkit/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Other Tools
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    
-    
-      
-        
-          
-        
-      
-        
-      
-    
-    
-    
-    
-      
-      
-    
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
-      
-        
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
-        
-          
-          
-          <div class="md-nav__link md-nav__container">
-            <a href="../../../faq/" class="md-nav__link ">
-              
-  
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M11 18h2v-2h-2v2m1-16A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2m0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8m0-14a4 4 0 0 0-4 4h2a2 2 0 0 1 2-2 2 2 0 0 1 2 2c0 2-3 1.75-3 5h2c0-2.25 3-2.5 3-5a4 4 0 0 0-4-4Z"/></svg>
-  
-  <span class="md-ellipsis">
-    FAQ
-  </span>
-  
-
-            </a>
-            
-              
-              <label class="md-nav__link " for="__nav_8" id="__nav_8_label" tabindex="">
-                <span class="md-nav__icon md-icon"></span>
-              </label>
-            
-          </div>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_8">
-            <span class="md-nav__icon md-icon"></span>
-            FAQ
+            Help
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -2841,15 +2153,6 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#european-data-space-for-smart-communities-ds4sscc" class="md-nav__link">
-    <span class="md-ellipsis">
-      European Data Space for Smart Communities (DS4SSCC)
-    </span>
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
   
@@ -2882,6 +2185,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#datasets-in-detail" class="md-nav__link">
+    <span class="md-ellipsis">
+      Datasets in detail
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2896,6 +2208,7 @@
                 
                   
 
+
   
     <a href="https://github.com/CitComAI-Hub/CitComAI-Hub.github.io/edit/main/docs/tef/south_connect/milano.md" title="Edit this page" class="md-content__button md-icon">
       
@@ -2903,6 +2216,8 @@
     </a>
   
   
+
+
 
 
   <h1>Milano</h1>
@@ -2955,8 +2270,8 @@ By combining AI-driven sensor networks, facility automation, and edge/cloud comp
   <tr>
     <td><strong>Data Broker<strong></td>
     <td>
-      <span style="background-color:green; color:white; padding:2px 4px; border-radius:4px;">Fiware</span><br>
-      <strong>- API:</strong> <span style="background-color:orange; color:white; padding:2px 4px; border-radius:4px;">NGSI-v2</span><br>
+      <span class="cc-chip cc-chip--broker">FIWARE</span><br>
+      <strong>- API:</strong> <span class="cc-chip cc-chip--v2">NGSI-v2</span><br>
       <strong>- Version:</strong> Orion
     </td>
   </tr>
@@ -2981,18 +2296,13 @@ Data incoming from our site locations is unified by corresponding FIWARE IoT Age
 Our infrastructure supports reliable data storage (InfluxDB, MongoDB), continuous analytics, data aggregation using our custom streaming component (EsperTech), and access through Traefik and authentication layers.
 Finally, visualization and analysis tools (Grafana, Spark, Node-RED, Snap4City) enable real-time monitoring of our infrastructure and allow end users to extract environmental conditions insights, urban infrastructure usage, and system health.</p>
 <p><a class="glightbox" href="../img/milano-arch.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="milano_arch" src="../img/milano-arch.png" /></a></p>
-<h3 id="european-data-space-for-smart-communities-ds4sscc">European Data Space for Smart Communities (DS4SSCC)</h3>
-<!-- <span style="background-color:rgb(51,255,51); color:black; padding:2px 4px; border-radius:4px; border:1px solid black;"><strong>Data Sources</strong></span> <span style="background-color:red; color:white; padding:2px 4px; border-radius:4px; border:1px solid black;"><strong>Data Broker</strong></span> <span style="background-color:rgb(255,51,255); color:white; padding:2px 4px; border-radius:4px; border:1px solid black;"><strong>Data API</strong></span> <span style="background-color:rgba(255,165,0,0.2); color:gray; padding:2px 4px; border-radius:4px;">IdM & Auth</span> <span style="background-color:rgba(204,255,255,0.2); color:gray; padding:2px 4px; border-radius:4px;">Data Publication</span>
-
-![aarhus_city_lab_arch-ds4sscc](./img/aarhus_city_lab_ds4sscc-arch.svg) -->
-
 <h2 id="relevant-datasets-of-the-site">Relevant datasets of the site</h2>
 <p>Milano TEF site offers the following datasets:</p>
 <ul>
-<li><strong><a href="../../../data_catalog/metadata_datasets/south_italy_uptown/#site-uptown-airquality">Air quality</a></strong>: air quality readings from sensors deployed across the Milano area, reporting temperature, humidity, and pollutant levels along with time and location.</li>
-<li><strong><a href="../../../data_catalog/metadata_datasets/south_italy_uptown/#site-uptown-biodiversity">Biodiversity</a></strong>: data from biodiversity sensors deployed in UpTown, reporting device status, energy levels, and bird species detections over time.</li>
-<li><strong><a href="../../../data_catalog/metadata_datasets/south_italy_uptown/#site-uptown-energy-distribution">Energy distribution</a></strong>: data from heating systems deployed in UpTown, reporting energy use, fluid temperatures, and heating power.</li>
-<li><strong><a href="../../../data_catalog/metadata_datasets/south_italy_mithraeum-of-circus-maximus/#site-mithraeum-of-circus-maximus-archaeological-site">Archaeological site</a></strong>: environmental data from sensors deployed in an underground archaeological site, reporting air quality, temperature, humidity, and vibration levels over time.</li>
+<li><strong><a href="#datasets-in-detail">Air quality</a></strong>: air quality readings from sensors deployed across the Milano area, reporting temperature, humidity, and pollutant levels along with time and location.</li>
+<li><strong><a href="#datasets-in-detail">Biodiversity</a></strong>: data from biodiversity sensors deployed in UpTown, reporting device status, energy levels, and bird species detections over time.</li>
+<li><strong><a href="#datasets-in-detail">Energy distribution</a></strong>: data from heating systems deployed in UpTown, reporting energy use, fluid temperatures, and heating power.</li>
+<li><strong><a href="#datasets-in-detail">Archaeological site</a></strong>: environmental data from sensors deployed in an underground archaeological site, reporting air quality, temperature, humidity, and vibration levels over time.</li>
 </ul>
 <h2 id="key-stakeholders-and-partners">Key Stakeholders and Partners</h2>
 <ul>
@@ -3006,12 +2316,395 @@ Finally, visualization and analysis tools (Grafana, Spark, Node-RED, Snap4City) 
 <li><strong>Technical Support</strong>: Andrea Maioli <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#97;&#110;&#100;&#114;&#101;&#97;&#49;&#46;&#109;&#97;&#105;&#111;&#108;&#105;&#64;&#112;&#111;&#108;&#105;&#109;&#105;&#46;&#105;&#116;">&#97;&#110;&#100;&#114;&#101;&#97;&#49;&#46;&#109;&#97;&#105;&#111;&#108;&#105;&#64;&#112;&#111;&#108;&#105;&#109;&#105;&#46;&#105;&#116;</a></li>
 <li><strong>General Inquiries</strong>: Alberto Celani <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#97;&#108;&#98;&#101;&#114;&#116;&#111;&#46;&#99;&#101;&#108;&#97;&#110;&#105;&#64;&#112;&#111;&#108;&#105;&#109;&#105;&#46;&#105;&#116;">&#97;&#108;&#98;&#101;&#114;&#116;&#111;&#46;&#99;&#101;&#108;&#97;&#110;&#105;&#64;&#112;&#111;&#108;&#105;&#109;&#105;&#46;&#105;&#116;</a></li>
 </ul>
+<h2 id="datasets-in-detail">Datasets in detail</h2>
+<p>Attributes of the datasets of this site, as described by its partners.</p>
+<details class="info">
+<summary>AirQuality</summary>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">ATTRIBUTE</th>
+<th style="text-align: left;">TYPE</th>
+<th style="text-align: left;">UNITS (SI)</th>
+<th style="text-align: left;">DESCRIPTION/COMMENTS</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">Text</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Sensor identifier</td>
+</tr>
+<tr>
+<td style="text-align: left;">temperature</td>
+<td style="text-align: left;">Number</td>
+<td style="text-align: left;">K</td>
+<td style="text-align: left;">Ambient temperature</td>
+</tr>
+<tr>
+<td style="text-align: left;">humidity</td>
+<td style="text-align: left;">Number</td>
+<td style="text-align: left;">%</td>
+<td style="text-align: left;">Relative humidity</td>
+</tr>
+<tr>
+<td style="text-align: left;">co</td>
+<td style="text-align: left;">Number</td>
+<td style="text-align: left;">mg/m³</td>
+<td style="text-align: left;">Carbon monoxide concentration</td>
+</tr>
+<tr>
+<td style="text-align: left;">nh3</td>
+<td style="text-align: left;">Number</td>
+<td style="text-align: left;">µg/m³</td>
+<td style="text-align: left;">Ammonia concentration</td>
+</tr>
+<tr>
+<td style="text-align: left;">no</td>
+<td style="text-align: left;">Number</td>
+<td style="text-align: left;">µg/m³</td>
+<td style="text-align: left;">Nitric oxide concentration</td>
+</tr>
+<tr>
+<td style="text-align: left;">no2</td>
+<td style="text-align: left;">Number</td>
+<td style="text-align: left;">µg/m³</td>
+<td style="text-align: left;">Nitrogen dioxide concentration</td>
+</tr>
+<tr>
+<td style="text-align: left;">o3</td>
+<td style="text-align: left;">Number</td>
+<td style="text-align: left;">µg/m³</td>
+<td style="text-align: left;">Ozone concentration</td>
+</tr>
+<tr>
+<td style="text-align: left;">pm25</td>
+<td style="text-align: left;">Number</td>
+<td style="text-align: left;">µg/m³</td>
+<td style="text-align: left;">Particulate matter &lt; 2.5 µm concentration</td>
+</tr>
+<tr>
+<td style="text-align: left;">pm10</td>
+<td style="text-align: left;">Number</td>
+<td style="text-align: left;">µg/m³</td>
+<td style="text-align: left;">Particulate matter &lt; 10 µm concentration</td>
+</tr>
+<tr>
+<td style="text-align: left;">so2</td>
+<td style="text-align: left;">Number</td>
+<td style="text-align: left;">µg/m³</td>
+<td style="text-align: left;">Sulfur dioxide concentration</td>
+</tr>
+<tr>
+<td style="text-align: left;">indoor</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">True if the sensor is located indoors</td>
+</tr>
+<tr>
+<td style="text-align: left;">manufacturer</td>
+<td style="text-align: left;">Text</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Sensor manufacturer name</td>
+</tr>
+<tr>
+<td style="text-align: left;">sensorName</td>
+<td style="text-align: left;">Text</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Human-readable sensor name</td>
+</tr>
+<tr>
+<td style="text-align: left;">location</td>
+<td style="text-align: left;">geo:json</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Geographical coordinates of the sensor</td>
+</tr>
+<tr>
+<td style="text-align: left;">timestamp</td>
+<td style="text-align: left;">Number</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Unix timestamp of the measurement</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details class="info">
+<summary>Biodiversity</summary>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">ATTRIBUTE</th>
+<th style="text-align: left;">TYPE</th>
+<th style="text-align: left;">UNITS (SI)</th>
+<th style="text-align: left;">DESCRIPTION/COMMENTS</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">Text</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Sensor identifier</td>
+</tr>
+<tr>
+<td style="text-align: left;">timestamp</td>
+<td style="text-align: left;">Number</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Unix timestamp of the measurement</td>
+</tr>
+<tr>
+<td style="text-align: left;">device_hostname</td>
+<td style="text-align: left;">Text</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Device hostname</td>
+</tr>
+<tr>
+<td style="text-align: left;">firmware_version</td>
+<td style="text-align: left;">Text</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Current firmware version</td>
+</tr>
+<tr>
+<td style="text-align: left;">state</td>
+<td style="text-align: left;">Text</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Reported high-level state of the device</td>
+</tr>
+<tr>
+<td style="text-align: left;">activity_state</td>
+<td style="text-align: left;">Text</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Current activity state (e.g., active, idle)</td>
+</tr>
+<tr>
+<td style="text-align: left;">device_temperature</td>
+<td style="text-align: left;">Number</td>
+<td style="text-align: left;">°C</td>
+<td style="text-align: left;">Internal device temperature</td>
+</tr>
+<tr>
+<td style="text-align: left;">battery_voltage</td>
+<td style="text-align: left;">Number</td>
+<td style="text-align: left;">V</td>
+<td style="text-align: left;">Battery voltage</td>
+</tr>
+<tr>
+<td style="text-align: left;">battery_level</td>
+<td style="text-align: left;">Number</td>
+<td style="text-align: left;">%</td>
+<td style="text-align: left;">Battery charge level</td>
+</tr>
+<tr>
+<td style="text-align: left;">battery_power_input</td>
+<td style="text-align: left;">Text</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Raw battery input power data</td>
+</tr>
+<tr>
+<td style="text-align: left;">last_ping</td>
+<td style="text-align: left;">Number</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Timestamp of last device ping</td>
+</tr>
+<tr>
+<td style="text-align: left;">last_audio_record</td>
+<td style="text-align: left;">Number</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Timestamp of last audio recording</td>
+</tr>
+<tr>
+<td style="text-align: left;">last_detection_ts</td>
+<td style="text-align: left;">Number</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Timestamp of last detection event</td>
+</tr>
+<tr>
+<td style="text-align: left;">last_detection_scientific_name</td>
+<td style="text-align: left;">Text</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Scientific name of last detected species</td>
+</tr>
+<tr>
+<td style="text-align: left;">last_detection_common_name_en</td>
+<td style="text-align: left;">Text</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Common name (EN) of last detected species</td>
+</tr>
+<tr>
+<td style="text-align: left;">last_detection_common_name_it</td>
+<td style="text-align: left;">Text</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Common name (IT) of last detected species</td>
+</tr>
+<tr>
+<td style="text-align: left;">last_detection_confidence</td>
+<td style="text-align: left;">Number</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Confidence score of last detection</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details class="info">
+<summary>Energy distribution</summary>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">ATTRIBUTE</th>
+<th style="text-align: left;">TYPE</th>
+<th style="text-align: left;">UNITS (SI)</th>
+<th style="text-align: left;">DESCRIPTION/COMMENTS</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">Text</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Sensor identifier</td>
+</tr>
+<tr>
+<td style="text-align: left;">timestamp</td>
+<td style="text-align: left;">Number</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Unix timestamp of the measurement</td>
+</tr>
+<tr>
+<td style="text-align: left;">user_identifier</td>
+<td style="text-align: left;">Text</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Anonymized unique identifier for the user</td>
+</tr>
+<tr>
+<td style="text-align: left;">pod_identifier</td>
+<td style="text-align: left;">Number</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Anonymized identifier of the heating POD unit</td>
+</tr>
+<tr>
+<td style="text-align: left;">pod_coordinates</td>
+<td style="text-align: left;">geo:json</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Geographical coordinates of the POD</td>
+</tr>
+<tr>
+<td style="text-align: left;">user_type</td>
+<td style="text-align: left;">Text</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Category or role of the user (e.g., residential, commercial)</td>
+</tr>
+<tr>
+<td style="text-align: left;">external_temperature</td>
+<td style="text-align: left;">Number</td>
+<td style="text-align: left;">°C</td>
+<td style="text-align: left;">Outdoor air temperature</td>
+</tr>
+<tr>
+<td style="text-align: left;">heating_temperature_delivery</td>
+<td style="text-align: left;">Number</td>
+<td style="text-align: left;">°C</td>
+<td style="text-align: left;">Temperature of the fluid delivered to the heating system</td>
+</tr>
+<tr>
+<td style="text-align: left;">heating_temperature_return</td>
+<td style="text-align: left;">Number</td>
+<td style="text-align: left;">°C</td>
+<td style="text-align: left;">Temperature of the fluid returning from the heating system</td>
+</tr>
+<tr>
+<td style="text-align: left;">heating_volume</td>
+<td style="text-align: left;">Number</td>
+<td style="text-align: left;">m³/h</td>
+<td style="text-align: left;">Volume flow rate of heating fluid</td>
+</tr>
+<tr>
+<td style="text-align: left;">heating_power</td>
+<td style="text-align: left;">Number</td>
+<td style="text-align: left;">kW</td>
+<td style="text-align: left;">Thermal power delivered for heating</td>
+</tr>
+<tr>
+<td style="text-align: left;">energy_consumption</td>
+<td style="text-align: left;">Number</td>
+<td style="text-align: left;">kWh</td>
+<td style="text-align: left;">Cumulative heating energy consumed</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details class="info">
+<summary>Archaeological Site</summary>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">ATTRIBUTE</th>
+<th style="text-align: left;">TYPE</th>
+<th style="text-align: left;">UNITS (SI)</th>
+<th style="text-align: left;">DESCRIPTION/COMMENTS</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">id</td>
+<td style="text-align: left;">Text</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Sensor identifier</td>
+</tr>
+<tr>
+<td style="text-align: left;">temperature</td>
+<td style="text-align: left;">Number</td>
+<td style="text-align: left;">K</td>
+<td style="text-align: left;">Ambient temperature</td>
+</tr>
+<tr>
+<td style="text-align: left;">humidity</td>
+<td style="text-align: left;">Number</td>
+<td style="text-align: left;">%</td>
+<td style="text-align: left;">Relative humidity</td>
+</tr>
+<tr>
+<td style="text-align: left;">pm10</td>
+<td style="text-align: left;">Number</td>
+<td style="text-align: left;">µg/m³</td>
+<td style="text-align: left;">Particulate matter &lt; 10 µm concentration</td>
+</tr>
+<tr>
+<td style="text-align: left;">pm25</td>
+<td style="text-align: left;">Number</td>
+<td style="text-align: left;">µg/m³</td>
+<td style="text-align: left;">Particulate matter &lt; 2.5 µm concentration</td>
+</tr>
+<tr>
+<td style="text-align: left;">spectralPower</td>
+<td style="text-align: left;">Number</td>
+<td style="text-align: left;">mW/Hz</td>
+<td style="text-align: left;">Spectral power density of vibrations</td>
+</tr>
+<tr>
+<td style="text-align: left;">timestamp</td>
+<td style="text-align: left;">Number</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Unix timestamp of the measurement</td>
+</tr>
+<tr>
+<td style="text-align: left;">location</td>
+<td style="text-align: left;">geo:json</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Geographical coordinates of the sensor</td>
+</tr>
+</tbody>
+</table>
+</details>
 <hr />
 <div class="admonition info">
 <p class="admonition-title">Info</p>
 <p>This page is part of the documentation hub for the CitCom.ai project. Please ensure that the information is up-to-date and accurate.</p>
-</div>
-
+</div><a class="cc-next" href="../warsaw/">
+    <span class="cc-next__label">Next step</span>
+    <span class="cc-next__title">Warsaw</span><span class="cc-next__text">The Warsaw TEF site of the South super-node (CONNECT): what it offers and its data.</span>
+    <span class="cc-next__arrow" aria-hidden="true">→</span>
+  </a>
 
 
 
@@ -3033,7 +2726,7 @@ Finally, visualization and analysis tools (Grafana, Spark, Node-RED, Snap4City) 
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="July 14, 2025 10:28:06"><span class="timeago" datetime="2025-07-14T10:28:06+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="July 14, 2025 10:28:06">2025-07-14</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="November 4, 2026 14:13:40"><span class="timeago" datetime="2026-11-04T14:13:40+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="November 4, 2026 14:13:40">2026-11-04</span>
   </span>
 
     
@@ -3058,6 +2751,7 @@ Finally, visualization and analysis tools (Grafana, Spark, Node-RED, Snap4City) 
     <nav>
       
         <a href="mailto:andreamaioli92@gmail.com">Andrea Maioli</a>, 
+        <a href="mailto:joancipria@protonmail.com">Joan Ciprià</a>, 
         <a href="mailto:44024844+sermars@users.noreply.github.com">Sergio Marti</a>
     </nav>
   </span>
@@ -3075,56 +2769,34 @@ Finally, visualization and analysis tools (Grafana, Spark, Node-RED, Snap4City) 
             </div>
           
           
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
         </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+  Back to top
+</button>
         
       </main>
       
         <footer class="md-footer">
   
-    
-      
-      <nav class="md-footer__inner md-grid" aria-label="Footer" >
-        
-          
-          <a href="../valencia/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Valencia">
-            <div class="md-footer__button md-icon">
-              
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
-            </div>
-            <div class="md-footer__title">
-              <span class="md-footer__direction">
-                Previous
-              </span>
-              <div class="md-ellipsis">
-                Valencia
-              </div>
-            </div>
-          </a>
-        
-        
-          
-          <a href="../warsaw/" class="md-footer__link md-footer__link--next" aria-label="Next: Warsaw">
-            <div class="md-footer__title">
-              <span class="md-footer__direction">
-                Next
-              </span>
-              <div class="md-ellipsis">
-                Warsaw
-              </div>
-            </div>
-            <div class="md-footer__button md-icon">
-              
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
-            </div>
-          </a>
-        
-      </nav>
-    
-  
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
       <div class="footer-container">
+    <div class="footer-column footer-links">
+        <h4 style="margin-top: 0;">TEF network and help</h4>
+        <ul>
+            <li><a href="../../">TEF sites</a></li>
+            <li><a href="../../../ai_assessment/">AI Trustworthiness Label</a></li>
+            <li><a href="../../../local_digital_twins/">Local Digital Twins</a></li>
+            <li><a href="../../../faq/">FAQ and contribute</a></li>
+            <li><a href="https://github.com/CitComAI-Hub/CitComAI-Hub.github.io" target="_blank" rel="noopener">GitHub</a></li>
+        </ul>
+    </div>
     <div class="footer-column">
         <h4 style="margin-top: 0;">Organization</h4>
         <div class="footer-logo" style="display: flex; align-items: center;">
@@ -3163,7 +2835,7 @@ Finally, visualization and analysis tools (Grafana, Spark, Node-RED, Snap4City) 
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../../..", "features": ["content.code.copy", "content.action.edit", "navigation.sections", "navigation.footer", "navigation.indexes"], "search": "../../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["content.code.copy", "content.code.annotate", "content.action.edit", "content.tabs.link", "navigation.tabs", "navigation.sections", "navigation.indexes", "navigation.top", "search.suggest", "search.highlight", "toc.follow"], "search": "../../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
       <script src="../../../assets/javascripts/bundle.d7c377c4.min.js"></script>
@@ -3172,7 +2844,7 @@ Finally, visualization and analysis tools (Grafana, Spark, Node-RED, Snap4City) 
       
         <script src="../../../js/timeago_mkdocs_material.js"></script>
       
-        <script src="../../../assets/js/data_catalog.js"></script>
+        <script src="../../../javascripts/external-links.js"></script>
       
     
   <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});

@@ -1,0 +1,2653 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Component model, federated catalogue, identity and transfer flow of the EDC data space.">
+      
+      
+      
+        <link rel="canonical" href="https://citcomai-hub.github.io/data_spaces/eclipse/architecture/">
+      
+      
+      
+      
+      <link rel="icon" href="../../../assets/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.0">
+    
+    
+  
+    <title>Eclipse EDC data space: architecture - CitCom.ai Hub</title>
+  
+
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.45e1311d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Barlow:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Barlow";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../css/timeago.css">
+    
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+    
+      <link rel="stylesheet" href="../../../stylesheets/citcom.css">
+    
+      <link rel="stylesheet" href="../../../assets/css/ai_assess_catalog.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+   <link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }
+    .gscrollbar-fixer { padding-right: 15px; }
+    .gdesc-inner { font-size: 0.75rem; }
+    body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+    body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../../assets/javascripts/glightbox.min.js"></script></head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#eclipse-edc-data-space-architecture" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      <header class="md-header cc-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="CitComAI Hub" class="cc-brand" aria-label="CitCom.ai Hub, home">
+      <img src="../../../assets/citcom.svg" alt="CitCom.ai" class="cc-brand__logo">
+      <span class="cc-brand__label"><strong>Hub</strong><span>Documentation</span></span>
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <ul class="cc-header__links">
+      <li><a href="../../../getting_started/" class="">Get started</a></li>
+      <li><a href="../../" class="">Data space</a></li>
+      <li><a href="../../../guides/" class="">Guides</a></li>
+      <li><a href="../../../toolbox/" class="">Toolbox</a></li>
+      <li><a href="../../../tef/" class="">TEF network</a></li>
+    </ul>
+    
+      <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3 3.19.09m3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95 2.06.05m-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5c-.84 0-1.65.15-2.39.42L12 2M3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29L3.34 7m.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14L3.36 17M20.65 7l-1.77 3.79a7.023 7.023 0 0 0-2.38-4.15l4.15.36m-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29L20.64 17M12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44L12 22Z"/></svg>
+      </label>
+    
+  
+</form>
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    <a href="https://marketplace.citcom-vrain-dataspace.eu" class="cc-header__cta" target="_blank" rel="noopener">
+      Marketplace
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5 17.59 15.59 7H9V5h10v10h-2V8.41L6.41 19 5 17.59Z"/></svg>
+    </a>
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="CitCom&lt;sup&gt;AI&lt;/sup&gt; Hub" class="md-nav__button md-logo" aria-label="CitCom<sup>AI</sup> Hub" data-md-component="logo">
+      
+  <img src="../../../assets/logo.png" alt="logo">
+
+    </a>
+    CitCom<sup>AI</sup> Hub
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/CitComAI-Hub/CitComAI-Hub.github.io" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    CitComAI-Hub/CitComAI-Hub.github.io
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../getting_started/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Get started
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Get started
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../getting_started/project/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    The project and the TEFs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../getting_started/interoperability/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Interoperability
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../getting_started/data_spaces/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Data spaces in 5 minutes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Data space
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Data space
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../fiware/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    How it works
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../marketplace/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Marketplace
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Eclipse EDC data space
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../guides/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Guides
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Guides
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../miais/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Example: MIAIS, an AI service
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../valencia/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Example: Valencia, a city platform
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../guides/join/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Join the data space
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../guides/deploy_connector/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Deploy your own connector
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../guides/wallet/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Get a wallet and your credentials
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../guides/consume_data/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Use data from your code
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../guides/publish_dataset/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Publish a dataset
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../guides/publish_service/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Publish a web service
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../toolbox/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Toolbox
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5" id="__nav_5_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Toolbox
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../toolbox/lepus/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lepus
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../toolbox/ngsi_ld/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    NGSI-LD and FiLiP
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../toolbox/ds_consumer_auth/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ds-consumer-auth
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../toolbox/wallets/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Wallets
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../toolbox/smart_data_models/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Smart Data Models
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_7" id="__nav_5_7_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    More tools
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_7">
+            <span class="md-nav__icon md-icon"></span>
+            More tools
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../toolbox/ai_toolkit/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    AI Toolkit
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../toolbox/ai_logging_monitor/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    AI Logging Monitor
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../toolbox/mims_toolkit/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    MIMs Toolkit
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../toolbox/ldt_toolkit/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    LDT Toolkit
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../toolbox/iot_agent/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    FIWARE IoT Agent
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../toolbox/other_toolkit/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Other tools
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+          
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../tef/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    TEF network
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_6" id="__nav_6_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            TEF network
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_2" id="__nav_6_2_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Nordic - POWER
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_2">
+            <span class="md-nav__icon md-icon"></span>
+            Nordic - POWER
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../tef/nordic_power/doll_living_lab/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    DOLL Living Lab
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../tef/nordic_power/aarhus_city_lab/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Aarhus City Lab
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../tef/nordic_power/net_zero_innovation_hub/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Net Zero Innovation Hub
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../tef/nordic_power/dti/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    DTI
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../tef/nordic_power/center_denmark/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Center Denmark
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../tef/nordic_power/gate21/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    GATE21
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../tef/nordic_power/rise/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RISE
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../tef/nordic_power/tampere/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tampere
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_3" id="__nav_6_3_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Central - MOVE
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_3">
+            <span class="md-nav__icon md-icon"></span>
+            Central - MOVE
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../tef/central_move/mechelen/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Mechelen
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../tef/central_move/brussels/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Brussels
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../tef/central_move/eindhoven/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Eindhoven
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../tef/central_move/paris/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Paris
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../tef/central_move/list/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Luxembourg
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_4" id="__nav_6_4_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    South - CONNECT
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_4">
+            <span class="md-nav__icon md-icon"></span>
+            South - CONNECT
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../tef/south_connect/valencia/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Valencia
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../tef/south_connect/milano/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Milano
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../tef/south_connect/warsaw/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Warsaw
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_5" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../ai_assessment/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    AI Trustworthiness Label
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_6_5" id="__nav_6_5_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_5">
+            <span class="md-nav__icon md-icon"></span>
+            AI Trustworthiness Label
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ai_assessment/ai_assessment_catalogue/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    AI Assessment Catalogue
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../local_digital_twins/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Local Digital Twins
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../faq/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Help
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_7" id="__nav_7_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            Help
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../faq/pull_request_procedure/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Request changes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-scope-and-positioning" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Scope and positioning
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-component-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Component model
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-the-eclipse-edc-role" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. The Eclipse EDC role
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. The Eclipse EDC role">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-runs-inside-an-edc-connector" class="md-nav__link">
+    <span class="md-ellipsis">
+      What runs inside an EDC connector
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-addresses-we-currently-support" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data addresses we currently support
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-federated-catalogue" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Federated catalogue
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Federated catalogue">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-tmforum-dome-active-in-citcom" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.1 TMForum / DOME (active in CitCom)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-dcat-sparql-apache-jena-fuseki-alternative-backend" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.2 DCAT / SPARQL (Apache Jena Fuseki — alternative backend)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-identity-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Identity model
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-transfer-flow-the-path-albufera-csv-took" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Transfer flow (the path Albufera CSV took)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-per-tenant-data-isolation" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. Per-tenant data isolation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-references" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. References
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+    <a href="https://github.com/CitComAI-Hub/CitComAI-Hub.github.io/edit/main/docs/data_spaces/eclipse/architecture.md" title="Edit this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-2m10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1 2.1 2.1Z"/></svg>
+    </a>
+  
+  
+
+
+
+
+<h1 id="eclipse-edc-data-space-architecture">Eclipse EDC data space: architecture</h1>
+<h2 id="1-scope-and-positioning">1. Scope and positioning</h2>
+<p>CitCom.ai is a <strong>multi-tenant data space</strong> that lets organisations
+publish data assets, discover assets published by other participants,
+negotiate machine-readable usage policies, and exchange the data under
+those agreements.</p>
+<p>It is built on the <strong>Eclipse Dataspace Components (EDC)</strong> open-source
+project (Eclipse Foundation), which we deploy through the
+<a href="https://github.com/sovity/edc-ce">Sovity Community Edition 16.4.2</a>
+distribution (<code>ghcr.io/sovity/edc-ce:16.4.2</code>). On top of EDC, we layer:</p>
+<ul>
+<li><strong>DS-Manager</strong> — backend (FastAPI) + frontend (React) by Hopu
+  (<code>registry.hopu.eu/dsr-backend:1.3.4-generic-ds</code>,
+  <code>registry.hopu.eu/dsr-frontend:1.3.3-generic-ds</code>). DS-Manager is the
+  human-facing management plane: identity, asset metadata, policy
+  drafting, federated catalogue browsing, audit. It speaks to EDC over
+  EDC's Management API. Container names and Keycloak identifiers carry
+  the legacy <code>dsr-*</code> prefix (Hopu's original "Data Space Ready" brand);
+  we keep those verbatim everywhere they're a runtime literal.</li>
+<li><strong>An onboarding portal</strong> (<code>onboarding-api</code>, Flask) for tenant
+  registration, the participant registry and SMTP delivery of
+  activation emails.</li>
+<li><strong>A federated catalogue</strong>. Two interchangeable backends are
+  supported and the choice is per–data-space (<code>CATALOG_BACKEND</code> env):
+  DCAT in Apache Jena Fuseki for SPARQL access, or TMForum/DOME
+  product offerings in Scorpio NGSI-LD for a marketplace-style browse
+  UX. <strong>CitCom is wired to the DOME stack</strong> (<code>CATALOG_BACKEND=tmforum</code>).
+  Both pipelines are populated by sync workers that poll every
+  connector's EDC catalogue every 30–60 s.</li>
+<li><strong>Object storage</strong> (MinIO, S3-compatible) with a per-tenant bucket
+  served behind an authenticated portal.</li>
+<li><strong>Identity</strong> anchored on Keycloak as the OIDC issuer, plus DS-Manager-level
+  DIDs (<code>did:web:&lt;subdomain&gt;.&lt;domain&gt;:did:&lt;uuid&gt;</code>) for participants and
+  per-tenant LEAR designations.</li>
+<li><strong>Reverse proxy + TLS</strong> via Traefik, with per-host Let's Encrypt
+  certificates issued through the Cloudflare DNS-01 challenge.</li>
+</ul>
+<p>The result is a deployment where each tenant gets its <strong>own subdomain</strong>,
+its <strong>own EDC connector</strong>, its <strong>own DS-Manager instance</strong> (so policy
+state and audit are tenant-isolated), and its <strong>own MinIO bucket</strong>, but
+shares the Keycloak realm, the catalogue index and the onboarding
+landing page.</p>
+<h2 id="2-component-model">2. Component model</h2>
+<pre class="mermaid"><code>flowchart LR
+  subgraph user["End user (browser)"]
+    direction TB
+    U[Operator/&lt;br/&gt;Asset owner]
+  end
+
+  subgraph traefik["Traefik (TLS termination, host routing)"]
+    direction TB
+    T[Traefik&lt;br/&gt;+ LE DNS-01]
+  end
+
+  subgraph onboarding["Main domain — onboarding"]
+    direction TB
+    NG_main[nginx-main&lt;br/&gt;portal + DS-Manager fallback]
+    OA[onboarding-api&lt;br/&gt;Flask + SMTP]
+    KC[Keycloak&lt;br/&gt;realm=DSR]
+    REG[Participant&lt;br/&gt;registry.json]
+    SYNC1[sync-fuseki]
+    SYNC2[sync-dome]
+    FUSEKI[Apache Jena&lt;br/&gt;Fuseki SPARQL]
+    NGSI[Scorpio&lt;br/&gt;NGSI-LD]
+    BAE[BAE/DOME&lt;br/&gt;marketplace UI]
+    TMFP[TMForum&lt;br/&gt;productCatalog]
+    TMFR[TMForum&lt;br/&gt;resourceCatalog]
+    TMFS[TMForum&lt;br/&gt;serviceCatalog]
+  end
+
+  subgraph admin["admin.citcom.dataspaceready.eu"]
+    direction TB
+    NG_admin[nginx-admin]
+    DSR_admin[dsr-backend-dev&lt;br/&gt;shared compliance]
+    EDC_admin[cp-admin&lt;br/&gt;EDC connector]
+  end
+
+  subgraph tenant["{tenant}.citcom.dataspaceready.eu (× N)"]
+    direction TB
+    NG_t[nginx-tenant&lt;br/&gt;+ tenant-validator]
+    DSR_t["dsr-backend-{t}&lt;br/&gt;+ frontend"]
+    EDC_t["cp-{t}&lt;br/&gt;EDC connector&lt;br/&gt;Sovity-CE 16.4.2"]
+    PG_t[(Postgres&lt;br/&gt;per tenant)]
+  end
+
+  subgraph storage["Storage (shared, X-Participant gated)"]
+    direction TB
+    MINIO[MinIO]
+    SP[storage-portal]
+  end
+
+  U --&gt;|HTTPS| T
+  T --&gt; NG_main
+  T --&gt; NG_admin
+  T --&gt; NG_t
+  NG_main --&gt; OA
+  NG_main --&gt; KC
+  NG_main --&gt; BAE
+  NG_main --&gt; FUSEKI
+  NG_main --&gt; TMFP
+  NG_main --&gt; TMFR
+  OA -.writes.-&gt; REG
+  NG_t --&gt; DSR_t
+  NG_t --&gt; SP
+  NG_t --&gt;|auth_request| OA
+  NG_admin --&gt; DSR_admin
+  DSR_t --&gt;|management API| EDC_t
+  DSR_admin --&gt;|management API| EDC_admin
+  DSR_t --&gt;|OIDC validate| KC
+  EDC_t -.DSP federation.- EDC_admin
+  EDC_t -.DSP federation.- EDC_t
+  SYNC1 --&gt;|poll catalog| EDC_admin
+  SYNC1 --&gt;|poll catalog| EDC_t
+  SYNC1 --&gt;|TURTLE upsert| FUSEKI
+  SYNC2 --&gt;|poll catalog| EDC_admin
+  SYNC2 --&gt;|poll catalog| EDC_t
+  SYNC2 --&gt;|TMF620| TMFP
+  SP --&gt; MINIO</code></pre>
+<blockquote>
+<p>See <a href="../diagrams/architecture-overview.excalidraw"><code>diagrams/architecture-overview.excalidraw</code></a>
+for an editable version of the same picture.</p>
+</blockquote>
+<h2 id="3-the-eclipse-edc-role">3. The Eclipse EDC role</h2>
+<p>For each tenant we run <strong>one EDC connector</strong> (<code>cp-{tenant}</code>), based on
+<code>ghcr.io/sovity/edc-ce:16.4.2</code>. The connector exposes four HTTP
+endpoint groups, each on its own port:</p>
+<table>
+<thead>
+<tr>
+<th>Group</th>
+<th>Port</th>
+<th>Purpose</th>
+<th>Who calls it</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Management</td>
+<td>8181</td>
+<td>Asset / policy / contract definition / catalogue / negotiation / transfer CRUD</td>
+<td>DS-Manager backend, sync workers, deploy scripts</td>
+</tr>
+<tr>
+<td>Protocol (DSP)</td>
+<td>9084</td>
+<td>Eclipse Dataspace Protocol — federated catalogue, contract negotiation, transfer authorisation</td>
+<td>Other connectors</td>
+</tr>
+<tr>
+<td>Public (data plane)</td>
+<td>9006</td>
+<td>Bearer-protected data egress for <code>HttpData-PULL</code> transfers</td>
+<td>Consumer once it has an EDR</td>
+</tr>
+<tr>
+<td>Control</td>
+<td>9241</td>
+<td>Internal control plane (data-plane-management)</td>
+<td>Connector internals only</td>
+</tr>
+</tbody>
+</table>
+<p>The connector is configured in pure code (no UI of its own); we drive
+it from DS-Manager.</p>
+<h3 id="what-runs-inside-an-edc-connector">What runs inside an EDC connector</h3>
+<ul>
+<li><strong>DSP catalog</strong> — answers <code>dcat:Catalog</code> queries with the connector's
+  visible offerings. Each <code>dcat:dataset</code> carries a <code>dcat:distribution</code>
+  list (HttpData-PULL, HttpData-PUSH, S3-PUSH, AzureStorage-PUSH) and
+  an <code>odrl:hasPolicy</code> referring to the associated ContractDefinition.</li>
+<li><strong>Contract negotiation</strong> — implements the Dataspace Protocol state
+  machine (REQUESTED → AGREED/VERIFIED → FINALIZED). Validates that
+  the offer the consumer requests matches what's in the catalogue
+  (offer policy, target asset, assigner).</li>
+<li><strong>Transfer process</strong> — once a contract is finalized, allocates an
+  EDR (Endpoint Data Reference) — a one-time bearer token + URL that
+  the consumer uses to pull the data plane.</li>
+<li><strong>Data plane</strong> — for <code>HttpData-PULL</code>, fronts the asset's
+  <code>dataAddress</code> (HTTP, S3, etc.) so the consumer never sees the raw
+  storage credentials.</li>
+</ul>
+<h3 id="data-addresses-we-currently-support">Data addresses we currently support</h3>
+<p><code>AssetCreate</code> requests in DS-Manager map straight to EDC <code>dataAddress</code>
+fields. The most common shapes:</p>
+<ul>
+<li><code>HttpData</code> (open or with <code>bearer</code>/<code>apiKey</code> auth) — the asset is
+  served from any HTTP endpoint reachable by the provider connector.</li>
+<li><code>AmazonS3</code> — the asset lives in an S3-compatible bucket. We use
+  <code>endpointOverride: http://minio:9000</code> to target the in-cluster
+  MinIO.</li>
+<li>The internal <code>http://storage/edc/{tenant}/{object}</code> URL — a
+  shorter-form HttpData address served by the storage portal's
+  internal <code>/edc/&lt;tenant&gt;/...</code> route. Reachable only from the docker
+  network so it never leaks outside the data plane.</li>
+</ul>
+<h2 id="4-federated-catalogue">4. Federated catalogue</h2>
+<p>The platform supports <strong>two interchangeable catalogue backends</strong>, both
+populated by polling each connector's EDC catalogue every 30–60 s. The
+choice is per–data-space, set with <code>CATALOG_BACKEND</code> in the project's
+<code>env.&lt;env&gt;</code> file:</p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Index</th>
+<th>Browsable from</th>
+<th>Use when</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>sparql</code></td>
+<td>Apache Jena Fuseki + DCAT (one named graph per tenant)</td>
+<td><code>/catalog/</code> connector-ui (SPARQL UI)</td>
+<td>Audience is data-engineering / RDF-native; you want raw SPARQL access to the federated metadata.</td>
+</tr>
+<tr>
+<td><code>tmforum</code></td>
+<td>Scorpio NGSI-LD + TMForum APIs (TMF620 productCatalog, TMF634 resourceCatalog, TMF638 serviceCatalog)</td>
+<td><code>/dome-catalog/</code> BAE marketplace UI + <code>/catalog/</code> connector-ui in TMForum mode</td>
+<td>Audience is a marketplace / business user; you want a richer browse + filter UX and TMForum-shaped product offerings.</td>
+</tr>
+</tbody>
+</table>
+<p>The two are functionally redundant — every dataset that reaches one
+also reaches the other if both are wired up — but in practice each
+deployment picks the one that matches its audience.</p>
+<blockquote>
+<p><strong>CitCom is configured with <code>CATALOG_BACKEND=tmforum</code></strong>, so the
+active federated catalogue is the DOME stack (Scorpio NGSI-LD + the
+TMForum API gateway in front of it, with the BAE marketplace UI as
+the human-facing browser at
+<code>https://citcom.dataspaceready.eu/dome-catalog/</code>).</p>
+<p>The Fuseki/SPARQL pipeline (4.1 below) still runs in the cluster as
+a fallback / engineering surface — it's cheap and useful for
+debugging — but it is <strong>not</strong> what citcom users see.</p>
+</blockquote>
+<h3 id="41-tmforum-dome-active-in-citcom">4.1 TMForum / DOME (active in CitCom)</h3>
+<p>A worker (<code>sync-dome</code>, Node.js, every 60 s by default) walks each
+connector listed in the participant registry, fetches its DCAT
+catalogue via DSP, maps each dataset to a TMForum triplet
+<strong>ResourceSpecification → ProductSpecification → ProductOffering</strong>,
+and upserts the result into the <strong>TMForum API gateway</strong> in front of
+the <strong>Scorpio NGSI-LD</strong> broker. The same worker also reports its
+liveness to <code>onboarding-api</code>'s <code>/sync-status</code> so the catalogue page
+shows "last updated <Y>s ago" to the user.</p>
+<pre class="mermaid"><code>sequenceDiagram
+  participant SD as sync-dome&lt;br/&gt;(Node.js, every 60 s)
+  participant Reg as Registry&lt;br/&gt;(onboarding-api)
+  participant E_a as EDC admin&lt;br/&gt;(requester)
+  participant E_t as EDC tenant&lt;br/&gt;(target)
+  participant TMF as TMForum API&lt;br/&gt;(Scorpio NGSI-LD)
+  participant BAE as BAE marketplace&lt;br/&gt;UI
+  SD-&gt;&gt;Reg: GET /registry
+  Reg--&gt;&gt;SD: participants[]
+  loop for each participant
+    SD-&gt;&gt;E_a: POST /catalog/request&lt;br/&gt;{counterPartyAddress: target DSP}
+    E_a-&gt;&gt;E_t: DSP catalog request
+    E_t--&gt;&gt;E_a: dcat:Catalog
+    E_a--&gt;&gt;SD: dcat:Catalog
+    SD-&gt;&gt;TMF: upsert ResourceSpec → ProductSpec → ProductOffering&lt;br/&gt;(TMF634 / TMF620)
+  end
+  BAE-&gt;&gt;TMF: GET /productOffering&lt;br/&gt;(browser query)
+  TMF--&gt;&gt;BAE: filtered list</code></pre>
+<p>Human-facing browser: the <strong>BAE / DOME marketplace</strong> at
+<code>https://citcom.dataspaceready.eu/dome-catalog/</code> (and a TMForum-mode
+build of <code>connector-ui</code> at <code>/catalog/</code> that hits the same TMForum API
+endpoints rather than SPARQL).</p>
+<h3 id="42-dcat-sparql-apache-jena-fuseki-alternative-backend">4.2 DCAT / SPARQL (Apache Jena Fuseki — alternative backend)</h3>
+<p>This is the path you'd pick if your audience is RDF-native or you want
+a programmable SPARQL surface across the whole data space. CitCom
+doesn't expose this to end users, but the pipeline runs in the cluster
+as a parallel index — useful for debugging and as a fallback.</p>
+<pre class="mermaid"><code>sequenceDiagram
+  participant SS as sync-service&lt;br/&gt;(Node.js, every 30 s)
+  participant Reg as Registry&lt;br/&gt;(onboarding-api)
+  participant E_a as EDC admin&lt;br/&gt;(requester)
+  participant E_t as EDC tenant&lt;br/&gt;(target)
+  participant F as Fuseki&lt;br/&gt;(named graphs)
+  SS-&gt;&gt;Reg: GET /registry
+  Reg--&gt;&gt;SS: participants[]
+  loop for each participant
+    SS-&gt;&gt;E_a: POST /catalog/request&lt;br/&gt;{counterPartyAddress: target DSP}
+    E_a-&gt;&gt;E_t: DSP catalog request
+    E_t--&gt;&gt;E_a: dcat:Catalog
+    E_a--&gt;&gt;SS: dcat:Catalog
+    SS-&gt;&gt;F: SPARQL UPDATE&lt;br/&gt;graph http://dataspace/{tenant}/catalog
+  end</code></pre>
+<p>When a project sets <code>CATALOG_BACKEND=sparql</code>, the <code>connector-ui</code> at
+<code>/catalog/</code> switches to a SPARQL-mode build that issues federated
+queries directly against Fuseki for the union of all tenant graphs.</p>
+<h2 id="5-identity-model">5. Identity model</h2>
+<pre class="mermaid"><code>flowchart TB
+  subgraph kc[Keycloak realm DSR]
+    direction TB
+    DSRAPP[client: dsr-app&lt;br/&gt;shared template]
+    DSRTLIB[client: dsr-app-libelium&lt;br/&gt;confidential]
+    DSRTVAL[client: dsr-app-valencia&lt;br/&gt;confidential]
+    DSRTUPV[client: dsr-app-upv&lt;br/&gt;confidential]
+    PORTAL[client: ds-portal&lt;br/&gt;onboarding portal]
+    USERS[Users in groups&lt;br/&gt;libelium, valencia, upv&lt;br/&gt;roles: dsr:asset-owner, dsr:operator]
+  end
+
+  subgraph dsr_t[DS-Manager per tenant]
+    direction TB
+    DID["/api/v1/dids/&lt;br/&gt;did:web:&amp;lt;subdomain&amp;gt;.&amp;lt;domain&amp;gt;:did:&amp;lt;uuid&amp;gt;"]
+    ORG["/api/v1/orgs/&lt;br/&gt;org_id, legal_name, headquarter_address"]
+    LEAR["/api/v1/orgs/&amp;lt;id&amp;gt;/lear&lt;br/&gt;designates user_did → org"]
+  end
+
+  USERS --&gt;|password grant| DSRTLIB
+  DSRTLIB --&gt;|access_token| dsr_t
+  dsr_t --&gt; DID
+  dsr_t --&gt; ORG
+  dsr_t --&gt; LEAR</code></pre>
+<ul>
+<li><strong>Keycloak</strong> is the identity issuer. It hosts a single realm
+  (<code>DSR</code>), one shared template client (<code>dsr-app</code>) used by the portal,
+  one confidential client per tenant (<code>dsr-app-{tenant}</code>) used by that
+  tenant's DS-Manager backend, and a <code>ds-portal</code> client for the main-domain
+  portal.</li>
+<li>The per-tenant client is <strong>provisioned automatically by
+  <code>provision-tenant.py</code></strong> and kept in sync (mappers, scopes, flags)
+  with <code>dsr-app</code> on every re-run.</li>
+<li><strong>DS-Manager DIDs</strong> are filesystem-style <code>did:web:</code> documents served from
+  <code>/did/&lt;id&gt;/x509CertificateChain.pem</code>. Every user gets a personal
+  DID; every Org gets one too. The LEAR (Legal Entity Appointed
+  Representative) link maps a user DID to an org DID, which is what a
+  consumer's connector verifies during contract negotiation.</li>
+</ul>
+<h2 id="6-transfer-flow-the-path-albufera-csv-took">6. Transfer flow (the path Albufera CSV took)</h2>
+<pre class="mermaid"><code>sequenceDiagram
+  participant L as Libelium DS-Manager&lt;br/&gt;(consumer)
+  participant EL as EDC libelium
+  participant EV as EDC valencia
+  participant V as Valencia DS-Manager&lt;br/&gt;(provider)
+  participant M as MinIO
+  L-&gt;&gt;EL: POST /catalog/request&lt;br/&gt;(target: valencia DSP)
+  EL-&gt;&gt;EV: DSP catalog request
+  EV--&gt;&gt;EL: dcat:Catalog&lt;br/&gt;{Albufera water level (15-min)}
+  EL--&gt;&gt;L: catalogue with offer policy
+  L-&gt;&gt;EL: POST /contractnegotiations&lt;br/&gt;{policy verbatim from offer}
+  EL-&gt;&gt;EV: DSP contract request
+  EV--&gt;&gt;EL: AGREED → VERIFIED → FINALIZED
+  L-&gt;&gt;EL: POST /transferprocesses&lt;br/&gt;{contractId, HttpData-PULL}
+  EL-&gt;&gt;EV: DSP transfer request
+  EV-&gt;&gt;EL: EDR (endpoint, bearer, expiry)
+  L-&gt;&gt;EL: POST /edrs/request → GET /edrs/{tp}/dataaddress
+  EL--&gt;&gt;L: {endpoint: http://cp-valencia:9006/api/public, authorization: …}
+  L-&gt;&gt;EV: GET /api/public + Authorization: bearer
+  EV-&gt;&gt;M: read object via dataAddress
+  M--&gt;&gt;EV: stream
+  EV--&gt;&gt;L: stream (CSV bytes)</code></pre>
+<blockquote>
+<p>See <a href="../diagrams/transfer-flow.excalidraw"><code>diagrams/transfer-flow.excalidraw</code></a>
+for an editable version of the same sequence.</p>
+</blockquote>
+<p>Two notes from the implementation:</p>
+<ol>
+<li>The <code>policy</code> block sent in <code>POST /contractnegotiations</code> MUST
+   include <code>odrl:</code> JSON-LD prefixes (<code>@type: odrl:Offer</code>, <code>odrl:target</code>,
+   <code>odrl:assigner</code>). If you ship it under the EDC default <code>@vocab</code>, EDC
+   validates <code>@type</code> as <code>https://w3id.org/edc/v0.0.1/ns/Offer</code> and
+   rejects.</li>
+<li>The provider uses the consumer's verified DID/Org as the input to
+   policy evaluation. With our open <code>albufera-open-use</code> policy
+   (USE-only, no constraints) any verified consumer of any participant
+   passes. With ABAC policies you can restrict per-attribute (LEAR,
+   organisation country, etc.).</li>
+</ol>
+<h2 id="7-per-tenant-data-isolation">7. Per-tenant data isolation</h2>
+<table>
+<thead>
+<tr>
+<th>Layer</th>
+<th>Mechanism</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>HTTP routing</td>
+<td>One <code>nginx-{tenant}</code> per subdomain; <code>tenant-validator</code> calls strict mode for the storage portal so a session for tenant A cannot read tenant B's bucket.</td>
+</tr>
+<tr>
+<td>Storage</td>
+<td><code>nginx-tenant.conf</code> injects <code>X-Participant: {tenant}</code> so the storage-portal serves only that bucket. Internal <code>/edc/&lt;tenant&gt;/</code> routes are blocked at the public gateway and only reachable from the docker network.</td>
+</tr>
+<tr>
+<td>Identity</td>
+<td>DS-Manager backend authenticates against <code>dsr-app-{tenant}</code> confidential client; <code>resource_access.dsr-app-{tenant}.roles</code> is the only role path it trusts.</td>
+</tr>
+<tr>
+<td>Catalog</td>
+<td>Sync workers write each tenant's catalogue to its own SPARQL named graph and its own TMForum tenant header.</td>
+</tr>
+<tr>
+<td>Database</td>
+<td>One <code>dsr-postgres-{tenant}</code> and one <code>db-{tenant}</code> (EDC). Per-tenant compose generated by <code>provision-tenant.py</code>.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="8-references">8. References</h2>
+<ul>
+<li>Eclipse EDC project: <a href="https://github.com/eclipse-edc/Connector">https://github.com/eclipse-edc/Connector</a></li>
+<li>Sovity Community Edition (the distribution we run): <a href="https://github.com/sovity/edc-ce">https://github.com/sovity/edc-ce</a></li>
+<li>DSP (Dataspace Protocol) spec: <a href="https://docs.internationaldataspaces.org/ids-knowledgebase/v/dataspace-protocol/">https://docs.internationaldataspaces.org/ids-knowledgebase/v/dataspace-protocol/</a></li>
+<li>ODRL (used for policy syntax): <a href="https://www.w3.org/TR/odrl-model/">https://www.w3.org/TR/odrl-model/</a></li>
+<li>DCAT (catalogue vocabulary): <a href="https://www.w3.org/TR/vocab-dcat-3/">https://www.w3.org/TR/vocab-dcat-3/</a></li>
+<li>TMForum APIs (the marketplace catalogue): <a href="https://www.tmforum.org/oda/open-apis/">https://www.tmforum.org/oda/open-apis/</a></li>
+<li>CitCom.ai (the Testing &amp; Experimentation Facility funding the
+  pilot): <a href="https://citcom.ai/">https://citcom.ai/</a></li>
+</ul>
+
+
+
+
+
+
+  
+    
+  
+  
+    
+  
+
+
+  <aside class="md-source-file">
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Last update">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="November 4, 2026 09:25:26"><span class="timeago" datetime="2026-11-04T09:25:26+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="November 4, 2026 09:25:26">2026-11-04</span>
+  </span>
+
+    
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Created">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3h-2Z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="April 30, 2026 10:40:05"><span class="timeago" datetime="2026-04-30T10:40:05+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="April 30, 2026 10:40:05">2026-04-30</span>
+  </span>
+
+    
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Contributors">
+      
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 5.5A3.5 3.5 0 0 1 15.5 9a3.5 3.5 0 0 1-3.5 3.5A3.5 3.5 0 0 1 8.5 9 3.5 3.5 0 0 1 12 5.5M5 8c.56 0 1.08.15 1.53.42-.15 1.43.27 2.85 1.13 3.96C7.16 13.34 6.16 14 5 14a3 3 0 0 1-3-3 3 3 0 0 1 3-3m14 0a3 3 0 0 1 3 3 3 3 0 0 1-3 3c-1.16 0-2.16-.66-2.66-1.62a5.536 5.536 0 0 0 1.13-3.96c.45-.27.97-.42 1.53-.42M5.5 18.25c0-2.07 2.91-3.75 6.5-3.75s6.5 1.68 6.5 3.75V20h-13v-1.75M0 20v-1.5c0-1.39 1.89-2.56 4.45-2.9-.59.68-.95 1.62-.95 2.65V20H0m24 0h-3.5v-1.75c0-1.03-.36-1.97-.95-2.65 2.56.34 4.45 1.51 4.45 2.9V20Z"/></svg>
+      
+    </span>
+    <nav>
+      
+        <a href="mailto:joancipria@protonmail.com">Joan Ciprià</a>, 
+        <a href="mailto:164411755+mateoofp@users.noreply.github.com">mateoofp</a>
+    </nav>
+  </span>
+
+    
+    
+  </aside>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="footer-container">
+    <div class="footer-column footer-links">
+        <h4 style="margin-top: 0;">TEF network and help</h4>
+        <ul>
+            <li><a href="../../../tef/">TEF sites</a></li>
+            <li><a href="../../../ai_assessment/">AI Trustworthiness Label</a></li>
+            <li><a href="../../../local_digital_twins/">Local Digital Twins</a></li>
+            <li><a href="../../../faq/">FAQ and contribute</a></li>
+            <li><a href="https://github.com/CitComAI-Hub/CitComAI-Hub.github.io" target="_blank" rel="noopener">GitHub</a></li>
+        </ul>
+    </div>
+    <div class="footer-column">
+        <h4 style="margin-top: 0;">Organization</h4>
+        <div class="footer-logo" style="display: flex; align-items: center;">
+            <a href="https://citcom.ai/" target="_blank">
+                <img class="citcom-logo" src="/assets/citcom.svg" alt="CitCom.ai logo">
+            </a>
+            <a href="https://vrain.upv.es/" target="_blank">
+                <img class="vrain-logo" src="/assets/vrain_white.png" alt="VRAIN logo">
+            </a>
+        </div>
+
+    </div>
+    <div class="footer-column">
+        <div class="footer-tagline">
+            <h4 style="margin: 0;">Co-funded by</h4>
+            <div class="logo-container" style="display: flex; align-items: center;">
+                <a target="_blank" href="https://digital-strategy.ec.europa.eu/en/policies/testing-and-experimentation-facilities"><img src="/assets/eu-co-funded.png" alt="EU Logo"></a>
+                <a target="_blank" href="https://cindi.gva.es/"><img src="/assets/gva.png" alt="GVA Logo"></a>
+            </div>
+            <p>
+                Views and opinions expressed are however those of the author(s)
+                only and do not necessarily reflect those of the European Union. Neither the European Union nor the
+                granting authority can be held responsible for them.
+            </p>
+        </div>
+    </div>
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["content.code.copy", "content.code.annotate", "content.action.edit", "content.tabs.link", "navigation.tabs", "navigation.sections", "navigation.indexes", "navigation.top", "search.suggest", "search.highlight", "toc.follow"], "search": "../../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.d7c377c4.min.js"></script>
+      
+        <script src="../../../js/timeago.min.js"></script>
+      
+        <script src="../../../js/timeago_mkdocs_material.js"></script>
+      
+        <script src="../../../javascripts/external-links.js"></script>
+      
+    
+  <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(() => { lightbox.reload() });
+</script></body>
+</html>

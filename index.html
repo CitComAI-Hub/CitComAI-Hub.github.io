@@ -6,11 +6,15 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
+        <meta name="description" content="The technical hub of the CitCom.ai TEF: data spaces, tools and guides to build AI services for smart cities.">
+      
       
       
         <link rel="canonical" href="https://citcomai-hub.github.io/">
       
       
+      
+        <link rel="next" href="getting_started/">
       
       
       <link rel="icon" href="assets/favicon.png">
@@ -18,7 +22,7 @@
     
     
   
-    <title>CitCom.ai Hub</title>
+    <title>Home - CitCom.ai Hub</title>
   
 
     
@@ -39,8 +43,8 @@
         
         
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
-        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Barlow:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Barlow";--md-code-font:"JetBrains Mono"}</style>
       
     
     
@@ -48,9 +52,7 @@
     
       <link rel="stylesheet" href="stylesheets/extra.css">
     
-      <link rel="stylesheet" href="stylesheets/neoteroi-mkdocs.css">
-    
-      <link rel="stylesheet" href="assets/css/data_catalog.css">
+      <link rel="stylesheet" href="stylesheets/citcom.css">
     
       <link rel="stylesheet" href="assets/css/ai_assess_catalog.css">
     
@@ -75,10 +77,12 @@
   
     
     
+      
     
     
     
-    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="indigo">
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom">
   
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
@@ -87,7 +91,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#package-components" class="md-skip">
+        <a href="#find-your-way-in" class="md-skip">
           Skip to content
         </a>
       
@@ -97,45 +101,50 @@
     </div>
     
     
-      
-
-  
-
-<header class="md-header md-header--shadow" data-md-component="header">
+      <header class="md-header cc-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="." title="CitCom&lt;sup&gt;AI&lt;/sup&gt; Hub" class="md-header__button md-logo" aria-label="CitCom<sup>AI</sup> Hub" data-md-component="logo">
-      
-  <img src="assets/logo.png" alt="logo">
-
+    <a href="." title="CitComAI Hub" class="cc-brand" aria-label="CitCom.ai Hub, home">
+      <img src="assets/citcom.svg" alt="CitCom.ai" class="cc-brand__logo">
+      <span class="cc-brand__label"><strong>Hub</strong><span>Documentation</span></span>
     </a>
     <label class="md-header__button md-icon" for="__drawer">
-      
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
     </label>
-    <div class="md-header__title" data-md-component="header-title">
-      <div class="md-header__ellipsis">
-        <div class="md-header__topic">
-          <span class="md-ellipsis">
-            CitCom<sup>AI</sup> Hub
-          </span>
-        </div>
-        <div class="md-header__topic" data-md-component="header-topic">
-          <span class="md-ellipsis">
-            
-              Home
-            
-          </span>
-        </div>
-      </div>
-    </div>
+    <ul class="cc-header__links">
+      <li><a href="getting_started/" class="">Get started</a></li>
+      <li><a href="data_spaces/" class="">Data space</a></li>
+      <li><a href="guides/" class="">Guides</a></li>
+      <li><a href="toolbox/" class="">Toolbox</a></li>
+      <li><a href="tef/" class="">TEF network</a></li>
+    </ul>
     
-      
+      <form class="md-header__option" data-md-component="palette">
+  
     
     
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3 3.19.09m3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95 2.06.05m-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5c-.84 0-1.65.15-2.39.42L12 2M3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29L3.34 7m.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14L3.36 17M20.65 7l-1.77 3.79a7.023 7.023 0 0 0-2.38-4.15l4.15.36m-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29L20.64 17M12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44L12 22Z"/></svg>
+      </label>
+    
+  
+</form>
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
     
     
       <label class="md-header__button md-icon" for="__search">
-        
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
       </label>
       <div class="md-search" data-md-component="search" role="dialog">
@@ -157,6 +166,8 @@
         </button>
       </nav>
       
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
     </form>
     <div class="md-search__output">
       <div class="md-search__scrollwrap" data-md-scrollfix>
@@ -171,9 +182,76 @@
   </div>
 </div>
     
+    <a href="https://marketplace.citcom-vrain-dataspace.eu" class="cc-header__cta" target="_blank" rel="noopener">
+      Marketplace
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5 17.59 15.59 7H9V5h10v10h-2V8.41L6.41 19 5 17.59Z"/></svg>
+    </a>
+  </nav>
+</header>
     
-      <div class="md-header__source">
-        <a href="https://github.com/CitComAI-Hub/CitComAI-Hub.github.io" title="Go to repository" class="md-source" data-md-component="source">
+    <div class="md-container" data-md-component="container">
+      
+      
+<section class="cc-dhero">
+  <div class="md-grid cc-dhero__inner">
+    <div class="md-typeset cc-dhero__copy">
+      <p class="cc-eyebrow">CitCom.ai Hub · Documentation</p>
+      <h1>Build AI services for smart cities on a shared data space</h1>
+      <p class="cc-dhero__lead">
+        The technical hub of the CitCom.ai TEF: how the data space works, the tools to connect a
+        city platform, and guides to build services that run in any CitCom city.
+      </p>
+      <label class="cc-dhero__search" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <span>Search the documentation</span>
+        <kbd>/</kbd>
+      </label>
+      <p class="cc-dhero__alt">
+        Looking for data or AI services to use?
+        <a href="https://marketplace.citcom-vrain-dataspace.eu" target="_blank" rel="noopener">Browse the marketplace &#8599;</a>
+      </p>
+    </div>
+    <nav class="md-typeset cc-line" aria-label="Reading path">
+      <p class="cc-line__label">The path</p>
+      <ol>
+        <li><a href="getting_started/"><span class="cc-line__stop"></span><span><strong>Get started</strong><small>What CitCom is and why data spaces</small></span></a></li>
+        <li><a href="data_spaces/"><span class="cc-line__stop"></span><span><strong>Data space</strong><small>The infrastructure running today</small></span></a></li>
+        <li><a href="guides/"><span class="cc-line__stop"></span><span><strong>Guides</strong><small>Worked examples and step-by-step guides</small></span></a></li>
+        <li><a href="toolbox/"><span class="cc-line__stop"></span><span><strong>Toolbox</strong><small>Lepus, FiLiP, ds-consumer-auth, wallets</small></span></a></li>
+        <li><a href="tef/"><span class="cc-line__stop"></span><span><strong>TEF network</strong><small>The sites, the AI label, digital twins</small></span></a></li>
+      </ol>
+    </nav>
+  </div>
+</section>
+
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+                
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" hidden>
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="." title="CitCom&lt;sup&gt;AI&lt;/sup&gt; Hub" class="md-nav__button md-logo" aria-label="CitCom<sup>AI</sup> Hub" data-md-component="logo">
+      
+  <img src="assets/logo.png" alt="logo">
+
+    </a>
+    CitCom<sup>AI</sup> Hub
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/CitComAI-Hub/CitComAI-Hub.github.io" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
@@ -182,298 +260,1918 @@
     CitComAI-Hub/CitComAI-Hub.github.io
   </div>
 </a>
-      </div>
-    
-  </nav>
+    </div>
   
-</header>
+  <ul class="md-nav__list" data-md-scrollfix>
     
-    <div class="md-container" data-md-component="container">
       
       
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
 
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="." class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#find-your-way-in" class="md-nav__link">
+    <span class="md-ellipsis">
+      Find your way in
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-you-will-find-here" class="md-nav__link">
+    <span class="md-ellipsis">
+      What you will find here
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#from-the-tef-network" class="md-nav__link">
+    <span class="md-ellipsis">
+      From the TEF network
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
         
           
         
       
-<style>
-    .md-button {
-        margin-top: 0.8rem;
-        margin-left: 0.2rem;
-        margin-right: 0.2rem;
-        padding: 0.8rem 2rem;
-        font-size: 1rem;
-        border-radius: 6px;
-    }
-
-    .github-icon {
-        margin-left: 0.3em;
-        position: relative;
-        top: 1px;
-    }
-
-    .md-footer-meta__inner {
-        margin-top: 0 !important;
-    }
-
-    .md-source-file {
-        display: none !important;
-    }
-
-    .md-content__inner {
-        margin: 0 1.5rem 2.5rem !important;
-    }
-
-    .md-header__button.md-icon {
-        display: none !important;
-    }
-
-    .md-main {
-        flex-grow: 0;
-    }
-
-    .md-main__inner {
-        display: flex;
-        height: 100%;
-    }
-
-    .tx-container {
-        padding: 2rem;
-        color: #fff;
-        background: linear-gradient(to bottom, #14151A, #1E2129 99%, #fff 99%);
-    }
+        
+      
+        
+      
+        
+      
     
-    .tx-hero {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin: 50px 3rem;
-        flex-wrap: wrap;
-        position: relative;
-    }
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="getting_started/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Get started
+  </span>
+  
 
-    .tx-hero h2 {
-        margin-bottom: 1.2rem;
-        font-weight: 600;
-        font-size: 2.5rem;
-        text-align: center;
-    }
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Get started
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="getting_started/project/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    The project and the TEFs
+  </span>
+  
 
-    .tx-hero p {
-        font-size: 1.1rem;
-        max-width: 600px;
-        margin: 0 auto 1.5rem;
-        /* Light color for contrast */
-        text-align: center;
-        line-height: 1.8;
-    }
+      </a>
+    </li>
+  
 
-    .tx-hero__content {
-        display: inline;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        z-index: 1;
-        /* Ensure content is above the image */
-    }
-    .tx-hero__content h2 {
-        font-family: 'FK Grotesk', sans-serif;
-    }
-</style>
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="getting_started/interoperability/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Interoperability
+  </span>
+  
 
-<!-- Main site Entry button descriptions -->
-<section class="tx-container">
-    <div class="md-grid md-typeset">
-        <div class="tx-hero">
-            <!-- <div class="tx-hero__image">
-                <img src="assets/smart-city.png" alt="Smart City" draggable="false">
-            </div> -->
-            <div class="tx-hero__content">
-                <div>
-                    <h2>CitCom<sup>AI</sup> Hub</h2>
-                    <p>Support & Documentation for Testing AI in Smart Cities and Communities</p>
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="getting_started/data_spaces/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Data spaces in 5 minutes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="data_spaces/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Data space
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Data space
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="data_spaces/fiware/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    How it works
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="marketplace/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Marketplace
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="data_spaces/eclipse/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Eclipse EDC data space
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="guides/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Guides
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Guides
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="miais/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Example: MIAIS, an AI service
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="valencia/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Example: Valencia, a city platform
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="guides/join/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Join the data space
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="guides/deploy_connector/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Deploy your own connector
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="guides/wallet/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Get a wallet and your credentials
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="guides/consume_data/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Use data from your code
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="guides/publish_dataset/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Publish a dataset
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="guides/publish_service/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Publish a web service
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="toolbox/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Toolbox
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5" id="__nav_5_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Toolbox
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="toolbox/lepus/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lepus
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="toolbox/ngsi_ld/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    NGSI-LD and FiLiP
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="toolbox/ds_consumer_auth/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ds-consumer-auth
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="toolbox/wallets/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Wallets
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="toolbox/smart_data_models/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Smart Data Models
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_7" id="__nav_5_7_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    More tools
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_7">
+            <span class="md-nav__icon md-icon"></span>
+            More tools
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="toolbox/ai_toolkit/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    AI Toolkit
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="toolbox/ai_logging_monitor/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    AI Logging Monitor
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="toolbox/mims_toolkit/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    MIMs Toolkit
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="toolbox/ldt_toolkit/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    LDT Toolkit
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="toolbox/iot_agent/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    FIWARE IoT Agent
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="toolbox/other_toolkit/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Other tools
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+          
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="tef/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    TEF network
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_6" id="__nav_6_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            TEF network
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_2" id="__nav_6_2_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Nordic - POWER
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_2">
+            <span class="md-nav__icon md-icon"></span>
+            Nordic - POWER
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="tef/nordic_power/doll_living_lab/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    DOLL Living Lab
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="tef/nordic_power/aarhus_city_lab/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Aarhus City Lab
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="tef/nordic_power/net_zero_innovation_hub/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Net Zero Innovation Hub
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="tef/nordic_power/dti/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    DTI
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="tef/nordic_power/center_denmark/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Center Denmark
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="tef/nordic_power/gate21/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    GATE21
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="tef/nordic_power/rise/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RISE
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="tef/nordic_power/tampere/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tampere
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_3" id="__nav_6_3_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Central - MOVE
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_3">
+            <span class="md-nav__icon md-icon"></span>
+            Central - MOVE
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="tef/central_move/mechelen/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Mechelen
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="tef/central_move/brussels/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Brussels
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="tef/central_move/eindhoven/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Eindhoven
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="tef/central_move/paris/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Paris
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="tef/central_move/list/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Luxembourg
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_4" id="__nav_6_4_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    South - CONNECT
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_4">
+            <span class="md-nav__icon md-icon"></span>
+            South - CONNECT
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="tef/south_connect/valencia/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Valencia
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="tef/south_connect/milano/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Milano
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="tef/south_connect/warsaw/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Warsaw
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_5" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="ai_assessment/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    AI Trustworthiness Label
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_6_5" id="__nav_6_5_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_5">
+            <span class="md-nav__icon md-icon"></span>
+            AI Trustworthiness Label
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ai_assessment/ai_assessment_catalogue/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    AI Assessment Catalogue
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="local_digital_twins/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Local Digital Twins
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="faq/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Help
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_7" id="__nav_7_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            Help
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="faq/pull_request_procedure/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Request changes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
                 </div>
-                <a href="/welcome" title="" class="md-button md-button--primary">
-                    Get started
-                </a>
-                <!-- ...existing code... -->
-                <!-- Updated GitHub button with inline SVG icon on the right -->
-                <a href="https://github.com/CitComAI-Hub" title="source.link.title" class="md-button">
-                    Go to GitHub
-                    <svg class="github-icon" width="22" height="22" viewBox="0 0 16 16" fill="currentColor"
-                        aria-hidden="true" >
-                        <path fill-rule="evenodd"
-                            d="M8 0C3.58 0 0 3.58 0 8a8 8 0 005.47 7.59c.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2 .37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.98 0-.88.31-1.6.82-2.16-.08-.2-.36-1.01.08-2.11 0 0 .67-.22 2.2.82a7.5 7.5 0 012-.27c.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.91.08 2.11.51.56.82 1.27.82 2.16 0 3.1-1.87 3.78-3.65 3.98.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0016 8c0-4.42-3.58-8-8-8z">
-                        </path>
-                    </svg>
-                </a>
-            </div>
-        </div>
-    </div>
-</section>
+              </div>
+            
+            
+              
+                
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" hidden>
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
 
-
-      <main class="md-main" data-md-component="main">
-        <div class="md-main__inner md-grid">
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#find-your-way-in" class="md-nav__link">
+    <span class="md-ellipsis">
+      Find your way in
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-you-will-find-here" class="md-nav__link">
+    <span class="md-ellipsis">
+      What you will find here
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#from-the-tef-network" class="md-nav__link">
+    <span class="md-ellipsis">
+      From the TEF network
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
           
           
             <div class="md-content" data-md-component="content">
               <article class="md-content__inner md-typeset">
                 
-                  
-
-  
-    <a href="https://github.com/CitComAI-Hub/CitComAI-Hub.github.io/edit/main/docs/index.md" title="Edit this page" class="md-content__button md-icon">
-      
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-2m10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1 2.1 2.1Z"/></svg>
-    </a>
-  
-  
-
-
-<style>
-/* Hide title on the home page */
-article > h1 {
-    display: none
-}
-
-/* Fix title font-weight */
-body > header > nav > div.md-header__title.md-header__title--active > div > div:nth-child(2){
-    font-weight: 700;   
-}
-.package-icon{
-    width: 5rem;
-}
-body > div.md-container > main > div > div > article > a{
-    display: none
-}
-</style>
-
-<div style="text-align: center;">
-
-<img class="package-icon skip-glightbox" src="./assets/package.png">
-  <h1>Minimal Package for TEF nodes</h1>
-  <p>Work package 3 (WP3) provides the <strong>Minimal Package for CitCom.ai TEF (Testing and Experimentation Facility) nodes</strong>, which contains comprehensive <strong>guides, toolboxes, and deployment frameworks</strong> to ensure interoperability across the wide range of TEF nodes by defining a <strong>common reference architecture</strong>. Based on this architecture, it also provides support and examples to develop <strong>AI services</strong>.</p> 
-</div>
-
-<p><br></p>
-<h3 id="package-components">Package components:</h3>
-<div class="grid cards">
+  <h2 id="find-your-way-in">Find your way in</h2>
+<div class="cc-roles">
+<div class="cc-role">
+<p class="cc-role__who">Cities and TEF nodes</p>
+<p>What CitCom offers and the minimal package the TEF nodes share.</p>
 <ul>
-<li>
-<p><span class="twemoji lg middle"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2S7 4 7 12c0 3.1.76 5.75 1.67 7.83A2 2 0 0 0 10.5 21h3a2 2 0 0 0 1.83-1.17C16.25 17.75 17 15.1 17 12c0-8-5-10-5-10m1.5 17h-3c-1-2.24-1.5-4.59-1.5-7 0-4.64 1.9-6.8 3-7.67 1.1.87 3 3.03 3 7.67 0 2.41-.5 4.76-1.5 7m6.5 3-3.86-1.55c.7-1.53 1.2-3.11 1.51-4.72m-9.79 4.72L4 22l2.35-6.27c.31 1.61.81 3.19 1.51 4.72M12 12c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2Z"/></svg></span> <strong>Getting Started</strong></p>
-<hr />
-<p>Start by learning the basics of CitCom.ai and its common reference architecture.</p>
-<p><a href="welcome/"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13.22 19.03a.75.75 0 0 1 0-1.06L18.19 13H3.75a.75.75 0 0 1 0-1.5h14.44l-4.97-4.97a.749.749 0 0 1 .326-1.275.749.749 0 0 1 .734.215l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"/></svg></span> Learn more</a></p>
-</li>
-<li>
-<p><span class="twemoji lg middle"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M15 23h-2v-2h2v2m4-2h-2v2h2v-2m-4-4h-2v2h2v-2m-8 4H5v2h2v-2m0-4H5v2h2v-2m12 0h-2v2h2v-2m-4-4h-2v2h2v-2m4 0h-2v2h2v-2m2-4a2 2 0 0 1 2 2v12h-2V11H11v12H9v-8H3v8H1v-8a2 2 0 0 1 2-2h6v-2a2 2 0 0 1 2-2V7a2 2 0 0 1 2-2h2V1h2v4h2a2 2 0 0 1 2 2v2m-2 0V7h-6v2h6Z"/></svg></span> <strong>TEF Nodes</strong></p>
-<hr />
-<p>Testing and Experimentation Facility (TEF) nodes.</p>
-<p><a href="tef/"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13.22 19.03a.75.75 0 0 1 0-1.06L18.19 13H3.75a.75.75 0 0 1 0-1.5h14.44l-4.97-4.97a.749.749 0 0 1 .326-1.275.749.749 0 0 1 .734.215l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"/></svg></span> Learn more</a></p>
-</li>
-<li>
-<p><span class="twemoji lg middle"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 2a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6H6m0 2h7v5h5v11H6V4m2 8v2h8v-2H8m0 4v2h5v-2H8Z"/></svg></span> <strong>Documentation</strong></p>
-<hr />
-<p>Reports and deployment guides of different components.</p>
-<p><a href="documentation/"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13.22 19.03a.75.75 0 0 1 0-1.06L18.19 13H3.75a.75.75 0 0 1 0-1.5h14.44l-4.97-4.97a.749.749 0 0 1 .326-1.275.749.749 0 0 1 .734.215l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"/></svg></span> Learn more</a></p>
-</li>
-<li>
-<p><span class="twemoji lg middle"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 4H2V2h16v2m-4.96 6h-10l.6-3h12.72l.4 2c.74.04 1.45.19 2.13.46L18 5H2l-1 5v2h1v6h8.5c-.33-.8-.5-1.65-.5-2.5v.5H4v-4h6v3.5c0-1.66.64-3.33 1.9-4.6.36-.35.74-.65 1.14-.9m10.35 11L22 22.39l-3.12-3.07c-.69.43-1.51.68-2.38.68-2.5 0-4.5-2-4.5-4.5s2-4.5 4.5-4.5 4.5 2 4.5 4.5c0 .88-.25 1.71-.69 2.4l3.08 3.1M19 15.5a2.5 2.5 0 0 0-5 0 2.5 2.5 0 0 0 5 0Z"/></svg></span> <strong>Data Catalog</strong></p>
-<hr />
-<p>Centralized hub to keep track of available datasets.</p>
-<p><a href="data_catalog/"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13.22 19.03a.75.75 0 0 1 0-1.06L18.19 13H3.75a.75.75 0 0 1 0-1.5h14.44l-4.97-4.97a.749.749 0 0 1 .326-1.275.749.749 0 0 1 .734.215l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"/></svg></span> Learn more</a></p>
-</li>
-<li>
-<p><span class="twemoji lg middle"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 8h-3V6c0-1.1-.9-2-2-2H9c-1.1 0-2 .9-2 2v2H4c-1.1 0-2 .9-2 2v10h20V10c0-1.1-.9-2-2-2M9 6h6v2H9V6m11 12H4v-3h2v1h2v-1h8v1h2v-1h2v3m-2-5v-1h-2v1H8v-1H6v1H4v-3h16v3h-2Z"/></svg></span> <strong>Toolbox</strong></p>
-<hr />
-<p>A set of useful tools compatible with MIMs.</p>
-<p><a href="toolbox/"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13.22 19.03a.75.75 0 0 1 0-1.06L18.19 13H3.75a.75.75 0 0 1 0-1.5h14.44l-4.97-4.97a.749.749 0 0 1 .326-1.275.749.749 0 0 1 .734.215l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"/></svg></span> Learn more</a></p>
-</li>
-<li>
-<p><span class="twemoji lg middle"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17.5 15.5c0 1.11-.89 2-2 2s-2-.89-2-2 .9-2 2-2 2 .9 2 2m-9-2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.89 2-2-.89-2-2-2M23 15v3c0 .55-.45 1-1 1h-1v1c0 1.11-.89 2-2 2H5a2 2 0 0 1-2-2v-1H2c-.55 0-1-.45-1-1v-3c0-.55.45-1 1-1h1c0-3.87 3.13-7 7-7h1V5.73c-.6-.34-1-.99-1-1.73 0-1.1.9-2 2-2s2 .9 2 2c0 .74-.4 1.39-1 1.73V7h1c3.87 0 7 3.13 7 7h1c.55 0 1 .45 1 1m-2 1h-2v-2c0-2.76-2.24-5-5-5h-4c-2.76 0-5 2.24-5 5v2H3v1h2v3h14v-3h2v-1Z"/></svg></span> <strong>AI Services</strong></p>
-<hr />
-<p>Minimal interoperable AI services for platforms compatible with MIMs.</p>
-<p><a href="services/"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13.22 19.03a.75.75 0 0 1 0-1.06L18.19 13H3.75a.75.75 0 0 1 0-1.5h14.44l-4.97-4.97a.749.749 0 0 1 .326-1.275.749.749 0 0 1 .734.215l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"/></svg></span> Learn more</a></p>
-</li>
+<li><a href="getting_started/project/">The project and the TEFs</a></li>
+<li><a href="valencia/">Valencia: a city platform</a></li>
+<li><a href="tef/">TEF network</a></li>
 </ul>
 </div>
+<div class="cc-role">
+<p class="cc-role__who">Data providers</p>
+<p>Publish a dataset in the data space and decide who can use it.</p>
+<ul>
+<li><a href="guides/join/">Join the data space</a></li>
+<li><a href="guides/publish_dataset/">Publish a dataset</a></li>
+<li><a href="toolbox/lepus/">Lepus</a></li>
+</ul>
+</div>
+<div class="cc-role">
+<p class="cc-role__who">AI developers</p>
+<p>Read city data from your code and offer your service to other cities.</p>
+<ul>
+<li><a href="miais/">MIAIS: a worked example</a></li>
+<li><a href="guides/consume_data/">Use data from your code</a></li>
+<li><a href="guides/publish_service/">Publish a web service</a></li>
+</ul>
+</div>
+<div class="cc-role">
+<p class="cc-role__who">Data space operators</p>
+<p>How the CitCom data space is built, and how to run your own connector.</p>
+<ul>
+<li><a href="data_spaces/fiware/">FIWARE data space</a></li>
+<li><a href="data_spaces/fiware/#inside-a-connector">Inside a connector</a></li>
+<li><a href="guides/deploy_connector/">Deploy your own connector</a></li>
+</ul>
+</div>
+</div>
+<h2 id="what-you-will-find-here">What you will find here</h2>
+<p><a href="https://citcom.ai">CitCom.ai</a> is a European Union project that runs Testing and Experimentation Facilities for AI and robotics in smart and sustainable cities. This hub gathers the <em>minimal package</em> that the project prepares for its TEF nodes, so that a service built in one city runs in the others.</p>
+<div class="cc-facts">
+<p><a href="data_spaces/"><strong>A working data space</strong><span>Shared infrastructure for every CitCom partner, running today with real city data.</span></a>
+<a href="guides/"><strong>Worked examples</strong><span>An AI service and a city platform, from their own integration to the data space.</span></a>
+<a href="toolbox/"><strong>Open tools</strong><span>Connect an NGSI-v2 platform, read NGSI-LD data and get data space tokens.</span></a></p>
+</div>
+<h2 id="from-the-tef-network">From the TEF network</h2>
+<div class="cc-links">
+<p><a href="tef/">TEF sites</a>
+<a href="ai_assessment/">AI Trustworthiness Label</a>
+<a href="local_digital_twins/">Local Digital Twins</a>
+<a href="faq/">FAQ and contribute</a></p>
+</div>
 
-
-
-
-
-
-
-  
-    
-  
-  
-    
-  
-
-
-  <aside class="md-source-file">
-    
-      
-  <span class="md-source-file__fact">
-    <span class="md-icon" title="Last update">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
-    </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="July 24, 2025 14:41:07"><span class="timeago" datetime="2025-07-24T14:41:07+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="July 24, 2025 14:41:07">2025-07-24</span>
-  </span>
-
-    
-    
-      
-  <span class="md-source-file__fact">
-    <span class="md-icon" title="Created">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3h-2Z"/></svg>
-    </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="February 5, 2024 09:00:22"><span class="timeago" datetime="2024-02-05T09:00:22+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="February 5, 2024 09:00:22">2024-02-05</span>
-  </span>
-
-    
-    
-      
-  <span class="md-source-file__fact">
-    <span class="md-icon" title="Contributors">
-      
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 5.5A3.5 3.5 0 0 1 15.5 9a3.5 3.5 0 0 1-3.5 3.5A3.5 3.5 0 0 1 8.5 9 3.5 3.5 0 0 1 12 5.5M5 8c.56 0 1.08.15 1.53.42-.15 1.43.27 2.85 1.13 3.96C7.16 13.34 6.16 14 5 14a3 3 0 0 1-3-3 3 3 0 0 1 3-3m14 0a3 3 0 0 1 3 3 3 3 0 0 1-3 3c-1.16 0-2.16-.66-2.66-1.62a5.536 5.536 0 0 0 1.13-3.96c.45-.27.97-.42 1.53-.42M5.5 18.25c0-2.07 2.91-3.75 6.5-3.75s6.5 1.68 6.5 3.75V20h-13v-1.75M0 20v-1.5c0-1.39 1.89-2.56 4.45-2.9-.59.68-.95 1.62-.95 2.65V20H0m24 0h-3.5v-1.75c0-1.03-.36-1.97-.95-2.65 2.56.34 4.45 1.51 4.45 2.9V20Z"/></svg>
-      
-    </span>
-    <nav>
-      
-        <a href="mailto:joancipria@protonmail.com">Joan Ciprià</a>, 
-        <a href="mailto:44024844+sermars@users.noreply.github.com">Sergio Marti</a>
-    </nav>
-  </span>
-
-    
-    
-  </aside>
-
-
-
-
-
-                
               </article>
             </div>
           
           
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
         </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+  Back to top
+</button>
         
       </main>
       
         <footer class="md-footer">
   
-    
-  
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
       <div class="footer-container">
+    <div class="footer-column footer-links">
+        <h4 style="margin-top: 0;">TEF network and help</h4>
+        <ul>
+            <li><a href="tef/">TEF sites</a></li>
+            <li><a href="ai_assessment/">AI Trustworthiness Label</a></li>
+            <li><a href="local_digital_twins/">Local Digital Twins</a></li>
+            <li><a href="faq/">FAQ and contribute</a></li>
+            <li><a href="https://github.com/CitComAI-Hub/CitComAI-Hub.github.io" target="_blank" rel="noopener">GitHub</a></li>
+        </ul>
+    </div>
     <div class="footer-column">
         <h4 style="margin-top: 0;">Organization</h4>
         <div class="footer-logo" style="display: flex; align-items: center;">
@@ -512,7 +2210,7 @@ body > div.md-container > main > div > div > article > a{
     </div>
     
     
-    <script id="__config" type="application/json">{"base": ".", "features": ["content.code.copy", "content.action.edit", "navigation.sections", "navigation.footer", "navigation.indexes"], "search": "assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": ".", "features": ["content.code.copy", "content.code.annotate", "content.action.edit", "content.tabs.link", "navigation.tabs", "navigation.sections", "navigation.indexes", "navigation.top", "search.suggest", "search.highlight", "toc.follow"], "search": "assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
       <script src="assets/javascripts/bundle.d7c377c4.min.js"></script>
@@ -521,7 +2219,7 @@ body > div.md-container > main > div > div > article > a{
       
         <script src="js/timeago_mkdocs_material.js"></script>
       
-        <script src="assets/js/data_catalog.js"></script>
+        <script src="javascripts/external-links.js"></script>
       
     
   <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
