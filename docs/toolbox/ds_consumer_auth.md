@@ -53,6 +53,7 @@ pip install "ds-consumer-auth @ git+https://github.com/CitComAI-Hub/ds-consumer-
 | `DS_USERNAME`, `DS_PASSWORD` | yes | Machine user that holds the credential |
 | `DS_VERIFIER_URL` | yes | Verifier service of the provider, e.g. `https://verifier-townhall-vlc.citcom-vrain-dataspace.eu/services/machine-id` |
 | `DS_SCOPE` | no | Scope asked to the verifier, e.g. `operator1` |
+| `DS_CLIENT_ID`, `DS_CLIENT_SECRET` | with a realm of the onboarding portal | The client for the login: your organisation's DID and its secret. By default `account-console`, without secret |
 | `DS_CREDENTIAL_TYPE` | no | `MachineCredential` by default |
 | `DS_HOLDER_KEY_FILE` | no | Key of the holder, to keep the same one across restarts |
 

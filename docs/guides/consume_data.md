@@ -24,9 +24,9 @@ flowchart LR
 
 ## What you need
 
-- Your organisation [registered in the data space](join.md), with [your own connector](deploy_connector.md): it issues the `MachineCredential` of your programs. The realm created by the onboarding portal does not issue it yet.
+- Your organisation [registered in the data space](join.md). Nothing to deploy: the realm the onboarding portal created for it issues the `MachineCredential` of your programs. With your own connector, it issues it.
 - Its legal representative (LEAR) able to log in to the [marketplace](https://marketplace.citcom-vrain-dataspace.eu).
-- Access to the admin console of your Keycloak, to create a machine user.
+- The administrator of your organisation's Keycloak, to create a user for the program.
 - Python 3.10 or later.
 
 ## Steps
@@ -46,13 +46,24 @@ Open the [marketplace](https://marketplace.citcom-vrain-dataspace.eu), find the 
 
     The [Ajuntament de València](../valencia/index.md#data-in-the-data-space) offers four datasets that are always on. They are a good first test; the rest of this guide uses its *Waste containers* offer as the example. Replace the values with those of your offer.
 
-### 2. Create a machine user in your Keycloak
+### 2. Create a user for your program
 
-Your program logs in as a user of its own, never as a person. In the admin console of your Keycloak:
+Your program logs in as a user of its own, never as a person. Open the admin console of your organisation's Keycloak:
 
-1. **Users → Add user**: a name such as `reader1`, with an email. Then **Credentials → Set password**, not temporary.
-2. **Role mapping → Assign role → Filter by clients**: choose the role the offer asks for in the client `roles-dataspace` (`clearence1`). Give it **only** the roles of the offers this program uses: the provider's verifier rejects a credential that carries a role the purchase does not allow.
-3. Bind the `MachineCredential` to the user. See [Create the users](deploy_connector.md#5-create-the-users): having the role is not enough.
+=== "Realm created by the portal"
+
+    `https://keycloak-onboarding.citcom-vrain-dataspace.eu/admin/<your realm>/console/`, with the user `admin` and the password you set after the approval email.
+
+=== "Your own connector"
+
+    `https://<your Keycloak host>/admin/master/console/#/provider`, with the admin of your Keycloak.
+
+Then:
+
+1. **Users → Add user**: a name such as `reader1`, with an email. **Create**.
+2. **Credentials → Set password**: a long password, with **Temporary** off.
+3. **Role mapping → Assign role**, filter by clients, and choose `roles-dataspace` · `clearence1`, the role the data offers ask for. Give it **only** the roles of the offers this program uses: a verifier rejects a credential that carries a role the purchase does not allow.
+4. **Verifiable credentials → Create verifiable credential** and choose `MachineCredential`. Without this step Keycloak does not issue it, even with the role.
 
 ### 3. Buy the offer
 
@@ -69,21 +80,39 @@ pip install "ds-consumer-auth @ git+https://github.com/CitComAI-Hub/ds-consumer-
 
 ### 5. Configure
 
-```bash title=".env"
-# Your organisation: who you are
-export DS_ISSUER_URL="https://<your Keycloak host>/realms/<your realm>"
-export DS_USERNAME="reader1"
-export DS_PASSWORD="<its password>"
-# The provider: who you ask (from step 1)
-export DS_VERIFIER_URL="https://verifier-townhall-vlc.citcom-vrain-dataspace.eu/services/machine-id"
-export DS_SCOPE="operator1"
-```
+=== "Realm created by the portal"
+
+    The program logs in through your organisation's own client, whose ID is your DID. Copy its secret from the admin console: **Clients → `did:web:onboarding.citcom-vrain-dataspace.eu:<your realm>` → Credentials → Client secret**.
+
+    ```bash title=".env"
+    # Your organisation: who you are
+    export DS_ISSUER_URL="https://keycloak-onboarding.citcom-vrain-dataspace.eu/realms/<your realm>"
+    export DS_CLIENT_ID="did:web:onboarding.citcom-vrain-dataspace.eu:<your realm>"
+    export DS_CLIENT_SECRET="<the client secret>"
+    export DS_USERNAME="reader1"
+    export DS_PASSWORD="<its password>"
+    # The provider: who you ask (from step 1)
+    export DS_VERIFIER_URL="https://verifier-townhall-vlc.citcom-vrain-dataspace.eu/services/machine-id"
+    export DS_SCOPE="operator1"
+    ```
+
+=== "Your own connector"
+
+    ```bash title=".env"
+    # Your organisation: who you are
+    export DS_ISSUER_URL="https://<your Keycloak host>/realms/provider"
+    export DS_USERNAME="reader1"
+    export DS_PASSWORD="<its password>"
+    # The provider: who you ask (from step 1)
+    export DS_VERIFIER_URL="https://verifier-townhall-vlc.citcom-vrain-dataspace.eu/services/machine-id"
+    export DS_SCOPE="operator1"
+    ```
 
 ```bash
 source .env
 ```
 
-Keep the password out of your repository.
+Keep the passwords and the secret out of your repository.
 
 ### 6. Check the token
 
@@ -139,7 +168,9 @@ from ds_consumer_auth import ConsumerConfig, data_space_session
 
 def session_for(provider_verifier: str):
     return data_space_session(ConsumerConfig(
-        issuer_url="https://<your Keycloak host>/realms/<your realm>",
+        issuer_url="https://keycloak-onboarding.citcom-vrain-dataspace.eu/realms/<your realm>",
+        client_id="did:web:onboarding.citcom-vrain-dataspace.eu:<your realm>",
+        client_secret="<the client secret>",
         username="reader1",
         password="<its password>",
         verifier_url=provider_verifier,
@@ -151,8 +182,9 @@ def session_for(provider_verifier: str):
 
 | Symptom | Cause | Fix |
 |---|---|---|
-| `login: request failed (HTTP 401)` | Wrong user or password, or `DS_ISSUER_URL` points to another realm | Check them in your Keycloak |
-| The credential request fails, or the account console says *You have no verifiable credentials yet* | The `MachineCredential` is not bound to the machine user | Step 2.3 |
+| `login: request failed (HTTP 401)` | Wrong user or password, wrong client secret, or `DS_ISSUER_URL` points to another realm | Check them in your Keycloak |
+| `login: request failed (HTTP 400)` with `unauthorized_client` | A realm created by the portal, without `DS_CLIENT_ID` and `DS_CLIENT_SECRET` | Set them as in step 5 |
+| The credential request fails, or the account console says *You have no verifiable credentials yet* | The `MachineCredential` is not bound to the user | Step 2.4 |
 | `vp_token: the verifier rejected the credential (HTTP 400: {})` | The provider does not trust your organisation for `MachineCredential`: the offer is not bought, or the order is not completed. Or the machine user has a role the offer does not allow | Check the order in the marketplace; leave only the offer's role on the machine user |
 | The same `400`, and the order is completed | Your organisation is not in the trust anchor, or the provider cannot resolve your DID | Check that your registration is approved and that your `did.json` is reachable from the internet |
 | `401` from the provider's gateway | A token from another verifier, or the wrong scope | Check `DS_VERIFIER_URL` and `DS_SCOPE` |

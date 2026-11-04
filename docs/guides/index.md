@@ -9,8 +9,8 @@ Build on the CitCom data space. Start with a worked example: the [MIAIS](../miai
 
 | Guide | For | You end up with |
 |---|---|---|
-| [Join the data space](join.md) | The legal representative (LEAR) of an organisation | Your organisation registered and trusted, able to buy in the marketplace |
-| [Deploy your own connector](deploy_connector.md) | Operators | A consumer connector that issues your organisation's credentials |
+| [Join the data space](join.md) | The legal representative (LEAR) of an organisation | Your organisation registered and trusted, able to buy and read data |
+| [Deploy your own connector](deploy_connector.md) | Operators who want their own infrastructure (optional) | A connector that issues your organisation's credentials |
 | [Get a wallet and your credentials](wallet.md) | Anyone | A wallet with your credential, ready to log in |
 | [Use data from your code](consume_data.md) | Developers of a consumer | A program that reads another organisation's data |
 | [Publish a dataset](publish_dataset.md) | Data providers | An offer in the marketplace that others can buy |
@@ -18,7 +18,7 @@ Build on the CitCom data space. Start with a worked example: the [MIAIS](../miai
 
 !!! tip "To read data as soon as possible"
 
-    Follow [Join the data space](join.md), then [Use data from your code](consume_data.md). The first one tells you whether you need your own connector.
+    Follow [Join the data space](join.md), then [Use data from your code](consume_data.md). Nothing to deploy: the onboarding portal gives your organisation everything it needs.
 
 ```mermaid
 flowchart LR
