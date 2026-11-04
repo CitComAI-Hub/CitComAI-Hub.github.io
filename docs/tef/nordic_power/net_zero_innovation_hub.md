@@ -1,5 +1,6 @@
 ---
 title: Net Zero Innovation Hub
+description: "The Net Zero Innovation Hub TEF site of the Nordic super-node (POWER): what it offers and its data."
 ---
 
 !!! note "Page to be completed"

@@ -1,96 +1,88 @@
 ---
-title: The CitCom data spaces
-description: "The two CitCom data spaces, FIWARE and Eclipse EDC, and how they connect."
+title: The CitCom data space
+description: "The data space shared by all CitCom partners: how it works today, its marketplace and how to join."
+hide:
+  - toc
 ---
 
-# The CitCom data spaces
+# The CitCom data space
 
-CitCom runs two data spaces, built with the two main open-source technologies in Europe. Both follow the concepts in [Data spaces in 5 minutes](../getting_started/data_spaces.md); they differ in how identity and contracts work.
+<p class="cc-lead">Where CitCom partners share data and AI services under their own rules. Operated by VRAIN-UPV for every partner, built on the FIWARE Data Space Connector, and open to any organisation that joins.</p>
 
-| | FIWARE data space | Eclipse EDC data space |
-|---|---|---|
-| **Technology** | [FIWARE Data Space Connector](https://github.com/FIWARE/data-space-connector) 10 | [Eclipse EDC](https://eclipse-edc.github.io/), sovity Community Edition |
-| **Operated by** | VRAIN-UPV (Valencia TEF node) | [Libelium](https://www.libelium.com/) |
-| **Identity** | Verifiable credentials (OID4VCI / OID4VP) and wallets | Connector identities managed by the operator's portal |
-| **Contracts** | Marketplace (TMForum) → contract-management → trust list + ODRL policy | Dataspace Protocol (DSP) negotiation between connectors |
-| **Data API** | NGSI-LD, served by the provider's connector | Any HTTP source, transferred by the connectors |
-| **Entry point** | [marketplace.citcom-vrain-dataspace.eu](https://marketplace.citcom-vrain-dataspace.eu) | [citcom.dataspaceready.eu](https://citcom.dataspaceready.eu) |
+<div class="cc-infra" markdown="0">
+  <div class="cc-infra__band">
+    <p class="cc-infra__eyebrow">Shared services · operated by VRAIN-UPV for all of CitCom</p>
+    <div class="cc-infra__shared">
+      <a class="cc-infra__svc" href="../guides/join/">
+        <strong>Onboarding portal</strong>
+        <small>An organisation asks to join</small>
+      </a>
+      <a class="cc-infra__svc" href="fiware/#shared-services">
+        <strong>Trust anchor</strong>
+        <small>The list of trusted organisations, checked on every access</small>
+      </a>
+      <a class="cc-infra__svc" href="../marketplace/">
+        <strong>Marketplace</strong>
+        <small>Providers publish offers, consumers buy them</small>
+      </a>
+    </div>
+  </div>
+  <div class="cc-infra__links" aria-hidden="true">
+    <div class="cc-infra__label cc-infra__label--center"><span class="cc-infra__step">1</span><small>Both join</small></div>
+    <div class="cc-infra__label cc-infra__label--left"><span class="cc-infra__step">2</span><small>Publishes an offer</small></div>
+    <div class="cc-infra__label cc-infra__label--right"><span class="cc-infra__step">3</span><small>Buys it</small></div>
+  </div>
+  <div class="cc-infra__flow">
+    <a class="cc-infra__part" href="../valencia/">
+      <span class="cc-infra__tag">Provider · example</span>
+      <strong>Ajuntament de València</strong>
+      <small>Its connector serves the city data it offers</small>
+      <span class="cc-infra__conn">Connector</span>
+    </a>
+    <div class="cc-infra__arrow">
+      <span class="cc-infra__step">4</span>
+      <span class="cc-infra__line"></span>
+      <small>Reads the data, connector to connector</small>
+    </div>
+    <a class="cc-infra__part" href="../miais/">
+      <span class="cc-infra__tag">Consumer · example</span>
+      <strong>VRAIN-UPV</strong>
+      <small>Its AI service, the MIAIS, reads the data it bought</small>
+      <span class="cc-infra__conn">Connector</span>
+    </a>
+  </div>
+  <ol class="cc-infra__legend">
+    <li><span class="cc-infra__step">1</span><span><strong>Join.</strong> Both organisations register in the onboarding portal. Once approved, they are in the trust anchor and their credentials are trusted.</span></li>
+    <li><span class="cc-infra__step">2</span><span><strong>Publish.</strong> The Ajuntament offers a dataset in the marketplace, for example its waste containers.</span></li>
+    <li><span class="cc-infra__step">3</span><span><strong>Buy.</strong> VRAIN-UPV buys the offer. The purchase sets up the contract in the Ajuntament's connector.</span></li>
+    <li><span class="cc-infra__step">4</span><span><strong>Read.</strong> The MIAIS of VRAIN-UPV reads the data from the Ajuntament's connector. The data never goes through the shared services.</span></li>
+  </ol>
+  <div class="cc-infra__cta-row"><a class="cc-infra__cta" href="../guides/join/">Join &rarr;</a></div>
+</div>
 
-<div class="grid cards" markdown>
+The Ajuntament de València and VRAIN-UPV are the first participants, and both are told step by step as worked examples. The technical view, with every component and the public addresses, is in [How it works](fiware.md#the-deployment-today).
 
--   :material-shield-key-outline:{ .lg .middle } __FIWARE data space__
+<div class="grid cards cc-two" markdown>
+
+-   :material-shield-key-outline:{ .lg .middle } __How it works__
 
     ---
 
-    Components, and the flows to join, buy and access data and services.
+    Its components, the deployment running today, and the flows to join, buy and access data and services.
 
-    [:octicons-arrow-right-24: FIWARE data space](fiware.md)
+    [:octicons-arrow-right-24: How it works](fiware.md)
 
--   :material-transit-connection-variant:{ .lg .middle } __Eclipse EDC data space__
-
-    ---
-
-    The alternative stack: architecture and deployment.
-
-    [:octicons-arrow-right-24: Eclipse EDC data space](eclipse/index.md)
-
--   :material-bridge:{ .lg .middle } __Bridging both__
+-   :material-storefront-outline:{ .lg .middle } __Marketplace__
 
     ---
 
-    How the Valencia data is also available in the EDC data space.
+    Where the participants publish and buy datasets and services.
 
-    [:octicons-arrow-right-24: Bridging both](bridge.md)
-
--   :material-map-marker-outline:{ .lg .middle } __Valencia TEF node__
-
-    ---
-
-    The data, services and participants running today.
-
-    [:octicons-arrow-right-24: Valencia](../valencia/index.md)
+    [:octicons-arrow-right-24: Marketplace](../marketplace/index.md)
 
 </div>
 
-## The FIWARE data space at a glance
+## Also in CitCom
 
-```mermaid
-flowchart TB
-    subgraph OP["Operated for the whole data space"]
-        TA["<b>Trust anchor</b><br/>Trusted Issuers Registry"]
-        ON["<b>Onboarding portal</b><br/>organisations join"]
-        MK["<b>Marketplace</b><br/>catalogue, offers, orders"]
-    end
-    subgraph TV["Ajuntament de València · townhall-vlc"]
-        TVC["Connector"]
-        TVD[("City data<br/>VLCi + Lepus, Orion-LD")]
-        TVC --- TVD
-    end
-    subgraph VR["VRAIN-UPV · vrain"]
-        VRC["Connector"]
-        VRS["MIAIS<br/>AI service"]
-        VRC --- VRS
-    end
-    W["Wallets<br/>Lissi, atesta-id-wallet"]
+Libelium operates a second, separate data space built on Eclipse EDC, for the partners that work with that technology. It has its own portal and catalogue; see [Eclipse EDC data space](eclipse/index.md).
 
-    ON -- "registers" --> TA
-    TVC -. "publishes offers" .-> MK
-    VRC -. "publishes offers" .-> MK
-    MK -- "contract on purchase" --> TVC
-    MK -- "contract on purchase" --> VRC
-    VRS == "reads waste containers<br/>MachineCredential" ==> TVC
-    W == "people log in<br/>ServiceCredential" ==> VRC
-```
-
-- The **trust anchor**, the **onboarding portal** and the **marketplace** are shared by everyone.
-- Each participant runs its own **connector**. Today there are two: the Ajuntament de València, which provides city data, and VRAIN-UPV, which provides an AI service and consumes city data.
-- The **MIAIS** of VRAIN reads the waste containers of Valencia through the Ajuntament's connector, after buying the offer in the marketplace. People from other organisations use the MIAIS by logging in with their wallet.
-
-The public services are:
-
-| Service | URL |
-|---|---|
-| Marketplace | <https://marketplace.citcom-vrain-dataspace.eu> |
-| Onboarding portal | <https://onboarding.citcom-vrain-dataspace.eu> |
-| Trust anchor (TIR) | <https://tir.citcom-vrain-dataspace.eu/v4/issuers> (list of trusted organisations) |
-| Connector of a participant `<p>` | `https://apisix-<p>.citcom-vrain-dataspace.eu` (data and services), `https://keycloak-<p>…` (credentials), `https://verifier-<p>…` (tokens) |

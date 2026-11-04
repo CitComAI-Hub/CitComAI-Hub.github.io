@@ -1,5 +1,6 @@
 ---
 title: Local Digital Twins
+description: "The local digital twins of the TEF sites and the work to make them interoperable."
 ---
 # Local Digital Twins
 Local Digital Twins (LDTs) are at the forefront of transforming how cities and communities leverage data and technology to address complex challenges.

@@ -1,5 +1,6 @@
 ---
 title: DOLL Living Lab
+description: "The DOLL Living Lab TEF site of the Nordic super-node (POWER): what it offers and its data."
 ---
 
 ## Overview

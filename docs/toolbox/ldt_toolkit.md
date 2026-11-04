@@ -1,5 +1,6 @@
 ---
 title: LDT Toolkit
+description: "A deployable demonstrator of interoperable, AI-ready local digital twins."
 ---
 
 # LDT Toolkit

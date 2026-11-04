@@ -1,10 +1,11 @@
 ---
-title: AI Assessment
+title: AI Trustworthiness Label
+description: "How the TEF sites assess the AI systems they test: badges, guidelines and an example report."
 ---
 
-# Citcom AI Trustworthiness Label
+# CitCom AI Trustworthiness Label
 
-The **Citcom AI Trustworthiness Label** is a Citcom.ai service, **currently under pilot**, through which TEF site partners independently assess AI systems deployed in smart-city contexts — across mobility, energy, citizen services, urban planning, and related domains.
+The **CitCom AI Trustworthiness Label** is a CitCom.ai service, **currently under pilot**, through which TEF site partners independently assess AI systems deployed in smart-city contexts — across mobility, energy, citizen services, urban planning, and related domains.
 
 Its purpose is to provide a **trusted, recognisable signal**: an independent expert opinion on whether an AI system has been developed and operated responsibly for its intended use. The Label gives cities a sounder basis for procurement and gives providers a credible way to demonstrate responsible practice on the market.
 
@@ -30,7 +31,7 @@ The tangible outcome of the process is a **system of badges**. Each badge corres
 | **Governance** | The governance, oversight, and operational practices around the system: risk management, human oversight, accountability, monitoring and incident response, and documentation. |
 | **Impact** | The effects of the system on people, communities, and society: affected populations, differential impact, transparency and recourse, broader societal effects, participation, and environmental footprint. |
 
-Each badge would include a **watermark** to ensure authenticity and prevent misuse, and would be **verifiable through the Citcom Hub**, allowing external stakeholders to confirm its origin and evaluation status.
+Each badge would include a **watermark** to ensure authenticity and prevent misuse, and would be **verifiable through the CitCom Hub**, allowing external stakeholders to confirm its origin and evaluation status.
 
 ## Customised to context and use case
 

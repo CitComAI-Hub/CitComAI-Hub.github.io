@@ -5,7 +5,7 @@ description: "The alternative stack, built on Eclipse EDC: what runs and how it 
 
 # Eclipse EDC data space
 
-CitCom runs a second data space, an alternative to the [FIWARE one](../fiware.md), built on the **Eclipse Dataspace Components** (EDC). It is operated by [Libelium](https://www.libelium.com/) at [citcom.dataspaceready.eu](https://citcom.dataspaceready.eu) and lets organisations publish data assets, discover the assets of other participants, negotiate machine-readable usage policies and exchange the data under those agreements.
+Besides the [CitCom data space](../index.md), some partners use a separate data space built on the **Eclipse Dataspace Components** (EDC). It is operated by [Libelium](https://www.libelium.com/) at [citcom.dataspaceready.eu](https://citcom.dataspaceready.eu) and lets organisations publish data assets, discover the assets of other participants, negotiate machine-readable usage policies and exchange the data under those agreements.
 
 ## The stack
 
@@ -17,13 +17,16 @@ CitCom is one of four data spaces built on the same platform; each one is a thin
 
 ## How it compares
 
-| | FIWARE data space | Eclipse EDC data space |
+| | CitCom data space (FIWARE) | Eclipse EDC data space |
 |---|---|---|
+| Operated by | [VRAIN-UPV](https://vrain.upv.es/) | [Libelium](https://www.libelium.com/) |
+| Technology | [FIWARE Data Space Connector](https://github.com/FIWARE/data-space-connector) 10 | [Eclipse EDC](https://eclipse-edc.github.io/), sovity Community Edition |
 | Identity | Verifiable credentials and wallets | Accounts and connector identities managed by the portal |
 | Contracts | Marketplace orders, applied by each provider's connector | DSP negotiation between connectors |
 | Data | NGSI-LD APIs, queried live | Assets: any HTTP source, transferred by the connectors |
+| Entry point | [marketplace.citcom-vrain-dataspace.eu](https://marketplace.citcom-vrain-dataspace.eu) | [citcom.dataspaceready.eu](https://citcom.dataspaceready.eu) |
 
-Both data spaces share the Valencia data: see [Bridging both](../bridge.md).
+The Ajuntament de València also publishes its data here: see [the Valencia example](../../valencia/index.md#the-same-data-in-the-eclipse-edc-data-space).
 
 ## In this section
 

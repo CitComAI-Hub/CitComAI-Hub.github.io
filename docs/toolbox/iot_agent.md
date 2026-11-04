@@ -1,3 +1,6 @@
+---
+description: "An experiment: connect an NGSI-v2 broker to an NGSI-LD broker through subscriptions."
+---
 # FIWARE IoT-Agent
 
 [Repository :simple-github:](https://github.com/CitComAI-Hub/IoTAgent.NGSI-V2_to_NGSI-LD_Subscription){:target="_blank" .md-button .md-button--primary-light }

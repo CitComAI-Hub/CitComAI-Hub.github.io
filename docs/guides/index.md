@@ -1,28 +1,32 @@
 ---
-title: Build
+title: Guides
 description: "A worked example and one guide per task: wallet, join, use data, publish a dataset or a service."
 ---
 
-# Build
+# Guides
 
-Build a service on the CitCom data space. Start with the [MIAIS](../miais/index.md), a worked example that goes from a custom integration to a data space service. Then follow the guides: each one covers one task, from start to finish, in the [FIWARE data space](../data_spaces/fiware.md). They all follow the same structure: what you will get, what you need, the steps, how to check that it works and what to do if it does not.
+Build on the CitCom data space. Start with a worked example: the [MIAIS](../miais/index.md) shows an AI service that goes from a custom integration to a data space service, and [Valencia](../valencia/index.md) shows a city that offers its existing platform as a data provider. Then follow the guides: each one covers one task, from start to finish, in the [CitCom data space](../data_spaces/index.md). They all follow the same structure: what you will get, what you need, the steps, how to check that it works and what to do if it does not.
 
 | Guide | For | You end up with |
 |---|---|---|
+| [Join the data space](join.md) | The legal representative (LEAR) of an organisation | Your organisation registered and trusted, able to buy in the marketplace |
+| [Deploy your own connector](deploy_connector.md) | Operators | A consumer connector that issues your organisation's credentials |
 | [Get a wallet and your credentials](wallet.md) | Anyone | A wallet with your credential, ready to log in |
-| [Join the data space](join.md) | The legal representative (LEAR) of an organisation | Your organisation registered, with its profile in the marketplace |
 | [Use data from your code](consume_data.md) | Developers of a consumer | A program that reads another organisation's data |
 | [Publish a dataset](publish_dataset.md) | Data providers | An offer in the marketplace that others can buy |
 | [Publish a web service](publish_service.md) | Service providers | A web app that people from other organisations open with their wallet |
-| [Deploy your own connector](deploy_connector.md) | Operators | An overview of what a connector is made of and how it is deployed |
+
+!!! tip "To read data as soon as possible"
+
+    Follow [Join the data space](join.md), then [Use data from your code](consume_data.md). The first one tells you whether you need your own connector.
 
 ```mermaid
 flowchart LR
-    W["Get a wallet"] --> J["Join"]
-    J --> C["Use data"]
-    J --> P["Publish a dataset"]
-    J --> S["Publish a service"]
-    D["Deploy a connector"] -.-> J
+    D["Deploy a connector<br/>(optional)"] -.-> J["Join"]
+    J --> W["Get a wallet"]
+    W --> C["Use data"]
+    W --> P["Publish a dataset"]
+    W --> S["Publish a service"]
 ```
 
 !!! tip "New to data spaces?"

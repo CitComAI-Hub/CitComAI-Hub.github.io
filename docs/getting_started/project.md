@@ -28,7 +28,7 @@ The sites are grouped in three **super-nodes**, each with a theme. A super-node 
 | **Lead** | Denmark | Belgium | Spain |
 | **Countries** | Denmark, Sweden, Finland | Belgium, France, Luxembourg, the Netherlands | Spain, Italy, Poland, Germany |
 
-Every site has its own page in [TEF nodes](../tef/index.md). The [Valencia node](../valencia/index.md), run by the Ajuntament de València and VRAIN-UPV, hosts the FIWARE data space described in this site.
+Every site has its own page in the [TEF network](../tef/index.md).
 
 ## Why a common architecture
 

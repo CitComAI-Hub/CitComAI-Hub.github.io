@@ -1,3 +1,6 @@
+---
+description: "Frameworks and projects to build, deploy and manage AI services."
+---
 # AI Toolkit
 
 For the development and implementation of different AI services, here we list a series of projects that can significantly help in managing these services.

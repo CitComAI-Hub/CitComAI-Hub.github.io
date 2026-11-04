@@ -1,11 +1,11 @@
 ---
-title: FIWARE data space
+title: How the data space works
 description: "Its components and four flows: join, purchase, machine access and person access."
 ---
 
-# FIWARE data space
+# How the data space works
 
-The CitCom FIWARE data space runs on Kubernetes at the Valencia TEF node and uses the [FIWARE Data Space Connector](https://github.com/FIWARE/data-space-connector) (version 10), which follows the recommendations of the [Data Spaces Business Alliance](https://data-spaces-business-alliance.eu/). This page describes its parts and the four flows that make it work.
+The CitCom data space is operated by VRAIN-UPV for the whole of CitCom and uses the [FIWARE Data Space Connector](https://github.com/FIWARE/data-space-connector) (version 10), which follows the recommendations of the [Data Spaces Business Alliance](https://data-spaces-business-alliance.eu/). This page describes its parts, the deployment running today and the four flows that make it work.
 
 ## Shared services
 
@@ -17,6 +17,48 @@ The CitCom FIWARE data space runs on Kubernetes at the Valencia TEF node and use
 
 **Marketplace**
 :   The catalogue of offers, built on the [TM Forum](https://www.tmforum.org/) APIs and the [BAE](https://github.com/FIWARE-TMForum/Business-API-Ecosystem) frontend. The LEAR of each organisation logs in with a wallet, sets up the organisation's profile, publishes offers and buys them. See [Marketplace](../marketplace/index.md).
+
+## The deployment today
+
+```mermaid
+flowchart TB
+    subgraph OP["Operated for the whole data space"]
+        TA["<b>Trust anchor</b><br/>Trusted Issuers Registry"]
+        ON["<b>Onboarding portal</b><br/>organisations join"]
+        MK["<b>Marketplace</b><br/>catalogue, offers, orders"]
+    end
+    subgraph TV["Ajuntament de València · townhall-vlc"]
+        TVC["Connector"]
+        TVD[("City data<br/>VLCi + Lepus, Orion-LD")]
+        TVC --- TVD
+    end
+    subgraph VR["VRAIN-UPV · vrain"]
+        VRC["Connector"]
+        VRS["MIAIS<br/>AI service"]
+        VRC --- VRS
+    end
+    W["Wallets<br/>Lissi, atesta-id-wallet"]
+
+    ON -- "registers" --> TA
+    TVC -. "publishes offers" .-> MK
+    VRC -. "publishes offers" .-> MK
+    MK -- "contract on purchase" --> TVC
+    MK -- "contract on purchase" --> VRC
+    VRS == "reads waste containers<br/>MachineCredential" ==> TVC
+    W == "people log in<br/>ServiceCredential" ==> VRC
+```
+
+- Each participant runs its own **connector**. The diagram shows the first two: the Ajuntament de València, which provides city data, and VRAIN-UPV, which provides an AI service and consumes city data. Both are described as worked examples: [Valencia](../valencia/index.md) and the [MIAIS](../miais/index.md). New participants join the same way.
+- The MIAIS reads the waste containers of Valencia through the Ajuntament's connector, after buying the offer in the marketplace. People from other organisations use the MIAIS by logging in with their wallet.
+
+The public services are:
+
+| Service | URL |
+|---|---|
+| Marketplace | <https://marketplace.citcom-vrain-dataspace.eu> |
+| Onboarding portal | <https://onboarding.citcom-vrain-dataspace.eu> |
+| Trust anchor (TIR) | <https://tir.citcom-vrain-dataspace.eu/v4/issuers> (list of trusted organisations) |
+| Connector of a participant `<p>` | `https://apisix-<p>.citcom-vrain-dataspace.eu` (data and services), `https://keycloak-<p>…` (credentials), `https://verifier-<p>…` (tokens) |
 
 ## Inside a connector
 
@@ -140,6 +182,6 @@ The person's organisation must have bought the service, and the person must have
 
 ## Where to go next
 
-- [Valencia TEF node](../valencia/index.md): the participants, data and services running today.
+- [Valencia: a city platform](../valencia/index.md): a worked example of a city offering its data here.
 - [Guides](../guides/index.md): join, read data, publish a dataset or a service.
 - [Deploy your own connector](../guides/deploy_connector.md): how a connector is deployed.

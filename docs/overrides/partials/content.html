@@ -1,7 +1,7 @@
 {#- Material 9.5's partials/content.html with the next step at the end of the page -#}
 {#- Pages of the main sections end with a recommended next step -#}
 {%- set main_section = namespace(on=false) -%}
-{%- for prefix in ["getting_started/", "data_spaces/", "marketplace/", "valencia/", "miais/", "guides/", "toolbox/"] -%}
+{%- for prefix in ["getting_started/", "data_spaces/", "marketplace/", "valencia/", "miais/", "guides/", "toolbox/", "tef/", "ai_assessment/", "local_digital_twins/"] -%}
   {%- if page.url.startswith(prefix) -%}{%- set main_section.on = true -%}{%- endif -%}
 {%- endfor -%}
 

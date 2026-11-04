@@ -1,10 +1,10 @@
 ---
 title: Smart Data Models
-description: "The data models used in the CitCom data spaces."
+description: "The data models used in the CitCom data space."
 next_step:
-  url: resources/
-  title: "Partners & resources"
-  description: "The TEF nodes of CitCom, the AI Trustworthiness Label, Local Digital Twins and how to contribute."
+  url: tef/
+  title: "TEF network"
+  description: "The TEF sites of CitCom, the AI Trustworthiness Label and Local Digital Twins."
 ---
 
 # Smart Data Models

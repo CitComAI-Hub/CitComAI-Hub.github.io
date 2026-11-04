@@ -1,10 +1,13 @@
+---
+description: "Propose a change to this site with a fork and a pull request."
+---
 # Request changes: Pull Request Procedure
 
-By default, Citcom.ai Hub is an open portal where anyone can publish changes. However, these changes must be made in a controlled manner through a review process ([*pull-request*](https://docs.github.com/pull-requests)).
+By default, CitCom.ai Hub is an open portal where anyone can publish changes. However, these changes must be made in a controlled manner through a review process ([*pull-request*](https://docs.github.com/pull-requests)).
 
-## 1. Fork of the Citcom.ai Hub repo
+## 1. Fork of the CitCom.ai Hub repo
 
-The first step to editing the content of Citcom.ai Hub is to have a copy of it in our personal GitHub account. This is done by creating a **Fork** from the [GitHub repository](https://github.com/CitComAI-Hub/CitComAI-Hub.github.io).
+The first step to editing the content of CitCom.ai Hub is to have a copy of it in our personal GitHub account. This is done by creating a **Fork** from the [GitHub repository](https://github.com/CitComAI-Hub/CitComAI-Hub.github.io).
 
 1. While logged into GitHub, click on the icon labeled `Fork`.
     1. (*Optional*) Deselect the checkbox if you want all branches of the repository to be copied.
@@ -14,7 +17,7 @@ The first step to editing the content of Citcom.ai Hub is to have a copy of it i
 
 ## 2. Selecting the branch to edit
 
-From our fork of the Citcom.ai Hub repository, if needed, we can switch to any branch.
+From our fork of the CitCom.ai Hub repository, if needed, we can switch to any branch.
 
 ![change_branch](./img/3_change_branch.png)
 
@@ -47,7 +50,7 @@ From our forked repository, go to the `Pull requests` tab (1) and select the opt
 
     ![comparing_changes](./img/6_comparing_changes.png)
 
-Lastly, verify that the commits containing all the changes you made are visible, then create the pull request. If it has been correctly created, you will see your pull-request appear in the repository `CitComAI-Hub/CitComAI-Hub.github.io` for review and publication on the official Citcom.ai Hub portal.
+Lastly, verify that the commits containing all the changes you made are visible, then create the pull request. If it has been correctly created, you will see your pull-request appear in the repository `CitComAI-Hub/CitComAI-Hub.github.io` for review and publication on the official CitCom.ai Hub portal.
 
 ![publish_pull_request](./img/7_publish_pull_request.png)
 

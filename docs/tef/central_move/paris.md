@@ -1,5 +1,6 @@
 ---
 title: Paris
+description: "The Paris TEF site of the Central super-node (MOVE): what it offers and its data."
 ---
 
 !!! note "Page to be completed"
