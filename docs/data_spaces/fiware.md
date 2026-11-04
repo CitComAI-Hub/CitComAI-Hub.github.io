@@ -166,7 +166,7 @@ sequenceDiagram
     participant VF as Provider verifier
     participant OPA as Provider OPA
     participant APP as Web service (e.g. MIAIS)
-    U->>GW: Open https://waste-collection-vrain.citcom-vrain-dataspace.eu
+    U->>GW: Open https://apps-vrain.citcom-vrain-dataspace.eu/waste-collection/
     GW-->>U: No session: redirect to the verifier
     VF-->>U: QR code
     U->>VF: Scan with the wallet, present the ServiceCredential
