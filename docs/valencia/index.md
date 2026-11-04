@@ -32,7 +32,7 @@ The Ajuntament offers four datasets in the [marketplace](../marketplace/index.md
 | Waste containers | [`WasteContainer`](https://github.com/smart-data-models/dataModel.WasteManagement/tree/master/WasteContainer) | VLCi, through Lepus | `/lepus/ngsi-ld` | Waste management |
 | Air quality | [`AirQualityObserved`](https://github.com/smart-data-models/dataModel.Environment/tree/master/AirQualityObserved) | VLCi, through Lepus | `/lepus/ngsi-ld` | Environment |
 | Traffic flow | [`TrafficFlowObserved`](https://github.com/smart-data-models/dataModel.Transportation/tree/master/TrafficFlowObserved) | VLCi, through Lepus | `/lepus/ngsi-ld` | Mobility |
-| Traffic state | `TrafficState` | VLCi open data endpoint, loaded every 7 minutes | `/ngsi-ld` | Mobility |
+| Traffic state | `TrafficState` | VLCi open data | `/ngsi-ld` | Mobility |
 
 The endpoints are under `https://apisix-townhall-vlc.citcom-vrain-dataspace.eu`. Each offer gives access to its entity type only, with a `MachineCredential`. To use them, follow [Use data from your code](../guides/consume_data.md).
 
@@ -47,7 +47,6 @@ flowchart LR
     subgraph TV["townhall-vlc connector"]
         GW["APISIX<br/>verifier token + ODRL policy"]
         LE["Lepus<br/>NGSI-LD → NGSI-v2"]
-        AF["Airflow<br/>ingestion every 7 min"]
         OR[("Orion-LD")]
         EDC["Route for EDC<br/>OAuth2"]
     end
@@ -58,13 +57,12 @@ flowchart LR
     CONS -- "/ngsi-ld" --> GW
     GW --> LE --> VLCI
     GW --> OR
-    OD --> AF --> OR
+    OD --> OR
     EDCC -- "/edc/lepus/ngsi-ld" --> EDC --> LE
 ```
 
 - **Lepus** serves the VLCi data live. It translates each NGSI-LD query into NGSI-v2, authenticates with the city platform on its own, and returns the entities as NGSI-LD with their Smart Data Models `@context`. VLCi never sees the data space tokens, and nothing is copied. See [Lepus](../toolbox/lepus.md).
-- **Airflow** loads the traffic state from an open data endpoint of VLCi into an Orion-LD broker every 7 minutes, for data that is not in VLCi.
-- **APISIX** protects both paths with the same mechanism: a token from the verifier and the ODRL policy of the purchased offer.
+- **APISIX** protects every path with the same mechanism: a token from the verifier and the ODRL policy of the purchased offer.
 - The same Lepus also serves the [Eclipse EDC data space](../data_spaces/eclipse/index.md), through its own route. See [Bridging both](../data_spaces/bridge.md).
 
 ## Who uses this data
