@@ -2111,7 +2111,7 @@
 
 <h1 id="wallets">Wallets</h1>
 <p>A wallet keeps your verifiable credentials and presents them when you log in, by scanning a QR code. In CitCom you need one to log in to the <a href="https://marketplace.citcom-vrain-dataspace.eu">marketplace</a> and to the web services of the data space, such as the <a href="../../miais/">MIAIS</a>.</p>
-<p>Both wallets below work with the CitCom data space: they receive credentials with OpenID4VCI and present them with OpenID4VP, in SD-JWT format (<code>dc+sd-jwt</code>).</p>
+<p>Both wallets below work with the CitCom.ai Data Space: they receive credentials with OpenID4VCI and present them with OpenID4VP, in SD-JWT format (<code>dc+sd-jwt</code>).</p>
 <div class="grid cards">
 <ul>
 <li>
@@ -2129,7 +2129,7 @@
 </ul>
 </div>
 <h2 id="atesta-id-wallet">atesta-id-wallet</h2>
-<p><a href="https://github.com/CitComAI-Hub/atesta-id-wallet">atesta-id-wallet</a> is a desktop wallet made in CitCom, in English, Spanish and Danish. Install it from the <a href="https://github.com/CitComAI-Hub/atesta-id-wallet/releases">releases page</a>: a Windows installer, a <code>.deb</code> for Debian and Ubuntu, or an AppImage for any Linux.</p>
+<p><a href="https://github.com/CitComAI-Hub/atesta-id-wallet">atesta-id-wallet</a> is a desktop wallet made in CitCom, in English, Spanish, Danish, German, French and Luxembourgish. Install it from the <a href="https://github.com/CitComAI-Hub/atesta-id-wallet/releases">releases page</a>: a Windows installer, a <code>.deb</code> for Debian and Ubuntu, or an AppImage for any Linux.</p>
 <ul>
 <li><strong>Add a credential</strong>: in your Keycloak account, <em>Verifiable Credentials → Issue to wallet</em>. Click the link, or press <strong>Scan QR</strong> and take a screenshot of the QR code.</li>
 <li><strong>Log in</strong>: click the login link, or press <strong>Scan QR</strong> and take a screenshot. Before sending anything, the wallet shows who is asking, where the data goes and which claims it will disclose. Nothing is sent until you press <strong>Share</strong>.</li>
@@ -2145,13 +2145,13 @@
 <li><strong>One holder key per profile</strong>: verifiers can correlate the presentations made with the same profile.</li>
 <li><strong>SD-JWT VC only</strong> (<code>dc+sd-jwt</code>, <code>vc+sd-jwt</code>): no <code>jwt_vc_json</code>, no mdoc, no deferred issuance.</li>
 <li><strong>Verifiers identified by X.509 certificates</strong>: verifiers identified by a DID, verifier attestations or OpenID Federation are not supported.</li>
-<li><strong>No revocation check</strong> of the credentials (Token Status List).</li>
+<li><strong>Revocation</strong>: only Token Status List in JWT form, and only as fresh as the last check.</li>
 </ul>
 <p>Read its <a href="https://github.com/CitComAI-Hub/atesta-id-wallet/blob/main/docs/SECURITY.md">security model</a> before using it with real personal data.</p>
 <h2 id="step-by-step">Step by step</h2>
 <p>The guide <a href="../../guides/wallet/">Get a wallet and your credentials</a> covers which credential you need, how to get it and the usual errors.</p><a class="cc-next" href="../smart_data_models/">
     <span class="cc-next__label">Next step</span>
-    <span class="cc-next__title">Smart Data Models</span><span class="cc-next__text">The data models used in the CitCom data space.</span>
+    <span class="cc-next__title">Smart Data Models</span><span class="cc-next__text">The data models used in the CitCom.ai Data Space.</span>
     <span class="cc-next__arrow" aria-hidden="true">→</span>
   </a>
 
@@ -2175,7 +2175,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="November 4, 2026 21:50:45"><span class="timeago" datetime="2026-11-04T21:50:45+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="November 4, 2026 21:50:45">2026-11-04</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="November 5, 2026 09:15:18"><span class="timeago" datetime="2026-11-05T09:15:18+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="November 5, 2026 09:15:18">2026-11-05</span>
   </span>
 
     
