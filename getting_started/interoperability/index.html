@@ -2166,7 +2166,8 @@
 <h1 id="interoperability">Interoperability</h1>
 <p>Interoperability is what lets a service built for one city run in another city without a new integration. CitCom measures it with a simple ladder of three levels, built on the Minimal Interoperability Mechanisms.</p>
 <h2 id="mims">MIMs</h2>
-<p>The <a href="https://mims.oascities.org/">Minimal Interoperability Mechanisms</a> (MIMs) are a small set of agreements, published by <a href="https://oascities.org/">Open &amp; Agile Smart Cities</a> (OASC), that cities adopt so their systems can talk to each other. They are <em>minimal</em> on purpose: a city does not replace its platform, it adds a common interface on top. CitCom uses two of them as its base:</p>
+<p>The <a href="https://mims.oascities.org/">Minimal Interoperability Mechanisms</a> (MIMs) are a small set of agreements, published by <a href="https://oascities.org/">Open &amp; Agile Smart Cities</a> (OASC), that cities adopt so their systems can talk to each other. They are <em>minimal</em> on purpose: a city does not replace its platform, it adds a common interface on top.</p>
+<p>The current version, MIMs Plus v9 (June 2026), orders the foundational MIMs along the journey of the data: make it accessible (MIM0), represent it with standard models (MIM2), exchange it under clear terms and trust (MIM3) and interlink it (MIM1). CitCom builds on the first two:</p>
 <table>
 <thead>
 <tr>
@@ -2177,28 +2178,29 @@
 </thead>
 <tbody>
 <tr>
-<td><strong>MIM1 Context information management</strong></td>
-<td>One API to read and write data about real-world entities</td>
-<td><a href="https://www.etsi.org/deliver/etsi_gs/CIM/001_099/009/01.08.01_60/gs_cim009v010801p.pdf">NGSI-LD</a>, served by a context broker (Orion-LD, Scorpio)</td>
+<td><strong>MIM0 Accessing Data</strong></td>
+<td>All data is available through an API, ideally based on open standards</td>
+<td>The <a href="https://www.etsi.org/deliver/etsi_ts/104100_104199/104175/01.01.01_60/ts_104175v010101p.pdf">NGSI-LD API</a>, served by a context broker (Orion-LD, Scorpio)</td>
 </tr>
 <tr>
-<td><strong>MIM2 Data models</strong></td>
-<td>One vocabulary to describe those entities</td>
-<td><a href="https://smartdatamodels.org/">Smart Data Models</a>, such as <code>WasteContainer</code> or <code>AirQualityObserved</code></td>
+<td><strong>MIM2 Representing Data</strong></td>
+<td>The data is described with shared, standard models</td>
+<td><a href="https://smartdatamodels.org/">Smart Data Models</a> as NGSI-LD entities, such as <code>WasteContainer</code> or <code>AirQualityObserved</code></td>
 </tr>
 </tbody>
 </table>
+<p>NGSI-LD and Smart Data Models work as one package: the main mechanism of MIM2 is <em>Smart Data Models with NGSI-LD</em>, in which the models are NGSI-LD entities with a JSON Schema and a JSON-LD <code>@context</code>. Older versions of the MIMs had them as two separate MIMs (MIM1 Context information management and MIM2 Data models), a numbering that many documents still use.</p>
 <h2 id="interoperability-levels">Interoperability levels</h2>
 <pre class="mermaid"><code>flowchart LR
     L0["&lt;b&gt;Level 0&lt;/b&gt;&lt;br/&gt;Custom integration&lt;br/&gt;&lt;i&gt;one adapter per city&lt;/i&gt;"]
     L1["&lt;b&gt;Level 1&lt;/b&gt;&lt;br/&gt;NGSI-LD + Smart Data Models&lt;br/&gt;&lt;i&gt;same API and models everywhere&lt;/i&gt;"]
     L2["&lt;b&gt;Level 2&lt;/b&gt;&lt;br/&gt;Data space&lt;br/&gt;&lt;i&gt;same API, plus trust and access control&lt;/i&gt;"]
-    L0 -- "adopt MIM1 + MIM2" --&gt; L1
+    L0 -- "adopt NGSI-LD +&lt;br/&gt;Smart Data Models" --&gt; L1
     L1 -- "add a connector" --&gt; L2</code></pre>
 <h3 id="level-0-custom-integration">Level 0: custom integration</h3>
 <p>There is no common standard. Each platform is connected with an integration written for it: its own API, its own field names, its own authentication. It works, but every new city means a new integration, and the data cannot be reused easily by others.</p>
 <h3 id="level-1-pivotal-interoperability-points">Level 1: pivotal interoperability points</h3>
-<p>The platform exposes its data through <strong>NGSI-LD</strong> (MIM1) and describes it with <strong>Smart Data Models</strong> (MIM2). The platform can keep its own internals: what matters is that the interface is the same. A service written for level 1 reads waste containers in Valencia and in any other level-1 city with the same code.</p>
+<p>The platform exposes its data through <strong>NGSI-LD</strong> and describes it with <strong>Smart Data Models</strong>, the package of MIM2. The platform can keep its own internals: what matters is that the interface is the same. A service written for level 1 reads waste containers in Valencia and in any other level-1 city with the same code.</p>
 <p>What is still missing is <em>control</em>: a level-1 broker is usually either open to everyone or protected with an ad hoc key.</p>
 <h3 id="level-2-common-interface-with-integrated-security">Level 2: common interface with integrated security</h3>
 <p>The NGSI-LD interface is placed behind a <strong>data space connector</strong>. Level 1 stays as it is, and the connector adds what is needed to share data between organisations that do not know each other in advance:</p>
@@ -2236,7 +2238,7 @@
 <div class="admonition tip">
 <p class="admonition-title">Learn more</p>
 <ul>
-<li>OASC: <a href="https://mims.oascities.org/">MIMs Plus</a> and the <a href="../../toolbox/mims_toolkit/">MIMs toolkit</a>.</li>
+<li>OASC: <a href="https://mims.oascities.org/">MIMs Plus</a> (v9, June 2026) and the <a href="../../toolbox/mims_toolkit/">MIMs toolkit</a>.</li>
 <li>IDSA: <a href="https://docs.internationaldataspaces.org/ids-knowledgebase/idsa-rulebook/idsa-rulebook/3.-functional_requirements/3.11-interoperability_in_data_spaces">Interoperability in data spaces</a>, with its four layers: technical, semantic, organisational and legal.</li>
 </ul>
 </div><a class="cc-next" href="../data_spaces/">
@@ -2265,7 +2267,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="October 28, 2026 11:30:28"><span class="timeago" datetime="2026-10-28T11:30:28+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="October 28, 2026 11:30:28">2026-10-28</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="November 5, 2026 08:24:16"><span class="timeago" datetime="2026-11-05T08:24:16+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="November 5, 2026 08:24:16">2026-11-05</span>
   </span>
 
     
