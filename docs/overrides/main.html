@@ -1,12 +1,12 @@
 {% extends "base.html" %}
 
+{#- "<page> - CitCom.ai Hub", and the site name alone on the home -#}
 {% block htmltitle %}
-  {% if page.meta and page.meta.title %}
-    <title>{{ page.meta.title }} - CitCom.ai Hub</title>
-  {% elif page.title and not page.is_homepage %}
-    <title>{{ page.title | striptags }} - CitCom.ai Hub</title>
+  {%- set title = page.meta.title if page.meta and page.meta.title else page.title -%}
+  {% if not title or page.url == nav.homepage.url %}
+    <title>{{ config.site_name }}</title>
   {% else %}
-    <title>CitCom.ai Hub</title>
+    <title>{{ title | striptags }} - {{ config.site_name }}</title>
   {% endif %}
 {% endblock %}
 
