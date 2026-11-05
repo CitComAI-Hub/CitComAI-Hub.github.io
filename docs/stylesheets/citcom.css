@@ -1545,3 +1545,23 @@
   .md-typeset dl.cc-facts > div:nth-child(odd) { border-right: none; }
   .md-typeset dl.cc-facts > div:nth-last-child(2):nth-child(odd) { border-bottom: 1px solid var(--cc-border); }
 }
+
+/* ---------- Home: a little more life (only visual) ---------- */
+
+/* the box of the most common tasks opens with an ink bar: the focal point of the intro */
+.md-typeset.cc-tasks h2 {
+  border-bottom: 0;
+  background: var(--cc-ink);
+  color: #ffffff;
+}
+[data-md-color-scheme="slate"] .md-typeset.cc-tasks h2 {
+  background: #ffffff;
+  color: var(--cc-ink);
+}
+.md-typeset.cc-tasks {
+  border-color: var(--cc-ink);
+}
+[data-md-color-scheme="slate"] .md-typeset.cc-tasks {
+  border-color: #ffffff;
+}
+
