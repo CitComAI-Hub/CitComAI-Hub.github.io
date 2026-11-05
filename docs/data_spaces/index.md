@@ -54,17 +54,7 @@ hide:
   <div class="cc-infra__cta-row"><a class="cc-infra__cta" href="../guides/join/">Join the data space</a></div>
 </div>
 
-<div class="cc-steps" markdown="0">
-  <ol class="cc-infra__legend">
-    <li><span class="cc-infra__step">1</span><span><strong>Join.</strong> Both organisations register in the onboarding portal. Once approved, they are in the trust anchor and their credentials are trusted.</span></li>
-    <li><span class="cc-infra__step">2</span><span><strong>Publish.</strong> The Ajuntament offers a dataset in the marketplace, for example its waste containers.</span></li>
-    <li><span class="cc-infra__step">3</span><span><strong>Buy.</strong> VRAIN-UPV buys the offer. The purchase sets up the contract in the Ajuntament's connector.</span></li>
-    <li><span class="cc-infra__step">4</span><span><strong>Read.</strong> The MIAIS of VRAIN-UPV reads the data from the Ajuntament's connector. The data never goes through the shared services.</span></li>
-  </ol>
-</div>
-
-The Ajuntament de València and VRAIN-UPV are the first participants, and both are told step by step as worked examples. The technical view, with every component and the public addresses, is in [How it works](fiware.md#the-deployment-today).
-
+The Ajuntament de València and VRAIN-UPV are the first participants, and both are told step by step as worked examples. [How it works](fiware.md) explains each step of the diagram, with every component and the public addresses.
 
 ## Also in CitCom
 
