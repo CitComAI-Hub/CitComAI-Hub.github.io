@@ -21,15 +21,12 @@ The LDT demonstrator will be built using open-source components, ensuring transp
 
 #### Real-Time Monitoring
 - View live asset status, locations, and entity charts via the Mapbox React app.
-- [Access Mapbox React App]()
 
 #### Historical Dashboards
 - Analyze historical data trends and insights using Grafana dashboards.
-- [Access Grafana Dashboards]()
 
 #### Analytical Tool
 - Perform advanced analytics and reporting via Superset.
-- [Access Superset Analytics]()
 
 ---
 
