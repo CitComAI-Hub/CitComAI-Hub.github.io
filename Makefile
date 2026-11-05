@@ -1,42 +1,42 @@
 SHELL := /bin/bash
 
-# Python 3.10 or later (the devcontainer uses 3.12)
+# Python 3.10 or later
 PYTHON := python3
-VENV := venv
+VENV := .venv
 BIN := $(VENV)/bin
 
 ################################################################################
 # COMMANDS                                                                     #
 ################################################################################
 
-$(BIN)/mkdocs: requirements.txt
+$(BIN)/zensical: pyproject.toml
 	$(PYTHON) -m venv $(VENV)
-	$(BIN)/pip install -q -r requirements.txt
+	$(BIN)/pip install -q -e .
 	@touch $@
 
 .PHONY: install
 ## Create the virtual environment and install the dependencies
-install: $(BIN)/mkdocs
+install: $(BIN)/zensical
 
 .PHONY: serve
-## Serve the site at http://127.0.0.1:8000, reloading on every change
+## Serve the site at http://localhost:8000, reloading on every change
 serve: install
-	$(BIN)/mkdocs serve
+	$(BIN)/zensical serve
 
 .PHONY: serve-lan
 ## Serve the site to your local network or tailnet (port 8000); stop it with Ctrl+C
 serve-lan: install
-	$(BIN)/mkdocs serve -a 0.0.0.0:8000
+	$(BIN)/zensical serve -a 0.0.0.0:8000
 
 .PHONY: build
-## Build the site into public/ in strict mode, as before a pull request
+## Build the site into public/ in strict mode, as CI does: any broken link or warning fails
 build: install
-	$(BIN)/mkdocs build --strict
+	$(BIN)/zensical build --clean --strict
 
 .PHONY: clean
-## Remove the built site and the virtual environment
+## Remove the built site, the build cache and the virtual environment
 clean:
-	rm -rf public $(VENV)
+	rm -rf public .cache $(VENV)
 
 ################################################################################
 # Self Documenting Commands                                                    #

@@ -1,17 +1,17 @@
 {% extends "base.html" %}
 
+{#- "<page> - CitCom.ai Hub", and the site name alone on the home -#}
 {% block htmltitle %}
-  {% if page.meta and page.meta.title %}
-    <title>{{ page.meta.title }} - CitCom.ai Hub</title>
-  {% elif page.title and not page.is_homepage %}
-    <title>{{ page.title | striptags }} - CitCom.ai Hub</title>
+  {%- set title = page.meta.title if page.meta and page.meta.title else page.title -%}
+  {% if not title or page.url == nav.homepage.url %}
+    <title>{{ config.site_name }}</title>
   {% else %}
-    <title>CitCom.ai Hub</title>
+    <title>{{ title | striptags }} - {{ config.site_name }}</title>
   {% endif %}
 {% endblock %}
 
 {#- No tabs row. In its place, inside the container that instant navigation replaces, the section
     of the page, so that javascripts/header-section.js can mark it in the header (which is kept). -#}
 {% block tabs %}
-  {%- for item in nav if item.active and item.children %}<span hidden data-cc-section="{{ item.title }}"></span>{% endfor -%}
+  {%- for item in nav.items if item.active and item.children %}<span hidden data-cc-section="{{ item.title }}"></span>{% endfor -%}
 {% endblock %}

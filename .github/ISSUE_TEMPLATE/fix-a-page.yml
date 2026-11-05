@@ -1,0 +1,19 @@
+name: Fix or update a page
+description: Something on a page is wrong, outdated or unclear.
+labels: [content]
+body:
+  - type: input
+    id: page
+    attributes:
+      label: Page
+      description: The address of the page.
+      placeholder: https://citcomai-hub.github.io/guides/join/
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: What is wrong
+      description: What the page says, and what it should say (with a source if you have one).
+    validations:
+      required: true

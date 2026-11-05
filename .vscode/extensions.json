@@ -1,5 +1,3 @@
 {
-    "recommendations": [
-        "redhat.vscode-yaml"
-    ]
+  "recommendations": ["tamasfe.even-better-toml", "DavidAnson.vscode-markdownlint"]
 }

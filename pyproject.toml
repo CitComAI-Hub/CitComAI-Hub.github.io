@@ -1,0 +1,20 @@
+# The CitCom.ai Hub site: its build dependencies and the Markdown extensions in hub_extensions/.
+# Install everything with `pip install -e .` (or `make install`).
+
+[project]
+name = "citcom-hub-docs"
+version = "3.0.0"
+description = "Source of citcomai-hub.github.io, the technical hub of the CitCom.ai TEF"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+  # Zensical is 0.0.x: pin it and upgrade on purpose, checking the build
+  "zensical==0.0.74",
+]
+
+[build-system]
+requires = ["setuptools>=69"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+packages = ["hub_extensions"]

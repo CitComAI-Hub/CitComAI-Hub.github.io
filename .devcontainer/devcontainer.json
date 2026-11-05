@@ -1,0 +1,13 @@
+// Edit and preview the site in a container (VS Code Dev Containers or GitHub Codespaces):
+// it installs the dependencies; run `make serve` and open the forwarded port 8000.
+{
+  "name": "CitCom.ai Hub",
+  "image": "mcr.microsoft.com/devcontainers/python:3.12",
+  "postCreateCommand": "make install",
+  "forwardPorts": [8000],
+  "customizations": {
+    "vscode": {
+      "extensions": ["tamasfe.even-better-toml", "DavidAnson.vscode-markdownlint"]
+    }
+  }
+}

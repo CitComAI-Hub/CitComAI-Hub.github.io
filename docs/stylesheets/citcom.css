@@ -160,7 +160,9 @@
   box-shadow: inset 0 -2px 0 var(--md-accent-fg-color);
   border-radius: 0;
 }
-.cc-header__cta {
+/* The Marketplace button, only where it fits (from 45em). The header selector outweighs the
+   shared button rules at the end of the file, which display every button. */
+.cc-header .cc-header__cta {
   display: none;
   margin-left: 0.4rem;
   white-space: nowrap;
@@ -169,71 +171,35 @@
 .cc-header .md-header__option {
   color: var(--cc-header-fg);
 }
-/* Search box on a white header */
+/* Search: a box on the header that opens Zensical's search dialog (Ctrl+K). The dialog draws
+   itself in a shadow root and takes the accent and the text font from the theme. */
 @media screen and (min-width: 60em) {
   .cc-header .md-search {
     padding: 0;
   }
-  .cc-header .md-search__inner {
+  .cc-header .md-search__button {
     width: 9.5rem;
-  }
-  .cc-header .md-search__form {
+    height: 1.8rem;
+    color: var(--md-default-fg-color--light);
     background-color: var(--cc-surface);
     border: 1px solid var(--cc-border);
     border-radius: var(--cc-radius-sm);
-    height: 1.8rem;
   }
-  .cc-header .md-search__form:hover {
-    background-color: var(--cc-surface);
-  }
-  .cc-header .md-search__input,
-  .cc-header .md-search__suggest {
-    font-size: 0.7rem;
-    height: 1.8rem;
-  }
-  .cc-header .md-search__input {
+  .cc-header .md-search__button:hover,
+  .cc-header .md-search__button:focus-visible {
     color: var(--cc-header-fg);
+    background-color: var(--cc-surface);
+    border-color: var(--md-accent-fg-color);
   }
-  .cc-header .md-search__input::placeholder {
+  .cc-header .md-search__button::before {
+    top: 0.37rem;
+    background-color: currentcolor;
+  }
+  .cc-header .md-search__button::after {
+    top: 0.4rem;
     color: var(--md-default-fg-color--light);
-  }
-  .cc-header .md-search__icon[for="__search"] {
-    color: var(--md-default-fg-color--light);
-    top: 0.3rem;
-  }
-  /* Open: grow to the left over the section links, without pushing the
-     header (Material widens the box in the flow and it ran off the edge). */
-  .cc-header .md-search {
-    position: relative;
-    flex: none;
-    width: 9.5rem;
-    height: 1.8rem;
-  }
-  .cc-header .md-search__inner {
-    position: absolute;
-    top: 0;
-    right: 0;
-    padding: 0;
-  }
-  [data-md-toggle="search"]:checked ~ .md-header .md-search__inner {
-    width: min(23.4rem, calc(100vw - 14rem));
-  }
-  [data-md-toggle="search"]:checked ~ .md-header .md-search__form {
-    background-color: var(--md-default-bg-color);
-    border-color: var(--cc-accent);
-    border-radius: var(--cc-radius-sm) var(--cc-radius-sm) 0 0;
-  }
-  .cc-header .md-search__output {
-    top: 1.8rem;
-    border-radius: 0 0 var(--cc-radius-sm) var(--cc-radius-sm);
-  }
-  .cc-header .md-search__scrollwrap {
-    width: 100%;
-  }
-}
-@media screen and (min-width: 76.25em) {
-  [data-md-toggle="search"]:checked ~ .md-header .md-search__inner {
-    width: 30rem;
+    background: none;
+    border: 1px solid var(--cc-border);
   }
 }
 @media screen and (min-width: 76.25em) {
@@ -242,7 +208,7 @@
   }
 }
 @media screen and (min-width: 45em) {
-  .cc-header__cta {
+  .cc-header .cc-header__cta {
     display: inline-flex;
   }
 }
@@ -253,6 +219,16 @@
 }
 
 /* ---------- Typography ---------- */
+
+/* figures and SVG diagrams never wider than the text */
+figure {
+  max-width: 100% !important;
+  width: auto !important;
+}
+figure > svg {
+  width: 100% !important;
+  height: auto !important;
+}
 
 .md-typeset h1,
 .md-typeset h2,
@@ -310,6 +286,14 @@
 /* (all the buttons of the site share the rules at the end of this file) */
 
 /* ---------- Cards ---------- */
+
+/* images centred in the cards, without HTML in the Markdown */
+.grid.cards img {
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+  height: auto;
+}
 
 .md-typeset .grid.cards > ul > li,
 .md-typeset .grid > .card {
@@ -385,6 +369,44 @@
   }
 }
 
+/* ---------- Tooltips and link previews ---------- */
+
+/* Square, with a rule instead of a shadow, as every box of the site */
+.md-tooltip2__inner {
+  border: 1px solid var(--cc-border);
+  border-radius: 0;
+  box-shadow: none;
+}
+/* A preview is a quick card, not the page in small: the heading and the first two blocks of
+   text. It stops at the first block that is not text (table, diagram, map, cards, admonition,
+   next step...); images and the rows of buttons of a page are left out. The title tooltips (text only) are
+   not affected. */
+.md-tooltip2__inner.md-typeset > :not(h1, h2, h3, h4, h5, h6, p, ul, ol),
+.md-tooltip2__inner.md-typeset > :not(h1, h2, h3, h4, h5, h6, p, ul, ol) ~ *,
+.md-tooltip2__inner.md-typeset > :nth-child(n + 4),
+.md-tooltip2__inner.md-typeset p > :is(img, svg),
+.md-tooltip2__inner.md-typeset p:has(> .md-button) {
+  display: none;
+}
+/* Text tooltips (glossary terms, the theme toggle): the text of the site, a little smaller,
+   not the theme's tiny bold label */
+[role="tooltip"] > .md-tooltip2__inner {
+  padding: 0.4rem 0.6rem;
+  font-size: 0.62rem;
+  font-weight: 400;
+  line-height: 1.45;
+}
+/* Glossary terms keep the theme's dotted underline; links with a preview do not get it, they
+   are underlined as every link */
+.md-typeset a[data-preview] {
+  border-bottom: none;
+}
+
+/* the lead paragraph of a page at the size of the rest of the preview */
+.md-tooltip2__inner.md-typeset .cc-lead {
+  font-size: inherit;
+}
+
 /* ---------- Admonitions, tables and code ---------- */
 
 .md-typeset .admonition,
@@ -454,6 +476,11 @@
 
 /* ---------- Sidebar ---------- */
 
+/* Safari draws the SVG icons of the navigation in the wrong place without this */
+.md-nav__link svg {
+  transform: translate(0, 0);
+}
+
 .md-nav__title {
   font-family: var(--cc-heading-font);
   font-weight: 500;
@@ -477,7 +504,7 @@
   color: var(--md-accent-fg-color);
 }
 
-/* ---------- Footer ---------- */
+/* ---------- Footer (partials/copyright.html) ---------- */
 
 .md-footer,
 .md-footer-meta {
@@ -486,9 +513,79 @@
 .md-footer-meta {
   border-top: 1px solid rgba(255, 255, 255, 0.06);
 }
+footer {
+  color: #fff;
+}
+/* Three columns over the full width: links, organisation, co-funding */
+.md-footer-meta__inner .md-copyright {
+  width: 100%;
+}
+.footer-container {
+  display: grid;
+  margin: 1rem auto;
+}
+.md-footer-meta .footer-container {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  width: 100%;
+  gap: 2rem;
+}
+@media screen and (max-width: 44.9375em) {
+  .md-footer-meta .footer-container {
+    grid-template-columns: 1fr;
+  }
+}
+.footer-column {
+  padding: 10px;
+}
+.footer-column h4 {
+  margin-top: 0;
+}
+.footer-tagline h4 {
+  margin-bottom: 0;
+}
+.md-footer-meta .footer-links ul {
+  margin: 0;
+  padding: 0;
+}
+.md-footer-meta .footer-container .footer-links li {
+  margin: 0 0 0.35rem;
+  list-style: none;
+}
+.footer-links a {
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 0.7rem;
+}
+.footer-links a:hover {
+  color: #ffffff;
+}
+/* Logos: the CitCom logo is black artwork, inverted for the dark footer */
+.footer-logo,
+.footer-tagline .logo-container {
+  display: flex;
+  align-items: center;
+}
+footer .footer-logo .citcom-logo {
+  width: 5rem;
+  filter: invert(100%);
+}
+footer .footer-logo .vrain-logo {
+  width: 5rem;
+  margin-left: 1rem;
+}
+footer .footer-tagline img {
+  width: 8rem;
+}
+/* the EU disclaimer, small but readable */
+.md-footer-meta .footer-tagline p {
+  margin: 0;
+  padding: 0;
+  font-size: 0.55rem;
+  line-height: 1.5;
+  color: var(--md-footer-fg-color--light);
+}
 /* Light theme: a light footer, set apart by a rule, so the page does not end on a heavy dark
-   block. The logos are white artwork: inverted they turn black (the EU allows the monochrome
-   emblem); the CitCom logo is black artwork, inverted by extra.css for the dark footer. */
+   block. The other logos are white artwork: inverted they turn black (the EU allows the
+   monochrome emblem), and the CitCom logo stays as it is. */
 [data-md-color-scheme="default"] :is(.md-footer, .md-footer-meta) {
   --md-footer-fg-color: var(--cc-ink);
   --md-footer-fg-color--light: var(--cc-grey);
@@ -504,12 +601,6 @@
 }
 [data-md-color-scheme="default"] .md-footer-meta .footer-logo .citcom-logo {
   filter: none;
-}
-/* the EU disclaimer, readable (extra.css sets it at 0.4rem, 8px) */
-.md-footer-meta .footer-tagline p {
-  font-size: 0.55rem;
-  line-height: 1.5;
-  color: var(--md-footer-fg-color--light);
 }
 
 /* ---------- Home: title, lead and search on white ---------- */
@@ -780,31 +871,9 @@
   margin-top: 0;
 }
 
-/* Footer: three columns over the full width */
-.md-footer-meta__inner .md-copyright {
-  width: 100%;
-}
-.md-footer-meta .footer-container {
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  width: 100%;
-  gap: 2rem;
-}
-.md-footer-meta .footer-links ul {
-  margin: 0;
-  padding: 0;
-}
-.md-footer-meta .footer-container .footer-links li {
-  margin: 0 0 0.35rem;
-  list-style: none;
-}
-@media screen and (max-width: 44.9375em) {
-  .md-footer-meta .footer-container {
-    grid-template-columns: 1fr;
-  }
-}
-
-/* External links in the text: a small arrow says they open in a new tab */
-.md-typeset a.cc-external:not(.md-button):not(.md-content__button):not(.cc-header__cta):not(.cc-btn)::after {
+/* External links in the text: a small arrow says they open in a new tab. Not on links that are
+   an image (the logos of the footer): the arrow would hang next to the picture. */
+.md-typeset a.cc-external:not(.md-button):not(.md-content__button):not(.cc-header__cta):not(.cc-btn):not(:has(> img:only-child))::after {
   content: "";
   display: inline-block;
   width: 0.62em;
