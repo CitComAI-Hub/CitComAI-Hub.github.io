@@ -24,13 +24,13 @@ jobs:
       - uses: actions/checkout@v7
         with:
           fetch-depth: 0 # full history: the date and authors of each page come from git
-      - uses: actions/setup-python@v6
+      - uses: actions/setup-python@v7
         with:
           python-version: "3.12"
           cache: pip
           cache-dependency-path: pyproject.toml
-      # Build cache, with the external assets that the privacy plugin downloads
-      - uses: actions/cache@v4
+      # Build cache of Zensical: unchanged pages are not rendered again
+      - uses: actions/cache@v6
         with:
           path: .cache
           key: zensical-${{ hashFiles('pyproject.toml', 'zensical.toml') }}

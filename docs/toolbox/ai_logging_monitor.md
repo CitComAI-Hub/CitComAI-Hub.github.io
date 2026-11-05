@@ -103,5 +103,5 @@ Additionally, other libraries and platforms were considered:
 
 - [Evidently](https://www.evidentlyai.com/), a tool for evaluating and monitoring the performance of machine learning models, providing detailed reports and visualizations of model metrics.
 - [Grafana + Prometheus](https://prometheus.io/docs/visualization/grafana/), where Grafana is an open-source platform for monitoring and observability, providing dashboards and visualizations, and Prometheus is a monitoring system and time-series database that collects metrics and data.
-- [alibi-detect](https://docs.seldon.io/projects/alibi-detect), a library focused on detecting outliers, adversarial instances, and concept drift in machine learning models, ensuring the robustness and reliability of the deployed models.
+- [alibi-detect](https://docs.seldon.ai/alibi-detect), a library focused on detecting outliers, adversarial instances, and concept drift in machine learning models, ensuring the robustness and reliability of the deployed models.
 
