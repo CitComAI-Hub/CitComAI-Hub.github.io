@@ -42,6 +42,7 @@
   --cc-border: #e3e6ea;
   --cc-rule: var(--cc-ink);
   --cc-tint: #f4f6fc; /* the blue, barely: the home intro and hovered rows */
+  --cc-blue-line: #b7c1ec; /* the blue, soft: accent rules on cards */
 }
 
 [data-md-color-scheme="slate"] {
@@ -63,6 +64,7 @@
   --cc-border: #35383d;
   --cc-rule: rgba(255, 255, 255, 0.5);
   --cc-tint: #20232b;
+  --cc-blue-line: #4a5590;
 }
 
 /* ---------- Header ---------- */
@@ -646,8 +648,14 @@
   grid-template-areas: "who links" "what links";
   grid-template-rows: auto 1fr;
   gap: 0.3rem 3rem;
-  padding: 1rem 0 0.9rem;
+  padding: 1.1rem 0 1rem;
   border-bottom: 1px solid var(--cc-border);
+  transition: background-color 0.15s, box-shadow 0.15s;
+}
+/* the tint bleeds a little to both sides; the rules stay aligned */
+.md-typeset .cc-role:hover {
+  background-color: var(--cc-tint);
+  box-shadow: -0.8rem 0 0 var(--cc-tint), 0.8rem 0 0 var(--cc-tint);
 }
 .md-typeset .cc-role p {
   grid-area: what;
@@ -662,8 +670,9 @@
 .md-typeset .cc-role h3.cc-role__who {
   grid-area: who;
   margin: 0;
-  font-size: 1.05rem;
-  font-weight: 500;
+  font-size: 1.35rem;
+  font-weight: 400;
+  letter-spacing: -0.01em;
   line-height: 1.3;
 }
 .md-typeset .cc-role ul,
@@ -1017,7 +1026,7 @@
   flex-direction: column;
   padding: 1.1rem 1.1rem 1rem;
   border: 1px solid var(--cc-border);
-  border-top: 3px solid var(--tone, var(--md-accent-fg-color));
+  border-top: 3px solid var(--tone, var(--cc-blue-line));
   border-radius: var(--cc-radius-sm);
   background: var(--md-default-bg-color);
   transition: transform 0.15s, box-shadow 0.15s;
@@ -1028,9 +1037,9 @@
 .md-typeset .cc-tool h3 a::after { content: ""; position: absolute; inset: 0; } /* whole card clickable */
 .md-typeset .cc-tool__meta {
   margin: 0.15rem 0 0.6rem;
-  font-size: 0.64rem;
-  font-weight: 600;
-  color: var(--md-accent-fg-color);
+  font-size: 0.66rem;
+  font-weight: 500;
+  color: var(--md-default-fg-color--light);
 }
 .md-typeset .cc-tool > p:not([class]) {
   margin: 0;
@@ -1066,7 +1075,7 @@
   gap: 0.15rem;
   padding: 0.7rem 0.8rem;
   border: 1px solid var(--cc-border);
-  border-left: 3px solid var(--md-accent-fg-color);
+  border-left: 3px solid var(--cc-blue-line);
   border-radius: var(--cc-radius-sm);
   color: var(--md-default-fg-color);
   transition: background 0.15s;
@@ -1275,5 +1284,28 @@
 .md-typeset .cc-minitools a:hover strong,
 .md-typeset .cc-tool h3 a:hover {
   color: var(--md-accent-fg-color);
+}
+
+/* Home: each link of a role with the arrow of the cards */
+.md-typeset .cc-role li > a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+.md-typeset .cc-role li > a::before {
+  content: "";
+  flex: none;
+  width: 0.85rem;
+  height: 0.85rem;
+  background-color: var(--md-accent-fg-color);
+  -webkit-mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>') center / contain no-repeat;
+  mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>') center / contain no-repeat;
+  transition: transform 0.15s;
+}
+.md-typeset .cc-role li > a:hover::before {
+  transform: translateX(0.2rem);
+}
+@media (prefers-reduced-motion: reduce) {
+  .md-typeset .cc-role li > a::before { transition: none; }
 }
 

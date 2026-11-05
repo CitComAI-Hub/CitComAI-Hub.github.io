@@ -52,11 +52,3 @@ How the CitCom.ai Data Space is built, and how to run your own connector.
 </div>
 
 </div>
-
-## What you will find here
-
-[CitCom.ai](https://citcom.ai) is a European Union project that runs Testing and Experimentation Facilities for AI and robotics in smart and sustainable cities. This hub gathers the *minimal package* that the project prepares for its TEF nodes, so that a service built in one city runs in the others.
-
-- **A working data space.** Shared infrastructure for every CitCom partner, running today with real city data: [the CitCom.ai Data Space](data_spaces/index.md).
-- **Worked examples.** An AI service and a city platform, each followed from its own integration to the data space: [Guides](guides/index.md).
-- **Open tools.** Connect an NGSI-v2 platform, read NGSI-LD data and get data space tokens: [Toolbox](toolbox/index.md).
