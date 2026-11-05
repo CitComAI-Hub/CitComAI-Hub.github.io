@@ -1,8 +1,6 @@
 ---
 title: The CitCom.ai Data Space
 description: "The data space shared by all CitCom partners: how it works today, its marketplace and how to join."
-hide:
-  - toc
 ---
 
 # The CitCom.ai Data Space

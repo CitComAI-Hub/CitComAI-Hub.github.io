@@ -1093,7 +1093,7 @@
 /* ---------- Toolbox: the cards of the rest of the site ---------- */
 .cc-tools {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr); /* two per row: the page keeps the table of contents */
   gap: 0.8rem;
   margin: 1.2rem 0 0.8rem;
 }
@@ -1209,9 +1209,6 @@
 }
 .md-typeset ul.cc-rows a:hover strong { color: var(--md-accent-fg-color); }
 .md-typeset ul.cc-rows a:hover::after { background-color: var(--md-accent-fg-color); transform: translateX(0.2rem); }
-@media screen and (max-width: 60em) {
-  .cc-tools { grid-template-columns: repeat(2, 1fr); }
-}
 @media screen and (max-width: 44.9375em) {
   .cc-tools, .md-typeset ul.cc-rows--two { grid-template-columns: 1fr; }
 }
