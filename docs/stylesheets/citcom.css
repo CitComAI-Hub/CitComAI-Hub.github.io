@@ -983,9 +983,8 @@
   display: flex;
   flex-direction: column;
   gap: 0.9rem;
-  margin: 1.1rem 0 0 !important;
-  padding: 1rem 0 0 !important;
-  border-top: 1px solid var(--cc-border);
+  margin: 0 !important;
+  padding: 0 !important;
   list-style: none;
 }
 .cc-infra__legend li {
@@ -993,11 +992,13 @@
   align-items: flex-start;
   gap: 0.6rem;
   margin: 0 !important;
-  font-size: 0.72rem;
-  line-height: 1.5;
+  max-width: 34rem;
+  font-size: 0.8rem;
+  line-height: 1.55;
 }
 .cc-infra__legend li .cc-infra__step { margin-top: -0.05rem; }
-.cc-infra__cta-row { margin-top: 1.2rem; text-align: center; }
+.cc-steps { margin: 0 0 1.6rem; }
+.cc-infra__cta-row { margin-top: 1.4rem; }
 .cc-infra__cta {
   display: inline-block;
   padding: 0.55rem 2.2rem;
