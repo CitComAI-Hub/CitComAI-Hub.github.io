@@ -16,6 +16,7 @@
   --cc-accent-dark: var(--cc-teal-dark);
   --cc-radius: 16px;
   --cc-radius-sm: 8px;
+  --cc-icon-gap: 0.4em; /* between a label and its icon, in every button */
   --cc-heading-font: "Barlow Condensed", "Barlow", system-ui, sans-serif;
 }
 
@@ -144,7 +145,7 @@
 .cc-header__cta {
   display: none;
   align-items: center;
-  gap: 0.3rem;
+  gap: var(--cc-icon-gap);
   margin-left: 0.4rem;
   padding: 0.45rem 0.9rem;
   border-radius: var(--cc-radius-sm);
@@ -333,6 +334,9 @@
 /* ---------- Buttons ---------- */
 
 .md-typeset .md-button {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--cc-icon-gap);
   border-radius: var(--cc-radius-sm);
   border-width: 1px;
   font-weight: 700;
