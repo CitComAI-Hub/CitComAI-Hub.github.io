@@ -1474,8 +1474,9 @@
 }
 
 /* ---------- Buttons: one look and one behaviour for every button of the site ----------
-   Primary: ink, the accent on hover (white and soft blue in dark mode).
-   Secondary: an ink outline that fills with ink on hover.
+   One rule: what you can click turns to the accent on hover, as links do.
+   Primary: ink, filled with the accent on hover (white and soft blue in dark mode).
+   Secondary: an ink outline whose outline and text turn to the accent on hover.
    Square, same type, same icon gap, same transition; the header button is only smaller. */
 
 .md-typeset .md-button,
@@ -1505,13 +1506,13 @@
   height: 1em;
   fill: currentColor;
 }
-/* secondary, on hover: filled with ink */
+/* secondary, on hover: the outline and the text in the accent, as a link does */
 .md-typeset .md-button:is(:hover, :focus-visible),
 .md-typeset a.cc-btn:is(:hover, :focus-visible),
 #catalogFiltersToggle:is(:hover, :focus-visible) {
-  background: var(--cc-ink);
-  border-color: var(--cc-ink);
-  color: #ffffff;
+  background: transparent;
+  border-color: var(--cc-blue);
+  color: var(--cc-blue);
 }
 /* primary */
 .md-typeset .md-button--primary,
@@ -1548,7 +1549,11 @@
 [data-md-color-scheme="slate"] .md-typeset a.cc-btn:hover,
 [data-md-color-scheme="slate"] .md-typeset a.cc-btn:focus-visible,
 [data-md-color-scheme="slate"] #catalogFiltersToggle:hover,
-[data-md-color-scheme="slate"] #catalogFiltersToggle:focus-visible,
+[data-md-color-scheme="slate"] #catalogFiltersToggle:focus-visible {
+  background: transparent;
+  border-color: var(--cc-blue-soft);
+  color: var(--cc-blue-soft);
+}
 [data-md-color-scheme="slate"] .md-typeset .md-button.md-button--primary,
 [data-md-color-scheme="slate"] .md-typeset a.cc-btn.cc-btn--primary,
 [data-md-color-scheme="slate"] .cc-header__cta,
