@@ -1,10 +1,6 @@
 ---
 title: Deploy your own connector
 description: "Install a consumer connector, Keycloak and did-helper, so that your organisation issues its own credentials."
-next_step:
-  url: guides/join/
-  title: "Join the data space"
-  description: "Register your organisation with the DID of your new connector."
 ---
 
 # Deploy your own connector

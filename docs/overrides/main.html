@@ -10,5 +10,8 @@
   {% endif %}
 {% endblock %}
 
-{#- The section links live in the header (partials/header.html): no tabs row -#}
-{% block tabs %}{% endblock %}
+{#- No tabs row. In its place, inside the container that instant navigation replaces, the section
+    of the page, so that javascripts/header-section.js can mark it in the header (which is kept). -#}
+{% block tabs %}
+  {%- for item in nav if item.active and item.children %}<span hidden data-cc-section="{{ item.title }}"></span>{% endfor -%}
+{% endblock %}

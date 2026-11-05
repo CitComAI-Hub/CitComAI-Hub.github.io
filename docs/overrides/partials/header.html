@@ -1,12 +1,14 @@
 {#- Header in the style of the CitCom marketplace: logo, the main sections, search and a Marketplace button.
-    Based on Material 9.5's partials/header.html; the section links replace the tabs row. -#}
+    Based on Material 9.5's partials/header.html; the section links replace the tabs row.
+    URLs are absolute: instant navigation keeps the header, so links relative to the first page
+    loaded would point to the wrong place on the next one. -#}
 {%- macro first_url(item) -%}
   {%- if item.children -%}{{ first_url(item.children[0]) }}{%- else -%}{{ item.url }}{%- endif -%}
 {%- endmacro -%}
 <header class="md-header cc-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="{{ lang.t('header') }}">
-    <a href="{{ nav.homepage.url | url }}" title="{{ config.site_name | striptags }}" class="cc-brand" aria-label="CitCom.ai Hub, home">
-      <img src="{{ 'assets/citcom.svg' | url }}" alt="CitCom.ai" class="cc-brand__logo">
+    <a href="/" title="{{ config.site_name | striptags }}" class="cc-brand" aria-label="CitCom.ai Hub, home">
+      <img src="/assets/citcom.svg" alt="CitCom.ai" class="cc-brand__logo">
       <span class="cc-brand__label">Hub</span>
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -14,7 +16,7 @@
     </label>
     <ul class="cc-header__links">
       {%- for item in nav if item.children and item.title not in config.extra.hidden_sections %}
-      <li><a href="{{ first_url(item) | url }}" class="{% if item.active %}cc-header__link--active{% endif %}">{{ item.title }}</a></li>
+      <li><a href="/{{ first_url(item) }}" data-cc-section="{{ item.title }}" class="{% if item.active %}cc-header__link--active{% endif %}">{{ item.title }}</a></li>
       {%- endfor %}
     </ul>
     {% if config.theme.palette and not config.theme.palette is mapping %}
