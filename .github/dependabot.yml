@@ -1,0 +1,23 @@
+# Weekly pull requests to develop when Zensical (pyproject.toml) or a GitHub action has a new
+# version. The check workflow builds each one in strict mode; review the site before merging,
+# since Zensical is still 0.x and a new version can change the theme.
+version: 2
+updates:
+  - package-ecosystem: pip
+    directory: /
+    target-branch: develop
+    schedule:
+      interval: weekly
+    commit-message:
+      prefix: build
+
+  - package-ecosystem: github-actions
+    directory: /
+    target-branch: develop
+    schedule:
+      interval: weekly
+    commit-message:
+      prefix: ci
+    groups:
+      actions:
+        patterns: ["*"]
