@@ -592,18 +592,6 @@
   align-items: center;
   gap: 0.8rem 1.6rem;
 }
-.md-typeset a.cc-intro__alt {
-  font-size: 0.8rem;
-  color: var(--md-typeset-color);
-  text-decoration: underline;
-  text-decoration-color: var(--cc-border);
-  text-decoration-thickness: 1px;
-  text-underline-offset: 4px;
-  transition: text-decoration-color 0.15s;
-}
-.md-typeset a.cc-intro__alt:hover {
-  text-decoration-color: currentColor;
-}
 /* Opens Material's search: it is the label of the search toggle */
 .cc-search {
   display: flex;
@@ -760,8 +748,8 @@
 .md-typeset .cc-role h3.cc-role__who {
   grid-area: who;
   margin: 0;
-  font-size: 1.35rem;
-  font-weight: 400;
+  font-size: 1.1rem; /* a step below the h2 above it ("Find your way in") */
+  font-weight: 500;
   letter-spacing: -0.01em;
   line-height: 1.3;
 }
