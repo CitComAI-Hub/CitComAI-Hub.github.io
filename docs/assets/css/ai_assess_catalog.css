@@ -1,51 +1,118 @@
-/* AI Assessment Catalogue table layout (scoped to .ai-assessment-table) */
-.ai-assessment-table { overflow-x: visible; }
-
-.ai-assessment-table table {
+/* AI Assessment Catalogue table layout (scoped to .ai-assessment-table).
+   Each column has its width and the table scrolls sideways: with a fixed layout at 100% width the
+   ten columns were squeezed into the screen and the long texts made every row very tall. */
+.md-typeset .ai-assessment-table table:not([class]) {
   table-layout: fixed;
-  width: 100%;
-  /* Responsive: let container and column min-widths define overflow */
-  min-width: 0;
+  width: max-content;
+  max-width: none;
   border-collapse: collapse;
 }
 
 .ai-assessment-table table th,
 .ai-assessment-table table td {
   white-space: normal;
-  overflow-wrap: anywhere;
+  overflow-wrap: break-word;
   vertical-align: top;
 }
 
-/* Per-column minimum widths */
-.ai-assessment-table table th:nth-child(1),
-.ai-assessment-table table td:nth-child(1) { min-width: 160px; }
+/* Widths per column: labels narrow, descriptions wide */
+.ai-assessment-table table th:nth-child(1) { width: 150px; }  /* Solution Name */
+.ai-assessment-table table th:nth-child(2) { width: 100px; }  /* Provider */
+.ai-assessment-table table th:nth-child(3) { width: 130px; }  /* Licensing Type */
+.ai-assessment-table table th:nth-child(4) { width: 110px; }  /* Project Phase / TRL */
+.ai-assessment-table table th:nth-child(5) { width: 220px; }  /* Domain of Application */
+.ai-assessment-table table th:nth-child(6) { width: 140px; }  /* AI Risk Category */
+.ai-assessment-table table th:nth-child(7) { width: 170px; }  /* Ethical Dimensions */
+.ai-assessment-table table th:nth-child(8) { width: 240px; }  /* Security & Securitization of Data */
+.ai-assessment-table table th:nth-child(9) { width: 300px; }  /* Resources */
+.ai-assessment-table table th:nth-child(10) { width: 460px; } /* Example of Use Case */
 
-.ai-assessment-table table th:nth-child(2),
-.ai-assessment-table table td:nth-child(2) { min-width: 110px; }
+/* --- Search and filters, above the table --- */
+.cc-cat-tools {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.6rem 0.8rem;
+  margin: 1.6rem 0 0.8rem;
+}
+.cc-cat-search {
+  display: flex;
+  flex: 0 1 26rem;
+  align-items: center;
+  gap: 0.5rem;
+  height: 2.1rem;
+  padding: 0 0.7rem;
+  border: 1px solid var(--cc-border);
+  background: var(--md-default-bg-color);
+}
+.cc-cat-search:focus-within { border-color: var(--md-accent-fg-color); }
+.cc-cat-search svg { width: 1rem; height: 1rem; flex: none; fill: var(--md-default-fg-color--light); }
+.cc-cat-search input {
+  flex: 1;
+  min-width: 0;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: var(--md-typeset-color);
+  font: inherit;
+  font-size: 0.75rem;
+}
+#catalogFiltersToggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  height: 2.1rem;
+  padding: 0 0.8rem;
+  border: 1px solid var(--cc-border);
+  background: var(--md-default-bg-color);
+  color: var(--md-typeset-color);
+  font: inherit;
+  font-size: 0.72rem;
+  cursor: pointer;
+}
+#catalogFiltersToggle svg { width: 0.9rem; height: 0.9rem; fill: currentColor; }
+#catalogFiltersToggle:hover,
+#catalogFiltersToggle[aria-expanded="true"] { border-color: var(--md-typeset-color); }
+#catalogFiltersToggle.cc-cat-toggle--set { border-color: var(--md-accent-fg-color); color: var(--md-accent-fg-color); }
+.cc-cat-count { font-size: 0.68rem; color: var(--md-default-fg-color--light); }
 
-.ai-assessment-table table th:nth-child(3),
-.ai-assessment-table table td:nth-child(3) { min-width: 140px; }
-
-.ai-assessment-table table th:nth-child(4),
-.ai-assessment-table table td:nth-child(4) { min-width: 140px; }
-
-.ai-assessment-table table th:nth-child(5),
-.ai-assessment-table table td:nth-child(5) { min-width: 220px; }
-
-.ai-assessment-table table th:nth-child(6),
-.ai-assessment-table table td:nth-child(6) { min-width: 160px; }
-
-.ai-assessment-table table th:nth-child(7),
-.ai-assessment-table table td:nth-child(7) { min-width: 160px; }
-
-.ai-assessment-table table th:nth-child(8),
-.ai-assessment-table table td:nth-child(8) { min-width: 220px; }
-
-.ai-assessment-table table th:nth-child(9),
-.ai-assessment-table table td:nth-child(9) { min-width: 160px; }
-
-.ai-assessment-table table th:nth-child(10),
-.ai-assessment-table table td:nth-child(10) { min-width: 560px; max-width: 800px; }
+.cc-cat-filters {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 0.8rem 1rem;
+  margin: 0 0 1rem;
+  padding: 0.9rem 1rem;
+  border: 1px solid var(--cc-border);
+  background: var(--cc-tint);
+}
+.cc-cat-filters[hidden] { display: none; }
+.cc-cat-filter { display: flex; flex-direction: column; gap: 0.25rem; }
+.cc-cat-filter span { font-size: 0.62rem; font-weight: 600; color: var(--md-default-fg-color--light); }
+.cc-cat-filter select {
+  min-width: 9rem;
+  max-width: 16rem;
+  height: 1.8rem;
+  padding: 0 0.4rem;
+  border: 1px solid var(--cc-border);
+  border-radius: 0;
+  background: var(--md-default-bg-color);
+  color: var(--md-typeset-color);
+  font: inherit;
+  font-size: 0.7rem;
+}
+.cc-cat-reset {
+  height: 1.8rem;
+  padding: 0 0.2rem;
+  border: 0;
+  background: none;
+  color: var(--md-typeset-color);
+  font: inherit;
+  font-size: 0.68rem;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  cursor: pointer;
+}
 
 /* --- Page-scoped layout to reclaim sidebar width and show it on hover --- */
 .catalog-page .md-content { grid-column: 1 / -1; }
@@ -78,11 +145,9 @@
   transform: translateY(-50%);
   width: 36px;
   height: 36px;
-  border-radius: 18px;
-  border: none;
-  background: #fff;
-  color: #111;
-  box-shadow: 0 2px 10px rgba(0,0,0,.15);
+  border: 1px solid var(--cc-border);
+  background: var(--md-default-bg-color);
+  color: var(--md-typeset-color);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -90,7 +155,7 @@
   z-index: 1100;
 }
 
-.catalog-nav-toggle:hover { background: #f3f3f3; }
+.catalog-nav-toggle:hover { border-color: var(--md-typeset-color); }
 
 /* Widen the page content area for this catalogue */
 .catalog-page .md-main .md-grid {
