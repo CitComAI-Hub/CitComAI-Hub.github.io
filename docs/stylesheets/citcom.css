@@ -1565,3 +1565,22 @@
   border-color: #ffffff;
 }
 
+/* the icon of each role on a small square of the blue tint */
+.md-typeset .cc-role {
+  grid-template-columns: 3.2rem minmax(0, 1fr) minmax(0, 1fr);
+}
+.md-typeset .cc-role p.cc-role__ico {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.3rem;
+  height: 2.3rem;
+  padding: 0;
+  background: color-mix(in srgb, var(--md-accent-fg-color) 9%, transparent);
+}
+.md-typeset .cc-role__ico .twemoji,
+.md-typeset .cc-role__ico .twemoji svg {
+  --md-icon-size: 1.25rem;
+  width: 1.25rem;
+  height: 1.25rem;
+}
