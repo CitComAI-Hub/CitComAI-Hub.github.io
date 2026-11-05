@@ -1140,3 +1140,109 @@
 .md-typeset .grid > .card > p:first-child > .twemoji.lg {
   margin-right: 0.45em;
 }
+
+/* ---------- TEF network map (tef index): the home's blueprint grid and line ---------- */
+.cc-tef {
+  --cc-grid-line: rgba(11, 123, 133, 0.07);
+  margin: 1.2rem 0 1.6rem;
+  padding: 1.4rem 1.2rem 1rem;
+  border: 1px solid var(--cc-border);
+  border-radius: var(--cc-radius);
+  background-color: var(--md-default-bg-color);
+  background-image:
+    linear-gradient(var(--cc-grid-line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--cc-grid-line) 1px, transparent 1px);
+  background-size: 1.6rem 1.6rem;
+}
+[data-md-color-scheme="slate"] .cc-tef { --cc-grid-line: rgba(60, 195, 207, 0.07); }
+.cc-tef a { text-decoration: none; }
+.cc-tef__root {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.15rem;
+  width: max-content;
+  margin: 0 auto;
+  padding: 0.5rem 1.4rem;
+  border: 2px solid var(--md-accent-fg-color);
+  border-radius: 999px;
+  background: var(--md-default-bg-color);
+}
+.cc-tef__root span { font: 700 0.95rem/1 var(--cc-heading-font); letter-spacing: 0.06em; text-transform: uppercase; }
+.cc-tef__root small { font-size: 0.6rem; color: var(--md-default-fg-color--light); }
+/* one rail from the TEF down to the three super-nodes */
+.cc-tef__rail {
+  position: relative;
+  height: 2.2rem;
+}
+.cc-tef__rail::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 0;
+  height: 50%;
+  border-left: 3px solid var(--md-accent-fg-color);
+}
+.cc-tef__rail::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  bottom: 0;
+  left: calc(100% / 6);
+  right: calc(100% / 6);
+  border: 3px solid var(--md-accent-fg-color);
+  border-bottom: 0;
+  border-radius: 6px 6px 0 0;
+}
+.cc-tef__nodes {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  align-items: start;
+}
+.cc-tef__node {
+  padding: 0.9rem 0.9rem 0.4rem;
+  border: 1px solid var(--cc-border);
+  border-top: 3px solid var(--md-accent-fg-color);
+  border-radius: var(--cc-radius-sm);
+  background: var(--md-default-bg-color);
+}
+.md-typeset .cc-tef__node p { margin: 0; }
+.md-typeset p.cc-tef__eyebrow {
+  font-size: 0.58rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--md-default-fg-color--light);
+}
+.md-typeset p.cc-tef__theme {
+  font: 700 1.5rem/1.1 var(--cc-heading-font);
+  letter-spacing: 0.04em;
+  color: var(--md-accent-fg-color);
+}
+.md-typeset p.cc-tef__meta {
+  margin-bottom: 0.4rem;
+  font-size: 0.64rem;
+  color: var(--md-default-fg-color--light);
+}
+/* the home's line, tighter: up to eight stations per super-node */
+.cc-tef .md-typeset.cc-line ol::before { left: 0.45rem; top: 1.1rem; bottom: 1.1rem; }
+.cc-tef .md-typeset.cc-line a { gap: 0.7rem; padding: 0.35rem 0.4rem 0.35rem 0; }
+.cc-tef .md-typeset .cc-line__stop { width: 0.95rem; height: 0.95rem; }
+.cc-tef .md-typeset.cc-line strong { font-size: 0.74rem; line-height: 1.3; }
+.cc-tef .md-typeset.cc-line small { font-size: 0.62rem; }
+.md-typeset p.cc-tef__more {
+  margin: 1rem 0 0;
+  text-align: center;
+  font-size: 0.72rem;
+  font-weight: 700;
+}
+.md-typeset .cc-tef__more a { color: var(--md-accent-fg-color); }
+.md-typeset .cc-tef__more a:hover { text-decoration: underline; }
+@media screen and (max-width: 44.9375em) {
+  .cc-tef { padding: 1rem 0.8rem 0.8rem; }
+  .cc-tef__nodes { grid-template-columns: 1fr; }
+  .cc-tef__rail { height: 1.2rem; }
+  .cc-tef__rail::after { display: none; }
+  .cc-tef__rail::before { height: 100%; }
+}
