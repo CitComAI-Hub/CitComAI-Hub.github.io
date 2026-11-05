@@ -198,6 +198,9 @@ emoji_index = "zensical.extensions.emoji.twemoji"
 emoji_generator = "zensical.extensions.emoji.to_svg"
 options.custom_icons = ["docs/overrides/.icons"]
 
+# Date of the last change and authors of each page (hub_extensions/git_facts.py)
+[project.markdown_extensions."hub_extensions.git_facts"]
+
 # ---------------------------------------------------------------------------
 # Plugins (search is always on)
 # ---------------------------------------------------------------------------

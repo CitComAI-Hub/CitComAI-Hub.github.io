@@ -1,1 +1,12 @@
-{#- The facts of the page (date of the last change, authors) are added back by the next commit -#}
+{#- The facts of the page, in words: "Updated November 5, 2026 · Joan Ciprià, Sergio Marti".
+    page.meta.git comes from hub_extensions/git_facts.py. -#}
+{%- set git = page.meta.git if page.meta else none -%}
+{% if git %}
+  <aside class="md-source-file cc-page-facts">
+    <span>Updated {{ git.updated }}</span>
+    {%- if git.authors %}
+    <span aria-hidden="true"> · </span>
+    <span>{{ git.authors | join(", ") }}</span>
+    {%- endif %}
+  </aside>
+{% endif %}

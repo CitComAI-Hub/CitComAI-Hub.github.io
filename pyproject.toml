@@ -1,4 +1,4 @@
-# The CitCom.ai Hub site and its build dependencies.
+# The CitCom.ai Hub site: its build dependencies and the Markdown extensions in hub_extensions/.
 # Install everything with `pip install -e .` (or `make install`).
 
 [project]
@@ -17,4 +17,4 @@ requires = ["setuptools>=69"]
 build-backend = "setuptools.build_meta"
 
 [tool.setuptools]
-packages = []
+packages = ["hub_extensions"]
