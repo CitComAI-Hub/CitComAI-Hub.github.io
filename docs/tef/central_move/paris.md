@@ -3,6 +3,14 @@ title: Paris
 description: "The Paris TEF site of the Central super-node (MOVE): what it offers and its data."
 ---
 
+<dl class="cc-facts" markdown="0">
+  <div><dt>Super-node</dt><dd>Central · MOVE</dd></div>
+  <div><dt>Country</dt><dd>France</dd></div>
+  <div><dt>Location</dt><dd>Trappes, Satory, Linas, Saclay and Champs-sur-Marne</dd></div>
+  <div><dt>Partners</dt><dd>UTAC, Université Gustave Eiffel, IRT SystemX, LNE</dd></div>
+  <div><dt>Focus</dt><dd>Autonomous mobility: simulation, test tracks, validation and certification of AI</dd></div>
+</dl>
+
 !!! note "Page to be completed"
 
     The partners of this site have not described it here yet. To add the description, see [Request changes](../../faq/pull_request_procedure.md).

@@ -3,6 +3,15 @@ title: Mechelen
 description: "The Mechelen TEF site of the Central super-node (MOVE): what it offers and its data."
 ---
 
+<dl class="cc-facts" markdown="0">
+  <div><dt>Super-node</dt><dd>Central · MOVE</dd></div>
+  <div><dt>Country</dt><dd>Belgium</dd></div>
+  <div><dt>Led by</dt><dd>City of Mechelen</dd></div>
+  <div><dt>Focus</dt><dd>Mobility: testing on the public domain, open calls, mobility data</dd></div>
+  <div><dt>Datasets</dt><dd>Local weather and WBGT, parking occupation (with the owner's consent), counts of pedestrians, cyclists, cars and trucks</dd></div>
+  <div><dt>Contact</dt><dd>Roos Lowette, site coordinator: <a href="mailto:roos.lowette@mechelen.be">roos.lowette@mechelen.be</a></dd></div>
+</dl>
+
 ## Overview
 
 The TEF Site is located in Mechelen, Belgium and is dedicated to advancing research and development in mobility. This site provides local personel who will help provide space on the public domain to test state-of-the-art infrastructure and is a key site in the CitCom.ai project, facilitating collaboration between cities and comunities, industrial partners (AI innovators) and research institutions.

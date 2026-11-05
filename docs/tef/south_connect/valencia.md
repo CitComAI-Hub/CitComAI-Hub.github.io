@@ -5,6 +5,16 @@ description: "The Valencia TEF site: who is who, its services for companies and 
 
 # Valencia
 
+<dl class="cc-facts" markdown="0">
+  <div><dt>Super-node</dt><dd>South · CONNECT</dd></div>
+  <div><dt>Country</dt><dd>Spain</dd></div>
+  <div><dt>Partners</dt><dd>Ajuntament de València (City Council), València Innovation Capital, VRAIN-UPV</dd></div>
+  <div><dt>Focus</dt><dd>Pollution, noise, waste and water, mobility, urban development, tourism</dd></div>
+  <div><dt>Data broker</dt><dd>VLCi urban platform (FIWARE, NGSI-v2), in the data space through Lepus</dd></div>
+  <div><dt>Datasets</dt><dd>Four datasets of the City Council in the CitCom.ai marketplace</dd></div>
+  <div><dt>Contact</dt><dd>VRAIN-UPV, through the <a href="https://github.com/CitComAI-Hub">GitHub organisation</a></dd></div>
+</dl>
+
 The Valencia TEF site belongs to the South super-node (CONNECT). It supports AI innovation in pollution, noise, waste and water management, mobility, urban development and tourism.
 
 ## Who is who

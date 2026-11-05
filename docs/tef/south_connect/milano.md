@@ -7,7 +7,8 @@ description: "The Milano TEF site of the South super-node (CONNECT): what it off
   <div><dt>Super-node</dt><dd>South · CONNECT</dd></div>
   <div><dt>Country</dt><dd>Italy</dd></div>
   <div><dt>Led by</dt><dd>Politecnico di Milano (DEIB and ABC departments)</dd></div>
-  <div><dt>Test areas</dt><dd>UpTown District (Cascina Merlata, Euromilano) and the Olympic Village (Porta Romana, Covivio)</dd></div>
+  <div><dt>Location</dt><dd>UpTown District (Cascina Merlata, Euromilano) and the Olympic Village (Porta Romana, Covivio)</dd></div>
+  <div><dt>Focus</dt><dd>AI for facility management in urban regeneration areas</dd></div>
   <div><dt>Data broker</dt><dd>FIWARE Orion, NGSI-v2</dd></div>
   <div><dt>Datasets</dt><dd>Air quality, biodiversity, energy distribution, archaeological site</dd></div>
   <div><dt>Contact</dt><dd>Luca Mottola, site coordinator: <a href="mailto:luca.mottola@polimi.it">luca.mottola@polimi.it</a></dd></div>

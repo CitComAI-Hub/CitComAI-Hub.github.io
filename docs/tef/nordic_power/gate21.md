@@ -3,6 +3,12 @@ title: GATE21
 description: "The GATE21 TEF site of the Nordic super-node (POWER): what it offers and its data."
 ---
 
+<dl class="cc-facts" markdown="0">
+  <div><dt>Super-node</dt><dd>Nordic · POWER</dd></div>
+  <div><dt>Country</dt><dd>Denmark</dd></div>
+  <div><dt>Data broker</dt><dd>FIWARE Scorpio, NGSI-LD</dd></div>
+</dl>
+
 !!! note "Page to be completed"
 
     The partners of this site have not described it here yet. To add the description, see [Request changes](../../faq/pull_request_procedure.md).

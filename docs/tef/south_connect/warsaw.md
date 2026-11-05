@@ -3,6 +3,16 @@ title: Warsaw
 description: "The Warsaw TEF site of the South super-node (CONNECT): what it offers and its data."
 ---
 
+<dl class="cc-facts" markdown="0">
+  <div><dt>Super-node</dt><dd>South · CONNECT</dd></div>
+  <div><dt>Country</dt><dd>Poland</dd></div>
+  <div><dt>Led by</dt><dd>Warsaw University of Technology (CENAGIS)</dd></div>
+  <div><dt>Location</dt><dd>Main campus of the university and the Józefosław centre</dd></div>
+  <div><dt>Focus</dt><dd>Geospatial data, GeoAI and large-scale computing</dd></div>
+  <div><dt>Datasets</dt><dd>Road network of Poland (BDOT10k), LIDAR of part of Warsaw, BIM of the Józefosław observatory</dd></div>
+  <div><dt>Contact</dt><dd>Dariusz Gotlib, site coordinator: <a href="mailto:dariusz.gotlib@pw.edu.pl">dariusz.gotlib@pw.edu.pl</a></dd></div>
+</dl>
+
 ## Overview
 
 The Warsaw TEF site, part of the South Supernode, is a computing center dedicated to geospatial data analytics and physical infrastructure for testing devices and applications. The center is based on an advanced IT infrastructure that allows geospatial analysis and satellite calculations. Warsaw TEF site is led by Warsaw University of Technology and provides computing infrastructure supporting spatial big data and GeoAI computations, diverse geospatial datasets and expertise and support in spatial big data, smart city, GeoAI, indoor navigation and geospatial analysis.
