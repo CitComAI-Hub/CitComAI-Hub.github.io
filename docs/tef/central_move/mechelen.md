@@ -62,7 +62,7 @@ The TEF Site is located in Mechelen, Belgium and is dedicated to advancing resea
 
 ## Relevant datasets of the site
 
-- **Dataset_1**: Local weather and WBGT in Mechelen [link](https://app.swaggerhub.com/apis-docs/bmesuere/VLINDER/1.0)
+- **Dataset_1**: Local weather and WBGT in Mechelen from the [VLINDER network](https://vlinder.ugent.be/) of Ghent University
 - **Dataset_2**: Parking occupation of parking garages in Mechelen (privatly owned data - can only be shared with consent of owner) 
 - **Dataset_3**: Count data on several locations in Mechelen where the passing amount of pedestrians, cyclists, cars and trucks are measured ([link](https://documenter.getpostman.com/view/8210376/TWDRqyaV))
 
@@ -78,9 +78,3 @@ The TEF Site is located in Mechelen, Belgium and is dedicated to advancing resea
 - **Technical Support**: Benjamin Vermeulen - benjamin.vermeulen@mechelen.be
 - **General Inquiries**: data@mechelen.be
 - **TEF Belgium Coordinator**: Thomas De Meester - thomas.demeester@imec.be
-
-
-## Documentation and Resources
-
-- [Documentation Link 1](https://www.mechelen.be/data)
-

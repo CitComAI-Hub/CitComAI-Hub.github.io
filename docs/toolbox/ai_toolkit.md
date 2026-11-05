@@ -46,7 +46,7 @@ For the development and implementation of different AI services, here we list a 
 | [Keras](https://keras.io/) | Deep Learning for humans. |
 | [Pytorch Lightning](https://lightning.ai/pytorch-lightning) | Deep learning framework to train, deploy, and ship AI products Lightning fast. |
 | [RAPIDS](https://rapids.ai/) | RAPIDS provides unmatched speed with familiar APIs that match the most popular PyData libraries. Built on state-of-the-art foundations like NVIDIA CUDA and Apache Arrow, it unlocks the speed of GPUs with code you already know. |
-| [OpenMMLab](https://openmmlab.com/) | Covers a wide range of research topics of computer vision, e.g., classification, detection, segmentation and super-resolution. |
+| [OpenMMLab](https://github.com/open-mmlab) | Covers a wide range of research topics of computer vision, e.g., classification, detection, segmentation and super-resolution. |
 
 
 ## Programming
@@ -126,5 +126,5 @@ For the development and implementation of different AI services, here we list a 
 | [Evidently AI](https://www.evidentlyai.com/) | Evidently helps analyze and monitor the quality of machine learning models in production. It generates detailed reports on data drift and model performance, using visualizations to identify significant changes in input data or model performance. |
 | [Whylogs](https://whylabs.ai/) | Whylogs is a lightweight and scalable library for logging and monitoring ML data in production. It provides statistical profiles of input and output data, facilitating the detection of data drift and anomalies in real-time or batch data. |
 | [Promehteus](https://prometheus.io/) & [Grafana](https://grafana.com/)| Although not specific to ML, they can be adapted to monitor specific ML model metrics, including production accuracy. By defining custom metrics that reflect model performance, they can be used to capture and visualize data drift or model drift, though this requires manual configuration and clear metric definitions. |
-| [Alibi Detect](https://docs.seldon.io/projects/alibi-detect/en/latest/) | Specialized in anomaly and data drift detection, Alibi Detect offers a series of techniques and algorithms designed specifically to identify changes in input data and model behavior, which may indicate the need for retraining. |
+| [Alibi Detect](https://docs.seldon.ai/alibi-detect) | Specialized in anomaly and data drift detection, Alibi Detect offers a series of techniques and algorithms designed specifically to identify changes in input data and model behavior, which may indicate the need for retraining. |
 | [MLPerf](https://github.com/mlperf) _(and [MLCommons](https://github.com/mlcommons/))_ | MLPerf is a suite of benchmarks that evaluates the performance of hardware, software, and machine learning models. It provides standardized metrics that allow comparing different implementations and configurations of ML, helping to identify best practices and optimizations in the field of machine learning. |
