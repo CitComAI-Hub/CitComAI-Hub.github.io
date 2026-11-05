@@ -871,8 +871,9 @@ footer .footer-tagline img {
   margin-top: 0;
 }
 
-/* External links in the text: a small arrow says they open in a new tab */
-.md-typeset a.cc-external:not(.md-button):not(.md-content__button):not(.cc-header__cta):not(.cc-btn)::after {
+/* External links in the text: a small arrow says they open in a new tab. Not on links that are
+   an image (the logos of the footer): the arrow would hang next to the picture. */
+.md-typeset a.cc-external:not(.md-button):not(.md-content__button):not(.cc-header__cta):not(.cc-btn):not(:has(> img:only-child))::after {
   content: "";
   display: inline-block;
   width: 0.62em;
