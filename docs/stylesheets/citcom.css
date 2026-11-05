@@ -1504,3 +1504,44 @@
   font-size: 0.68rem;
   color: var(--md-default-fg-color--light);
 }
+
+/* ---------- Facts of a TEF site: a box at the top of the page ---------- */
+
+.md-typeset dl.cc-facts {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0;
+  margin: 0 0 2rem;
+  border: 1px solid var(--cc-border);
+  background: var(--cc-tint);
+}
+.md-typeset dl.cc-facts > div {
+  padding: 0.7rem 1rem;
+  border-bottom: 1px solid var(--cc-border);
+}
+.md-typeset dl.cc-facts > div:nth-child(odd) {
+  border-right: 1px solid var(--cc-border);
+}
+.md-typeset dl.cc-facts dt {
+  font-size: 0.68rem;
+  font-weight: 600;
+  color: var(--md-default-fg-color--light);
+}
+.md-typeset dl.cc-facts dd {
+  margin: 0.15rem 0 0;
+  font-size: 0.75rem;
+}
+/* the last fact spans the row when it is alone in it */
+.md-typeset dl.cc-facts > div:last-child:nth-child(odd) {
+  grid-column: 1 / -1;
+  border-right: none;
+}
+.md-typeset dl.cc-facts > div:nth-last-child(-n + 1),
+.md-typeset dl.cc-facts > div:nth-last-child(2):nth-child(odd) {
+  border-bottom: none;
+}
+@media screen and (max-width: 44.9375em) {
+  .md-typeset dl.cc-facts { grid-template-columns: 1fr; }
+  .md-typeset dl.cc-facts > div:nth-child(odd) { border-right: none; }
+  .md-typeset dl.cc-facts > div:nth-last-child(2):nth-child(odd) { border-bottom: 1px solid var(--cc-border); }
+}
