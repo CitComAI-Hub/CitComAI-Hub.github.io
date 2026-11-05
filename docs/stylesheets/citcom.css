@@ -1351,11 +1351,14 @@
   padding-top: 0.3rem;
   line-height: 1;
 }
+/* Lucide: stroke icons, in the blue, a little thinner than their default */
 .md-typeset .cc-role__ico .twemoji svg {
   width: 1.5rem;
   height: 1.5rem;
   max-height: none;
-  fill: var(--md-accent-fg-color);
+  fill: none;
+  color: var(--md-accent-fg-color);
+  stroke-width: 1.6;
 }
 .md-typeset .cc-role__ico .twemoji {
   --md-icon-size: 1.5rem;

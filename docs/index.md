@@ -12,7 +12,7 @@ hide:
 <div class="cc-roles" markdown>
 
 <div class="cc-role" markdown>
-:material-city-variant-outline:
+:lucide-landmark:
 {: .cc-role__ico aria-hidden="true" }
 
 <h3 class="cc-role__who" id="city">Cities and TEF nodes</h3>
@@ -25,7 +25,7 @@ What CitCom offers and the minimal package the TEF nodes share.
 </div>
 
 <div class="cc-role" markdown>
-:material-database-export-outline:
+:lucide-database:
 {: .cc-role__ico aria-hidden="true" }
 
 <h3 class="cc-role__who" id="provider">Data providers</h3>
@@ -38,7 +38,7 @@ Publish a dataset in the data space and decide who can use it.
 </div>
 
 <div class="cc-role" markdown>
-:material-code-braces:
+:lucide-code-xml:
 {: .cc-role__ico aria-hidden="true" }
 
 <h3 class="cc-role__who" id="developer">AI developers</h3>
@@ -51,7 +51,7 @@ Read city data from your code and offer your service to other cities.
 </div>
 
 <div class="cc-role" markdown>
-:material-server-network-outline:
+:lucide-network:
 {: .cc-role__ico aria-hidden="true" }
 
 <h3 class="cc-role__who" id="operator">Data space operators</h3>
