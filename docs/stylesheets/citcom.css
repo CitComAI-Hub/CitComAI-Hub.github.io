@@ -160,7 +160,9 @@
   box-shadow: inset 0 -2px 0 var(--md-accent-fg-color);
   border-radius: 0;
 }
-.cc-header__cta {
+/* The Marketplace button, only where it fits (from 45em). The header selector outweighs the
+   shared button rules at the end of the file, which display every button. */
+.cc-header .cc-header__cta {
   display: none;
   margin-left: 0.4rem;
   white-space: nowrap;
@@ -206,7 +208,7 @@
   }
 }
 @media screen and (min-width: 45em) {
-  .cc-header__cta {
+  .cc-header .cc-header__cta {
     display: inline-flex;
   }
 }
