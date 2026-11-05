@@ -206,6 +206,9 @@ options.custom_icons = ["docs/overrides/.icons"]
 targets.include = ["*.md"]
 sources.exclude = ["index.md"]
 
+# ...but only on links in the text, not on cards, buttons and other navigation (hub_extensions/text_previews.py)
+[project.markdown_extensions."hub_extensions.text_previews"]
+
 # Date of the last change and authors of each page (hub_extensions/git_facts.py)
 [project.markdown_extensions."hub_extensions.git_facts"]
 

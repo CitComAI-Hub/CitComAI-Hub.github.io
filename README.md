@@ -66,7 +66,7 @@ The dependencies are in [`pyproject.toml`](./pyproject.toml); after pulling a ch
 - **Images**: in an `img/` folder next to the page, never linked from another site.
 - **Diagrams**: [Mermaid](https://mermaid.js.org/) code blocks (` ```mermaid `); they follow the light and dark themes.
 - **Links**: links to other sites open in a new tab automatically ([`docs/javascripts/external-links.js`](./docs/javascripts/external-links.js)); write them as normal Markdown links.
-- **Cross-references**: link the text itself (`see [Lepus](../toolbox/lepus.md)`), not "→ Lepus". Hovering a link to another page of the site shows a preview of it (every page but the home).
+- **Cross-references**: link the text itself (`see [Lepus](../toolbox/lepus.md)`), not "→ Lepus". Hovering a link in the text to another page of the site shows a short preview of it: its title and first lines. Cards, buttons and the home's links have none ([`hub_extensions/text_previews.py`](./hub_extensions/text_previews.py)).
 - **Date and authors**: every page ends with the date of its last change and the people who wrote it, taken from git. Nothing to write by hand.
 - **What not to publish**: no internal IP addresses, host names, credentials or server paths of the infrastructure; describe the architecture and the public URLs.
 

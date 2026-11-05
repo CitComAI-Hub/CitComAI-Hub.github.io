@@ -381,6 +381,21 @@ figure > svg {
   border-radius: 0;
   box-shadow: none;
 }
+/* A preview is a quick card, not the page in small: the heading and the first two blocks of
+   text. It stops at the first block that is not text (table, diagram, map, cards, admonition,
+   next step...); images and the rows of buttons of a page are left out. The title tooltips (text only) are
+   not affected. */
+.md-tooltip2__inner.md-typeset > :not(h1, h2, h3, h4, h5, h6, p, ul, ol),
+.md-tooltip2__inner.md-typeset > :not(h1, h2, h3, h4, h5, h6, p, ul, ol) ~ *,
+.md-tooltip2__inner.md-typeset > :nth-child(n + 4),
+.md-tooltip2__inner.md-typeset p > :is(img, svg),
+.md-tooltip2__inner.md-typeset p:has(> .md-button) {
+  display: none;
+}
+/* the lead paragraph of a page at the size of the rest of the preview */
+.md-tooltip2__inner.md-typeset .cc-lead {
+  font-size: inherit;
+}
 
 /* ---------- Admonitions, tables and code ---------- */
 
