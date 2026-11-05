@@ -7,8 +7,8 @@
   --cc-night: #232528;
   --cc-night-2: #2c2f33;
   --cc-grey: #5b5b66;
-  --cc-blue: #0000ff;
-  --cc-blue-soft: #8c9cff; /* the blue, readable on dark backgrounds */
+  --cc-blue: #2440c0; /* deep ultramarine: the brand blue, calmer on screen */
+  --cc-blue-soft: #9aa9ee; /* the blue, readable on dark backgrounds */
   --cc-orange: #ffaa00;
   --cc-violet: #9b00ff;
   --cc-teal: #3cc3cf; /* marketplace */
@@ -32,7 +32,7 @@
   --md-primary-bg-color: var(--cc-ink);
   --md-primary-bg-color--light: rgba(31, 36, 44, 0.6);
   --md-accent-fg-color: var(--cc-accent-dark);
-  --md-accent-fg-color--transparent: rgba(0, 0, 255, 0.07);
+  --md-accent-fg-color--transparent: rgba(36, 64, 192, 0.07);
   --md-typeset-color: var(--cc-ink);
   --md-typeset-a-color: var(--cc-accent-dark);
   --md-default-fg-color: rgba(31, 36, 44, 0.9);
@@ -54,7 +54,7 @@
   --md-primary-fg-color--dark: #0d0e13;
   --md-primary-bg-color: #ffffff;
   --md-accent-fg-color: var(--cc-accent);
-  --md-accent-fg-color--transparent: rgba(140, 156, 255, 0.12);
+  --md-accent-fg-color--transparent: rgba(154, 169, 238, 0.12);
   --md-default-bg-color: #1a1b1e;
   --md-code-bg-color: #232528;
   --md-typeset-a-color: var(--cc-accent);
