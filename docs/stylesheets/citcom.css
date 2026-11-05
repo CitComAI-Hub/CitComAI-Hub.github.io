@@ -1336,3 +1336,37 @@
   .md-typeset .cc-role li > a::before { transition: none; }
 }
 
+/* Home: one line icon per role, as its own column; the name and the text align to its right */
+.md-typeset .cc-role {
+  grid-template-columns: 2.2rem minmax(0, 1fr) minmax(0, 1fr);
+  grid-template-areas: "ico who links" "ico what links";
+  column-gap: 0;
+}
+.md-typeset .cc-role ul {
+  margin-left: 3rem;
+}
+.md-typeset .cc-role p.cc-role__ico {
+  grid-area: ico;
+  margin: 0;
+  padding-top: 0.3rem;
+  line-height: 1;
+}
+.md-typeset .cc-role__ico .twemoji svg {
+  width: 1.5rem;
+  height: 1.5rem;
+  max-height: none;
+  fill: var(--md-accent-fg-color);
+}
+.md-typeset .cc-role__ico .twemoji {
+  --md-icon-size: 1.5rem;
+}
+@media screen and (max-width: 59.9375em) {
+  .md-typeset .cc-role {
+    grid-template-columns: 2.2rem minmax(0, 1fr);
+    grid-template-areas: "ico who" "ico what" ". links";
+  }
+  .md-typeset .cc-role ul {
+    margin: 0.4rem 0 0;
+  }
+}
+
