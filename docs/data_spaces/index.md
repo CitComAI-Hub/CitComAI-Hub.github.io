@@ -35,7 +35,7 @@ hide:
   <div class="cc-infra__flow">
     <a class="cc-infra__part" href="../valencia/">
       <span class="cc-infra__tag">Provider</span>
-      <strong>Ajuntament de València</strong>
+      <strong>Valencia City Council</strong>
       <small>Its connector serves the city data it offers</small>
       <span class="cc-infra__conn">Connector</span>
     </a>
@@ -54,7 +54,7 @@ hide:
   <div class="cc-infra__cta-row"><a class="cc-infra__cta" href="../guides/join/">Join the data space</a></div>
 </div>
 
-The Ajuntament de València and VRAIN-UPV are the first participants, and both are told step by step as worked examples. [How it works](fiware.md) explains each step of the diagram, with every component and the public addresses.
+Valencia City Council (Ajuntament de València) and VRAIN-UPV are the first participants, and both are told step by step as worked examples. [How it works](fiware.md) explains each step of the diagram, with every component and the public addresses.
 
 ## Also in CitCom
 
