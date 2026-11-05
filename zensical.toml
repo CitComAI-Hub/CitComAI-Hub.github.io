@@ -2,7 +2,7 @@
 # Build: `make build` · Preview: `make serve` · See README.md.
 
 [project]
-site_name = "CitCom<sup>AI</sup> Hub"
+site_name = "CitCom.ai Hub"
 site_url = "https://citcomai-hub.github.io"
 site_description = "The technical hub of the CitCom.ai TEF: data spaces, tools and guides to build AI services for smart cities."
 repo_url = "https://github.com/CitComAI-Hub/CitComAI-Hub.github.io"
@@ -217,6 +217,56 @@ sources.exclude = ["index.md"]
 # ---------------------------------------------------------------------------
 # Plugins (search is always on)
 # ---------------------------------------------------------------------------
+
+# llms.txt and llms-full.txt: the site in Markdown for AI assistants (https://llmstxt.org), so that a
+# developer can give the docs to their assistant
+[project.plugins.llmstxt]
+full_output = "llms-full.txt"
+markdown_description = """
+The technical hub of CitCom.ai, the EU Testing and Experimentation Facility for AI and robotics
+in smart cities: the CitCom.ai Data Space (FIWARE Data Space Connector, verifiable credentials,
+NGSI-LD, Smart Data Models), its marketplace, the guides to join it, publish and consume data and
+services, and the tools to connect a city platform.
+"""
+
+[project.plugins.llmstxt.sections]
+"Get started" = [
+  "getting_started/index.md",
+  "getting_started/project.md",
+  "getting_started/interoperability.md",
+  "getting_started/data_spaces.md",
+]
+"Data space" = [
+  "data_spaces/index.md",
+  "data_spaces/fiware.md",
+  "marketplace/index.md",
+  "data_spaces/eclipse/index.md",
+]
+"Guides" = [
+  "guides/index.md",
+  "guides/join.md",
+  "guides/wallet.md",
+  "guides/consume_data.md",
+  "guides/deploy_connector.md",
+  "guides/publish_dataset.md",
+  "guides/publish_service.md",
+  "miais/index.md",
+  "valencia/index.md",
+]
+"Toolbox" = [
+  "toolbox/index.md",
+  "toolbox/lepus.md",
+  "toolbox/ngsi_ld.md",
+  "toolbox/ds_consumer_auth.md",
+  "toolbox/wallets.md",
+  "toolbox/smart_data_models.md",
+]
+"TEF network" = [
+  "tef/index.md",
+  "tef/sites.md",
+  "ai_assessment/index.md",
+  "local_digital_twins/index.md",
+]
 
 # {{ config.extra.labels.* }} in the TEF site pages
 [project.plugins.macros]

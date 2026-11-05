@@ -220,10 +220,6 @@
 
 /* ---------- Typography ---------- */
 
-/* the AI of the site name in the header and the drawer */
-sup {
-  font-size: 10px;
-}
 /* figures and SVG diagrams never wider than the text */
 figure {
   max-width: 100% !important;
