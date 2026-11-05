@@ -850,34 +850,34 @@
   color: var(--cc-night);
   font: 700 0.66rem/1 var(--cc-heading-font);
 }
-.cc-infra__band {
+.cc-infra__band { /* the zone operated by VRAIN-UPV: tinted, not dark */
   padding: 1rem;
+  border: 1px solid color-mix(in srgb, var(--cc-accent) 45%, transparent);
   border-radius: var(--cc-radius-sm);
-  background: var(--cc-night);
-  color: #fff;
+  background: color-mix(in srgb, var(--cc-accent) 8%, var(--md-default-bg-color));
 }
-[data-md-color-scheme="slate"] .cc-infra__band { border: 1px solid var(--cc-border); }
 .cc-infra__eyebrow {
   margin: 0 0 0.7rem !important;
   font: 600 0.62rem/1.2 var(--md-text-font-family);
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--cc-teal);
+  color: var(--cc-accent-dark);
 }
+[data-md-color-scheme="slate"] .cc-infra__eyebrow { color: var(--cc-accent); }
 .cc-infra__shared { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.6rem; }
 .cc-infra__svc {
   display: flex;
   flex-direction: column;
   gap: 0.25rem;
   padding: 0.8rem;
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  border: 1px solid var(--cc-border);
   border-radius: var(--cc-radius-sm);
-  background: var(--cc-night-2);
-  transition: border-color 0.15s, transform 0.15s;
+  background: var(--md-default-bg-color);
+  transition: border-color 0.15s, transform 0.15s, box-shadow 0.15s;
 }
-.cc-infra__svc:hover { border-color: var(--cc-teal); transform: translateY(-2px); }
+.cc-infra__svc:hover { border-color: var(--cc-accent); transform: translateY(-2px); box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08); }
 .cc-infra__svc strong { font-size: 0.8rem; }
-.cc-infra__svc small { font-size: 0.64rem; line-height: 1.35; color: rgba(255, 255, 255, 0.72); }
+.cc-infra__svc small { font-size: 0.64rem; line-height: 1.35; color: var(--md-default-fg-color--light); }
 /* steps 1-3: one rail from the shared services down to both participants */
 .cc-infra__links {
   position: relative;
