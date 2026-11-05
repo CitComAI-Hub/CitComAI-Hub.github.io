@@ -1,36 +1,33 @@
 {% extends "main.html" %}
 
-{#- Home of the docs. Deliberately not the marketplace's layout: light hero on a blueprint grid,
-    a search box, and the reading path drawn as a line with stations. -#}
+{#- Home of the docs: title, lead and search, next to the most common tasks. The page content
+    (reading lists by role) follows. -#}
 {% block tabs %}
-<section class="cc-dhero">
-  <div class="md-grid cc-dhero__inner">
-    <div class="md-typeset cc-dhero__copy">
-      <p class="cc-eyebrow">CitCom.ai Hub · Documentation</p>
+<section class="cc-intro">
+  <div class="md-grid cc-intro__inner">
+    <div class="md-typeset cc-intro__copy">
       <h1>Build AI services for smart cities on a shared data space</h1>
-      <p class="cc-dhero__lead">
+      <p class="cc-intro__lead">
         The technical hub of the CitCom.ai TEF: how the data space works, the tools to connect a
         city platform, and guides to build services that run in any CitCom city.
       </p>
-      <label class="cc-dhero__search" for="__search">
-        {% include ".icons/material/magnify.svg" %}
-        <span>Search the documentation</span>
-        <kbd>/</kbd>
-      </label>
-      <p class="cc-dhero__alt">
-        Looking for data or AI services to use?
-        <a href="{{ config.extra.marketplace_url }}" target="_blank" rel="noopener">Browse the marketplace &#8599;</a>
-      </p>
+      <div class="cc-intro__actions">
+        <label class="cc-search" for="__search">
+          {% include ".icons/material/magnify.svg" %}
+          <span>Search the documentation</span>
+          <kbd>/</kbd>
+        </label>
+        <a class="cc-intro__alt" href="{{ config.extra.marketplace_url }}" target="_blank" rel="noopener">Browse the marketplace</a>
+      </div>
     </div>
-    <nav class="md-typeset cc-line" aria-label="Reading path">
-      <p class="cc-line__label">The path</p>
-      <ol>
-        <li><a href="{{ 'getting_started/' | url }}"><span class="cc-line__stop"></span><span><strong>Get started</strong><small>What CitCom is and why data spaces</small></span></a></li>
-        <li><a href="{{ 'data_spaces/' | url }}"><span class="cc-line__stop"></span><span><strong>Data space</strong><small>The infrastructure running today</small></span></a></li>
-        <li><a href="{{ 'guides/' | url }}"><span class="cc-line__stop"></span><span><strong>Guides</strong><small>Worked examples and step-by-step guides</small></span></a></li>
-        <li><a href="{{ 'toolbox/' | url }}"><span class="cc-line__stop"></span><span><strong>Toolbox</strong><small>Lepus, FiLiP, ds-consumer-auth, wallets</small></span></a></li>
-        <li><a href="{{ 'tef/' | url }}"><span class="cc-line__stop"></span><span><strong>TEF network</strong><small>The sites, the AI label, digital twins</small></span></a></li>
-      </ol>
+    <nav class="md-typeset cc-tasks" aria-labelledby="cc-tasks-title">
+      <h2 id="cc-tasks-title">Start with a guide</h2>
+      <ul>
+        <li><a href="{{ 'guides/join/' | url }}"><strong>Join the data space</strong><span>Register your organisation so that the other participants trust it.</span></a></li>
+        <li><a href="{{ 'guides/publish_dataset/' | url }}"><strong>Publish a dataset</strong><span>Offer it in the marketplace with its access policy.</span></a></li>
+        <li><a href="{{ 'guides/consume_data/' | url }}"><strong>Use data from your code</strong><span>Buy a data offer and read it from Python.</span></a></li>
+        <li><a href="{{ 'guides/publish_service/' | url }}"><strong>Publish a web service</strong><span>Offer a web app that people open with their wallet.</span></a></li>
+      </ul>
     </nav>
   </div>
 </section>

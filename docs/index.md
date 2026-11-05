@@ -12,7 +12,10 @@ hide:
 <div class="cc-roles" markdown>
 
 <div class="cc-role" markdown>
-<p class="cc-role__who">Cities and TEF nodes</p>
+:lucide-landmark:
+{: .cc-role__ico aria-hidden="true" }
+
+<h3 class="cc-role__who" id="city">Cities and TEF nodes</h3>
 
 What CitCom offers and the minimal package the TEF nodes share.
 
@@ -22,7 +25,10 @@ What CitCom offers and the minimal package the TEF nodes share.
 </div>
 
 <div class="cc-role" markdown>
-<p class="cc-role__who">Data providers</p>
+:lucide-database:
+{: .cc-role__ico aria-hidden="true" }
+
+<h3 class="cc-role__who" id="provider">Data providers</h3>
 
 Publish a dataset in the data space and decide who can use it.
 
@@ -32,7 +38,10 @@ Publish a dataset in the data space and decide who can use it.
 </div>
 
 <div class="cc-role" markdown>
-<p class="cc-role__who">AI developers</p>
+:lucide-code-xml:
+{: .cc-role__ico aria-hidden="true" }
+
+<h3 class="cc-role__who" id="developer">AI developers</h3>
 
 Read city data from your code and offer your service to other cities.
 
@@ -42,7 +51,10 @@ Read city data from your code and offer your service to other cities.
 </div>
 
 <div class="cc-role" markdown>
-<p class="cc-role__who">Data space operators</p>
+:lucide-network:
+{: .cc-role__ico aria-hidden="true" }
+
+<h3 class="cc-role__who" id="operator">Data space operators</h3>
 
 How the CitCom.ai Data Space is built, and how to run your own connector.
 
@@ -51,23 +63,4 @@ How the CitCom.ai Data Space is built, and how to run your own connector.
 - [Deploy your own connector](guides/deploy_connector.md)
 </div>
 
-</div>
-
-## What you will find here
-
-[CitCom.ai](https://citcom.ai) is a European Union project that runs Testing and Experimentation Facilities for AI and robotics in smart and sustainable cities. This hub gathers the *minimal package* that the project prepares for its TEF nodes, so that a service built in one city runs in the others.
-
-<div class="cc-facts" markdown>
-<a href="data_spaces/"><strong>A working data space</strong><span>Shared infrastructure for every CitCom partner, running today with real city data.</span></a>
-<a href="guides/"><strong>Worked examples</strong><span>An AI service and a city platform, from their own integration to the data space.</span></a>
-<a href="toolbox/"><strong>Open tools</strong><span>Connect an NGSI-v2 platform, read NGSI-LD data and get data space tokens.</span></a>
-</div>
-
-## From the TEF network
-
-<div class="cc-links" markdown>
-[TEF sites](tef/index.md)
-[AI Trustworthiness Label](ai_assessment/index.md)
-[Local Digital Twins](local_digital_twins/index.md)
-[FAQ and contribute](faq/index.md)
 </div>
