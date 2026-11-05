@@ -1,7 +1,7 @@
 {% extends "main.html" %}
 
-{#- Home of the docs: title, lead and search, next to the most common tasks. The page content
-    (reading lists by role) follows. -#}
+{#- Home of the docs: title, lead and two buttons, next to the first three guides (the path every
+    organisation follows). The page content (reading lists by role) follows. -#}
 {% block tabs %}
 <section class="cc-intro">
   <div class="md-grid cc-intro__inner">
@@ -12,21 +12,21 @@
         city platform, and guides to build services that run in any CitCom city.
       </p>
       <div class="cc-intro__actions">
-        <label class="cc-search" for="__search">
-          {% include ".icons/material/magnify.svg" %}
-          <span>Search the documentation</span>
-          <kbd>/</kbd>
-        </label>
+        <a class="cc-btn cc-btn--primary" href="{{ 'getting_started/' | url }}">Get started</a>
+        <a class="cc-btn" href="https://github.com/CitComAI-Hub" target="_blank" rel="noopener">
+          {% include ".icons/fontawesome/brands/github.svg" %}
+          GitHub
+        </a>
       </div>
     </div>
     <nav class="md-typeset cc-tasks" aria-labelledby="cc-tasks-title">
-      <h2 id="cc-tasks-title">Start with a guide</h2>
+      <h2 id="cc-tasks-title">Start here</h2>
       <ul>
         <li><a href="{{ 'guides/join/' | url }}"><strong>Join the data space</strong><span>Register your organisation so that the other participants trust it.</span></a></li>
+        <li><a href="{{ 'guides/wallet/' | url }}"><strong>Get a wallet and your credentials</strong><span>Log in to the marketplace with a QR code.</span></a></li>
         <li><a href="{{ 'guides/consume_data/' | url }}"><strong>Use data from your code</strong><span>Buy a data offer and read it from Python.</span></a></li>
-        <li><a href="{{ 'guides/publish_dataset/' | url }}"><strong>Publish a dataset</strong><span>Offer it in the marketplace with its access policy.</span></a></li>
-        <li><a href="{{ 'guides/publish_service/' | url }}"><strong>Publish a web service</strong><span>Offer a web app that people open with their wallet.</span></a></li>
       </ul>
+      <a class="cc-tasks__all" href="{{ 'guides/' | url }}">All the guides</a>
     </nav>
   </div>
 </section>

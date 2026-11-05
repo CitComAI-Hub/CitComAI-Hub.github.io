@@ -15,12 +15,12 @@ hide:
 :lucide-landmark:
 {: .cc-role__ico aria-hidden="true" }
 
-<h3 class="cc-role__who" id="city">Cities and TEF nodes</h3>
+<h3 class="cc-role__who" id="city">Cities and TEF sites</h3>
 
-What CitCom offers and the minimal package the TEF nodes share.
+Bring your city platform to the data space without migrating it, and see how the TEF sites work.
 
-- [The project and the TEFs](getting_started/project.md)
 - [Valencia: a city platform](valencia/index.md)
+- [Lepus](toolbox/lepus.md)
 - [TEF network](tef/index.md)
 </div>
 
@@ -28,13 +28,13 @@ What CitCom offers and the minimal package the TEF nodes share.
 :lucide-database:
 {: .cc-role__ico aria-hidden="true" }
 
-<h3 class="cc-role__who" id="provider">Data providers</h3>
+<h3 class="cc-role__who" id="provider">Data and service providers</h3>
 
-Publish a dataset in the data space and decide who can use it.
+Offer a dataset or a web service and decide who can use it.
 
-- [Join the data space](guides/join.md)
+- [Deploy your own connector](guides/deploy_connector.md)
 - [Publish a dataset](guides/publish_dataset.md)
-- [Lepus](toolbox/lepus.md)
+- [Publish a web service](guides/publish_service.md)
 </div>
 
 <div class="cc-role" markdown>
@@ -43,11 +43,11 @@ Publish a dataset in the data space and decide who can use it.
 
 <h3 class="cc-role__who" id="developer">AI developers</h3>
 
-Read city data from your code and offer your service to other cities.
+Read city data from your code and build services that run in any CitCom city.
 
 - [MIAIS: a worked example](miais/index.md)
-- [Use data from your code](guides/consume_data.md)
-- [Publish a web service](guides/publish_service.md)
+- [NGSI-LD and FiLiP](toolbox/ngsi_ld.md)
+- [ds-consumer-auth](toolbox/ds_consumer_auth.md)
 </div>
 
 <div class="cc-role" markdown>
@@ -56,11 +56,11 @@ Read city data from your code and offer your service to other cities.
 
 <h3 class="cc-role__who" id="operator">Data space operators</h3>
 
-How the CitCom.ai Data Space is built, and how to run your own connector.
+How the CitCom.ai Data Space is built and run, and the other data space of CitCom.
 
 - [How the data space works](data_spaces/fiware.md)
 - [Inside a connector](data_spaces/fiware.md#inside-a-connector)
-- [Deploy your own connector](guides/deploy_connector.md)
+- [Eclipse EDC data space](data_spaces/eclipse/index.md)
 </div>
 
 </div>

@@ -617,36 +617,6 @@
   align-items: center;
   gap: 0.8rem 1.6rem;
 }
-/* Opens Material's search: it is the label of the search toggle */
-.cc-search {
-  display: flex;
-  flex: 0 1 26rem;
-  align-items: center;
-  gap: 0.6rem;
-  padding: 0.65rem 0.9rem;
-  border: 1px solid var(--cc-border);
-  background: var(--md-default-bg-color);
-  color: var(--md-default-fg-color--light);
-  font-size: 0.8rem;
-  cursor: text;
-  transition: border-color 0.15s;
-}
-.cc-search:hover {
-  border-color: var(--md-typeset-color);
-}
-.cc-search svg {
-  width: 1.05rem;
-  height: 1.05rem;
-  fill: currentColor;
-}
-.cc-search span {
-  flex: 1;
-}
-.cc-search kbd {
-  padding: 0 0.35rem;
-  border: 1px solid var(--cc-border);
-  font-size: 0.62rem;
-}
 /* the one box of the home: the tasks most readers come for */
 .md-typeset.cc-tasks {
   background: var(--md-default-bg-color);
@@ -732,9 +702,6 @@
   }
   .md-typeset.cc-intro__copy h1 {
     font-size: 2rem;
-  }
-  .cc-search {
-    flex-basis: 100%;
   }
 }
 
@@ -1392,13 +1359,6 @@
 .md-typeset.md-content__inner > ul.cc-rows {
   max-width: none;
 }
-.md-typeset .cc-search kbd,
-.cc-search kbd {
-  box-shadow: none;
-  border-radius: 0;
-  background: transparent;
-  color: inherit;
-}
 .md-main__inner:has(.cc-roles) {
   margin-top: 0.6rem;
 }
@@ -1583,4 +1543,43 @@
   --md-icon-size: 1.25rem;
   width: 1.25rem;
   height: 1.25rem;
+}
+
+/* the two buttons of the intro: start reading, or go to the code */
+.md-typeset a.cc-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--cc-icon-gap);
+  padding: 0.6rem 1.2rem;
+  border: 1px solid var(--md-typeset-color);
+  color: var(--md-typeset-color);
+  font-size: 0.8rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: background-color 0.15s, color 0.15s;
+}
+.md-typeset a.cc-btn svg { width: 1rem; height: 1rem; fill: currentColor; }
+.md-typeset a.cc-btn:hover { background: var(--md-typeset-color); color: var(--md-default-bg-color); }
+.md-typeset a.cc-btn--primary { background: var(--md-typeset-color); color: var(--md-default-bg-color); }
+.md-typeset a.cc-btn--primary:hover {
+  background: var(--md-accent-fg-color);
+  border-color: var(--md-accent-fg-color);
+  color: #ffffff;
+}
+.cc-intro__actions { gap: 0.8rem; }
+
+/* the box of the first steps ends with a link to every guide */
+.md-typeset.cc-tasks a.cc-tasks__all {
+  padding: 0.7rem 1.1rem;
+  border-top: 1px solid var(--cc-border);
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+[data-md-color-scheme="slate"] .md-typeset a.cc-btn { border-color: #ffffff; color: #ffffff; }
+[data-md-color-scheme="slate"] .md-typeset a.cc-btn:hover,
+[data-md-color-scheme="slate"] .md-typeset a.cc-btn--primary { background: #ffffff; color: var(--cc-ink); }
+[data-md-color-scheme="slate"] .md-typeset a.cc-btn--primary:hover {
+  background: var(--md-accent-fg-color);
+  border-color: var(--md-accent-fg-color);
+  color: var(--cc-ink);
 }
