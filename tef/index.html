@@ -103,19 +103,19 @@
     
       <header class="md-header cc-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href=".." title="CitComAI Hub" class="cc-brand" aria-label="CitCom.ai Hub, home">
-      <img src="../assets/citcom.svg" alt="CitCom.ai" class="cc-brand__logo">
+    <a href="/" title="CitComAI Hub" class="cc-brand" aria-label="CitCom.ai Hub, home">
+      <img src="/assets/citcom.svg" alt="CitCom.ai" class="cc-brand__logo">
       <span class="cc-brand__label">Hub</span>
     </a>
     <label class="md-header__button md-icon" for="__drawer">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
     </label>
     <ul class="cc-header__links">
-      <li><a href="../getting_started/" class="">Get started</a></li>
-      <li><a href="../data_spaces/" class="">Data space</a></li>
-      <li><a href="../guides/" class="">Guides</a></li>
-      <li><a href="../toolbox/" class="">Toolbox</a></li>
-      <li><a href="./" class="cc-header__link--active">TEF network</a></li>
+      <li><a href="/getting_started/" data-cc-section="Get started" class="">Get started</a></li>
+      <li><a href="/data_spaces/" data-cc-section="Data space" class="">Data space</a></li>
+      <li><a href="/guides/" data-cc-section="Guides" class="">Guides</a></li>
+      <li><a href="/toolbox/" data-cc-section="Toolbox" class="">Toolbox</a></li>
+      <li><a href="/tef/" data-cc-section="TEF network" class="cc-header__link--active">TEF network</a></li>
     </ul>
     
       <form class="md-header__option" data-md-component="palette">
@@ -191,7 +191,7 @@
     
     <div class="md-container" data-md-component="container">
       
-      
+      <span hidden data-cc-section="TEF network"></span>
       <main class="md-main" data-md-component="main">
         <div class="md-main__inner md-grid">
           
@@ -532,23 +532,23 @@
         
       
         
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
           
         
       
         
           
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
         
       
     
@@ -601,74 +601,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../miais/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Example: MIAIS, an AI service
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../valencia/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Example: Valencia, a city platform
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../guides/join/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     Join the data space
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../guides/deploy_connector/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Deploy your own connector
   </span>
   
 
@@ -727,6 +664,27 @@
   
   
     <li class="md-nav__item">
+      <a href="../guides/deploy_connector/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Deploy your own connector
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../guides/publish_dataset/" class="md-nav__link">
         
   
@@ -753,6 +711,48 @@
   
   <span class="md-ellipsis">
     Publish a web service
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../miais/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Example: MIAIS, an AI service
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../valencia/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Example: Valencia, a city platform
   </span>
   
 
@@ -2161,13 +2161,19 @@
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
+      <div class="md-progress" data-md-component="progress" role="progressbar"></div>
     
-    <script id="__config" type="application/json">{"base": "..", "features": ["content.code.copy", "content.code.annotate", "content.action.edit", "content.tabs.link", "navigation.tabs", "navigation.sections", "navigation.indexes", "navigation.top", "search.suggest", "search.highlight", "toc.follow"], "search": "../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["content.code.copy", "content.code.annotate", "content.action.edit", "content.tabs.link", "navigation.instant", "navigation.instant.progress", "navigation.tabs", "navigation.sections", "navigation.indexes", "navigation.top", "search.suggest", "search.highlight", "toc.follow"], "search": "../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
       <script src="../assets/javascripts/bundle.d7c377c4.min.js"></script>
       
         <script src="../javascripts/external-links.js"></script>
+      
+        <script src="../javascripts/catalog.js"></script>
+      
+        <script src="../javascripts/header-section.js"></script>
       
     
   <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});

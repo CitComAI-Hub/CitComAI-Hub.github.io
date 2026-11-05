@@ -101,19 +101,19 @@
     
       <header class="md-header cc-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="." title="CitComAI Hub" class="cc-brand" aria-label="CitCom.ai Hub, home">
-      <img src="assets/citcom.svg" alt="CitCom.ai" class="cc-brand__logo">
+    <a href="/" title="CitComAI Hub" class="cc-brand" aria-label="CitCom.ai Hub, home">
+      <img src="/assets/citcom.svg" alt="CitCom.ai" class="cc-brand__logo">
       <span class="cc-brand__label">Hub</span>
     </a>
     <label class="md-header__button md-icon" for="__drawer">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
     </label>
     <ul class="cc-header__links">
-      <li><a href="getting_started/" class="">Get started</a></li>
-      <li><a href="data_spaces/" class="">Data space</a></li>
-      <li><a href="guides/" class="">Guides</a></li>
-      <li><a href="toolbox/" class="">Toolbox</a></li>
-      <li><a href="tef/" class="">TEF network</a></li>
+      <li><a href="/getting_started/" data-cc-section="Get started" class="">Get started</a></li>
+      <li><a href="/data_spaces/" data-cc-section="Data space" class="">Data space</a></li>
+      <li><a href="/guides/" data-cc-section="Guides" class="">Guides</a></li>
+      <li><a href="/toolbox/" data-cc-section="Toolbox" class="">Toolbox</a></li>
+      <li><a href="/tef/" data-cc-section="TEF network" class="">TEF network</a></li>
     </ul>
     
       <form class="md-header__option" data-md-component="palette">
@@ -199,21 +199,21 @@
         city platform, and guides to build services that run in any CitCom city.
       </p>
       <div class="cc-intro__actions">
-        <label class="cc-search" for="__search">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
-          <span>Search the documentation</span>
-          <kbd>/</kbd>
-        </label>
+        <a class="cc-btn cc-btn--primary" href="getting_started/">Get started</a>
+        <a class="cc-btn" href="https://github.com/CitComAI-Hub" target="_blank" rel="noopener">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+          GitHub
+        </a>
       </div>
     </div>
     <nav class="md-typeset cc-tasks" aria-labelledby="cc-tasks-title">
-      <h2 id="cc-tasks-title">Start with a guide</h2>
+      <h2 id="cc-tasks-title">Start here</h2>
       <ul>
         <li><a href="guides/join/"><strong>Join the data space</strong><span>Register your organisation so that the other participants trust it.</span></a></li>
-        <li><a href="guides/publish_dataset/"><strong>Publish a dataset</strong><span>Offer it in the marketplace with its access policy.</span></a></li>
+        <li><a href="guides/wallet/"><strong>Get a wallet and your credentials</strong><span>Log in to the marketplace with a QR code.</span></a></li>
         <li><a href="guides/consume_data/"><strong>Use data from your code</strong><span>Buy a data offer and read it from Python.</span></a></li>
-        <li><a href="guides/publish_service/"><strong>Publish a web service</strong><span>Offer a web app that people open with their wallet.</span></a></li>
       </ul>
+      <a class="cc-tasks__all" href="guides/">All the guides</a>
     </nav>
   </div>
 </section>
@@ -319,7 +319,7 @@
           <li class="md-nav__item">
   <a href="#city" class="md-nav__link">
     <span class="md-ellipsis">
-      Cities and TEF nodes
+      Cities and TEF sites
     </span>
   </a>
   
@@ -328,7 +328,7 @@
           <li class="md-nav__item">
   <a href="#provider" class="md-nav__link">
     <span class="md-ellipsis">
-      Data providers
+      Data and service providers
     </span>
   </a>
   
@@ -647,23 +647,23 @@
         
       
         
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
           
         
       
         
           
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
         
       
     
@@ -716,74 +716,11 @@
   
   
     <li class="md-nav__item">
-      <a href="miais/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Example: MIAIS, an AI service
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="valencia/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Example: Valencia, a city platform
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="guides/join/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     Join the data space
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="guides/deploy_connector/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Deploy your own connector
   </span>
   
 
@@ -842,6 +779,27 @@
   
   
     <li class="md-nav__item">
+      <a href="guides/deploy_connector/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Deploy your own connector
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="guides/publish_dataset/" class="md-nav__link">
         
   
@@ -868,6 +826,48 @@
   
   <span class="md-ellipsis">
     Publish a web service
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="miais/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Example: MIAIS, an AI service
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="valencia/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Example: Valencia, a city platform
   </span>
   
 
@@ -2101,7 +2101,7 @@
           <li class="md-nav__item">
   <a href="#city" class="md-nav__link">
     <span class="md-ellipsis">
-      Cities and TEF nodes
+      Cities and TEF sites
     </span>
   </a>
   
@@ -2110,7 +2110,7 @@
           <li class="md-nav__item">
   <a href="#provider" class="md-nav__link">
     <span class="md-ellipsis">
-      Data providers
+      Data and service providers
     </span>
   </a>
   
@@ -2175,11 +2175,11 @@
   <path d="M6 18v-7" />
 </svg>
 </span></p>
-<h3 class="cc-role__who" id="city">Cities and TEF nodes</h3>
-<p>What CitCom offers and the minimal package the TEF nodes share.</p>
+<h3 class="cc-role__who" id="city">Cities and TEF sites</h3>
+<p>Bring your city platform to the data space without migrating it, and see how the TEF sites work.</p>
 <ul>
-<li><a href="getting_started/project/">The project and the TEFs</a></li>
 <li><a href="valencia/">Valencia: a city platform</a></li>
+<li><a href="toolbox/lepus/">Lepus</a></li>
 <li><a href="tef/">TEF network</a></li>
 </ul>
 </div>
@@ -2202,12 +2202,12 @@
   <path d="M3 12A9 3 0 0 0 21 12" />
 </svg>
 </span></p>
-<h3 class="cc-role__who" id="provider">Data providers</h3>
-<p>Publish a dataset in the data space and decide who can use it.</p>
+<h3 class="cc-role__who" id="provider">Data and service providers</h3>
+<p>Offer a dataset or a web service and decide who can use it.</p>
 <ul>
-<li><a href="guides/join/">Join the data space</a></li>
+<li><a href="guides/deploy_connector/">Deploy your own connector</a></li>
 <li><a href="guides/publish_dataset/">Publish a dataset</a></li>
-<li><a href="toolbox/lepus/">Lepus</a></li>
+<li><a href="guides/publish_service/">Publish a web service</a></li>
 </ul>
 </div>
 <div class="cc-role">
@@ -2230,11 +2230,11 @@
 </svg>
 </span></p>
 <h3 class="cc-role__who" id="developer">AI developers</h3>
-<p>Read city data from your code and offer your service to other cities.</p>
+<p>Read city data from your code and build services that run in any CitCom city.</p>
 <ul>
 <li><a href="miais/">MIAIS: a worked example</a></li>
-<li><a href="guides/consume_data/">Use data from your code</a></li>
-<li><a href="guides/publish_service/">Publish a web service</a></li>
+<li><a href="toolbox/ngsi_ld/">NGSI-LD and FiLiP</a></li>
+<li><a href="toolbox/ds_consumer_auth/">ds-consumer-auth</a></li>
 </ul>
 </div>
 <div class="cc-role">
@@ -2259,11 +2259,11 @@
 </svg>
 </span></p>
 <h3 class="cc-role__who" id="operator">Data space operators</h3>
-<p>How the CitCom.ai Data Space is built, and how to run your own connector.</p>
+<p>How the CitCom.ai Data Space is built and run, and the other data space of CitCom.</p>
 <ul>
 <li><a href="data_spaces/fiware/">How the data space works</a></li>
 <li><a href="data_spaces/fiware/#inside-a-connector">Inside a connector</a></li>
-<li><a href="guides/deploy_connector/">Deploy your own connector</a></li>
+<li><a href="data_spaces/eclipse/">Eclipse EDC data space</a></li>
 </ul>
 </div>
 </div>
@@ -2337,13 +2337,19 @@
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
+      <div class="md-progress" data-md-component="progress" role="progressbar"></div>
     
-    <script id="__config" type="application/json">{"base": ".", "features": ["content.code.copy", "content.code.annotate", "content.action.edit", "content.tabs.link", "navigation.tabs", "navigation.sections", "navigation.indexes", "navigation.top", "search.suggest", "search.highlight", "toc.follow"], "search": "assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    <script id="__config" type="application/json">{"base": ".", "features": ["content.code.copy", "content.code.annotate", "content.action.edit", "content.tabs.link", "navigation.instant", "navigation.instant.progress", "navigation.tabs", "navigation.sections", "navigation.indexes", "navigation.top", "search.suggest", "search.highlight", "toc.follow"], "search": "assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
       <script src="assets/javascripts/bundle.d7c377c4.min.js"></script>
       
         <script src="javascripts/external-links.js"></script>
+      
+        <script src="javascripts/catalog.js"></script>
+      
+        <script src="javascripts/header-section.js"></script>
       
     
   <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
