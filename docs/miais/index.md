@@ -98,7 +98,7 @@ Whether the service runs at level 1 or level 2 is a matter of configuration:
     NGSI_LD_URL="http://localhost:1026"
     ```
 
-=== "Level 2: the CitCom data space"
+=== "Level 2: the CitCom.ai Data Space"
 
     ```bash
     NGSI_LD_URL="https://apisix-townhall-vlc.citcom-vrain-dataspace.eu/lepus"

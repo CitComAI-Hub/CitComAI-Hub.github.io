@@ -9,7 +9,7 @@ next_step:
 
 # Join the data space
 
-**What you will get**: your organisation registered in the CitCom FIWARE data space. The other participants trust the credentials it issues, and its legal representative can log in to the marketplace to buy offers.
+**What you will get**: your organisation registered in the CitCom.ai Data Space. The other participants trust the credentials it issues, and its legal representative can log in to the marketplace to buy offers.
 
 ## Two ways to get your organisation's identity
 

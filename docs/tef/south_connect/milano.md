@@ -53,7 +53,7 @@ Milano TEF site uses the following technologies:
     <th colspan="2" style="text-align: center;">Specifications</th>
   </tr>
   <tr>
-    <td><strong>Data Broker<strong></td>
+    <td><strong>Data Broker</strong></td>
     <td>
       {{ config.extra.labels.data_brokers.fiware }}<br>
       <strong>- API:</strong> {{config.extra.labels.api_brokers.ngsi_v2}}<br>
@@ -61,15 +61,15 @@ Milano TEF site uses the following technologies:
     </td>
   </tr>
   <tr>
-    <td><strong>Data Source<strong></td>
+    <td><strong>Data Source</strong></td>
     <td>&lt;no_specified></td>
   </tr>
   <tr>
-    <td><strong>IdM &amp; Auth<strong></td>
+    <td><strong>IdM &amp; Auth</strong></td>
     <td>&lt;no_specified></td>
   </tr>
   <tr>
-    <td><strong>Data Publication<strong></td>
+    <td><strong>Data Publication</strong></td>
     <td>&lt;no_specified></td>
   </tr>
 </table>

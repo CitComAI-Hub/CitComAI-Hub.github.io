@@ -44,9 +44,9 @@ Read city data from your code and offer your service to other cities.
 <div class="cc-role" markdown>
 <p class="cc-role__who">Data space operators</p>
 
-How the CitCom data space is built, and how to run your own connector.
+How the CitCom.ai Data Space is built, and how to run your own connector.
 
-- [FIWARE data space](data_spaces/fiware.md)
+- [How the data space works](data_spaces/fiware.md)
 - [Inside a connector](data_spaces/fiware.md#inside-a-connector)
 - [Deploy your own connector](guides/deploy_connector.md)
 </div>

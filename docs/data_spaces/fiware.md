@@ -5,7 +5,7 @@ description: "Its components and four flows: join, purchase, machine access and 
 
 # How the data space works
 
-The CitCom data space is operated by VRAIN-UPV for the whole of CitCom and uses the [FIWARE Data Space Connector](https://github.com/FIWARE/data-space-connector) (version 10), which follows the recommendations of the [Data Spaces Business Alliance](https://data-spaces-business-alliance.eu/). This page describes its parts, the deployment running today and the four flows that make it work.
+The CitCom.ai Data Space is operated by VRAIN-UPV for the whole of CitCom and uses the [FIWARE Data Space Connector](https://github.com/FIWARE/data-space-connector) (version 10), which follows the recommendations of the [Data Spaces Business Alliance](https://data-spaces-business-alliance.eu/). This page describes its parts, the deployment running today and the four flows that make it work.
 
 ## Shared services
 
@@ -129,7 +129,7 @@ An offer carries two settings: **which credential and roles** the buyer will be 
 
 ### A machine reads data
 
-This is how a program, such as the [MIAIS](../miais/index.md), reads data from another organisation. The library [ds-consumer-auth](../toolbox/ds_consumer_auth.md) does steps 1 to 4 for you.
+This is how a program, such as the [MIAIS](../miais/index.md), reads data from another organisation. The library [ds-consumer-auth](../toolbox/ds_consumer_auth.md) does steps 1 to 5 for you.
 
 ```mermaid
 sequenceDiagram

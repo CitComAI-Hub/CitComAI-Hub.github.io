@@ -39,7 +39,7 @@ sequenceDiagram
     L->>GW: Requests with Authorization: Bearer
 ```
 
-Steps 1 to 4 follow [OID4VCI](https://openid.net/specs/openid-4-verifiable-credential-issuance-1_0.html) against Keycloak 26.6; the credential is valid for long and kept in memory. Step 5 presents it to the provider's verifier. Tested against the CitCom data space (FIWARE Data Space Connector 10).
+Steps 1 to 4 follow [OID4VCI](https://openid.net/specs/openid-4-verifiable-credential-issuance-1_0.html) against Keycloak 26.6; the credential is valid for long and kept in memory. Step 5 presents it to the provider's verifier. Tested against the CitCom.ai Data Space (FIWARE Data Space Connector 10).
 
 ## Install and configure
 

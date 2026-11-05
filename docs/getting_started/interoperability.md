@@ -11,7 +11,7 @@ Interoperability is what lets a service built for one city run in another city w
 
 The [Minimal Interoperability Mechanisms](https://mims.oascities.org/) (MIMs) are a small set of agreements, published by [Open & Agile Smart Cities](https://oascities.org/) (OASC), that cities adopt so their systems can talk to each other. They are *minimal* on purpose: a city does not replace its platform, it adds a common interface on top.
 
-The current version, MIMs Plus v9 (June 2026), orders the foundational MIMs along the journey of the data: make it accessible (MIM0), represent it with standard models (MIM2), exchange it under clear terms and trust (MIM3) and interlink it (MIM1). CitCom builds on the first two:
+The current version, MIMs Plus v9 (June 2026), orders the foundational MIMs along the journey of the data: make it accessible (MIM0), represent it with standard models (MIM2), exchange it under clear terms and trust (MIM3) and interlink it (MIM1). CitCom builds on the first two for [level 1](#level-1-pivotal-interoperability-points), and its data space covers MIM3 at [level 2](#level-2-common-interface-with-integrated-security):
 
 | MIM | What it fixes | In CitCom |
 |---|---|---|

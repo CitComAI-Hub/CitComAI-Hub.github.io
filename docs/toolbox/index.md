@@ -1,6 +1,6 @@
 ---
 title: Toolbox
-description: "The open-source tools used in the CitCom data space."
+description: "The open-source tools used in the CitCom.ai Data Space."
 hide:
   - toc
 ---

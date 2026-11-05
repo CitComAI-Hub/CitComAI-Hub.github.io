@@ -43,10 +43,10 @@ From our forked repository, go to the `Pull requests` tab (1) and select the opt
 
     |                 |            *Repository name*                   |  *Branch name*  |
     |----------------:|:----------------------------------------------:|-----------------|
-    | **Destination** |      `CitComAI-Hub/CitComAI-Hub.github.io`     | `<branch_name>` |
+    | **Destination** |      `CitComAI-Hub/CitComAI-Hub.github.io`     | `main` |
     |    **Origin**   | `<github_account_name>/CitComAI-Hub.github.io` | `<branch_name>` | 
 
-    *Verify that the names of the destination branch and the source branch are the same.*
+    *The destination branch is always `main`: every change to the published site goes through a reviewed pull request.*
 
     ![comparing_changes](./img/6_comparing_changes.png)
 
