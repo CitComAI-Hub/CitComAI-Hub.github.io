@@ -373,6 +373,15 @@ figure > svg {
   }
 }
 
+/* ---------- Tooltips and link previews ---------- */
+
+/* Square, with a rule instead of a shadow, as every box of the site */
+.md-tooltip2__inner {
+  border: 1px solid var(--cc-border);
+  border-radius: 0;
+  box-shadow: none;
+}
+
 /* ---------- Admonitions, tables and code ---------- */
 
 .md-typeset .admonition,

@@ -136,6 +136,7 @@ features = [
   "content.code.annotate",
   "content.code.copy",
   "content.tabs.link",
+  "content.tooltips",
   "navigation.indexes",
   "navigation.instant",
   "navigation.instant.progress",
@@ -199,6 +200,11 @@ custom_checkbox = true
 emoji_index = "zensical.extensions.emoji.twemoji"
 emoji_generator = "zensical.extensions.emoji.to_svg"
 options.custom_icons = ["docs/overrides/.icons"]
+
+# Instant previews: hovering a link to another page of the site shows that section in a tooltip
+[project.markdown_extensions."zensical.extensions.preview"]
+targets.include = ["*.md"]
+sources.exclude = ["index.md"]
 
 # Date of the last change and authors of each page (hub_extensions/git_facts.py)
 [project.markdown_extensions."hub_extensions.git_facts"]
