@@ -1,5 +1,5 @@
 ---
-title: Frequently Asked Questions (FAQ) 
+title: Frequently Asked Questions (FAQ)
 description: "Frequent questions, and how to propose a change to this site."
 ---
 
@@ -8,7 +8,7 @@ description: "Frequent questions, and how to propose a change to this site."
     This website is publicly accessible, so **anyone can edit its content** by following a series of steps.
 
     1. Create a [Fork](https://github.com/CitComAI-Hub/CitComAI-Hub.github.io/fork) of the project.  
-    2. Create a Pull-Resquest with your changes.
+    2. Create a pull request with your changes to the `main` branch.
 
     [More details...](./pull_request_procedure.md)
 

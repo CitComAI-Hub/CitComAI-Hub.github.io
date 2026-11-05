@@ -129,7 +129,7 @@ An offer carries two settings: **which credential and roles** the buyer will be 
 
 ### A machine reads data
 
-This is how a program, such as the [MIAIS](../miais/index.md), reads data from another organisation. The library [ds-consumer-auth](../toolbox/ds_consumer_auth.md) does steps 1 to 4 for you.
+This is how a program, such as the [MIAIS](../miais/index.md), reads data from another organisation. The library [ds-consumer-auth](../toolbox/ds_consumer_auth.md) does steps 1 to 5 for you.
 
 ```mermaid
 sequenceDiagram

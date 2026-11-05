@@ -67,7 +67,7 @@ flowchart LR
 
 ## The same data in the Eclipse EDC data space
 
-Some CitCom partners use the [Eclipse EDC data space](../data_spaces/eclipse/index.md) instead. So that they can use the Valencia data too, the Ajuntament publishes the same source there, without copying it. The two data spaces stay separate: this is one provider making its data available in both.
+Some CitCom partners use the [Eclipse EDC data space](../data_spaces/eclipse/index.md) instead. So that they can use the Valencia data too, the Ajuntament can publish the same source there, without copying it. The two data spaces stay separate: this is one provider making its data available in both.
 
 ### How it works
 

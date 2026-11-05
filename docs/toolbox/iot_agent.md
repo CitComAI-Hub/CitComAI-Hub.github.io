@@ -3,9 +3,9 @@ description: "An experiment: connect an NGSI-v2 broker to an NGSI-LD broker thro
 ---
 # FIWARE IoT-Agent
 
-[Repository :simple-github:](https://github.com/CitComAI-Hub/IoTAgent.NGSI-V2_to_NGSI-LD_Subscription){:target="_blank" .md-button .md-button--primary-light }
+[Repository :simple-github:](https://github.com/CitComAI-Hub/IoTAgent.NGSI-V2_to_NGSI-LD_Subscription){:target="_blank" .md-button .md-button--primary }
 
-This section explains **how to connect an NGSI-V2 broker with an NGSI-LD broker (_Fiware Orion_) through subscriptions to a _FIWARE IoT-Agent_**. This connection between brokers arises as an alternative to the use of [FIWARE Lepus](./lepus.md) due to the lack of testing and the experimental nature of this service.
+This section explains **how to connect an NGSI-V2 broker with an NGSI-LD broker (_Fiware Orion_) through subscriptions to a _FIWARE IoT-Agent_**. It was tested as an alternative to [Lepus](./lepus.md) when Lepus was still experimental; CitCom now uses Lepus, because it does not copy the data.
 
 ![brkers_connection](img/suscripcion_brokers.png)
 
@@ -29,8 +29,8 @@ Grouping the services according to the network or networks they belong to, we ha
     - **LD Context** `ngsild.context`
     - **Orion-LD** `ngsild.orionld`
     - **Quantum Leap** `ngsild.quantumleap`: Fiware data persistence service
-    - **CreateDB** `ngsild.cratedb`: DB for Quantum Leap.
-- __Both networks__ `ngsiv2_network` y `ngsild_network`
+    - **CrateDB** `ngsild.cratedb`: DB for QuantumLeap.
+- __Both networks__ `ngsiv2_network` and `ngsild_network`
     - **Jupyter Server**
     - **NGINX**
 

@@ -14,7 +14,7 @@ description: "The Net Zero Innovation Hub TEF site of the Nordic super-node (POW
     <th colspan="2" style="text-align: center;">Specifications</th>
   </tr>
   <tr>
-    <td><strong>Data Broker<strong></td>
+    <td><strong>Data Broker</strong></td>
     <td>
       &lt;no_specified\><br>
       <strong>- API:</strong> &lt;no_specified\><br>
@@ -22,15 +22,15 @@ description: "The Net Zero Innovation Hub TEF site of the Nordic super-node (POW
     </td>
   </tr>
   <tr>
-    <td><strong>Data Source<strong></td>
+    <td><strong>Data Source</strong></td>
     <td>&lt;no_specified\></a></td>
   </tr>
   <tr>
-    <td><strong>IdM &amp; Auth<strong></td>
+    <td><strong>IdM &amp; Auth</strong></td>
     <td>&lt;no_specified\></td>
   </tr>
   <tr>
-    <td><strong>Data Publication<strong></td>
+    <td><strong>Data Publication</strong></td>
     <td>&lt;no_specified\></td>
   </tr>
 </table>

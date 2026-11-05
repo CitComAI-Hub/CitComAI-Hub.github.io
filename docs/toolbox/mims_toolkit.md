@@ -9,7 +9,7 @@ List of tools and projects that can help services comply with the OASC Minimal I
 
 | Tool | Features |
 |-|-|
-| [Orion Context Broker](https://github.com/FIWARE/context.Orion-LD) | Orion is a widely adopted and mature context broker implementation developed by the FIWARE community. |
+| [Orion-LD Context Broker](https://github.com/FIWARE/context.Orion-LD) | Orion-LD is a widely adopted and mature context broker implementation developed by the FIWARE community. |
 | [Scorpio Broker](https://github.com/ScorpioBroker/ScorpioBroker) | Scorpio Broker is another context broker implementation that conforms to the NGSI-LD standard. |
 | [Djane.io](https://github.com/sensinov/djane) | Djane.io is an open-source context broker implementation that also supports the NGSI-LD standard. It aims to provide a flexible and extensible platform for managing context information |
 | [Stellio Broker](https://github.com/stellio-hub/stellio-context-broker) | Stellio is a context broker implementation specifically designed for high-performance and large-scale deployments. |

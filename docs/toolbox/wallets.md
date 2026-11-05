@@ -31,7 +31,7 @@ Both wallets below work with the CitCom data space: they receive credentials wit
 
 ## atesta-id-wallet
 
-[atesta-id-wallet](https://github.com/CitComAI-Hub/atesta-id-wallet) is a desktop wallet made in CitCom, in English, Spanish and Danish. Install it from the [releases page](https://github.com/CitComAI-Hub/atesta-id-wallet/releases): a Windows installer, a `.deb` for Debian and Ubuntu, or an AppImage for any Linux.
+[atesta-id-wallet](https://github.com/CitComAI-Hub/atesta-id-wallet) is a desktop wallet made in CitCom, in English, Spanish, Danish, German, French and Luxembourgish. Install it from the [releases page](https://github.com/CitComAI-Hub/atesta-id-wallet/releases): a Windows installer, a `.deb` for Debian and Ubuntu, or an AppImage for any Linux.
 
 - **Add a credential**: in your Keycloak account, *Verifiable Credentials → Issue to wallet*. Click the link, or press **Scan QR** and take a screenshot of the QR code.
 - **Log in**: click the login link, or press **Scan QR** and take a screenshot. Before sending anything, the wallet shows who is asking, where the data goes and which claims it will disclose. Nothing is sent until you press **Share**.
@@ -47,7 +47,7 @@ Both wallets below work with the CitCom data space: they receive credentials wit
 - **One holder key per profile**: verifiers can correlate the presentations made with the same profile.
 - **SD-JWT VC only** (`dc+sd-jwt`, `vc+sd-jwt`): no `jwt_vc_json`, no mdoc, no deferred issuance.
 - **Verifiers identified by X.509 certificates**: verifiers identified by a DID, verifier attestations or OpenID Federation are not supported.
-- **No revocation check** of the credentials (Token Status List).
+- **Revocation**: only Token Status List in JWT form, and only as fresh as the last check.
 
 Read its [security model](https://github.com/CitComAI-Hub/atesta-id-wallet/blob/main/docs/SECURITY.md) before using it with real personal data.
 

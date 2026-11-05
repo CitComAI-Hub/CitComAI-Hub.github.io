@@ -27,7 +27,7 @@ Digital Outdoor Living Lab (DOLL) is located in Albertslund, Denmark and is dedi
     <th colspan="2" style="text-align: center;">Specifications</th>
   </tr>
 <tr>
-    <td><strong>Data Broker<strong></td>
+    <td><strong>Data Broker</strong></td>
     <td>
       {{ config.extra.labels.data_brokers.fiware }}<br>
       <strong>- API:</strong> {{ config.extra.labels.api_brokers.ngsi_ld }}<br>
@@ -35,15 +35,15 @@ Digital Outdoor Living Lab (DOLL) is located in Albertslund, Denmark and is dedi
     </td>
  </tr>
   <tr>
-    <td><strong>Data Source<strong></td>
+    <td><strong>Data Source</strong></td>
     <td>Scorpio Context Broker</td>
   </tr>
   <tr>
-    <td><strong>IdM &amp; Auth<strong></td>
+    <td><strong>IdM &amp; Auth</strong></td>
     <td>KeyCloak</td>
   </tr>
   <tr>
-    <td><strong>Data Publication<strong></td>
+    <td><strong>Data Publication</strong></td>
     <td>RESTful API</td>
   </tr>
 </table>

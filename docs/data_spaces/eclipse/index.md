@@ -26,7 +26,7 @@ CitCom is one of four data spaces built on the same platform; each one is a thin
 | Data | NGSI-LD APIs, queried live | Assets: any HTTP source, transferred by the connectors |
 | Entry point | [marketplace.citcom-vrain-dataspace.eu](https://marketplace.citcom-vrain-dataspace.eu) | [citcom.dataspaceready.eu](https://citcom.dataspaceready.eu) |
 
-The Ajuntament de València also publishes its data here: see [the Valencia example](../../valencia/index.md#the-same-data-in-the-eclipse-edc-data-space).
+The Ajuntament de València can publish its data here too, through a route of its FIWARE connector: see [the Valencia example](../../valencia/index.md#the-same-data-in-the-eclipse-edc-data-space).
 
 ## In this section
 

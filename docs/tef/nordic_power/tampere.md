@@ -14,7 +14,7 @@ description: "The Tampere TEF site of the Nordic super-node (POWER): what it off
     <th colspan="2" style="text-align: center;">Specifications</th>
   </tr>
   <tr>
-    <td><strong>Data Broker<strong></td>
+    <td><strong>Data Broker</strong></td>
     <td>
       {{ config.extra.labels.data_brokers.iot_ticket }}<br>
       <strong>- API:</strong> {{ config.extra.labels.api_brokers.custom }}<br>
@@ -22,15 +22,15 @@ description: "The Tampere TEF site of the Nordic super-node (POWER): what it off
     </td>
   </tr>
   <tr>
-    <td><strong>Data Source<strong></td>
+    <td><strong>Data Source</strong></td>
     <td>&lt;no_specified></td>
   </tr>
   <tr>
-    <td><strong>IdM &amp; Auth<strong></td>
+    <td><strong>IdM &amp; Auth</strong></td>
     <td>&lt;no_specified\></td>
   </tr>
   <tr>
-    <td><strong>Data Publication<strong></td>
+    <td><strong>Data Publication</strong></td>
     <td>&lt;no_specified\></td>
   </tr>
 </table>

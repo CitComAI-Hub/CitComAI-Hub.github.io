@@ -46,6 +46,9 @@ theme:
       toggle:
         icon: material/weather-sunny
         name: Switch to light mode
+# docs/overrides is the theme custom_dir: keep its templates out of the published site
+exclude_docs: |
+  /overrides/
 not_in_nav: |
   /data_spaces/eclipse/architecture.md
   /data_spaces/eclipse/deployment.md
