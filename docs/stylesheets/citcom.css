@@ -1484,3 +1484,10 @@
   }
 }
 
+
+/* ---------- Page facts (last update and authors, under the content) ---------- */
+
+.md-typeset .cc-page-facts {
+  font-size: 0.68rem;
+  color: var(--md-default-fg-color--light);
+}

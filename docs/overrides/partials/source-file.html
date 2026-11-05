@@ -1,0 +1,13 @@
+{#- The facts of the page, in words: "Updated <date> · Joan Ciprià, Sergio Marti". Replaces
+    Material's row of icons with relative times ("1 hour ago", "1 week ago"). -#}
+{% if page.meta and page.meta.git_revision_date_localized %}
+  {% set updated = page.meta.git_revision_date_localized %}
+{% endif %}
+{% set authors = git_info.get("page_authors") if git_info else [] %}
+{% if updated or authors %}
+  <aside class="md-source-file cc-page-facts">
+    {% if updated %}<span>Updated {{ updated }}</span>{% endif %}
+    {% if updated and authors %}<span aria-hidden="true"> · </span>{% endif %}
+    {% if authors %}<span>{% for a in authors %}{{ a.name }}{% if not loop.last %}, {% endif %}{% endfor %}</span>{% endif %}
+  </aside>
+{% endif %}
