@@ -49,7 +49,6 @@ CitCom runs its Testing and Experimentation Facilities (TEFs) in cities across E
       </ol></div>
     </div>
   </div>
-  <p class="cc-tef__more"><a href="sites/">Data broker and API of every site</a></p>
 </div>
 
 ## Shared services
