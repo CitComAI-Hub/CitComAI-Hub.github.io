@@ -17,7 +17,7 @@ next_step:
 
 !!! warning "First version of this guide"
 
-    The configuration comes from the connectors running in the CitCom data space, but this guide has not yet been followed from start to finish on a new cluster. Report anything that does not work in the [repository](https://github.com/CitComAI-Hub/CitComAI-Hub.github.io/issues).
+    The configuration comes from the connectors running in the CitCom.ai Data Space, but this guide has not yet been followed from start to finish on a new cluster. Report anything that does not work in the [repository](https://github.com/CitComAI-Hub/CitComAI-Hub.github.io/issues).
 
 ```mermaid
 flowchart LR

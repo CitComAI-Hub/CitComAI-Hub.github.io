@@ -9,7 +9,7 @@ next_step:
 
 # Valencia: a city platform in the data space
 
-The **Ajuntament de València** (City Council) was one of the first participants of the [FIWARE data space](../data_spaces/fiware.md). Its case is the reference for a city that already runs an urban platform and wants to offer that data to other organisations, without migrating the platform or copying the data.
+The **Ajuntament de València** (City Council) was one of the first participants of the [CitCom.ai Data Space](../data_spaces/index.md). Its case is the reference for a city that already runs an urban platform and wants to offer that data to other organisations, without migrating the platform or copying the data.
 
 Where the [MIAIS](../miais/index.md) shows the side of an AI service, this example shows the side of a **data provider**.
 
@@ -50,7 +50,7 @@ flowchart LR
         OR[("Orion-LD")]
         EDC["Route for EDC<br/>OAuth2"]
     end
-    CONS["Consumers of the<br/>FIWARE data space"]
+    CONS["Consumers of the<br/>CitCom.ai Data Space"]
     EDCC["Eclipse EDC<br/>data space"]
 
     CONS -- "/lepus/ngsi-ld" --> GW
@@ -95,11 +95,11 @@ flowchart LR
 
 The route is deliberately narrow:
 
-- It accepts only tokens with its own scope, which no other client of the realm has. A token for this route does not work on the rest of the connector, and the credentials-based tokens of the FIWARE data space do not work on this route.
+- It accepts only tokens with its own scope, which no other client of the realm has. A token for this route does not work on the rest of the connector, and the credentials-based tokens of the CitCom.ai Data Space do not work on this route.
 - It only allows `GET` on `/entities`, only for the entity types that are published, and with a rate limit.
 - It always returns JSON-LD, so the `@context` travels with the data.
 
-Lepus is the same instance used in the FIWARE data space: both read the same, live data.
+Lepus is the same instance used in the CitCom.ai Data Space: both read the same, live data.
 
 ### What is published
 
@@ -107,7 +107,7 @@ The Valencia datasets that Lepus serves can be published as EDC assets, one per 
 
 ### Differences to keep in mind
 
-| | FIWARE data space | EDC data space |
+| | CitCom.ai Data Space | Eclipse EDC data space |
 |---|---|---|
 | Who is the consumer for the Ajuntament? | Each organisation, by its DID | The EDC connector that holds the asset |
 | Access rules | ODRL policy per purchase, enforced by the Ajuntament's connector | Contract policy in EDC; the Ajuntament's route only knows the client |

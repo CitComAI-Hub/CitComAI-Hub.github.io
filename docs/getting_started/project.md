@@ -26,7 +26,7 @@ The sites are grouped in three **super-nodes**, each with a theme. A super-node 
 | **Theme** | POWER | MOVE | CONNECT |
 | **Focus** | Energy, environment, cybersecurity, ethics, edge learning | Mobility and logistics | Securely connecting citizens, infrastructure, AI and robotics across city services |
 | **Lead** | Denmark | Belgium | Spain |
-| **Countries** | Denmark, Sweden, Finland | Belgium, France, Luxembourg, the Netherlands | Spain, Italy, Poland, Germany |
+| **Countries** | Denmark, Sweden, Finland | Belgium, France, Luxembourg, the Netherlands | Spain, Italy, Poland |
 
 Every site has its own page in the [TEF network](../tef/index.md).
 

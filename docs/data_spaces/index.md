@@ -1,11 +1,11 @@
 ---
-title: The CitCom data space
+title: The CitCom.ai Data Space
 description: "The data space shared by all CitCom partners: how it works today, its marketplace and how to join."
 hide:
   - toc
 ---
 
-# The CitCom data space
+# The CitCom.ai Data Space
 
 <p class="cc-lead">Where CitCom partners share data and AI services under their own rules. Operated by VRAIN-UPV for every partner, built on the FIWARE Data Space Connector, and open to any organisation that joins.</p>
 

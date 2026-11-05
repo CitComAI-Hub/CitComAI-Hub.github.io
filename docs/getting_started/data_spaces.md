@@ -3,15 +3,15 @@ title: Data spaces in 5 minutes
 description: "The core concepts: participant, trust anchor, connector, credential, offer and policy."
 next_step:
   url: data_spaces/
-  title: "The CitCom data space"
-  description: "How the CitCom data space works today, its marketplace and how to join."
+  title: "The CitCom.ai Data Space"
+  description: "How the CitCom.ai Data Space works today, its marketplace and how to join."
 ---
 
 # Data spaces in 5 minutes
 
 A **data space** is a set of rules and software that lets organisations share data while each one keeps control of its own. There is no central database: the data stays with its provider, and the provider decides who can read it and under which conditions.
 
-This page explains the few concepts you need to follow the rest of the site. The [CitCom data space](../data_spaces/index.md) is built on them; [How it works](../data_spaces/fiware.md) shows how they are implemented.
+This page explains the few concepts you need to follow the rest of the site. The [CitCom.ai Data Space](../data_spaces/index.md) is built on them; [How it works](../data_spaces/fiware.md) shows how they are implemented.
 
 ## The pieces
 
@@ -63,7 +63,7 @@ flowchart TB
 3. It presents the credential to the provider's connector and receives a short-lived access token.
 4. It calls the data API with that token. The connector checks the policy and returns the data.
 
-Nobody shares passwords, and the provider never creates accounts for consumers: trust comes from the trust anchor, and access from the contract. The [FIWARE data space](../data_spaces/fiware.md#flows) page shows these steps as diagrams.
+Nobody shares passwords, and the provider never creates accounts for consumers: trust comes from the trust anchor, and access from the contract. [How the data space works](../data_spaces/fiware.md#flows) shows these steps as diagrams.
 
 ## Why not just an API key?
 

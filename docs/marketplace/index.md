@@ -9,7 +9,7 @@ next_step:
 
 # Marketplace
 
-The **CitCom marketplace** is where the participants of the FIWARE data space publish their datasets and services, and where other organisations find and buy them. It is the place to find what is available: the datasets and services of every participant, with their descriptions and terms of use.
+The **CitCom marketplace** is where the participants of the CitCom.ai Data Space publish their datasets and services, and where other organisations find and buy them. It is the place to find what is available: the datasets and services of every participant, with their descriptions and terms of use.
 
 [Open the marketplace](https://marketplace.citcom-vrain-dataspace.eu){ .md-button .md-button--primary }
 

@@ -7,7 +7,7 @@ description: "atesta-id-wallet, made in CitCom, and Lissi ID Wallet."
 
 A wallet keeps your verifiable credentials and presents them when you log in, by scanning a QR code. In CitCom you need one to log in to the [marketplace](https://marketplace.citcom-vrain-dataspace.eu) and to the web services of the data space, such as the [MIAIS](../miais/index.md).
 
-Both wallets below work with the CitCom data space: they receive credentials with OpenID4VCI and present them with OpenID4VP, in SD-JWT format (`dc+sd-jwt`).
+Both wallets below work with the CitCom.ai Data Space: they receive credentials with OpenID4VCI and present them with OpenID4VP, in SD-JWT format (`dc+sd-jwt`).
 
 <div class="grid cards" markdown>
 
