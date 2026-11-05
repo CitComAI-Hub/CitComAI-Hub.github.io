@@ -51,6 +51,7 @@ hide:
       <span class="cc-infra__conn">Connector</span>
     </a>
   </div>
+  <div class="cc-infra__cta-row"><a class="cc-infra__cta" href="../guides/join/">Join the data space</a></div>
 </div>
 
 <div class="cc-steps" markdown="0">
@@ -60,8 +61,6 @@ hide:
     <li><span class="cc-infra__step">3</span><span><strong>Buy.</strong> VRAIN-UPV buys the offer. The purchase sets up the contract in the Ajuntament's connector.</span></li>
     <li><span class="cc-infra__step">4</span><span><strong>Read.</strong> The MIAIS of VRAIN-UPV reads the data from the Ajuntament's connector. The data never goes through the shared services.</span></li>
   </ol>
-  <div class="cc-infra__cta-row"><a class="cc-infra__cta" href="../guides/join/">Join the data space</a>
-</div>
 </div>
 
 The Ajuntament de València and VRAIN-UPV are the first participants, and both are told step by step as worked examples. The technical view, with every component and the public addresses, is in [How it works](fiware.md#the-deployment-today).

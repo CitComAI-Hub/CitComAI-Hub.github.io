@@ -426,6 +426,20 @@
   font-weight: 700;
 }
 
+/* Tip in the brand blue instead of Material's teal */
+.md-typeset .admonition.tip,
+.md-typeset details.tip {
+  border-color: var(--md-accent-fg-color);
+}
+.md-typeset .tip > .admonition-title,
+.md-typeset .tip > summary {
+  background-color: var(--md-accent-fg-color--transparent);
+}
+.md-typeset .tip > .admonition-title::before,
+.md-typeset .tip > summary::before {
+  background-color: var(--md-accent-fg-color);
+}
+
 /* ---------- Sidebar ---------- */
 
 .md-nav__title {
@@ -997,8 +1011,8 @@
   line-height: 1.55;
 }
 .cc-infra__legend li .cc-infra__step { margin-top: -0.05rem; }
-.cc-steps { margin: 0 0 1.6rem; }
-.cc-infra__cta-row { margin-top: 1.4rem; }
+.cc-steps { margin: 2.4rem 0 2rem; }
+.cc-infra__cta-row { margin-top: 1.4rem; text-align: center; }
 .cc-infra__cta {
   display: inline-block;
   padding: 0.55rem 2.2rem;
