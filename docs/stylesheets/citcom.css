@@ -83,6 +83,17 @@
   --md-mermaid-label-fg-color: #e8e9ee;
 }
 
+/* Mermaid in the language of the data space map: nodes on the page background with a soft blue
+   border, groups on the faint tint. The diagram is drawn in a shadow root, so only custom
+   properties reach it; Material strokes nodes with the node-fg colour (text uses label-fg) and
+   paints groups with the lightest/lighter greys, so those are redefined on the diagram only. */
+.md-typeset .mermaid {
+  --md-mermaid-node-bg-color: var(--md-default-bg-color);
+  --md-mermaid-node-fg-color: var(--cc-blue-line);
+  --md-default-fg-color--lightest: var(--cc-tint);
+  --md-default-fg-color--lighter: var(--cc-blue-line);
+}
+
 /* ---------- Header ---------- */
 
 .cc-header {
