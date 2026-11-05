@@ -1,0 +1,27 @@
+name: Propose a page or a tool
+description: A guide, a TEF site page or a tool of the Toolbox that the Hub should have.
+labels: [proposal]
+body:
+  - type: dropdown
+    id: kind
+    attributes:
+      label: What
+      options:
+        - A guide
+        - A page for a TEF site
+        - A tool for the Toolbox
+        - Something else
+    validations:
+      required: true
+  - type: textarea
+    id: content
+    attributes:
+      label: Description
+      description: What it is, who it is for, and links to the material (repository, documentation).
+    validations:
+      required: true
+  - type: input
+    id: contact
+    attributes:
+      label: Organisation
+      description: The CitCom partner or TEF site behind it.
