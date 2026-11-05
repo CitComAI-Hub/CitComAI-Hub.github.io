@@ -20,6 +20,10 @@
 }
 
 /* ---------- Colour schemes ---------- */
+/* Mermaid diagrams in the site palette: ink text, blue edges, the faint blue for nodes */
+:root {
+  --md-mermaid-font-family: "Hanken Grotesk", system-ui, sans-serif;
+}
 
 [data-md-color-scheme="default"] {
   --md-primary-fg-color: #ffffff;
@@ -44,6 +48,11 @@
   --cc-tint: #f4f6fc; /* the blue, barely: the home intro and hovered rows */
   --cc-blue-line: #b7c1ec; /* the blue, soft: arrows at rest */
   --cc-blue-mid: #7d8ede; /* the blue, half way: accent rules on cards */
+  --md-mermaid-node-bg-color: #f4f6fc;
+  --md-mermaid-node-fg-color: #15141a;
+  --md-mermaid-edge-color: #7d8ede;
+  --md-mermaid-label-bg-color: #ffffff;
+  --md-mermaid-label-fg-color: #15141a;
 }
 
 [data-md-color-scheme="slate"] {
@@ -67,6 +76,11 @@
   --cc-tint: #20232b;
   --cc-blue-line: #4a5590;
   --cc-blue-mid: #6f7fd0;
+  --md-mermaid-node-bg-color: #20232b;
+  --md-mermaid-node-fg-color: #e8e9ee;
+  --md-mermaid-edge-color: #6f7fd0;
+  --md-mermaid-label-bg-color: #1a1b1e;
+  --md-mermaid-label-fg-color: #e8e9ee;
 }
 
 /* ---------- Header ---------- */
@@ -1036,85 +1050,130 @@
   .cc-infra__line::after { right: -5px; top: auto; bottom: -4px; border: 6px solid transparent; border-top: 8px solid var(--md-accent-fg-color); border-bottom: 0; }
 }
 
-/* ---------- Toolbox ---------- */
+/* ---------- Toolbox: the cards of the rest of the site ---------- */
 .cc-tools {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 0.8rem;
-  margin: 1.2rem 0 1.6rem;
+  margin: 1.2rem 0 0.8rem;
 }
 .md-typeset .cc-tool {
   position: relative;
   display: flex;
   flex-direction: column;
-  padding: 1.1rem 1.1rem 1rem;
+  padding: 1rem 1.1rem 0.9rem;
   border: 1px solid var(--cc-border);
-  border-top: 3px solid var(--tone, var(--cc-blue-mid));
-  border-radius: var(--cc-radius-sm);
   background: var(--md-default-bg-color);
-  transition: background-color 0.15s, border-color 0.15s;
+  transition: border-color 0.15s, background-color 0.15s;
 }
-.md-typeset .cc-tool:not(.cc-tool--add):hover {
-  border-top-color: var(--md-accent-fg-color);
+.md-typeset .cc-tool:hover {
+  border-color: var(--md-typeset-color);
   background: var(--cc-tint);
 }
-.md-typeset .cc-tool:hover h3 a { color: var(--md-accent-fg-color); }
-.md-typeset .cc-tool h3 { margin: 0; padding-right: 2rem; font-size: 1.05rem; font-weight: 500; }
-.md-typeset .cc-tool h3 a { color: var(--md-default-fg-color); }
-.md-typeset .cc-tool h3 a::after { content: ""; position: absolute; inset: 0; } /* whole card clickable */
+.md-typeset .cc-tool h3 { margin: 0 0 0.3rem; font-size: 1.05rem; font-weight: 500; }
+.md-typeset .cc-tool p { margin: 0; }
 .md-typeset .cc-tool__meta {
-  margin: 0.15rem 0 0.6rem;
+  margin-bottom: 0.6rem !important;
   font-size: 0.66rem;
-  font-weight: 500;
-  color: var(--md-typeset-color);
+  line-height: 1.45;
+  color: var(--md-default-fg-color--light);
 }
 .md-typeset .cc-tool > p:not([class]) {
-  margin: 0;
   font-size: 0.72rem;
   line-height: 1.5;
-  color: var(--md-typeset-color);
 }
-.md-typeset .cc-tool__ext {
-  position: absolute;
-  top: 0.95rem;
-  right: 0.9rem;
-  z-index: 1;
-  display: grid;
-  place-items: center;
-  width: 1.6rem;
-  height: 1.6rem;
-  border-radius: 50%;
-  color: var(--md-default-fg-color--lighter);
-  transition: background 0.15s, color 0.15s;
-}
-.md-typeset .cc-tool__ext:hover { background: var(--cc-surface); color: var(--md-default-fg-color); }
-.cc-tool__ext svg { width: 0.95rem; height: 0.95rem; }
-.md-typeset .cc-tool--add { border-style: dashed; border-top-width: 1px; background: transparent; }
-.cc-minitools {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 0.5rem;
-  margin: 0.8rem 0 1.6rem;
-}
-.md-typeset .cc-minitools a {
+/* the action at the bottom, level across a row; the whole card opens the guide */
+.md-typeset .cc-tool__links {
   display: flex;
-  flex-direction: column;
-  gap: 0.15rem;
-  padding: 0.7rem 0.8rem;
-  border: 1px solid var(--cc-border);
-  border-left: 3px solid var(--cc-blue-mid);
-  border-radius: var(--cc-radius-sm);
-  color: var(--md-default-fg-color);
-  transition: background 0.15s;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: auto !important;
+  padding-top: 0.8rem;
+  font-size: 0.72rem;
 }
-.md-typeset .cc-minitools a:hover { background: var(--cc-tint); border-left-color: var(--md-accent-fg-color); }
-.cc-minitools strong { font-size: 0.74rem; }
-.cc-minitools span { font-size: 0.66rem; line-height: 1.4; color: var(--md-typeset-color); }
+.md-typeset a.cc-tool__go {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-weight: 500;
+  color: var(--md-accent-fg-color);
+}
+.md-typeset a.cc-tool__go::before {
+  content: "";
+  width: 0.85rem;
+  height: 0.85rem;
+  background-color: currentColor;
+  -webkit-mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>') center / contain no-repeat;
+  mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>') center / contain no-repeat;
+  transition: transform 0.15s;
+}
+.md-typeset .cc-tool:hover a.cc-tool__go::before { transform: translateX(0.2rem); }
+.md-typeset a.cc-tool__go::after { content: ""; position: absolute; inset: 0; }
+.md-typeset a.cc-tool__ext {
+  position: relative;
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  color: var(--md-default-fg-color--light);
+}
+.md-typeset a.cc-tool__ext::after {
+  content: "";
+  width: 0.62rem;
+  height: 0.62rem;
+  background-color: currentColor;
+  -webkit-mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7M19 19H5V5h7V3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7h-2v7Z"/></svg>') center / contain no-repeat;
+  mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7M19 19H5V5h7V3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7h-2v7Z"/></svg>') center / contain no-repeat;
+}
+.md-typeset a.cc-tool__ext:hover { color: var(--md-typeset-color); text-decoration: underline; text-underline-offset: 3px; }
+@media (prefers-reduced-motion: reduce) {
+  .md-typeset a.cc-tool__go::before { transition: none; }
+}
+
+/* Ruled list of links with the arrow of the cards (More tools) */
+.md-typeset ul.cc-rows {
+  list-style: none;
+  margin: 0.8rem 0 1.6rem;
+  padding: 0;
+  border-top: 1px solid var(--md-typeset-color);
+}
+.md-typeset ul.cc-rows--two {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 2.4rem;
+}
+[dir] .md-typeset ul.cc-rows li { margin: 0; border-bottom: 1px solid var(--cc-border); }
+.md-typeset ul.cc-rows a {
+  position: relative;
+  display: block;
+  padding: 0.65rem 2.4rem 0.65rem 0;
+  color: var(--md-typeset-color);
+  text-decoration: none;
+}
+.md-typeset ul.cc-rows strong { display: block; font-size: 0.8rem; font-weight: 500; }
+.md-typeset ul.cc-rows span { display: block; font-size: 0.7rem; line-height: 1.45; }
+.md-typeset ul.cc-rows a:hover span { color: var(--md-typeset-color); }
+.md-typeset ul.cc-rows a::after {
+  content: "";
+  position: absolute;
+  right: 0.2rem;
+  top: 50%;
+  width: 0.9rem;
+  height: 0.9rem;
+  margin-top: -0.45rem;
+  background-color: var(--cc-blue-line);
+  -webkit-mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>') center / contain no-repeat;
+  mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>') center / contain no-repeat;
+  transition: transform 0.15s, background-color 0.15s;
+}
+.md-typeset ul.cc-rows a:hover strong { color: var(--md-accent-fg-color); }
+.md-typeset ul.cc-rows a:hover::after { background-color: var(--md-accent-fg-color); transform: translateX(0.2rem); }
 @media screen and (max-width: 60em) {
-  .cc-tools, .cc-minitools { grid-template-columns: repeat(2, 1fr); }
+  .cc-tools { grid-template-columns: repeat(2, 1fr); }
 }
 @media screen and (max-width: 44.9375em) {
-  .cc-tools, .cc-minitools { grid-template-columns: 1fr; }
+  .cc-tools, .md-typeset ul.cc-rows--two { grid-template-columns: 1fr; }
 }
 
 /* ---------- Labels of the TEF pages (extra.labels) ---------- */
@@ -1269,6 +1328,9 @@
 .md-typeset.md-content__inner > .cc-lead {
   max-width: 34rem;
 }
+.md-typeset.md-content__inner > ul.cc-rows {
+  max-width: none;
+}
 .md-typeset .cc-search kbd,
 .cc-search kbd {
   box-shadow: none;
@@ -1299,6 +1361,8 @@
 }
 .md-typeset .cc-role li > a,
 .md-typeset ul.cc-more li > a,
+.md-typeset ul.cc-rows li > a,
+.md-typeset .cc-tool__links > a,
 .md-typeset.cc-tasks li > a,
 .md-footer .md-typeset li > a,
 .md-footer-meta li > a,
@@ -1308,7 +1372,6 @@
 .md-typeset .cc-role li > a:hover,
 .md-typeset ul.cc-more li > a:hover,
 .md-typeset.cc-tasks a:hover strong,
-.md-typeset .cc-minitools a:hover strong,
 .md-typeset .cc-tool h3 a:hover {
   color: var(--md-accent-fg-color);
 }
