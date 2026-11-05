@@ -141,6 +141,7 @@ features = [
   "navigation.instant",
   "navigation.instant.progress",
   "navigation.path",
+  "navigation.prune",
   "navigation.sections",
   "navigation.tabs",
   "navigation.top",
