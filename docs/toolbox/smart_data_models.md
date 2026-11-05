@@ -9,7 +9,7 @@ next_step:
 
 # Smart Data Models
 
-[Smart Data Models](https://smartdatamodels.org/) is the shared vocabulary of [MIM2](../getting_started/interoperability.md#mims): open data models for smart cities, energy, environment, mobility and more, maintained by FIWARE, TM Forum, IUDX and OASC. A model fixes the entity type, the attribute names, their units and their meaning, and publishes a JSON-LD `@context` for NGSI-LD.
+[Smart Data Models](https://smartdatamodels.org/) is the shared vocabulary of [MIM2 Representing Data](../getting_started/interoperability.md#mims), used together with [NGSI-LD](ngsi_ld.md) as one package: open data models for smart cities, energy, environment, mobility and more, maintained by FIWARE, TM Forum, IUDX and OASC. A model fixes the entity type, the attribute names, their units and their meaning, and publishes a JSON-LD `@context` for NGSI-LD.
 
 When two cities publish their waste containers as `WasteContainer`, a service written for one works with the other.
 
