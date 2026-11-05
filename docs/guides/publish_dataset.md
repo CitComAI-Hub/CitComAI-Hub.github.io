@@ -21,37 +21,58 @@ description: "Offer a dataset in the marketplace with its access policy."
 
 One offer per dataset keeps things simple. For each one, write down:
 
-- the **path** of its route, e.g. `/ngsi-ld` or `/lepus/ngsi-ld`;
-- its **entity type**, e.g. `WasteContainer`;
-- the **credential and role** that buyers will present: `MachineCredential` and a role such as `clearence1`.
+| Placeholder | What it is | Example |
+|---|---|---|
+| `<dataset>` | A short name for the dataset: the name of its policy | `bike-stations` |
+| `<path>` | The path of its route in your gateway | `/ngsi-ld` |
+| `<EntityType>` | Its entity type, a [Smart Data Model](../toolbox/smart_data_models.md) | `BikeHireDockingStation` |
+| `<participant>`, `<domain>` | Your participant and the domain of your connector's host names | `acme`, `example.org` |
+
+Buyers read it with a `MachineCredential` that carries the role `clearence1`. That is the role every data offer of the data space asks for, so a buyer creates it once for all its purchases; the realms created by the onboarding portal already have it.
 
 ### 2. Write the two characteristics
 
-An offer carries two characteristics that your connector applies on every purchase:
+An offer carries two characteristics that your connector applies on every purchase.
 
-=== "Verifier policy"
+**Verifier policy** (`credentialsConfiguration`): which credentials the verifier accepts from the buyer:
 
-    Which credentials the verifier accepts from the buyer (`credentialsConfiguration`): the credential type and the allowed values of the data space roles.
-
-    ```json
-    {
+```json
+{
+  "name": "Verifier policy",
+  "valueType": "credentialsConfiguration",
+  "productSpecCharacteristicValue": [{
+    "isDefault": true,
+    "value": [{
       "credentialsType": "MachineCredential",
       "claims": [{
         "name": "roles",
         "path": "$.roles[?(@.target==\"roles-dataspace\")].names[*]",
         "allowedValues": ["clearence1"]
       }]
-    }
-    ```
+    }]
+  }]
+}
+```
 
-=== "ODRL policy"
+**ODRL policy** (`authorizationPolicy`): what the buyer can do, here read the `<EntityType>` entities under `<path>`:
 
-    What the buyer can do (`authorizationPolicy`): here, use the `WasteContainer` entities under `/lepus/ngsi-ld`, with a `MachineCredential` that has the role `clearence1`.
-
-    ```json
-    {
+```json
+{
+  "name": "ODRL policy",
+  "valueType": "authorizationPolicy",
+  "productSpecCharacteristicValue": [{
+    "isDefault": true,
+    "value": [{
+      "@context": {
+        "odrl": "http://www.w3.org/ns/odrl/2/",
+        "xsd": "http://www.w3.org/2001/XMLSchema#",
+        "vc": "https://www.w3.org/2018/credentials#",
+        "http": "https://github.com/SEAMWARE/odrl-pap/http#",
+        "ngsi-ld": "https://uri.etsi.org/ngsi-ld/"
+      },
+      "@id": "https://<participant>.<domain>/policy/<dataset>-access",
+      "odrl:uid": "https://<participant>.<domain>/policy/<dataset>-access",
       "@type": "odrl:Policy",
-      "odrl:uid": "https://<participant>.<domain>/policy/waste-containers-access",
       "odrl:permission": [{
         "odrl:assigner": "did:web:<participant>.<domain>",
         "odrl:action": "odrl:use",
@@ -61,10 +82,10 @@ An offer carries two characteristics that your connector applies on every purcha
           "odrl:refinement": {
             "@type": "odrl:LogicalConstraint",
             "odrl:and": [
-              {"odrl:leftOperand": "http:path", "odrl:operator": "http:isInPath",
-               "odrl:rightOperand": "/lepus/ngsi-ld"},
-              {"odrl:leftOperand": "ngsi-ld:entityType", "odrl:operator": "odrl:eq",
-               "odrl:rightOperand": "WasteContainer"}
+              { "@type": "odrl:Constraint", "odrl:leftOperand": "http:path", "odrl:operator": "http:isInPath",
+                "odrl:rightOperand": { "@value": "<path>", "@type": "xsd:string" } },
+              { "@type": "odrl:Constraint", "odrl:leftOperand": "ngsi-ld:entityType", "odrl:operator": "odrl:eq",
+                "odrl:rightOperand": { "@value": "<EntityType>", "@type": "xsd:string" } }
             ]
           }
         },
@@ -74,18 +95,22 @@ An offer carries two characteristics that your connector applies on every purcha
           "odrl:refinement": {
             "@type": "odrl:LogicalConstraint",
             "odrl:and": [
-              {"odrl:leftOperand": "vc:role", "odrl:operator": "odrl:hasPart",
-               "odrl:rightOperand": "clearence1"},
-              {"odrl:leftOperand": "vc:type", "odrl:operator": "odrl:hasPart",
-               "odrl:rightOperand": "MachineCredential"}
+              { "@type": "odrl:Constraint", "odrl:leftOperand": "vc:role", "odrl:operator": "odrl:hasPart",
+                "odrl:rightOperand": { "@value": "clearence1", "@type": "xsd:string" } },
+              { "@type": "odrl:Constraint", "odrl:leftOperand": "vc:type", "odrl:operator": "odrl:hasPart",
+                "odrl:rightOperand": { "@value": "MachineCredential", "@type": "xsd:string" } }
             ]
           }
         }
       }]
-    }
-    ```
+    }]
+  }]
+}
+```
 
-    The full version, with the `@context` and typed values, is in the [Valencia offers](../valencia/index.md#data-in-the-data-space) used as reference.
+!!! example "A real one: the Valencia datasets"
+
+    The Ajuntament de València publishes [four datasets](../valencia/index.md#data-in-the-data-space) this way, one offer each. For its waste containers, `<dataset>` is `waste-containers`, `<path>` is `/lepus/ngsi-ld` and `<EntityType>` is `WasteContainer`.
 
 ### 3. Create the offer in the marketplace
 
@@ -93,7 +118,7 @@ Log in to the [marketplace](https://marketplace.citcom-vrain-dataspace.eu) with 
 
 1. Create a **catalogue** for your organisation, if you do not have one.
 2. Create the **product specification**: name, description, terms of use, an image (it is required to show the offer on the home page) and the two characteristics above.
-3. Create the **product offering** in your catalogue, with a [category](../marketplace/index.md#categories) and a price (free is fine), and launch it.
+3. Create the **product offering** in your catalogue, with a [category](../marketplace/index.md#how-the-marketplace-is-organised) and a price (free is fine), and launch it.
 
 Write all texts in English: CitCom is international.
 
