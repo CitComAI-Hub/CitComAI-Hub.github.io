@@ -15,7 +15,7 @@
       {% include ".icons/material/menu.svg" %}
     </label>
     <ul class="cc-header__links">
-      {%- for item in nav if item.children and item.title not in config.extra.hidden_sections %}
+      {%- for item in nav.items if item.children and item.title not in config.extra.hidden_sections %}
       <li><a href="/{{ first_url(item) }}" data-cc-section="{{ item.title }}" class="{% if item.active %}cc-header__link--active{% endif %}">{{ item.title }}</a></li>
       {%- endfor %}
     </ul>
@@ -23,7 +23,7 @@
       {% include "partials/palette.html" %}
       {% include "partials/javascripts/palette.html" %}
     {% endif %}
-    {% if "material/search" in config.plugins %}
+    {% if "search" in config.plugins %}
       <label class="md-header__button md-icon" for="__search">
         {% include ".icons/material/magnify.svg" %}
       </label>

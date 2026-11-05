@@ -1,0 +1,279 @@
+# Configuration of the CitCom.ai Hub site, built with Zensical (https://zensical.org).
+# Build: `make build` · Preview: `make serve` · See README.md.
+
+[project]
+site_name = "CitCom<sup>AI</sup> Hub"
+site_url = "https://citcomai-hub.github.io"
+site_description = "The technical hub of the CitCom.ai TEF: data spaces, tools and guides to build AI services for smart cities."
+repo_url = "https://github.com/CitComAI-Hub/CitComAI-Hub.github.io"
+repo_name = "CitComAI-Hub/CitComAI-Hub.github.io"
+edit_uri = "edit/main/docs/"
+copyright = "Copyright &copy; 2023 - 2026 CitCom.ai Hub"
+site_dir = "public"
+
+extra_css = [
+  "stylesheets/extra.css",
+  "stylesheets/citcom.css",
+  "assets/css/ai_assess_catalog.css",
+]
+extra_javascript = [
+  # Mermaid pinned: the theme would load the latest 12.x, which lays out our diagrams differently
+  "https://unpkg.com/mermaid@10.6.1/dist/mermaid.min.js",
+  "javascripts/external-links.js",
+  "javascripts/catalog.js",
+  "javascripts/header-section.js",
+]
+
+# The theme templates live in docs/overrides: keep them out of the published pages
+exclude_docs = """
+/overrides/
+"""
+# Sergio's EDC pages, linked from data_spaces/eclipse/index.md
+not_in_nav = """
+/data_spaces/eclipse/architecture.md
+/data_spaces/eclipse/deployment.md
+"""
+
+# The header shows the top-level sections except those in extra.hidden_sections.
+# Moving or removing a page? Add its old path to plugins.redirects below.
+nav = [
+  { "Home" = "index.md" },
+  { "Get started" = [
+    "getting_started/index.md",
+    { "The project and the TEFs" = "getting_started/project.md" },
+    { "Interoperability" = "getting_started/interoperability.md" },
+    { "Data spaces in 5 minutes" = "getting_started/data_spaces.md" },
+  ] },
+  { "Data space" = [
+    "data_spaces/index.md",
+    { "How it works" = "data_spaces/fiware.md" },
+    { "Marketplace" = "marketplace/index.md" },
+    { "Eclipse EDC data space" = "data_spaces/eclipse/index.md" },
+  ] },
+  { "Guides" = [
+    "guides/index.md",
+    { "Join the data space" = "guides/join.md" },
+    { "Get a wallet and your credentials" = "guides/wallet.md" },
+    { "Use data from your code" = "guides/consume_data.md" },
+    { "Deploy your own connector" = "guides/deploy_connector.md" },
+    { "Publish a dataset" = "guides/publish_dataset.md" },
+    { "Publish a web service" = "guides/publish_service.md" },
+    { "Example: MIAIS, an AI service" = "miais/index.md" },
+    { "Example: Valencia, a city platform" = "valencia/index.md" },
+  ] },
+  { "Toolbox" = [
+    "toolbox/index.md",
+    { "Lepus" = "toolbox/lepus.md" },
+    { "NGSI-LD and FiLiP" = "toolbox/ngsi_ld.md" },
+    { "ds-consumer-auth" = "toolbox/ds_consumer_auth.md" },
+    { "Wallets" = "toolbox/wallets.md" },
+    { "Smart Data Models" = "toolbox/smart_data_models.md" },
+    { "More tools" = [
+      { "AI Toolkit" = "toolbox/ai_toolkit.md" },
+      { "AI Logging Monitor" = "toolbox/ai_logging_monitor.md" },
+      { "MIMs Toolkit" = "toolbox/mims_toolkit.md" },
+      { "LDT Toolkit" = "toolbox/ldt_toolkit.md" },
+      { "FIWARE IoT Agent" = "toolbox/iot_agent.md" },
+      { "Other tools" = "toolbox/other_toolkit.md" },
+    ] },
+  ] },
+  { "TEF network" = [
+    "tef/index.md",
+    { "Sites in detail" = "tef/sites.md" },
+    { "Nordic - POWER" = [
+      "tef/nordic_power/doll_living_lab.md",
+      "tef/nordic_power/aarhus_city_lab.md",
+      "tef/nordic_power/net_zero_innovation_hub.md",
+      "tef/nordic_power/dti.md",
+      "tef/nordic_power/center_denmark.md",
+      "tef/nordic_power/gate21.md",
+      "tef/nordic_power/rise.md",
+      "tef/nordic_power/tampere.md",
+    ] },
+    { "Central - MOVE" = [
+      "tef/central_move/mechelen.md",
+      "tef/central_move/brussels.md",
+      "tef/central_move/eindhoven.md",
+      "tef/central_move/paris.md",
+      "tef/central_move/list.md",
+    ] },
+    { "South - CONNECT" = [
+      "tef/south_connect/valencia.md",
+      "tef/south_connect/milano.md",
+      "tef/south_connect/warsaw.md",
+    ] },
+    { "AI Trustworthiness Label" = [
+      "ai_assessment/index.md",
+      "ai_assessment/ai_assessment_catalogue.md",
+    ] },
+    { "Local Digital Twins" = "local_digital_twins/index.md" },
+  ] },
+  { "Help" = [
+    "faq/index.md",
+    { "Request changes" = "faq/pull_request_procedure.md" },
+  ] },
+]
+
+[project.extra]
+generator = false
+marketplace_url = "https://marketplace.citcom-vrain-dataspace.eu"
+hidden_sections = ["Help"]
+
+# ---------------------------------------------------------------------------
+# Theme: Material's classic look, restyled in docs/stylesheets/citcom.css
+# ---------------------------------------------------------------------------
+
+[project.theme]
+variant = "classic"
+custom_dir = "docs/overrides"
+logo = "assets/logo.png"
+favicon = "assets/favicon.png"
+features = [
+  "content.action.edit",
+  "content.code.annotate",
+  "content.code.copy",
+  "content.tabs.link",
+  "navigation.indexes",
+  "navigation.instant",
+  "navigation.instant.progress",
+  "navigation.sections",
+  "navigation.tabs",
+  "navigation.top",
+  "search.highlight",
+  "search.suggest",
+  "toc.follow",
+]
+
+[project.theme.font]
+text = "Hanken Grotesk"
+code = "JetBrains Mono"
+
+[[project.theme.palette]]
+media = "(prefers-color-scheme: light)"
+scheme = "default"
+primary = "custom"
+accent = "custom"
+toggle.icon = "material/weather-night"
+toggle.name = "Switch to dark mode"
+
+[[project.theme.palette]]
+media = "(prefers-color-scheme: dark)"
+scheme = "slate"
+primary = "custom"
+accent = "custom"
+toggle.icon = "material/weather-sunny"
+toggle.name = "Switch to light mode"
+
+# ---------------------------------------------------------------------------
+# Markdown
+# ---------------------------------------------------------------------------
+
+[project.markdown_extensions.admonition]
+[project.markdown_extensions.attr_list]
+[project.markdown_extensions.def_list]
+[project.markdown_extensions.md_in_html]
+[project.markdown_extensions.pymdownx.details]
+[project.markdown_extensions.pymdownx.inlinehilite]
+
+[project.markdown_extensions.pymdownx.highlight]
+anchor_linenums = true
+line_spans = "__span"
+pygments_lang_class = true
+
+[project.markdown_extensions.pymdownx.superfences]
+custom_fences = [
+  { name = "mermaid", class = "mermaid", format = "pymdownx.superfences.fence_code_format" },
+]
+
+[project.markdown_extensions.pymdownx.tabbed]
+alternate_style = true
+slugify = { object = "pymdownx.slugs.slugify", kwds = { case = "lower" } }
+
+[project.markdown_extensions.pymdownx.tasklist]
+custom_checkbox = true
+
+# Icons in the text (:lucide-database:); the Lucide set is in docs/overrides/.icons
+[project.markdown_extensions.pymdownx.emoji]
+emoji_index = "zensical.extensions.emoji.twemoji"
+emoji_generator = "zensical.extensions.emoji.to_svg"
+options.custom_icons = ["docs/overrides/.icons"]
+
+# ---------------------------------------------------------------------------
+# Plugins (search is always on)
+# ---------------------------------------------------------------------------
+
+# {{ config.extra.labels.* }} in the TEF site pages
+[project.plugins.macros]
+
+# Click to enlarge images
+[project.plugins.glightbox]
+width = "100%"
+
+# Old URLs of the site, so that external links keep working
+[project.plugins.redirects.redirect_maps]
+"welcome.md" = "getting_started/index.md"
+"getting_started/nodes_countries.md" = "tef/index.md"
+"getting_started/data_spaces/fundaments_deployment.md" = "getting_started/data_spaces.md"
+"getting_started/get_involved/index.md" = "guides/join.md"
+"getting_started/get_involved/join.md" = "guides/join.md"
+"data_catalog/index.md" = "marketplace/index.md"
+"data_catalog/instructions.md" = "marketplace/index.md"
+"data_catalog/metadata_datasets/nordic_citcom_gtm.md" = "marketplace/index.md"
+"data_catalog/metadata_datasets/north_center denmark_center denmark.md" = "marketplace/index.md"
+"data_catalog/metadata_datasets/south_italy_mithraeum-of-circus-maximus.md" = "marketplace/index.md"
+"data_catalog/metadata_datasets/south_italy_uptown.md" = "marketplace/index.md"
+"data_catalog/metadata_datasets/south_spain_valencia.md" = "marketplace/index.md"
+"documentation/index.md" = "guides/index.md"
+"documentation/verifiable_credentials/index.md" = "guides/wallet.md"
+"documentation/verifiable_credentials/keycloak/index.md" = "guides/deploy_connector.md"
+"documentation/trust_frameworks/index.md" = "data_spaces/fiware.md"
+"documentation/trust_frameworks/fiware_trust_anchor/index.md" = "data_spaces/fiware.md"
+"documentation/data_space_connectors/index.md" = "data_spaces/index.md"
+"documentation/data_space_connectors/fiware/index.md" = "data_spaces/fiware.md"
+"documentation/data_space_connectors/eclipse/index.md" = "data_spaces/eclipse/index.md"
+"documentation/data_federation/index.md" = "toolbox/lepus.md"
+"documentation/data_federation/ngsiv2_to_ld/lepus.md" = "toolbox/lepus.md"
+"documentation/data_federation/ngsiv2_to_ld/iot_agent.md" = "toolbox/iot_agent.md"
+"documentation/mv_data_space/index.md" = "data_spaces/index.md"
+"documentation/mv_data_space/fiware/trust_anchor.md" = "guides/deploy_connector.md"
+"documentation/mv_data_space/fiware/consumer.md" = "guides/deploy_connector.md"
+"documentation/mv_data_space/fiware/provider.md" = "guides/deploy_connector.md"
+"documentation/mv_data_space/eclipse/index.md" = "data_spaces/eclipse/index.md"
+"documentation/mv_data_space/eclipse/architecture.md" = "data_spaces/eclipse/architecture.md"
+"documentation/mv_data_space/eclipse/deployment.md" = "data_spaces/eclipse/deployment.md"
+"documentation/local_digital_twins/index.md" = "local_digital_twins/index.md"
+"documentation/ai_assessment/index.md" = "ai_assessment/index.md"
+"documentation/ai_assessment/ai_assessment_catalogue.md" = "ai_assessment/ai_assessment_catalogue.md"
+"services/index.md" = "marketplace/index.md"
+"services/waste_collection.md" = "miais/index.md"
+"services/GenAI-MVP.md" = "marketplace/index.md"
+"services/healthy_routes.md" = "marketplace/index.md"
+"services/wastecontainer_location_optimization.md" = "marketplace/index.md"
+"resources/index.md" = "tef/index.md"
+"data_spaces/bridge.md" = "valencia/index.md#the-same-data-in-the-eclipse-edc-data-space"
+
+# Chips of the TEF site pages, used through the macros plugin
+[project.extra.labels.data_brokers]
+fiware = "<span class=\"cc-chip cc-chip--broker\">FIWARE</span>"
+kafka = "<span class=\"cc-chip cc-chip--broker\">Kafka</span>"
+iot_ticket = "<span class=\"cc-chip cc-chip--broker\">IoT-Ticket Azure</span>"
+
+[project.extra.labels.api_brokers]
+ngsi_v2 = "<span class=\"cc-chip cc-chip--v2\">NGSI-v2</span>"
+ngsi_ld = "<span class=\"cc-chip cc-chip--ld\">NGSI-LD</span>"
+custom = "<span class=\"cc-chip cc-chip--custom\">Custom</span>"
+
+[project.extra.labels.ds4ssc_compliant.yes_comp]
+data_sources = "<span class=\"cc-chip cc-chip--yes\">Data Sources</span>"
+data_broker = "<span class=\"cc-chip cc-chip--yes\">Data Broker</span>"
+data_api = "<span class=\"cc-chip cc-chip--yes\">Data API</span>"
+data_idm_auth = "<span class=\"cc-chip cc-chip--yes\">IdM &amp; Auth</span>"
+data_publication = "<span class=\"cc-chip cc-chip--yes\">Data Publication</span>"
+
+[project.extra.labels.ds4ssc_compliant.no_comp]
+data_sources = "<span class=\"cc-chip cc-chip--no\">Data Sources</span>"
+data_broker = "<span class=\"cc-chip cc-chip--no\">Data Broker</span>"
+data_api = "<span class=\"cc-chip cc-chip--no\">Data API</span>"
+data_idm_auth = "<span class=\"cc-chip cc-chip--no\">IdM &amp; Auth</span>"
+data_publication = "<span class=\"cc-chip cc-chip--no\">Data Publication</span>"
+
