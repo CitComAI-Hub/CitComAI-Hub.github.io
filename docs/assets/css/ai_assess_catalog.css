@@ -1,6 +1,6 @@
-/* AI Assessment Catalogue table layout (scoped to .ai-assessment-table).
-   Each column has its width and the table scrolls sideways: with a fixed layout at 100% width the
-   ten columns were squeezed into the screen and the long texts made every row very tall. */
+/* AI Assessment Catalogue. javascripts/catalog.js draws one card per row of the table and hides
+   the table; the table styles below are for reading it without JavaScript.
+   Each column has its width and the table scrolls sideways. */
 .md-typeset .ai-assessment-table table:not([class]) {
   table-layout: fixed;
   width: max-content;
@@ -114,64 +114,69 @@
   cursor: pointer;
 }
 
-/* --- Page-scoped layout to reclaim sidebar width and show it on hover --- */
-.catalog-page .md-content { grid-column: 1 / -1; }
-.catalog-page .md-sidebar--secondary { display: none; }
-
-.catalog-page .md-sidebar--primary {
-  position: fixed;
-  left: 0;
-  top: 0;
-  height: 100vh;
-  transform: translateX(-100%);
-  transition: transform .18s ease-in-out;
-  z-index: 1000;
-  box-shadow: 0 0 0 rgba(0,0,0,0);
-  background-color: var(--md-default-bg-color);
-  backdrop-filter: none;
-  -webkit-backdrop-filter: none;
-  overflow-y: auto;
+/* --- One card per solution --- */
+.cc-cat-cards {
+  display: grid;
+  gap: 0.8rem;
 }
-
-.catalog-page.catalog-nav-open .md-sidebar--primary {
-  transform: translateX(0);
-  box-shadow: 0 4px 24px rgba(0,0,0,.18);
-}
-
-.catalog-nav-toggle {
-  position: fixed;
-  left: 6px;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 36px;
-  height: 36px;
+.md-typeset .cc-cat-card {
+  padding: 1rem 1.2rem 0.9rem;
   border: 1px solid var(--cc-border);
   background: var(--md-default-bg-color);
-  color: var(--md-typeset-color);
+}
+.md-typeset .cc-cat-card[hidden] { display: none; }
+.md-typeset h3.cc-cat-card__name {
+  margin: 0;
+  font-size: 1.05rem;
+  font-weight: 600;
+}
+.md-typeset p.cc-cat-card__meta {
+  margin: 0.2rem 0 0;
+  font-size: 0.68rem;
+  color: var(--md-default-fg-color--light);
+}
+.md-typeset p.cc-cat-card__lead {
+  margin: 0.6rem 0 0;
+  font-size: 0.78rem;
+}
+.md-typeset ul.cc-cat-card__tags {
   display: flex;
-  align-items: center;
-  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin: 0.7rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+[dir] .md-typeset ul.cc-cat-card__tags li {
+  margin: 0;
+  padding: 0.1rem 0.45rem;
+  border: 1px solid var(--cc-border);
+  background: var(--cc-tint);
+  font-size: 0.62rem;
+}
+.md-typeset .cc-cat-card details.cc-cat-card__more:not(#cc) {
+  margin: 0.8rem 0 0;
+  border: 0;
+  border-top: 1px solid var(--cc-border);
+  padding: 0;
+  background: none;
+  font-size: 0.72rem;
+}
+.md-typeset .cc-cat-card details.cc-cat-card__more:not(#cc) > summary {
+  margin: 0;
+  padding: 0.55rem 1.4rem 0 0;
+  background: none;
+  background-color: transparent;
+  font-weight: 500;
   cursor: pointer;
-  z-index: 1100;
 }
-
-.catalog-nav-toggle:hover { border-color: var(--md-typeset-color); }
-
-/* Widen the page content area for this catalogue */
-.catalog-page .md-main .md-grid {
-  /* Fixed side gutters: 24px each, consistent at any viewport width */
-  max-width: none;
-  width: calc(100vw - 500px);
+.md-typeset .cc-cat-card details.cc-cat-card__more:not(#cc) > summary::before { display: none; }
+.md-typeset .cc-cat-card details.cc-cat-card__more:not(#cc) > summary::after { top: 0.6rem; right: 0; }
+.md-typeset .cc-cat-card details.cc-cat-card__more:not(#cc) dl { margin: 0.6rem 0 0.2rem; }
+.md-typeset .cc-cat-card details.cc-cat-card__more:not(#cc) dt {
+  margin-top: 0.6rem;
+  font-size: 0.62rem;
+  font-weight: 600;
+  color: var(--md-default-fg-color--light);
 }
-
-.catalog-page .md-content__inner {
-  /* Keep constant gutters handled by .md-grid; avoid extra padding */
-  margin: 0 auto 2.5rem;
-  padding-inline: 0;
-}
-
-/* Hide the toggle while the sidebar is open */
-.catalog-page.catalog-nav-open .catalog-nav-toggle {
-  opacity: 0;
-  pointer-events: none;
-}
+.md-typeset .cc-cat-card details.cc-cat-card__more:not(#cc) dd { margin: 0.15rem 0 0; }

@@ -1,26 +1,12 @@
 ---
 title: AI Assessment Catalogue
-hide:
-  - toc
 description: "The tools and methods used to assess each dimension of trustworthiness."
 ---
 
-<!-- Floating toggle for showing the left navigation on hover -->
-<button class="catalog-nav-toggle" aria-label="Show navigation" title="Show navigation">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                <path d="M3 12c0-.55.45-1 1-1h12.59l-4.3-4.29a1.003 1.003 0 0 1 1.42-1.42l6 6c.39.39.39 1.02 0 1.41l-6 6a1.003 1.003 0 0 1-1.42-1.42L16.59 13H4c-.55 0-1-.45-1-1Z"/>
-        </svg>
- </button>
+The AI Assessment Catalogue showcases the evaluation tools, testing frameworks, and assessment solutions available across the CitCom.ai TEF network. It is regularly updated as new methodologies and tools become available at each TEF site. If you would like to request an assessment or learn more about a tool, please contact the relevant TEF sites.
 
-<div class="catalog-header" markdown>
-<div markdown>
-The AI Assessment Catalogue showcases the evaluation tools, testing frameworks, and assessment solutions available across the CitCom.ai TEF network.
-It is regularly updated as new methodologies and tools become available at each TEF site. 
-If you would like to request an assessment or learn more about a tool, please contact the relevant TEF sites.
-</div>
-</div>
-
-<!-- Search and filters: javascripts/catalog.js fills the filters from the table -->
+<!-- javascripts/catalog.js draws one card per row of the table below (the table is the source:
+     edit it as usual) and fills the search and the filters. Without JavaScript the table shows. -->
 <div class="cc-cat-tools">
   <label class="cc-cat-search">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
@@ -33,6 +19,7 @@ If you would like to request an assessment or learn more about a tool, please co
   <span class="cc-cat-count" id="catalogCount" aria-live="polite"></span>
 </div>
 <div class="cc-cat-filters" id="catalogFilters" hidden></div>
+<div class="cc-cat-cards" id="catalogCards"></div>
 
 <div class="ai-assessment-table" markdown>
 
