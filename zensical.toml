@@ -204,6 +204,9 @@ custom_checkbox = true
 auto_append = ["includes/glossary.md"]
 check_paths = true
 
+# ...but not inside links and headings (hub_extensions/glossary_scope.py)
+[project.markdown_extensions."hub_extensions.glossary_scope"]
+
 # Icons in the text (:lucide-database:); the Lucide set is in docs/overrides/.icons
 [project.markdown_extensions.pymdownx.emoji]
 emoji_index = "zensical.extensions.emoji.twemoji"
