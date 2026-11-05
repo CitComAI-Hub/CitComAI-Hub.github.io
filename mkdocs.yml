@@ -87,6 +87,7 @@ nav:
           - Other tools: toolbox/other_toolkit.md
   - TEF network:
       - tef/index.md
+      - Sites in detail: tef/sites.md
       - Nordic - POWER:
           - tef/nordic_power/doll_living_lab.md
           - tef/nordic_power/aarhus_city_lab.md

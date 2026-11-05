@@ -7,6 +7,55 @@ description: "The TEF sites of CitCom grouped in three super-nodes, and the serv
 
 CitCom runs its Testing and Experimentation Facilities (TEFs) in cities across Europe. The sites are grouped in three super-nodes, each with a theme, and they share services that no single site offers alone. What a TEF is and how the project is organised is explained in [The project and the TEFs](../getting_started/project.md).
 
+<div class="cc-tef" markdown="0">
+  <div class="cc-tef__root"><span>CitCom.ai TEF</span><small>16 sites · 3 super-nodes</small></div>
+  <div class="cc-tef__rail" aria-hidden="true"></div>
+  <div class="cc-tef__nodes">
+    <div class="cc-tef__node">
+      <p class="cc-tef__eyebrow">Nordic super-node</p>
+      <p class="cc-tef__theme">POWER</p>
+      <p class="cc-tef__meta">Hub in Denmark · 8 sites</p>
+      <div class="md-typeset cc-line"><ol>
+        <li><a href="nordic_power/doll_living_lab/"><span class="cc-line__stop"></span><span><strong>DOLL Living Lab</strong><small>Denmark</small></span></a></li>
+        <li><a href="nordic_power/aarhus_city_lab/"><span class="cc-line__stop"></span><span><strong>Aarhus City Lab</strong><small>Denmark</small></span></a></li>
+        <li><a href="nordic_power/net_zero_innovation_hub/"><span class="cc-line__stop"></span><span><strong>Net Zero Innovation Hub</strong><small>Denmark</small></span></a></li>
+        <li><a href="nordic_power/dti/"><span class="cc-line__stop"></span><span><strong>DTI</strong><small>Denmark</small></span></a></li>
+        <li><a href="nordic_power/center_denmark/"><span class="cc-line__stop"></span><span><strong>Center Denmark</strong><small>Denmark</small></span></a></li>
+        <li><a href="nordic_power/gate21/"><span class="cc-line__stop"></span><span><strong>GATE21</strong><small>Denmark</small></span></a></li>
+        <li><a href="nordic_power/rise/"><span class="cc-line__stop"></span><span><strong>RISE</strong><small>Sweden</small></span></a></li>
+        <li><a href="nordic_power/tampere/"><span class="cc-line__stop"></span><span><strong>Tampere</strong><small>Finland</small></span></a></li>
+      </ol></div>
+    </div>
+    <div class="cc-tef__node">
+      <p class="cc-tef__eyebrow">Central super-node</p>
+      <p class="cc-tef__theme">MOVE</p>
+      <p class="cc-tef__meta">Hub in Belgium · 5 sites</p>
+      <div class="md-typeset cc-line"><ol>
+        <li><a href="central_move/mechelen/"><span class="cc-line__stop"></span><span><strong>Mechelen</strong><small>Belgium</small></span></a></li>
+        <li><a href="central_move/brussels/"><span class="cc-line__stop"></span><span><strong>Brussels</strong><small>Belgium</small></span></a></li>
+        <li><a href="central_move/eindhoven/"><span class="cc-line__stop"></span><span><strong>Eindhoven</strong><small>Netherlands</small></span></a></li>
+        <li><a href="central_move/paris/"><span class="cc-line__stop"></span><span><strong>Paris</strong><small>France</small></span></a></li>
+        <li><a href="central_move/list/"><span class="cc-line__stop"></span><span><strong>LIST</strong><small>Luxembourg</small></span></a></li>
+      </ol></div>
+    </div>
+    <div class="cc-tef__node">
+      <p class="cc-tef__eyebrow">South super-node</p>
+      <p class="cc-tef__theme">CONNECT</p>
+      <p class="cc-tef__meta">Hub in Spain · 3 sites</p>
+      <div class="md-typeset cc-line"><ol>
+        <li><a href="south_connect/valencia/"><span class="cc-line__stop"></span><span><strong>Valencia</strong><small>Spain</small></span></a></li>
+        <li><a href="south_connect/milano/"><span class="cc-line__stop"></span><span><strong>Milano</strong><small>Italy</small></span></a></li>
+        <li><a href="south_connect/warsaw/"><span class="cc-line__stop"></span><span><strong>Warsaw</strong><small>Poland</small></span></a></li>
+      </ol></div>
+    </div>
+  </div>
+  <p class="cc-tef__more"><a href="sites/">Data broker and API of every site &rarr;</a></p>
+</div>
+
+## Shared services
+
+The super-nodes share services that no single site offers alone.
+
 <div class="grid cards cc-two" markdown>
 
 -   :material-shield-check-outline:{ .lg } __AI Trustworthiness Label__
@@ -26,39 +75,3 @@ CitCom runs its Testing and Experimentation Facilities (TEFs) in cities across E
     [:octicons-arrow-right-24: Local Digital Twins](../local_digital_twins/index.md)
 
 </div>
-
-## The sites
-
-![The TEF sites of CitCom](./img/citcom_tefs.png)
-
-### Nordic super-node | POWER
-
-| TEF site | Country | Data broker | API | 
-| -------- | ---- | ----------- | ---------- |
-| [DOLL Living Lab](./nordic_power/doll_living_lab.md) | Denmark | {{ config.extra.labels.data_brokers.fiware }} | {{ config.extra.labels.api_brokers.ngsi_ld }} |
-| [Aarhus City Lab](./nordic_power/aarhus_city_lab.md) | Denmark | {{ config.extra.labels.data_brokers.fiware }} | {{ config.extra.labels.api_brokers.ngsi_ld }} |
-| [Net Zero Innovation Hub](./nordic_power/net_zero_innovation_hub.md) | Denmark |  |  |
-| [DTI](./nordic_power/dti.md) | Denmark |  | |
-| [Center Denmark](./nordic_power/center_denmark.md) | Denmark | {{ config.extra.labels.data_brokers.kafka }} | {{ config.extra.labels.api_brokers.custom }} |
-| [GATE21](./nordic_power/gate21.md) | Denmark | {{ config.extra.labels.data_brokers.fiware }} | {{ config.extra.labels.api_brokers.ngsi_ld }} |
-| [Tampere](./nordic_power/tampere.md) | Finland | {{ config.extra.labels.data_brokers.iot_ticket }}​ | {{ config.extra.labels.api_brokers.custom }} |
-| [RISE](./nordic_power/rise.md) | Sweden | {{ config.extra.labels.data_brokers.fiware }} | {{ config.extra.labels.api_brokers.ngsi_v2 }} <br> {{ config.extra.labels.api_brokers.ngsi_ld }} |
-
-### Central super-node | MOVE
-
-| TEF site | Country | Data broker | API |
-| -------- | ---- | ----------- | ---------- |
-| [Mechelen](./central_move/mechelen.md) | Belgium |  |  |
-| [Brussels](./central_move/brussels.md) | Belgium |  |  |
-| [Eindhoven](./central_move/eindhoven.md) | Netherlands | {{ config.extra.labels.data_brokers.fiware }} |  |
-| [Paris](./central_move/paris.md) | France |  |  |
-| [LIST](./central_move/list.md) | Luxembourg |  |  |
-
-### South super-node | CONNECT
-
-| TEF site | Country | Data broker | API |
-| -------- | ---- | ----------- | ---------- |
-| [Valencia](./south_connect/valencia.md) | Spain | {{ config.extra.labels.data_brokers.fiware }} | {{ config.extra.labels.api_brokers.ngsi_v2 }} |
-| [Milano](./south_connect/milano.md) | Italy | {{ config.extra.labels.data_brokers.fiware }} | {{ config.extra.labels.api_brokers.ngsi_v2 }} |
-| [Warsaw](./south_connect/warsaw.md) | Poland |  |  |
-
