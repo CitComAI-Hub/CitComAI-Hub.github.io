@@ -380,7 +380,15 @@
 /* the card link reads as "View details →" */
 .md-typeset .grid.cards > ul > li {
   position: relative;
+  display: flex;
+  flex-direction: column;
   transition: border-color 0.15s, background-color 0.15s;
+}
+/* the action link sits at the bottom, level across the cards of a row */
+.md-typeset .grid.cards > ul > li > p:last-child:has(> a:only-child) {
+  margin-top: auto;
+  padding-top: 0.6rem;
+  margin-bottom: 0;
 }
 .md-typeset .grid.cards > ul > li > p:last-child > a:only-child {
   display: inline-flex;
