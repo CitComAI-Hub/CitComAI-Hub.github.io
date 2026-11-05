@@ -8,16 +8,14 @@
   --cc-night-2: #2c2f33;
   --cc-grey: #5b5b66;
   --cc-blue: #0000ff;
-  --cc-cyan: #00ffff;
-  --cc-cyan-soft: #a7ebeb;
+  --cc-blue-soft: #8c9cff; /* the blue, readable on dark backgrounds */
   --cc-orange: #ffaa00;
   --cc-violet: #9b00ff;
-  --cc-lime: #00ff00;
   --cc-teal: #3cc3cf; /* marketplace */
   --cc-green: #00c48c;
   --cc-green-dark: #00724d;
   --cc-teal-dark: #0b7b85;
-  --cc-accent: var(--cc-cyan); /* on dark */
+  --cc-accent: var(--cc-blue-soft); /* on dark */
   --cc-accent-dark: var(--cc-blue); /* on light */
   --cc-radius: 0;
   --cc-radius-sm: 0;
@@ -56,7 +54,7 @@
   --md-primary-fg-color--dark: #0d0e13;
   --md-primary-bg-color: #ffffff;
   --md-accent-fg-color: var(--cc-accent);
-  --md-accent-fg-color--transparent: rgba(0, 255, 255, 0.1);
+  --md-accent-fg-color--transparent: rgba(140, 156, 255, 0.12);
   --md-default-bg-color: #1a1b1e;
   --md-code-bg-color: #232528;
   --md-typeset-a-color: var(--cc-accent);
@@ -458,7 +456,8 @@
 /* ---------- Home: hero (light, blueprint grid, search) ---------- */
 
 .cc-dhero {
-  background-color: var(--cc-cyan-soft);
+  background-color: var(--cc-surface);
+  border-bottom: 1px solid var(--cc-border);
   color: var(--cc-ink);
 }
 [data-md-color-scheme="slate"] .cc-dhero {
@@ -543,8 +542,7 @@
   font-size: 0.75rem;
   color: inherit;
 }
-.cc-dhero .cc-line { --md-accent-fg-color: var(--cc-ink); --md-default-bg-color: var(--cc-cyan-soft); --md-typeset-color: var(--cc-ink); --md-default-fg-color--light: #2e4747; }
-[data-md-color-scheme="slate"] .cc-dhero .cc-line { --md-accent-fg-color: var(--cc-cyan); --md-default-bg-color: var(--cc-night); --md-typeset-color: #ffffff; --md-default-fg-color--light: rgba(255, 255, 255, 0.7); }
+.cc-dhero .cc-line { --md-default-bg-color: var(--cc-surface); }
 .md-typeset.cc-line ol {
   position: relative;
   list-style: none;
@@ -742,7 +740,7 @@
   font-family: var(--cc-heading-font);
   font-weight: 400;
   font-size: 1.3rem;
-  color: var(--cc-cyan);
+  color: #ffffff;
 }
 .md-typeset .cc-next__text {
   font-size: 0.72rem;
@@ -862,8 +860,8 @@
   width: 1.35rem;
   height: 1.35rem;
   border-radius: 50%;
-  background: var(--cc-cyan);
-  color: var(--cc-ink);
+  background: var(--md-accent-fg-color);
+  color: var(--md-default-bg-color);
   font: 600 0.66rem/1 var(--cc-heading-font);
 }
 .cc-infra__band { /* the zone operated by VRAIN-UPV: tinted, not dark */
