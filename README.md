@@ -91,6 +91,8 @@ The look follows the CitCom.ai brand of [citcomtef.eu](https://citcomtef.eu/): H
 
 **Nothing is loaded from other sites**: fonts, Mermaid and GLightbox are copies in the repository ([`docs/assets/vendor`](./docs/assets/vendor), with their versions), so visitors' browsers only talk to this site. [`docs/javascripts/mermaid.js`](./docs/javascripts/mermaid.js) loads Mermaid only on pages with a diagram.
 
+**For AI assistants**: the site publishes [`llms.txt`](https://citcomai-hub.github.io/llms.txt) and `llms-full.txt` (plugin `llmstxt` in `zensical.toml`). A new page that matters to developers goes in its `sections`.
+
 **Date and authors** come from [`hub_extensions/git_facts.py`](./hub_extensions/git_facts.py), a Markdown extension of this repository, because Zensical does not run MkDocs' git plugins yet. [`.mailmap`](./.mailmap) gives one name to people who committed under two.
 
 ## Contribute and publish
