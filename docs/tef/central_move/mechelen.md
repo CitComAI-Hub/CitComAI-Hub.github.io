@@ -58,7 +58,7 @@ The TEF Site is located in Mechelen, Belgium and is dedicated to advancing resea
 
 ### Architecture
 
-![image](https://github.com/user-attachments/assets/848ecda3-0f40-4f22-80e7-635da6d6fe37)
+![Architecture of the Mechelen sensor data platform](img/mechelen-arch.png)
 
 ## Relevant datasets of the site
 

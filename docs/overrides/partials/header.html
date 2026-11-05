@@ -7,7 +7,7 @@
 {%- endmacro -%}
 <header class="md-header cc-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="{{ lang.t('header') }}">
-    <a href="/" title="{{ config.site_name | striptags }}" class="cc-brand" aria-label="CitCom.ai Hub, home">
+    <a href="/" class="cc-brand" aria-label="CitCom.ai Hub, home">
       <img src="/assets/citcom.svg" alt="CitCom.ai" class="cc-brand__logo">
       <span class="cc-brand__label">Hub</span>
     </a>
@@ -15,7 +15,7 @@
       {% include ".icons/material/menu.svg" %}
     </label>
     <ul class="cc-header__links">
-      {%- for item in nav if item.children and item.title not in config.extra.hidden_sections %}
+      {%- for item in nav.items if item.children and item.title not in config.extra.hidden_sections %}
       <li><a href="/{{ first_url(item) }}" data-cc-section="{{ item.title }}" class="{% if item.active %}cc-header__link--active{% endif %}">{{ item.title }}</a></li>
       {%- endfor %}
     </ul>
@@ -23,7 +23,7 @@
       {% include "partials/palette.html" %}
       {% include "partials/javascripts/palette.html" %}
     {% endif %}
-    {% if "material/search" in config.plugins %}
+    {% if "search" in config.plugins %}
       <label class="md-header__button md-icon" for="__search">
         {% include ".icons/material/magnify.svg" %}
       </label>
