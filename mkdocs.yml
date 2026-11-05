@@ -7,6 +7,8 @@ copyright: Copyright &copy; 2023 - 2026 CitCom.ai Hub
 site_dir: public
 extra_javascript:
   - javascripts/external-links.js
+  - javascripts/catalog.js
+  - javascripts/header-section.js
 extra_css:
   - stylesheets/extra.css
   - stylesheets/citcom.css
@@ -24,6 +26,8 @@ theme:
     - content.code.annotate
     - content.action.edit
     - content.tabs.link
+    - navigation.instant
+    - navigation.instant.progress
     - navigation.tabs
     - navigation.sections
     - navigation.indexes

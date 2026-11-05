@@ -5,52 +5,12 @@ hide:
 description: "The tools and methods used to assess each dimension of trustworthiness."
 ---
 
-<script>
-    // Hide sidebar. This script is only executed in the data catalog page.
-    document.addEventListener('DOMContentLoaded', function () {
-        const sidebar = document.querySelector('.md-sidebar--secondary');
-        if (document.querySelector('.catalog-header') && sidebar) {
-            sidebar.style.display = 'none';
-            sidebar.style.width = '0';
-            sidebar.style.padding = '0';
-            sidebar.style.margin = '0';
-        }
-    });
-</script>
-
-
 <!-- Floating toggle for showing the left navigation on hover -->
 <button class="catalog-nav-toggle" aria-label="Show navigation" title="Show navigation">
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                 <path d="M3 12c0-.55.45-1 1-1h12.59l-4.3-4.29a1.003 1.003 0 0 1 1.42-1.42l6 6c.39.39.39 1.02 0 1.41l-6 6a1.003 1.003 0 0 1-1.42-1.42L16.59 13H4c-.55 0-1-.45-1-1Z"/>
         </svg>
  </button>
-
-<script>
-// Page-scoped nav hover behaviour for AI Assessment Catalogue
-document.addEventListener('DOMContentLoaded', function () {
-    const body = document.body;
-    body.classList.add('catalog-page');
-
-    const primary = document.querySelector('.md-sidebar--primary');
-    const toggle = document.querySelector('.catalog-nav-toggle');
-    if (!primary || !toggle) return;
-
-    let inside = false;
-
-    const open = () => body.classList.add('catalog-nav-open');
-    const close = () => { if (!inside) body.classList.remove('catalog-nav-open'); };
-
-    toggle.addEventListener('mouseenter', () => { inside = true; open(); });
-    toggle.addEventListener('mouseleave', () => { inside = false; setTimeout(close, 120); });
-    toggle.addEventListener('click', () => {
-        body.classList.toggle('catalog-nav-open');
-    });
-
-    primary.addEventListener('mouseenter', () => { inside = true; open(); });
-    primary.addEventListener('mouseleave', () => { inside = false; setTimeout(close, 150); });
-});
-</script>
 
 <div class="catalog-header" markdown>
 <div markdown>

@@ -49,6 +49,7 @@
 
 /* --- Page-scoped layout to reclaim sidebar width and show it on hover --- */
 .catalog-page .md-content { grid-column: 1 / -1; }
+.catalog-page .md-sidebar--secondary { display: none; }
 
 .catalog-page .md-sidebar--primary {
   position: fixed;
