@@ -26,7 +26,7 @@ extra_javascript = [
   "javascripts/header-section.js",
 ]
 
-# The theme templates live in docs/overrides: keep them out of the published pages
+# Not pages of the site: the theme templates and the notes on the vendored code
 exclude_docs = """
 /overrides/
 /assets/vendor/README.md
