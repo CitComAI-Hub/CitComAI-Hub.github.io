@@ -83,6 +83,17 @@
   --md-mermaid-label-fg-color: #e8e9ee;
 }
 
+/* Mermaid in the language of the data space map: nodes on the page background with a soft blue
+   border, groups on the faint tint. The diagram is drawn in a shadow root, so only custom
+   properties reach it; Material strokes nodes with the node-fg colour (text uses label-fg) and
+   paints groups with the lightest/lighter greys, so those are redefined on the diagram only. */
+.md-typeset .mermaid {
+  --md-mermaid-node-bg-color: var(--md-default-bg-color);
+  --md-mermaid-node-fg-color: var(--cc-blue-line);
+  --md-default-fg-color--lightest: var(--cc-tint);
+  --md-default-fg-color--lighter: var(--cc-blue-line);
+}
+
 /* ---------- Header ---------- */
 
 .cc-header {
@@ -292,7 +303,8 @@
 }
 .md-typeset h3 {
   font-size: 1rem;
-  font-weight: 500;
+  font-weight: 600;
+  margin-top: 2.2em; /* a step of a guide starts visibly apart from the previous one */
 }
 .md-typeset h4 {
   font-weight: 600;
@@ -460,6 +472,33 @@
 .md-typeset table:not([class]) th {
   font-weight: 700;
 }
+/* Tables and admonitions near the size of the running text (Material sets them at 0.64rem, which
+   is 12.8px against 16px), and tables ruled only between rows: no outer frame, no vertical lines */
+.md-typeset table:not([class]),
+.md-typeset .admonition,
+.md-typeset details {
+  font-size: 0.72rem;
+}
+.md-typeset table:not([class]) {
+  border: none;
+}
+.md-typeset table:not([class]) th {
+  font-weight: 600;
+  border-bottom: 1px solid var(--cc-rule);
+}
+.md-typeset table:not([class]) td {
+  border-top: 1px solid var(--cc-border);
+}
+.md-typeset table:not([class]) tbody tr:last-child td {
+  border-bottom: 1px solid var(--cc-border);
+}
+.md-typeset table:not([class]) :is(th, td):first-child {
+  padding-left: 0;
+}
+/* a comparison table (empty top-left cell): the first column holds the labels of the rows */
+.md-typeset table:not([class]):has(thead th:first-child:empty) td:first-child {
+  font-weight: 600;
+}
 
 /* Admonitions in the site palette. Two families: information in the brand blue (note in graphite),
    and states in muted orange, red and green. Material's own colours (cyan, teal, violet) never show. */
@@ -497,6 +536,18 @@
   font-size: 0.7rem;
   color: var(--md-default-fg-color);
 }
+/* The page you are on, in the accent. Material paints it with --md-typeset-a-color, which is ink
+   here (links read in ink), so without this it looks like any other entry. */
+.md-nav--primary .md-nav__link--active,
+.md-nav--primary .md-nav__item--section > .md-nav__link.md-nav__link--active {
+  color: var(--md-accent-fg-color);
+  font-weight: 600;
+}
+/* the section you are reading, in the table of contents (colour only: a bolder weight would
+   reflow the list while scrolling) */
+.md-nav--secondary .md-nav__link--active {
+  color: var(--md-accent-fg-color);
+}
 
 /* ---------- Footer ---------- */
 
@@ -506,6 +557,31 @@
 }
 .md-footer-meta {
   border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+/* Light theme: a light footer, set apart by a rule, so the page does not end on a heavy dark
+   block. The logos are white artwork: inverted they turn black (the EU allows the monochrome
+   emblem); the CitCom logo is black artwork, inverted by extra.css for the dark footer. */
+[data-md-color-scheme="default"] :is(.md-footer, .md-footer-meta) {
+  --md-footer-fg-color: var(--cc-ink);
+  --md-footer-fg-color--light: var(--cc-grey);
+  --md-footer-fg-color--lighter: var(--cc-grey);
+  background-color: var(--cc-surface);
+  color: var(--cc-ink);
+}
+[data-md-color-scheme="default"] .md-footer-meta {
+  border-top: 1px solid var(--cc-border);
+}
+[data-md-color-scheme="default"] .md-footer-meta :is(.vrain-logo, .footer-tagline img) {
+  filter: invert(1);
+}
+[data-md-color-scheme="default"] .md-footer-meta .footer-logo .citcom-logo {
+  filter: none;
+}
+/* the EU disclaimer, readable (extra.css sets it at 0.4rem, 8px) */
+.md-footer-meta .footer-tagline p {
+  font-size: 0.55rem;
+  line-height: 1.5;
+  color: var(--md-footer-fg-color--light);
 }
 
 /* ---------- Home: title, lead and search on white ---------- */
@@ -540,18 +616,6 @@
   flex-wrap: wrap;
   align-items: center;
   gap: 0.8rem 1.6rem;
-}
-.md-typeset a.cc-intro__alt {
-  font-size: 0.8rem;
-  color: var(--md-typeset-color);
-  text-decoration: underline;
-  text-decoration-color: var(--cc-border);
-  text-decoration-thickness: 1px;
-  text-underline-offset: 4px;
-  transition: text-decoration-color 0.15s;
-}
-.md-typeset a.cc-intro__alt:hover {
-  text-decoration-color: currentColor;
 }
 /* Opens Material's search: it is the label of the search toggle */
 .cc-search {
@@ -709,8 +773,8 @@
 .md-typeset .cc-role h3.cc-role__who {
   grid-area: who;
   margin: 0;
-  font-size: 1.35rem;
-  font-weight: 400;
+  font-size: 1.1rem; /* a step below the h2 above it ("Find your way in") */
+  font-weight: 500;
   letter-spacing: -0.01em;
   line-height: 1.3;
 }
@@ -1053,7 +1117,7 @@
 /* ---------- Toolbox: the cards of the rest of the site ---------- */
 .cc-tools {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr); /* two per row: the page keeps the table of contents */
   gap: 0.8rem;
   margin: 1.2rem 0 0.8rem;
 }
@@ -1169,9 +1233,6 @@
 }
 .md-typeset ul.cc-rows a:hover strong { color: var(--md-accent-fg-color); }
 .md-typeset ul.cc-rows a:hover::after { background-color: var(--md-accent-fg-color); transform: translateX(0.2rem); }
-@media screen and (max-width: 60em) {
-  .cc-tools { grid-template-columns: repeat(2, 1fr); }
-}
 @media screen and (max-width: 44.9375em) {
   .cc-tools, .md-typeset ul.cc-rows--two { grid-template-columns: 1fr; }
 }
@@ -1436,3 +1497,51 @@
   }
 }
 
+
+/* ---------- Page facts (last update and authors, under the content) ---------- */
+
+.md-typeset .cc-page-facts {
+  font-size: 0.68rem;
+  color: var(--md-default-fg-color--light);
+}
+
+/* ---------- Facts of a TEF site: a box at the top of the page ---------- */
+
+.md-typeset dl.cc-facts {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0;
+  margin: 0 0 2rem;
+  border: 1px solid var(--cc-border);
+  background: var(--cc-tint);
+}
+.md-typeset dl.cc-facts > div {
+  padding: 0.7rem 1rem;
+  border-bottom: 1px solid var(--cc-border);
+}
+.md-typeset dl.cc-facts > div:nth-child(odd) {
+  border-right: 1px solid var(--cc-border);
+}
+.md-typeset dl.cc-facts dt {
+  font-size: 0.68rem;
+  font-weight: 600;
+  color: var(--md-default-fg-color--light);
+}
+.md-typeset dl.cc-facts dd {
+  margin: 0.15rem 0 0;
+  font-size: 0.75rem;
+}
+/* the last fact spans the row when it is alone in it */
+.md-typeset dl.cc-facts > div:last-child:nth-child(odd) {
+  grid-column: 1 / -1;
+  border-right: none;
+}
+.md-typeset dl.cc-facts > div:nth-last-child(-n + 1),
+.md-typeset dl.cc-facts > div:nth-last-child(2):nth-child(odd) {
+  border-bottom: none;
+}
+@media screen and (max-width: 44.9375em) {
+  .md-typeset dl.cc-facts { grid-template-columns: 1fr; }
+  .md-typeset dl.cc-facts > div:nth-child(odd) { border-right: none; }
+  .md-typeset dl.cc-facts > div:nth-last-child(2):nth-child(odd) { border-bottom: 1px solid var(--cc-border); }
+}
