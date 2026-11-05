@@ -173,6 +173,7 @@ toggle.name = "Switch to light mode"
 # Markdown
 # ---------------------------------------------------------------------------
 
+[project.markdown_extensions.abbr]
 [project.markdown_extensions.admonition]
 [project.markdown_extensions.attr_list]
 [project.markdown_extensions.def_list]
@@ -196,6 +197,12 @@ slugify = { object = "pymdownx.slugs.slugify", kwds = { case = "lower" } }
 
 [project.markdown_extensions.pymdownx.tasklist]
 custom_checkbox = true
+
+# Glossary: includes/glossary.md is appended to every page, so its terms show their definition
+# on hover wherever they appear
+[project.markdown_extensions.pymdownx.snippets]
+auto_append = ["includes/glossary.md"]
+check_paths = true
 
 # Icons in the text (:lucide-database:); the Lucide set is in docs/overrides/.icons
 [project.markdown_extensions.pymdownx.emoji]

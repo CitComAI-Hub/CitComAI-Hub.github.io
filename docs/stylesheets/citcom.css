@@ -388,6 +388,20 @@ figure > svg {
 .md-tooltip2__inner.md-typeset p:has(> .md-button) {
   display: none;
 }
+/* Text tooltips (glossary terms, the theme toggle): the text of the site, a little smaller,
+   not the theme's tiny bold label */
+[role="tooltip"] > .md-tooltip2__inner {
+  padding: 0.4rem 0.6rem;
+  font-size: 0.62rem;
+  font-weight: 400;
+  line-height: 1.45;
+}
+/* Glossary terms keep the theme's dotted underline; links with a preview do not get it, they
+   are underlined as every link */
+.md-typeset a[data-preview] {
+  border-bottom: none;
+}
+
 /* the lead paragraph of a page at the size of the rest of the preview */
 .md-tooltip2__inner.md-typeset .cc-lead {
   font-size: inherit;
