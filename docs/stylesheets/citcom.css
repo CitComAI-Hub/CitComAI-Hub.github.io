@@ -162,38 +162,8 @@
 }
 .cc-header__cta {
   display: none;
-  align-items: center;
-  gap: var(--cc-icon-gap);
   margin-left: 0.4rem;
-  padding: 0.45rem 0.9rem;
-  border-radius: var(--cc-radius-sm);
-  background: var(--cc-night);
-  color: #ffffff;
-  font-size: 0.72rem;
-  font-weight: 700;
   white-space: nowrap;
-}
-.cc-header__cta {
-  transition: background-color 0.2s, color 0.2s;
-}
-.cc-header__cta:hover,
-.cc-header__cta:focus {
-  background: #000000;
-  color: #ffffff;
-}
-.cc-header__cta svg {
-  width: 0.8rem;
-  height: 0.8rem;
-  fill: currentColor;
-}
-[data-md-color-scheme="slate"] .cc-header__cta {
-  background: #ffffff;
-  color: var(--cc-night);
-}
-[data-md-color-scheme="slate"] .cc-header__cta:hover,
-[data-md-color-scheme="slate"] .cc-header__cta:focus {
-  background: var(--cc-blue-soft);
-  color: var(--cc-night);
 }
 .cc-header .md-header__button,
 .cc-header .md-header__option {
@@ -337,49 +307,7 @@
 
 /* ---------- Buttons ---------- */
 
-.md-typeset .md-button {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--cc-icon-gap);
-  border-radius: var(--cc-radius-sm);
-  border-width: 1px;
-  font-weight: 500;
-  padding: 0.6em 1.4em;
-  color: var(--md-typeset-color);
-  border-color: var(--md-typeset-color);
-}
-.md-typeset .md-button:hover,
-.md-typeset .md-button:focus {
-  background-color: var(--md-typeset-color);
-  border-color: var(--md-typeset-color);
-  color: var(--md-default-bg-color);
-}
-/* Primary buttons as in the marketplace: dark on white pages, accent on dark backgrounds */
-.md-typeset .md-button--primary {
-  background-color: var(--cc-ink);
-  border-color: var(--cc-ink);
-  color: #ffffff;
-}
-.md-typeset .md-button--primary:hover,
-.md-typeset .md-button--primary:focus {
-  background-color: #000000;
-  border-color: #000000;
-  color: #ffffff;
-}
-[data-md-color-scheme="slate"] .md-typeset .md-button--primary {
-  background-color: var(--cc-accent);
-  border-color: var(--cc-accent);
-  color: var(--cc-night);
-}
-[data-md-color-scheme="slate"] .md-typeset .md-button--primary:hover,
-[data-md-color-scheme="slate"] .md-typeset .md-button--primary:focus {
-  background-color: #ffffff;
-  border-color: #ffffff;
-  color: var(--cc-night);
-}
-.md-typeset .md-button {
-  transition: background-color 0.2s, color 0.2s, border-color 0.2s;
-}
+/* (all the buttons of the site share the rules at the end of this file) */
 
 /* ---------- Cards ---------- */
 
@@ -876,7 +804,7 @@
 }
 
 /* External links in the text: a small arrow says they open in a new tab */
-.md-typeset a.cc-external:not(.md-button):not(.md-content__button):not(.cc-header__cta)::after {
+.md-typeset a.cc-external:not(.md-button):not(.md-content__button):not(.cc-header__cta):not(.cc-btn)::after {
   content: "";
   display: inline-block;
   width: 0.62em;
@@ -1058,16 +986,6 @@
 }
 .cc-infra__legend li .cc-infra__step { margin-top: -0.05rem; }
 .cc-infra__cta-row { margin-top: 1.4rem; text-align: center; }
-.cc-infra__cta {
-  display: inline-block;
-  padding: 0.55rem 2.2rem;
-  border-radius: 0;
-  background: var(--cc-ink);
-  color: #fff !important;
-  font: 500 0.85rem/1 var(--cc-heading-font);
-  transition: background 0.15s, transform 0.15s;
-}
-.cc-infra__cta:hover { background: #000000; }
 @media screen and (max-width: 44.9375em) {
   .cc-infra { padding: 0.8rem; }
   .cc-infra__shared, .cc-infra__legend { grid-template-columns: 1fr; }
@@ -1545,27 +1463,6 @@
   height: 1.25rem;
 }
 
-/* the two buttons of the intro: start reading, or go to the code */
-.md-typeset a.cc-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--cc-icon-gap);
-  padding: 0.6rem 1.2rem;
-  border: 1px solid var(--md-typeset-color);
-  color: var(--md-typeset-color);
-  font-size: 0.8rem;
-  font-weight: 500;
-  text-decoration: none;
-  transition: background-color 0.15s, color 0.15s;
-}
-.md-typeset a.cc-btn svg { width: 1rem; height: 1rem; fill: currentColor; }
-.md-typeset a.cc-btn:hover { background: var(--md-typeset-color); color: var(--md-default-bg-color); }
-.md-typeset a.cc-btn--primary { background: var(--md-typeset-color); color: var(--md-default-bg-color); }
-.md-typeset a.cc-btn--primary:hover {
-  background: var(--md-accent-fg-color);
-  border-color: var(--md-accent-fg-color);
-  color: #ffffff;
-}
 .cc-intro__actions { gap: 0.8rem; }
 
 /* the box of the first steps ends with a link to every guide */
@@ -1575,11 +1472,100 @@
   font-size: 0.75rem;
   font-weight: 500;
 }
-[data-md-color-scheme="slate"] .md-typeset a.cc-btn { border-color: #ffffff; color: #ffffff; }
+
+/* ---------- Buttons: one look and one behaviour for every button of the site ----------
+   Primary: ink, the accent on hover (white and soft blue in dark mode).
+   Secondary: an ink outline that fills with ink on hover.
+   Square, same type, same icon gap, same transition; the header button is only smaller. */
+
+.md-typeset .md-button,
+.md-typeset a.cc-btn,
+.cc-header__cta,
+.md-typeset .cc-infra__cta,
+#catalogFiltersToggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--cc-icon-gap);
+  padding: 0.6rem 1.2rem;
+  border: 1px solid var(--cc-ink);
+  border-radius: 0;
+  background: transparent;
+  color: var(--cc-ink);
+  font: 500 0.8rem/1.2 var(--md-text-font-family, inherit);
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.15s, border-color 0.15s, color 0.15s;
+}
+.md-typeset .md-button svg,
+.md-typeset a.cc-btn svg,
+.cc-header__cta svg,
+#catalogFiltersToggle svg {
+  width: 1em;
+  height: 1em;
+  fill: currentColor;
+}
+/* secondary, on hover: filled with ink */
+.md-typeset .md-button:is(:hover, :focus-visible),
+.md-typeset a.cc-btn:is(:hover, :focus-visible),
+#catalogFiltersToggle:is(:hover, :focus-visible) {
+  background: var(--cc-ink);
+  border-color: var(--cc-ink);
+  color: #ffffff;
+}
+/* primary */
+.md-typeset .md-button--primary,
+.md-typeset a.cc-btn--primary,
+.cc-header__cta,
+.md-typeset .cc-infra__cta {
+  background: var(--cc-ink);
+  color: #ffffff;
+}
+.md-typeset .md-button--primary:is(:hover, :focus-visible),
+.md-typeset a.cc-btn--primary:is(:hover, :focus-visible),
+.cc-header__cta:is(:hover, :focus-visible),
+.md-typeset .cc-infra__cta:is(:hover, :focus-visible) {
+  background: var(--cc-blue);
+  border-color: var(--cc-blue);
+  color: #ffffff;
+}
+/* the header button: smaller, the same otherwise */
+.cc-header__cta {
+  padding: 0.45rem 0.9rem;
+  font-size: 0.72rem;
+}
+
+/* dark mode: white instead of ink, the soft blue on hover (no :is() lists here: the id of the
+   catalogue button would give every selector of the list the weight of an id) */
+[data-md-color-scheme="slate"] .md-typeset .md-button,
+[data-md-color-scheme="slate"] .md-typeset a.cc-btn,
+[data-md-color-scheme="slate"] #catalogFiltersToggle {
+  border-color: #ffffff;
+  color: #ffffff;
+}
+[data-md-color-scheme="slate"] .md-typeset .md-button:hover,
+[data-md-color-scheme="slate"] .md-typeset .md-button:focus-visible,
 [data-md-color-scheme="slate"] .md-typeset a.cc-btn:hover,
-[data-md-color-scheme="slate"] .md-typeset a.cc-btn--primary { background: #ffffff; color: var(--cc-ink); }
-[data-md-color-scheme="slate"] .md-typeset a.cc-btn--primary:hover {
-  background: var(--md-accent-fg-color);
-  border-color: var(--md-accent-fg-color);
+[data-md-color-scheme="slate"] .md-typeset a.cc-btn:focus-visible,
+[data-md-color-scheme="slate"] #catalogFiltersToggle:hover,
+[data-md-color-scheme="slate"] #catalogFiltersToggle:focus-visible,
+[data-md-color-scheme="slate"] .md-typeset .md-button.md-button--primary,
+[data-md-color-scheme="slate"] .md-typeset a.cc-btn.cc-btn--primary,
+[data-md-color-scheme="slate"] .cc-header__cta,
+[data-md-color-scheme="slate"] .md-typeset .cc-infra__cta {
+  background: #ffffff;
+  border-color: #ffffff;
+  color: var(--cc-ink);
+}
+[data-md-color-scheme="slate"] .md-typeset .md-button.md-button--primary:hover,
+[data-md-color-scheme="slate"] .md-typeset .md-button.md-button--primary:focus-visible,
+[data-md-color-scheme="slate"] .md-typeset a.cc-btn.cc-btn--primary:hover,
+[data-md-color-scheme="slate"] .md-typeset a.cc-btn.cc-btn--primary:focus-visible,
+[data-md-color-scheme="slate"] .cc-header__cta:hover,
+[data-md-color-scheme="slate"] .cc-header__cta:focus-visible,
+[data-md-color-scheme="slate"] .md-typeset .cc-infra__cta:hover,
+[data-md-color-scheme="slate"] .md-typeset .cc-infra__cta:focus-visible {
+  background: var(--cc-blue-soft);
+  border-color: var(--cc-blue-soft);
   color: var(--cc-ink);
 }

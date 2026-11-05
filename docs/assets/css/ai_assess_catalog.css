@@ -57,23 +57,10 @@
   font: inherit;
   font-size: 0.75rem;
 }
-#catalogFiltersToggle {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-  height: 2.1rem;
-  padding: 0 0.8rem;
-  border: 1px solid var(--cc-border);
-  background: var(--md-default-bg-color);
-  color: var(--md-typeset-color);
-  font: inherit;
-  font-size: 0.72rem;
-  cursor: pointer;
-}
-#catalogFiltersToggle svg { width: 0.9rem; height: 0.9rem; fill: currentColor; }
-#catalogFiltersToggle:hover,
-#catalogFiltersToggle[aria-expanded="true"] { border-color: var(--md-typeset-color); }
-#catalogFiltersToggle.cc-cat-toggle--set { border-color: var(--md-accent-fg-color); color: var(--md-accent-fg-color); }
+/* #catalogFiltersToggle looks like every secondary button (citcom.css); here only its height,
+   to match the search field, and the state when a filter is set */
+#catalogFiltersToggle { height: 2.1rem; padding-top: 0; padding-bottom: 0; font-size: 0.72rem; }
+#catalogFiltersToggle.cc-cat-toggle--set:not(:hover) { border-color: var(--md-accent-fg-color); color: var(--md-accent-fg-color); }
 .cc-cat-count { font-size: 0.68rem; color: var(--md-default-fg-color--light); }
 
 .cc-cat-filters {
