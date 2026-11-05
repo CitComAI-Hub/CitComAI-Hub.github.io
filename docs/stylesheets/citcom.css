@@ -497,6 +497,18 @@
   font-size: 0.7rem;
   color: var(--md-default-fg-color);
 }
+/* The page you are on, in the accent. Material paints it with --md-typeset-a-color, which is ink
+   here (links read in ink), so without this it looks like any other entry. */
+.md-nav--primary .md-nav__link--active,
+.md-nav--primary .md-nav__item--section > .md-nav__link.md-nav__link--active {
+  color: var(--md-accent-fg-color);
+  font-weight: 600;
+}
+/* the section you are reading, in the table of contents (colour only: a bolder weight would
+   reflow the list while scrolling) */
+.md-nav--secondary .md-nav__link--active {
+  color: var(--md-accent-fg-color);
+}
 
 /* ---------- Footer ---------- */
 
