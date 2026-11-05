@@ -1,7 +1,5 @@
 ---
 title: Getting started
-hide:
-  - toc
 description: "What CitCom.ai is and why its pieces fit together, in plain words."
 ---
 
