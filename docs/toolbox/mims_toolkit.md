@@ -3,9 +3,9 @@ description: "Tools to comply with the OASC Minimal Interoperability Mechanisms.
 ---
 # MIMs Tools
 
-List of tools and projects that can help services comply with OASC Minimal Interoperability Mechanisms.
+List of tools and projects that can help services comply with the OASC Minimal Interoperability Mechanisms, grouped by the MIMs of [MIMs Plus v9](https://mims.oascities.org/) (June 2026). NGSI-LD and Smart Data Models are one package in MIM2 (*Smart Data Models with NGSI-LD*); the brokers and clients are listed under MIM0, the API to access the data.
 
-## MIM1 - Context Information
+## MIM0 - Accessing Data: NGSI-LD
 
 | Tool | Features |
 |-|-|
@@ -21,7 +21,7 @@ List of tools and projects that can help services comply with OASC Minimal Inter
 | [A guide for connecting NGSI-V2 Broker to NGSI-LD via FIWARE IoT-Agent](https://github.com/CitComAI-Hub/IoTAgent.NGSI-V2_to_NGSI-LD_Subscription) | Local environment for testing subscriptions between FIWARE Orion brokers NGSI-V2 to NGSI-LD via FIWARE IoT-Agent. |
 
 
-## MIM2 - Data Models
+## MIM2 - Representing Data: data models
 
 | Tool | Features |
 |-|-|

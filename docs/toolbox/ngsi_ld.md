@@ -5,7 +5,7 @@ description: "The NGSI-LD calls you need most, and FiLiP to make them from Pytho
 
 # NGSI-LD and FiLiP
 
-**NGSI-LD** is the API of [MIM1](../getting_started/interoperability.md#mims): an ETSI standard to read, write and subscribe to data about real-world entities. Every entity has an `id`, a `type` and attributes, and a JSON-LD `@context` that gives the attributes their meaning, usually from [Smart Data Models](smart_data_models.md).
+**NGSI-LD** is an ETSI standard API to read, write and subscribe to data about real-world entities. Every entity has an `id`, a `type` and attributes, and a JSON-LD `@context` that gives the attributes their meaning, usually from [Smart Data Models](smart_data_models.md). In the [MIMs](../getting_started/interoperability.md#mims) the two go together: *Smart Data Models with NGSI-LD* is the main mechanism of MIM2.
 
 ## The calls you need most
 
@@ -66,5 +66,5 @@ The code is the same at both levels; only the session changes. See [ds-consumer-
 
 !!! tip "Learn more"
 
-    - The [NGSI-LD specification](https://www.etsi.org/deliver/etsi_gs/CIM/001_099/009/01.08.01_60/gs_cim009v010801p.pdf) (ETSI GS CIM 009).
+    - The NGSI-LD specification, now maintained by ETSI TC DATA: the [Core API](https://www.etsi.org/deliver/etsi_ts/104100_104199/104175/01.01.01_60/ts_104175v010101p.pdf) (ETSI TS 104 175, September 2026, which supersedes ETSI GS CIM 009) and the [Information Model](https://www.etsi.org/deliver/etsi_ts/104100_104199/104178/01.01.01_60/ts_104178v010101p.pdf) (ETSI TS 104 178).
     - The FIWARE [NGSI-LD step-by-step tutorials](https://ngsi-ld-tutorials.readthedocs.io/).
