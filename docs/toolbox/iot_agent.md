@@ -3,7 +3,7 @@ description: "An experiment: connect an NGSI-v2 broker to an NGSI-LD broker thro
 ---
 # FIWARE IoT-Agent
 
-[Repository :simple-github:](https://github.com/CitComAI-Hub/IoTAgent.NGSI-V2_to_NGSI-LD_Subscription){:target="_blank" .md-button .md-button--primary }
+[:simple-github: Repository](https://github.com/CitComAI-Hub/IoTAgent.NGSI-V2_to_NGSI-LD_Subscription){:target="_blank" .md-button .md-button--primary }
 
 This section explains **how to connect an NGSI-V2 broker with an NGSI-LD broker (_Fiware Orion_) through subscriptions to a _FIWARE IoT-Agent_**. It was tested as an alternative to [Lepus](./lepus.md) when Lepus was still experimental; CitCom now uses Lepus, because it does not copy the data.
 
