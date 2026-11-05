@@ -70,14 +70,14 @@ nav:
       - Eclipse EDC data space: data_spaces/eclipse/index.md
   - Guides:
       - guides/index.md
-      - "Example: MIAIS, an AI service": miais/index.md
-      - "Example: Valencia, a city platform": valencia/index.md
       - Join the data space: guides/join.md
-      - Deploy your own connector: guides/deploy_connector.md
       - Get a wallet and your credentials: guides/wallet.md
       - Use data from your code: guides/consume_data.md
+      - Deploy your own connector: guides/deploy_connector.md
       - Publish a dataset: guides/publish_dataset.md
       - Publish a web service: guides/publish_service.md
+      - "Example: MIAIS, an AI service": miais/index.md
+      - "Example: Valencia, a city platform": valencia/index.md
   - Toolbox:
       - toolbox/index.md
       - Lepus: toolbox/lepus.md
