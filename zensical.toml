@@ -12,13 +12,16 @@ copyright = "Copyright &copy; 2023 - 2026 CitCom.ai Hub"
 site_dir = "public"
 
 extra_css = [
+  "assets/vendor/glightbox-3.3.1.min.css",
+  "stylesheets/fonts.css",
   "stylesheets/extra.css",
   "stylesheets/citcom.css",
   "assets/css/ai_assess_catalog.css",
 ]
 extra_javascript = [
-  # Mermaid pinned: the theme would load the latest 12.x, which lays out our diagrams differently
-  "https://unpkg.com/mermaid@10.6.1/dist/mermaid.min.js",
+  # Third-party code is served by the site (docs/assets/vendor), never from a CDN
+  "javascripts/mermaid.js",
+  "assets/vendor/glightbox-3.3.1.min.js",
   "javascripts/external-links.js",
   "javascripts/catalog.js",
   "javascripts/header-section.js",
@@ -27,6 +30,7 @@ extra_javascript = [
 # The theme templates live in docs/overrides: keep them out of the published pages
 exclude_docs = """
 /overrides/
+/assets/vendor/README.md
 """
 # Sergio's EDC pages, linked from data_spaces/eclipse/index.md
 not_in_nav = """
@@ -144,9 +148,8 @@ features = [
   "toc.follow",
 ]
 
-[project.theme.font]
-text = "Hanken Grotesk"
-code = "JetBrains Mono"
+# Fonts served by the site itself: docs/stylesheets/fonts.css
+font = false
 
 [[project.theme.palette]]
 media = "(prefers-color-scheme: light)"
