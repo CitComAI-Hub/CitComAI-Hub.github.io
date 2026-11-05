@@ -218,6 +218,20 @@
 
 /* ---------- Typography ---------- */
 
+/* the AI of the site name in the header and the drawer */
+sup {
+  font-size: 10px;
+}
+/* figures and SVG diagrams never wider than the text */
+figure {
+  max-width: 100% !important;
+  width: auto !important;
+}
+figure > svg {
+  width: 100% !important;
+  height: auto !important;
+}
+
 .md-typeset h1,
 .md-typeset h2,
 .md-typeset h3 {
@@ -274,6 +288,14 @@
 /* (all the buttons of the site share the rules at the end of this file) */
 
 /* ---------- Cards ---------- */
+
+/* images centred in the cards, without HTML in the Markdown */
+.grid.cards img {
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+  height: auto;
+}
 
 .md-typeset .grid.cards > ul > li,
 .md-typeset .grid > .card {
@@ -418,6 +440,11 @@
 
 /* ---------- Sidebar ---------- */
 
+/* Safari draws the SVG icons of the navigation in the wrong place without this */
+.md-nav__link svg {
+  transform: translate(0, 0);
+}
+
 .md-nav__title {
   font-family: var(--cc-heading-font);
   font-weight: 500;
@@ -441,7 +468,7 @@
   color: var(--md-accent-fg-color);
 }
 
-/* ---------- Footer ---------- */
+/* ---------- Footer (partials/copyright.html) ---------- */
 
 .md-footer,
 .md-footer-meta {
@@ -450,9 +477,79 @@
 .md-footer-meta {
   border-top: 1px solid rgba(255, 255, 255, 0.06);
 }
+footer {
+  color: #fff;
+}
+/* Three columns over the full width: links, organisation, co-funding */
+.md-footer-meta__inner .md-copyright {
+  width: 100%;
+}
+.footer-container {
+  display: grid;
+  margin: 1rem auto;
+}
+.md-footer-meta .footer-container {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  width: 100%;
+  gap: 2rem;
+}
+@media screen and (max-width: 44.9375em) {
+  .md-footer-meta .footer-container {
+    grid-template-columns: 1fr;
+  }
+}
+.footer-column {
+  padding: 10px;
+}
+.footer-column h4 {
+  margin-top: 0;
+}
+.footer-tagline h4 {
+  margin-bottom: 0;
+}
+.md-footer-meta .footer-links ul {
+  margin: 0;
+  padding: 0;
+}
+.md-footer-meta .footer-container .footer-links li {
+  margin: 0 0 0.35rem;
+  list-style: none;
+}
+.footer-links a {
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 0.7rem;
+}
+.footer-links a:hover {
+  color: #ffffff;
+}
+/* Logos: the CitCom logo is black artwork, inverted for the dark footer */
+.footer-logo,
+.footer-tagline .logo-container {
+  display: flex;
+  align-items: center;
+}
+footer .footer-logo .citcom-logo {
+  width: 5rem;
+  filter: invert(100%);
+}
+footer .footer-logo .vrain-logo {
+  width: 5rem;
+  margin-left: 1rem;
+}
+footer .footer-tagline img {
+  width: 8rem;
+}
+/* the EU disclaimer, small but readable */
+.md-footer-meta .footer-tagline p {
+  margin: 0;
+  padding: 0;
+  font-size: 0.55rem;
+  line-height: 1.5;
+  color: var(--md-footer-fg-color--light);
+}
 /* Light theme: a light footer, set apart by a rule, so the page does not end on a heavy dark
-   block. The logos are white artwork: inverted they turn black (the EU allows the monochrome
-   emblem); the CitCom logo is black artwork, inverted by extra.css for the dark footer. */
+   block. The other logos are white artwork: inverted they turn black (the EU allows the
+   monochrome emblem), and the CitCom logo stays as it is. */
 [data-md-color-scheme="default"] :is(.md-footer, .md-footer-meta) {
   --md-footer-fg-color: var(--cc-ink);
   --md-footer-fg-color--light: var(--cc-grey);
@@ -468,12 +565,6 @@
 }
 [data-md-color-scheme="default"] .md-footer-meta .footer-logo .citcom-logo {
   filter: none;
-}
-/* the EU disclaimer, readable (extra.css sets it at 0.4rem, 8px) */
-.md-footer-meta .footer-tagline p {
-  font-size: 0.55rem;
-  line-height: 1.5;
-  color: var(--md-footer-fg-color--light);
 }
 
 /* ---------- Home: title, lead and search on white ---------- */
@@ -742,29 +833,6 @@
 }
 .md-typeset .cc-eyebrow + h2 {
   margin-top: 0;
-}
-
-/* Footer: three columns over the full width */
-.md-footer-meta__inner .md-copyright {
-  width: 100%;
-}
-.md-footer-meta .footer-container {
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  width: 100%;
-  gap: 2rem;
-}
-.md-footer-meta .footer-links ul {
-  margin: 0;
-  padding: 0;
-}
-.md-footer-meta .footer-container .footer-links li {
-  margin: 0 0 0.35rem;
-  list-style: none;
-}
-@media screen and (max-width: 44.9375em) {
-  .md-footer-meta .footer-container {
-    grid-template-columns: 1fr;
-  }
 }
 
 /* External links in the text: a small arrow says they open in a new tab */
