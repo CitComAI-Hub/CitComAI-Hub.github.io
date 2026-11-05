@@ -1574,3 +1574,15 @@
   border-color: var(--cc-blue-soft);
   color: var(--cc-ink);
 }
+
+/* a button that leaves the docs (new tab) ends with the arrow of the header's Marketplace button;
+   internal buttons have none. external-links.js marks those links with .cc-external */
+.md-typeset a.cc-external:is(.md-button, .cc-btn)::after {
+  content: "";
+  flex: none;
+  width: 1em;
+  height: 1em;
+  background-color: currentColor;
+  -webkit-mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5 17.59 15.59 7H9V5h10v10h-2V8.41L6.41 19 5 17.59Z"/></svg>') center / contain no-repeat;
+  mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5 17.59 15.59 7H9V5h10v10h-2V8.41L6.41 19 5 17.59Z"/></svg>') center / contain no-repeat;
+}
