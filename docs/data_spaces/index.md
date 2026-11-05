@@ -11,7 +11,7 @@ hide:
 
 <div class="cc-infra" markdown="0">
   <div class="cc-infra__band">
-    <p class="cc-infra__eyebrow">Shared services · operated by VRAIN-UPV for all of CitCom</p>
+    <p class="cc-infra__eyebrow">Shared services, operated by VRAIN-UPV for all of CitCom</p>
     <div class="cc-infra__shared">
       <a class="cc-infra__svc" href="../guides/join/">
         <strong>Onboarding portal</strong>
@@ -34,7 +34,7 @@ hide:
   </div>
   <div class="cc-infra__flow">
     <a class="cc-infra__part" href="../valencia/">
-      <span class="cc-infra__tag">Provider · example</span>
+      <span class="cc-infra__tag">Provider</span>
       <strong>Ajuntament de València</strong>
       <small>Its connector serves the city data it offers</small>
       <span class="cc-infra__conn">Connector</span>
@@ -45,7 +45,7 @@ hide:
       <small>Reads the data, connector to connector</small>
     </div>
     <a class="cc-infra__part" href="../miais/">
-      <span class="cc-infra__tag">Consumer · example</span>
+      <span class="cc-infra__tag">Consumer</span>
       <strong>VRAIN-UPV</strong>
       <small>Its AI service, the MIAIS, reads the data it bought</small>
       <span class="cc-infra__conn">Connector</span>
@@ -57,30 +57,11 @@ hide:
     <li><span class="cc-infra__step">3</span><span><strong>Buy.</strong> VRAIN-UPV buys the offer. The purchase sets up the contract in the Ajuntament's connector.</span></li>
     <li><span class="cc-infra__step">4</span><span><strong>Read.</strong> The MIAIS of VRAIN-UPV reads the data from the Ajuntament's connector. The data never goes through the shared services.</span></li>
   </ol>
-  <div class="cc-infra__cta-row"><a class="cc-infra__cta" href="../guides/join/">Join &rarr;</a></div>
+  <div class="cc-infra__cta-row"><a class="cc-infra__cta" href="../guides/join/">Join the data space</a></div>
 </div>
 
 The Ajuntament de València and VRAIN-UPV are the first participants, and both are told step by step as worked examples. The technical view, with every component and the public addresses, is in [How it works](fiware.md#the-deployment-today).
 
-<div class="grid cards cc-two" markdown>
-
--   :material-shield-key-outline:{ .lg .middle } __How it works__
-
-    ---
-
-    Its components, the deployment running today, and the flows to join, buy and access data and services.
-
-    [:octicons-arrow-right-24: How it works](fiware.md)
-
--   :material-storefront-outline:{ .lg .middle } __Marketplace__
-
-    ---
-
-    Where the participants publish and buy datasets and services.
-
-    [:octicons-arrow-right-24: Marketplace](../marketplace/index.md)
-
-</div>
 
 ## Also in CitCom
 
