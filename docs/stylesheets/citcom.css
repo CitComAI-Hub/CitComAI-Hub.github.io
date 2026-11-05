@@ -558,6 +558,31 @@
 .md-footer-meta {
   border-top: 1px solid rgba(255, 255, 255, 0.06);
 }
+/* Light theme: a light footer, set apart by a rule, so the page does not end on a heavy dark
+   block. The logos are white artwork: inverted they turn black (the EU allows the monochrome
+   emblem); the CitCom logo is black artwork, inverted by extra.css for the dark footer. */
+[data-md-color-scheme="default"] :is(.md-footer, .md-footer-meta) {
+  --md-footer-fg-color: var(--cc-ink);
+  --md-footer-fg-color--light: var(--cc-grey);
+  --md-footer-fg-color--lighter: var(--cc-grey);
+  background-color: var(--cc-surface);
+  color: var(--cc-ink);
+}
+[data-md-color-scheme="default"] .md-footer-meta {
+  border-top: 1px solid var(--cc-border);
+}
+[data-md-color-scheme="default"] .md-footer-meta :is(.vrain-logo, .footer-tagline img) {
+  filter: invert(1);
+}
+[data-md-color-scheme="default"] .md-footer-meta .footer-logo .citcom-logo {
+  filter: none;
+}
+/* the EU disclaimer, readable (extra.css sets it at 0.4rem, 8px) */
+.md-footer-meta .footer-tagline p {
+  font-size: 0.55rem;
+  line-height: 1.5;
+  color: var(--md-footer-fg-color--light);
+}
 
 /* ---------- Home: title, lead and search on white ---------- */
 
