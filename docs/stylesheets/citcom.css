@@ -42,7 +42,8 @@
   --cc-border: #e3e6ea;
   --cc-rule: var(--cc-ink);
   --cc-tint: #f4f6fc; /* the blue, barely: the home intro and hovered rows */
-  --cc-blue-line: #b7c1ec; /* the blue, soft: accent rules on cards */
+  --cc-blue-line: #b7c1ec; /* the blue, soft: arrows at rest */
+  --cc-blue-mid: #7d8ede; /* the blue, half way: accent rules on cards */
 }
 
 [data-md-color-scheme="slate"] {
@@ -65,6 +66,7 @@
   --cc-rule: rgba(255, 255, 255, 0.5);
   --cc-tint: #20232b;
   --cc-blue-line: #4a5590;
+  --cc-blue-mid: #6f7fd0;
 }
 
 /* ---------- Header ---------- */
@@ -584,20 +586,47 @@
   border-top: 1px solid var(--cc-border);
 }
 .md-typeset.cc-tasks a {
+  position: relative;
   display: block;
-  padding: 0.75rem 1.1rem;
+  padding: 0.75rem 3rem 0.75rem 1.1rem;
   color: var(--md-typeset-color);
   transition: background-color 0.15s;
+}
+/* the arrow of the cards: it moves when the row is hovered */
+.md-typeset.cc-tasks a::after {
+  content: "";
+  position: absolute;
+  right: 1.1rem;
+  top: 50%;
+  width: 1rem;
+  height: 1rem;
+  margin-top: -0.5rem;
+  background-color: var(--cc-blue-line);
+  -webkit-mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>') center / contain no-repeat;
+  mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>') center / contain no-repeat;
+  transition: transform 0.15s, background-color 0.15s;
+}
+.md-typeset.cc-tasks a:hover::after,
+.md-typeset.cc-tasks a:focus-visible::after {
+  background-color: var(--md-accent-fg-color);
+  transform: translateX(0.25rem);
+}
+@media (prefers-reduced-motion: reduce) {
+  .md-typeset.cc-tasks a::after { transition: none; }
 }
 .md-typeset.cc-tasks a:hover,
 .md-typeset.cc-tasks a:focus-visible {
   background: var(--cc-tint);
+  color: var(--md-typeset-color);
 }
 .md-typeset.cc-tasks strong {
   display: block;
   font-size: 0.85rem;
   font-weight: 500;
   color: var(--md-typeset-a-color);
+}
+.md-typeset.cc-tasks a span {
+  color: var(--md-typeset-color);
 }
 .md-typeset.cc-tasks span {
   display: block;
@@ -1012,26 +1041,30 @@
   flex-direction: column;
   padding: 1.1rem 1.1rem 1rem;
   border: 1px solid var(--cc-border);
-  border-top: 3px solid var(--tone, var(--cc-blue-line));
+  border-top: 3px solid var(--tone, var(--cc-blue-mid));
   border-radius: var(--cc-radius-sm);
   background: var(--md-default-bg-color);
-  transition: transform 0.15s, box-shadow 0.15s;
+  transition: background-color 0.15s, border-color 0.15s;
 }
-.md-typeset .cc-tool:hover {  }
-.md-typeset .cc-tool h3 { margin: 0; padding-right: 2rem; font-size: 1rem; }
+.md-typeset .cc-tool:not(.cc-tool--add):hover {
+  border-top-color: var(--md-accent-fg-color);
+  background: var(--cc-tint);
+}
+.md-typeset .cc-tool:hover h3 a { color: var(--md-accent-fg-color); }
+.md-typeset .cc-tool h3 { margin: 0; padding-right: 2rem; font-size: 1.05rem; font-weight: 500; }
 .md-typeset .cc-tool h3 a { color: var(--md-default-fg-color); }
 .md-typeset .cc-tool h3 a::after { content: ""; position: absolute; inset: 0; } /* whole card clickable */
 .md-typeset .cc-tool__meta {
   margin: 0.15rem 0 0.6rem;
   font-size: 0.66rem;
   font-weight: 500;
-  color: var(--md-default-fg-color--light);
+  color: var(--md-typeset-color);
 }
 .md-typeset .cc-tool > p:not([class]) {
   margin: 0;
-  font-size: 0.7rem;
+  font-size: 0.72rem;
   line-height: 1.5;
-  color: var(--md-default-fg-color--light);
+  color: var(--md-typeset-color);
 }
 .md-typeset .cc-tool__ext {
   position: absolute;
@@ -1061,14 +1094,14 @@
   gap: 0.15rem;
   padding: 0.7rem 0.8rem;
   border: 1px solid var(--cc-border);
-  border-left: 3px solid var(--cc-blue-line);
+  border-left: 3px solid var(--cc-blue-mid);
   border-radius: var(--cc-radius-sm);
   color: var(--md-default-fg-color);
   transition: background 0.15s;
 }
-.md-typeset .cc-minitools a:hover { background: var(--cc-surface); }
+.md-typeset .cc-minitools a:hover { background: var(--cc-tint); border-left-color: var(--md-accent-fg-color); }
 .cc-minitools strong { font-size: 0.74rem; }
-.cc-minitools span { font-size: 0.64rem; line-height: 1.4; color: var(--md-default-fg-color--light); }
+.cc-minitools span { font-size: 0.66rem; line-height: 1.4; color: var(--md-typeset-color); }
 @media screen and (max-width: 60em) {
   .cc-tools, .cc-minitools { grid-template-columns: repeat(2, 1fr); }
 }
