@@ -447,19 +447,29 @@
   font-weight: 700;
 }
 
-/* Tip in the brand blue instead of Material's teal */
-.md-typeset .admonition.tip,
-.md-typeset details.tip {
-  border-color: var(--md-accent-fg-color);
+/* Admonitions in the site palette. Two families: information in the brand blue (note in graphite),
+   and states in muted orange, red and green. Material's own colours (cyan, teal, violet) never show. */
+.md-typeset :is(.admonition, details):not(#cc) {
+  --cc-adm: var(--md-accent-fg-color);
+  border-color: var(--cc-adm);
+  border-width: 1px;
+  box-shadow: none;
 }
-.md-typeset .tip > .admonition-title,
-.md-typeset .tip > summary {
-  background-color: var(--md-accent-fg-color--transparent);
+.md-typeset :is(.admonition, details):not(#cc) > :is(.admonition-title, summary) {
+  background-color: color-mix(in srgb, var(--cc-adm) 8%, transparent);
 }
-.md-typeset .tip > .admonition-title::before,
-.md-typeset .tip > summary::before {
-  background-color: var(--md-accent-fg-color);
+.md-typeset :is(.admonition, details):not(#cc) > :is(.admonition-title, summary)::before,
+.md-typeset details:not(#cc) > summary::after {
+  background-color: var(--cc-adm);
 }
+.md-typeset :is(.admonition, details):not(#cc):is(.note) { --cc-adm: var(--cc-grey); }
+.md-typeset :is(.admonition, details):not(#cc):is(.warning, .caution, .attention) { --cc-adm: #c47f00; }
+.md-typeset :is(.admonition, details):not(#cc):is(.danger, .error, .failure, .fail, .missing, .bug) { --cc-adm: #b3261e; }
+.md-typeset :is(.admonition, details):not(#cc):is(.success, .check, .done) { --cc-adm: #2e7d4f; }
+[data-md-color-scheme="slate"] .md-typeset :is(.admonition, details):not(#cc):is(.note) { --cc-adm: #9a9aa6; }
+[data-md-color-scheme="slate"] .md-typeset :is(.admonition, details):not(#cc):is(.warning, .caution, .attention) { --cc-adm: #ffb733; }
+[data-md-color-scheme="slate"] .md-typeset :is(.admonition, details):not(#cc):is(.danger, .error, .failure, .fail, .missing, .bug) { --cc-adm: #f07167; }
+[data-md-color-scheme="slate"] .md-typeset :is(.admonition, details):not(#cc):is(.success, .check, .done) { --cc-adm: #5cc58a; }
 
 /* ---------- Sidebar ---------- */
 
