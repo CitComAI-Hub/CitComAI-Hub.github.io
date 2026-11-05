@@ -5,7 +5,7 @@ description: "Serve an NGSI-v2 platform as NGSI-LD, without migrating it."
 
 # Lepus
 
-[Repository :simple-github:](https://github.com/CitComAI-Hub/lepus){ .md-button .md-button--primary }
+[:simple-github: Repository](https://github.com/CitComAI-Hub/lepus){ .md-button .md-button--primary }
 
 **Lepus** serves the data of an **NGSI-v2** context broker as **NGSI-LD**. It is the shortcut to [interoperability level 1](../getting_started/interoperability.md#level-1-pivotal-interoperability-points) for a city that already runs an NGSI-v2 platform: no migration, no copy of the data. Each NGSI-LD request is translated to NGSI-v2, sent to the platform, and the answer is translated back.
 

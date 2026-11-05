@@ -5,7 +5,7 @@ description: "Get the access token of the data space from your code."
 
 # ds-consumer-auth
 
-[Repository :simple-github:](https://github.com/CitComAI-Hub/ds-consumer-auth){ .md-button .md-button--primary }
+[:simple-github: Repository](https://github.com/CitComAI-Hub/ds-consumer-auth){ .md-button .md-button--primary }
 
 **ds-consumer-auth** is a Python library, made in CitCom, that gets the access token of a FIWARE data space for a program. It hides the whole credential flow behind a `requests` session: the token is obtained, cached, renewed before it expires, and a request that gets a `401` is retried once with a new token.
 

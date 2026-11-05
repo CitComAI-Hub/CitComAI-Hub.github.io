@@ -1,9 +1,11 @@
 // Open links to other sites in a new tab, so readers do not lose their place in the docs.
 function openExternalLinksInNewTab() {
   document.querySelectorAll("a[href]").forEach(function (link) {
-    if (link.hostname && link.hostname !== window.location.hostname && !link.target) {
-      link.target = "_blank";
-      link.rel = "noopener";
+    if (link.hostname && link.hostname !== window.location.hostname) {
+      if (!link.target) {
+        link.target = "_blank";
+        link.rel = "noopener";
+      }
       link.classList.add("cc-external");
     }
   });
