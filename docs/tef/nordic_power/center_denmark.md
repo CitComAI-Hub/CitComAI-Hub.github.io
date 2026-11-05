@@ -3,6 +3,16 @@ title: Center Denmark
 description: "The Center Denmark TEF site of the Nordic super-node (POWER): what it offers and its data."
 ---
 
+<dl class="cc-facts" markdown="0">
+  <div><dt>Super-node</dt><dd>Nordic · POWER</dd></div>
+  <div><dt>Country</dt><dd>Denmark</dd></div>
+  <div><dt>Location</dt><dd>Fredericia</dd></div>
+  <div><dt>Focus</dt><dd>Utility data: electricity, water, heating, gas and PtX</dd></div>
+  <div><dt>Data broker</dt><dd>Kafka, custom API</dd></div>
+  <div><dt>Datasets</dt><dd>Built on request, plus open datasets in the <a href="https://portal.centerdenmark.com">data portal</a></dd></div>
+  <div><dt>Contact</dt><dd>Britt Reenberg, site coordinator: <a href="mailto:brir@centerdenmark.com">brir@centerdenmark.com</a></dd></div>
+</dl>
+
 ## Overview
 
 Center Denmark is located in Fredericia, Denmark, and serves as a national hub for digitalization across the utility sector. As a TEF Site in the CitCom.ai project, Center Denmark focuses on enabling AI-driven innovation by providing access to high-quality, real-world data from electricity, water, and heating systems (including gas and PtX where relevant).

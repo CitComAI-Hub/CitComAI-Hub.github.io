@@ -3,6 +3,16 @@ title: Brussels
 description: "The Brussels TEF site of the Central super-node (MOVE): what it offers and its data."
 ---
 
+<dl class="cc-facts" markdown="0">
+  <div><dt>Super-node</dt><dd>Central · MOVE</dd></div>
+  <div><dt>Country</dt><dd>Belgium</dd></div>
+  <div><dt>Led by</dt><dd>Bruxelles Mobilité, with Paradigm, FARI, imec and Digitaal Vlaanderen</dd></div>
+  <div><dt>Location</dt><dd>Charles Quint avenue and the Annie Cordy tunnel: 9 crossings and a 2.9 km tunnel</dd></div>
+  <div><dt>Focus</dt><dd>Dynamic traffic management and traffic sensors</dd></div>
+  <div><dt>Data</dt><dd>Traffic data from cameras, traffic lights, magnetometers and air quality sensors, through the regional data platform</dd></div>
+  <div><dt>Contact</dt><dd>Mohamed Aarab, site coordinator: <a href="mailto:maarab@sprb.brussels">maarab@sprb.brussels</a></dd></div>
+</dl>
+
 ## Overview
 
 The testing zone is located in Brussels, Belgium and is centred around innovations for dynamic traffic management and traffic sensor solutions. The leading partner is the region of Brussels' transport authority Bruxelles Mobilité, supported by Paradigm, FARI, imec and Digitaal Vlaanderen. 

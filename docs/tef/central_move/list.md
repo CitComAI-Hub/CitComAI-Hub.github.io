@@ -3,6 +3,16 @@ title: Luxembourg
 description: "The Luxembourg TEF site of the Central super-node (MOVE): what it offers and its data."
 ---
 
+<dl class="cc-facts" markdown="0">
+  <div><dt>Super-node</dt><dd>Central · MOVE</dd></div>
+  <div><dt>Country</dt><dd>Luxembourg</dd></div>
+  <div><dt>Led by</dt><dd>LIST, Luxembourg Institute of Science and Technology</dd></div>
+  <div><dt>Location</dt><dd>Belval</dd></div>
+  <div><dt>Focus</dt><dd>Local Digital Twins, AI and data analytics for cities, electromobility</dd></div>
+  <div><dt>Datasets</dt><dd>SWIO charging station data</dd></div>
+  <div><dt>Contact</dt><dd>Andrés Meléndez Imaz, site coordinator: <a href="mailto:andres.melendez@list.lu">andres.melendez@list.lu</a></dd></div>
+</dl>
+
 ## Overview
 
 The LIST TEF Site is located in Belval, Luxembourg and is dedicated to advancing research and development in Digital Twin technologies. This site is equipped with state-of-the-art infrastructure and is a key site in the CitCom.ai project, facilitating collaboration between cities and comunities, industrial partners (AI innovators) and research institutions.

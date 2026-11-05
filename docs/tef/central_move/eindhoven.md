@@ -3,6 +3,12 @@ title: Eindhoven
 description: "The Eindhoven TEF site of the Central super-node (MOVE): what it offers and its data."
 ---
 
+<dl class="cc-facts" markdown="0">
+  <div><dt>Super-node</dt><dd>Central · MOVE</dd></div>
+  <div><dt>Country</dt><dd>Netherlands</dd></div>
+  <div><dt>Data broker</dt><dd>FIWARE</dd></div>
+</dl>
+
 !!! note "Page to be completed"
 
     The partners of this site have not described it here yet. To add the description, see [Request changes](../../faq/pull_request_procedure.md).

@@ -3,6 +3,16 @@ title: DOLL Living Lab
 description: "The DOLL Living Lab TEF site of the Nordic super-node (POWER): what it offers and its data."
 ---
 
+<dl class="cc-facts" markdown="0">
+  <div><dt>Super-node</dt><dd>Nordic · POWER</dd></div>
+  <div><dt>Country</dt><dd>Denmark</dd></div>
+  <div><dt>Led by</dt><dd>DOLL (We Build Denmark), with Albertslund Municipality</dd></div>
+  <div><dt>Location</dt><dd>Albertslund</dd></div>
+  <div><dt>Focus</dt><dd>Intelligent traffic systems, outdoor lighting, structural health</dd></div>
+  <div><dt>Data broker</dt><dd>FIWARE Scorpio, NGSI-LD, in its Local Digital Twin</dd></div>
+  <div><dt>Contact</dt><dd>Line Johansen, site coordinator: <a href="mailto:line.nykjaer.johansen@webuilddenmark.dk">line.nykjaer.johansen@webuilddenmark.dk</a></dd></div>
+</dl>
+
 ## Overview
 
 Digital Outdoor Living Lab (DOLL) is located in Albertslund, Denmark and is dedicated to advancing research and development in Smart City technologies, including Intelligent Traffic Systems, Outdoor Lighting and Structural Health. This site is equipped with state-of-the-art infrastructure and is a key site in the CitCom.ai project, facilitating collaboration between cities and communities, industrial partners (AI innovators) and research institutions. The site hosts a Local Digital Twin with a network of data-providing partners
