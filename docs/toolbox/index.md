@@ -10,31 +10,31 @@ hide:
 <p class="cc-lead">Open-source tools to bring city data to the data space and use it from your code. Several are made in CitCom.</p>
 
 <div class="cc-tools" markdown="0">
-  <article style="--tone: var(--cc-teal)" class="cc-tool">
+  <article style="--tone: var(--cc-cyan)" class="cc-tool">
     <h3><a href="lepus/">Lepus</a></h3>
     <p class="cc-tool__meta">City platforms · CitCom fork</p>
     <p>Serve an NGSI-v2 platform as NGSI-LD with Smart Data Models, live and without migrating it.</p>
     <a class="cc-tool__ext" href="https://github.com/CitComAI-Hub/lepus" target="_blank" rel="noopener" title="Repository on GitHub" aria-label="Repository on GitHub"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg></a>
   </article>
-  <article style="--tone: var(--cc-green)" class="cc-tool">
+  <article style="--tone: var(--cc-lime)" class="cc-tool">
     <h3><a href="ds_consumer_auth/">ds-consumer-auth</a></h3>
     <p class="cc-tool__meta">Developers · Made in CitCom</p>
     <p>Get the access token of the data space from Python. One line, and it is renewed for you.</p>
     <a class="cc-tool__ext" href="https://github.com/CitComAI-Hub/ds-consumer-auth" target="_blank" rel="noopener" title="Repository on GitHub" aria-label="Repository on GitHub"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg></a>
   </article>
-  <article style="--tone: #7c6cf0" class="cc-tool">
+  <article style="--tone: var(--cc-violet)" class="cc-tool">
     <h3><a href="wallets/">Wallets</a></h3>
     <p class="cc-tool__meta">Everyone · Made in CitCom</p>
     <p>Keep your credentials and log in with a QR code: atesta-id-wallet on the desktop, Lissi ID Wallet on the phone.</p>
     <a class="cc-tool__ext" href="https://github.com/CitComAI-Hub/atesta-id-wallet" target="_blank" rel="noopener" title="Repository on GitHub" aria-label="Repository on GitHub"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg></a>
   </article>
-  <article style="--tone: #f0a03c" class="cc-tool">
+  <article style="--tone: var(--cc-orange)" class="cc-tool">
     <h3><a href="ngsi_ld/">NGSI-LD and FiLiP</a></h3>
     <p class="cc-tool__meta">Developers</p>
     <p>The NGSI-LD calls you need most, and FiLiP to make them from Python against any broker.</p>
     <a class="cc-tool__ext" href="https://github.com/RWTH-EBC/FiLiP" target="_blank" rel="noopener" title="Repository on GitHub" aria-label="Repository on GitHub"><svg viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg></a>
   </article>
-  <article style="--tone: #e8607a" class="cc-tool">
+  <article style="--tone: var(--cc-blue)" class="cc-tool">
     <h3><a href="smart_data_models/">Smart Data Models</a></h3>
     <p class="cc-tool__meta">Data providers</p>
     <p>The shared vocabulary of city data: entity types, attributes and units that every city reads the same way.</p>
