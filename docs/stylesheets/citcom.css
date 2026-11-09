@@ -1357,15 +1357,16 @@ footer .footer-tagline img {
 
 /* ---------- Links: ink with a thin blue underline; blue on hover ---------- */
 /* Running text only. Lists of links in components stay plain ink and turn blue on hover. */
-.md-typeset :is(p, li, td, dd, figcaption) > a:not([class]) {
+/* external-links.js gives the external links the class cc-external: they are running text too */
+.md-typeset :is(p, li, td, dd, figcaption) > a:is(:not([class]), [class="cc-external"]) {
   text-decoration: underline;
   text-decoration-color: color-mix(in srgb, var(--md-accent-fg-color) 50%, transparent);
   text-decoration-thickness: 1px;
   text-underline-offset: 0.2em;
   transition: color 0.15s, text-decoration-color 0.15s;
 }
-.md-typeset :is(p, li, td, dd, figcaption) > a:not([class]):hover,
-.md-typeset :is(p, li, td, dd, figcaption) > a:not([class]):focus-visible {
+.md-typeset :is(p, li, td, dd, figcaption) > a:is(:not([class]), [class="cc-external"]):hover,
+.md-typeset :is(p, li, td, dd, figcaption) > a:is(:not([class]), [class="cc-external"]):focus-visible {
   color: var(--md-accent-fg-color);
   text-decoration-color: currentColor;
 }
