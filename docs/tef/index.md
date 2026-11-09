@@ -1,13 +1,44 @@
 ---
 title: TEF network
-description: "The TEF sites of CitCom grouped in three super-nodes, and the services they share: the AI Trustworthiness Label and Local Digital Twins."
+description: "What a TEF is, the three super-nodes and the sites of CitCom, and the services they share: the AI Trustworthiness Label and Local Digital Twins."
 ---
 
 # TEF network
 
-CitCom runs its Testing and Experimentation Facilities (TEFs) in cities across Europe. The sites are grouped in three super-nodes, each with a theme, and they share services that no single site offers alone. What a TEF is and how the project is organised is explained in [The project and the TEFs](../getting_started/project.md).
+## What a TEF is
+
+A **Testing and Experimentation Facility** (TEF) is a place where companies test AI and robotics products in real conditions before they reach the market. The European Commission funds [TEFs in several sectors](https://digital-strategy.ec.europa.eu/en/activities/testing-and-experimentation-facilities); CitCom.ai is the one for **smart and sustainable cities and communities**.
+
+In practice, a CitCom TEF site is a city, a living lab or a research centre that offers:
+
+- **Real environments**: streets, buildings, energy grids or mobility hubs where a product can run.
+- **Data**: city platforms with sensor and open data, increasingly shared through a data space.
+- **Expertise**: help to scope the test, check regulatory compliance (GDPR, the AI Act, cybersecurity) and assess the result.
+
+The project brings together [more than 30 organisations](https://citcom.ai/about) in 11 EU countries. The [CitCom TEF website](https://citcomtef.eu/) is the entry point for companies that want to test a product.
+
+## Three super-nodes
+
+The sites are grouped in three **super-nodes**, each with a theme. A super-node is a regional hub that shares expertise and resources between its sites. Every site has its own page, and their detail is also in [Sites in detail](sites.md).
 
 <div class="cc-tef" markdown="0">
+  <div class="cc-tef__defs">
+    <div class="cc-tef__def">
+      <p class="cc-tef__eyebrow">Nordic super-node</p>
+      <p class="cc-tef__theme">POWER</p>
+      <p class="cc-tef__text">The Nordic super-node is focused on the theme "POWER". Its nodes work in areas that support smart cities and communities and focus on energy, environmental solutions, cybersecurity, ethics and edge learning.</p>
+    </div>
+    <div class="cc-tef__def">
+      <p class="cc-tef__eyebrow">Central super-node</p>
+      <p class="cc-tef__theme">MOVE</p>
+      <p class="cc-tef__text">The Central super-node revolves around the theme "MOVE". It focuses more specifically on challenges related to mobility and logistics in cities and communities.</p>
+    </div>
+    <div class="cc-tef__def">
+      <p class="cc-tef__eyebrow">South super-node</p>
+      <p class="cc-tef__theme">CONNECT</p>
+      <p class="cc-tef__text">The South super-node revolves around the theme "CONNECT". It focuses more specifically on the need to securely connect citizens, infrastructures, AI and robotics services in cities and communities, with innovations that provide intelligence to local infrastructures and cross-sectoral city services.</p>
+    </div>
+  </div>
   <div class="cc-tef__root"><span>CitCom.ai TEF</span><small>16 sites in 3 super-nodes</small></div>
   <div class="cc-tef__rail" aria-hidden="true"></div>
   <div class="cc-tef__nodes">

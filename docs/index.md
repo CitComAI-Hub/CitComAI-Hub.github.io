@@ -1,7 +1,7 @@
 ---
 template: home.html
 title: Home
-description: "The technical hub of the CitCom.ai TEF: data spaces, tools and guides to build AI services for smart cities."
+description: "The Common Infrastructure of CitCom.ai (WP3): the data space, tools and guides to build AI services for smart cities."
 hide:
   - navigation
   - toc
@@ -61,6 +61,26 @@ How the CitCom.ai Data Space is built and run, and the other data space of CitCo
 - [How the data space works](data_spaces/fiware.md)
 - [Inside a connector](data_spaces/fiware.md#inside-a-connector)
 - [Eclipse EDC data space](data_spaces/eclipse/index.md)
+</div>
+
+</div>
+
+## About CitCom.ai
+
+<div class="cc-about" markdown>
+
+<div class="cc-about__text" markdown>
+
+The [CitCom.ai](https://citcom.ai) project is a **European Union initiative** that sets up Testing and Experimentation Facilities (TEFs) for **AI and robotics** in **smart and sustainable cities and communities**. It gives companies real environments where to develop, test and validate their AI products and services before they reach the market, and checks that they meet the EU regulations on **data privacy and cybersecurity**. More than [30 organisations](https://citcom.ai/about) in 11 countries take part.
+
+This site is the work of **work package 3 (WP3), Common Infrastructure and Services**: the **minimal package** for TEF nodes, with a common reference architecture to make their services **interoperable**, and the guides, tools and examples to build **AI services** on it.
+
+[The TEF network](tef/index.md){ .md-button .md-button--primary } [citcom.ai](https://citcom.ai){ .md-button }
+
+</div>
+
+<div class="cc-about__video">
+  <iframe src="https://www.youtube-nocookie.com/embed/-wiVzj51lg0" title="CitCom.ai presentation video" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 </div>
 
 </div>

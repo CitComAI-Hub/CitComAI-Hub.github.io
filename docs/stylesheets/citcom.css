@@ -43,6 +43,7 @@
   --cc-header-bg: #ffffff;
   --cc-header-fg: var(--cc-ink);
   --cc-surface: #f3f4f6;
+  --cc-raised: var(--md-default-bg-color); /* cards: on the page colour in light */
   --cc-border: #e3e6ea;
   --cc-rule: var(--cc-ink);
   --cc-tint: #f4f6fc; /* the blue, barely: the home intro and hovered rows */
@@ -57,30 +58,36 @@
 
 [data-md-color-scheme="slate"] {
   --md-hue: 222;
-  --md-primary-fg-color: var(--cc-night);
-  --md-primary-fg-color--light: var(--cc-night-2);
-  --md-primary-fg-color--dark: #0d0e13;
+  --md-primary-fg-color: #101114;
+  --md-primary-fg-color--light: #1a1c21;
+  --md-primary-fg-color--dark: #0a0b0d;
   --md-primary-bg-color: #ffffff;
   --md-accent-fg-color: var(--cc-accent);
-  --md-accent-fg-color--transparent: rgba(154, 169, 238, 0.12);
-  --md-default-bg-color: #1a1b1e;
-  --md-code-bg-color: #232528;
+  --md-accent-fg-color--transparent: rgba(195, 206, 255, 0.14);
+  --md-default-bg-color: #17181c;
+  --md-default-fg-color: #ffffff;
+  --md-default-fg-color--light: #b8bcc6;
+  --md-default-fg-color--lighter: rgba(255, 255, 255, 0.4);
+  --md-typeset-color: #f1f2f5;
+  --md-code-bg-color: #262a31;
   --md-typeset-a-color: var(--md-typeset-color);
-  --md-footer-bg-color: #0d0e13;
-  --md-footer-bg-color--dark: #08090c;
-  --cc-header-bg: var(--cc-night);
+  --md-footer-bg-color: #101114;
+  --md-footer-bg-color--dark: #0a0b0d;
+  --cc-accent: #c3ceff;
+  --cc-header-bg: #101114;
   --cc-header-fg: #ffffff;
-  --cc-surface: #232528;
-  --cc-border: #35383d;
-  --cc-rule: rgba(255, 255, 255, 0.5);
-  --cc-tint: #20232b;
-  --cc-blue-line: #4a5590;
-  --cc-blue-mid: #6f7fd0;
-  --md-mermaid-node-bg-color: #20232b;
-  --md-mermaid-node-fg-color: #e8e9ee;
-  --md-mermaid-edge-color: #6f7fd0;
-  --md-mermaid-label-bg-color: #1a1b1e;
-  --md-mermaid-label-fg-color: #e8e9ee;
+  --cc-surface: #262a31;
+  --cc-raised: #262a31; /* cards stand out from the page */
+  --cc-border: #4a505c;
+  --cc-rule: rgba(255, 255, 255, 0.55);
+  --cc-tint: #1d2026;
+  --cc-blue-line: #6672b8;
+  --cc-blue-mid: #8391e0;
+  --md-mermaid-node-bg-color: #262a31;
+  --md-mermaid-node-fg-color: #f1f2f5;
+  --md-mermaid-edge-color: #8391e0;
+  --md-mermaid-label-bg-color: #17181c;
+  --md-mermaid-label-fg-color: #f1f2f5;
 }
 
 /* Mermaid in the language of the data space map: nodes on the page background with a soft blue
@@ -299,7 +306,7 @@ figure > svg {
 .md-typeset .grid > .card {
   border: 1px solid var(--cc-border);
   border-radius: var(--cc-radius);
-  background: var(--md-default-bg-color);
+  background: var(--cc-raised);
   padding: 1rem 1.1rem;
 }
 
@@ -1083,7 +1090,7 @@ footer .footer-tagline img {
   flex-direction: column;
   padding: 1rem 1.1rem 0.9rem;
   border: 1px solid var(--cc-border);
-  background: var(--md-default-bg-color);
+  background: var(--cc-raised);
   transition: border-color 0.15s, background-color 0.15s;
 }
 .md-typeset .cc-tool:hover {
@@ -1657,4 +1664,432 @@ footer .footer-tagline img {
   background-color: currentColor;
   -webkit-mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5 17.59 15.59 7H9V5h10v10h-2V8.41L6.41 19 5 17.59Z"/></svg>') center / contain no-repeat;
   mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5 17.59 15.59 7H9V5h10v10h-2V8.41L6.41 19 5 17.59Z"/></svg>') center / contain no-repeat;
+}
+
+/* ---------- Home: "Start here" is a path that advances by itself (see home-tasks.js) ----------
+   A vertical line with one dot per step. The active step has its dot filled and a bar filling the
+   line down to the next dot; the steps already passed stay filled. Every title and description is
+   always visible, so nothing changes size when the active step changes. */
+.md-typeset.cc-tasks,
+[data-md-color-scheme="slate"] .md-typeset.cc-tasks {
+  border: 0;
+  background: transparent;
+}
+.md-typeset.cc-tasks h2,
+[data-md-color-scheme="slate"] .md-typeset.cc-tasks h2 {
+  padding: 0 0 1.1rem;
+  background: transparent;
+  color: var(--md-default-fg-color--light);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+.md-typeset.cc-tasks li + li {
+  border-top: 0;
+}
+.md-typeset.cc-tasks li > a {
+  padding: 0.45rem 0 1.1rem 2.9rem;
+  background: transparent;
+}
+.md-typeset.cc-tasks li:last-child > a {
+  padding-bottom: 0.45rem;
+}
+.md-typeset.cc-tasks li > a:hover,
+.md-typeset.cc-tasks li > a:focus-visible {
+  background: transparent;
+}
+/* the dot (it replaces the arrow of the other cards) */
+.md-typeset.cc-tasks li > a::after {
+  left: 0;
+  right: auto;
+  top: 0.55rem;
+  width: 1.4rem;
+  height: 1.4rem;
+  margin: 0;
+  box-sizing: border-box;
+  border: 2px solid var(--md-accent-fg-color);
+  border-radius: 50%;
+  background: var(--md-default-bg-color);
+  -webkit-mask: none;
+  mask: none;
+  transform: none;
+  transition: background-color 0.3s, box-shadow 0.3s;
+  z-index: 1;
+}
+.md-typeset.cc-tasks li > a:hover::after,
+.md-typeset.cc-tasks li > a:focus-visible::after {
+  transform: none;
+}
+/* the line down to the next dot, and (on the same place) the part of it already travelled */
+.md-typeset.cc-tasks li:not(:last-child)::before,
+.md-typeset.cc-tasks li:not(:last-child) > a::before {
+  content: "";
+  position: absolute;
+  left: calc(0.7rem - 1px);
+  top: 1.25rem;
+  bottom: -0.6rem;
+  width: 2px;
+}
+.md-typeset.cc-tasks li:not(:last-child)::before {
+  background: var(--md-accent-fg-color);
+  opacity: 0.25;
+}
+.md-typeset.cc-tasks li { position: relative; }
+.md-typeset.cc-tasks li:not(:last-child) > a::before {
+  background: var(--md-accent-fg-color);
+  transform: scaleY(0);
+  transform-origin: top;
+}
+.md-typeset.cc-tasks li > a strong {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--md-default-fg-color);
+}
+.md-typeset.cc-tasks li > a span {
+  margin-top: 0.15rem;
+  font-size: 0.82rem;
+  color: var(--md-default-fg-color--light);
+}
+.md-typeset.cc-tasks a.cc-tasks__all {
+  border-top: 0;
+  padding: 0.5rem 0 0 2.9rem;
+}
+/* with JavaScript: the steps that are not the active one fade a little */
+.md-typeset.cc-tasks.is-js li > a strong,
+.md-typeset.cc-tasks.is-js li > a span {
+  transition: opacity 0.3s, color 0.3s;
+}
+.md-typeset.cc-tasks.is-js li:not(.is-active) > a strong {
+  opacity: 0.6;
+}
+/* the detail only shows on the active step and the others close up; the height of the whole list
+   is fixed by the script (the tallest state), so the page below does not move */
+.md-typeset.cc-tasks.is-js li > a span {
+  max-height: 0;
+  margin-top: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.35s ease, margin-top 0.35s ease, opacity 0.3s ease;
+}
+.md-typeset.cc-tasks.is-js li.is-active > a span {
+  max-height: var(--cc-h, 6rem);
+  margin-top: 0.15rem;
+  opacity: 1;
+}
+.md-typeset.cc-tasks.is-measuring *,
+.md-typeset.cc-tasks.is-measuring *::before,
+.md-typeset.cc-tasks.is-measuring *::after {
+  transition: none !important;
+  animation: none !important;
+}
+.md-typeset.cc-tasks.is-js li.is-active > a strong {
+  color: var(--md-accent-fg-color);
+}
+.md-typeset.cc-tasks.is-js li.is-active > a::after,
+.md-typeset.cc-tasks.is-js li.is-done > a::after {
+  background: var(--md-accent-fg-color);
+}
+.md-typeset.cc-tasks.is-js li.is-active > a::after {
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--md-accent-fg-color) 20%, transparent);
+}
+.md-typeset.cc-tasks.is-js li.is-done > a::before {
+  transform: scaleY(1);
+}
+.md-typeset.cc-tasks.is-auto li.is-active > a::before {
+  animation: cc-tasks-progress 2s linear forwards;
+}
+/* the last step has no line, but its (invisible) bar still tells when to start again */
+.md-typeset.cc-tasks.is-auto li:last-child > a::before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+}
+.md-typeset.cc-tasks.is-auto.is-paused li.is-active > a::before {
+  animation-play-state: paused;
+}
+@keyframes cc-tasks-progress {
+  from { transform: scaleY(0); }
+  to { transform: scaleY(1); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .md-typeset.cc-tasks.is-js li > a::after,
+  .md-typeset.cc-tasks.is-js li > a strong,
+  .md-typeset.cc-tasks.is-js li > a span { transition: none; }
+}
+
+/* ---------- Home: "About CitCom.ai", the text next to the presentation video ---------- */
+.md-typeset .cc-about {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+  gap: 2.5rem;
+  align-items: start;
+}
+.md-typeset .cc-about__text > :first-child {
+  margin-top: 0;
+}
+.md-typeset .cc-about__video {
+  aspect-ratio: 16 / 9;
+  border: 1px solid var(--cc-border);
+  background: var(--cc-surface);
+}
+.md-typeset .cc-about__video iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+@media screen and (max-width: 59.9375em) {
+  .md-typeset .cc-about {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}
+
+/* ---------- Dark theme: raised cards ----------
+   In dark the page, the intro band and the cards were almost one grey. Cards are now a clear step
+   lighter than the page, with a stronger border and a line of the accent on top; hovered ones
+   go one step further. */
+[data-md-color-scheme="slate"] .md-typeset .grid.cards > ul > li,
+[data-md-color-scheme="slate"] .md-typeset .grid > .card,
+[data-md-color-scheme="slate"] .md-typeset .cc-tool {
+  border-top: 2px solid var(--cc-accent);
+}
+[data-md-color-scheme="slate"] .md-typeset .grid.cards > ul > li:hover,
+[data-md-color-scheme="slate"] .md-typeset .grid > .card:hover,
+[data-md-color-scheme="slate"] .md-typeset .cc-tool:hover {
+  background: #2d323b;
+  border-color: #6a7285;
+  border-top-color: var(--cc-accent);
+}
+
+/* ---------- TEF network: the map walks through its super-nodes (see tef-supernodes.js) ----------
+   The active card is highlighted, with a bar on top that fills and tells when to move on, and its
+   definition shows above the map. The three definitions (above the map) share one grid cell, so the box keeps the
+   height of the tallest and nothing below moves. Without JavaScript they are listed one by one. */
+.cc-tef__defs {
+  display: grid;
+  margin-bottom: 1.2rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--cc-border);
+}
+.md-typeset .cc-tef__def {
+  grid-area: 1 / 1;
+  margin: 0;
+  font-size: 0.8rem;
+  line-height: 1.55;
+}
+.md-typeset .cc-tef__def + .cc-tef__def {
+  margin-top: 1.2rem;
+}
+.md-typeset .cc-tef__def p {
+  margin: 0;
+}
+.md-typeset .cc-tef__def p.cc-tef__eyebrow {
+  margin-bottom: 0.4rem;
+}
+.md-typeset .cc-tef__def p.cc-tef__theme {
+  margin-bottom: 0.35rem;
+  color: var(--md-accent-fg-color);
+}
+.md-typeset .cc-tef__def p.cc-tef__text {
+  max-width: 44rem;
+}
+.cc-tef.is-js .cc-tef__def {
+  margin-top: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s;
+}
+.cc-tef.is-js .cc-tef__def.is-active {
+  opacity: 1;
+  visibility: visible;
+}
+.cc-tef.is-js .cc-tef__node {
+  position: relative;
+  transition: border-color 0.3s, background-color 0.3s, box-shadow 0.3s;
+}
+.cc-tef.is-js .cc-tef__node.is-active {
+  border-color: var(--md-accent-fg-color);
+  background: color-mix(in srgb, var(--md-accent-fg-color) 7%, var(--md-default-bg-color));
+  box-shadow: 0 0 0 1px var(--md-accent-fg-color);
+}
+.cc-tef.is-js .cc-tef__node:not(.is-active) .cc-tef__theme,
+.cc-tef.is-js .cc-tef__node:not(.is-active) .cc-tef__meta {
+  opacity: 0.65;
+}
+.cc-tef.is-js .cc-tef__node.is-active .cc-tef__theme {
+  color: var(--md-accent-fg-color);
+}
+.cc-tef.is-auto .cc-tef__node::before {
+  content: "";
+  position: absolute;
+  top: -1px;
+  left: -1px;
+  right: -1px;
+  height: 3px;
+  background: var(--md-accent-fg-color);
+  transform: scaleX(0);
+  transform-origin: left;
+}
+.cc-tef.is-auto .cc-tef__node.is-active::before {
+  animation: cc-tef-progress 6s linear forwards;
+}
+.cc-tef.is-auto.is-paused .cc-tef__node.is-active::before {
+  animation-play-state: paused;
+}
+@keyframes cc-tef-progress {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .cc-tef.is-js .cc-tef__def,
+  .cc-tef.is-js .cc-tef__node { transition: none; }
+}
+
+/* ---------- Guided tour: the "New here?" link of the breadcrumb row, the progress bar of the steps and
+   the previous / next buttons (see partials/content.html and extra.tour in zensical.toml) ---------- */
+.md-typeset .cc-tour {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.6rem 1.2rem;
+  margin: 0 0 1.6rem;
+  padding: 0.7rem 1rem;
+  border: 1px solid var(--cc-border);
+  background: var(--cc-tint);
+}
+.md-typeset .cc-tour__label {
+  flex: 1;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--md-accent-fg-color);
+  white-space: nowrap;
+}
+.md-typeset .cc-tour ol.cc-tour__steps {
+  display: flex;
+  order: 3;
+  flex: 1 1 100%;
+  gap: 0.35rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+[dir] .md-typeset .cc-tour ol.cc-tour__steps > li {
+  flex: 1 1 0;
+  min-width: 0;
+  margin: 0;
+}
+.md-typeset .cc-tour .cc-tour__steps a {
+  display: block;
+  padding-top: 0.45rem;
+  border-top: 3px solid var(--cc-blue-line);
+  color: var(--md-default-fg-color--light);
+  font-size: 0.7rem;
+  line-height: 1.3;
+  text-decoration: none;
+}
+.md-typeset .cc-tour__steps small {
+  display: block;
+  font-size: 0.6rem;
+  letter-spacing: 0.08em;
+}
+.md-typeset .cc-tour__steps span {
+  display: block;
+}
+.md-typeset .cc-tour__steps .is-done a {
+  border-top-color: var(--md-accent-fg-color);
+}
+.md-typeset .cc-tour__steps .is-current a {
+  border-top-color: var(--md-accent-fg-color);
+  color: var(--md-typeset-color);
+  font-weight: 600;
+}
+.md-typeset .cc-tour__steps a:hover,
+.md-typeset .cc-tour__steps a:focus-visible {
+  color: var(--md-accent-fg-color);
+}
+.md-typeset .cc-tour__exit {
+  order: 2;
+  font-size: 0.7rem;
+  color: var(--md-default-fg-color--light);
+  white-space: nowrap;
+}
+@media screen and (max-width: 44.9375em) {
+  .md-typeset .cc-tour__steps li:not(.is-current) span { display: none; }
+}
+
+.md-typeset .cc-tour-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  margin: 3rem 0 1rem;
+}
+.md-typeset .cc-tour-nav .cc-next {
+  margin: 0;
+}
+.md-typeset .cc-tour-nav__prev {
+  display: inline-flex;
+  flex-direction: column;
+  align-self: flex-start;
+  gap: 0.1rem;
+  font-size: 0.8rem;
+  color: var(--md-typeset-color);
+}
+.md-typeset .cc-tour-nav__prev small {
+  font-size: 0.62rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--md-default-fg-color--light);
+}
+.md-typeset .cc-tour-nav__prev span::before {
+  content: "← ";
+  color: var(--md-accent-fg-color);
+}
+
+/* the "New here?" link, at the end of the breadcrumb row of the pages outside the tour */
+.md-path.cc-path {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.2rem 1.2rem;
+}
+.cc-path__tour {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  margin: 0.2rem 0;
+  font-size: 0.72rem;
+  font-weight: 500;
+  color: var(--md-accent-fg-color);
+  white-space: nowrap;
+}
+.cc-path__tour-q {
+  display: inline-grid;
+  place-items: center;
+  width: 1.05rem;
+  height: 1.05rem;
+  background: var(--md-accent-fg-color);
+  color: var(--md-default-bg-color);
+  font-size: 0.65rem;
+  font-weight: 700;
+}
+.cc-path__tour::after {
+  content: "→";
+  transition: transform 0.15s;
+}
+.cc-path__tour:hover,
+.cc-path__tour:focus-visible {
+  color: var(--md-accent-fg-color);
+}
+.cc-path__tour:hover::after,
+.cc-path__tour:focus-visible::after {
+  transform: translateX(0.2rem);
+}
+@media (prefers-reduced-motion: reduce) {
+  .cc-path__tour::after { transition: none; }
 }

@@ -5,6 +5,12 @@ PYTHON := python3
 VENV := .venv
 BIN := $(VENV)/bin
 
+# Preferred port for `serve`; if it is busy, the next free one is used.
+# Override with e.g. `make serve PORT=9000`
+PORT ?= 8000
+# First free TCP port starting at $(PORT)
+FREE_PORT = p=$(PORT); until $(PYTHON) -c "import socket,sys; socket.socket().bind(('0.0.0.0',int(sys.argv[1])))" $$p 2>/dev/null; do p=$$((p+1)); done; echo $$p
+
 ################################################################################
 # COMMANDS                                                                     #
 ################################################################################
@@ -19,14 +25,18 @@ $(BIN)/zensical: pyproject.toml
 install: $(BIN)/zensical
 
 .PHONY: serve
-## Serve the site at http://localhost:8000, reloading on every change
+## Serve the site at http://localhost:8000 (or the next free port), reloading on every change
 serve: install
-	$(BIN)/zensical serve
+	@port=$$($(FREE_PORT)); \
+	[ "$$port" = "$(PORT)" ] || echo "Port $(PORT) is busy, using $$port instead"; \
+	$(BIN)/zensical serve -a localhost:$$port
 
 .PHONY: serve-lan
-## Serve the site to your local network or tailnet (port 8000); stop it with Ctrl+C
+## Serve the site to your local network or tailnet (port 8000 or the next free one); stop it with Ctrl+C
 serve-lan: install
-	$(BIN)/zensical serve -a 0.0.0.0:8000
+	@port=$$($(FREE_PORT)); \
+	[ "$$port" = "$(PORT)" ] || echo "Port $(PORT) is busy, using $$port instead"; \
+	$(BIN)/zensical serve -a 0.0.0.0:$$port
 
 .PHONY: build
 ## Build the site into public/ in strict mode, as CI does: any broken link or warning fails

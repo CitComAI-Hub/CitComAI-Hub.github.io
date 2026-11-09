@@ -4,7 +4,7 @@
 [project]
 site_name = "CitCom.ai Hub"
 site_url = "https://citcomai-hub.github.io"
-site_description = "The technical hub of the CitCom.ai TEF: data spaces, tools and guides to build AI services for smart cities."
+site_description = "The Common Infrastructure of CitCom.ai (WP3): the data space, tools and guides to build AI services for smart cities."
 repo_url = "https://github.com/CitComAI-Hub/CitComAI-Hub.github.io"
 repo_name = "CitComAI-Hub/CitComAI-Hub.github.io"
 edit_uri = "edit/main/docs/"
@@ -24,6 +24,8 @@ extra_javascript = [
   "javascripts/external-links.js",
   "javascripts/catalog.js",
   "javascripts/header-section.js",
+  "javascripts/home-tasks.js",
+  "javascripts/tef-supernodes.js",
 ]
 
 # Not pages of the site: the theme templates and the notes on the vendored code
@@ -41,11 +43,44 @@ not_in_nav = """
 # Moving or removing a page? Add its old path to plugins.redirects below.
 nav = [
   { "Home" = "index.md" },
+  { "TEF network" = [
+    "tef/index.md",
+    { "Sites in detail" = "tef/sites.md" },
+    { "Nordic - POWER" = [
+      "tef/nordic_power/doll_living_lab.md",
+      "tef/nordic_power/aarhus_city_lab.md",
+      "tef/nordic_power/net_zero_innovation_hub.md",
+      "tef/nordic_power/dti.md",
+      "tef/nordic_power/center_denmark.md",
+      "tef/nordic_power/gate21.md",
+      "tef/nordic_power/rise.md",
+      "tef/nordic_power/tampere.md",
+    ] },
+    { "Central - MOVE" = [
+      "tef/central_move/mechelen.md",
+      "tef/central_move/brussels.md",
+      "tef/central_move/eindhoven.md",
+      "tef/central_move/paris.md",
+      "tef/central_move/list.md",
+    ] },
+    { "South - CONNECT" = [
+      "tef/south_connect/valencia.md",
+      "tef/south_connect/milano.md",
+      "tef/south_connect/warsaw.md",
+    ] },
+    { "AI Trustworthiness Label" = [
+      "ai_assessment/index.md",
+      "ai_assessment/ai_assessment_catalogue.md",
+    ] },
+    { "Local Digital Twins" = "local_digital_twins/index.md" },
+  ] },
   { "Get started" = [
     "getting_started/index.md",
-    { "The project and the TEFs" = "getting_started/project.md" },
+    { "The project" = "getting_started/project.md" },
+    { "How this site works" = "getting_started/site.md" },
     { "Interoperability" = "getting_started/interoperability.md" },
     { "Data spaces in 5 minutes" = "getting_started/data_spaces.md" },
+    { "Your path" = "getting_started/path.md" },
   ] },
   { "Data space" = [
     "data_spaces/index.md",
@@ -81,37 +116,6 @@ nav = [
       { "Other tools" = "toolbox/other_toolkit.md" },
     ] },
   ] },
-  { "TEF network" = [
-    "tef/index.md",
-    { "Sites in detail" = "tef/sites.md" },
-    { "Nordic - POWER" = [
-      "tef/nordic_power/doll_living_lab.md",
-      "tef/nordic_power/aarhus_city_lab.md",
-      "tef/nordic_power/net_zero_innovation_hub.md",
-      "tef/nordic_power/dti.md",
-      "tef/nordic_power/center_denmark.md",
-      "tef/nordic_power/gate21.md",
-      "tef/nordic_power/rise.md",
-      "tef/nordic_power/tampere.md",
-    ] },
-    { "Central - MOVE" = [
-      "tef/central_move/mechelen.md",
-      "tef/central_move/brussels.md",
-      "tef/central_move/eindhoven.md",
-      "tef/central_move/paris.md",
-      "tef/central_move/list.md",
-    ] },
-    { "South - CONNECT" = [
-      "tef/south_connect/valencia.md",
-      "tef/south_connect/milano.md",
-      "tef/south_connect/warsaw.md",
-    ] },
-    { "AI Trustworthiness Label" = [
-      "ai_assessment/index.md",
-      "ai_assessment/ai_assessment_catalogue.md",
-    ] },
-    { "Local Digital Twins" = "local_digital_twins/index.md" },
-  ] },
   { "Help" = [
     "faq/index.md",
     { "Request changes" = "faq/pull_request_procedure.md" },
@@ -121,7 +125,36 @@ nav = [
 [project.extra]
 generator = false
 marketplace_url = "https://marketplace.citcom-vrain-dataspace.eu"
-hidden_sections = ["Help"]
+# "Get started" is the guided tour, not a section of the menu: the header links to it with its own
+# button, and its pages carry the tour bar (see partials/content.html).
+hidden_sections = ["Help", "Get started"]
+
+# The guided tour for newcomers, in order. One source for the home, the header link, the tour bar
+# and the previous / next buttons. `url` is the page URL (with the trailing slash).
+[[project.extra.tour]]
+title = "The project"
+url = "getting_started/project/"
+text = "What CitCom is, what a TEF is and why the sites share an architecture."
+
+[[project.extra.tour]]
+title = "How this site works"
+url = "getting_started/site/"
+text = "The sections of the menu and what each one is for."
+
+[[project.extra.tour]]
+title = "Interoperability"
+url = "getting_started/interoperability/"
+text = "The common rules behind every CitCom service."
+
+[[project.extra.tour]]
+title = "Data spaces"
+url = "getting_started/data_spaces/"
+text = "How data is shared under control."
+
+[[project.extra.tour]]
+title = "Your path"
+url = "getting_started/path/"
+text = "Pick what you came to do."
 
 # ---------------------------------------------------------------------------
 # Theme: Material's classic look, restyled in docs/stylesheets/citcom.css
@@ -244,8 +277,10 @@ services, and the tools to connect a city platform.
 "Get started" = [
   "getting_started/index.md",
   "getting_started/project.md",
+  "getting_started/site.md",
   "getting_started/interoperability.md",
   "getting_started/data_spaces.md",
+  "getting_started/path.md",
 ]
 "Data space" = [
   "data_spaces/index.md",

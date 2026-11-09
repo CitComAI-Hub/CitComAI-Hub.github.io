@@ -1,11 +1,21 @@
 ---
 title: Getting started
-description: "What CitCom.ai is and why its pieces fit together, in plain words."
+description: "A guided tour for newcomers: what CitCom.ai is, how this site is organised and how its pieces fit together."
 ---
 
 # Getting started
 
-<p class="cc-lead">What CitCom.ai is and why its technical pieces fit together the way they do, in plain words. Start here if you are new to the project: each page is short and leads to the deeper chapters.</p>
+<p class="cc-lead">A guided tour for whoever arrives here for the first time: what CitCom.ai is, how this site is organised and how its technical pieces fit together, in plain words. Five short steps, each one leads to the next.</p>
+
+## The tour
+
+1. **[The project](project.md)**: what CitCom is, what a TEF is and why the sites share an architecture.
+2. **[How this site works](site.md)**: the sections of the menu and what each one is for.
+3. **[Interoperability](interoperability.md)**: the common rules behind every CitCom service.
+4. **[Data spaces](data_spaces.md)**: how data is shared under control.
+5. **[Your path](path.md)**: pick what you came to do.
+
+[Start the tour](project.md){ .md-button .md-button--primary }
 
 ## CitCom in four questions
 
@@ -17,7 +27,7 @@ description: "What CitCom.ai is and why its pieces fit together, in plain words.
 
     A European Union project that runs Testing and Experimentation Facilities (TEFs) for AI and robotics in smart cities. Companies test their AI products in real cities, with real data, before they reach the market.
 
-    [:octicons-arrow-right-24: The project and the TEFs](project.md)
+    [:octicons-arrow-right-24: The project](project.md)
 
 -   :material-puzzle-outline:{ .lg } __What does it build on?__
 

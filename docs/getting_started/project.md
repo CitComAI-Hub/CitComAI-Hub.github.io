@@ -1,34 +1,13 @@
 ---
-title: The project and the TEFs
-description: "What a TEF is, the three super-nodes and the minimal package for TEF nodes."
+title: The project
+description: "What CitCom.ai is, what a TEF is, why the sites share a common architecture and the minimal package WP3 offers them."
 ---
 
-# The project and the TEFs
+# The project
 
-## What a TEF is
+**CitCom.ai** is a European Union project that sets up Testing and Experimentation Facilities (TEFs) for AI and robotics in smart and sustainable cities and communities. A **TEF** is a place where companies test AI products in real conditions before they reach the market; the sites, the super-nodes they are grouped in and what each one offers are in the [TEF network](../tef/index.md).
 
-A **Testing and Experimentation Facility** (TEF) is a place where companies test AI and robotics products in real conditions before they reach the market. The European Commission funds [TEFs in several sectors](https://digital-strategy.ec.europa.eu/en/activities/testing-and-experimentation-facilities); CitCom.ai is the one for **smart and sustainable cities and communities**.
-
-In practice, a CitCom TEF site is a city, a living lab or a research centre that offers:
-
-- **Real environments**: streets, buildings, energy grids or mobility hubs where a product can run.
-- **Data**: city platforms with sensor and open data, increasingly shared through a data space.
-- **Expertise**: help to scope the test, check regulatory compliance (GDPR, the AI Act, cybersecurity) and assess the result.
-
-The project brings together [more than 30 organisations](https://citcom.ai/about) in 11 EU countries. The [CitCom TEF website](https://citcomtef.eu/) is the entry point for companies that want to test a product.
-
-## Three super-nodes
-
-The sites are grouped in three **super-nodes**, each with a theme. A super-node is a regional hub that shares expertise and resources between its sites.
-
-| | Nordic | Central | South |
-|--:|:--:|:--:|:--:|
-| **Theme** | POWER | MOVE | CONNECT |
-| **Focus** | Energy, environment, cybersecurity, ethics, edge learning | Mobility and logistics | Securely connecting citizens, infrastructure, AI and robotics across city services |
-| **Lead** | Denmark | Belgium | Spain |
-| **Countries** | Denmark, Sweden, Finland | Belgium, France, Luxembourg, the Netherlands | Spain, Italy, Poland |
-
-Every site has its own page in the [TEF network](../tef/index.md).
+This site is the work of **work package 3 (WP3), Common Infrastructure and Services**. This page explains why the sites share a common architecture and what WP3 offers them.
 
 ## Why a common architecture
 
