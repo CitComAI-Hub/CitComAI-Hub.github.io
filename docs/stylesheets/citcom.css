@@ -2467,3 +2467,15 @@ footer .footer-tagline img {
   order: 4;
   margin: 0.2rem 0 0 auto;
 }
+
+/* Home, "In this documentation": the dots of the steps that are not the active one are smaller; the
+   scale keeps the centre of each dot on the line */
+.md-typeset.cc-tasks.is-js li > a::after {
+  transition: background-color 0.3s, box-shadow 0.3s, transform 0.3s;
+}
+.md-typeset.cc-tasks.is-js li:not(.is-active) > a::after {
+  transform: scale(0.65);
+}
+@media (prefers-reduced-motion: reduce) {
+  .md-typeset.cc-tasks.is-js li > a::after { transition: none; }
+}
