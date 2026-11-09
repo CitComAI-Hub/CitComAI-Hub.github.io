@@ -872,8 +872,10 @@ footer .footer-tagline img {
 }
 
 /* External links in the text: a small arrow says they open in a new tab. Not on links that are
-   an image (the logos of the footer): the arrow would hang next to the picture. */
-.md-typeset a.cc-external:not(.md-button):not(.md-content__button):not(.cc-header__cta):not(.cc-btn):not(:has(> img:only-child))::after {
+   an image (the logos of the footer): the arrow would hang next to the picture. Not on the action
+   link of a card either: its ::after is the overlay that makes the whole card clickable, and the
+   cards of the toolbox draw their own icon. */
+.md-typeset a.cc-external:not(.md-button):not(.md-content__button):not(.cc-header__cta):not(.cc-btn):not(.cc-tool__ext):not(.grid.cards > ul > li > p:last-child > a:only-child):not(:has(> img:only-child))::after {
   content: "";
   display: inline-block;
   width: 0.62em;
