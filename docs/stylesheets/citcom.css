@@ -590,25 +590,8 @@ footer .footer-tagline img {
   line-height: 1.5;
   color: var(--md-footer-fg-color--light);
 }
-/* Light theme: a light footer, set apart by a rule, so the page does not end on a heavy dark
-   block. The other logos are white artwork: inverted they turn black (the EU allows the
-   monochrome emblem), and the CitCom logo stays as it is. */
-[data-md-color-scheme="default"] :is(.md-footer, .md-footer-meta) {
-  --md-footer-fg-color: var(--cc-ink);
-  --md-footer-fg-color--light: var(--cc-grey);
-  --md-footer-fg-color--lighter: var(--cc-grey);
-  background-color: var(--cc-surface);
-  color: var(--cc-ink);
-}
-[data-md-color-scheme="default"] .md-footer-meta {
-  border-top: 1px solid var(--cc-border);
-}
-[data-md-color-scheme="default"] .md-footer-meta :is(.vrain-logo, .footer-tagline img) {
-  filter: invert(1);
-}
-[data-md-color-scheme="default"] .md-footer-meta .footer-logo .citcom-logo {
-  filter: none;
-}
+/* The footer, with the logos of the organisations, is the same dark block in the light and in the
+   dark theme: the logos are white artwork and it keeps them as they are. */
 
 /* ---------- Home: title, lead and search on white ---------- */
 
@@ -1968,7 +1951,7 @@ footer .footer-tagline img {
   .cc-tef.is-js .cc-tef__node { transition: none; }
 }
 
-/* ---------- Guided tour: the "New here?" link of the breadcrumb row, the progress bar of the steps (see partials/content.html and extra.tour in zensical.toml) ---------- */
+/* ---------- Guided tour: the progress bar of the steps (see partials/content.html and extra.tour in zensical.toml) ---------- */
 .md-typeset .cc-tour {
   display: flex;
   flex-wrap: wrap;
