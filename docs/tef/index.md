@@ -1,6 +1,7 @@
 ---
 title: TEF network
 description: "What a TEF is, the three super-nodes and the sites of CitCom, and the services they share: the AI Trustworthiness Label and Local Digital Twins."
+summary: "Who takes part: three super-nodes and 16 sites across Europe."
 ---
 
 # TEF network

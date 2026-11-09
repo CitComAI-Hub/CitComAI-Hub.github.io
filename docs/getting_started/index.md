@@ -1,56 +1,62 @@
 ---
-title: Getting started
-description: "A guided tour for newcomers: what CitCom.ai is, how this site is organised and how its pieces fit together."
+title: The project
+description: "What CitCom.ai is, what a TEF is, why the sites share a common architecture and the minimal package WP3 offers them."
 ---
 
-# Getting started
+# The project
 
-<p class="cc-lead">A guided tour for whoever arrives here for the first time: what CitCom.ai is, how this site is organised and how its technical pieces fit together, in plain words. Five short steps, each one leads to the next.</p>
+**CitCom.ai** is a European Union project that sets up Testing and Experimentation Facilities (TEFs) for AI and robotics in smart and sustainable cities and communities. A **TEF** is a place where companies test AI products in real conditions before they reach the market; the sites, the super-nodes they are grouped in and what each one offers are in the [TEF network](../tef/index.md).
 
-## The tour
+This site is the work of **work package 3 (WP3), Common Infrastructure and Services**. This page explains why the sites share a common architecture and what WP3 offers them.
 
-1. **[The project](project.md)**: what CitCom is, what a TEF is and why the sites share an architecture.
-2. **[How this site works](site.md)**: the sections of the menu and what each one is for.
-3. **[Interoperability](interoperability.md)**: the common rules behind every CitCom service.
-4. **[Data spaces](data_spaces.md)**: how data is shared under control.
-5. **[Your path](path.md)**: pick what you came to do.
+## Why a common architecture
 
-[Start the tour](project.md){ .md-button .md-button--primary }
+Each city already has its own data platform, often built years ago with its own interfaces. A product tested in one city would need a new integration in the next one. CitCom avoids that by agreeing on a few common points:
 
-## CitCom in four questions
+- the same **API and data models** to read city data ([interoperability level 1](interoperability.md#level-1-pivotal-interoperability-points));
+- the same **way to share data under control**, between organisations that do not have to trust each other in advance ([level 2: data spaces](data_spaces.md)).
 
-<div class="grid cards cc-two" markdown>
+A service built on those points runs in any city that follows them. The [MIAIS](../miais/index.md) shows how.
 
--   :material-city-variant-outline:{ .lg } __What is it?__
+## The minimal package for TEF nodes
 
-    ---
+CitCom has two kinds of offer, for different audiences:
 
-    A European Union project that runs Testing and Experimentation Facilities (TEFs) for AI and robotics in smart cities. Companies test their AI products in real cities, with real data, before they reach the market.
+- **The TEF nodes offer services to AI and robotics innovators**: test sites, data, expertise and assessment. The [CitCom TEF website](https://citcomtef.eu/) lists them.
+- **CitCom's work package 3 (WP3) offers the TEF nodes a *minimal package***: a common reference architecture, with the guides, tools and deployment examples to apply it. Nodes that adopt it share a common technical base, so a service built on that base can run in any of them. This hub gathers the package:
 
-    [:octicons-arrow-right-24: The project](project.md)
+<div class="grid cards" markdown>
 
--   :material-puzzle-outline:{ .lg } __What does it build on?__
+-   :material-server-network:{ .lg .middle } __A working data space__
 
     ---
 
-    The European work on data sharing between cities: the Minimal Interoperability Mechanisms (MIMs) of OASC, Smart Data Models, and the data space recommendations of the DSSC and DS4SSCC.
+    Running infrastructure that sites and companies can join, with real data from Valencia.
 
-    [:octicons-arrow-right-24: Interoperability](interoperability.md)
+    [:octicons-arrow-right-24: The data spaces](../data_spaces/index.md)
 
--   :material-server-network:{ .lg } __Which technology does it use?__
-
-    ---
-
-    NGSI-LD brokers to serve the data, Smart Data Models to describe it, and a data space built with FIWARE to share it under control, with verifiable credentials held in a wallet.
-
-    [:octicons-arrow-right-24: Data spaces in 5 minutes](data_spaces.md)
-
--   :material-package-variant-closed:{ .lg } __Who provides what?__
+-   :material-robot-outline:{ .lg .middle } __A worked example__
 
     ---
 
-    The **TEF nodes** offer their services to AI and robotics innovators. CitCom's **work package 3 (WP3)** offers the TEF nodes a *minimal package*: a common reference architecture, with the guides, tools and deployment examples to apply it. This hub gathers it.
+    An AI service that goes from a custom integration to a data space service.
 
-    [:octicons-arrow-right-24: The minimal package](project.md#the-minimal-package-for-tef-nodes)
+    [:octicons-arrow-right-24: MIAIS](../miais/index.md)
+
+-   :material-book-open-variant:{ .lg .middle } __Guides and tools__
+
+    ---
+
+    One guide per task, and the tools to connect a city platform.
+
+    [:octicons-arrow-right-24: Guides](../guides/index.md)
+
+-   :material-shield-check-outline:{ .lg .middle } __Trust and assessment__
+
+    ---
+
+    The AI Trustworthiness Label to assess the services tested in the TEFs.
+
+    [:octicons-arrow-right-24: AI Trustworthiness Label](../ai_assessment/index.md)
 
 </div>

@@ -1,6 +1,7 @@
 ---
 title: Guides
 description: "One guide per task, in order: join, get a wallet, use data, deploy a connector, publish a dataset or a service."
+summary: "One guide per task: join, get a wallet, publish and use data."
 ---
 
 # Guides

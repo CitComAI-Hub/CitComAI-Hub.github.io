@@ -1,6 +1,7 @@
 ---
 title: Toolbox
 description: "The open-source tools used in the CitCom.ai Data Space."
+summary: "Open-source tools to connect a city platform and build services."
 ---
 
 # Toolbox

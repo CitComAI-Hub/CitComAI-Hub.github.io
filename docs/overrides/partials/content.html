@@ -5,14 +5,14 @@
   {%- set section.main = true -%}
 {%- endfor -%}
 
-{#- The guided tour: on its pages, a bar with the progress above the title and previous / next at the
+{#- The guided tour: on its pages, a bar with the progress above the title and the same one at the
     end. The steps are extra.tour in zensical.toml; a page is a step if its URL is in the list. -#}
 {%- set tour = config.extra.tour or [] -%}
 {%- set cur = namespace(i=-1) -%}
 {%- for s in tour -%}{%- if s.url == page.url -%}{%- set cur.i = loop.index0 -%}{%- endif -%}{%- endfor -%}
 
-{%- if cur.i >= 0 -%}
-<nav class="cc-tour" aria-label="Guided tour">
+{%- macro tour_bar(tour, cur, label, end=false) -%}
+<nav class="cc-tour{% if end %} cc-tour--end{% endif %}" aria-label="{{ label }}">
   <span class="cc-tour__label">Tour · step {{ cur.i + 1 }} of {{ tour | length }}</span>
   <ol class="cc-tour__steps">
     {%- for s in tour %}
@@ -21,8 +21,12 @@
     </li>
     {%- endfor %}
   </ol>
-  <a class="cc-tour__exit" href="{{ 'getting_started/' | url }}">Leave the tour</a>
+  <a class="cc-tour__exit" href="{{ nav.homepage.url | url }}">Leave the tour</a>
 </nav>
+{%- endmacro -%}
+
+{%- if cur.i >= 0 -%}
+{{ tour_bar(tour, cur, "Guided tour") }}
 {%- endif %}
 
 {% include "partials/actions.html" %}
@@ -32,24 +36,7 @@
 {{ page.content }}
 
 {%- if cur.i >= 0 -%}
-<div class="cc-tour-nav">
-  {%- if cur.i > 0 %}
-  <a class="cc-tour-nav__prev" href="{{ tour[cur.i - 1].url | url }}"><small>Previous</small><span>{{ tour[cur.i - 1].title }}</span></a>
-  {%- endif %}
-  {%- if cur.i + 1 < tour | length %}
-  <a class="cc-next" href="{{ tour[cur.i + 1].url | url }}">
-    <span class="cc-next__label">Next · step {{ cur.i + 2 }} of {{ tour | length }}</span>
-    <span class="cc-next__title">{{ tour[cur.i + 1].title }}</span>
-    <span class="cc-next__text">{{ tour[cur.i + 1].text }}</span>
-  </a>
-  {%- else %}
-  <a class="cc-next" href="{{ nav.homepage.url | url }}">
-    <span class="cc-next__label">Done</span>
-    <span class="cc-next__title">Finish the tour</span>
-    <span class="cc-next__text">Back to the home, with all the sections one click away.</span>
-  </a>
-  {%- endif %}
-</div>
+{{ tour_bar(tour, cur, "Guided tour, progress", true) }}
 {%- endif %}
 
 {#- Next step: next_step in the front matter, or else the next page of the navigation -#}

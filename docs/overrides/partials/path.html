@@ -21,7 +21,7 @@
         {{ item.render(nav_item) }}
       {% endfor %}
     </ol>
-    {%- if tour and not in_tour.yes and page.url != "getting_started/" %}
+    {%- if tour and not in_tour.yes %}
     <a class="cc-path__tour" href="{{ tour[0].url | url }}"><span class="cc-path__tour-q" aria-hidden="true">?</span>New here? Take the tour</a>
     {%- endif %}
   </nav>

@@ -1,7 +1,10 @@
 {% extends "main.html" %}
 
-{#- Home of the docs: title, lead and two buttons, next to the guided tour (extra.tour in zensical.toml, the path every
-newcomer follows). The page content (reading lists by role) follows. -#}
+{#- Home of the docs: title, lead and two buttons, next to the main blocks of the documentation (the sections of the header, with the short
+    summary of each index page). The page content (reading lists by role) follows. -#}
+{%- macro first_url(item) -%}
+  {%- if item.children -%}{{ first_url(item.children[0]) }}{%- else -%}{{ item.url }}{%- endif -%}
+{%- endmacro -%}
 {% block tabs %}
 <section class="cc-intro">
   <div class="md-grid cc-intro__inner">
@@ -21,13 +24,14 @@ newcomer follows). The page content (reading lists by role) follows. -#}
       </div>
     </div>
     <nav class="md-typeset cc-tasks" aria-labelledby="cc-tasks-title">
-      <h2 id="cc-tasks-title">The tour</h2>
+      <h2 id="cc-tasks-title">In this documentation</h2>
       <ul>
-        {%- for step in config.extra.tour %}
-        <li><a href="{{ step.url | url }}"><strong>{{ step.title }}</strong><span>{{ step.text }}</span></a></li>
+        {%- for item in nav.items if item.children and item.title not in config.extra.hidden_sections %}
+        {%- set first = item.children[0] %}
+        <li><a href="{{ first_url(item) | url }}"><strong>{{ item.title }}</strong><span>{{ first.meta.summary or first.meta.description }}</span></a></li>
         {%- endfor %}
       </ul>
-      <a class="cc-tasks__all" href="{{ config.extra.tour[0].url | url }}">Start the tour</a>
+      <a class="cc-tasks__all" href="{{ config.extra.tour[0].url | url }}">New here? Take the tour</a>
     </nav>
   </div>
 </section>

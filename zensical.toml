@@ -76,7 +76,6 @@ nav = [
   ] },
   { "Get started" = [
     "getting_started/index.md",
-    { "The project" = "getting_started/project.md" },
     { "How this site works" = "getting_started/site.md" },
     { "Interoperability" = "getting_started/interoperability.md" },
     { "Data spaces in 5 minutes" = "getting_started/data_spaces.md" },
@@ -133,7 +132,7 @@ hidden_sections = ["Help", "Get started"]
 # and the previous / next buttons. `url` is the page URL (with the trailing slash).
 [[project.extra.tour]]
 title = "The project"
-url = "getting_started/project/"
+url = "getting_started/"
 text = "What CitCom is, what a TEF is and why the sites share an architecture."
 
 [[project.extra.tour]]
@@ -276,7 +275,6 @@ services, and the tools to connect a city platform.
 [project.plugins.llmstxt.sections]
 "Get started" = [
   "getting_started/index.md",
-  "getting_started/project.md",
   "getting_started/site.md",
   "getting_started/interoperability.md",
   "getting_started/data_spaces.md",
@@ -325,6 +323,7 @@ width = "100%"
 # Old URLs of the site, so that external links keep working
 [project.plugins.redirects.redirect_maps]
 "welcome.md" = "getting_started/index.md"
+"getting_started/project.md" = "getting_started/index.md"
 "getting_started/nodes_countries.md" = "tef/index.md"
 "getting_started/data_spaces/fundaments_deployment.md" = "getting_started/data_spaces.md"
 "getting_started/get_involved/index.md" = "guides/join.md"

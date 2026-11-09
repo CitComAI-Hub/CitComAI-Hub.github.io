@@ -1948,8 +1948,7 @@ footer .footer-tagline img {
   .cc-tef.is-js .cc-tef__node { transition: none; }
 }
 
-/* ---------- Guided tour: the "New here?" link of the breadcrumb row, the progress bar of the steps and
-   the previous / next buttons (see partials/content.html and extra.tour in zensical.toml) ---------- */
+/* ---------- Guided tour: the "New here?" link of the breadcrumb row, the progress bar of the steps (see partials/content.html and extra.tour in zensical.toml) ---------- */
 .md-typeset .cc-tour {
   display: flex;
   flex-wrap: wrap;
@@ -2022,74 +2021,7 @@ footer .footer-tagline img {
   .md-typeset .cc-tour__steps li:not(.is-current) span { display: none; }
 }
 
-.md-typeset .cc-tour-nav {
-  display: flex;
-  flex-direction: column;
-  gap: 0.8rem;
+/* the same bar closes each step of the tour */
+.md-typeset .cc-tour--end {
   margin: 3rem 0 1rem;
-}
-.md-typeset .cc-tour-nav .cc-next {
-  margin: 0;
-}
-.md-typeset .cc-tour-nav__prev {
-  display: inline-flex;
-  flex-direction: column;
-  align-self: flex-start;
-  gap: 0.1rem;
-  font-size: 0.8rem;
-  color: var(--md-typeset-color);
-}
-.md-typeset .cc-tour-nav__prev small {
-  font-size: 0.62rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--md-default-fg-color--light);
-}
-.md-typeset .cc-tour-nav__prev span::before {
-  content: "← ";
-  color: var(--md-accent-fg-color);
-}
-
-/* the "New here?" link, at the end of the breadcrumb row of the pages outside the tour */
-.md-path.cc-path {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-  gap: 0.2rem 1.2rem;
-}
-.cc-path__tour {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.45rem;
-  margin: 0.2rem 0;
-  font-size: 0.72rem;
-  font-weight: 500;
-  color: var(--md-accent-fg-color);
-  white-space: nowrap;
-}
-.cc-path__tour-q {
-  display: inline-grid;
-  place-items: center;
-  width: 1.05rem;
-  height: 1.05rem;
-  background: var(--md-accent-fg-color);
-  color: var(--md-default-bg-color);
-  font-size: 0.65rem;
-  font-weight: 700;
-}
-.cc-path__tour::after {
-  content: "→";
-  transition: transform 0.15s;
-}
-.cc-path__tour:hover,
-.cc-path__tour:focus-visible {
-  color: var(--md-accent-fg-color);
-}
-.cc-path__tour:hover::after,
-.cc-path__tour:focus-visible::after {
-  transform: translateX(0.2rem);
-}
-@media (prefers-reduced-motion: reduce) {
-  .cc-path__tour::after { transition: none; }
 }
