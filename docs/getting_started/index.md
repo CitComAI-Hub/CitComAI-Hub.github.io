@@ -13,7 +13,7 @@ This site is the work of **work package 3 (WP3), Common Infrastructure and Servi
 
 Each city already has its own data platform, often built years ago with its own interfaces. A product tested in one city would need a new integration in the next one. CitCom avoids that by agreeing on a few common points:
 
-- the same **API and data models** to read city data ([interoperability level 1](interoperability.md#level-1-pivotal-interoperability-points));
+- the same **API and data models** to read city data ([interoperability level 1](interoperability.md#level-1));
 - the same **way to share data under control**, between organisations that do not have to trust each other in advance ([level 2: data spaces](data_spaces.md)).
 
 A service built on those points runs in any city that follows them. The [MIAIS](../miais/index.md) shows how.

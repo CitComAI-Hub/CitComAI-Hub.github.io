@@ -11,7 +11,7 @@ Interoperability is what lets a service built for one city run in another city w
 
 The [Minimal Interoperability Mechanisms](https://mims.oascities.org/) (MIMs) are a small set of agreements, published by [Open & Agile Smart Cities](https://oascities.org/) (OASC), that cities adopt so their systems can talk to each other. They are *minimal* on purpose: a city does not replace its platform, it adds a common interface on top.
 
-The current version, MIMs Plus v9 (June 2026), orders the foundational MIMs along the journey of the data: make it accessible (MIM0), represent it with standard models (MIM2), exchange it under clear terms and trust (MIM3) and interlink it (MIM1). CitCom builds on the first two for [level 1](#level-1-pivotal-interoperability-points), and its data space covers MIM3 at [level 2](#level-2-common-interface-with-integrated-security):
+The current version, MIMs Plus v9 (June 2026), orders the foundational MIMs along the journey of the data: make it accessible (MIM0), represent it with standard models (MIM2), exchange it under clear terms and trust (MIM3) and interlink it (MIM1). CitCom builds on the first two for [level 1](#level-1), and its data space covers MIM3 at [level 2](#level-2):
 
 | MIM | What it fixes | In CitCom |
 |---|---|---|
@@ -22,34 +22,59 @@ NGSI-LD and Smart Data Models work as one package: the main mechanism of MIM2 is
 
 ## Interoperability levels
 
-```mermaid
-flowchart LR
-    L0["<b>Level 0</b><br/>Custom integration<br/><i>one adapter per city</i>"]
-    L1["<b>Level 1</b><br/>NGSI-LD + Smart Data Models<br/><i>same API and models everywhere</i>"]
-    L2["<b>Level 2</b><br/>Data space<br/><i>same API, plus trust and access control</i>"]
-    L0 -- "adopt NGSI-LD +<br/>Smart Data Models" --> L1
-    L1 -- "add a connector" --> L2
-```
-
-### Level 0: custom integration
-
-There is no common standard. Each platform is connected with an integration written for it: its own API, its own field names, its own authentication. It works, but every new city means a new integration, and the data cannot be reused easily by others.
-
-### Level 1: pivotal interoperability points
-
-The platform exposes its data through **NGSI-LD** and describes it with **Smart Data Models**, the package of MIM2. The platform can keep its own internals: what matters is that the interface is the same. A service written for level 1 reads waste containers in Valencia and in any other level-1 city with the same code.
-
-What is still missing is *control*: a level-1 broker is usually either open to everyone or protected with an ad hoc key.
-
-### Level 2: common interface with integrated security
-
-The NGSI-LD interface is placed behind a **data space connector**. Level 1 stays as it is, and the connector adds what is needed to share data between organisations that do not know each other in advance:
-
-- a **trust framework**: who belongs to the data space, managed by a trust anchor;
-- **identity**: each organisation, person and machine proves who it is with verifiable credentials;
-- **authorisation**: access rules (ODRL policies) that the provider defines and the connector enforces, usually created when a consumer buys an offer in the marketplace.
-
-[Data spaces in 5 minutes](data_spaces.md) explains these pieces.
+<div class="cc-levels" markdown="0">
+  <div class="cc-levels__flow">
+    <div class="cc-levels__node" id="level-0" style="--lvl: 0" tabindex="0">
+      <p class="cc-tef__eyebrow">Level 0</p>
+      <p class="cc-tef__theme">Custom integration</p>
+      <p class="cc-tef__meta">One adapter per city</p>
+      <ul>
+        <li>Its own API</li>
+        <li>Its own field names</li>
+        <li>Its own authentication</li>
+      </ul>
+      <div class="cc-levels__text">
+        <p>There is no common standard. Each platform is connected with an integration written for it: its own API, its own field names, its own authentication.</p>
+        <p>It works, but every new city means a new integration, and the data cannot be reused easily by others.</p>
+      </div>
+    </div>
+    <div class="cc-levels__step" aria-hidden="true"><span class="cc-levels__arrow"></span><small>Adopt NGSI-LD and Smart Data Models</small></div>
+    <div class="cc-levels__node" id="level-1" style="--lvl: 1" tabindex="0">
+      <p class="cc-tef__eyebrow">Level 1</p>
+      <p class="cc-tef__theme">Pivotal points</p>
+      <p class="cc-tef__meta">Same API and models everywhere</p>
+      <ul>
+        <li>NGSI-LD API <span>MIM0</span></li>
+        <li>Smart Data Models <span>MIM2</span></li>
+        <li>Open, or an ad hoc key</li>
+      </ul>
+      <div class="cc-levels__text">
+        <p>The platform exposes its data through <strong>NGSI-LD</strong> and describes it with <strong>Smart Data Models</strong>, the package of MIM2. The platform can keep its own internals: what matters is that the interface is the same. A service written for level 1 reads waste containers in Valencia and in any other level-1 city with the same code.</p>
+        <p>What is still missing is <em>control</em>: a level-1 broker is usually either open to everyone or protected with an ad hoc key.</p>
+      </div>
+    </div>
+    <div class="cc-levels__step" aria-hidden="true"><span class="cc-levels__arrow"></span><small>Add a connector</small></div>
+    <div class="cc-levels__node" id="level-2" style="--lvl: 2" tabindex="0">
+      <p class="cc-tef__eyebrow">Level 2</p>
+      <p class="cc-tef__theme">Data space</p>
+      <p class="cc-tef__meta">Same API, plus trust and access control</p>
+      <ul>
+        <li>Trust framework</li>
+        <li>Verifiable credentials</li>
+        <li>Access policies <span>ODRL</span></li>
+      </ul>
+      <div class="cc-levels__text">
+        <p>The NGSI-LD interface is placed behind a <strong>data space connector</strong>. Level 1 stays as it is, and the connector adds what is needed to share data between organisations that do not know each other in advance:</p>
+        <ul>
+          <li>a <strong>trust framework</strong>: who belongs to the data space, managed by a trust anchor;</li>
+          <li><strong>identity</strong>: each organisation, person and machine proves who it is with verifiable credentials;</li>
+          <li><strong>authorisation</strong>: access rules (ODRL policies) that the provider defines and the connector enforces, usually created when a consumer buys an offer in the marketplace.</li>
+        </ul>
+        <p><a href="../data_spaces/">Data spaces in 5 minutes</a> explains these pieces.</p>
+      </div>
+    </div>
+  </div>
+</div>
 
 ## The levels in practice
 

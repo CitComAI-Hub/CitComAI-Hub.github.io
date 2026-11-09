@@ -25,13 +25,26 @@ document$.subscribe(function () {
     });
   }
 
+  // two reasons to stand still: the pointer is over the diagram (hover), or the person pressed pause
+  var hover = false;
+  var stopped = false;
+  function sync() {
+    map.classList.toggle("is-paused", hover || stopped);
+  }
   function pause(on) {
-    map.classList.toggle("is-paused", on);
+    hover = on;
+    sync();
   }
 
   map.classList.add("is-js");
   if (auto) map.classList.add("is-auto");
   show(0);
+  window.ccAddControls(map, {
+    auto: auto,
+    prev: function () { show((current + nodes.length - 1) % nodes.length); },
+    next: function () { show((current + 1) % nodes.length); },
+    toggle: function (s) { stopped = s; sync(); }
+  });
 
   nodes.forEach(function (node, i) {
     // only a real movement of the mouse counts, so a still pointer never changes the step

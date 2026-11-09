@@ -13,24 +13,49 @@ A **data space** is a set of rules and software that lets organisations share da
 
 This page explains the few concepts you need to follow the rest of the site. The [CitCom.ai Data Space](../data_spaces/index.md) is built on them; [How it works](../data_spaces/fiware.md) shows how they are implemented.
 
-## The pieces
+<div class="cc-pieces" markdown="0">
+  <div class="cc-pieces__head">
+    <div class="cc-pieces__texts">
+      <div class="cc-pieces__text"><p class="cc-tef__eyebrow">Registration</p><p>Provider and consumer are <strong>registered in the trust anchor</strong>. From then on, the credentials they issue are accepted by the others.</p></div>
+      <div class="cc-pieces__text"><p class="cc-tef__eyebrow">Publication</p><p>Once registered, the provider <strong>publishes an offer</strong> in the marketplace.</p></div>
+      <div class="cc-pieces__text"><p class="cc-tef__eyebrow">Step 1</p><p>The consumer <strong>buys the offer</strong> in the marketplace. The provider's connector registers the contract.</p></div>
+      <div class="cc-pieces__text"><p class="cc-tef__eyebrow">Step 2</p><p>The consumer's program gets a <strong>credential</strong> from its own organisation.</p></div>
+      <div class="cc-pieces__text"><p class="cc-tef__eyebrow">Step 3</p><p>It presents the credential to the provider's connector, which checks it against the trust anchor, and receives a short-lived <strong>access token</strong>.</p></div>
+      <div class="cc-pieces__text"><p class="cc-tef__eyebrow">Step 4</p><p>It calls the data API with that token. The connector checks the policy and <strong>returns the data</strong>.</p></div>
+    </div>
+    <ol class="cc-pieces__bar" aria-label="Phases of the exchange">
+      <li><button type="button" aria-label="Registration"><span></span></button></li>
+      <li><button type="button" aria-label="Publication"><span></span></button></li>
+      <li><button type="button" aria-label="Step 1"><span></span></button></li>
+      <li><button type="button" aria-label="Step 2"><span></span></button></li>
+      <li><button type="button" aria-label="Step 3"><span></span></button></li>
+      <li><button type="button" aria-label="Step 4"><span></span></button></li>
+    </ol>
+  </div>
+  <div class="cc-pieces__map">
+    <div class="cc-pieces__who cc-pieces__who--provider">
+      <p class="cc-tef__eyebrow">Provider</p>
+      <p class="cc-tef__meta">Offers data or services</p>
+      <div class="cc-pieces__piece" data-steps="2 4 5"><strong>Connector</strong><small>Checks who asks, applies the policy</small></div>
+      <div class="cc-pieces__piece" data-steps="5"><strong>Data</strong><small>Stays at the provider</small></div>
+    </div>
+    <div class="cc-pieces__piece cc-pieces__trust" data-steps="0 4"><strong>Trust anchor</strong><small>Who belongs to the data space</small></div>
+    <div class="cc-pieces__piece cc-pieces__market" data-steps="1 2"><strong>Marketplace</strong><small>Offers and contracts</small></div>
+    <div class="cc-pieces__arrow cc-pieces__a1 cc-pieces__arrow--r" data-steps="0"><small>registered in</small><span></span></div>
+    <div class="cc-pieces__arrow cc-pieces__a2 cc-pieces__arrow--l" data-steps="0"><small>registered in</small><span></span></div>
+    <div class="cc-pieces__arrow cc-pieces__a3 cc-pieces__arrow--r" data-steps="1"><small>publishes an offer</small><span></span></div>
+    <div class="cc-pieces__arrow cc-pieces__a4 cc-pieces__arrow--l" data-steps="2"><small>buys the offer</small><span></span></div>
+    <div class="cc-pieces__arrow cc-pieces__a5 cc-pieces__arrow--l cc-pieces__arrow--data" data-steps="4 5"><small>reads the data with a credential</small><span></span></div>
+    <div class="cc-pieces__who cc-pieces__who--consumer">
+      <p class="cc-tef__eyebrow">Consumer</p>
+      <p class="cc-tef__meta">Uses data or services</p>
+      <div class="cc-pieces__piece" data-steps="2 3 4 5"><strong>Connector or app</strong><small>Asks for the data</small></div>
+      <div class="cc-pieces__piece" data-steps="3 4"><strong>Wallet / credentials</strong><small>Proves who it is</small></div>
+    </div>
+  </div>
+</div>
 
-```mermaid
-flowchart TB
-    TA["<b>Trust anchor</b><br/>who belongs to the data space"]
-    MK["<b>Marketplace</b><br/>offers and contracts"]
-    subgraph P["Provider"]
-        PC["Connector"] --- PD[("Data")]
-    end
-    subgraph C["Consumer"]
-        CC["Connector or app"] --- W["Wallet / credentials"]
-    end
-    P -. "registered in" .-> TA
-    C -. "registered in" .-> TA
-    P -- "publishes an offer" --> MK
-    C -- "buys the offer" --> MK
-    C == "reads the data<br/>with a credential" ==> PC
-```
+## The pieces
 
 **Participant**
 :   An organisation in the data space: a city council, a company, a university. In CitCom, for example, the Ajuntament de València (`townhall-vlc`) and VRAIN-UPV (`vrain`). A participant can be a **provider** (offers data or services), a **consumer** (uses them), or both.

@@ -23,8 +23,15 @@ document$.subscribe(function () {
     });
   }
 
+  // two reasons to stand still: the pointer is over the diagram (hover), or the person pressed pause
+  var hover = false;
+  var stopped = false;
+  function sync() {
+    box.classList.toggle("is-paused", hover || stopped);
+  }
   function pause(on) {
-    box.classList.toggle("is-paused", on);
+    hover = on;
+    sync();
   }
 
   // The list keeps the height of its tallest state (the one with the longest description open),
@@ -65,7 +72,7 @@ document$.subscribe(function () {
     });
     item.addEventListener("focusin", function () { show(i); pause(true); });
     item.addEventListener("animationend", function (event) {
-      if (event.animationName === "cc-tasks-progress") show((current + 1) % items.length);
+      if (event.animationName.indexOf("cc-tasks-progress") === 0) show((current + 1) % items.length);
     });
   });
   box.addEventListener("mouseleave", function () {

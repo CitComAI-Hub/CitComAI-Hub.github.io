@@ -24,8 +24,11 @@ extra_javascript = [
   "javascripts/external-links.js",
   "javascripts/catalog.js",
   "javascripts/header-section.js",
+  "javascripts/cycle-controls.js",
   "javascripts/home-tasks.js",
   "javascripts/tef-supernodes.js",
+  "javascripts/levels.js",
+  "javascripts/pieces.js",
 ]
 
 # Not pages of the site: the theme templates and the notes on the vendored code
