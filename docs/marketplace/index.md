@@ -22,7 +22,7 @@ Anyone can browse it. To buy or to publish, your organisation must [join the dat
 - **Categories** are shared by the whole data space, so the filters work the same for every provider. The data space operator adds a category when a new kind of offer needs one.
 - The **home page** shows the offers that have an image.
 
-Each offer describes itself: what it contains, how to access it and its terms of use. This site does not keep a copy of the list: the marketplace is the only inventory.
+Each offer describes itself: what it contains, how to access it and its terms of use, which come from its policy class in the [rulebook](../data_spaces/rulebook.md). This site does not keep a copy of the list: the marketplace is the only inventory.
 
 ## Buying an offer
 

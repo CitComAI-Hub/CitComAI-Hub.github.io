@@ -51,6 +51,7 @@ nav = [
     "data_spaces/index.md",
     { "How it works" = "data_spaces/fiware.md" },
     { "Marketplace" = "marketplace/index.md" },
+    { "Rulebook" = "data_spaces/rulebook.md" },
     { "Eclipse EDC data space" = "data_spaces/eclipse/index.md" },
   ] },
   { "Guides" = [

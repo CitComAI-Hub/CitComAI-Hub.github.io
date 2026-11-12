@@ -7,6 +7,9 @@ description: "Offer a web app that people open with their wallet."
 
 **What you will get**: a web application offered in the marketplace. People from the organisations that buy it open it with their wallet; you write no login code. Your connector's gateway does the login and checks the purchase on every request.
 
+!!! note "Policies come from the rulebook"
+    In the CitCom.ai Data Space, the terms and policies of an offer are generated from a policy class of the [rulebook](../data_spaces/rulebook.md) (`service-access` for services). The policies below are what that class generates. Add your offer to the rulebook, or ask the operator to, instead of writing them by hand.
+
 In this guide, replace:
 
 | Placeholder | What it is | Example |
