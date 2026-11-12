@@ -65,11 +65,15 @@ How the CitCom.ai Data Space is built and run, and the other data space of CitCo
 
 </div>
 
-## About CitCom.ai
-
 <div class="cc-about" markdown>
 
+<div class="cc-about__video" aria-hidden="true">
+  <iframe src="https://www.youtube-nocookie.com/embed/-wiVzj51lg0?autoplay=1&mute=1&loop=1&playlist=-wiVzj51lg0&controls=0&modestbranding=1&playsinline=1&rel=0" title="CitCom.ai presentation video" tabindex="-1" allow="autoplay; encrypted-media; picture-in-picture" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+</div>
+
 <div class="cc-about__text" markdown>
+
+## About CitCom.ai
 
 The [CitCom.ai](https://citcom.ai) project is a **European Union initiative** that sets up Testing and Experimentation Facilities (TEFs) for **AI and robotics** in **smart and sustainable cities and communities**. It gives companies real environments where to develop, test and validate their AI products and services before they reach the market, and checks that they meet the EU regulations on **data privacy and cybersecurity**. More than [30 organisations](https://citcom.ai/about) in 11 countries take part.
 
@@ -77,10 +81,6 @@ This site is the work of **work package 3 (WP3), Common Infrastructure and Servi
 
 [The TEF network](tef/index.md){ .md-button .md-button--primary } [citcom.ai](https://citcom.ai){ .md-button }
 
-</div>
-
-<div class="cc-about__video">
-  <iframe src="https://www.youtube-nocookie.com/embed/-wiVzj51lg0" title="CitCom.ai presentation video" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 </div>
 
 </div>

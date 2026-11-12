@@ -1325,8 +1325,11 @@ footer .footer-tagline img {
 /* Home content: a measure of reading, and less air under the intro */
 .md-content:has(.cc-roles) .md-content__inner {
   padding-top: 0.6rem;
-  margin-bottom: 3rem;
+  margin-bottom: 0;
+  padding-bottom: 0;
 }
+.md-content:has(.cc-about) .md-content__inner::after { display: none; }
+.md-main:has(.cc-about) .md-main__inner { margin-bottom: 0; }
 /* A reading measure for running text (about 80 characters); figures, tables and code keep the
    full width */
 .md-typeset.md-content__inner > p,
@@ -1734,30 +1737,63 @@ footer .footer-tagline img {
 
 /* ---------- Home: "About CitCom.ai", the text next to the presentation video ---------- */
 .md-typeset .cc-about {
-  display: grid;
-  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
-  gap: 2.5rem;
-  align-items: start;
-}
-.md-typeset .cc-about__text > :first-child {
-  margin-top: 0;
+  /* full width of the page; the muted video plays behind the text */
+  position: relative;
+  box-sizing: border-box;
+  width: 100vw;
+  margin: 2.5rem 0 0 calc(50% - 50vw);
+  height: clamp(26rem, 40vw, 36rem);
+  container-type: size;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background: #15141a;
+  color: #fff;
 }
 .md-typeset .cc-about__video {
-  aspect-ratio: 16 / 9;
-  border: 1px solid var(--cc-border);
-  background: var(--cc-surface);
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
 }
 .md-typeset .cc-about__video iframe {
-  display: block;
-  width: 100%;
-  height: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: max(100cqw, 177.78cqh);
+  height: max(56.25cqw, 100cqh);
+  transform: translate(-50%, -50%);
   border: 0;
 }
+.md-typeset .cc-about::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(21, 20, 26, 0.92) 0%, rgba(21, 20, 26, 0.7) 55%, rgba(21, 20, 26, 0.35) 100%);
+}
+.md-typeset .cc-about__text {
+  position: relative;
+  z-index: 1;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 1.5rem max(1rem, calc((100vw - 61rem) / 2 + 0.8rem));
+}
+.md-typeset .cc-about__text > * { max-width: 36rem; }
+.md-typeset .cc-about__text > :first-child { margin-top: 0; }
+.md-typeset .cc-about__text h2,
+.md-typeset .cc-about__text p { color: #fff; }
+.md-typeset .cc-about__text a:not(.md-button) { color: #fff; text-decoration: underline; }
+.md-typeset .cc-about__text .md-button:not(.md-button--primary) { color: #fff; border-color: #fff; }
+.md-typeset .cc-about__text .md-button:not(.md-button--primary):hover { background: #fff; color: #15141a; }
+.md-typeset .cc-about__text .md-button--primary { background: #fff; border-color: #fff; color: #15141a; }
+.md-typeset .cc-about__text .md-button--primary:hover { background: transparent; color: #fff; }
+.md-typeset .cc-about__text .headerlink { display: none; }
+@media (prefers-reduced-motion: reduce) {
+  .md-typeset .cc-about__video { display: none; }
+}
 @media screen and (max-width: 59.9375em) {
-  .md-typeset .cc-about {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-  }
+  .md-typeset .cc-about { height: auto; min-height: 26rem; }
+  .md-typeset .cc-about::after { background: rgba(21, 20, 26, 0.8); }
+  .md-typeset .cc-about__text > * { max-width: none; }
 }
 
 /* ---------- Dark theme: raised cards ----------
