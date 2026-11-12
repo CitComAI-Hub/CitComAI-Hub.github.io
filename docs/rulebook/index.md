@@ -16,7 +16,8 @@ The **rulebook** holds the rules that every participant of the CitCom.ai Data Sp
 [![marketplace offers](https://github.com/CitComAI-Hub/citcom-ds-rulebook/actions/workflows/marketplace.yml/badge.svg?branch=main)](https://github.com/CitComAI-Hub/citcom-ds-rulebook/actions/workflows/marketplace.yml)
 ![rulebook v0.3 draft](https://img.shields.io/badge/rulebook-v0.3%20draft-lightgrey)
 
-[Read the rulebook](https://github.com/CitComAI-Hub/citcom-ds-rulebook/blob/main/rulebook/README.md){ .md-button .md-button--primary }
+[Read the rules](rules.md){ .md-button .md-button--primary }
+[Policy classes](rules.md#7-usage-terms-policy-classes){ .md-button }
 
 !!! note "Draft"
     The rulebook is a draft written by VRAIN-UPV. It becomes binding when the CitCom.ai consortium adopts a tagged version. Until then, the open decisions are listed at its end.
@@ -27,7 +28,7 @@ The **rulebook** holds the rules that every participant of the CitCom.ai Data Sp
 - **Joining and leaving**: admission criteria, how access is removed when an organisation leaves or a purchase is cancelled.
 - **Agreements**: joining means accepting the rulebook; buying an offer is the contract between provider and consumer.
 - **Data categories**: open and shared data can be offered; confidential and personal data cannot, for now.
-- **Policy classes**: every offer uses one class, which fixes its terms of use. There are three: `open-data`, `dataset-access` (shared data) and `service-access` (services).
+- **Policy classes**: every offer uses one class, which fixes its terms of use. There are three: [`open-data`](classes/open-data.md), [`dataset-access`](classes/dataset-access.md) (shared data) and [`service-access`](classes/service-access.md) (services).
 - **Technical and security rules**: data is read only, follows [Smart Data Models](../toolbox/smart_data_models.md), and an offer reaches only the data it defines.
 
 Every rule says how it is upheld: **enforced** (the software blocks what breaks it), **audited** (recorded and checked afterwards) or **contractual** (an obligation of the parties).
@@ -69,4 +70,6 @@ The *marketplace offers* check reads what is actually published, every day, whoe
 
 - **Providers** publish with the offer wizard of the marketplace: they choose a class for each offer and fill in a few fields; they do not write their own terms or policies. See [Publish a dataset](../guides/publish_dataset.md) and [Publish a web service](../guides/publish_service.md).
 - **Consumers** find the terms of an offer in the marketplace, with a link to its class in the rulebook. Buying an offer means accepting them.
-- **Everyone** can propose a change: open an issue or a pull request in the [rulebook repository](https://github.com/CitComAI-Hub/citcom-ds-rulebook).
+- **Everyone** can propose a change, no technical knowledge needed: the edit button of each rulebook page opens it in GitHub's editor, where the change becomes a proposal for review. You can also open an issue in the [rulebook repository](https://github.com/CitComAI-Hub/citcom-ds-rulebook).
+
+The rulebook pages of this site are its repository as it is: the site takes them from there every day, so a change accepted in the rulebook shows up here by the next day.

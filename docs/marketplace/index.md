@@ -22,7 +22,7 @@ Anyone can browse it. To buy or to publish, your organisation must [join the dat
 - **Categories** are shared by the whole data space, so the filters work the same for every provider. The data space operator adds a category when a new kind of offer needs one.
 - The **home page** shows the offers that have an image.
 
-Each offer describes itself: what it contains, how to access it and its terms of use, which come from its policy class in the [rulebook](../data_spaces/rulebook.md). This site does not keep a copy of the list: the marketplace is the only inventory.
+Each offer describes itself: what it contains, how to access it and its terms of use, which come from its policy class in the [rulebook](../rulebook/index.md). This site does not keep a copy of the list: the marketplace is the only inventory.
 
 ## Buying an offer
 
@@ -37,7 +37,7 @@ Then:
 
 ## Publishing an offer
 
-Providers publish from **My offerings → Offers → New offer**: an offer wizard asks what kind of offer it is and a few fields, and generates its access policies and terms of use from the [rulebook](../data_spaces/rulebook.md). See [Publish a dataset](../guides/publish_dataset.md) and [Publish a web service](../guides/publish_service.md).
+Providers publish from **My offerings → Offers → New offer**: an offer wizard asks what kind of offer it is and a few fields, and generates its access policies and terms of use from the [rulebook](../rulebook/index.md). See [Publish a dataset](../guides/publish_dataset.md) and [Publish a web service](../guides/publish_service.md).
 
 ## Other data in CitCom
 

@@ -7,7 +7,7 @@ description: "Offer a web app that people open with their wallet, with the offer
 
 **What you will get**: a web application offered in the marketplace. People from the organisations that buy it open it with their wallet; you write no login code. Your connector's gateway does the login and checks the purchase on every request.
 
-You put the application behind your gateway, then publish it from the marketplace with the **offer wizard**. Its access policies and its terms of use come from the [rulebook](../data_spaces/rulebook.md) (class `service-access`), so you write no policy and no legal text.
+You put the application behind your gateway, then publish it from the marketplace with the **offer wizard**. Its access policies and its terms of use come from the [rulebook](../rulebook/index.md) (class `service-access`), so you write no policy and no legal text.
 
 In this guide, replace:
 

@@ -18,25 +18,30 @@ $(BIN)/zensical: pyproject.toml
 ## Create the virtual environment and install the dependencies
 install: $(BIN)/zensical
 
+.PHONY: rulebook
+## Import the rulebook pages from its repository (main on GitHub, or RULEBOOK_DIR=<local clone>)
+rulebook:
+	$(PYTHON) scripts/import_rulebook.py
+
 .PHONY: serve
 ## Serve the site at http://localhost:8000, reloading on every change
-serve: install
+serve: install rulebook
 	$(BIN)/zensical serve
 
 .PHONY: serve-lan
 ## Serve the site to your local network or tailnet (port 8000); stop it with Ctrl+C
-serve-lan: install
+serve-lan: install rulebook
 	$(BIN)/zensical serve -a 0.0.0.0:8000
 
 .PHONY: build
 ## Build the site into public/ in strict mode, as CI does: any broken link or warning fails
-build: install
+build: install rulebook
 	$(BIN)/zensical build --clean --strict
 
 .PHONY: clean
-## Remove the built site, the build cache and the virtual environment
+## Remove the built site, the build cache, the imported rulebook and the virtual environment
 clean:
-	rm -rf public .cache $(VENV)
+	rm -rf public .cache docs/rulebook $(VENV)
 
 ################################################################################
 # Self Documenting Commands                                                    #
