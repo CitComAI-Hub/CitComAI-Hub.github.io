@@ -13,6 +13,7 @@ The **rulebook** holds the rules that every participant of the CitCom.ai Data Sp
 
 [![policies](https://github.com/CitComAI-Hub/citcom-ds-rulebook/actions/workflows/policies.yml/badge.svg?branch=main)](https://github.com/CitComAI-Hub/citcom-ds-rulebook/actions/workflows/policies.yml)
 [![in sync with deployment](https://github.com/CitComAI-Hub/citcom-ds-rulebook/actions/workflows/sync.yml/badge.svg?branch=main)](https://github.com/CitComAI-Hub/citcom-ds-rulebook/actions/workflows/sync.yml)
+[![marketplace offers](https://github.com/CitComAI-Hub/citcom-ds-rulebook/actions/workflows/marketplace.yml/badge.svg?branch=main)](https://github.com/CitComAI-Hub/citcom-ds-rulebook/actions/workflows/marketplace.yml)
 ![rulebook v0.3 draft](https://img.shields.io/badge/rulebook-v0.3%20draft-lightgrey)
 
 [Read the rulebook](https://github.com/CitComAI-Hub/citcom-ds-rulebook/blob/main/rulebook/README.md){ .md-button .md-button--primary }
@@ -45,14 +46,15 @@ flowchart LR
     RB --> GEN --> DEP
     DEP --> MK
     DEP --> CON
-    CHK["Daily check"] -. compares .-> DEP
+    CHK["Daily checks"] -. compare .-> DEP
+    CHK -. compare .-> MK
 ```
 
 1. A change (a rule, a class, an offer) is proposed in the rulebook repository and reviewed.
 2. The generator turns each offer into its terms, its access policies and its request limits. Automatic tests check that every policy allows what its class allows, and nothing else.
 3. The deployment of the data space pins that version of the rulebook and regenerates its offers.
 4. The offers are published in the marketplace. When someone buys one, the provider's connector loads its policy.
-5. Every day, a check compares the deployment with what the rulebook generates. The **in sync** badge above shows the result.
+5. Every day, two checks compare the deployment and every offer published in the marketplace with what the rulebook generates. The badges above show the result.
 
 ## Status
 
@@ -60,9 +62,10 @@ flowchart LR
 |---|---|
 | **policies** | The generator works and every policy decides as its class says. |
 | **in sync with deployment** | The deployment uses exactly what the rulebook generates. It turns red when the rulebook changes and the deployment has not taken the new version yet. |
+| **marketplace offers** | Every offer published in the marketplace, from any provider, was generated from a class of the rulebook: its policies and its terms are what the class gives. |
 | **version** | The rulebook version. *Draft* until the consortium adopts one. |
 
-The check compares the rulebook with the deployment's configuration. The offers in the marketplace are compared with it by the operator after each publication.
+The *in sync* check compares the rulebook with the deployment's configuration; the *marketplace offers* check reads what is actually published, every day.
 
 ## What it means for you
 
