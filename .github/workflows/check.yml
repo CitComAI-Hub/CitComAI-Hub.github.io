@@ -26,4 +26,5 @@ jobs:
           key: zensical-${{ hashFiles('pyproject.toml', 'zensical.toml') }}
           restore-keys: zensical-
       - run: pip install -e .
+      - run: python scripts/import_rulebook.py
       - run: zensical build --strict

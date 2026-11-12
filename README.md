@@ -14,7 +14,7 @@ The navigation is defined in [`zensical.toml`](./zensical.toml) (`nav`). Each se
 |---|---|
 | Home | `index.md` |
 | Get started | `getting_started/` |
-| Data space | `data_spaces/` (the CitCom.ai Data Space and the Eclipse EDC one), `marketplace/` |
+| Data space | `data_spaces/` (the CitCom.ai Data Space and the Eclipse EDC one), `marketplace/`, `rulebook/` |
 | Guides | `guides/`, and the worked examples `miais/` and `valencia/` |
 | Toolbox | `toolbox/` |
 | TEF network | `tef/` (one page per site), `ai_assessment/`, `local_digital_twins/` |
@@ -47,6 +47,12 @@ Other commands (`make help` lists them):
 | `make clean` | Removes `public/`, the build cache and `.venv/`. |
 
 The dependencies are in [`pyproject.toml`](./pyproject.toml); after pulling a change to it, run `make install` again. The repository also opens in a [dev container](./.devcontainer/devcontainer.json) (VS Code or GitHub Codespaces), ready for `make serve`.
+
+## The rulebook pages
+
+The pages under *Data space › Rulebook*, except its overview (`docs/rulebook/index.md`), are not in this repository: they are the [rulebook repository](https://github.com/CitComAI-Hub/citcom-ds-rulebook) as it is on its `main` branch. [`scripts/import_rulebook.py`](./scripts/import_rulebook.py) copies them into `docs/rulebook/` (ignored by git) before every build, with their links adapted to the site, and their edit button opens the file in the rulebook repository. `make build` and `make serve` run it; the `publish` workflow runs every day, so a change merged in the rulebook shows up here by the next day.
+
+To change them, propose the change in the rulebook repository. To preview a change in a local clone of it: `make serve RULEBOOK_DIR=../citcom-ds-rulebook`. A new policy class appears on the site linked from the rules; add it to `nav` in `zensical.toml` to list it in the menu.
 
 ## Writing a page
 

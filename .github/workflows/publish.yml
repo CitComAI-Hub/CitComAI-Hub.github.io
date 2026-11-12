@@ -1,10 +1,13 @@
 # Builds the site on every push to main and publishes it on GitHub Pages
-# (Settings → Pages → Source: GitHub Actions).
+# (Settings → Pages → Source: GitHub Actions). It also runs every day, to publish the changes of the
+# rulebook, whose pages are imported from its own repository at build time.
 name: publish
 
 on:
   push:
     branches: [main]
+  schedule:
+    - cron: "17 4 * * *"
   workflow_dispatch:
 
 permissions:
@@ -36,6 +39,7 @@ jobs:
           key: zensical-${{ hashFiles('pyproject.toml', 'zensical.toml') }}
           restore-keys: zensical-
       - run: pip install -e .
+      - run: python scripts/import_rulebook.py
       - run: zensical build --strict
       - uses: actions/configure-pages@v6
       - uses: actions/upload-pages-artifact@v5
