@@ -37,7 +37,7 @@ Then:
 
 ## Publishing an offer
 
-See [Publish a dataset](../guides/publish_dataset.md) and [Publish a web service](../guides/publish_service.md).
+Providers publish from **My offerings → Offers → New offer**: an offer wizard asks what kind of offer it is and a few fields, and generates its access policies and terms of use from the [rulebook](../data_spaces/rulebook.md). See [Publish a dataset](../guides/publish_dataset.md) and [Publish a web service](../guides/publish_service.md).
 
 ## Other data in CitCom
 

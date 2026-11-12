@@ -1,22 +1,22 @@
 ---
 title: Publish a dataset
-description: "Offer a dataset in the marketplace with its access policy."
+description: "Offer a dataset in the marketplace with the offer wizard."
 ---
 
 # Publish a dataset
 
 **What you will get**: a dataset of your organisation offered in the marketplace. Whoever buys it can read it through your connector, and only it.
 
-!!! note "Policies come from the rulebook"
-    In the CitCom.ai Data Space, the terms and policies of an offer are generated from a policy class of the [rulebook](../data_spaces/rulebook.md) (`open-data` or `dataset-access` for datasets). The policies below are what those classes generate. Add your offer to the rulebook, or ask the operator to, instead of writing them by hand.
+You publish it from the marketplace with the **offer wizard**: you choose what kind of data it is and fill in a few fields. Its access policies and its terms of use come from the [rulebook](../data_spaces/rulebook.md), so you write no policy and no legal text, and the marketplace rejects any offer that the rulebook would not generate.
 
 ## What you need
 
 - Your organisation [registered](join.md), with its own [connector](deploy_connector.md) and the contract management address in its marketplace profile.
+- Your organisation **enabled as a provider**: before your first offer, the data space operator reviews your connector once (rulebook R8.7). Ask the operator.
 - The data in an **NGSI-LD broker** behind your connector, described with [Smart Data Models](../toolbox/smart_data_models.md):
     - a broker of your own (Orion-LD, Scorpio), loaded by your ingestion process; or
     - your existing NGSI-v2 platform, served as NGSI-LD by [Lepus](../toolbox/lepus.md), as the Ajuntament de València does.
-- A route in your connector's gateway (APISIX) to that broker, protected by the verifier token and the policy engine (OPA), as the default `/ngsi-ld/*` route is. The [rulebook](../data_spaces/rulebook.md) also asks that the route:
+- A route in your connector's gateway (APISIX) to that broker, protected by the verifier token and the policy engine (OPA), as the default `/ngsi-ld/*` route is. The rulebook also asks that the route:
     - accepts **GET only**: buyers read, they never write;
     - serves only the entity endpoints, `<path>/v1/entities` and `<path>/v1/entities/*`;
     - removes the `X-Stripped-Path` and tenant headers (`NGSILD-Tenant`, and `Fiware-Service`, `Fiware-ServicePath` in front of NGSI-v2) that the buyer sends, because the policy engine would trust them;
@@ -26,120 +26,52 @@ description: "Offer a dataset in the marketplace with its access policy."
 
 ## Steps
 
-### 1. Decide what the offer grants
+### 1. Decide what the offer covers
 
-One offer per dataset keeps things simple. For each one, write down:
+One offer per dataset. For each one, have at hand:
 
-| Placeholder | What it is | Example |
+| Field | What it is | Example |
 |---|---|---|
-| `<dataset>` | A short name for the dataset: the name of its policy | `bike-stations` |
-| `<path>` | The path of its route in your gateway | `/ngsi-ld` |
-| `<EntityType>` | Its entity type, a [Smart Data Model](../toolbox/smart_data_models.md) | `BikeHireDockingStation` |
-| `<participant>`, `<domain>` | Your participant and the domain of your connector's host names | `acme`, `example.org` |
+| Kind of data | **Open data** if you already publish it as open data; **Shared data** if it is not public (rulebook R6.4) | Shared data |
+| Path in your gateway | The path of its route | `/ngsi-ld` |
+| Entity type | Its NGSI-LD type, a [Smart Data Model](../toolbox/smart_data_models.md) | `BikeHireDockingStation` |
 
-Buyers read it with a `MachineCredential` that carries the role `clearence1`. That is the role every data offer of the data space asks for, so a buyer creates it once for all its purchases; the realms created by the onboarding portal already have it.
+Buyers read it with a `MachineCredential` that carries the role `clearence1`, the data access role that every dataset of the data space asks for (rulebook R3.4). A buyer gives that role once to the software that reads its purchases; the realms created by the onboarding portal already have it.
 
-### 2. Write the two characteristics
+### 2. Publish it with the offer wizard
 
-An offer carries two characteristics that your connector applies on every purchase.
+Log in to the [marketplace](https://marketplace.citcom-vrain-dataspace.eu) with the wallet of your organisation's legal representative, acting as your organisation. In **My offerings**:
 
-**Verifier policy** (`credentialsConfiguration`): which credentials the verifier accepts from the buyer:
+1. In **Catalogues**, create one for your organisation if you do not have one.
+2. In **Offers**, press **New offer**. The wizard asks, in order:
+    1. **What do you offer?** Open data or Shared data.
+    2. **The offer**: title, description (Markdown), short name, path and entity type, and an image URL (offers with an image appear on the marketplace home).
+    3. **Catalogue and categories.**
+    4. **Terms of use**: the details the terms of your class need, about this offer (where the data comes from and how to cite it, what users can expect of it) and about your organisation (its name, the governing law, the courts, the data protection law). The organisation's details are remembered for your next offers.
+    5. **Review and publish**: **Preview the offer** shows, in plain words, what buyers get and the full terms of use. **Publish the offer** creates and launches it.
 
-```json
-{
-  "name": "Verifier policy",
-  "valueType": "credentialsConfiguration",
-  "productSpecCharacteristicValue": [{
-    "isDefault": true,
-    "value": [{
-      "credentialsType": "MachineCredential",
-      "claims": [{
-        "name": "roles",
-        "path": "$.roles[?(@.target==\"roles-dataspace\")].names[*]",
-        "allowedValues": ["clearence1"]
-      }]
-    }]
-  }]
-}
-```
+Write all texts in English: CitCom is international.
 
-**ODRL policy** (`authorizationPolicy`): what the buyer can do, here read the `<EntityType>` entities under `<path>`. The action is `odrl:read`, which allows GET only. Never use `odrl:use` for data: it allows every method, so a buyer could change or delete your data.
-
-```json
-{
-  "name": "ODRL policy",
-  "valueType": "authorizationPolicy",
-  "productSpecCharacteristicValue": [{
-    "isDefault": true,
-    "value": [{
-      "@context": {
-        "odrl": "http://www.w3.org/ns/odrl/2/",
-        "xsd": "http://www.w3.org/2001/XMLSchema#",
-        "vc": "https://www.w3.org/2018/credentials#",
-        "http": "https://github.com/SEAMWARE/odrl-pap/http#",
-        "ngsi-ld": "https://uri.etsi.org/ngsi-ld/"
-      },
-      "@id": "https://<participant>.<domain>/policy/<dataset>-access",
-      "odrl:uid": "https://<participant>.<domain>/policy/<dataset>-access",
-      "@type": "odrl:Policy",
-      "odrl:permission": [{
-        "odrl:assigner": "did:web:<participant>.<domain>",
-        "odrl:action": "odrl:read",
-        "odrl:target": {
-          "@type": "odrl:AssetCollection",
-          "odrl:source": "urn:asset",
-          "odrl:refinement": {
-            "@type": "odrl:LogicalConstraint",
-            "odrl:and": [
-              { "@type": "odrl:Constraint", "odrl:leftOperand": "http:path", "odrl:operator": "http:isInPath",
-                "odrl:rightOperand": { "@value": "<path>", "@type": "xsd:string" } },
-              { "@type": "odrl:Constraint", "odrl:leftOperand": "ngsi-ld:entityType", "odrl:operator": "odrl:eq",
-                "odrl:rightOperand": { "@value": "<EntityType>", "@type": "xsd:string" } }
-            ]
-          }
-        },
-        "odrl:assignee": {
-          "@type": "odrl:PartyCollection",
-          "odrl:source": "urn:user",
-          "odrl:refinement": {
-            "@type": "odrl:LogicalConstraint",
-            "odrl:and": [
-              { "@type": "odrl:Constraint", "odrl:leftOperand": "vc:role", "odrl:operator": "odrl:hasPart",
-                "odrl:rightOperand": { "@value": "clearence1", "@type": "xsd:string" } },
-              { "@type": "odrl:Constraint", "odrl:leftOperand": "vc:type", "odrl:operator": "odrl:hasPart",
-                "odrl:rightOperand": { "@value": "MachineCredential", "@type": "xsd:string" } }
-            ]
-          }
-        }
-      }]
-    }]
-  }]
-}
-```
+The wizard asks the rulebook for the access policies (read only, that entity type under that path, only the buyer's software) and for the terms of use of the class. Nothing generated can be edited, and the marketplace checks every offer against the rulebook again before saving it: an offer edited by hand afterwards is rejected with *"Not generated from the CitCom rulebook"*.
 
 !!! example "A real one: the Valencia datasets"
 
-    The Ajuntament de València publishes [four datasets](../valencia/index.md#data-in-the-data-space) this way, one offer each. For its waste containers, `<dataset>` is `waste-containers`, `<path>` is `/lepus/ngsi-ld` and `<EntityType>` is `WasteContainer`.
-
-### 3. Create the offer in the marketplace
-
-Log in to the [marketplace](https://marketplace.citcom-vrain-dataspace.eu) with the LEAR's wallet, and in **My offerings**:
-
-1. Create a **catalogue** for your organisation, if you do not have one.
-2. Create the **product specification**: name, description, terms of use, an image (it is required to show the offer on the home page) and the two characteristics above.
-3. Create the **product offering** in your catalogue, with a [category](../marketplace/index.md#how-the-marketplace-is-organised) and a price (free is fine), and two terms: **License**, the terms and conditions of the offer's class (`open-data` or `dataset-access`), and **Policy class**, the class with a link to it in the rulebook. Then launch it.
-
-Write all texts in English: CitCom is international.
+    The Ajuntament de València offers [four datasets](../valencia/index.md#data-in-the-data-space), one offer each. Its waste containers are *Shared data*, path `/lepus/ngsi-ld`, entity type `WasteContainer`.
 
 ## Check that it works
 
 Buy the offer from a test organisation, then read the data as in [Use data from your code](consume_data.md). Also check what must fail: another entity type returns `403`, a write (`POST`, `PATCH`, `DELETE`) is refused, and an organisation that did not buy returns an error at the verifier.
 
+Every day, the rulebook checks every offer published in the marketplace against its class (the *marketplace offers* badge on the [rulebook page](../data_spaces/rulebook.md)).
+
 ## If something fails
 
 | Symptom | Cause | Fix |
 |---|---|---|
-| The purchase completes but nothing changes in your connector | The contract management address is missing in your profile, or a characteristic was saved without its value type | Fix the profile; recreate the characteristics with `credentialsConfiguration` and `authorizationPolicy` value types |
-| The buyer gets `403` for the right path and type | The policy was not loaded in the policy engine | Check the policy; if you load one by hand, use an id without hyphens: hyphenated ids are accepted but never applied |
-| The buyer's credential is rejected even though they bought | Their credential carries a role that the offer does not allow | All the data space roles of a credential must be allowed by the purchase: give machine users only the data role |
-| The offer does not appear on the marketplace home | The specification has no image | Add a *Profile Picture* attachment |
+| The wizard says *Act on behalf of your organisation* | You are logged in as yourself | Switch to your organisation in the user menu |
+| *Only providers can create offers* or *Only organisations with their own connector* | Your organisation is not enabled as a provider, or it has no `did:web` of its own | Ask the data space operator |
+| **Preview the offer** stays disabled | A required field is empty | The list under the button names the fields still to fill in |
+| *Not generated from the CitCom rulebook: …* | The specification or the offer was edited by hand | Create the offer again with the wizard |
+| *The rulebook service is not available* | The marketplace cannot reach the rulebook service | Try again later; tell the operator if it lasts |
+| The purchase completes but nothing changes in your connector | The contract management address is missing in your profile | Fix the profile |
+| The buyer's credential is rejected even though they bought | Their credential carries a role that the offer does not allow | All the data space roles of a credential must be allowed by the purchase: give machine users only the data access role |

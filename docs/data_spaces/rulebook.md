@@ -34,41 +34,39 @@ Every rule says how it is upheld: **enforced** (the software blocks what breaks 
 
 ## How it reaches the data space
 
-The rulebook is not only a document. The terms and conditions of every offer, its access policies and its request limits are **generated** from it, so an offer cannot contradict the rules.
+The rulebook is not only a document. The terms and conditions of every offer and its access policies are **generated** from it, so an offer cannot contradict the rules.
 
 ```mermaid
 flowchart LR
-    RB["<b>Rulebook</b><br/>rules, policy classes,<br/>offers"]
-    GEN["<b>Generator</b><br/>terms, access policies,<br/>request limits"]
-    DEP["<b>Deployment</b><br/>pins a rulebook version"]
-    MK["<b>Marketplace</b><br/>each offer shows its terms<br/>and its policy class"]
-    CON["<b>Connectors</b><br/>enforce the policies<br/>and limits"]
-    RB --> GEN --> DEP
-    DEP --> MK
-    DEP --> CON
-    CHK["Daily checks"] -. compare .-> DEP
-    CHK -. compare .-> MK
+    RB["<b>Rulebook</b><br/>rules and<br/>policy classes"]
+    SVC["<b>Rulebook service</b><br/>generates and checks<br/>policies and terms"]
+    WIZ["<b>Marketplace</b><br/>offer wizard;<br/>rejects anything else"]
+    CON["<b>Provider's connector</b><br/>enforces the policy<br/>of each purchase"]
+    RB --> SVC
+    WIZ <--> SVC
+    WIZ --> CON
+    CHK["Daily check"] -. compares .-> WIZ
 ```
 
-1. A change (a rule, a class, an offer) is proposed in the rulebook repository and reviewed.
-2. The generator turns each offer into its terms, its access policies and its request limits. Automatic tests check that every policy allows what its class allows, and nothing else.
-3. The deployment of the data space pins that version of the rulebook and regenerates its offers.
-4. The offers are published in the marketplace. When someone buys one, the provider's connector loads its policy.
-5. Every day, two checks compare the deployment and every offer published in the marketplace with what the rulebook generates. The badges above show the result.
+1. The rules and the policy classes are written in the rulebook repository; a change is proposed there and reviewed.
+2. A provider publishes an offer from the marketplace with the **offer wizard**: it chooses a class and fills in a few fields. The rulebook service, next to the marketplace, generates the offer's access policies and its terms of use. Automatic tests check that every policy allows what its class allows, and nothing else.
+3. The marketplace checks every offer against the rulebook again before saving it, and rejects any that the rulebook would not generate, for example one edited by hand.
+4. When someone buys an offer, the provider's connector loads its policy and applies it on every request, with the request limit of its class.
+5. Every day, a check reads every offer published in the marketplace and compares it with what its class generates. The badges above show the result.
 
 ## Status
 
 | Badge | Green means |
 |---|---|
 | **policies** | The generator works and every policy decides as its class says. |
-| **in sync with deployment** | The deployment uses exactly what the rulebook generates. It turns red when the rulebook changes and the deployment has not taken the new version yet. |
+| **in sync with deployment** | The offers of the providers whose connectors the operator deploys are exactly what the rulebook generates. It turns red when the rulebook changes and that deployment has not taken the new version yet. |
 | **marketplace offers** | Every offer published in the marketplace, from any provider, was generated from a class of the rulebook: its policies and its terms are what the class gives. |
 | **version** | The rulebook version. *Draft* until the consortium adopts one. |
 
-The *in sync* check compares the rulebook with the deployment's configuration; the *marketplace offers* check reads what is actually published, every day.
+The *marketplace offers* check reads what is actually published, every day, whoever published it.
 
 ## What it means for you
 
-- **Providers** choose a policy class for each offer; they do not write their own terms or policies. See [Publish a dataset](../guides/publish_dataset.md) and [Publish a web service](../guides/publish_service.md).
+- **Providers** publish with the offer wizard of the marketplace: they choose a class for each offer and fill in a few fields; they do not write their own terms or policies. See [Publish a dataset](../guides/publish_dataset.md) and [Publish a web service](../guides/publish_service.md).
 - **Consumers** find the terms of an offer in the marketplace, with a link to its class in the rulebook. Buying an offer means accepting them.
 - **Everyone** can propose a change: open an issue or a pull request in the [rulebook repository](https://github.com/CitComAI-Hub/citcom-ds-rulebook).
