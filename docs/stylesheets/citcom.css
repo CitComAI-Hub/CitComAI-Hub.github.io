@@ -2452,8 +2452,6 @@ footer .footer-tagline img {
   background: var(--md-accent-fg-color);
   color: var(--md-default-bg-color);
 }
-.md-footer-meta .cc-info-link, .footer-links .cc-info-link { color: inherit; font-size: inherit; }
-.footer-links .cc-info-link:hover .cc-info { background: #ffffff; color: var(--cc-night, #15141a); }
 @media (prefers-reduced-motion: reduce) { .cc-info { transition: none; } }
 
 /* the "i" among the page actions (next to the edit icon): same box as them */
@@ -2627,5 +2625,63 @@ footer .footer-tagline img {
   font-size: 0.68rem;
   opacity: 0.75;
   text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* small drawings of the diagrams of "Why a common architecture" (they reuse the .cc-help cards) */
+.md-typeset .cc-help__flow {
+  display: flex;
+  align-items: center;
+  gap: 0.2rem;
+  width: 100%;
+  font-size: 0.75rem;
+}
+.md-typeset .cc-help__stack {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+.md-typeset .cc-help__stack > span,
+.md-typeset .cc-help__box {
+  padding: 0.3rem 0.6rem;
+  border: 1px solid var(--cc-border);
+  background: var(--md-default-bg-color);
+  text-align: center;
+  white-space: nowrap;
+}
+.md-typeset .cc-help__box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-color: var(--md-accent-fg-color);
+}
+.md-typeset .cc-help__box small { font-size: 0.6rem; color: var(--md-default-fg-color--light); }
+.md-typeset .cc-help__flow > i {
+  position: relative;
+  flex: 1;
+  min-width: 1.4rem;
+  height: 0;
+  border-top: 1px dashed var(--md-accent-fg-color);
+}
+.md-typeset .cc-help__flow > i::after {
+  content: "";
+  position: absolute;
+  right: -1px;
+  top: -4px;
+  width: 6px;
+  height: 6px;
+  border-top: 1.5px solid var(--md-accent-fg-color);
+  border-right: 1.5px solid var(--md-accent-fg-color);
+  transform: rotate(45deg);
+  transform-origin: center;
+}
+.md-typeset .cc-help__flow > i small {
+  position: absolute;
+  top: -1.15rem;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.58rem;
+  font-style: normal;
+  color: var(--md-default-fg-color--light);
   white-space: nowrap;
 }

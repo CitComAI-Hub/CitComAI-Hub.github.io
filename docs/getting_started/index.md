@@ -15,8 +15,30 @@ This site is the work of **work package 3 (WP3), Common Infrastructure and Servi
 
 Each city already has its own data platform, often built years ago with its own interfaces. A product tested in one city would need a new integration in the next one. CitCom avoids that by agreeing on a few common points:
 
-- the same **API and data models** to read city data ([interoperability level 1](interoperability.md#level-1));
-- the same **way to share data under control**, between organisations that do not have to trust each other in advance ([level 2: data spaces](data_spaces.md)).
+<div class="cc-help" markdown="0">
+  <div class="cc-help__item">
+    <div class="cc-help__demo" aria-hidden="true">
+      <span class="cc-help__flow">
+        <span class="cc-help__stack"><span>City A</span><span>City B</span><span>City C</span></span>
+        <i></i>
+        <span class="cc-help__box"><strong>Same API</strong><small>NGSI-LD, Smart Data Models</small></span>
+      </span>
+    </div>
+    <p class="cc-tef__eyebrow">Level 1 · Interoperability</p>
+    <p>The same <strong>API and data models</strong> to read city data, whatever platform each city runs. <a href="interoperability/#level-1">Interoperability level 1</a>.</p>
+  </div>
+  <div class="cc-help__item">
+    <div class="cc-help__demo" aria-hidden="true">
+      <span class="cc-help__flow">
+        <span class="cc-help__box"><strong>Provider</strong></span>
+        <i><small>contract</small></i>
+        <span class="cc-help__box"><strong>Consumer</strong></span>
+      </span>
+    </div>
+    <p class="cc-tef__eyebrow">Level 2 · Data spaces</p>
+    <p>The same <strong>way to share data under control</strong>, between organisations that do not have to trust each other in advance. <a href="data_spaces/">Level 2: data spaces</a>.</p>
+  </div>
+</div>
 
 A service built on those points runs in any city that follows them. The [MIAIS](../miais/index.md) shows how.
 
