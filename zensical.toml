@@ -31,10 +31,13 @@ exclude_docs = """
 /overrides/
 /assets/vendor/README.md
 """
-# Sergio's EDC pages, linked from data_spaces/eclipse/index.md
+# Sergio's EDC pages, linked from data_spaces/eclipse/index.md; and the rulebook pages that are not
+# in the navigation: the terms templates, linked from their class, and any new class until it is
+# added to the navigation (the rules link to it)
 not_in_nav = """
 /data_spaces/eclipse/architecture.md
 /data_spaces/eclipse/deployment.md
+/rulebook/classes/
 """
 
 # The header shows the top-level sections except those in extra.hidden_sections.
@@ -51,7 +54,16 @@ nav = [
     "data_spaces/index.md",
     { "How it works" = "data_spaces/fiware.md" },
     { "Marketplace" = "marketplace/index.md" },
-    { "Rulebook" = "data_spaces/rulebook.md" },
+    { "Rulebook" = [
+      "rulebook/index.md",
+      # Imported from the rulebook repository at build time (scripts/import_rulebook.py)
+      { "The rules" = "rulebook/rules.md" },
+      { "Policy classes" = [
+        { "Open data" = "rulebook/classes/open-data.md" },
+        { "Dataset access" = "rulebook/classes/dataset-access.md" },
+        { "Service access" = "rulebook/classes/service-access.md" },
+      ] },
+    ] },
     { "Eclipse EDC data space" = "data_spaces/eclipse/index.md" },
   ] },
   { "Guides" = [
@@ -252,6 +264,11 @@ services, and the tools to connect a city platform.
   "data_spaces/index.md",
   "data_spaces/fiware.md",
   "marketplace/index.md",
+  "rulebook/index.md",
+  "rulebook/rules.md",
+  "rulebook/classes/open-data.md",
+  "rulebook/classes/dataset-access.md",
+  "rulebook/classes/service-access.md",
   "data_spaces/eclipse/index.md",
 ]
 "Guides" = [
@@ -329,6 +346,7 @@ width = "100%"
 "services/healthy_routes.md" = "marketplace/index.md"
 "services/wastecontainer_location_optimization.md" = "marketplace/index.md"
 "resources/index.md" = "tef/index.md"
+"data_spaces/rulebook.md" = "rulebook/index.md"
 "data_spaces/bridge.md" = "valencia/index.md#the-same-data-in-the-eclipse-edc-data-space"
 
 # Chips of the TEF site pages, used through the macros plugin

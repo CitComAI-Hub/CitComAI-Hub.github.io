@@ -7,7 +7,7 @@ description: "Offer a dataset in the marketplace with the offer wizard."
 
 **What you will get**: a dataset of your organisation offered in the marketplace. Whoever buys it can read it through your connector, and only it.
 
-You publish it from the marketplace with the **offer wizard**: you choose what kind of data it is and fill in a few fields. Its access policies and its terms of use come from the [rulebook](../data_spaces/rulebook.md), so you write no policy and no legal text, and the marketplace rejects any offer that the rulebook would not generate.
+You publish it from the marketplace with the **offer wizard**: you choose what kind of data it is and fill in a few fields. Its access policies and its terms of use come from the [rulebook](../rulebook/index.md), so you write no policy and no legal text, and the marketplace rejects any offer that the rulebook would not generate.
 
 ## What you need
 
@@ -62,7 +62,7 @@ The wizard asks the rulebook for the access policies (read only, that entity typ
 
 Buy the offer from a test organisation, then read the data as in [Use data from your code](consume_data.md). Also check what must fail: another entity type returns `403`, a write (`POST`, `PATCH`, `DELETE`) is refused, and an organisation that did not buy returns an error at the verifier.
 
-Every day, the rulebook checks every offer published in the marketplace against its class (the *marketplace offers* badge on the [rulebook page](../data_spaces/rulebook.md)).
+Every day, the rulebook checks every offer published in the marketplace against its class (the *marketplace offers* badge on the [rulebook page](../rulebook/index.md)).
 
 ## If something fails
 
