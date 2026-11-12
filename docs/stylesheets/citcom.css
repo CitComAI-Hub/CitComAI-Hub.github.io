@@ -1685,7 +1685,7 @@ footer .footer-tagline img {
   transform: scaleX(1);
 }
 .md-typeset.cc-tasks.is-auto li.is-active > a::before {
-  animation: cc-tasks-progress 2s linear forwards;
+  animation: cc-tasks-progress 4s linear forwards;
 }
 .md-typeset.cc-tasks.is-auto.is-paused li.is-active > a::before {
   animation-play-state: paused;
