@@ -59,3 +59,10 @@ Valencia City Council (Ajuntament de València) and VRAIN-UPV are the first part
 
 Libelium operates a second, separate data space built on Eclipse EDC, for the partners that work with that technology. It has its own portal and catalogue; see [Eclipse EDC data space](eclipse/index.md).
 
+The three types of credential used in CitCom:
+
+| Credential | Held by | Used to |
+|---|---|---|
+| `LegalPersonCredential` | the legal representative (LEAR) of an organisation | act for the organisation: join, buy, sell |
+| `MachineCredential` | a program | read data through an API |
+| `ServiceCredential` | a person | log in to a web service offered in the data space |

@@ -9,18 +9,20 @@ Interoperability is what lets a service built for one city run in another city w
 
 ## MIMs
 
-The [Minimal Interoperability Mechanisms](https://mims.oascities.org/) (MIMs) are a small set of agreements, published by [Open & Agile Smart Cities](https://oascities.org/) (OASC), that cities adopt so their systems can talk to each other. They are *minimal* on purpose: a city does not replace its platform, it adds a common interface on top.
+The [Minimal Interoperability Mechanisms (MIMs)](https://mims.oascities.org/) are a small set of agreements, published by [Open & Agile Smart Cities (OASC)](https://oascities.org/), that cities adopt so their systems can talk to each other. They are *minimal* on purpose: a city does not replace its platform, it adds a common interface on top.
 
-The current version, MIMs Plus v9 (June 2026), orders the foundational MIMs along the journey of the data: make it accessible (MIM0), represent it with standard models (MIM2), exchange it under clear terms and trust (MIM3) and interlink it (MIM1). CitCom builds on the first two for [level 1](#level-1), and its data space covers MIM3 at [level 2](#level-2):
+The current version, MIMs Plus v9 (June 2026), has four foundational MIMs. Their numbers do not follow the order of the journey of the data, which is: make it accessible (MIM0), represent it with standard models (MIM2), exchange it under clear terms and trust (MIM3) and interlink it (MIM1). CitCom builds on MIM0 and MIM2 for [level 1](#level-1), and its data space covers MIM3 at [level 2](#level-2). MIM1 is not part of the minimal package:
 
 | MIM | What it fixes | In CitCom |
 |---|---|---|
 | **MIM0 Accessing Data** | All data is available through an API, ideally based on open standards | The [NGSI-LD API](https://www.etsi.org/deliver/etsi_ts/104100_104199/104175/01.01.01_60/ts_104175v010101p.pdf), served by a context broker (Orion-LD, Scorpio) |
+| **MIM1 Interlinking Data** | Data from different sources is linked, so it can be combined | Not part of the minimal package |
 | **MIM2 Representing Data** | The data is described with shared, standard models | [Smart Data Models](https://smartdatamodels.org/) as NGSI-LD entities, such as `WasteContainer` or `AirQualityObserved` |
+| **MIM3 Exchanging Data** | Data is exchanged under clear terms and trust | The [data space](../data_spaces/index.md): connectors, contracts and policies, at [level 2](#level-2) |
 
-NGSI-LD and Smart Data Models work as one package: the main mechanism of MIM2 is *Smart Data Models with NGSI-LD*, in which the models are NGSI-LD entities with a JSON Schema and a JSON-LD `@context`. Older versions of the MIMs had them as two separate MIMs (MIM1 Context information management and MIM2 Data models), a numbering that many documents still use.
+NGSI-LD and Smart Data Models work as one package: the main mechanism of MIM2 is *Smart Data Models with NGSI-LD*, in which the models are NGSI-LD entities with a JSON Schema and a JSON-LD `@context`. Older versions of the MIMs had them as two separate MIMs (an older MIM1, Context information management, and MIM2, Data models), a numbering that many documents still use and that does not match the MIM1 above.
 
-## Interoperability levels
+## Citcom.ai Interoperability levels
 
 <div class="cc-levels" markdown="0">
   <div class="cc-levels__flow">
@@ -76,7 +78,7 @@ NGSI-LD and Smart Data Models work as one package: the main mechanism of MIM2 is
   </div>
 </div>
 
-## The levels in practice
+### The levels in practice
 
 The [MIAIS](../miais/index.md), the worked example of this site, has one version per level. Its code shows what really changes from one level to the next:
 

@@ -134,26 +134,35 @@ marketplace_url = "https://marketplace.citcom-vrain-dataspace.eu"
 hidden_sections = ["Help", "The project"]
 
 # The guided tour for newcomers, in order. One source for the home, the header link, the tour bar
-# and the previous / next buttons. `url` is the page URL (with the trailing slash).
+# and the previous / next buttons. `url` is the page URL (with the trailing slash). `hint_for` is the
+# main section (page URL) that offers this step in the announcement bar, with the message in `hint`.
 [[project.extra.tour]]
 title = "The project"
 url = "getting_started/"
 text = "What CitCom is, what a TEF is and why the sites share an architecture."
+hint_for = "tef/"
+hint = "New to CitCom? The tour explains what a TEF is and why the sites share an architecture, in a few minutes."
 
 [[project.extra.tour]]
 title = "Interoperability"
 url = "getting_started/interoperability/"
 text = "The common rules behind every CitCom service."
+hint_for = "toolbox/"
+hint = "Not sure why these tools? This step explains the common rules they implement."
 
 [[project.extra.tour]]
 title = "Data spaces"
 url = "getting_started/data_spaces/"
 text = "How data is shared under control."
+hint_for = "data_spaces/"
+hint = "New to data spaces? Five minutes to see how data is shared under control."
 
 [[project.extra.tour]]
 title = "Your path"
 url = "getting_started/path/"
 text = "Pick what you came to do."
+hint_for = "guides/"
+hint = "Not sure where to start? Pick what you came to do and go to the guide that fits."
 
 # ---------------------------------------------------------------------------
 # Theme: Material's classic look, restyled in docs/stylesheets/citcom.css
@@ -165,6 +174,7 @@ custom_dir = "docs/overrides"
 logo = "assets/logo.png"
 favicon = "assets/favicon.png"
 features = [
+  "announce.dismiss",
   "content.action.edit",
   "content.code.annotate",
   "content.code.copy",

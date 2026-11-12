@@ -2666,6 +2666,17 @@ footer .footer-tagline img {
   white-space: nowrap;
 }
 
+/* cards with text only (no drawing) */
+.md-typeset .cc-help--plain {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.8rem;
+}
+@media screen and (max-width: 44.9375em) {
+  .md-typeset .cc-help--plain { grid-template-columns: minmax(0, 1fr); }
+}
+.md-typeset .cc-help--plain .cc-help__item { grid-template-columns: minmax(0, 1fr); grid-template-rows: auto; align-content: start; }
+.md-typeset .cc-help--plain .cc-help__item p { grid-column: 1; }
+.md-typeset .cc-help--plain .cc-help__item p:not(.cc-tef__eyebrow) { margin-top: 0.6rem; }
 /* small drawings of the diagrams of "Why a common architecture" (they reuse the .cc-help cards) */
 .md-typeset .cc-help__flow {
   display: flex;
@@ -2691,16 +2702,20 @@ footer .footer-tagline img {
   display: flex;
   flex-direction: column;
   align-items: center;
+  flex: 1 1 0;
+  min-width: 0;
+  white-space: normal;
   border-color: var(--md-accent-fg-color);
 }
+.md-typeset .cc-help__flow > .cc-help__stack { flex: none; }
 .md-typeset .cc-help__box small { font-size: 0.6rem; color: var(--md-default-fg-color--light); }
 .md-typeset .cc-help__flow > i {
   position: relative;
-  flex: 1;
-  min-width: 1.4rem;
+  flex: 0 0 1.4rem;
   height: 0;
   border-top: 1px dashed var(--md-accent-fg-color);
 }
+.md-typeset .cc-help__flow > i:has(small) { flex-basis: 3.6rem; }
 .md-typeset .cc-help__flow > i::after {
   content: "";
   position: absolute;
@@ -2723,3 +2738,17 @@ footer .footer-tagline img {
   color: var(--md-default-fg-color--light);
   white-space: nowrap;
 }
+
+/* ---------- Announcement bar (first visit to a main section: suggests a step of the tour) ---------- */
+.md-banner {
+  background: var(--cc-ink);
+  color: #fff;
+}
+.md-banner .md-banner__inner { font-size: 0.8rem; margin: 0.5rem auto; }
+.md-banner a,
+.md-banner a:hover {
+  color: #fff;
+  font-weight: 600;
+  text-decoration: underline;
+}
+.md-banner a::after { content: " \2192"; }

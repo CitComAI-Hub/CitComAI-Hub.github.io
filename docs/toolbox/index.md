@@ -56,7 +56,7 @@ Built something that helps CitCom partners? [Propose your tool with a pull reque
 
 ## Where each tool fits
 
-Which tools you need depends on where your data is today. Whatever the starting point, the path is the same: reach [interoperability level 1](../getting_started/interoperability.md#interoperability-levels) (NGSI-LD and Smart Data Models), put a connector in front for level 2, and let programs and people use the data.
+Which tools you need depends on where your data is today. Whatever the starting point, the path is the same: reach [interoperability level 1](../getting_started/interoperability.md#level-1) (NGSI-LD and Smart Data Models), put a connector in front for level 2, and let programs and people use the data.
 
 ```mermaid
 flowchart LR

@@ -9,9 +9,11 @@ next_step:
 
 # Data spaces in 5 minutes
 
-A **data space** is a set of rules and software that lets organisations share data while each one keeps control of its own. There is no central database: the data stays with its provider, and the provider decides who can read it and under which conditions.
+**Data space (DS)** refer to structured and managed environments where data from various sources is securely stored, shared, and utilized for AI and robotics applications within smart and sustainable cities. These data spaces are **the project's core technology**, enabling participants to **access** and leverage **high-quality data for testing**, **experimentation**, and **validation of AI technologies**.
 
-This page explains the few concepts you need to follow the rest of the site. The [CitCom.ai Data Space](../data_spaces/index.md) is built on them; [How it works](../data_spaces/fiware.md) shows how they are implemented.
+Data spaces support **interoperability**, ensuring that data from different sources can be combined and used while **complying with** regulations such as the **GDPR and other EU directives**. They provide the necessary infrastructure for managing data in a way that supports ethical considerations, cybersecurity, and the broader goals of creating a more digital and sustainable urban environment.
+
+This is how a data space works, from joining it to reading data. Follow the steps and watch which pieces take part in each one; the pieces are explained below.
 
 <div class="cc-pieces" markdown="0">
   <div class="cc-pieces__head">
@@ -55,31 +57,38 @@ This page explains the few concepts you need to follow the rest of the site. The
   </div>
 </div>
 
+
 ## The pieces
 
-**Participant**
-:   An organisation in the data space: a city council, a company, a university. In CitCom, for example, the Ajuntament de València (`townhall-vlc`) and VRAIN-UPV (`vrain`). A participant can be a **provider** (offers data or services), a **consumer** (uses them), or both.
+A data space is not a single product but a set of **building blocks**, each with one job: who takes part, who is trusted, who controls access and under which rules. These are the *pieces* of the diagram above, and the terms used throughout this documentation. Knowing what each one does is enough to follow any guide.
 
-**Trust anchor**
-:   The list of participants that everyone trusts. When an organisation joins, the operator of the data space adds it to the trust anchor. From then on, the credentials it issues are accepted by the others.
+<div class="cc-help cc-help--plain" markdown="0">
+  <div class="cc-help__item">
+    <p class="cc-tef__eyebrow">Connector</p>
+    <p>The software each participant runs at its border. For a provider, it sits in front of the data: it checks who is asking, applies the access rules and only then forwards the request. In CitCom it is the <a href="../../data_spaces/fiware/">FIWARE Data Space Connector</a>.</p>
+  </div>
+  <div class="cc-help__item">
+    <p class="cc-tef__eyebrow">Trust anchor</p>
+    <p>The list of participants that everyone trusts. When an organisation joins, the operator of the data space adds it to the trust anchor. From then on, the credentials it issues are accepted by the others.</p>
+  </div>
+  <div class="cc-help__item">
+    <p class="cc-tef__eyebrow">Participant</p>
+    <p>An organisation in the data space: a city council, a company, a university. In CitCom, for example, the Ajuntament de València (<code>townhall-vlc</code>) and VRAIN-UPV (<code>vrain</code>). A participant can be a <strong>provider</strong> (offers data or services), a <strong>consumer</strong> (uses them), or both.</p>
+  </div>
+  <div class="cc-help__item">
+    <p class="cc-tef__eyebrow">Verifiable credential</p>
+    <p>A digital certificate, signed by an organisation, that says something about a person or a machine: "this is an employee of VRAIN", "this program acts for VRAIN with the role <code>clearence1</code>". People keep theirs in a <a href="../../toolbox/wallets/">wallet</a> on the phone or the desktop; programs request them from their organisation's identity server. CitCom uses three types, listed below.</p>
+  </div>
+  <div class="cc-help__item">
+    <p class="cc-tef__eyebrow">Offer</p>
+    <p>What a provider makes available: a dataset or a service, with a description, terms of use and the access rule it grants. Offers are published in the <strong>marketplace</strong>, where anyone can browse them.</p>
+  </div>
+  <div class="cc-help__item">
+    <p class="cc-tef__eyebrow">Contract and policy</p>
+    <p>When a consumer buys an offer, a contract is created. The provider's connector then registers two things: that the consumer's credentials are now accepted, and an <strong>access policy</strong> (written in <a href="https://www.w3.org/TR/odrl-model/">ODRL</a>) that says exactly what they can read, for example "only <code>WasteContainer</code> entities, only through this path".</p>
+  </div>
+</div>
 
-**Connector**
-:   The software each participant runs at its border. For a provider, it sits in front of the data: it checks who is asking, applies the access rules and only then forwards the request. In CitCom it is the [FIWARE Data Space Connector](../data_spaces/fiware.md).
-
-**Verifiable credential**
-:   A digital certificate, signed by an organisation, that says something about a person or a machine: "this is an employee of VRAIN", "this program acts for VRAIN with the role `clearence1`". People keep theirs in a [wallet](../toolbox/wallets.md) on the phone or the desktop; programs request them from their organisation's identity server. CitCom uses three types:
-
-    | Credential | Held by | Used to |
-    |---|---|---|
-    | `LegalPersonCredential` | the legal representative (LEAR) of an organisation | act for the organisation: join, buy, sell |
-    | `MachineCredential` | a program | read data through an API |
-    | `ServiceCredential` | a person | log in to a web service offered in the data space |
-
-**Offer**
-:   What a provider makes available: a dataset or a service, with a description, terms of use and the access rule it grants. Offers are published in the **marketplace**, where anyone can browse them.
-
-**Contract and policy**
-:   When a consumer buys an offer, a contract is created. The provider's connector then registers two things: that the consumer's credentials are now accepted, and an **access policy** (written in [ODRL](https://www.w3.org/TR/odrl-model/)) that says exactly what they can read, for example "only `WasteContainer` entities, only through this path".
 
 ## What happens when a consumer reads data
 
