@@ -34,9 +34,9 @@ Four sections in the top menu, plus the marketplace. Each one answers a differen
   </div>
   <div class="cc-help__item">
     <div class="cc-help__demo" aria-hidden="true">
-      <span class="cc-info">i</span>
+      <span class="cc-help__next"><small>Help</small><strong>FAQ</strong></span>
     </div>
     <p class="cc-tef__eyebrow">Help</p>
-    <p>The <strong>i</strong> at the top right of every page, next to the edit icon, opens the <a href="../faq/">help and the FAQ</a>.</p>
+    <p>The <strong>Help</strong> section of the menu, and the link in the footer, open the <a href="../faq/">FAQ</a> and how to ask for changes.</p>
   </div>
 </div>
