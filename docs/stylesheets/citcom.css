@@ -1938,7 +1938,6 @@ footer .footer-tagline img {
 .md-typeset .cc-tour--end {
   margin: 3rem 0 1rem;
 }
-.md-typeset .cc-tour--end .cc-tour__exit { order: 5; margin-left: auto; }
 .md-typeset .cc-tour__next {
   position: relative;
   order: 4;
@@ -1971,18 +1970,21 @@ footer .footer-tagline img {
   color: var(--md-default-fg-color--light);
 }
 .md-typeset .cc-tour__next::after {
-  content: "\2192";
+  content: "";
   position: absolute;
-  top: 50%;
   right: 0.2rem;
-  transform: translateY(-40%);
-  font-size: 1.4rem;
-  color: var(--md-accent-fg-color);
-  transition: right 0.2s;
+  top: 50%;
+  width: 1.1rem;
+  height: 1.1rem;
+  margin-top: -0.35rem;
+  background-color: var(--md-accent-fg-color);
+  -webkit-mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>') center / contain no-repeat;
+  mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>') center / contain no-repeat;
+  transition: transform 0.15s;
 }
 .md-typeset .cc-tour__next:hover .cc-tour__nexttitle,
 .md-typeset .cc-tour__next:focus-visible .cc-tour__nexttitle { color: var(--md-accent-fg-color); }
-.md-typeset .cc-tour__next:hover::after { right: 0; }
+.md-typeset .cc-tour__next:hover::after { transform: translateX(0.2rem); }
 @media (prefers-reduced-motion: reduce) {
   .md-typeset .cc-tour__next::after { transition: none; }
 }
