@@ -52,7 +52,7 @@ description: "The data space shared by all CitCom partners: how it works today, 
   <div class="cc-infra__cta-row"><a class="cc-infra__cta" href="../guides/join/">Join the data space</a></div>
 </div>
 
-Valencia City Council (Ajuntament de València) and VRAIN-UPV are the first participants, and both are told step by step as worked examples. [How it works](fiware.md) explains each step of the diagram, with every component and the public addresses.
+Valencia City Council (Ajuntament de València) and VRAIN-UPV are the first participants, and both are told step by step as worked examples. [How it works](fiware.md) explains each step of the diagram, with every component and the public addresses. The rules every participant accepts are in the [rulebook](rulebook.md).
 
 ## Also in CitCom
 
