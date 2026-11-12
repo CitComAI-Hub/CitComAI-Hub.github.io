@@ -26,6 +26,7 @@ extra_javascript = [
   "javascripts/header-section.js",
   "javascripts/cycle-controls.js",
   "javascripts/home-tasks.js",
+  "javascripts/tour-return.js",
   "javascripts/tef-supernodes.js",
   "javascripts/levels.js",
   "javascripts/pieces.js",
@@ -77,9 +78,8 @@ nav = [
     ] },
     { "Local Digital Twins" = "local_digital_twins/index.md" },
   ] },
-  { "Get started" = [
+  { "The project" = [
     "getting_started/index.md",
-    { "How this site works" = "getting_started/site.md" },
     { "Interoperability" = "getting_started/interoperability.md" },
     { "Data spaces in 5 minutes" = "getting_started/data_spaces.md" },
     { "Your path" = "getting_started/path.md" },
@@ -120,6 +120,7 @@ nav = [
   ] },
   { "Help" = [
     "faq/index.md",
+    { "How this site works" = "site.md" },
     { "Request changes" = "faq/pull_request_procedure.md" },
   ] },
 ]
@@ -127,9 +128,10 @@ nav = [
 [project.extra]
 generator = false
 marketplace_url = "https://marketplace.citcom-vrain-dataspace.eu"
-# "Get started" is the guided tour, not a section of the menu: the header links to it with its own
-# button, and its pages carry the tour bar (see partials/content.html).
-hidden_sections = ["Help", "Get started"]
+# The section of the guided tour ("The project", named after its first page) is not a section of the
+# menu: it is entered from the home, and its pages carry the tour bar (see partials/content.html).
+# If you rename that section in the nav, rename it here too.
+hidden_sections = ["Help", "The project"]
 
 # The guided tour for newcomers, in order. One source for the home, the header link, the tour bar
 # and the previous / next buttons. `url` is the page URL (with the trailing slash).
@@ -137,11 +139,6 @@ hidden_sections = ["Help", "Get started"]
 title = "The project"
 url = "getting_started/"
 text = "What CitCom is, what a TEF is and why the sites share an architecture."
-
-[[project.extra.tour]]
-title = "How this site works"
-url = "getting_started/site/"
-text = "The sections of the menu and what each one is for."
 
 [[project.extra.tour]]
 title = "Interoperability"
@@ -278,7 +275,6 @@ services, and the tools to connect a city platform.
 [project.plugins.llmstxt.sections]
 "Get started" = [
   "getting_started/index.md",
-  "getting_started/site.md",
   "getting_started/interoperability.md",
   "getting_started/data_spaces.md",
   "getting_started/path.md",
@@ -309,6 +305,10 @@ services, and the tools to connect a city platform.
   "toolbox/wallets.md",
   "toolbox/smart_data_models.md",
 ]
+"Help" = [
+  "site.md",
+  "faq/index.md",
+]
 "TEF network" = [
   "tef/index.md",
   "tef/sites.md",
@@ -327,6 +327,7 @@ width = "100%"
 [project.plugins.redirects.redirect_maps]
 "welcome.md" = "getting_started/index.md"
 "getting_started/project.md" = "getting_started/index.md"
+"getting_started/site.md" = "site.md"
 "getting_started/nodes_countries.md" = "tef/index.md"
 "getting_started/data_spaces/fundaments_deployment.md" = "getting_started/data_spaces.md"
 "getting_started/get_involved/index.md" = "guides/join.md"
