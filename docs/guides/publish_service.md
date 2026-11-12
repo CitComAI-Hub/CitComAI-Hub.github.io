@@ -71,11 +71,13 @@ Add these routes to your APISIX. The first one does the login and the policy che
 
 Point the public host name of the service to your APISIX, not to the app. Several services of your organisation can share one host name, each under its own prefix.
 
+The [rulebook](../data_spaces/rulebook.md) also asks for a request limit per buying organisation on the route: **600 requests per minute** (APISIX `limit-count`, counted per issuer of the buyer's credential; a web page makes many requests), and that the gateway removes the `X-Stripped-Path` header that the browser sends.
+
 ### 3. Create the offer
 
 As in [Publish a dataset](publish_dataset.md#3-create-the-offer-in-the-marketplace), with these two characteristics.
 
-**Verifier policy**: which credential is accepted after a purchase, and with which role:
+**Verifier policy**: which credential is accepted after a purchase, and with which roles. List **every** service role of your organisation, not only this one: a buyer's user may hold the roles of several of your services, and the verifier rejects a credential that carries a role the list does not allow.
 
 ```json
 {
@@ -88,7 +90,7 @@ As in [Publish a dataset](publish_dataset.md#3-create-the-offer-in-the-marketpla
       "claims": [{
         "name": "roles",
         "path": "$.roles[?(@.target==\"roles-dataspace\")].names[*]",
-        "allowedValues": ["<service>_user"]
+        "allowedValues": ["<service>_user", "<other service roles>"]
       }]
     }]
   }]
@@ -145,7 +147,7 @@ As in [Publish a dataset](publish_dataset.md#3-create-the-offer-in-the-marketpla
 }
 ```
 
-Give the offer the category that fits, such as *AI services*, and a screenshot as its image.
+Give the offer the category that fits, such as *AI services*, a screenshot as its image, and the two terms of a [published dataset](publish_dataset.md#3-create-the-offer-in-the-marketplace): **License** (the terms and conditions of the `service-access` class) and **Policy class**.
 
 The policy works by path, not by host name: that is why the service lives under its own prefix, and why the policy gives no access to anything else in your gateway.
 

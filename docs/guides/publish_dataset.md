@@ -16,7 +16,13 @@ description: "Offer a dataset in the marketplace with its access policy."
 - The data in an **NGSI-LD broker** behind your connector, described with [Smart Data Models](../toolbox/smart_data_models.md):
     - a broker of your own (Orion-LD, Scorpio), loaded by your ingestion process; or
     - your existing NGSI-v2 platform, served as NGSI-LD by [Lepus](../toolbox/lepus.md), as the Ajuntament de València does.
-- A route in your connector's gateway (APISIX) to that broker, protected by the verifier token and the policy engine (OPA), as the default `/ngsi-ld/*` route is.
+- A route in your connector's gateway (APISIX) to that broker, protected by the verifier token and the policy engine (OPA), as the default `/ngsi-ld/*` route is. The [rulebook](../data_spaces/rulebook.md) also asks that the route:
+    - accepts **GET only**: buyers read, they never write;
+    - serves only the entity endpoints, `<path>/v1/entities` and `<path>/v1/entities/*`;
+    - removes the `X-Stripped-Path` and tenant headers (`NGSILD-Tenant`, and `Fiware-Service`, `Fiware-ServicePath` in front of NGSI-v2) that the buyer sends, because the policy engine would trust them;
+    - limits each buying organisation to **60 requests per minute** (APISIX `limit-count`, counted per issuer of the buyer's credential).
+
+    The rulebook's [implementation profiles](https://github.com/CitComAI-Hub/citcom-ds-rulebook/blob/main/docs/implementation-profiles.md) explain why, for each kind of broker.
 
 ## Steps
 
@@ -57,7 +63,7 @@ An offer carries two characteristics that your connector applies on every purcha
 }
 ```
 
-**ODRL policy** (`authorizationPolicy`): what the buyer can do, here read the `<EntityType>` entities under `<path>`:
+**ODRL policy** (`authorizationPolicy`): what the buyer can do, here read the `<EntityType>` entities under `<path>`. The action is `odrl:read`, which allows GET only. Never use `odrl:use` for data: it allows every method, so a buyer could change or delete your data.
 
 ```json
 {
@@ -78,7 +84,7 @@ An offer carries two characteristics that your connector applies on every purcha
       "@type": "odrl:Policy",
       "odrl:permission": [{
         "odrl:assigner": "did:web:<participant>.<domain>",
-        "odrl:action": "odrl:use",
+        "odrl:action": "odrl:read",
         "odrl:target": {
           "@type": "odrl:AssetCollection",
           "odrl:source": "urn:asset",
@@ -121,13 +127,13 @@ Log in to the [marketplace](https://marketplace.citcom-vrain-dataspace.eu) with 
 
 1. Create a **catalogue** for your organisation, if you do not have one.
 2. Create the **product specification**: name, description, terms of use, an image (it is required to show the offer on the home page) and the two characteristics above.
-3. Create the **product offering** in your catalogue, with a [category](../marketplace/index.md#how-the-marketplace-is-organised) and a price (free is fine), and launch it.
+3. Create the **product offering** in your catalogue, with a [category](../marketplace/index.md#how-the-marketplace-is-organised) and a price (free is fine), and two terms: **License**, the terms and conditions of the offer's class (`open-data` or `dataset-access`), and **Policy class**, the class with a link to it in the rulebook. Then launch it.
 
 Write all texts in English: CitCom is international.
 
 ## Check that it works
 
-Buy the offer from a test organisation, then read the data as in [Use data from your code](consume_data.md). Also check what must fail: another entity type returns `403`, and an organisation that did not buy returns an error at the verifier.
+Buy the offer from a test organisation, then read the data as in [Use data from your code](consume_data.md). Also check what must fail: another entity type returns `403`, a write (`POST`, `PATCH`, `DELETE`) is refused, and an organisation that did not buy returns an error at the verifier.
 
 ## If something fails
 
