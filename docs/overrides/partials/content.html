@@ -57,6 +57,10 @@
 {{ tour_bar(tour, cur, "Guided tour") }}
 {%- endif %}
 
+{#- Help: the square "i" at the right of the page actions (they float to the right, so it goes first) -#}
+{%- if page.url[:4] != "faq/" and page.url != "site/" %}
+<a class="md-content__button cc-info-btn" href="{{ 'faq/' | url }}" title="Help" aria-label="Help"><span class="cc-info" aria-hidden="true">i</span></a>
+{%- endif %}
 {% include "partials/actions.html" %}
 {% if "<h1" not in page.content %}
   <h1>{{ page.title | d(config.site_name, true)}}</h1>

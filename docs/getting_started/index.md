@@ -7,9 +7,11 @@ description: "What CitCom.ai is, what a TEF is, why the sites share a common arc
 
 **CitCom.ai** is a European Union project that sets up Testing and Experimentation Facilities (TEFs) for AI and robotics in smart and sustainable cities and communities. A **TEF** is a place where companies test AI products in real conditions before they reach the market; the sites, the super-nodes they are grouped in and what each one offers are in the [TEF network](../tef/index.md).
 
+## Common Infrastructure and Services
+
 This site is the work of **work package 3 (WP3), Common Infrastructure and Services**. This page explains why the sites share a common architecture and what WP3 offers them.
 
-## Why a common architecture
+### Why a common architecture
 
 Each city already has its own data platform, often built years ago with its own interfaces. A product tested in one city would need a new integration in the next one. CitCom avoids that by agreeing on a few common points:
 

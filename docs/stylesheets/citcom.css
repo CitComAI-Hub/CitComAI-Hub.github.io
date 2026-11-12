@@ -2419,3 +2419,213 @@ footer .footer-tagline img {
 @media (prefers-reduced-motion: reduce) {
   .cc-cycle__btn { transition: none; }
 }
+
+/* ---------- "How this site works": a square "i" with the link, above the table of contents and in the footer ---------- */
+.cc-info {
+  display: inline-grid;
+  place-items: center;
+  flex: none;
+  width: 1.15rem;
+  height: 1.15rem;
+  box-sizing: border-box;
+  border: 1.5px solid currentColor;
+  border-radius: 0;
+  font-size: 0.7rem;
+  font-weight: 700;
+  font-style: normal;
+  line-height: 1;
+  transition: background-color 0.15s, color 0.15s;
+}
+.md-typeset .cc-info-link,
+.md-path .cc-info-link,
+.cc-info-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--md-accent-fg-color);
+  font-size: 0.7rem;
+  font-weight: 500;
+  text-decoration: none;
+}
+.cc-info-link:hover .cc-info,
+.cc-info-link:focus-visible .cc-info {
+  background: var(--md-accent-fg-color);
+  color: var(--md-default-bg-color);
+}
+.md-footer-meta .cc-info-link, .footer-links .cc-info-link { color: inherit; font-size: inherit; }
+.footer-links .cc-info-link:hover .cc-info { background: #ffffff; color: var(--cc-night, #15141a); }
+@media (prefers-reduced-motion: reduce) { .cc-info { transition: none; } }
+
+/* the "i" among the page actions (next to the edit icon): same box as them */
+.md-typeset a.cc-info-btn {
+  display: inline-grid;
+  place-items: center;
+  vertical-align: top;
+  color: var(--md-default-fg-color--light);
+  text-decoration: none;
+}
+.md-typeset a.cc-info-btn .cc-info {
+  width: 1.2rem;
+  height: 1.2rem;
+  margin-top: 0.1rem;
+  font-size: 0.75rem;
+}
+.md-typeset a.cc-info-btn:hover,
+.md-typeset a.cc-info-btn:focus-visible { color: var(--md-accent-fg-color); }
+.md-typeset a.cc-info-btn:hover .cc-info,
+.md-typeset a.cc-info-btn:focus-visible .cc-info { background: var(--md-accent-fg-color); color: var(--md-default-bg-color); }
+
+/* ---------- "How this site works": the things that help, each with a small drawing of the real control ---------- */
+.md-typeset .cc-help {
+  display: grid;
+  gap: 1rem;
+  margin: 1.2rem 0 1.6rem;
+}
+.md-typeset .cc-help__item {
+  display: grid;
+  grid-template-columns: minmax(0, 15rem) minmax(0, 1fr);
+  grid-template-rows: auto 1fr;
+  gap: 0 1.4rem;
+  align-items: start;
+  padding: 1rem;
+  border: 1px solid var(--cc-border);
+  background: var(--md-default-bg-color);
+}
+.md-typeset .cc-help__item p { grid-column: 2; margin: 0.5rem 0 0; font-size: 0.85rem; }
+.md-typeset .cc-help__item p.cc-tef__eyebrow { justify-self: start; margin-top: 0; font-size: 0.62rem; }
+@media screen and (max-width: 44.9375em) {
+  .md-typeset .cc-help__item { grid-template-columns: minmax(0, 1fr); }
+  .md-typeset .cc-help__item p, .md-typeset .cc-help__demo { grid-column: 1; }
+  .md-typeset .cc-help__demo { grid-row: auto; }
+  .md-typeset .cc-help__item p.cc-tef__eyebrow { margin-top: 1rem; }
+}
+.md-typeset .cc-help__demo {
+  grid-column: 1;
+  grid-row: 1 / span 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 6rem;
+  padding: 1rem;
+  background: var(--cc-tint);
+}
+.md-typeset .cc-help__search {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.2rem;
+  width: 100%;
+  max-width: 14rem;
+  padding: 0.5rem 0.8rem;
+  border: 1px solid var(--cc-border);
+  background: var(--md-default-bg-color);
+  font-size: 0.8rem;
+  color: var(--md-default-fg-color--light);
+}
+.md-typeset .cc-help__search kbd { font-size: 0.65rem; white-space: nowrap; }
+.md-typeset .cc-help__next {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 14rem;
+  padding: 0.6rem 2.2rem 0.7rem 0.9rem;
+  border: 1px solid var(--cc-border);
+  background: var(--md-default-bg-color);
+}
+.md-typeset .cc-help__next small {
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--md-accent-fg-color);
+}
+.md-typeset .cc-help__next strong { font-weight: 400; font-size: 0.95rem; }
+.md-typeset .cc-help__next::after {
+  content: "\2192";
+  position: absolute;
+  right: 0.8rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--md-accent-fg-color);
+}
+.md-typeset .cc-help__demo .cc-info {
+  width: 2.2rem;
+  height: 2.2rem;
+  font-size: 1.2rem;
+  color: var(--md-accent-fg-color);
+}
+
+/* ---------- Guided tour: the temporary button to go back to the step you left (see tour-return.js) ---------- */
+.cc-tour-return {
+  position: fixed;
+  left: max(1rem, env(safe-area-inset-left, 0px));
+  bottom: max(1rem, env(safe-area-inset-bottom, 0px));
+  z-index: 5;
+  display: flex;
+  align-items: stretch;
+  max-width: calc(100vw - 2rem);
+  background: var(--cc-ink);
+  color: #ffffff;
+  animation: cc-tour-return-in 0.3s ease-out;
+}
+[data-md-color-scheme="slate"] .cc-tour-return {
+  background: #ffffff;
+  color: var(--cc-ink);
+}
+.cc-tour-return a {
+  display: flex;
+  flex-direction: column;
+  padding: 0.6rem 1rem 0.65rem 1.1rem;
+  color: inherit;
+  text-decoration: none;
+}
+.cc-tour-return a::before {
+  content: "\2190";
+  position: absolute;
+  left: 0.9rem;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1rem;
+}
+.cc-tour-return a { position: relative; padding-left: 2.4rem; }
+.cc-tour-return small {
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  opacity: 0.75;
+}
+.cc-tour-return strong {
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+.cc-tour-return a:hover,
+.cc-tour-return a:focus-visible { background: var(--md-accent-fg-color); color: #ffffff; }
+.cc-tour-return button {
+  flex: none;
+  width: 2.2rem;
+  border: 0;
+  border-left: 1px solid rgba(255, 255, 255, 0.25);
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  font-size: 1.1rem;
+  cursor: pointer;
+}
+[data-md-color-scheme="slate"] .cc-tour-return button { border-left-color: rgba(0, 0, 0, 0.2); }
+.cc-tour-return button:hover,
+.cc-tour-return button:focus-visible { background: rgba(127, 127, 127, 0.3); }
+@keyframes cc-tour-return-in {
+  from { opacity: 0; transform: translateY(0.6rem); }
+  to { opacity: 1; transform: none; }
+}
+@media (prefers-reduced-motion: reduce) { .cc-tour-return { animation: none; } }
+.cc-tour-return a > span {
+  max-width: 18rem;
+  overflow: hidden;
+  font-size: 0.68rem;
+  opacity: 0.75;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

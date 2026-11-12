@@ -3,6 +3,8 @@ title: Frequently Asked Questions (FAQ)
 description: "Frequent questions, and how to propose a change to this site."
 ---
 
+New to this site? [How this site works](../site.md) explains the menu and what each section is for.
+
 ??? question "How can I edit a page on the CitCom.ai Hub?"
 
     This website is publicly accessible, so **anyone can edit its content** by following a series of steps.

@@ -5,7 +5,7 @@ description: "Pick the role that looks most like yours and start with its first 
 
 # Your path
 
-You now know what CitCom is, how this site is organised and how data is shared. Pick the role that looks most like yours and start with its first guide.
+You now know what CitCom is and how data is shared. Pick the role that looks most like yours and start with its first guide.
 
 <div class="grid cards cc-two" markdown>
 

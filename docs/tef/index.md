@@ -6,6 +6,8 @@ summary: "Who takes part: three super-nodes and 16 sites across Europe."
 
 # TEF network
 
+<p class="cc-lead">Who takes part in CitCom.ai: what a TEF is, the three super-nodes, their 16 sites across Europe and the services they share, such as the AI Trustworthiness Label and Local Digital Twins.</p>
+
 ## What a TEF is
 
 A **Testing and Experimentation Facility** (TEF) is a place where companies test AI and robotics products in real conditions before they reach the market. The European Commission funds [TEFs in several sectors](https://digital-strategy.ec.europa.eu/en/activities/testing-and-experimentation-facilities); CitCom.ai is the one for **smart and sustainable cities and communities**.
