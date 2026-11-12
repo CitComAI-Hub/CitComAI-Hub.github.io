@@ -27,6 +27,7 @@ extra_javascript = [
   "javascripts/cycle-controls.js",
   "javascripts/home-tasks.js",
   "javascripts/tour-return.js",
+  "javascripts/announce-timeout.js",
   "javascripts/tef-supernodes.js",
   "javascripts/levels.js",
   "javascripts/pieces.js",

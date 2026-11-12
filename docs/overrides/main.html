@@ -22,7 +22,7 @@
 {% block announce %}
   {%- for s in config.extra.tour -%}
     {%- if s.hint_for == page.url -%}
-    <strong>First time here?</strong> {{ s.hint }} <a href="{{ s.url | url }}">Tour · step {{ loop.index }}: {{ s.title }}</a>
+    <a class="cc-announce__link" href="{{ s.url | url }}" title="Tour · step {{ loop.index }}: {{ s.title }}"><strong>First time here?</strong> {{ s.hint }}</a>
     {%- endif -%}
   {%- endfor -%}
 {% endblock %}

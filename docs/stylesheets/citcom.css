@@ -2741,14 +2741,51 @@ footer .footer-tagline img {
 
 /* ---------- Announcement bar (first visit to a main section: suggests a step of the tour) ---------- */
 .md-banner {
-  background: var(--cc-ink);
-  color: #fff;
+  /* the accent of the site: it stands out from the dark header and the footer */
+  background: var(--md-accent-fg-color);
+  color: var(--md-default-bg-color);
+  transition: opacity 0.4s;
 }
-.md-banner .md-banner__inner { font-size: 0.8rem; margin: 0.5rem auto; }
+[data-md-component="announce"].is-leaving .md-banner { opacity: 0; }
+/* time left: a thin line along the bottom that empties (as long as announce-timeout.js waits) */
+.md-banner { position: relative; }
+[data-md-component="announce"].is-counting .md-banner::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 3px;
+  background: currentColor;
+  opacity: 0.6;
+  transform-origin: left center;
+  animation: cc-announce-time var(--cc-announce-time, 8s) linear forwards;
+}
+[data-md-component="announce"].is-paused .md-banner::after { animation-play-state: paused; }
+@keyframes cc-announce-time { from { transform: scaleX(1); } to { transform: scaleX(0); } }
+@media (prefers-reduced-motion: reduce) { .md-banner { transition: none; } }
+.md-banner .md-banner__inner {
+  /* the text centred on the width of the window, the close button at its right edge */
+  max-width: none;
+  margin: 0;
+  padding: 0.7rem 3.2rem;
+  font-size: 0.8rem;
+  text-align: center;
+}
 .md-banner a,
-.md-banner a:hover {
-  color: #fff;
-  font-weight: 600;
-  text-decoration: underline;
+.md-banner a:hover { color: inherit; }
+/* the whole bar is the link: the link stretches over it, under the close button */
+.md-banner a.cc-announce__link { text-decoration: none; }
+.md-banner a.cc-announce__link::before { content: ""; position: absolute; inset: 0; }
+.md-banner a.cc-announce__link::after { content: " \2192"; font-weight: 600; }
+.md-banner a.cc-announce__link:hover,
+.md-banner a.cc-announce__link:focus-visible { text-decoration: underline; }
+.md-banner .md-banner__button {
+  position: absolute;
+  top: 50%;
+  right: 1rem;
+  float: none;
+  margin: 0;
+  transform: translateY(-50%);
+  z-index: 1;
 }
-.md-banner a::after { content: " \2192"; }
