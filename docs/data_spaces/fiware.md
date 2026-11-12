@@ -125,7 +125,7 @@ sequenceDiagram
     CM->>PAP: Load the policy (e.g. only WasteContainer under /lepus/ngsi-ld)
 ```
 
-An offer carries two settings: **which credential and roles** the buyer will be allowed to present, and **which policy** limits what the buyer can do. Both are applied automatically when the order completes; nobody configures the connector by hand.
+An offer carries two settings: **which credential and roles** the buyer will be allowed to present, and **which policy** limits what the buyer can do. The marketplace's offer wizard generates both from the [rulebook](rulebook.md), and both are applied automatically when the order completes; nobody writes a policy or configures the connector by hand.
 
 ### A machine reads data
 
