@@ -7,6 +7,9 @@ description: "Offer a dataset in the marketplace with its access policy."
 
 **What you will get**: a dataset of your organisation offered in the marketplace. Whoever buys it can read it through your connector, and only it.
 
+!!! note "Policies come from the rulebook"
+    In the CitCom.ai Data Space, the terms and policies of an offer are generated from a policy class of the [rulebook](../data_spaces/rulebook.md) (`open-data` or `dataset-access` for datasets). The policies below are what those classes generate. Add your offer to the rulebook, or ask the operator to, instead of writing them by hand.
+
 ## What you need
 
 - Your organisation [registered](join.md), with its own [connector](deploy_connector.md) and the contract management address in its marketplace profile.
