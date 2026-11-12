@@ -11,8 +11,8 @@
 {%- set cur = namespace(i=-1) -%}
 {%- for s in tour -%}{%- if s.url == page.url -%}{%- set cur.i = loop.index0 -%}{%- endif -%}{%- endfor -%}
 
-{%- macro tour_bar(tour, cur, label, end=false) -%}
-<nav class="cc-tour{% if end %} cc-tour--end{% endif %}" aria-label="{{ label }}">
+{%- macro tour_bar(tour, cur, label) -%}
+<nav class="cc-tour" aria-label="{{ label }}">
   <span class="cc-tour__label">Tour · step {{ cur.i + 1 }} of {{ tour | length }}</span>
   <ol class="cc-tour__steps">
     {%- for s in tour %}
@@ -22,13 +22,34 @@
     {%- endfor %}
   </ol>
   <a class="cc-tour__exit" href="{{ nav.homepage.url | url }}">Leave the tour</a>
-  {%- if end %}
-  {%- if cur.i + 1 < tour | length %}
-  <a class="cc-tour__next md-button md-button--primary" href="{{ tour[cur.i + 1].url | url }}">Next: {{ tour[cur.i + 1].title }}</a>
+</nav>
+{%- endmacro -%}
+
+{#- The end of a step: the same segments, bigger, and under them the next page with its explanation and an arrow -#}
+{%- macro tour_end(tour, cur) -%}
+{%- set last = cur.i + 1 >= tour | length -%}
+<nav class="cc-tour cc-tour--end" aria-label="Guided tour, progress">
+  <ol class="cc-tour__steps">
+    {%- for s in tour %}
+    <li class="{% if loop.index0 < cur.i %}is-done{% elif loop.index0 == cur.i %}is-current{% endif %}">
+      <a href="{{ s.url | url }}"{% if loop.index0 == cur.i %} aria-current="step"{% endif %}><small>{{ loop.index }}</small><span>{{ s.title }}</span></a>
+    </li>
+    {%- endfor %}
+  </ol>
+  {%- if not last %}
+  <a class="cc-tour__next" href="{{ tour[cur.i + 1].url | url }}">
+    <span class="cc-tour__nextlabel">Next · step {{ cur.i + 2 }} of {{ tour | length }}</span>
+    <span class="cc-tour__nexttitle">{{ tour[cur.i + 1].title }}</span>
+    {%- if tour[cur.i + 1].text %}<span class="cc-tour__nexttext">{{ tour[cur.i + 1].text }}</span>{% endif %}
+  </a>
   {%- else %}
-  <a class="cc-tour__next md-button md-button--primary" href="{{ nav.homepage.url | url }}">Finish the tour</a>
+  <a class="cc-tour__next" href="{{ nav.homepage.url | url }}">
+    <span class="cc-tour__nextlabel">End of the tour</span>
+    <span class="cc-tour__nexttitle">Back to the home</span>
+    <span class="cc-tour__nexttext">Now you know the project, the site and the basics. Pick what you came to do.</span>
+  </a>
   {%- endif %}
-  {%- endif %}
+  <a class="cc-tour__exit" href="{{ nav.homepage.url | url }}">Leave the tour</a>
 </nav>
 {%- endmacro -%}
 
@@ -43,7 +64,7 @@
 {{ page.content }}
 
 {%- if cur.i >= 0 -%}
-{{ tour_bar(tour, cur, "Guided tour, progress", true) }}
+{{ tour_end(tour, cur) }}
 {%- endif %}
 
 {#- Next step: next_step in the front matter, or else the next page of the navigation -#}

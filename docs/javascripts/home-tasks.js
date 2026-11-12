@@ -1,4 +1,4 @@
-// Home, box "Start here": it walks through its steps by itself, advancing along a line of dots, one
+// Home, box "In this documentation": it walks through its steps by itself, highlighting one row at a time, one
 // step at a time (only the active step shows its description; the list keeps the height of its tallest state, so nothing below moves). The progress bar of the active step (a CSS animation) tells when to
 // move on. It stops while the box is hovered or has the focus; with "reduce motion" it does not
 // start. Without JavaScript every description stays visible.

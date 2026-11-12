@@ -1649,85 +1649,13 @@ footer .footer-tagline img {
   mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5 17.59 15.59 7H9V5h10v10h-2V8.41L6.41 19 5 17.59Z"/></svg>') center / contain no-repeat;
 }
 
-/* ---------- Home: "Start here" is a path that advances by itself (see home-tasks.js) ----------
-   A vertical line with one dot per step. The active step has its dot filled and a bar filling the
-   line down to the next dot; the steps already passed stay filled. Every title and description is
-   always visible, so nothing changes size when the active step changes. */
-.md-typeset.cc-tasks,
-[data-md-color-scheme="slate"] .md-typeset.cc-tasks {
-  border: 0;
-  background: transparent;
-}
-.md-typeset.cc-tasks h2,
-[data-md-color-scheme="slate"] .md-typeset.cc-tasks h2 {
-  padding: 0 0 1.1rem;
-  background: transparent;
-  color: var(--md-default-fg-color--light);
-  font-size: 0.7rem;
-  font-weight: 700;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-}
-.md-typeset.cc-tasks li + li {
-  border-top: 0;
-}
-.md-typeset.cc-tasks li > a {
-  padding: 0.45rem 0 1.1rem 2.9rem;
-  background: transparent;
-}
-.md-typeset.cc-tasks li:last-child > a {
-  padding-bottom: 0.45rem;
-}
-.md-typeset.cc-tasks li > a:hover,
-.md-typeset.cc-tasks li > a:focus-visible {
-  background: transparent;
-}
-/* the dot (it replaces the arrow of the other cards) */
-.md-typeset.cc-tasks li > a::after {
-  left: 0;
-  right: auto;
-  top: 0.55rem;
-  width: 1.4rem;
-  height: 1.4rem;
-  margin: 0;
-  box-sizing: border-box;
-  border: 2px solid var(--md-accent-fg-color);
-  border-radius: 50%;
-  background: var(--md-default-bg-color);
-  -webkit-mask: none;
-  mask: none;
-  transform: none;
-  transition: background-color 0.3s, box-shadow 0.3s;
-  z-index: 1;
-}
-.md-typeset.cc-tasks li > a:hover::after,
-.md-typeset.cc-tasks li > a:focus-visible::after {
-  transform: none;
-}
-/* the line down to the next dot, and (on the same place) the part of it already travelled */
-.md-typeset.cc-tasks li:not(:last-child)::before,
-.md-typeset.cc-tasks li:not(:last-child) > a::before {
-  content: "";
-  position: absolute;
-  left: calc(0.7rem - 1px);
-  top: 1.25rem;
-  bottom: -0.6rem;
-  width: 2px;
-}
-.md-typeset.cc-tasks li:not(:last-child)::before {
-  background: var(--md-accent-fg-color);
-  opacity: 0.25;
-}
-.md-typeset.cc-tasks li { position: relative; }
-.md-typeset.cc-tasks li:not(:last-child) > a::before {
-  background: var(--md-accent-fg-color);
-  transform: scaleY(0);
-  transform-origin: top;
-}
+/* ---------- Home: the box "In this documentation" advances by itself (see home-tasks.js) ----------
+   Ink header, one row per block with its arrow. The active row has the tint, its title in the
+   accent, its description open and a bar filling along its bottom edge; the others show only the
+   title. The list keeps the height of its tallest state, so nothing below moves. */
 .md-typeset.cc-tasks li > a strong {
   font-size: 1.05rem;
-  font-weight: 700;
-  color: var(--md-default-fg-color);
+  font-weight: 500;
 }
 .md-typeset.cc-tasks li > a span {
   margin-top: 0.15rem;
@@ -1735,19 +1663,41 @@ footer .footer-tagline img {
   color: var(--md-default-fg-color--light);
 }
 .md-typeset.cc-tasks a.cc-tasks__all {
-  border-top: 0;
-  padding: 0.5rem 0 0 2.9rem;
+  padding: 0.7rem 1.1rem;
+  border-top: 1px solid var(--cc-border);
 }
-/* with JavaScript: the steps that are not the active one fade a little */
-.md-typeset.cc-tasks.is-js li > a strong,
-.md-typeset.cc-tasks.is-js li > a span {
+/* the bar of the time left, on the bottom edge of the active row */
+.md-typeset.cc-tasks.is-js li > a::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 3px;
+  background: var(--md-accent-fg-color);
+  transform: scaleX(0);
+  transform-origin: left;
+}
+.md-typeset.cc-tasks.is-js:not(.is-auto) li.is-active > a::before {
+  transform: scaleX(1);
+}
+.md-typeset.cc-tasks.is-auto li.is-active > a::before {
+  animation: cc-tasks-progress 2s linear forwards;
+}
+.md-typeset.cc-tasks.is-auto.is-paused li.is-active > a::before {
+  animation-play-state: paused;
+}
+@keyframes cc-tasks-progress {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
+}
+/* with JavaScript: the rows that are not active are quieter; the detail only shows on the active one */
+.md-typeset.cc-tasks.is-js li > a strong {
   transition: opacity 0.3s, color 0.3s;
 }
 .md-typeset.cc-tasks.is-js li:not(.is-active) > a strong {
   opacity: 0.6;
 }
-/* the detail only shows on the active step and the others close up; the height of the whole list
-   is fixed by the script (the tallest state), so the page below does not move */
 .md-typeset.cc-tasks.is-js li > a span {
   max-height: 0;
   margin-top: 0;
@@ -1760,66 +1710,26 @@ footer .footer-tagline img {
   margin-top: 0.15rem;
   opacity: 1;
 }
+.md-typeset.cc-tasks.is-js li.is-active > a {
+  background: var(--cc-tint);
+}
+.md-typeset.cc-tasks.is-js li.is-active > a strong {
+  color: var(--md-accent-fg-color);
+}
+.md-typeset.cc-tasks.is-js li.is-active > a::after {
+  background-color: var(--md-accent-fg-color);
+  transform: translateX(0.25rem);
+}
 .md-typeset.cc-tasks.is-measuring *,
 .md-typeset.cc-tasks.is-measuring *::before,
 .md-typeset.cc-tasks.is-measuring *::after {
   transition: none !important;
   animation: none !important;
 }
-.md-typeset.cc-tasks.is-js li.is-active > a strong {
-  color: var(--md-accent-fg-color);
-}
-.md-typeset.cc-tasks.is-js li.is-active > a::after,
-.md-typeset.cc-tasks.is-js li.is-done > a::after {
-  background: var(--md-accent-fg-color);
-}
-.md-typeset.cc-tasks.is-js li.is-active > a::after {
-  box-shadow: 0 0 0 4px color-mix(in srgb, var(--md-accent-fg-color) 20%, transparent);
-}
-.md-typeset.cc-tasks.is-js li.is-done > a::before {
-  transform: scaleY(1);
-}
-.md-typeset.cc-tasks.is-auto li.is-active > a::before {
-  animation: cc-tasks-progress 2s linear forwards;
-}
-/* the last step has no line to the next one: its time is a ring that fills around the dot */
-@property --cc-ring {
-  syntax: "<number>";
-  inherits: false;
-  initial-value: 0;
-}
-.md-typeset.cc-tasks.is-auto li:last-child > a::before {
-  content: "";
-  position: absolute;
-  left: -5px;
-  top: calc(0.55rem - 5px);
-  width: calc(1.4rem + 10px);
-  height: calc(1.4rem + 10px);
-  box-sizing: border-box;
-  border-radius: 50%;
-  background: conic-gradient(var(--md-accent-fg-color) calc(var(--cc-ring) * 1turn), transparent 0);
-  -webkit-mask: radial-gradient(farthest-side, transparent calc(100% - 3px), #000 calc(100% - 2px));
-  mask: radial-gradient(farthest-side, transparent calc(100% - 3px), #000 calc(100% - 2px));
-  transform: none;
-}
-.md-typeset.cc-tasks.is-auto li.is-active:last-child > a::before {
-  animation: cc-tasks-progress-ring 2s linear forwards;
-}
-@keyframes cc-tasks-progress-ring {
-  from { --cc-ring: 0; }
-  to { --cc-ring: 1; }
-}
-.md-typeset.cc-tasks.is-auto.is-paused li.is-active > a::before {
-  animation-play-state: paused;
-}
-@keyframes cc-tasks-progress {
-  from { transform: scaleY(0); }
-  to { transform: scaleY(1); }
-}
 @media (prefers-reduced-motion: reduce) {
-  .md-typeset.cc-tasks.is-js li > a::after,
   .md-typeset.cc-tasks.is-js li > a strong,
-  .md-typeset.cc-tasks.is-js li > a span { transition: none; }
+  .md-typeset.cc-tasks.is-js li > a span,
+  .md-typeset.cc-tasks.is-js li > a::after { transition: none; }
 }
 
 /* ---------- Home: "About CitCom.ai", the text next to the presentation video ---------- */
@@ -2024,9 +1934,57 @@ footer .footer-tagline img {
   .md-typeset .cc-tour__steps li:not(.is-current) span { display: none; }
 }
 
-/* the same bar closes each step of the tour */
+/* the end of each step: the same card as the top, with the next page inside, under the segments */
 .md-typeset .cc-tour--end {
   margin: 3rem 0 1rem;
+}
+.md-typeset .cc-tour--end .cc-tour__exit { order: 5; margin-left: auto; }
+.md-typeset .cc-tour__next {
+  position: relative;
+  order: 4;
+  flex: 1 1 100%;
+  display: block;
+  margin-top: 0.4rem;
+  padding: 0.9rem 3rem 0.2rem 0;
+  border-top: 1px solid var(--cc-border);
+  color: var(--md-typeset-color);
+  text-decoration: none;
+}
+.md-typeset .cc-tour__nextlabel {
+  display: block;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--md-accent-fg-color);
+}
+.md-typeset .cc-tour__nexttitle {
+  display: block;
+  margin-top: 0.2rem;
+  font-size: 1.15rem;
+  font-weight: 300;
+}
+.md-typeset .cc-tour__nexttext {
+  display: block;
+  margin-top: 0.2rem;
+  font-size: 0.8rem;
+  color: var(--md-default-fg-color--light);
+}
+.md-typeset .cc-tour__next::after {
+  content: "\2192";
+  position: absolute;
+  top: 50%;
+  right: 0.2rem;
+  transform: translateY(-40%);
+  font-size: 1.4rem;
+  color: var(--md-accent-fg-color);
+  transition: right 0.2s;
+}
+.md-typeset .cc-tour__next:hover .cc-tour__nexttitle,
+.md-typeset .cc-tour__next:focus-visible .cc-tour__nexttitle { color: var(--md-accent-fg-color); }
+.md-typeset .cc-tour__next:hover::after { right: 0; }
+@media (prefers-reduced-motion: reduce) {
+  .md-typeset .cc-tour__next::after { transition: none; }
 }
 
 /* ---------- Interoperability levels: the same language as the TEF map ----------
@@ -2460,22 +2418,4 @@ footer .footer-tagline img {
 }
 @media (prefers-reduced-motion: reduce) {
   .cc-cycle__btn { transition: none; }
-}
-
-/* the button that closes each step of the tour: on to the next one */
-.md-typeset .cc-tour .cc-tour__next {
-  order: 4;
-  margin: 0.2rem 0 0 auto;
-}
-
-/* Home, "In this documentation": the dots of the steps that are not the active one are smaller; the
-   scale keeps the centre of each dot on the line */
-.md-typeset.cc-tasks.is-js li > a::after {
-  transition: background-color 0.3s, box-shadow 0.3s, transform 0.3s;
-}
-.md-typeset.cc-tasks.is-js li:not(.is-active) > a::after {
-  transform: scale(0.65);
-}
-@media (prefers-reduced-motion: reduce) {
-  .md-typeset.cc-tasks.is-js li > a::after { transition: none; }
 }
