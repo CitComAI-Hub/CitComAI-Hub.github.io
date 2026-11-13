@@ -28,7 +28,7 @@ Choose **A** unless you need B. With B, [deploy your connector](deploy_connector
 
 ## What you need
 
-- The **legal representative** (LEAR) of the organisation, who acts for it and signs the participation agreement, with an email address.
+- The **legal representative** (LEAR) of the organisation, who acts for it and signs the [accession agreement](../rulebook/accession-agreement.md), with an email address.
 - With option B: the DID of your connector, for example `did:web:did.example.org`, with its document reachable at `https://did.example.org/.well-known/did.json`.
 
 ## Steps
@@ -44,9 +44,11 @@ In the **Digital identity** section of the form:
 - **Option A**: leave the `did:web` field **empty**. The portal will create your identity when the registration is approved.
 - **Option B**: enter the DID of your connector.
 
-### 3. Sign the participation agreement
+### 3. Sign the accession agreement
 
-Download the participation agreement from the form, have the LEAR sign it, and upload the signed copy. Submit the registration.
+Download the [accession agreement](../rulebook/accession-agreement.md) from the form. The LEAR fills it in (the PDF has fields for the organisation, the roles it intends to take and a contact for incidents), signs it by hand or electronically, and uploads the signed copy. Submit the registration.
+
+By signing, the organisation accepts the [rulebook](../rulebook/index.md) as it is in force at each moment. Changes to the rulebook are announced at least 30 days before they take effect, and a participant can leave at any time.
 
 ### 4. Wait for the approval
 

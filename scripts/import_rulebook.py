@@ -11,6 +11,9 @@ Pages (source in the rulebook repository → page of the site):
     rulebook/README.md            → rulebook/rules.md
     classes/<class>.md            → rulebook/classes/<class>.md
     classes/<class>.terms.md      → rulebook/classes/<class>.terms.md   (terms template)
+    agreements/accession-agreement.md → rulebook/accession-agreement.md
+    agreements/accession-agreement.pdf → rulebook/accession-agreement.pdf (copied as is; the
+                                         onboarding portal links to it)
 
 On the way, every page gets:
 
@@ -49,6 +52,10 @@ ROOT = Path(__file__).resolve().parent.parent
 OUT = ROOT / "docs" / "rulebook"
 CACHE = ROOT / ".cache" / "rulebook"
 
+# The accession agreement: a page, and its PDF next to it
+AGREEMENT = "agreements/accession-agreement.md"
+AGREEMENT_PDF = "agreements/accession-agreement.pdf"
+
 # Links to a folder of the rulebook repository that has a better place on the site
 FOLDERS = {"classes": "rules.md#7-usage-terms-policy-classes"}
 
@@ -81,6 +88,8 @@ def fetch() -> Path:
 def pages(src: Path) -> dict[str, str]:
     """Imported files: path in the rulebook repository → path under docs/rulebook/."""
     mapping = {"rulebook/README.md": "rules.md"}
+    if (src / AGREEMENT).is_file():
+        mapping[AGREEMENT] = "accession-agreement.md"
     for path in sorted((src / "classes").glob("*.md")):
         mapping[f"classes/{path.name}"] = f"classes/{path.name}"
     return mapping
@@ -168,6 +177,8 @@ def description_of(source: str) -> str:
     name = PurePosixPath(source).name
     if source == "rulebook/README.md":
         return "The rules of the CitCom.ai Data Space: governance, participants, agreements, data categories, usage terms, technical and security rules."
+    if source == AGREEMENT:
+        return "What an organisation signs to join the CitCom.ai Data Space: it accepts the rulebook in force."
     if name.endswith(".terms.md"):
         return f"The terms of use published with every {name.removesuffix('.terms.md')} offering, with the fields each provider fills in."
     return f"The {name.removesuffix('.md')} policy class: what an offering of this class gives and what it asks."
@@ -203,11 +214,12 @@ def front_matter(source: str, text: str, commit: str, dirty: bool, src: Path) ->
 def main() -> None:
     src = fetch()
     commit = git(src, "rev-parse", "HEAD").strip()
-    dirty = bool(git(src, "status", "--porcelain", "--", "rulebook", "classes").strip())
+    dirty = bool(git(src, "status", "--porcelain", "--", "rulebook", "classes", "agreements").strip())
     mapping = pages(src)
 
     # Remove what an earlier run imported (a class may have been removed); index.md stays
-    (OUT / "rules.md").unlink(missing_ok=True)
+    for old in ("rules.md", "accession-agreement.md", "accession-agreement.pdf"):
+        (OUT / old).unlink(missing_ok=True)
     shutil.rmtree(OUT / "classes", ignore_errors=True)
     for source, target in mapping.items():
         text = (src / source).read_text(encoding="utf-8")
@@ -218,6 +230,14 @@ def main() -> None:
                 "*Template: the fields in `${...}` are filled in by each provider when it publishes an "
                 "offering with the offer wizard of the marketplace.*\n\n" + body
             )
+        if source == AGREEMENT and (src / AGREEMENT_PDF).is_file():
+            # The PDF to fill in and sign, right under the title
+            title, _, rest = body.partition("\n")
+            body = (
+                f"{title}\n\n[Download the PDF to sign](accession-agreement.pdf){{ .md-button .md-button--primary }}\n"
+                + rest
+            )
+            shutil.copyfile(src / AGREEMENT_PDF, OUT / "accession-agreement.pdf")
         dest = OUT / target
         dest.parent.mkdir(parents=True, exist_ok=True)
         dest.write_text(front_matter(source, text, commit, dirty, src) + body, encoding="utf-8")

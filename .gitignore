@@ -14,3 +14,5 @@ __pycache__/
 # The rulebook, imported at build time from its own repository (scripts/import_rulebook.py)
 /docs/rulebook/rules.md
 /docs/rulebook/classes/
+/docs/rulebook/accession-agreement.md
+/docs/rulebook/accession-agreement.pdf
