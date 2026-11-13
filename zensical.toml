@@ -58,6 +58,7 @@ nav = [
       "rulebook/index.md",
       # Imported from the rulebook repository at build time (scripts/import_rulebook.py)
       { "The rules" = "rulebook/rules.md" },
+      { "Accession agreement" = "rulebook/accession-agreement.md" },
       { "Policy classes" = [
         { "Open data" = "rulebook/classes/open-data.md" },
         { "Dataset access" = "rulebook/classes/dataset-access.md" },
@@ -266,6 +267,7 @@ services, and the tools to connect a city platform.
   "marketplace/index.md",
   "rulebook/index.md",
   "rulebook/rules.md",
+  "rulebook/accession-agreement.md",
   "rulebook/classes/open-data.md",
   "rulebook/classes/dataset-access.md",
   "rulebook/classes/service-access.md",

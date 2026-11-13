@@ -26,7 +26,7 @@ The **rulebook** holds the rules that every participant of the CitCom.ai Data Sp
 
 - **Governance**: the CitCom.ai consortium governs the data space; VRAIN-UPV operates the shared services (trust anchor, onboarding portal, marketplace) and is bound by neutrality rules.
 - **Joining and leaving**: admission criteria, how access is removed when an organisation leaves or a purchase is cancelled.
-- **Agreements**: joining means accepting the rulebook; buying an offer is the contract between provider and consumer.
+- **Agreements**: an organisation joins by signing the [accession agreement](accession-agreement.md), which accepts the rulebook in force; buying an offer is the contract between provider and consumer.
 - **Data categories**: open and shared data can be offered; confidential and personal data cannot, for now.
 - **Policy classes**: every offer uses one class, which fixes its terms of use. There are three: [`open-data`](classes/open-data.md), [`dataset-access`](classes/dataset-access.md) (shared data) and [`service-access`](classes/service-access.md) (services).
 - **Technical and security rules**: data is read only, follows [Smart Data Models](../toolbox/smart_data_models.md), and an offer reaches only the data it defines.
