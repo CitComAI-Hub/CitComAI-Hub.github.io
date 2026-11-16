@@ -1,12 +1,12 @@
 ---
 title: TEF network
-description: "What a TEF is, the three super-nodes and the sites of CitCom, and the services they share: the AI Trustworthiness Label and Local Digital Twins."
+description: "What a TEF is, the three super-nodes and the sites of CitCom."
 summary: "Who takes part: three super-nodes and 16 sites across Europe."
 ---
 
 # TEF network
 
-<p class="cc-lead">Who takes part in CitCom.ai: what a TEF is, the three super-nodes, their 16 sites across Europe and the services they share, such as the AI Trustworthiness Label and Local Digital Twins.</p>
+<p class="cc-lead">Who takes part in CitCom.ai: what a TEF is, the three super-nodes and their 16 sites across Europe.</p>
 
 ## What a TEF is
 
@@ -120,27 +120,3 @@ Every TEF site, grouped by super-node, with the data broker and the API of its p
 | [Valencia](./south_connect/valencia.md) | Spain | {{ config.extra.labels.data_brokers.fiware }} | {{ config.extra.labels.api_brokers.ngsi_v2 }} |
 | [Milano](./south_connect/milano.md) | Italy | {{ config.extra.labels.data_brokers.fiware }} | {{ config.extra.labels.api_brokers.ngsi_v2 }} |
 | [Warsaw](./south_connect/warsaw.md) | Poland |  |  |
-
-## Shared services
-
-The super-nodes share services that no single site offers alone.
-
-<div class="grid cards cc-two" markdown>
-
--   :material-shield-check-outline:{ .lg } __AI Trustworthiness Label__
-
-    ---
-
-    How the TEF sites assess the AI systems they test, with guidelines, an example report and a catalogue of assessment tools.
-
-    [:octicons-arrow-right-24: AI Trustworthiness Label](../ai_assessment/index.md)
-
--   :material-cube-outline:{ .lg } __Local Digital Twins__
-
-    ---
-
-    The local digital twins of the TEF sites and the work to make them interoperable.
-
-    [:octicons-arrow-right-24: Local Digital Twins](../local_digital_twins/index.md)
-
-</div>

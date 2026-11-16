@@ -43,6 +43,13 @@ summary: "Open-source tools to connect a city platform and build services."
 
 Built something that helps CitCom partners? [Propose your tool with a pull request](../faq/pull_request_procedure.md).
 
+## Also in the Toolbox
+
+<ul class="cc-rows cc-rows--two" markdown="0">
+  <li><a href="../ai_assessment/"><strong>AI Trustworthiness Label</strong><span>How the TEF sites assess the AI systems they test: badges, guidelines and an example report</span></a></li>
+  <li><a href="../local_digital_twins/"><strong>Local Digital Twins</strong><span>The local digital twins of the TEF sites and the work to make them interoperable</span></a></li>
+</ul>
+
 ## More tools
 
 <ul class="cc-rows cc-rows--two" markdown="0">

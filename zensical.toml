@@ -72,11 +72,6 @@ nav = [
       "tef/south_connect/milano.md",
       "tef/south_connect/warsaw.md",
     ] },
-    { "AI Trustworthiness Label" = [
-      "ai_assessment/index.md",
-      "ai_assessment/ai_assessment_catalogue.md",
-    ] },
-    { "Local Digital Twins" = "local_digital_twins/index.md" },
   ] },
   { "The project" = [
     "getting_started/index.md",
@@ -109,6 +104,11 @@ nav = [
     { "ds-consumer-auth" = "toolbox/ds_consumer_auth.md" },
     { "Wallets" = "toolbox/wallets.md" },
     { "Smart Data Models" = "toolbox/smart_data_models.md" },
+    { "AI Trustworthiness Label" = [
+      "ai_assessment/index.md",
+      "ai_assessment/ai_assessment_catalogue.md",
+    ] },
+    { "Local Digital Twins" = "local_digital_twins/index.md" },
     { "More tools" = [
       { "AI Toolkit" = "toolbox/ai_toolkit.md" },
       { "AI Logging Monitor" = "toolbox/ai_logging_monitor.md" },
@@ -314,6 +314,8 @@ services, and the tools to connect a city platform.
   "toolbox/ds_consumer_auth.md",
   "toolbox/wallets.md",
   "toolbox/smart_data_models.md",
+  "ai_assessment/index.md",
+  "local_digital_twins/index.md",
 ]
 "Help" = [
   "site.md",
@@ -321,8 +323,6 @@ services, and the tools to connect a city platform.
 ]
 "TEF network" = [
   "tef/index.md",
-  "ai_assessment/index.md",
-  "local_digital_twins/index.md",
 ]
 
 # {{ config.extra.labels.* }} in the TEF site pages

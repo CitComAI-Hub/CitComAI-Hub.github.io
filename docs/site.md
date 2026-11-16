@@ -9,7 +9,7 @@ Four sections in the top menu, plus the marketplace. Each one answers a differen
 
 | Section | What it is | Read it when |
 |---|---|---|
-| [TEF network](tef/index.md) | Who takes part: the three super-nodes and their sites, one page each, and the services they share. | You want to know where your city or company fits. |
+| [TEF network](tef/index.md) | Who takes part: the three super-nodes and their sites, one page each. | You want to know where your city or company fits. |
 | [Data space](data_spaces/index.md) | How the CitCom.ai Data Space works and how the marketplace is built on it. | You want to understand what you are joining. |
 | [Guides](guides/index.md) | One guide per task: join, get a wallet, publish a dataset, use data from your code. | You already know what you want to do. |
 | [Toolbox](toolbox/index.md) | The tools to connect a city platform and build services: Lepus, FiLiP, wallets. | You need a piece of software. |
