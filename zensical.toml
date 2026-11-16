@@ -50,7 +50,6 @@ nav = [
   { "Home" = "index.md" },
   { "TEF network" = [
     "tef/index.md",
-    { "Sites in detail" = "tef/sites.md" },
     { "Nordic - POWER" = [
       "tef/nordic_power/doll_living_lab.md",
       "tef/nordic_power/aarhus_city_lab.md",
@@ -322,7 +321,6 @@ services, and the tools to connect a city platform.
 ]
 "TEF network" = [
   "tef/index.md",
-  "tef/sites.md",
   "ai_assessment/index.md",
   "local_digital_twins/index.md",
 ]
@@ -340,6 +338,7 @@ width = "100%"
 "getting_started/project.md" = "getting_started/index.md"
 "getting_started/site.md" = "site.md"
 "getting_started/nodes_countries.md" = "tef/index.md"
+"tef/sites.md" = "tef/index.md"
 "getting_started/data_spaces/fundaments_deployment.md" = "getting_started/data_spaces.md"
 "getting_started/get_involved/index.md" = "guides/join.md"
 "getting_started/get_involved/join.md" = "guides/join.md"

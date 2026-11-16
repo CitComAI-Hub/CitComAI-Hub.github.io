@@ -20,33 +20,60 @@ The CitCom.ai Data Space is operated by VRAIN-UPV for the whole of CitCom and us
 
 ## The deployment today
 
-```mermaid
-flowchart TB
-    subgraph OP["Operated for the whole data space"]
-        TA["<b>Trust anchor</b><br/>Trusted Issuers Registry"]
-        ON["<b>Onboarding portal</b><br/>organisations join"]
-        MK["<b>Marketplace</b><br/>catalogue, offers, orders"]
-    end
-    subgraph TV["Ajuntament de València · townhall-vlc"]
-        TVC["Connector"]
-        TVD[("City data<br/>VLCi + Lepus, Orion-LD")]
-        TVC --- TVD
-    end
-    subgraph VR["VRAIN-UPV · vrain"]
-        VRC["Connector"]
-        VRS["MIAIS<br/>AI service"]
-        VRC --- VRS
-    end
-    W["Wallets<br/>atesta-id-wallet, Lissi"]
-
-    ON -- "registers" --> TA
-    TVC -. "publishes offers" .-> MK
-    VRC -. "publishes offers" .-> MK
-    MK -- "contract on purchase" --> TVC
-    MK -- "contract on purchase" --> VRC
-    VRS == "reads waste containers<br/>MachineCredential" ==> TVC
-    W == "people log in<br/>ServiceCredential" ==> VRC
-```
+<div class="cc-infra" markdown="0">
+  <div class="cc-infra__band">
+    <p class="cc-infra__eyebrow">Operated by VRAIN-UPV for the whole data space</p>
+    <div class="cc-infra__shared">
+      <a class="cc-infra__svc" href="../../guides/join/">
+        <strong>Onboarding portal</strong>
+        <small>Organisations join</small>
+      </a>
+      <a class="cc-infra__svc" href="#shared-services">
+        <strong>Trust anchor</strong>
+        <small>Trusted Issuers Registry</small>
+      </a>
+      <a class="cc-infra__svc" href="../../marketplace/">
+        <strong>Marketplace</strong>
+        <small>Catalogue, offers, orders</small>
+      </a>
+    </div>
+  </div>
+  <div class="cc-infra__links cc-infra__links--steps" aria-hidden="true">
+    <div class="cc-infra__label"><span class="cc-infra__step">1</span><small>The onboarding portal registers each organisation in the trust anchor</small></div>
+    <div class="cc-infra__label"><span class="cc-infra__step">2</span><small>Each connector publishes offers in the marketplace</small></div>
+    <div class="cc-infra__label"><span class="cc-infra__step">3</span><small>On purchase, the marketplace registers the contract in the provider's connector</small></div>
+  </div>
+  <div class="cc-infra__flow">
+    <a class="cc-infra__part" href="../../valencia/">
+      <span class="cc-infra__tag">Provider</span>
+      <strong>Ajuntament de València</strong>
+      <small>townhall-vlc. City data: VLCi + Lepus, Orion-LD</small>
+      <span class="cc-infra__conn">Connector</span>
+    </a>
+    <div class="cc-infra__arrow">
+      <span class="cc-infra__step">4</span>
+      <span class="cc-infra__line"></span>
+      <small>Reads the waste containers (MachineCredential)</small>
+    </div>
+    <a class="cc-infra__part" href="../../miais/">
+      <span class="cc-infra__tag">Consumer</span>
+      <strong>VRAIN-UPV</strong>
+      <small>vrain. AI service: MIAIS</small>
+      <span class="cc-infra__conn">Connector</span>
+    </a>
+  </div>
+  <div class="cc-infra__flow cc-infra__flow--below">
+    <div class="cc-infra__rise">
+      <span class="cc-infra__riseline"></span>
+      <span class="cc-infra__risetext"><span class="cc-infra__step">5</span><small>People log in (ServiceCredential)</small></span>
+      <a class="cc-infra__part cc-infra__part--plain" href="../../toolbox/wallets/">
+        <span class="cc-infra__tag">People</span>
+        <strong>Wallets</strong>
+        <small>atesta-id-wallet, Lissi</small>
+      </a>
+    </div>
+  </div>
+</div>
 
 - Each participant runs its own **connector**. The diagram shows the first two: the Ajuntament de València, which provides city data, and VRAIN-UPV, which provides an AI service and consumes city data. Both are described as worked examples: [Valencia](../valencia/index.md) and the [MIAIS](../miais/index.md). New participants join the same way.
 - The MIAIS reads the waste containers of Valencia through the Ajuntament's connector, after buying the offer in the marketplace. People from other organisations use the MIAIS by logging in with their wallet.
@@ -64,28 +91,49 @@ The public services are:
 
 Every participant runs the same set of components:
 
-```mermaid
-flowchart LR
-    subgraph CON["Connector of a participant"]
-        direction LR
-        KC["<b>Keycloak</b><br/>issues credentials<br/>(OID4VCI)"]
-        VF["<b>Verifier</b><br/>credential → token<br/>(OID4VP)"]
-        TIL[("<b>Trusted Issuers List</b><br/>who may access")]
-        GW["<b>APISIX</b><br/>gateway"]
-        OPA["<b>OPA</b><br/>policy decision"]
-        PAP[("<b>ODRL-PAP</b><br/>access policies")]
-        CM["<b>contract-management</b><br/>applies purchases"]
-        BR[("<b>NGSI-LD broker</b><br/>Scorpio / Orion-LD / Lepus")]
-        VF --> TIL
-        GW --> OPA --> PAP
-        GW --> BR
-        CM --> TIL
-        CM --> PAP
-    end
-    CLIENT["Consumer"] -- "1 credential" --> VF
-    CLIENT -- "2 token + request" --> GW
-    MKT["Marketplace"] -- "completed order" --> CM
-```
+<div class="cc-infra" markdown="0">
+  <div class="cc-infra__solo">
+    <div class="cc-infra__part cc-infra__part--plain">
+      <span class="cc-infra__tag">Consumer</span>
+      <strong>A program or a person</strong>
+      <small>With a MachineCredential or a ServiceCredential</small>
+    </div>
+  </div>
+  <div class="cc-infra__links cc-infra__links--steps" aria-hidden="true">
+    <div class="cc-infra__label"><span class="cc-infra__step">1</span><small>It presents its credential to the Verifier and gets an access token</small></div>
+    <div class="cc-infra__label"><span class="cc-infra__step">2</span><small>It sends the request with the token to APISIX</small></div>
+  </div>
+  <div class="cc-infra__band">
+    <p class="cc-infra__eyebrow">Connector of a participant</p>
+    <p class="cc-infra__group">Access: who gets in</p>
+    <div class="cc-infra__shared">
+      <div class="cc-infra__svc"><strong>Verifier</strong><small>Credential → token (OID4VP)</small></div>
+      <div class="cc-infra__svc"><strong>APISIX</strong><small>Gateway: checks the token, asks OPA</small></div>
+      <div class="cc-infra__svc"><strong>NGSI-LD broker</strong><small>The data: Scorpio, Orion-LD, Lepus</small></div>
+    </div>
+    <p class="cc-infra__group">Rules: what they can do</p>
+    <div class="cc-infra__shared">
+      <div class="cc-infra__svc"><strong>Trusted Issuers List</strong><small>Who may access this connector</small></div>
+      <div class="cc-infra__svc"><strong>OPA</strong><small>Allows or denies each request</small></div>
+      <div class="cc-infra__svc"><strong>ODRL-PAP</strong><small>Stores the access policies</small></div>
+    </div>
+    <p class="cc-infra__group">Set-up: who is let in, and how</p>
+    <div class="cc-infra__shared">
+      <div class="cc-infra__svc"><strong>Keycloak</strong><small>Issues credentials to its people and programs (OID4VCI)</small></div>
+      <div class="cc-infra__svc"><strong>contract-management</strong><small>Applies each purchase to the list and the policies</small></div>
+    </div>
+  </div>
+  <div class="cc-infra__links cc-infra__links--steps" aria-hidden="true">
+    <div class="cc-infra__label"><span class="cc-infra__step">3</span><small>When an order is completed, the marketplace notifies contract-management</small></div>
+  </div>
+  <div class="cc-infra__solo">
+    <div class="cc-infra__part cc-infra__part--plain">
+      <span class="cc-infra__tag">Shared service</span>
+      <strong>Marketplace</strong>
+      <small>Where the offers are bought</small>
+    </div>
+  </div>
+</div>
 
 | Component | Role |
 |---|---|

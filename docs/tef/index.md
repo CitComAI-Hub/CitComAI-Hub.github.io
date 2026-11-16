@@ -22,7 +22,7 @@ The project brings together [more than 30 organisations](https://citcom.ai/about
 
 ## Three super-nodes
 
-The sites are grouped in three **super-nodes**, each with a theme. A super-node is a regional hub that shares expertise and resources between its sites. Every site has its own page, and their detail is also in [Sites in detail](sites.md).
+The sites are grouped in three **super-nodes**, each with a theme. A super-node is a regional hub that shares expertise and resources between its sites. Every site has its own page.
 
 <div class="cc-tef" markdown="0">
   <div class="cc-tef__defs">
@@ -84,6 +84,42 @@ The sites are grouped in three **super-nodes**, each with a theme. A super-node 
     </div>
   </div>
 </div>
+
+Every TEF site, grouped by super-node, with the data broker and the API of its platform. 
+
+!!! info
+    An empty cell means the site has not published that information yet. Open a site for its full description.
+
+### Nordic super-node | POWER
+
+| TEF site | Country | Data broker | API | 
+| -------- | ---- | ----------- | ---------- |
+| [DOLL Living Lab](./nordic_power/doll_living_lab.md) | Denmark | {{ config.extra.labels.data_brokers.fiware }} | {{ config.extra.labels.api_brokers.ngsi_ld }} |
+| [Aarhus City Lab](./nordic_power/aarhus_city_lab.md) | Denmark | {{ config.extra.labels.data_brokers.fiware }} | {{ config.extra.labels.api_brokers.ngsi_ld }} |
+| [Net Zero Innovation Hub](./nordic_power/net_zero_innovation_hub.md) | Denmark |  |  |
+| [DTI](./nordic_power/dti.md) | Denmark |  | |
+| [Center Denmark](./nordic_power/center_denmark.md) | Denmark | {{ config.extra.labels.data_brokers.kafka }} | {{ config.extra.labels.api_brokers.custom }} |
+| [GATE21](./nordic_power/gate21.md) | Denmark | {{ config.extra.labels.data_brokers.fiware }} | {{ config.extra.labels.api_brokers.ngsi_ld }} |
+| [Tampere](./nordic_power/tampere.md) | Finland | {{ config.extra.labels.data_brokers.iot_ticket }} | {{ config.extra.labels.api_brokers.custom }} |
+| [RISE](./nordic_power/rise.md) | Sweden | {{ config.extra.labels.data_brokers.fiware }} | {{ config.extra.labels.api_brokers.ngsi_v2 }} <br> {{ config.extra.labels.api_brokers.ngsi_ld }} |
+
+### Central super-node | MOVE
+
+| TEF site | Country | Data broker | API |
+| -------- | ---- | ----------- | ---------- |
+| [Mechelen](./central_move/mechelen.md) | Belgium |  |  |
+| [Brussels](./central_move/brussels.md) | Belgium |  |  |
+| [Eindhoven](./central_move/eindhoven.md) | Netherlands | {{ config.extra.labels.data_brokers.fiware }} |  |
+| [Paris](./central_move/paris.md) | France |  |  |
+| [LIST](./central_move/list.md) | Luxembourg |  |  |
+
+### South super-node | CONNECT
+
+| TEF site | Country | Data broker | API |
+| -------- | ---- | ----------- | ---------- |
+| [Valencia](./south_connect/valencia.md) | Spain | {{ config.extra.labels.data_brokers.fiware }} | {{ config.extra.labels.api_brokers.ngsi_v2 }} |
+| [Milano](./south_connect/milano.md) | Italy | {{ config.extra.labels.data_brokers.fiware }} | {{ config.extra.labels.api_brokers.ngsi_v2 }} |
+| [Warsaw](./south_connect/warsaw.md) | Poland |  |  |
 
 ## Shared services
 

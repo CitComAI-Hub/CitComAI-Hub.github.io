@@ -1059,6 +1059,68 @@ footer .footer-tagline img {
   .cc-infra__line { width: 2px; height: 1.6rem; background: repeating-linear-gradient(var(--md-accent-fg-color) 0 8px, transparent 8px 13px); }
   .cc-infra__line::after { right: -5px; top: auto; bottom: -4px; border: 6px solid transparent; border-top: 8px solid var(--md-accent-fg-color); border-bottom: 0; }
 }
+/* the deployment of "How the data space works": the steps in a column on the rail, three participants in a row */
+.cc-infra__links--steps {
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1.2rem 0;
+}
+.cc-infra__links--steps::before { top: 0; height: 100%; }
+.cc-infra__links--steps::after { display: none; }
+.cc-infra__links--steps .cc-infra__label { position: relative; top: auto; left: auto; transform: none; white-space: normal; max-width: 90%; }
+.cc-infra__part--plain { padding-bottom: 0.9rem; }
+/* inside a connector: the consumer and the marketplace centred, the components by group */
+.cc-infra__solo { display: flex; justify-content: center; }
+.cc-infra__solo .cc-infra__part { width: min(100%, 22rem); }
+a.cc-infra__part--plain:hover, .cc-infra__solo .cc-infra__part:hover { border-color: var(--cc-border); }
+.cc-infra__group {
+  margin: 0.9rem 0 0.4rem !important;
+  font-size: 0.66rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--md-default-fg-color--light);
+}
+.cc-infra__eyebrow + .cc-infra__group { margin-top: 0 !important; }
+div.cc-infra__svc:hover { border-color: var(--cc-border); }
+/* step 5: the wallets under the consumer, with an arrow that goes up to its connector */
+.cc-infra__flow--below { margin-top: 0.2rem; }
+.cc-infra__rise {
+  grid-column: 3;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  gap: 0.2rem 0.6rem;
+  padding-left: 0.9rem;
+}
+.cc-infra__riseline {
+  position: relative;
+  grid-row: 1 / span 1;
+  grid-column: 1;
+  justify-self: center;
+  width: 2px;
+  height: 2.2rem;
+  background: repeating-linear-gradient(var(--md-accent-fg-color) 0 8px, transparent 8px 13px);
+}
+.cc-infra__riseline::after {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: -5px;
+  border: 6px solid transparent;
+  border-bottom: 8px solid var(--md-accent-fg-color);
+  border-top: 0;
+}
+.cc-infra__risetext { grid-column: 2; display: flex; align-items: center; gap: 0.4rem; }
+.cc-infra__risetext small { font-size: 0.66rem; font-weight: 500; color: var(--md-accent-fg-color); }
+.cc-infra__rise .cc-infra__part { grid-column: 1 / -1; margin-left: -0.9rem; }
+@media screen and (max-width: 44.9375em) {
+  .cc-infra__rise { grid-column: 1; padding-left: 0; }
+  .cc-infra__rise .cc-infra__part { margin-left: 0; }
+}
 
 /* ---------- Toolbox: the cards of the rest of the site ---------- */
 .cc-tools {
